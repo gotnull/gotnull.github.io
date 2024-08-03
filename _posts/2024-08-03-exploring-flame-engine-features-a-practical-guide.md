@@ -50,6 +50,8 @@ class MyGame extends FlameGame {
 
 ## 2. Handling Input
 
+This example demonstrates how to handle user input to move a sprite around the screen.
+
 ```dart
 import 'package:flame/game.dart';
 import 'package:flame/components.dart';
@@ -93,6 +95,8 @@ class MyGame extends FlameGame with KeyboardEvents {
 
 ## 3. Adding a Background
 
+This example demonstrates how to add a static background to the game scene.
+
 ```dart
 import 'package:flame/game.dart';
 import 'package:flame/components.dart';
@@ -112,6 +116,8 @@ class MyGame extends FlameGame {
 ```
 
 ## 4. Creating a Particle System
+
+This example illustrates how to create a simple particle system using Flame.
 
 ```dart
 import 'package:flame/game.dart';
@@ -146,6 +152,8 @@ class MyGame extends FlameGame {
 ```
 
 ## 5. Implementing a Simple Collision Detection
+
+This example shows how to implement basic collision detection between two components.
 
 ```dart
 import 'package:flame/game.dart';
