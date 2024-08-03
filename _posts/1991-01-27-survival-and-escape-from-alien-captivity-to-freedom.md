@@ -4,6 +4,7 @@ title: Survival and Escape - From Alien Captivity to Freedom
 subtitle: The Struggle and Triumph of Evading Capture on a Foreign World
 tags: [adventure, survival, sci-fi]
 author: Lester Knight Chaykin
+comments: true
 ---
 
 After the catastrophic explosion that transported me to a desolate alien planet, survival became my immediate concern. The alien world I found myself on was not only inhospitable but also teeming with danger. From the moment I arrived, I faced a series of life-threatening challenges that tested my resolve and ingenuity.

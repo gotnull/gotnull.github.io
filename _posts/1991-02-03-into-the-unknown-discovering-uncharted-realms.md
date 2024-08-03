@@ -4,6 +4,7 @@ title: Into the Unknown - Discovering Uncharted Realms
 subtitle: The Challenges and Wonders of Exploring New Worlds
 tags: [exploration, adventure, sci-fi]
 author: Lester Knight Chaykin
+comments: true
 ---
 
 As we soared through the skies on the back of our dragon-like companion, the alien landscape below became a distant memory, replaced by a tapestry of new and uncharted realms. The journey into the unknown was both exhilarating and daunting, filled with the promise of discovery and the challenge of navigating through unfamiliar territories.

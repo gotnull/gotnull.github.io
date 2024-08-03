@@ -7,6 +7,7 @@ thumbnail-img: /assets/img/hello.jpg
 share-img: /assets/img/hello.jpg
 tags: [history, physics, adventure]
 author: Lester Knight Chaykin
+comments: true
 ---
 
 At the edge of scientific innovation, my high-tech underground laboratory stood as a beacon of cutting-edge research. With a state-of-the-art particle accelerator, I was engaged in experiments designed to simulate the conditions present at the dawn of the universe. My goal was to unlock the profound secrets of cosmic beginnings and revolutionize our understanding of reality.

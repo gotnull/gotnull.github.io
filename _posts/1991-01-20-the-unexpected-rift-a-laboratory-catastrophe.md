@@ -4,6 +4,7 @@ title: The Unexpected Rift - A Laboratory Catastrophe
 subtitle: How a Scientific Breakthrough Became a Portal to Another World
 tags: [adventure, science-fiction, laboratory]
 author: Lester Knight Chaykin
+comments: true
 ---
 
 The peaceful rhythm of scientific inquiry was abruptly shattered when an unforeseen catastrophe struck my high-tech underground laboratory. What began as a routine experiment to reconstruct the universe's primordial moments soon spiraled into an event of cosmic significance.
