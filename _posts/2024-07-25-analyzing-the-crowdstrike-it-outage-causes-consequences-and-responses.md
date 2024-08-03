@@ -26,5 +26,3 @@ CrowdStrike's report highlights that this defect went undetected during their va
 In the wake of the outage, CrowdStrike implemented several immediate measures:
 
 - **Fix Deployment**: A fix was released to address the faulty update, though experts noted that restoring all affected systems would take time.
-  
-- **Enhanced Testing Procedures**: The company committed to impr
