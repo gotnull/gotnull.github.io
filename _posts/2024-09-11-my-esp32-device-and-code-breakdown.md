@@ -50,7 +50,7 @@ Here are the libraries and header files used in this project:
 Several global variables are used to store device states and sensor readings:
 
 ```cpp
-const char apn[] = "telstra.wap";
+const char apn[] = "apn.wap";
 const char* mqtt_broker = "broker.hivemq.com";
 const int mqtt_port = 1883;
 float latitude, longitude, speed, alt, accuracy;
