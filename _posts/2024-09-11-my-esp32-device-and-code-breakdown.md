@@ -110,7 +110,7 @@ void gps_loop() {
   if (modem.getGPS(&latitude, &longitude, &speed, &alt, &vsat, &usat, &accuracy, &year, &month, &day, &hour, &minute, &second)) {
     char gps_data[128];
     sprintf(gps_data, "{ \"latitude\": %f, \"longitude\": %f, \"speed\": %f }", latitude, longitude, speed);
-    mqtt.publish("gotnull/gps", gps_data);
+    mqtt.publish("anotherworld/gps", gps_data);
   }
 }
 ```
@@ -127,7 +127,7 @@ void dht_loop() {
   if (!(isnan(h) || isnan(t))) {
     char dht_data[64];
     sprintf(dht_data, "{ \"humidity\": %i, \"temp\": %i }", h, t);
-    mqtt.publish("gotnull/dht", dht_data);
+    mqtt.publish("anotherworld/dht", dht_data);
   }
 }
 ```
@@ -140,7 +140,7 @@ The battery voltage and charge level are sent via MQTT to monitor the power stat
 void battery_info_loop() {
   char battery_data[64];
   snprintf(battery_data, sizeof(battery_data), "{ \"volts\": %f, \"charge\": %f }", battery.getBatteryVolts(), battery.getBatteryChargeLevel());
-  mqtt.publish("gotnull/battery", battery_data);
+  mqtt.publish("anotherworld/battery", battery_data);
 }
 ```
 
