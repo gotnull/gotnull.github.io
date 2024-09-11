@@ -53,7 +53,7 @@ We’ll start by including the necessary libraries for the project:
 Define the gamepad object, TFT object, and joystick/button variables:
 
 ```cpp
-BleGamepad bleGamepad("ESP32 Controller", "Fulvio", 100); // Custom name and manufacturer
+BleGamepad bleGamepad("ESP32 Controller", "Another World", 100); // Custom name and manufacturer
 TFT_eSPI tft = TFT_eSPI();
 
 int joyX = 0;
@@ -155,7 +155,7 @@ Here’s the complete code for the joystick controller project:
 #include <TFT_eSPI.h>
 #include <SPI.h>
 
-BleGamepad bleGamepad("ESP32 Controller", "Fulvio", 100); // Gamepad name and manufacturer
+BleGamepad bleGamepad("ESP32 Controller", "Another World", 100); // Gamepad name and manufacturer
 TFT_eSPI tft = TFT_eSPI();
 
 int joyX = 0;
