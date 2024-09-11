@@ -219,4 +219,6 @@ void loop() {
 
 ## Conclusion
 
-This project demonstrates how to create a Bluetooth game controller using the ESP32, a joystick, and a TFT display. The BleGamepad
+This project demonstrates how to create a Bluetooth game controller using the ESP32, a joystick, and a TFT display. The BleGamepad library allows the ESP32 to act as a Bluetooth game controller that can communicate with devices like PCs or smartphones. The joystick inputs and button presses are sent via Bluetooth, while the TFT display provides real-time feedback on the controller’s state.
+
+With this setup, you can extend the project by adding more buttons, refining the display interface, or even creating custom game profiles for different games. Whether for gaming or controlling other applications, this DIY joystick controller opens up a wide range of possibilities for your Bluetooth-enabled projects.
