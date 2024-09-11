@@ -39,11 +39,11 @@ We’ll break down the code into key sections: initializing the TFT display, set
 
 We need to include the following libraries to control the TFT display and manage WiFi:
 
-xxxcpp
+```cpp
 #include <TFT_eSPI.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
-xxx
+```
 
 - **TFT_eSPI**: Controls the TFT display.
 - **WiFi**: Manages the ESP32’s WiFi connection.
@@ -53,19 +53,19 @@ xxx
 
 We’ll define the WiFi credentials, the server URL for video streaming, and initialize the display:
 
-xxxcpp
+```cpp
 const char* ssid = "your_SSID";
 const char* password = "your_password";
 const char* videoStreamURL = "http://yourvideostream.com/stream";
 
 TFT_eSPI tft = TFT_eSPI();  // Initialize TFT display
-xxx
+```
 
 ### Setup Function
 
 In the setup, we initialize the WiFi connection and the TFT display:
 
-xxxcpp
+```cpp
 void setup() {
   Serial.begin(115200);
   
@@ -88,13 +88,13 @@ void setup() {
   tft.setCursor(0, 0);
   tft.println("Video Watch Ready");
 }
-xxx
+```
 
 ### Streaming Video
 
 The following function fetches the video stream and renders it on the TFT display:
 
-xxxcpp
+```cpp
 void streamVideo() {
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
@@ -119,23 +119,23 @@ void streamVideo() {
     Serial.println("WiFi not connected");
   }
 }
-xxx
+```
 
 ### Main Loop
 
 In the **loop** function, we continuously stream the video to the display:
 
-xxxcpp
+```cpp
 void loop() {
   streamVideo();  // Continuously stream video
 }
-xxx
+```
 
 ### Full Code Example
 
 Here’s the complete code for the custom video watch project:
 
-xxxcpp
+```cpp
 #include <TFT_eSPI.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
@@ -192,7 +192,7 @@ void streamVideo() {
 void loop() {
   streamVideo();
 }
-xxx
+```
 
 ## Conclusion
 
