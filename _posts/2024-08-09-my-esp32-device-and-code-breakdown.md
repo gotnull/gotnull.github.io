@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My ESP32 Device and Code Breakdown
+title: ESP32 Cellular Device and Code Breakdown
 subtitle: A Deep Dive into Hardware and Software for IoT Applications
 tags: [ESP32, IoT, embedded systems, MQTT, GPS]
 author: Lester Knight Chaykin
