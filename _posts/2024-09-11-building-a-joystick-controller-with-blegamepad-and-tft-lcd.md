@@ -216,3 +216,7 @@ void loop() {
   delay(100);
 }
 ```
+
+## Conclusion
+
+This project demonstrates how to create a Bluetooth game controller using the ESP32, a joystick, and a TFT display. The BleGamepad
