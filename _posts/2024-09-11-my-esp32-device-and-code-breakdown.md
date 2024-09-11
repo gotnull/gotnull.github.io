@@ -52,7 +52,7 @@ Several global variables are used to store device states and sensor readings:
 ```cpp
 const char apn[] = "telstra.wap";
 const char* mqtt_broker = "broker.hivemq.com";
-const int mqtt_port = 8883;
+const int mqtt_port = 1883;
 float latitude, longitude, speed, alt, accuracy;
 int vsat, usat, year, month, day, hour, minute, second;
 ```
