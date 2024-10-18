@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: Building a Gameboy Color Emulator: Graphics Rendering  
+title: Building a Gameboy Color Emulator - Graphics Rendering  
 subtitle: How to Emulate the Gameboy Color’s Display  
 tags: [Gameboy Color, GBC, emulator, graphics, rendering, LCD]  
 author: Lester Knight Chaykin  
