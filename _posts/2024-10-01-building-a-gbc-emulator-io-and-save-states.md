@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: Building a Gameboy Color Emulator: I/O Registers and Save States  
+title: Building a Gameboy Color Emulator - I/O Registers and Save States  
 subtitle: Handling Input/Output and Saving Game States  
 tags: [Gameboy Color, GBC, emulator, input, I/O, save states]  
 author: Lester Knight Chaykin  
