@@ -1,9 +1,11 @@
+---
 layout: post  
 title: Building a Gameboy Color Emulator: Audio Emulation  
 subtitle: Recreating the Sound of the Gameboy Color  
 tags: [Gameboy Color, GBC, emulator, audio, sound, channels, emulation]  
 author: Lester Knight Chaykin  
 comments: true  
+---
 
 {: .box-success}  
 In this post, we’ll explore how to emulate the sound hardware of the Gameboy Color. The Gameboy uses multiple sound channels to generate different types of audio, and accurately reproducing this is key to making the emulator feel authentic. We'll go over how sound channels work, how waveforms are generated, and how to integrate audio into the emulator.

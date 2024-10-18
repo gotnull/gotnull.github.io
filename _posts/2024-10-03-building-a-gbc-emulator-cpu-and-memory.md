@@ -1,9 +1,11 @@
+---
 layout: post  
 title: Building a Gameboy Color Emulator: CPU Execution and Memory Management  
 subtitle: Diving Into CPU Instructions, Timers, and Memory Mapping  
 tags: [Gameboy Color, GBC, emulator, CPU, memory, instructions]  
 author: Lester Knight Chaykin  
 comments: true  
+---
 
 {: .box-success}  
 In this post, we will dive deeper into how the CPU processes instructions in the Gameboy Color emulator, how timing is managed, and the intricacies of memory mapping. Now that we’ve set up the emulator and mapped the inputs, we’ll focus on the core components that make the emulation work—specifically, how the CPU fetches and executes instructions and how the memory is structured.

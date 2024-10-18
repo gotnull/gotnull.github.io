@@ -1,9 +1,11 @@
+---
 layout: post  
 title: Building a Gameboy Color Emulator from Scratch  
 subtitle: A Deep Dive into Gameboy Color Emulation  
 tags: [Gameboy Color, GBC, emulator, Flutter, Dart, hardware, software]  
 author: Lester Knight Chaykin  
 comments: true  
+---
 
 {: .box-success}  
 In this blog post, I will explore how to build a Gameboy Color emulator from scratch using Dart and Flutter. We'll cover essential parts of the emulator, including CPU handling, gamepad input, memory mapping, and rendering. I'll guide you through the key components of the project and share code snippets to explain how they fit together.

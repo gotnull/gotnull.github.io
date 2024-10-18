@@ -1,9 +1,11 @@
+---
 layout: post  
 title: Building a Gameboy Color Emulator: Graphics Rendering  
 subtitle: How to Emulate the Gameboy Color’s Display  
 tags: [Gameboy Color, GBC, emulator, graphics, rendering, LCD]  
 author: Lester Knight Chaykin  
 comments: true  
+---
 
 {: .box-success}  
 In this post, we’re going to explore how graphics are rendered in the Gameboy Color emulator. We will dive into the Gameboy’s **LCD display**, **VRAM**, and the process of drawing tiles and sprites to the screen. This is a critical part of the emulator, as it is responsible for rendering everything you see during gameplay.
