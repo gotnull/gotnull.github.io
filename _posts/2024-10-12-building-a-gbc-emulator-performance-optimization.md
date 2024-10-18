@@ -1,9 +1,11 @@
+---
 layout: post  
 title: Building a Gameboy Color Emulator: Performance Optimization and Stability  
 subtitle: Improving Speed, Reducing Lag, and Ensuring Stability  
 tags: [Gameboy Color, GBC, emulator, performance, optimization, stability]  
 author: Lester Knight Chaykin  
 comments: true  
+---
 
 {: .box-success}  
 In this post, we’ll focus on optimizing the performance of our Gameboy Color emulator. Performance optimization is crucial for ensuring the emulator runs smoothly, with minimal lag, across a wide range of devices. Additionally, we’ll cover how to make the emulator more stable by managing resources effectively and preventing crashes.
