@@ -1,11 +1,12 @@
-—-
+---
 layout: post  
 title: Moore’s Law - Legacy, Limits, and the Future of Computing  
 subtitle: A Deep Dive into the Past, Present, and Future of Moore’s Law  
 tags: [Moore's Law, semiconductors, technology, exponential growth, limits, quantum computing]  
 author: Lester Knight Chaykin  
-comments: true  
-—-
+comments: true
+mathjax: true
+---
 
 {: .box-success}  
 For more than half a century, **Moore’s Law** has shaped the trajectory of technological progress, guiding the design and production of ever more powerful and affordable computers. However, as the semiconductor industry approaches fundamental **physical limits**, Moore’s Law is beginning to slow. In this post, we’ll explore the **history**, **mathematics**, **technological drivers**, and **future challenges** of Moore’s Law, while also looking at potential innovations that could take computing beyond this famous trend.
