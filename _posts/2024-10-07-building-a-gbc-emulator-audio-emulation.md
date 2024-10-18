@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: Building a Gameboy Color Emulator: Audio Emulation  
+title: Building a Gameboy Color Emulator - Audio Emulation  
 subtitle: Recreating the Sound of the Gameboy Color  
 tags: [Gameboy Color, GBC, emulator, audio, sound, channels, emulation]  
 author: Lester Knight Chaykin  
