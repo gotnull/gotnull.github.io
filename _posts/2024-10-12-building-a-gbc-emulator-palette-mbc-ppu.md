@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: Building a Gameboy Color Emulator: Palette, PPU, and Memory Bank Controllers  
+title: Building a Gameboy Color Emulator - Palette, PPU, and Memory Bank Controllers  
 subtitle: Rendering Colors, Managing Memory Banks, and Handling Graphics  
 tags: [Gameboy Color, GBC, emulator, palette, PPU, MBC, graphics]  
 author: Lester Knight Chaykin  
