@@ -18,9 +18,9 @@ gamepad_map.dart: Defines the mapping of gamepad buttons to GBC controls.
 configuration.dart: Contains global settings for the emulator, like enabling debug features and rendering options.
 Code Breakdown
 main.dart: Setting Up the Flutter App
-The xxxmain.dartxxx file initializes the emulator’s UI and sets up the window size. The app is named DartBoy in this example.
+The ```main.dart``` file initializes the emulator’s UI and sets up the window size. The app is named DartBoy in this example.
 
-xxxdart import 'package
+```dart import 'package
 /material.dart'; import 'package
 /window_manager.dart'; import 'gui/main_screen.dart';
 
@@ -40,12 +40,12 @@ Future<void> setWindowSize() async { // Set the minimum size for the window to p
 
 class DartBoy extends StatelessWidget { const DartBoy({super.key});
 
-@override Widget build(BuildContext context) { return MaterialApp( title: 'GBC', theme: ThemeData(primarySwatch: Colors.blue), home: const MainScreen(title: 'GBC', key: Key("gbc")), debugShowCheckedModeBanner: false, showPerformanceOverlay: false, showSemanticsDebugger: false, debugShowMaterialGrid: false, ); } } xxx
+@override Widget build(BuildContext context) { return MaterialApp( title: 'GBC', theme: ThemeData(primarySwatch: Colors.blue), home: const MainScreen(title: 'GBC', key: Key("gbc")), debugShowCheckedModeBanner: false, showPerformanceOverlay: false, showSemanticsDebugger: false, debugShowMaterialGrid: false, ); } } ```
 
 emulator.dart: Managing the Emulator State
-The xxxemulator.dartxxx file is the heart of the emulator. It manages the emulator state (waiting, ready, running), and includes logic to handle loading ROMs, updating CPU cycles, and syncing gamepad inputs.
+The ```emulator.dart``` file is the heart of the emulator. It manages the emulator state (waiting, ready, running), and includes logic to handle loading ROMs, updating CPU cycles, and syncing gamepad inputs.
 
-xxxdart import 'dart
+```dart import 'dart
 '; import 'dart
 ';
 
@@ -66,12 +66,12 @@ void loadROM(Uint8List romData) { // Load the ROM data into memory, setting the 
 
 Future<void> start() async { // Start running the emulator, transitioning to the running state. if (state == EmulatorState.ready) { state = EmulatorState.running; // Main loop to keep the emulator running. } }
 
-void pause() { // Pause the emulator. state = EmulatorState.paused; } } xxx
+void pause() { // Pause the emulator. state = EmulatorState.paused; } } ```
 
 gamepad_map.dart: Mapping Gamepad Inputs
-In the xxxgamepad_map.dartxxx file, we map physical gamepad buttons to Gameboy Color buttons such as A, B, Start, and Select. These mappings are critical for handling user inputs correctly.
+In the ```gamepad_map.dart``` file, we map physical gamepad buttons to Gameboy Color buttons such as A, B, Start, and Select. These mappings are critical for handling user inputs correctly.
 
-xxxdart const GamepadKey aButton = GamepadButtonKey( linuxKeyName: '1', macosKeyName: 'a.circle', windowsKeyName: "button-1", );
+```dart const GamepadKey aButton = GamepadButtonKey( linuxKeyName: '1', macosKeyName: 'a.circle', windowsKeyName: "button-1", );
 
 const GamepadKey bButton = GamepadButtonKey( linuxKeyName: '0', macosKeyName: 'b.circle', windowsKeyName: "button-0", );
 
@@ -81,12 +81,12 @@ const GamepadKey yButton = GamepadButtonKey( linuxKeyName: '2', macosKeyName: 'y
 
 const GamepadKey startButton = GamepadButtonKey( linuxKeyName: '7', macosKeyName: 'line.horizontal.3.circle', windowsKeyName: "button-7", );
 
-const GamepadKey selectButton = GamepadButtonKey( linuxKeyName: '6', macosKeyName: 'rectangle.fill.on.rectangle.fill.circle', windowsKeyName: "button-6", ); xxx
+const GamepadKey selectButton = GamepadButtonKey( linuxKeyName: '6', macosKeyName: 'rectangle.fill.on.rectangle.fill.circle', windowsKeyName: "button-6", ); ```
 
 configuration.dart: Setting Global Emulator Configuration
-In xxxconfiguration.dartxxx, we set global flags to control various emulator features, such as enabling background rendering, audio, or displaying debug information.
+In ```configuration.dart```, we set global flags to control various emulator features, such as enabling background rendering, audio, or displaying debug information.
 
-xxxdart class Configuration { static bool drawBackgroundLayer = true; static bool drawSpriteLayer = true; static bool printSerialCharacters = false; static bool debugInstructions = false; static bool enableAudio = false; } xxx
+```dart class Configuration { static bool drawBackgroundLayer = true; static bool drawSpriteLayer = true; static bool printSerialCharacters = false; static bool debugInstructions = false; static bool enableAudio = false; } ```
 
 Conclusion
 This post covered the basic structure of a Gameboy Color emulator built using Dart and Flutter. We walked through key files and explored how they contribute to emulating the Gameboy Color system. Stay tuned for future posts, where we will dive deeper into CPU emulation, memory management, and more.
