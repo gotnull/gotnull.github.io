@@ -81,3 +81,4 @@ def strategic_update(true_knowledge, utility_func):
     possible_representations = generate_transformations(true_knowledge)
     best_repr = max(possible_representations, key=lambda z: utility_func(behavior(z)))
     return best_repr
+```
