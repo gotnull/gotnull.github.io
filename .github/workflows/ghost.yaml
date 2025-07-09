@@ -1,0 +1,35 @@
+name: Generate AGI Blog Post
+
+on:
+  schedule:
+    - cron: '42 4 * * *'  # Daily 4:42am UTC
+  workflow_dispatch:
+
+jobs:
+  ghost-writer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install openai requests beautifulsoup4 python-dotenv
+
+    - name: Run ghost writer
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: python ghost/ghost_writer.py
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'ghost-writer'
+        git config --global user.email 'ghost@4511932.com'
+        git add _posts/*.md
+        git commit -m "Automated AGI blog post" || echo "No changes to commit"
+        git push
