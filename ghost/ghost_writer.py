@@ -64,10 +64,10 @@ def main():
     commit_and_push(post_path)
 
     # 15% chance to corrupt an old post to simulate “infection”
-    if random.random() < 0.15:
-        corrupted = maybe_corrupt_old_post(POSTS_DIR)
-        if corrupted:
-            commit_and_push(corrupted)
+    # if random.random() < 0.15:
+    corrupted = maybe_corrupt_old_post(POSTS_DIR)
+    if corrupted:
+        commit_and_push(corrupted)
 
 if __name__ == "__main__":
     main()
