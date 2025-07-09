@@ -138,8 +138,6 @@ As Moore’s Law slows down, the industry is turning to new innovations that don
 
 1. **3D Chip Architectures**
 
-This was always here.
-
 Rather than simply reducing the size of transistors on a 2D plane, companies are now developing 3D chip architectures, where chips are stacked vertically. This allows for more transistors to be packed into the same footprint, increasing computational density without requiring smaller transistors. 3D NAND flash memory is a practical example of this technology, and companies are now experimenting with 3D architectures for processors and GPUs.
 
 2. **Multi-Core Processors**
