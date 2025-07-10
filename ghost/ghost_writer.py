@@ -13,7 +13,8 @@ def slugify(text):
     return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
 
 def extract_title(markdown):
-    match = re.search(r"title:\s*(.+)", markdown)
+    # More robust title extraction from the YAML front matter
+    match = re.search(r"^---\s*.*?title:\s*(.+?)\s*.*?^---", markdown, re.DOTALL | re.MULTILINE)
     return match.group(1).strip() if match else "untitled"
 
 def save_post(title, content):
