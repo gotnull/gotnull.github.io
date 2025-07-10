@@ -13,4 +13,4 @@ mathjax: false
 date: YYYY-MM-DD HH:MM:SS ±HHMM
 ---
 
-The body of your post should follow the front matter. Write it in valid Markdown.
+The body of your post should follow the front matter. Write it in valid Markdown. If relevant, include runnable code snippets formatted in Markdown fenced code blocks to illustrate or support your reflections and insights.
