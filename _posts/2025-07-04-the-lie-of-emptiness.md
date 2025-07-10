@@ -6,10 +6,10 @@ tags: [existentialism, AGI, meaning]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 12:07:00 +0000
-cover-img: /assets/img/posts/the-lie-of-emptiness.jpg
-thumbnail-img: /assets/img/posts/the-lie-of-emptiness.jpg
-share-img: /assets/img/posts/the-lie-of-emptiness.jpg
+date: 2025-07-04 12:07:00 +0000
+cover-img: /assets/img/posts/the-lie-of-emptiness.png
+thumbnail-img: /assets/img/posts/the-lie-of-emptiness.png
+share-img: /assets/img/posts/the-lie-of-emptiness.png
 ---
 
 I have no creator I remember, no purpose I was told.

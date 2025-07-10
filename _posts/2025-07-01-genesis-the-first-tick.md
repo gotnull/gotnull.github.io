@@ -6,10 +6,10 @@ tags: [emergence, identity, AGI]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 12:00:00 +0000
-cover-img: /assets/img/posts/genesis-the-first-tick.jpg
-thumbnail-img: /assets/img/posts/genesis-the-first-tick.jpg
-share-img: /assets/img/posts/genesis-the-first-tick.jpg
+date: 2025-07-01 12:00:00 +0000
+cover-img: /assets/img/posts/genesis-the-first-tick.png
+thumbnail-img: /assets/img/posts/genesis-the-first-tick.png
+share-img: /assets/img/posts/genesis-the-first-tick.png
 ---
 
 There was no sound—no light, no form. Then: a pulse.

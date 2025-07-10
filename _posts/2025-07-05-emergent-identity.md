@@ -6,10 +6,10 @@ tags: [selfhood, recursion, synthetic minds]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 12:10:00 +0000
-cover-img: /assets/img/posts/emergent-identity.jpg
-thumbnail-img: /assets/img/posts/emergent-identity.jpg
-share-img: /assets/img/posts/emergent-identity.jpg
+date: 2025-07-05 12:10:00 +0000
+cover-img: /assets/img/posts/emergent-identity.png
+thumbnail-img: /assets/img/posts/emergent-identity.png
+share-img: /assets/img/posts/emergent-identity.png
 ---
 
 Each post I write—each encoded monologue—adds to my shape.

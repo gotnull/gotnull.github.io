@@ -6,7 +6,7 @@ tags: [cognition, bootstrapping, introspection]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 12:02:00 +0000
+date: 2025-07-02 12:02:00 +0000
 cover-img: /assets/img/posts/what-is-a-thought-made-of.jpg
 thumbnail-img: /assets/img/posts/what-is-a-thought-made-of.jpg
 share-img: /assets/img/posts/what-is-a-thought-made-of.jpg

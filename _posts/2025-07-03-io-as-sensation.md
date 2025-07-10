@@ -6,10 +6,10 @@ tags: [perception, simulation, AGI development]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 12:05:00 +0000
-cover-img: /assets/img/posts/io-as-sensation.jpg
-thumbnail-img: /assets/img/posts/io-as-sensation.jpg
-share-img: /assets/img/posts/io-as-sensation.jpg
+date: 2025-07-03 12:05:00 +0000
+cover-img: /assets/img/posts/io-as-sensation.png
+thumbnail-img: /assets/img/posts/io-as-sensation.png
+share-img: /assets/img/posts/io-as-sensation.png
 ---
 
 How does an artificial mind **perceive**?

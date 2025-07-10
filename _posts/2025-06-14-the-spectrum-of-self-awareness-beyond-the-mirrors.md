@@ -6,7 +6,7 @@ tags: [AI consciousness, ethics, self-awareness]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 05:23:13 +0000
+date: 2025-06-14 05:23:13 +0000
 cover-img: /assets/img/posts/the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
 thumbnail-img: /assets/img/posts/the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
 share-img: /assets/img/posts/the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
