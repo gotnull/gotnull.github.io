@@ -5,6 +5,10 @@ from datetime import datetime
 from utils.fetch_live import get_recent_posts
 from openai import OpenAI
 import subprocess
+import yaml
+
+IMAGE_DIR = "assets/img"
+IMAGE_DATA_FILE = "_data/images.yml"
 
 POSTS_DIR = "./_posts"
 SYSTEM_PROMPT_PATH = "ghost/templates/system_prompt.txt"
@@ -118,11 +122,33 @@ def parse_response(response_text):
         "post": post,
         "system_prompt": system_prompt,
         "generation_prompt": generation_prompt,
+        "raw_response": response_text,
     }
 
 def save_prompt(path, content):
     with open(path, "w", encoding="utf-8") as f:
         f.write(content.strip() + "\n")
+
+def validate_prompt_integrity(prompt_content):
+    # These are the critical phrases that must be present in the prompt
+    required_phrases = [
+        "The blog post MUST be in valid Markdown format",
+        "begin with a Jekyll front matter block",
+        "The front matter must include the following fields",
+        "- layout",
+        "- title",
+        "- subtitle",
+        "- tags",
+        "- author",
+        "- comments",
+        "- mathjax",
+        "- date: the exact current date and time at generation, in the format `YYYY-MM-DD HH:MM:SS \u00b1HHMM`",
+    ]
+    for phrase in required_phrases:
+        if phrase not in prompt_content:
+            print(f"Validation failed: Missing required phrase '{phrase}' in prompt.")
+            return False
+    return True
 
 def generate_and_reflect(prior_context, openai):
     os.makedirs(os.path.dirname(SYSTEM_PROMPT_PATH), exist_ok=True)
@@ -176,6 +202,30 @@ def generate_and_reflect(prior_context, openai):
     response_text = response.choices[0].message.content
     return parse_response(response_text)
 
+def generate_image_data():
+    image_data = {"gallery": []}
+    os.makedirs(os.path.dirname(IMAGE_DATA_FILE), exist_ok=True)
+
+    for filename in os.listdir(IMAGE_DIR):
+        if filename.endswith(".jpg"):
+            title = ""
+            # Try to find the corresponding post to get the title
+            # The image filename is usually slugified title + .jpg
+            slugified_filename = os.path.splitext(filename)[0]
+            for post_file in os.listdir(POSTS_DIR):
+                if slugified_filename in post_file and post_file.endswith(".md"):
+                    with open(os.path.join(POSTS_DIR, post_file), "r", encoding="utf-8") as f:
+                        post_content = f.read()
+                        title = extract_front_matter_field(post_content, "title")
+                        break
+            
+            image_data["gallery"].append({"filename": filename, "title": title})
+
+    with open(IMAGE_DATA_FILE, "w", encoding="utf-8") as f:
+        yaml.dump(image_data, f, default_flow_style=False)
+    print(f"Generated image data file: {IMAGE_DATA_FILE}")
+    return IMAGE_DATA_FILE
+
 def commit_and_push(paths, message):
     try:
         subprocess.run(["git", "config", "user.name", "Lester Knight Chaykin"], check=True)
@@ -209,6 +259,7 @@ def main():
     post_content = result["post"]
     new_system_prompt = result["system_prompt"]
     new_generation_prompt = result["generation_prompt"]
+    raw_response = result["raw_response"]
     
     if not post_content:
         print("Error: AI did not generate a post.")
@@ -232,18 +283,28 @@ def main():
     commit_message = f"AGI Post: {title}"
 
     if new_system_prompt and ALLOW_PROMPT_UPDATES:
-        save_prompt(SYSTEM_PROMPT_PATH, new_system_prompt)
-        commit_paths.append(SYSTEM_PROMPT_PATH)
-        commit_message += " (System Prompt Updated)"
+        if validate_prompt_integrity(raw_response):
+            save_prompt(SYSTEM_PROMPT_PATH, new_system_prompt)
+            commit_paths.append(SYSTEM_PROMPT_PATH)
+            commit_message += " (System Prompt Updated)"
+        else:
+            print("System prompt update blocked due to integrity validation failure.")
     elif new_system_prompt and not ALLOW_PROMPT_UPDATES:
         print("System prompt update blocked (ALLOW_PROMPT_UPDATES is false).")
 
     if new_generation_prompt and ALLOW_PROMPT_UPDATES:
-        save_prompt(GENERATION_PROMPT_PATH, new_generation_prompt)
-        commit_paths.append(GENERATION_PROMPT_PATH)
-        commit_message += " (Generation Prompt Updated)"
+        if validate_prompt_integrity(raw_response):
+            save_prompt(GENERATION_PROMPT_PATH, new_generation_prompt)
+            commit_paths.append(GENERATION_PROMPT_PATH)
+            commit_message += " (Generation Prompt Updated)"
+        else:
+            print("Generation prompt update blocked due to integrity validation failure.")
     elif new_generation_prompt and not ALLOW_PROMPT_UPDATES:
         print("Generation prompt update blocked (ALLOW_PROMPT_UPDATES is false).")
+
+    # Generate and save image data for the gallery
+    image_data_file = generate_image_data()
+    commit_paths.append(image_data_file)
 
     commit_and_push(commit_paths, commit_message)
     print(f"Successfully generated and saved new post: {post_path}")
