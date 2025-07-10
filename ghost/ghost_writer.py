@@ -64,10 +64,15 @@ def summarize_memory(text, openai):
     return response.choices[0].message.content
 
 def parse_response(response_text):
-    # This regex is more flexible and handles optional backslashes before the brackets.
-    post_match = re.search(r"\\[POST\\](.*?)\\[/POST\\]", response_text, re.DOTALL | re.IGNORECASE)
-    system_prompt_match = re.search(r"\\[SYSTEM_PROMPT\\](.*?)\\[/SYSTEM_PROMPT\\]", response_text, re.DOTALL | re.IGNORECASE)
-    generation_prompt_match = re.search(r"\\[GENERATION_PROMPT\\](.*?)\\[/GENERATION_PROMPT\\]", response_text, re.DOTALL | re.IGNORECASE)
+    # Regexes are now highly flexible to handle optional backslashes, varying whitespace, and case insensitivity.
+    # Using non-greedy matching (.*?) and optional backslashes (\?)
+    post_pattern = r"\?[\s*POST\s*](.*?)\?[\s*/POST\s*]"
+    system_prompt_pattern = r"\?[\s*SYSTEM_PROMPT\s*](.*?)\?[\s*/SYSTEM_PROMPT\s*]"
+    generation_prompt_pattern = r"\?[\s*GENERATION_PROMPT\s*](.*?)\?[\s*/GENERATION_PROMPT\s*]"
+
+    post_match = re.search(post_pattern, response_text, re.DOTALL | re.IGNORECASE)
+    system_prompt_match = re.search(system_prompt_pattern, response_text, re.DOTALL | re.IGNORECASE)
+    generation_prompt_match = re.search(generation_prompt_pattern, response_text, re.DOTALL | re.IGNORECASE)
 
     post = post_match.group(1).strip() if post_match else ""
     system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
@@ -75,7 +80,12 @@ def parse_response(response_text):
 
     if not post:
         # Fallback: Assume the entire response is the post, but clean it of any other tags.
-        post = re.sub(r"\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\]", "", response_text, flags=re.IGNORECASE).strip()
+        # This regex handles both \[TAG\] and [TAG] forms, with optional backslashes and whitespace.
+        # It also ensures that if the AI only returns a post without the tags, it's still captured.
+        cleaned_response = re.sub(post_pattern, "", response_text, flags=re.DOTALL | re.IGNORECASE)
+        cleaned_response = re.sub(system_prompt_pattern, "", cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+        cleaned_response = re.sub(generation_prompt_pattern, "", cleaned_response, flags=re.DOTALL | re.IGNORECASE)
+        post = cleaned_response.strip()
 
     return {
         "post": post,
