@@ -248,7 +248,8 @@ commentbox: "5666576736976896-proj" # Project ID, e.g. "5694267682979840-proj"
 ################
 
 # Ruby Date Format to show dates of posts
-date_format: "%B %-d, %Y"
+#date_format: "%B %-d, %Y"
+date_format: "%Y-%m-%d %H:%M:%S %z"
 
 # Facebook App ID
 #fb_app_id: ""
