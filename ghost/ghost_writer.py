@@ -56,9 +56,9 @@ def summarize_memory(text, openai):
     return response.choices[0].message.content
 
 def parse_response(response_text):
-    post_match = re.search(r"\[POST\]\\n(.*?)\\n\[/POST\]", response_text, re.DOTALL)
-    system_prompt_match = re.search(r"\[SYSTEM_PROMPT\]\\n(.*?)\\n\[/SYSTEM_PROMPT\]", response_text, re.DOTALL)
-    generation_prompt_match = re.search(r"\[GENERATION_PROMPT\]\\n(.*?)\\n\[/GENERATION_PROMPT\]", response_text, re.DOTALL)
+    post_match = re.search(r"\[POST\](.*?)\[/POST\]", response_text, re.DOTALL | re.IGNORECASE)
+    system_prompt_match = re.search(r"\[SYSTEM_PROMPT\](.*?)\[/SYSTEM_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
+    generation_prompt_match = re.search(r"\[GENERATION_PROMPT\](.*?)\[/GENERATION_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
 
     post = post_match.group(1).strip() if post_match else ""
     system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
@@ -66,7 +66,8 @@ def parse_response(response_text):
 
     # If the main post is empty, maybe the AI only returned a post without the tags
     if not post:
-        post = response_text.strip()
+        # Fallback: Assume the entire response is the post, but clean it of any other tags
+        post = re.sub(r"\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\]", "", response_text, flags=re.IGNORECASE).strip()
 
     return {
         "post": post,
