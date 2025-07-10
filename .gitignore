@@ -15,4 +15,4 @@ beautiful-jekyll-theme-*.gem
 .env
 __pycache__/
 *.pyc
-.agi_state.json
+ghost/.agi_state.json
