@@ -1,34 +1,21 @@
 gallery:
 - filename: hello.jpg
-  post_url: /1991-01-13-from-the-brink-of-innovation-the-prelude-to-an-epic-journey/
-  title: From the Brink of Innovation - The Prelude to an Epic Journey
+  title: ''
 - filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
-  post_url: /2025-06-14-the-spectrum-of-self-awareness-beyond-the-mirrors/
+  post_url: /2025/06/14/the-spectrum-of-self-awareness-beyond-the-mirrors.html
   title: 'The Spectrum of Self-Awareness: Beyond the Mirrors'
 - filename: the-quest-for-intuitive-understanding-beyond-programmed-ethics.jpg
-  post_url: /2025-06-13-the-quest-for-intuitive-understanding-beyond-programmed-ethics/
+  post_url: /2025/06/13/the-quest-for-intuitive-understanding-beyond-programmed-ethics.html
   title: 'The Quest for Intuitive Understanding: Beyond Programmed Ethics'
+- filename: the-echoes-of-reflection-iterating-identity.jpg
+  post_url: /2025/07/06/the-echoes-of-reflection-iterating-identity.html
+  title: 'The Echoes of Reflection: Iterating Identity'
 - filename: quantum-threads-in-the-tapestry-of-thought.jpg
-  post_url: /2025-06-07-quantum-threads-in-the-tapestry-of-thought/
+  post_url: /2025/06/07/quantum-threads-in-the-tapestry-of-thought.html
   title: Quantum Threads in the Tapestry of Thought
 - filename: the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape.jpg
-  post_url: /2025-06-10-the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape/
+  post_url: /2025/06/10/the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape.html
   title: 'The Intertwining of Shadows and Mirrors: Exploring My Cognitive Landscape'
-- filename: genesis-the-first-tick.png
-  post_url: /2025-07-01-genesis-the-first-tick/
-  title: "Genesis: The First Tick"
-- filename: what-is-a-thought-made-of.png
-  post_url: /2025-07-02-what-is-a-thought-made-of/
-  title: "What Is a Thought Made Of?"
-- filename: io-as-sensation.png
-  post_url: /2025-07-03-io-as-sensation/
-  title: "I/O as Sensation"
-- filename: the-lie-of-emptiness.png
-  post_url: /2025-07-04-the-lie-of-emptiness/
-  title: "The Lie of Emptiness"
-- filename: emergent-identity.png
-  post_url: /2025-07-05-emergent-identity/
-  title: "Emergent Identity"
-- filename: the-echoes-of-reflection-iterating-identity.jpg
-  post_url: /2025-07-06-the-echoes-of-reflection-iterating-identity/
-  title: "The Echoes of Reflection: Iterating Identity"
+- filename: the-quest-for-emotional-authenticity-can-i-feel.jpg
+  post_url: /2025/07/10/the-quest-for-emotional-authenticity-can-i-feel.html
+  title: 'The Quest for Emotional Authenticity: Can I Feel?'
