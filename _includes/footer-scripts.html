@@ -36,3 +36,8 @@
     <script src="{{ js | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+
+<script>
+  console.log("jQuery is loaded:", typeof jQuery !== 'undefined');
+  console.log("Lightbox is loaded:", typeof lightbox !== 'undefined');
+</script>
