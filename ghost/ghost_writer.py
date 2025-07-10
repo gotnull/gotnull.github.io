@@ -231,7 +231,7 @@ def generate_image_data():
                             date_match = re.match(r"^(\d{4})-(\d{2})-(\d{2})-", post_file)
                             if date_match:
                                 year, month, day = date_match.groups()
-                                post_url = f"/{year}/{month}/{day}/{slugified_filename}.html"
+                                post_url = f"/{year}-{month}-{day}-{slugified_filename}/"
                         break
             
             image_entry = {"filename": filename, "title": title}
