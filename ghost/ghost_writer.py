@@ -16,34 +16,40 @@ def extract_yaml_front_matter(content):
     front_matter_match = re.match(r"^---\n(.*?)\n---\n(.*)", content, re.DOTALL)
     if front_matter_match:
         yaml_block, post_body = front_matter_match.groups()
-        
+
+        def clean(value):
+            return value.strip().replace(":", "") if value else ""
+
         def extract_field(name):
             match = re.search(rf"^{name}:\s*['\"]?(.*?)['\"]?$", yaml_block, re.MULTILINE | re.IGNORECASE)
-            return match.group(1).strip() if match else ""
+            return clean(match.group(1)) if match else ""
 
-        title = extract_field("title") or "Untitled Post"
-        subtitle = extract_field("subtitle")
-        tags = extract_field("tags")
-        author = extract_field("author")
-        comments = extract_field("comments")
-        mathjax = extract_field("mathjax")
+        fields = {
+            "title": extract_field("title") or "Untitled Post",
+            "subtitle": extract_field("subtitle"),
+            "tags": extract_field("tags"),
+            "author": extract_field("author"),
+            "comments": extract_field("comments"),
+            "mathjax": extract_field("mathjax"),
+        }
 
-        reconstructed = f"---\nlayout: post\ntitle: \"{title}\"\n"
-        if subtitle:
-            reconstructed += f"subtitle: \"{subtitle}\"\n"
-        if tags:
-            reconstructed += f"tags: [{tags}]\n"
-        if author:
-            reconstructed += f"author: {author}\n"
-        if comments:
-            reconstructed += f"comments: {comments}\n"
-        if mathjax:
-            reconstructed += f"mathjax: {mathjax}\n"
+        reconstructed = "---\nlayout: post\n"
+        reconstructed += f'title: "{fields["title"]}"\n'
+        if fields["subtitle"]:
+            reconstructed += f'subtitle: "{fields["subtitle"]}"\n'
+        if fields["tags"]:
+            reconstructed += f"tags: [{fields['tags']}]\n"
+        if fields["author"]:
+            reconstructed += f"author: {fields['author']}\n"
+        if fields["comments"]:
+            reconstructed += f"comments: {fields['comments']}\n"
+        if fields["mathjax"]:
+            reconstructed += f"mathjax: {fields['mathjax']}\n"
         reconstructed += "---\n"
 
         return {
-            "title": title,
-            "subtitle": subtitle,
+            "title": fields["title"],
+            "subtitle": fields["subtitle"],
             "body": post_body.strip(),
             "full_front_matter": reconstructed
         }
