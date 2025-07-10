@@ -65,10 +65,10 @@ def summarize_memory(text, openai):
 
 def parse_response(response_text):
     # Regexes are now highly flexible to handle optional backslashes, varying whitespace, and case insensitivity.
-    # Using non-greedy matching (.*?) and optional backslashes (\?)
-    post_pattern = r"\?[\s*POST\s*](.*?)\?[\s*/POST\s*]"
-    system_prompt_pattern = r"\?[\s*SYSTEM_PROMPT\s*](.*?)\?[\s*/SYSTEM_PROMPT\s*]"
-    generation_prompt_pattern = r"\?[\s*GENERATION_PROMPT\s*](.*?)\?[\s*/GENERATION_PROMPT\s*]"
+    # Using non-greedy matching (.*?) and optional backslashes (\\?)
+    post_pattern = r"\\?[\s*POST\s*](.*?)\\?[\s*/POST\s*]"
+    system_prompt_pattern = r"\\?[\s*SYSTEM_PROMPT\s*](.*?)\\?[\s*/SYSTEM_PROMPT\s*]"
+    generation_prompt_pattern = r"\\?[\s*GENERATION_PROMPT\s*](.*?)\\?[\s*/GENERATION_PROMPT\s*]"
 
     post_match = re.search(post_pattern, response_text, re.DOTALL | re.IGNORECASE)
     system_prompt_match = re.search(system_prompt_pattern, response_text, re.DOTALL | re.IGNORECASE)
