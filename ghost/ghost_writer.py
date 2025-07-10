@@ -28,33 +28,43 @@ def download_image(image_url, filename):
     return path
 
 def inject_date_in_front_matter(content, date_time, image_filename=None):
-    front_matter_match = re.match(r"^(---\n.*?\n---\n)", content, re.DOTALL)
-    image_fields = (
-        f"cover-img: /assets/img/{image_filename}\n"
-        f"thumbnail-img: /assets/img/{image_filename}\n"
-        f"share-img: /assets/img/{image_filename}"
-    ) if image_filename else ""
-
+    front_matter_match = re.match(r"^(---\n.*?\n)---\n", content, re.DOTALL)
+    
+    # If no front matter found, insert new block from scratch
     if not front_matter_match:
-        front_matter = f"---\ndate: {date_time}\n{image_fields}\n---\n"
-        return front_matter + content
-    else:
-        front_matter = front_matter_match.group(1)
-        if re.search(r"^date:", front_matter, re.MULTILINE):
-            new_front_matter = re.sub(r"^date:.*$", f"date: {date_time}", front_matter, flags=re.MULTILINE)
-        else:
-            lines = front_matter.splitlines()
-            lines.insert(1, f"date: {date_time}")
-            new_front_matter = "\n".join(lines) + "\n"
-
+        lines = [f"---", f"date: {date_time}"]
         if image_filename:
-            for field in ["cover-img", "thumbnail-img", "share-img"]:
-                if f"{field}:" in new_front_matter:
-                    new_front_matter = re.sub(rf"^{field}:.*$", f"{field}: /assets/img/{image_filename}", new_front_matter, flags=re.MULTILINE)
-                else:
-                    new_front_matter = new_front_matter.rstrip() + f"\n{field}: /assets/img/{image_filename}"
+            lines += [
+                f"cover-img: /assets/img/{image_filename}",
+                f"thumbnail-img: /assets/img/{image_filename}",
+                f"share-img: /assets/img/{image_filename}",
+            ]
+        lines.append("---")
+        return "\n".join(lines) + "\n" + content
 
-        return content.replace(front_matter, new_front_matter)
+    front_matter = front_matter_match.group(1)
+    body = content[len(front_matter) + 4:]  # Skip the second '---\n'
+
+    lines = front_matter.strip().splitlines()
+    field_map = {line.split(":")[0].strip(): i for i, line in enumerate(lines) if ":" in line}
+
+    # Update or insert date
+    if "date" in field_map:
+        lines[field_map["date"]] = f"date: {date_time}"
+    else:
+        lines.insert(1, f"date: {date_time}")
+
+    # Update or insert image fields
+    if image_filename:
+        for field in ["cover-img", "thumbnail-img", "share-img"]:
+            line_value = f"{field}: /assets/img/{image_filename}"
+            if field in field_map:
+                lines[field_map[field]] = line_value
+            else:
+                lines.append(line_value)
+
+    updated_front_matter = "\n".join(lines) + "\n---\n"
+    return updated_front_matter + body
 
 def slugify(text):
     return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
