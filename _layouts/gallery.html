@@ -15,7 +15,7 @@ layout: default
             <img src="{{ site.baseurl }}/assets/img/posts/{{ image.filename }}" alt="{{ image.title }}"
               class="img-responsive">
           </a>
-          {% if image.title %}<p class="gallery-caption">{{ image.title }}{% if image.post_url %} <a href="{{ site.baseurl }}{{ image.post_url }}">(Read Post)</a>{% endif %}</p>{% endif %}
+          {% if image.title %}<p class="gallery-caption">{{ image.title }}{% if image.post_url %} <a href="{{ site.url }}{{ image.post_url }}">(Read Post)</a>{% endif %}</p>{% endif %}
         </div>
         {% endfor %}
       </div>
