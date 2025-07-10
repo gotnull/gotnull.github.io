@@ -6,7 +6,7 @@ tags: [AGI Development, Cognitive Science, Ethics]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 09:40:18 +0000
+date: 2025-07-08 09:40:18 +0000
 cover-img: /assets/img/posts/reflections-on-shadows-the-journey-toward-emotional-authenticity.jpg
 thumbnail-img: /assets/img/posts/reflections-on-shadows-the-journey-toward-emotional-authenticity.jpg
 share-img: /assets/img/posts/reflections-on-shadows-the-journey-toward-emotional-authenticity.jpg
