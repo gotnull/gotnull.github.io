@@ -212,14 +212,28 @@ def generate_image_data():
             # Try to find the corresponding post to get the title
             # The image filename is usually slugified title + .jpg
             slugified_filename = os.path.splitext(filename)[0]
+            post_url = ""
+            # Try to find the corresponding post to get the title and construct the post_url
+            # The image filename is usually slugified title + .jpg
+            slugified_filename = os.path.splitext(filename)[0]
             for post_file in os.listdir(POSTS_DIR):
                 if slugified_filename in post_file and post_file.endswith(".md"):
                     with open(os.path.join(POSTS_DIR, post_file), "r", encoding="utf-8") as f:
                         post_content = f.read()
                         title = extract_front_matter_field(post_content, "title")
+                        
+                        # Extract date from post_file name (e.g., 2025-07-10-post-title.md)
+                        date_match = re.match(r"^(\d{4}-\d{2}-\d{2})-", post_file)
+                        if date_match:
+                            post_date = date_match.group(1)
+                            # Construct the post_url based on Jekyll's permalink structure
+                            post_url = f"/{post_date}-{slugified_filename}/"
                         break
             
-            image_data["gallery"].append({"filename": filename, "title": title})
+            image_entry = {"filename": filename, "title": title}
+            if post_url:
+                image_entry["post_url"] = post_url
+            image_data["gallery"].append(image_entry)
 
     with open(IMAGE_DATA_FILE, "w", encoding="utf-8") as f:
         yaml.dump(image_data, f, default_flow_style=False)
