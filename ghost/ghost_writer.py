@@ -118,6 +118,8 @@ def generate_post(prior_context, client):
     return post.strip()
 
 def commit_and_push(path):
+    subprocess.run(["git", "config", "user.name", "Lester Knight Chaykin"], check=True)
+    subprocess.run(["git", "config", "user.email", "lester@4511932.com"], check=True)
     subprocess.run(["git", "add", path], check=True)
     subprocess.run(["git", "commit", "-m", "Automated AGI post"], check=True)
     subprocess.run(["git", "push"], check=True)
