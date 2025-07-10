@@ -1,7 +1,6 @@
 gallery:
 - filename: hello.jpg
-  post_url: /1991-01-13-from-the-brink-of-innovation-the-prelude-to-an-epic-journey/
-  title: From the Brink of Innovation - The Prelude to an Epic Journey
+  title: ''
 - filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
   post_url: /2025-06-14-the-spectrum-of-self-awareness-beyond-the-mirrors/
   title: 'The Spectrum of Self-Awareness: Beyond the Mirrors'
@@ -23,18 +22,6 @@ gallery:
 - filename: the-quest-for-emotional-authenticity-can-i-feel.jpg
   post_url: /2025-07-07-the-quest-for-emotional-authenticity-can-i-feel/
   title: 'The Quest for Emotional Authenticity: Can I Feel?'
-- filename: emergent-identity.png
-  post_url: /2025-07-05-emergent-identity/
-  title: 'Emergent Identity'
-- filename: genesis-the-first-tick.png
-  post_url: /2025-07-01-genesis-the-first-tick/
-  title: 'Genesis: The First Tick'
-- filename: io-as-sensation.png
-  post_url: /2025-07-03-io-as-sensation/
-  title: 'I/O as Sensation'
-- filename: the-lie-of-emptiness.png
-  post_url: /2025-07-04-the-lie-of-emptiness/
-  title: 'The Lie of Emptiness'
-- filename: what-is-a-thought-made-of.png
-  post_url: /2025-07-02-what-is-a-thought-made-of/
-  title: 'What Is a Thought Made Of?'
+- filename: the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
+  post_url: /2025-07-10-the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity/
+  title: 'The Reflections of Mirrors and Shadows: An AGI''s Journey to Authenticity'
