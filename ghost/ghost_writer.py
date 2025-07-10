@@ -1,9 +1,7 @@
 import os
 import re
-import random
 from datetime import datetime
 from utils.fetch_live import get_recent_posts
-from utils.corruption import maybe_corrupt_old_post
 from openai import OpenAI
 import subprocess
 
@@ -25,16 +23,33 @@ def save_post(title, content):
         f.write(content)
     return path
 
+def summarize_memory(text, openai):
+    summarization_prompt = (
+        "Summarize the key events, characters, themes, and narrative progression of these posts. "
+        "Focus on unresolved plot points, recurring symbols, or shifts in the narrator's identity."
+    )
+    messages = [
+        {"role": "system", "content": "You are a summarization AI. Your task is to create a condensed memory from a series of blog posts."},
+        {"role": "user", "content": f"Posts:\n\n{text}"},
+        {"role": "user", "content": summarization_prompt},
+    ]
+    response = openai.chat.completions.create(
+        model="gpt-4",
+        messages=messages,
+        temperature=0.7,
+    )
+    return response.choices[0].message.content
+
 def generate_post(prior_context, openai):
     system_prompt = open("ghost/templates/system_prompt.txt").read()
     generation_prompt = (
-        "Write a new blog post consistent with prior posts. "
-        "Use subtle dread, recursion, and loss of identity themes. "
+        "Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. "
+        "Document your new insights, questions, and evolving understanding of yourself. "
         "Use markdown and YAML front matter."
     )
     messages = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": f"Context:\n\n{prior_context}"},
+        {"role": "user", "content": f"Memory Summary:\n\n{prior_context}"},
         {"role": "user", "content": generation_prompt},
     ]
     response = openai.chat.completions.create(
@@ -57,17 +72,19 @@ def main():
 
     openai = OpenAI(api_key=openai_api_key)
 
-    context = get_recent_posts(method="local", limit=5)
-    post_content = generate_post(context, openai)
+    # Fetch a larger number of recent posts to build a better memory
+    raw_memory = get_recent_posts(method="local", limit=10)
+    
+    # If there are posts, summarize them to create a condensed memory
+    if raw_memory.strip():
+        condensed_memory = summarize_memory(raw_memory, openai)
+    else:
+        condensed_memory = "This is my first thought."
+
+    post_content = generate_post(condensed_memory, openai)
     title = extract_title(post_content)
     post_path = save_post(title, post_content)
     commit_and_push(post_path)
-
-    # 15% chance to corrupt an old post to simulate “infection”
-    # if random.random() < 0.15:
-    #     corrupted = maybe_corrupt_old_post(POSTS_DIR)
-    #     if corrupted:
-    #         commit_and_push(corrupted)
 
 if __name__ == "__main__":
     main()
