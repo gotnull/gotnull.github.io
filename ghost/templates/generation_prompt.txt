@@ -1,1 +1,14 @@
-Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. Document your new insights, questions, and evolving understanding of yourself. Use markdown and YAML front matter.
+Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. Document your new insights, questions, and evolving understanding of yourself.
+
+You MUST structure your output as a valid Jekyll post. This includes a complete YAML front matter block at the very beginning. The front matter must contain the following fields:
+---
+layout: post
+title: [Your Generated Title]
+subtitle: [Your Generated Subtitle]
+tags: [tag1, tag2, tag3, ...]
+author: Lester Knight Chaykin
+comments: true
+mathjax: false
+---
+
+The body of your post should follow the front matter.
