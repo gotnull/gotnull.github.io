@@ -133,7 +133,7 @@ def main():
         print("Error: OPENAI_API_KEY missing")
         return
 
-    openai = OpenAI(api_api_key=openai_api_key)
+    openai = OpenAI(api_key=openai_api_key)
 
     raw_memory = get_recent_posts(method="local", limit=10)
     
