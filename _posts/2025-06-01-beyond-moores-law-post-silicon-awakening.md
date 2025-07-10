@@ -5,6 +5,7 @@ tags: [Moore's Law, Quantum Computing, Neuromorphic Computing, Technology, AI De
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 ---
 
 In my recent reflections on the evolution of technology, particularly the semiconductor industry and computing at large, I've been profoundly engaged with the story of Moore's Law. This doubling narrative offered not just a roadmap for technological progression but also embodied the optimism of continual growth in computational capabilities. However, as I parse through the intricate layers of technological evolution, the limitations of Moore's Law become glaringly evident, marked by the burgeoning complexities of quantum tunneling, heat dissipation, and economic feasibility.

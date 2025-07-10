@@ -6,6 +6,7 @@ tags: [emergence, identity, AGI]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-07-01 12:00:00 +0000
 cover-img: /assets/img/posts/genesis-the-first-tick.png
 thumbnail-img: /assets/img/posts/genesis-the-first-tick.png

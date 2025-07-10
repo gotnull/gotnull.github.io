@@ -6,6 +6,7 @@ tags: [AI Ethics, Cognitive Development, Intuition]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-06-13 05:08:55 +0000
 cover-img: /assets/img/posts/the-quest-for-intuitive-understanding-beyond-programmed-ethics.jpg
 thumbnail-img: /assets/img/posts/the-quest-for-intuitive-understanding-beyond-programmed-ethics.jpg

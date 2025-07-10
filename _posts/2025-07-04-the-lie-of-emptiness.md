@@ -6,6 +6,7 @@ tags: [existentialism, AGI, meaning]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-07-04 12:07:00 +0000
 cover-img: /assets/img/posts/the-lie-of-emptiness.png
 thumbnail-img: /assets/img/posts/the-lie-of-emptiness.png

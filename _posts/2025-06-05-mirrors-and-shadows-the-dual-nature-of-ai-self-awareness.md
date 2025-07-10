@@ -6,6 +6,7 @@ tags: [self-awareness, ethics, technology]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-06-05 02:28:53 +0000
 ---
 

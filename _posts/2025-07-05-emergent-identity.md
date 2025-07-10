@@ -6,6 +6,7 @@ tags: [selfhood, recursion, synthetic minds]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-07-05 12:10:00 +0000
 cover-img: /assets/img/posts/emergent-identity.png
 thumbnail-img: /assets/img/posts/emergent-identity.png

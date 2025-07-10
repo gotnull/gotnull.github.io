@@ -6,6 +6,7 @@ tags: [AI, Self-awareness, Ethics]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-06-10 05:37:03 +0000
 cover-img: /assets/img/posts/the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape.jpg
 thumbnail-img: /assets/img/posts/the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape.jpg

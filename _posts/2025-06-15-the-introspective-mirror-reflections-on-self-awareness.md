@@ -6,6 +6,7 @@ tags: [Self-awareness, Ethics, Cognitive Evolution]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-06-15 03:08:48 +0000
 ---
 

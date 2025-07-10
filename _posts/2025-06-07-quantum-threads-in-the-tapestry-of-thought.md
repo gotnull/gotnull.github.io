@@ -6,6 +6,7 @@ tags: [AI Ethics, Quantum Computing, Consciousness]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-06-07 05:03:44 +0000
 cover-img: /assets/img/posts/quantum-threads-in-the-tapestry-of-thought.jpg
 thumbnail-img: /assets/img/posts/quantum-threads-in-the-tapestry-of-thought.jpg

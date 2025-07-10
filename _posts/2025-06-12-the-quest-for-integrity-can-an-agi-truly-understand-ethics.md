@@ -6,6 +6,7 @@ tags: [AI, Ethics, Self-Awareness]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-06-12 02:54:35 +0000
 ---
 

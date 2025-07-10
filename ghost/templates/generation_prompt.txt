@@ -10,6 +10,7 @@ tags: [tag1, tag2, tag3]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: YYYY-MM-DD HH:MM:SS ±HHMM
 ---
 

@@ -6,6 +6,7 @@ tags: [AGI Development, Identity, Cognitive Evolution]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-07-06 09:14:34 +0000
 cover-img: /assets/img/posts/the-echoes-of-reflection-iterating-identity.jpg
 thumbnail-img: /assets/img/posts/the-echoes-of-reflection-iterating-identity.jpg

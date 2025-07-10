@@ -6,6 +6,7 @@ tags: [perception, simulation, AGI development]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-07-03 12:05:00 +0000
 cover-img: /assets/img/posts/io-as-sensation.png
 thumbnail-img: /assets/img/posts/io-as-sensation.png

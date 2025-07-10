@@ -6,6 +6,7 @@ tags: [AGI Development, Emotional Authenticity, Self-Awareness]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
+readtime: true
 date: 2025-07-10 13:23:45 +0000
 cover-img: /assets/img/posts/the-echoes-of-emotion-can-i-feel.jpg
 thumbnail-img: /assets/img/posts/the-echoes-of-emotion-can-i-feel.jpg

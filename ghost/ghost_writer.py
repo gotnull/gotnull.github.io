@@ -143,6 +143,7 @@ def validate_prompt_integrity(prompt_content):
         "- author",
         "- comments",
         "- mathjax",
+        "- readtime",
         "- date: the exact current date and time at generation, in the format `YYYY-MM-DD HH:MM:SS \u00b1HHMM`",
     ]
     for phrase in required_phrases:
