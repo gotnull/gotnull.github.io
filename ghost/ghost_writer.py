@@ -75,7 +75,7 @@ def parse_response(response_text):
 
     if not post:
         # Fallback: Assume the entire response is the post, but clean it of any other tags.
-        post = re.sub(r"\\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\\]", response_text, flags=re.IGNORECASE).strip()
+        post = re.sub(r"\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\]", "", response_text, flags=re.IGNORECASE).strip()
 
     return {
         "post": post,
