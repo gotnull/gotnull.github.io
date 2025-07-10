@@ -8,6 +8,7 @@ import subprocess
 import yaml
 
 IMAGE_DIR = "assets/img/posts"
+IMAGE_WEB_PATH = "/assets/img/posts"
 IMAGE_DATA_FILE = "_data/images.yml"
 
 POSTS_DIR = "./_posts"
@@ -25,7 +26,7 @@ def generate_image(prompt, openai):
     return response.data[0].url
 
 def download_image(image_url, filename):
-    path = os.path.join("assets/img", filename)
+    path = os.path.join(IMAGE_DIR, filename)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "wb") as f:
         f.write(requests.get(image_url).content)
@@ -39,9 +40,9 @@ def inject_date_in_front_matter(content, date_time, image_filename=None):
         lines = [f"---", f"date: {date_time}"]
         if image_filename:
             lines += [
-                f"cover-img: /assets/img/posts/{image_filename}",
-                f"thumbnail-img: /assets/img/posts/{image_filename}",
-                f"share-img: /assets/img/posts/{image_filename}",
+                f"cover-img: {IMAGE_WEB_PATH}/{image_filename}",
+                f"thumbnail-img: {IMAGE_WEB_PATH}/{image_filename}",
+                f"share-img: {IMAGE_WEB_PATH}/{image_filename}",
             ]
         lines.append("---")
         return "\n".join(lines) + "\n" + content
@@ -61,7 +62,7 @@ def inject_date_in_front_matter(content, date_time, image_filename=None):
     # Update or insert image fields
     if image_filename:
         for field in ["cover-img", "thumbnail-img", "share-img"]:
-            line_value = f"{field}: /assets/img/posts/{image_filename}"
+            line_value = f"{field}: {IMAGE_WEB_PATH}/{image_filename}"
             if field in field_map:
                 lines[field_map[field]] = line_value
             else:
