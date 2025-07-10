@@ -13,7 +13,8 @@ def slugify(text):
     return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
 
 def extract_front_matter_field(markdown, field):
-    match = re.search(f"^{field}:\\s*([\"']?)(.*?)\1\\s*$", markdown, re.MULTILINE)
+    # This regex is designed to be robust against quotes and other YAML variations.
+    match = re.search(f"^\s*{field}:\s*([\"']?)(.*?)\1\s*$", markdown, re.MULTILINE | re.IGNORECASE)
     return match.group(2).strip() if match else ""
 
 def save_post(title, subtitle, content):
@@ -23,14 +24,19 @@ def save_post(title, subtitle, content):
     path = os.path.join(POSTS_DIR, filename)
     os.makedirs(POSTS_DIR, exist_ok=True)
 
-    # Reconstruct the front matter to ensure it is valid
-    content = re.sub(r"(title:\\s*).+", r"\\1" + safe_title, content, count=1)
+    # Reconstruct the front matter to ensure it is valid and clean.
+    # First, remove any existing title and subtitle lines to avoid duplication.
+    content = re.sub(r"^title:.*$\n", "", content, flags=re.MULTILINE)
+    content = re.sub(r"^subtitle:.*$\n", "", content, flags=re.MULTILINE)
+
+    # Add the clean title and subtitle back in.
+    new_front_matter = f"title: \"{safe_title}\""
     if subtitle:
         safe_subtitle = subtitle.replace(":", "")
-        if re.search(r"subtitle:", content):
-            content = re.sub(r"(subtitle:\\s*).+", r"\\1" + safe_subtitle, content, count=1)
-        else:
-            content = content.replace("--- traumatized", f"---\nsubtitle: {safe_subtitle}", 1)
+        new_front_matter += f"\nsubtitle: \"{safe_subtitle}\""
+
+    # Place the new front matter lines right after the 'layout' line.
+    content = re.sub(r"(layout: post)", r"\1\n" + new_front_matter, content, 1)
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -58,16 +64,17 @@ def summarize_memory(text, openai):
     return response.choices[0].message.content
 
 def parse_response(response_text):
-    post_match = re.search(r"\[POST\](.*?)\[/POST\]", response_text, re.DOTALL | re.IGNORECASE)
-    system_prompt_match = re.search(r"\[SYSTEM_PROMPT\](.*?)\[/SYSTEM_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
-    generation_prompt_match = re.search(r"\[GENERATION_PROMPT\](.*?)\[/GENERATION_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
+    # This regex is more flexible and handles escaped brackets.
+    post_match = re.search(r"\[POST\](.*?)\\[/POST\]", response_text, re.DOTALL | re.IGNORECASE)
+    system_prompt_match = re.search(r"\[SYSTEM_PROMPT\](.*?)\\[/SYSTEM_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
+    generation_prompt_match = re.search(r"\[GENERATION_PROMPT\](.*?)\\[/GENERATION_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
 
     post = post_match.group(1).strip() if post_match else ""
     system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
     generation_prompt = generation_prompt_match.group(1).strip() if generation_prompt_match else None
 
     if not post:
-        post = re.sub(r"\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\]", "", response_text, flags=re.IGNORECASE).strip()
+        post = re.sub(r"\[\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\]\]", "", response_text, flags=re.IGNORECASE).strip()
 
     return {
         "post": post,
@@ -126,7 +133,7 @@ def main():
         print("Error: OPENAI_API_KEY missing")
         return
 
-    openai = OpenAI(api_key=openai_api_key)
+    openai = OpenAI(api_api_key=openai_api_key)
 
     raw_memory = get_recent_posts(method="local", limit=10)
     
