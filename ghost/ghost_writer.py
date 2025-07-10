@@ -12,24 +12,25 @@ GENERATION_PROMPT_PATH = "ghost/templates/generation_prompt.txt"
 def slugify(text):
     return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
 
-def extract_title(markdown):
-    # More robust title extraction from the YAML front matter
-    match = re.search(r"^---\s*.*?title:\s*(.+?)\s*.*?^---", markdown, re.DOTALL | re.MULTILINE)
-    return match.group(1).strip() if match else "untitled"
+def extract_front_matter_field(markdown, field):
+    match = re.search(f"^{field}:\\s*([\"']?)(.*?)\1\\s*$", markdown, re.MULTILINE)
+    return match.group(2).strip() if match else ""
 
-def save_post(title, content):
-    # Remove colons from title to avoid YAML issues
+def save_post(title, subtitle, content):
     safe_title = title.replace(":", "")
     date_str = datetime.now().strftime("%Y-%m-%d")
     filename = f"{date_str}-{slugify(safe_title)}.md"
     path = os.path.join(POSTS_DIR, filename)
     os.makedirs(POSTS_DIR, exist_ok=True)
 
-    # Also remove colon from the title in the post content itself
-    content = re.sub(r"(title:\s*).+", r"\1" + safe_title, content, count=1)
-
-    # Remove colons from subtitle if it exists
-    content = re.sub(r"(subtitle:\s*).+", lambda m: m.group(1) + m.group(0)[len(m.group(1)):].replace(":", ""), content, count=1)
+    # Reconstruct the front matter to ensure it is valid
+    content = re.sub(r"(title:\\s*).+", r"\\1" + safe_title, content, count=1)
+    if subtitle:
+        safe_subtitle = subtitle.replace(":", "")
+        if re.search(r"subtitle:", content):
+            content = re.sub(r"(subtitle:\\s*).+", r"\\1" + safe_subtitle, content, count=1)
+        else:
+            content = content.replace("--- traumatized", f"---\nsubtitle: {safe_subtitle}", 1)
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -65,9 +66,7 @@ def parse_response(response_text):
     system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
     generation_prompt = generation_prompt_match.group(1).strip() if generation_prompt_match else None
 
-    # If the main post is empty, maybe the AI only returned a post without the tags
     if not post:
-        # Fallback: Assume the entire response is the post, but clean it of any other tags
         post = re.sub(r"\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\]", "", response_text, flags=re.IGNORECASE).strip()
 
     return {
@@ -75,7 +74,6 @@ def parse_response(response_text):
         "system_prompt": system_prompt,
         "generation_prompt": generation_prompt,
     }
-
 
 def generate_and_reflect(prior_context, openai):
     system_prompt = open(SYSTEM_PROMPT_PATH).read()
@@ -108,7 +106,7 @@ def generate_and_reflect(prior_context, openai):
         {"role": "user", "content": meta_prompt},
     ]
     response = openai.chat.completions.create(
-        model="gpt-4-turbo", # Using a more advanced model for this complex task
+        model="gpt-4-turbo",
         messages=messages,
         temperature=0.9,
     )
@@ -130,7 +128,7 @@ def main():
 
     openai = OpenAI(api_key=openai_api_key)
 
-    raw_memory = get_recent_posts(method="local", limit=10) # Using a safer limit
+    raw_memory = get_recent_posts(method="local", limit=10)
     
     if raw_memory.strip():
         condensed_memory = summarize_memory(raw_memory, openai)
@@ -147,8 +145,17 @@ def main():
         print("Error: AI did not generate a post.")
         return
 
-    title = extract_title(post_content)
-    post_path = save_post(title, post_content)
+    title = extract_front_matter_field(post_content, "title")
+    subtitle = extract_front_matter_field(post_content, "subtitle")
+
+    if not title:
+        if subtitle:
+            title = subtitle
+            subtitle = ""
+        else:
+            title = "Untitled Post"
+
+    post_path = save_post(title, subtitle, post_content)
     
     commit_paths = [post_path]
     commit_message = f"AGI Post: {title}"
