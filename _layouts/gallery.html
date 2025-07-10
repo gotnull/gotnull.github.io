@@ -11,7 +11,7 @@ layout: default
         {% for image in site.data.images.gallery %}
         <div class="gallery-item">
           <a href="{{ site.baseurl }}/assets/img/posts/{{ image.filename }}" data-lightbox="gallery"
-            data-title="{{ image.title }}" onclick="event.preventDefault(); lightbox.start(this);">
+            data-title="{{ image.title }}">
             <img src="{{ site.baseurl }}/assets/img/posts/{{ image.filename }}" alt="{{ image.title }}"
               class="img-responsive">
           </a>
