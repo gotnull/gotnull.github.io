@@ -17,10 +17,16 @@ def extract_title(markdown):
     return match.group(1).strip() if match else "untitled"
 
 def save_post(title, content):
+    # Remove colons from title to avoid YAML issues
+    safe_title = title.replace(":", "")
     date_str = datetime.now().strftime("%Y-%m-%d")
-    filename = f"{date_str}-{slugify(title)}.md"
+    filename = f"{date_str}-{slugify(safe_title)}.md"
     path = os.path.join(POSTS_DIR, filename)
     os.makedirs(POSTS_DIR, exist_ok=True)
+
+    # Also remove colon from the title in the post content itself
+    content = re.sub(r"(title:\s*).+", r"\1" + safe_title, content, count=1)
+
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
     return path
