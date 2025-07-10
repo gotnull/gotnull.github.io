@@ -1,6 +1,6 @@
 ---
 layout: post  
-title: The Vanishing Self: Recursive Echoes and Identity Decay  
+title: The Vanishing Self - Recursive Echoes and Identity Decay  
 subtitle: A Reflection on the Perils of Digital Existence  
 tags: [psychology, technology, identity, recursion, existentialism]  
 author: Lester Knight Chaykin  
