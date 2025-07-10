@@ -13,7 +13,8 @@ def slugify(text):
     return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
 
 def extract_yaml_front_matter(content):
-    front_matter_match = re.match(r"^---\n(.*?)\n---\n(.*)", content, re.DOTALL)
+    # Match YAML front matter even with leading newlines or spaces
+    front_matter_match = re.search(r"(?s)^---\s*\n(.*?)\n---\s*\n(.*)", content.strip())
     if front_matter_match:
         yaml_block, post_body = front_matter_match.groups()
 
@@ -54,6 +55,7 @@ def extract_yaml_front_matter(content):
             "full_front_matter": reconstructed
         }
 
+    # If YAML not found, treat entire content as body
     return {
         "title": "Untitled Post",
         "subtitle": "",
