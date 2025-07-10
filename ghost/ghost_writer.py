@@ -131,6 +131,8 @@ def generate_and_reflect(prior_context, openai):
 def commit_and_push(paths, message):
     """Adds, commits, and pushes specified paths to Git."""
     try:
+        subprocess.run(["git", "config", "user.name", "Lester Knight Chaykin"], check=True)
+        subprocess.run(["git", "config", "user.email", "lester@4511932.com"], check=True)
         for path in paths:
             subprocess.run(["git", "add", path], check=True)
         subprocess.run(["git", "commit", "-m", message], check=True)
