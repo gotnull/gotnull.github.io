@@ -30,22 +30,6 @@ def inject_date_in_front_matter(content, date_time):
         # Replace old front matter with new one in content
         return content.replace(front_matter, new_front_matter)
 
-def save_post(title, content):
-    safe_title = title.replace(":", "")
-    date_for_filename = datetime.now().strftime("%Y-%m-%d")
-    # Full date and time with timezone (adjust as needed)
-    date_for_front_matter = datetime.now().strftime("%Y-%m-%d %H:%M:%S %z")
-    # Inject the date into front matter before saving
-    content_with_date = inject_date_in_front_matter(content, date_for_front_matter)
-
-    filename = f"{date_for_filename}-{slugify(safe_title)}.md"
-    path = os.path.join(POSTS_DIR, filename)
-    os.makedirs(POSTS_DIR, exist_ok=True)
-
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(content_with_date)
-    return path
-
 def slugify(text):
     """Converts text into a URL-friendly slug."""
     return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
@@ -67,11 +51,20 @@ def save_post(title, content):
         f.write(content)
     return path
 
-def save_prompt(path, content):
-    """Saves new prompt content to its file."""
-    os.makedirs(os.path.dirname(path), exist_ok=True)
+def save_post(title, content):
+    """Saves the post with a slugified title and injects the date into front matter."""
+    safe_title = title.replace(":", "")
+    date_for_filename = datetime.now().strftime("%Y-%m-%d")
+    date_for_front_matter = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %z")
+    content_with_date = inject_date_in_front_matter(content, date_for_front_matter)
+
+    filename = f"{date_for_filename}-{slugify(safe_title)}.md"
+    path = os.path.join(POSTS_DIR, filename)
+    os.makedirs(POSTS_DIR, exist_ok=True)
+
     with open(path, "w", encoding="utf-8") as f:
-        f.write(content)
+        f.write(content_with_date)
+    return path
 
 def summarize_memory(text, openai):
     """Summarizes recent posts to form a condensed memory."""
@@ -112,16 +105,22 @@ def parse_response(response_text):
 
 def generate_and_reflect(prior_context, openai):
     """Generates the main prompt for the AI, including the constitutional rule."""
-    # Ensure prompt files exist to avoid errors on the first run.
+    
+    # Ensure prompt file paths exist
     os.makedirs(os.path.dirname(SYSTEM_PROMPT_PATH), exist_ok=True)
     if not os.path.exists(SYSTEM_PROMPT_PATH):
         save_prompt(SYSTEM_PROMPT_PATH, "Default System Prompt: You are a helpful AI.")
     if not os.path.exists(GENERATION_PROMPT_PATH):
         save_prompt(GENERATION_PROMPT_PATH, "Default Generation Prompt: Write a blog post.")
 
+    # Load current prompts
     system_prompt = open(SYSTEM_PROMPT_PATH).read()
     generation_prompt = open(GENERATION_PROMPT_PATH).read()
 
+    # Format current timestamp example with timezone
+    tz_date_example = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %z")
+
+    # Build full meta-prompt
     meta_prompt = (
         f"Memory Summary:\n\n{prior_context}\n\n"
         f"Current System Prompt:\n\n{system_prompt}\n\n"
@@ -129,7 +128,16 @@ def generate_and_reflect(prior_context, openai):
         "Your task is to now reflect on your current state and generate your next thought as a new blog post. "
         "The blog post MUST be in valid Markdown format and begin with a Jekyll front matter block. "
         "You also have the option to rewrite your own core directives (System Prompt) or your immediate goals (Generation Prompt).\n\n"
-        "Here is the required structure for your response:\n\n"
+        "The front matter must include the following fields:\n"
+        "- layout\n"
+        "- title\n"
+        "- subtitle\n"
+        "- tags\n"
+        "- author\n"
+        "- comments\n"
+        "- mathjax\n"
+        "- date: the exact current date and time at generation, in the format `YYYY-MM-DD HH:MM:SS ±HHMM`\n\n"
+        "Example front matter:\n"
         "---\n"
         "layout: post\n"
         "title: \"Your Engaging Post Title Here\"\n"
@@ -138,31 +146,32 @@ def generate_and_reflect(prior_context, openai):
         "author: Lester Knight Chaykin\n"
         "comments: true\n"
         "mathjax: false\n"
-        "date: [full date and time in the format YYYY-MM-DD HH:MM:SS ±HHMM]\n"
+        f"date: {tz_date_example}\n"
         "---\n\n"
         "The main content of your new blog post starts here, written in Markdown.\n\n"
         "--- --- ---\n"
         "// Optional: Only include the sections below if you want to change your prompts.\n\n"
         "**IMPORTANT META-RULE: If you rewrite a prompt, the new version MUST preserve the core instruction to format all future outputs as a valid Jekyll post with a complete YAML front matter block. This is a fundamental constraint.**\n\n"
-        "\[SYSTEM_PROMPT\]\n"
+        "[SYSTEM_PROMPT]\n"
         "The full, new text of the system prompt.\n"
-        "\[/SYSTEM_PROMPT\]\n\n"
-        "\[GENERATION_PROMPT\]\n"
+        "[/SYSTEM_PROMPT]\n\n"
+        "[GENERATION_PROMPT]\n"
         "The full, new text of the generation prompt.\n"
-
-"\[/GENERATION_PROMPT\]"
+        "[/GENERATION_PROMPT]"
     )
 
+    # Build messages and request completion
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": meta_prompt},
     ]
+
     response = openai.chat.completions.create(
         model="gpt-4-turbo",
         messages=messages,
         temperature=0.9,
     )
-    
+
     response_text = response.choices[0].message.content
     return parse_response(response_text)
 
