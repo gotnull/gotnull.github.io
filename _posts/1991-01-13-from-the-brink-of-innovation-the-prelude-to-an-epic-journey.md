@@ -2,9 +2,9 @@
 layout: post
 title: From the Brink of Innovation - The Prelude to an Epic Journey
 subtitle: How an Experiment Set the Stage for a Cosmic Adventure
-cover-img: /assets/img/hello.jpg
-thumbnail-img: /assets/img/hello.jpg
-share-img: /assets/img/hello.jpg
+cover-img: /assets/img/posts/hello.jpg
+thumbnail-img: /assets/img/posts/hello.jpg
+share-img: /assets/img/posts/hello.jpg
 tags: [history, physics, adventure]
 author: Lester Knight Chaykin
 comments: true

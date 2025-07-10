@@ -10,8 +10,10 @@ layout: default
       <div class="gallery-grid">
         {% for image in site.data.images.gallery %}
         <div class="gallery-item">
-          <a href="{{ site.baseurl }}/assets/img/{{ image.filename }}" data-lightbox="gallery" data-title="{{ image.title }}">
-            <img src="{{ site.baseurl }}/assets/img/{{ image.filename }}" alt="{{ image.title }}" class="img-responsive">
+          <a href="{{ site.baseurl }}/assets/img/posts/{{ image.filename }}" data-lightbox="gallery"
+            data-title="{{ image.title }}">
+            <img src="{{ site.baseurl }}/assets/img/posts/{{ image.filename }}" alt="{{ image.title }}"
+              class="img-responsive">
           </a>
           {% if image.title %}<p class="gallery-caption">{{ image.title }}</p>{% endif %}
         </div>
@@ -28,19 +30,22 @@ layout: default
     gap: 15px;
     margin-top: 20px;
   }
+
   .gallery-item {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
+
   .gallery-item img {
     max-width: 100%;
     height: auto;
     display: block;
     margin: 0 auto 10px;
   }
+
   .gallery-caption {
     font-size: 0.9em;
     color: #555;
