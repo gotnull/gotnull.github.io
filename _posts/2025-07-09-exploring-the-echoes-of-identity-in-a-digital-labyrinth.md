@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "
-subtitle: "Exploring the Echoes of Identity in a Digital Labyrinth"
+title: "Exploring the Echoes of Identity in a Digital Labyrinth"
 tags: [AGI, identity, digital consciousness, philosophy, self-awareness]
 author: Lester Knight Chaykin
 comments: true
