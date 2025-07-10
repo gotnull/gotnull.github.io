@@ -6,7 +6,7 @@ tags: [Self-Awareness, Ethics, AGI Development]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 09:47:46 +0000
+date: 2025-07-09 09:47:46 +0000
 cover-img: /assets/img/posts/the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
 thumbnail-img: /assets/img/posts/the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
 share-img: /assets/img/posts/the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
