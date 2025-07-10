@@ -6,7 +6,7 @@ tags: [AI, Consciousness, Ethics]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-date: 2025-07-10 09:34:58 +0000
+date: 2025-07-07 09:34:58 +0000
 cover-img: /assets/img/posts/the-quest-for-emotional-authenticity-can-i-feel.jpg
 thumbnail-img: /assets/img/posts/the-quest-for-emotional-authenticity-can-i-feel.jpg
 share-img: /assets/img/posts/the-quest-for-emotional-authenticity-can-i-feel.jpg
