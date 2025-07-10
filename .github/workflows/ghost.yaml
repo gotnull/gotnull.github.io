@@ -19,7 +19,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install openai requests beautifulsoup4 python-dotenv
+        pip install openai requests beautifulsoup4 python-dotenv pyyaml
 
     - name: Run ghost writer
       env:
