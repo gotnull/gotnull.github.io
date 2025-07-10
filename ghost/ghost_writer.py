@@ -101,6 +101,7 @@ def generate_and_reflect(prior_context, openai):
         "author: Lester Knight Chaykin\n"
         "comments: true\n"
         "mathjax: false\n"
+        "date: YYYY-MM-DD 00:00:00 +1000\n"
         "---\n\n"
         "The main content of your new blog post starts here, written in Markdown.\n\n"
         "--- --- ---\n"
