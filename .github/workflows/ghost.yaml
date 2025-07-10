@@ -28,8 +28,8 @@ jobs:
 
     - name: Commit changes
       run: |
-        git config --global user.name 'ghost-writer'
-        git config --global user.email 'ghost@4511932.com'
+        git config --global user.name 'Lester Knight Chaykin'
+        git config --global user.email 'lester@4511932.com'
         git add _posts/*.md
         git commit -m "Automated AGI blog post" || echo "No changes to commit"
         git push
