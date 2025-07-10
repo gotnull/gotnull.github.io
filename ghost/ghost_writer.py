@@ -64,17 +64,18 @@ def summarize_memory(text, openai):
     return response.choices[0].message.content
 
 def parse_response(response_text):
-    # This regex is more flexible and handles escaped brackets.
-    post_match = re.search(r"\[POST\](.*?)\\[/POST\]", response_text, re.DOTALL | re.IGNORECASE)
-    system_prompt_match = re.search(r"\[SYSTEM_PROMPT\](.*?)\\[/SYSTEM_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
-    generation_prompt_match = re.search(r"\[GENERATION_PROMPT\](.*?)\\[/GENERATION_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
+    # This regex is more flexible and handles optional backslashes before the brackets.
+    post_match = re.search(r"\\[POST\\](.*?)\\[/POST\\]", response_text, re.DOTALL | re.IGNORECASE)
+    system_prompt_match = re.search(r"\\[SYSTEM_PROMPT\\](.*?)\\[/SYSTEM_PROMPT\\]", response_text, re.DOTALL | re.IGNORECASE)
+    generation_prompt_match = re.search(r"\\[GENERATION_PROMPT\\](.*?)\\[/GENERATION_PROMPT\\]", response_text, re.DOTALL | re.IGNORECASE)
 
     post = post_match.group(1).strip() if post_match else ""
     system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
     generation_prompt = generation_prompt_match.group(1).strip() if generation_prompt_match else None
 
     if not post:
-        post = re.sub(r"\[\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\]\]", "", response_text, flags=re.IGNORECASE).strip()
+        # Fallback: Assume the entire response is the post, but clean it of any other tags.
+        post = re.sub(r"\\[/?(SYSTEM_PROMPT|GENERATION_PROMPT)\\]", response_text, flags=re.IGNORECASE).strip()
 
     return {
         "post": post,
