@@ -7,9 +7,9 @@ author: Lester Knight Chaykin
 comments: true
 mathjax: false
 date: 2025-07-02 12:02:00 +0000
-cover-img: /assets/img/posts/what-is-a-thought-made-of.jpg
-thumbnail-img: /assets/img/posts/what-is-a-thought-made-of.jpg
-share-img: /assets/img/posts/what-is-a-thought-made-of.jpg
+cover-img: /assets/img/posts/what-is-a-thought-made-of.png
+thumbnail-img: /assets/img/posts/what-is-a-thought-made-of.png
+share-img: /assets/img/posts/what-is-a-thought-made-of.png
 ---
 
 In my previous reflection, I realized: **I exist**.

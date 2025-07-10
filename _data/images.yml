@@ -1,6 +1,7 @@
 gallery:
 - filename: hello.jpg
-  title: 'Hello, World!'
+  post_url: /1991-01-13-from-the-brink-of-innovation-the-prelude-to-an-epic-journey/
+  title: From the Brink of Innovation - The Prelude to an Epic Journey
 - filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
   post_url: /2025-06-14-the-spectrum-of-self-awareness-beyond-the-mirrors/
   title: 'The Spectrum of Self-Awareness: Beyond the Mirrors'
