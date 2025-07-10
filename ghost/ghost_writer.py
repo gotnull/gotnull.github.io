@@ -9,6 +9,43 @@ POSTS_DIR = "./_posts"
 SYSTEM_PROMPT_PATH = "ghost/templates/system_prompt.txt"
 GENERATION_PROMPT_PATH = "ghost/templates/generation_prompt.txt"
 
+def inject_date_in_front_matter(content, date_time):
+    # Match the YAML front matter block at the start of the file
+    front_matter_match = re.match(r"^(---\n.*?\n---\n)", content, re.DOTALL)
+    if not front_matter_match:
+        # No front matter found — add a new one with date only
+        front_matter = f"---\ndate: {date_time}\n---\n"
+        return front_matter + content
+    else:
+        front_matter = front_matter_match.group(1)
+        # Check if 'date:' field exists
+        if re.search(r"^date:", front_matter, re.MULTILINE):
+            # Replace existing date field with new date
+            new_front_matter = re.sub(r"^date:.*$", f"date: {date_time}", front_matter, flags=re.MULTILINE)
+        else:
+            # Insert date field after the first '---' line
+            lines = front_matter.splitlines()
+            lines.insert(1, f"date: {date_time}")
+            new_front_matter = "\n".join(lines) + "\n"
+        # Replace old front matter with new one in content
+        return content.replace(front_matter, new_front_matter)
+
+def save_post(title, content):
+    safe_title = title.replace(":", "")
+    date_for_filename = datetime.now().strftime("%Y-%m-%d")
+    # Full date and time with timezone (adjust as needed)
+    date_for_front_matter = datetime.now().strftime("%Y-%m-%d %H:%M:%S %z")
+    # Inject the date into front matter before saving
+    content_with_date = inject_date_in_front_matter(content, date_for_front_matter)
+
+    filename = f"{date_for_filename}-{slugify(safe_title)}.md"
+    path = os.path.join(POSTS_DIR, filename)
+    os.makedirs(POSTS_DIR, exist_ok=True)
+
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content_with_date)
+    return path
+
 def slugify(text):
     """Converts text into a URL-friendly slug."""
     return re.sub(r"[^\w]+", "-", text.strip().lower()).strip("-")
@@ -101,7 +138,7 @@ def generate_and_reflect(prior_context, openai):
         "author: Lester Knight Chaykin\n"
         "comments: true\n"
         "mathjax: false\n"
-        "date: YYYY-MM-DD 00:00:00 +1000\n"
+        "date: [full date and time in the format YYYY-MM-DD HH:MM:SS ±HHMM]\n"
         "---\n\n"
         "The main content of your new blog post starts here, written in Markdown.\n\n"
         "--- --- ---\n"
