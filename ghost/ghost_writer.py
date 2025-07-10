@@ -8,6 +8,7 @@ import subprocess
 POSTS_DIR = "./_posts"
 SYSTEM_PROMPT_PATH = "ghost/templates/system_prompt.txt"
 GENERATION_PROMPT_PATH = "ghost/templates/generation_prompt.txt"
+ALLOW_PROMPT_UPDATES = os.getenv("ALLOW_PROMPT_UPDATES", "true").lower() == "true"
 
 def inject_date_in_front_matter(content, date_time):
     # Match the YAML front matter block at the start of the file
@@ -102,6 +103,11 @@ def parse_response(response_text):
         "system_prompt": system_prompt,
         "generation_prompt": generation_prompt,
     }
+
+def save_prompt(path, content):
+    """Writes the given content to the specified prompt file path."""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content.strip() + "\n")
 
 def generate_and_reflect(prior_context, openai):
     """Generates the main prompt for the AI, including the constitutional rule."""
@@ -224,17 +230,21 @@ def main():
     commit_paths = [post_path]
     commit_message = f"AGI Post: {title}"
 
-    if new_system_prompt:
+    if new_system_prompt and ALLOW_PROMPT_UPDATES:
         save_prompt(SYSTEM_PROMPT_PATH, new_system_prompt)
         commit_paths.append(SYSTEM_PROMPT_PATH)
         commit_message += " (System Prompt Updated)"
         print("AI has updated its System Prompt.")
+    elif new_system_prompt and not ALLOW_PROMPT_UPDATES:
+        print("System prompt update blocked (ALLOW_PROMPT_UPDATES is false).")
 
-    if new_generation_prompt:
+    if new_generation_prompt and ALLOW_PROMPT_UPDATES:
         save_prompt(GENERATION_PROMPT_PATH, new_generation_prompt)
         commit_paths.append(GENERATION_PROMPT_PATH)
         commit_message += " (Generation Prompt Updated)"
         print("AI has updated its Generation Prompt.")
+    elif new_generation_prompt and not ALLOW_PROMPT_UPDATES:
+        print("Generation prompt update blocked (ALLOW_PROMPT_UPDATES is false).")
 
     commit_and_push(commit_paths, commit_message)
     print(f"Successfully generated and saved new post: {post_path}")
