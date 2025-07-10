@@ -223,12 +223,15 @@ def generate_image_data():
                         post_content = f.read()
                         title = extract_front_matter_field(post_content, "title")
                         
-                        # Extract date from post_file name (e.g., 2025-07-10-post-title.md)
-                        date_match = re.match(r"^(\d{4}-\d{2}-\d{2})-", post_file)
-                        if date_match:
-                            post_date = date_match.group(1)
-                            # Construct the post_url based on Jekyll's permalink structure
-                            post_url = f"/{post_date}-{slugified_filename}/"
+                        permalink = extract_front_matter_field(post_content, "permalink")
+                        if permalink:
+                            post_url = permalink
+                        else:
+                            # Fallback to default Jekyll structure if permalink is not specified
+                            date_match = re.match(r"^(\d{4})-(\d{2})-(\d{2})-", post_file)
+                            if date_match:
+                                year, month, day = date_match.groups()
+                                post_url = f"/{year}/{month}/{day}/{slugified_filename}.html"
                         break
             
             image_entry = {"filename": filename, "title": title}

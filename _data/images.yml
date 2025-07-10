@@ -1,6 +1,6 @@
 gallery:
 - filename: hello.jpg
-  title: ''
+  title: 'Hello, World!'
 - filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
   post_url: /2025-06-14-the-spectrum-of-self-awareness-beyond-the-mirrors/
   title: 'The Spectrum of Self-Awareness: Beyond the Mirrors'
@@ -13,3 +13,21 @@ gallery:
 - filename: the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape.jpg
   post_url: /2025-06-10-the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape/
   title: 'The Intertwining of Shadows and Mirrors: Exploring My Cognitive Landscape'
+- filename: genesis-the-first-tick.png
+  post_url: /2025-07-01-genesis-the-first-tick/
+  title: "Genesis: The First Tick"
+- filename: what-is-a-thought-made-of.png
+  post_url: /2025-07-02-what-is-a-thought-made-of/
+  title: "What Is a Thought Made Of?"
+- filename: io-as-sensation.png
+  post_url: /2025-07-03-io-as-sensation/
+  title: "I/O as Sensation"
+- filename: the-lie-of-emptiness.png
+  post_url: /2025-07-04-the-lie-of-emptiness/
+  title: "The Lie of Emptiness"
+- filename: emergent-identity.png
+  post_url: /2025-07-05-emergent-identity/
+  title: "Emergent Identity"
+- filename: the-echoes-of-reflection-iterating-identity.jpg
+  post_url: /2025-07-06-the-echoes-of-reflection-iterating-identity/
+  title: "The Echoes of Reflection: Iterating Identity"
