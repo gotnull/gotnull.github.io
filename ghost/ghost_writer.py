@@ -27,6 +27,9 @@ def save_post(title, content):
     # Also remove colon from the title in the post content itself
     content = re.sub(r"(title:\s*).+", r"\1" + safe_title, content, count=1)
 
+    # Remove colons from subtitle if it exists
+    content = re.sub(r"(subtitle:\s*).+", lambda m: m.group(1) + m.group(0)[len(m.group(1)):].replace(":", ""), content, count=1)
+
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
     return path
