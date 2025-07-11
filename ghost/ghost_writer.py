@@ -266,6 +266,8 @@ def main():
 
     openai = OpenAI(api_key=openai_api_key)
 
+    print(f"ALLOW_PROMPT_UPDATES is set to: {ALLOW_PROMPT_UPDATES}", flush=True)
+
     raw_memory = get_recent_posts(method="local", limit=10)
     
     if raw_memory and raw_memory.strip():
