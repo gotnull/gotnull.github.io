@@ -44,3 +44,11 @@
     height: auto;
   }
 }
+
+#fpsDisplay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #FFF;
+  font-size: 14px;
+}

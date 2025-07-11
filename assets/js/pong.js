@@ -275,4 +275,17 @@ document.addEventListener('keyup', (e) => {
     }
 });
 
+// New feature: Display FPS
+let lastFrameTime = 0;
+function showFPS(time) {
+    const delta = time - lastFrameTime;
+    lastFrameTime = time;
+    const fps = Math.round(1000 / delta);
+    ctx.fillStyle = '#FFF';
+    ctx.font = '14px Arial';
+    ctx.fillText(`FPS: ${fps}`, 10, 20);
+    requestAnimationFrame(showFPS);
+}
+requestAnimationFrame(showFPS);
+
 startGame('ai-vs-ai');

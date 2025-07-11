@@ -72,3 +72,8 @@ history:
     the right paddle. Additionally, the HTML instructions have been updated to reflect
     these new controls, while the CSS remains unchanged.
   timestamp: '2025-07-11 07:03:29'
+- summary: The improved code introduces a new feature to display the frames per second
+    (FPS) on the screen, enhancing the game's performance monitoring. Additionally,
+    the CSS now includes a new style for the FPS display, positioning it at the top-left
+    corner of the canvas.
+  timestamp: '2025-07-11 08:07:16'
