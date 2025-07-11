@@ -146,3 +146,8 @@ history:
     now includes an event listener for the fullscreen toggle button, enhancing user
     experience by offering more control over the game display.
   timestamp: '2025-07-11 13:21:49'
+- summary: The improved code introduces a new leaderboard feature that tracks and
+    displays the top scores of players, saving this data in local storage and updating
+    the display accordingly. Additionally, the HTML and CSS have been updated to include
+    a dedicated leaderboard section to present this information.
+  timestamp: '2025-07-11 13:25:23'

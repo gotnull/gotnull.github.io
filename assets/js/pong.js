@@ -55,6 +55,24 @@ document.getElementById('instructionsButton').addEventListener('click', toggleIn
 document.getElementById('difficultyLevel').addEventListener('change', adjustAIDifficulty);
 document.getElementById('fullscreenButton').addEventListener('click', toggleFullscreen);
 
+// New Feature: Leaderboard system
+let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+updateLeaderboardDisplay();
+
+function updateLeaderboardDisplay() {
+    const leaderboardDisplay = document.getElementById('leaderboard');
+    leaderboardDisplay.innerHTML = '<h3>Leaderboard</h3>';
+    leaderboard.sort((a, b) => b.score - a.score).slice(0, 5).forEach((entry, index) => {
+        leaderboardDisplay.innerHTML += `<p>${index + 1}. ${entry.name}: ${entry.score}</p>`;
+    });
+}
+
+function addToLeaderboard(name, score) {
+    leaderboard.push({ name, score });
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+    updateLeaderboardDisplay();
+}
+
 function displayHighScores() {
     document.getElementById('highScores').innerText = `High Scores - Player 1: ${highScores.player1}, Player 2: ${highScores.player2}`;
 }
@@ -252,6 +270,7 @@ function update() {
                 gameRunning = false;
                 if (soundEnabled) winSound.play();
                 updateHighScores();
+                addToLeaderboard(winner, Math.max(player1Score, player2Score));
                 startCountdown();
                 return;
             }
