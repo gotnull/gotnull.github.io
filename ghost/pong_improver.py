@@ -104,52 +104,47 @@ def generate_summary(original_js, original_css, original_html, improved_js, impr
 
 def improve_pong_game(js_code, css_code, html_code, openai_client):
     print("Calling OpenAI API to improve Pong game (JS, CSS, HTML)...")
-    try:
-        prompt_template = (
-            "You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements "
-            "or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. "
-            "Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, "
-            "improving AI difficulty, adding power-ups, or refining visual elements.\n\n"
-            "Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.\n\n"
-            "---JS_CODE---\n{js_code}\n---CSS_CODE---\n{css_code}\n---HTML_CODE---\n{html_code}\n\n"
-            "Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.\n"
-            "Return the improved code using the following format:\n\n"
-            "---JS_CODE---\n// Improved JavaScript code here\n---CSS_CODE---\n/* Improved CSS code here */\n---HTML_CODE---\n<!-- Improved HTML code here -->\n"
-        )
+    prompt_template = (
+        "You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements "
+        "or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. "
+        "Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, "
+        "improving AI difficulty, adding power-ups, or refining visual elements.\n\n"
+        "Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.\n\n"
+        "---JS_CODE---\n{js_code}\n---CSS_CODE---\n{css_code}\n---HTML_CODE---\n{html_code}\n\n"
+        "Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.\n"
+        "Return the improved code using the following format:\n\n"
+        "---JS_CODE---\n// Improved JavaScript code here\n---CSS_CODE---\n/* Improved CSS code here */\n---HTML_CODE---\n<!-- Improved HTML code here -->\n"
+    )
 
-        prompt = prompt_template.format(
-            js_code=js_code,
-            css_code=css_code,
-            html_code=html_code
-        )
+    prompt = prompt_template.format(
+        js_code=js_code,
+        css_code=css_code,
+        html_code=html_code
+    )
 
-        response = openai_client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": "You are an AI assistant that improves JavaScript, CSS, and HTML code for a Pong game. You must return only the code, delimited by specific markers."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.7
-        )
+    response = openai_client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": "You are an AI assistant that improves JavaScript, CSS, and HTML code for a Pong game. You must return only the code, delimited by specific markers."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.7
+    )
 
-        full_response = response.choices[0].message.content
+    full_response = response.choices[0].message.content
 
-        js_match = re.search(r"---JS_CODE---\s*(.*?)\s*---CSS_CODE---", full_response, re.DOTALL)
-        css_match = re.search(r"---CSS_CODE---\s*(.*?)\s*---HTML_CODE---", full_response, re.DOTALL)
-        html_match = re.search(r"---HTML_CODE---\s*(.*)", full_response, re.DOTALL)
+    js_match = re.search(r"---JS_CODE---\s*(.*?)\s*---CSS_CODE---", full_response, re.DOTALL)
+    css_match = re.search(r"---CSS_CODE---\s*(.*?)\s*---HTML_CODE---", full_response, re.DOTALL)
+    html_match = re.search(r"---HTML_CODE---\s*(.*)", full_response, re.DOTALL)
 
-        if not all([js_match, css_match, html_match]):
-            raise ValueError("Failed to extract all code sections from OpenAI response.")
+    if not all([js_match, css_match, html_match]):
+        raise ValueError("Failed to extract all code sections from OpenAI response.")
 
-        improved_js = js_match.group(1).strip()
-        improved_css = css_match.group(1).strip()
-        improved_html = html_match.group(1).strip()
+    improved_js = js_match.group(1).strip()
+    improved_css = css_match.group(1).strip()
+    improved_html = html_match.group(1).strip()
 
-        return improved_js, improved_css, improved_html
-
-    except Exception as e:
-        print(f"Error calling OpenAI API for code improvement: {e}")
-        return js_code, css_code, html_code
+    return improved_js, improved_css, improved_html
 
 def main():
     openai_api_key = os.getenv("OPENAI_API_KEY")
