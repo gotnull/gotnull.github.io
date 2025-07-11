@@ -1,6 +1,10 @@
+:root {
+  --theme-color: #007BFF;
+}
+
 #pongCanvas {
   background-color: #000;
-  border: 2px solid #FFF;
+  border: 2px solid var(--theme-color);
   display: block;
   margin: 20px auto;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -16,7 +20,7 @@
   padding: 10px 20px;
   font-size: 1.2em;
   cursor: pointer;
-  background-color: #007BFF;
+  background-color: var(--theme-color);
   color: #FFF;
   border: none;
   border-radius: 5px;
