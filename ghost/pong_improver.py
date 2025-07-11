@@ -32,6 +32,8 @@ def update_pong_history(js_code, css_code, html_code):
             history_data = yaml.safe_load(f)
             if history_data is None:
                 history_data = {"history": []}
+            elif not isinstance(history_data.get("history"), list):
+                history_data["history"] = []
     except FileNotFoundError:
         history_data = {"history": []}
     except yaml.YAMLError as e:
