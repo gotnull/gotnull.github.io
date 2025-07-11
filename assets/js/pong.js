@@ -1,69 +1,62 @@
-// Improved JavaScript code: Added Power-Up Timer Display and Enhanced AI Difficulty
-
 const canvas = document.getElementById('pongCanvas');
 const ctx = canvas.getContext('2d');
 
 const paddleWidth = 10;
-const paddleHeight = 100;
+let paddleHeight = 100;
 const ballSize = 10;
-
-const soundEffect = new Audio('/assets/audio/bounce.mp3');
-
-let player1Y = canvas.height / 2 - paddleHeight / 2;
-let player2Y = canvas.height / 2 - paddleHeight / 2;
-let initialBall = { x: canvas.width / 2, y: canvas.height / 2, speedX: INITIAL_BALL_SPEED, speedY: INITIAL_BALL_SPEED };
-let balls = [initialBall];
 
 const INITIAL_BALL_SPEED = 5;
 let ballSpeedMultiplier = 1;
 
+const soundEffect = new Audio('/assets/audio/bounce.mp3');
+const hitSound = new Audio('/assets/audio/hit.mp3');
+const winSound = new Audio('/assets/audio/win.mp3');
+
+let player1Y = canvas.height / 2 - paddleHeight / 2;
+let player2Y = canvas.height / 2 - paddleHeight / 2;
+let player2Speed = 0;
+
+let balls = [];
 let player1Score = 0;
 let player2Score = 0;
 
 let gameRunning = false;
 let gameMode = 'ai-vs-ai';
-
-let player2Speed = 0;
 let powerUpActive = false;
-let powerUpX, powerUpY;
 let powerUpVisible = true;
+let powerUpX, powerUpY, currentPowerUpType = '';
 let powerUpTimer = 0;
+let ballVisible = true;
 
+const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall', 'multiball'];
 const winningScore = 5;
 let showWinScreen = false;
 let winner = '';
 let countdown = 5;
 let countdownInterval;
 
-const hitSound = new Audio('/assets/audio/hit.mp3');
-const winSound = new Audio('/assets/audio/win.mp3');
 const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
 let currentTheme = 0;
 
-const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall', 'multiball'];
-let currentPowerUpType = '';
-let ballVisible = true;
+let soundEnabled = true;
+let gameSpeed = 1;
+
+let highScores = JSON.parse(localStorage.getItem('highScores')) || { player1: 0, player2: 0 };
 
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
 document.getElementById('changeTheme').addEventListener('click', changeTheme);
 document.getElementById('toggleSound').addEventListener('click', toggleSound);
-
-let soundEnabled = true;
-
-let highScores = JSON.parse(localStorage.getItem('highScores')) || { player1: 0, player2: 0 };
+document.getElementById('increaseSpeed').addEventListener('click', () => adjustGameSpeed(0.1));
+document.getElementById('decreaseSpeed').addEventListener('click', () => adjustGameSpeed(-0.1));
 
 function displayHighScores() {
     document.getElementById('highScores').innerText = `High Scores - Player 1: ${highScores.player1}, Player 2: ${highScores.player2}`;
 }
 
 function updateHighScores() {
-    if (player1Score > highScores.player1) {
-        highScores.player1 = player1Score;
-    }
-    if (player2Score > highScores.player2) {
-        highScores.player2 = player2Score;
-    }
+    if (player1Score > highScores.player1) highScores.player1 = player1Score;
+    if (player2Score > highScores.player2) highScores.player2 = player2Score;
     localStorage.setItem('highScores', JSON.stringify(highScores));
     displayHighScores();
 }
@@ -77,18 +70,25 @@ function startGame(mode) {
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
     ballSpeedMultiplier = 1;
     ballVisible = true;
-    balls = [initialBall]; // Reset balls
-    resetBall();
+    balls = [createBall()];
+    resetBall(balls[0]);
     spawnPowerUp();
     gameLoop();
+}
+
+function createBall() {
+    return {
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+        speedX: 0,
+        speedY: 0
+    };
 }
 
 function togglePause() {
     if (showWinScreen) return;
     gameRunning = !gameRunning;
-    if (gameRunning) {
-        gameLoop();
-    }
+    if (gameRunning) gameLoop();
 }
 
 function changeTheme() {
@@ -113,13 +113,11 @@ function drawCircle(x, y, radius, color) {
     ctx.fill();
 }
 
-function resetBall() {
-    balls.forEach(ball => {
-        ball.x = canvas.width / 2;
-        ball.y = canvas.height / 2;
-        ball.speedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
-        ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
-    });
+function resetBall(ball) {
+    ball.x = canvas.width / 2;
+    ball.y = canvas.height / 2;
+    ball.speedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
+    ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
 }
 
 function spawnPowerUp() {
@@ -128,20 +126,11 @@ function spawnPowerUp() {
     powerUpX = Math.random() * (canvas.width - 30) + 15;
     powerUpY = Math.random() * (canvas.height - 30) + 15;
     currentPowerUpType = powerUpTypes[Math.floor(Math.random() * powerUpTypes.length)];
-    powerUpTimer = 10; // Power-up duration in seconds
+    powerUpTimer = 10;
     setTimeout(() => {
         powerUpVisible = false;
         setTimeout(() => powerUpActive = false, 5000);
     }, 10000);
-}
-
-function checkPowerUpCollision(ball) {
-    const distX = Math.abs(ball.x - powerUpX);
-    const distY = Math.abs(ball.y - powerUpY);
-    if (distX < ballSize && distY < ballSize) {
-        handlePowerUpEffect();
-        powerUpVisible = false;
-    }
 }
 
 function handlePowerUpEffect() {
@@ -151,21 +140,15 @@ function handlePowerUpEffect() {
             break;
         case 'shrinkPaddle':
             paddleHeight = Math.max(paddleHeight - 20, 40);
-            setTimeout(() => {
-                paddleHeight = 100;
-            }, 10000);
+            setTimeout(() => paddleHeight = 100, 10000);
             break;
         case 'reverseControls':
             reverseControls();
-            setTimeout(() => {
-                reverseControls();
-            }, 10000);
+            setTimeout(() => reverseControls(), 10000);
             break;
         case 'invisibleBall':
             ballVisible = false;
-            setTimeout(() => {
-                ballVisible = true;
-            }, 5000);
+            setTimeout(() => ballVisible = true, 5000);
             break;
         case 'multiball':
             addAdditionalBalls();
@@ -174,8 +157,10 @@ function handlePowerUpEffect() {
 }
 
 function addAdditionalBalls() {
-    if (balls.length < 3) {
-        balls.push({ x: canvas.width / 2, y: canvas.height / 2, speedX: INITIAL_BALL_SPEED, speedY: INITIAL_BALL_SPEED });
+    while (balls.length < 3) {
+        let newBall = createBall();
+        resetBall(newBall);
+        balls.push(newBall);
     }
 }
 
@@ -193,7 +178,7 @@ function reverseControlHandler(e) {
             if (e.key === 's') player1Y = Math.max(player1Y - 5, 0);
             if (e.key === 'ArrowUp') player2Speed = 5;
             if (e.key === 'ArrowDown') player2Speed = -5;
-        } else if (e.type === 'keyup') {
+        } else {
             if (e.key === 'ArrowUp' || e.key === 'ArrowDown') player2Speed = 0;
         }
     }
@@ -217,7 +202,9 @@ function update() {
     player1Y += (balls[0].y - (player1Y + paddleHeight / 2)) * 0.1;
     player1Y = Math.max(0, Math.min(canvas.height - paddleHeight, player1Y));
 
-    balls.forEach(ball => {
+    for (let i = balls.length - 1; i >= 0; i--) {
+        let ball = balls[i];
+
         ball.x += ball.speedX;
         ball.y += ball.speedY;
 
@@ -238,48 +225,51 @@ function update() {
             if (soundEnabled) hitSound.play();
         }
 
-        if (ball.x < 0) {
-            player2Score++;
-            if (player2Score >= winningScore) {
-                winner = 'Player 2';
+        if (ball.x < 0 || ball.x > canvas.width - ballSize) {
+            const scoredByPlayer1 = ball.x > canvas.width - ballSize;
+            if (scoredByPlayer1) player1Score++;
+            else player2Score++;
+
+            balls.splice(i, 1);
+
+            if (player1Score >= winningScore || player2Score >= winningScore) {
+                winner = player1Score >= winningScore ? 'Player 1' : 'Player 2';
                 showWinScreen = true;
-                if (soundEnabled) winSound.play();
                 gameRunning = false;
+                if (soundEnabled) winSound.play();
                 updateHighScores();
                 startCountdown();
+                return;
             }
-            resetBall();
-            if (!powerUpActive) spawnPowerUp();
-        } else if (ball.x > canvas.width - ballSize) {
-            player1Score++;
-            if (player1Score >= winningScore) {
-                winner = 'Player 1';
-                showWinScreen = true;
-                if (soundEnabled) winSound.play();
-                gameRunning = false;
-                updateHighScores();
-                startCountdown();
+
+            if (balls.length === 0) {
+                let b = createBall();
+                resetBall(b);
+                balls.push(b);
+                if (!powerUpActive) spawnPowerUp();
             }
-            resetBall();
-            if (!powerUpActive) spawnPowerUp();
         }
 
         if (powerUpActive && powerUpVisible) {
-            checkPowerUpCollision(ball);
+            const distX = Math.abs(ball.x - powerUpX);
+            const distY = Math.abs(ball.y - powerUpY);
+            if (distX < ballSize && distY < ballSize) {
+                handlePowerUpEffect();
+                powerUpVisible = false;
+            }
         }
-    });
+    }
 
     if (gameMode === 'ai-vs-ai') {
-        player2Y += (balls[0].y - (player2Y + paddleHeight / 2)) * 0.15; // Increased AI difficulty
-        player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
+        const target = balls.reduce((a, b) => Math.abs(b.x - canvas.width) < Math.abs(a.x - canvas.width) ? b : a, balls[0]);
+        player2Y += (target.y - (player2Y + paddleHeight / 2)) * 0.15;
     } else if (gameMode === 'player-vs-ai') {
         player2Y += player2Speed;
-        player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
     }
 
-    if (powerUpActive && powerUpTimer > 0) {
-        powerUpTimer -= 0.016;
-    }
+    player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
+
+    if (powerUpActive && powerUpTimer > 0) powerUpTimer -= 0.016;
 }
 
 function draw() {
@@ -295,9 +285,9 @@ function draw() {
     ctx.fillText(player1Score, canvas.width / 4, 50);
     ctx.fillText(player2Score, canvas.width * 3 / 4, 50);
 
+    ctx.setLineDash([5, 15]);
     ctx.strokeStyle = '#FFF';
     ctx.beginPath();
-    ctx.setLineDash([5, 15]);
     ctx.moveTo(canvas.width / 2, 0);
     ctx.lineTo(canvas.width / 2, canvas.height);
     ctx.stroke();
@@ -307,11 +297,11 @@ function draw() {
     }
 
     if (showWinScreen) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillStyle = 'rgba(0,0,0,0.7)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = '#FFF';
         ctx.fillText(`${winner} Wins!`, canvas.width / 2 - 80, canvas.height / 2);
-        ctx.fillText('Game restarts in ' + countdown + '...', canvas.width / 2 - 150, canvas.height / 2 + 50);
+        ctx.fillText(`Game restarts in ${countdown}...`, canvas.width / 2 - 150, canvas.height / 2 + 50);
     }
 
     if (powerUpActive) {
@@ -345,9 +335,16 @@ function startCountdown() {
 function gameLoop() {
     update();
     draw();
-    if (gameRunning || showWinScreen) {
-        requestAnimationFrame(gameLoop);
-    }
+    if (gameRunning || showWinScreen) requestAnimationFrame(gameLoop);
+}
+
+function adjustGameSpeed(amount) {
+    gameSpeed = Math.max(0.5, Math.min(2, gameSpeed + amount));
+    balls.forEach(ball => {
+        ball.speedX *= (1 + amount);
+        ball.speedY *= (1 + amount);
+    });
+    player2Speed *= (1 + amount);
 }
 
 document.addEventListener('keydown', controlHandler);
@@ -364,19 +361,6 @@ function showFPS(time) {
     requestAnimationFrame(showFPS);
 }
 requestAnimationFrame(showFPS);
-
-let gameSpeed = 1;
-document.getElementById('increaseSpeed').addEventListener('click', () => adjustGameSpeed(0.1));
-document.getElementById('decreaseSpeed').addEventListener('click', () => adjustGameSpeed(-0.1));
-
-function adjustGameSpeed(amount) {
-    gameSpeed = Math.max(0.5, Math.min(2, gameSpeed + amount));
-    balls.forEach(ball => {
-        ball.speedX *= (1 + amount);
-        ball.speedY *= (1 + amount);
-    });
-    player2Speed *= (1 + amount);
-}
 
 displayHighScores();
 startGame('ai-vs-ai');
