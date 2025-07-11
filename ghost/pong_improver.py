@@ -61,14 +61,14 @@ def update_pong_history(summary):
 def generate_summary(prompt_for_code_gen, openai_client):
     print("Generating summary of intended changes...")
     try:
-        summary_prompt = f"""
-Based on the following prompt for code generation, provide a concise, human-readable summary (1-2 sentences) of the intended improvements or features. Focus on what the AI is being asked to do, not how it will do it.
+        summary_prompt_template = (
+            "Based on the following prompt for code generation, provide a concise, human-readable summary (1-2 sentences) of the intended improvements or features. "
+            "Focus on what the AI is being asked to do, not how it will do it.\n\n"
+            "Prompt:\n\"\"\"{}\"\"\"\n\n"
+            "Summary:\n"
+        )
+        summary_prompt = summary_prompt_template.format(prompt_for_code_gen)
 
-Prompt:
-"""{prompt_for_code_gen}"""
-
-Summary:
-"""
         response = openai_client.chat.completions.create(
             model="gpt-4o",
             messages=[
@@ -78,9 +78,12 @@ Summary:
             temperature=0.5,
             max_tokens=100
         )
+
+        # Fix: access message correctly
         summary = response.choices[0].message.content.strip()
         print(f"Generated summary: {summary}")
         return summary
+
     except Exception as e:
         print(f"Error generating summary from OpenAI: {e}")
         return "Failed to generate summary due to API error."
@@ -88,28 +91,16 @@ Summary:
 def improve_pong_game(js_code, css_code, html_code, openai_client):
     print("Calling OpenAI API to improve Pong game (JS, CSS, HTML)...")
     try:
-        prompt_content = f"""
-You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
+        prompt_content = (
+            "You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. "
+            "Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.\n\n" +
+            "Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.\n\n" +
+            "---JS_CODE---\n{}\n---CSS_CODE---\n{}\n---HTML_CODE---\n{}\n\n" +
+            "Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.\n" +
+            "Return the improved code using the following format:\n\n" +
+            "---JS_CODE---\n// Improved JavaScript code here\n---CSS_CODE---\n/* Improved CSS code here */\n---HTML_CODE---\n<!-- Improved HTML code here -->\n"
+        ).format(js_code, css_code, html_code)
 
-Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
-
----JS_CODE---
-{js_code}
----CSS_CODE---
-{css_code}
----HTML_CODE---
-{html_code}
-
-Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.
-Return the improved code using the following format:
-
----JS_CODE---
-// Improved JavaScript code here
----CSS_CODE---
-/* Improved CSS code here */
----HTML_CODE---
-<!-- Improved HTML code here -->
-"""
         response = openai_client.chat.completions.create(
             model="gpt-4o", # Using gpt-4o for better code generation
             messages=[
@@ -151,28 +142,17 @@ def main():
 
     # The prompt for code generation is embedded in the improve_pong_game function
     # We extract it here to pass to generate_summary
-    prompt_for_summary_generation = f"""
-You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
+    prompt_for_summary_generation_template = (
+        "You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. "
+        "Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.\n\n" +
+        "Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.\n\n" +
+        "---JS_CODE---\n{}\n---CSS_CODE---\n{}\n---HTML_CODE---\n{}\n\n" +
+        "Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.\n" +
+        "Return the improved code using the following format:\n\n" +
+        "---JS_CODE---\n// Improved JavaScript code here\n---CSS_CODE---\n/* Improved CSS code here */\n---HTML_CODE---\n<!-- Improved HTML code here -->\n"
+    )
+    prompt_for_summary_generation = prompt_for_summary_generation_template.format(current_js_code, current_css_code, current_html_code)
 
-Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
-
----JS_CODE---
-{current_js_code}
----CSS_CODE---
-{current_css_code}
----HTML_CODE---
-{current_html_code}
-
-Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.
-Return the improved code using the following format:
-
----JS_CODE---
-// Improved JavaScript code here
----CSS_CODE---
-/* Improved CSS code here */
----HTML_CODE---
-<!-- Improved HTML code here -->
-"""
     summary_of_changes = generate_summary(prompt_for_summary_generation, openai_client)
 
     # Update history with the summary BEFORE sending to OpenAI for code changes
