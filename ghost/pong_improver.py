@@ -7,7 +7,7 @@ from datetime import datetime
 
 PONG_JS_PATH = "assets/js/pong.js"
 PONG_CSS_PATH = "assets/css/pong.css"
-PONG_HTML_PATH = "_layouts/game.html"
+PONG_HTML_PATH = "_includes/pong_game_content.html"
 PONG_HISTORY_PATH = "_data/pong_history.yml"
 
 def read_file_content(file_path):
@@ -80,7 +80,7 @@ def improve_pong_game(js_code, css_code, html_code, openai_client):
     print("Calling OpenAI API to improve Pong game (JS, CSS, HTML)...")
     try:
         prompt_content = f"""
-You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and HTML code for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
+You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
 
 Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
 
@@ -144,7 +144,7 @@ def main():
     # The prompt for code generation is embedded in the improve_pong_game function
     # We extract it here to pass to generate_summary
     prompt_for_summary = f"""
-You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and HTML code for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
+You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
 
 Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
 

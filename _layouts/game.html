@@ -1,14 +1,13 @@
+---
+layout: default
+---
+
 <main class="container-md">
   <div class="row">
     <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
       <h1 class="post-title">Pong</h1>
       <hr>
-      <canvas id="pongCanvas" width="600" height="400"></canvas>
-      <div class="game-controls">
-        <p>Use Up/Down arrows to move the right paddle.</p>
-        <button id="startGame">Start Game</button>
-        <button id="pauseGame">Pause/Resume</button>
-      </div>
+      {% include pong_game_content.html %}
 
       <h2 class="mt-5">Code Evolution History</h2>
       <div class="code-history" style="max-height: 500px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
