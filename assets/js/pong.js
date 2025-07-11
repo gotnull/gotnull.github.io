@@ -21,15 +21,17 @@ let gameMode = 'ai-vs-ai'; // Default mode is AI vs AI
 let player2Speed = 0; // Speed for player 2 when user controlled
 
 document.getElementById('startGame').addEventListener('click', () => {
-    // If game is already running (AI vs AI), just switch mode and reset
+    startGame('player-vs-ai');
+});
+
+function startGame(mode) {
     gameRunning = true;
     player1Score = 0;
     player2Score = 0;
-    gameMode = 'player-vs-ai'; // Switch mode when player starts
+    gameMode = mode;
     console.log('Game mode switched to:', gameMode);
     resetBall();
-    // No need to call gameLoop() again if it's already running
-});
+}
 
 function drawRect(x, y, width, height, color) {
     ctx.fillStyle = color;
@@ -46,7 +48,7 @@ function drawCircle(x, y, radius, color) {
 function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
-    ballSpeedX = ballSpeedX > 0 ? -5 : 5; // Ensure ball always serves in opposite direction
+    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5; // Random starting direction
     ballSpeedY = (Math.random() * 10) - 5; // Random vertical speed
 }
 

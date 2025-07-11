@@ -39,3 +39,10 @@ body.dark-mode .game-controls button:hover {
   font-size: 1.1em;
   color: #FFF;
 }
+
+@media (max-width: 600px) {
+  #pongCanvas {
+    width: 100%;
+    height: auto;
+  }
+}
