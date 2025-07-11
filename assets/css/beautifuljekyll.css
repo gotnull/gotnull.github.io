@@ -1026,7 +1026,62 @@ pre {
   border: unset;
 }
 
-/* --- Social media sharing section --- */
+/* Table of Contents */
+.blog-post #post-toc {
+  background-color: var(--page-col);
+  border: 1px solid var(--navbar-border-col);
+  padding: 15px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.blog-post #post-toc h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: var(--text-col);
+}
+
+.blog-post #post-toc ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.blog-post #post-toc ul ul {
+  padding-left: 20px;
+}
+
+.blog-post #post-toc li a {
+  color: var(--link-col);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.blog-post #post-toc li a:hover {
+  color: var(--hover-col);
+}
+
+.blog-post #post-toc li a.active {
+  font-weight: bold;
+  color: var(--hover-col);
+}
+
+body.dark-mode .blog-post #post-toc {
+  background-color: #21252b;
+  border-color: #3e4451;
+}
+
+body.dark-mode .blog-post #post-toc h3,
+body.dark-mode .blog-post #post-toc li a {
+  color: #abb2bf;
+}
+
+body.dark-mode .blog-post #post-toc li a:hover,
+body.dark-mode .blog-post #post-toc li a.active {
+  color: #98c379;
+}
+
+
 
 #social-share-section {
   margin-bottom: 1.875rem;

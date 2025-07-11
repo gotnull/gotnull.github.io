@@ -39,7 +39,8 @@ layout: base
         </div>
       {% endif %}
 
-      <div class="blog-post">
+      <div class="blog-post" id="post-content">
+        <div id="post-toc"></div>
         {{ content }}
       </div>
 
@@ -58,6 +59,22 @@ layout: base
             {% include {{ file }} %}
           {% endfor %}
         </div>
+      {% endif %}
+
+      {% if page.tags.size > 0 %}
+        {% assign max_related_posts = site.related_posts_limit | default: 3 %}
+        {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | where_exp: "post", "post.tags contains page.tags[0]" | sample: max_related_posts %}
+
+        {% if related_posts.size > 0 %}
+        <div class="related-posts">
+          <h4>Related Posts</h4>
+          <ul>
+            {% for post in related_posts %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
       {% endif %}
 
       {% if page.social-share %}
