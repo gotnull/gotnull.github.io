@@ -5,7 +5,7 @@ const paddleWidth = 10;
 const paddleHeight = 100;
 const ballSize = 10;
 
-const soundEffect = new Audio('bounce.mp3');
+const soundEffect = new Audio('/assets/audio/bounce.mp3');
 
 let player1Y = canvas.height / 2 - paddleHeight / 2;
 let player2Y = canvas.height / 2 - paddleHeight / 2;
