@@ -49,6 +49,7 @@ document.getElementById('changeTheme').addEventListener('click', changeTheme);
 document.getElementById('toggleSound').addEventListener('click', toggleSound);
 document.getElementById('increaseSpeed').addEventListener('click', () => adjustGameSpeed(0.1));
 document.getElementById('decreaseSpeed').addEventListener('click', () => adjustGameSpeed(-0.1));
+document.getElementById('resetHighScores').addEventListener('click', resetHighScores);
 
 function displayHighScores() {
     document.getElementById('highScores').innerText = `High Scores - Player 1: ${highScores.player1}, Player 2: ${highScores.player2}`;
@@ -57,6 +58,12 @@ function displayHighScores() {
 function updateHighScores() {
     if (player1Score > highScores.player1) highScores.player1 = player1Score;
     if (player2Score > highScores.player2) highScores.player2 = player2Score;
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    displayHighScores();
+}
+
+function resetHighScores() {
+    highScores = { player1: 0, player2: 0 };
     localStorage.setItem('highScores', JSON.stringify(highScores));
     displayHighScores();
 }
@@ -139,6 +146,7 @@ function handlePowerUpEffect() {
     switch (currentPowerUpType) {
         case 'speed':
             ballSpeedMultiplier = 1.5;
+            setTimeout(() => ballSpeedMultiplier = 1, 10000);
             break;
         case 'shrinkPaddle':
             paddleHeight = Math.max(paddleHeight - 20, 40);
