@@ -30,5 +30,7 @@ jobs:
         git config --global user.name 'Lester Knight Chaykin'
         git config --global user.email 'lester@4511932.com'
         git add assets/js/pong.js
+        git add assets/css/pong.css
+        git add _layouts/game.html
         git commit -m "Automated Pong game improvement" || echo "No changes to commit"
         git push
