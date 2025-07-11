@@ -39,6 +39,22 @@ body.dark-mode {
   --mid-col: #5c6370;
 }
 
+body.dark-mode .highlight > pre,
+body.dark-mode code {
+  background-color: #f8f8f8; /* Light background for code blocks in dark mode */
+  color: #333; /* Dark text for code blocks in dark mode */
+}
+
+body.dark-mode .highlight > pre {
+  border-color: rgba(0,0,0,0.1); /* Adjust border color for contrast */
+  border-left-color: #444; /* Keep the left border color */
+}
+
+body.dark-mode code {
+  background-color: #f9f2f4; /* Light background for inline code */
+  color: #c7254e; /* Keep original inline code color */
+}
+
 
 /* --- General --- */
 
