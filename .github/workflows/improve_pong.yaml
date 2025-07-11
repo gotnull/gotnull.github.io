@@ -1,7 +1,9 @@
 name: Improve Pong Game
 
 on:
-  workflow_dispatch: # Allows manual triggering
+  schedule:
+    - cron: '11 13 * * *'  # 11:11 PM AEST = 13:11 UTC
+  workflow_dispatch:
 
 jobs:
   improve-pong:
