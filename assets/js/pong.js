@@ -15,7 +15,7 @@ let ballSpeedY = 5;
 let player1Score = 0;
 let player2Score = 0;
 
-let gameRunning = true; // Game starts running by default
+let gameRunning = false; // Game starts paused by default
 let gameMode = 'ai-vs-ai'; // Default mode is AI vs AI
 
 let player2Speed = 0; // Speed for player 2 when user controlled
@@ -24,6 +24,8 @@ document.getElementById('startGame').addEventListener('click', () => {
     startGame('player-vs-ai');
 });
 
+document.getElementById('pauseGame').addEventListener('click', togglePause);
+
 function startGame(mode) {
     gameRunning = true;
     player1Score = 0;
@@ -31,6 +33,14 @@ function startGame(mode) {
     gameMode = mode;
     console.log('Game mode switched to:', gameMode);
     resetBall();
+    gameLoop();
+}
+
+function togglePause() {
+    gameRunning = !gameRunning;
+    if (gameRunning) {
+        gameLoop();
+    }
 }
 
 function drawRect(x, y, width, height, color) {
@@ -150,5 +160,8 @@ document.addEventListener('keyup', (e) => {
     }
 });
 
-// Initial game start
-gameLoop();
+// Initial instructions
+drawRect(0, 0, canvas.width, canvas.height, '#000');
+ctx.font = '30px Arial';
+ctx.fillStyle = '#FFF';
+ctx.fillText('Press Start to Begin', canvas.width / 2 - 150, canvas.height / 2);

@@ -3,6 +3,7 @@
   border: 2px solid #FFF;
   display: block;
   margin: 20px auto;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .game-controls {
@@ -19,6 +20,7 @@
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  margin: 0 5px;
 }
 
 .game-controls button:hover {
@@ -45,8 +47,4 @@ body.dark-mode .game-controls button:hover {
     width: 100%;
     height: auto;
   }
-}
-
-#pongCanvas {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
