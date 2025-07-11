@@ -201,7 +201,4 @@ document.addEventListener('keyup', (e) => {
     }
 });
 
-drawRect(0, 0, canvas.width, canvas.height, '#000');
-ctx.font = '30px Arial';
-ctx.fillStyle = '#FFF';
-ctx.fillText('Press Start to Begin', canvas.width / 2 - 150, canvas.height / 2);
+startGame('ai-vs-ai');
