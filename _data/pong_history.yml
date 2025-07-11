@@ -133,3 +133,10 @@ history:
     experience during countdowns, and the instructions detail the gameplay features
     such as power-ups and winning conditions.
   timestamp: '2025-07-11 12:54:41'
+- summary: The improved code introduces a new feature that allows players to adjust
+    the AI difficulty level through a dropdown menu with options for "easy," "medium,"
+    and "hard." This addition is reflected in the HTML with a new `<select>` element
+    and in the JavaScript with a new event listener that modifies the AI's speed based
+    on the selected difficulty. The CSS has been updated to style the new dropdown
+    menu consistently with the existing buttons.
+  timestamp: '2025-07-11 13:04:13'
