@@ -1,3 +1,5 @@
+// Added feature: Power-up to temporarily reverse player controls and refactored code for readability
+
 const canvas = document.getElementById('pongCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -40,7 +42,7 @@ const winSound = new Audio('/assets/audio/win.mp3');
 const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
 let currentTheme = 0;
 
-const powerUpTypes = ['speed', 'shrinkPaddle'];
+const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls'];
 let currentPowerUpType = '';
 
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
@@ -140,13 +142,54 @@ function checkPowerUpCollision() {
 }
 
 function handlePowerUpEffect() {
-    if (currentPowerUpType === 'speed') {
-        ballSpeedMultiplier = 1.5;
-    } else if (currentPowerUpType === 'shrinkPaddle') {
-        paddleHeight = Math.max(paddleHeight - 20, 40);
-        setTimeout(() => {
-            paddleHeight = 100; // Reset paddle size after 10 seconds
-        }, 10000);
+    switch (currentPowerUpType) {
+        case 'speed':
+            ballSpeedMultiplier = 1.5;
+            break;
+        case 'shrinkPaddle':
+            paddleHeight = Math.max(paddleHeight - 20, 40);
+            setTimeout(() => {
+                paddleHeight = 100; // Reset paddle size after 10 seconds
+            }, 10000);
+            break;
+        case 'reverseControls':
+            reverseControls();
+            setTimeout(() => {
+                reverseControls(); // Revert controls after 10 seconds
+            }, 10000);
+            break;
+    }
+}
+
+function reverseControls() {
+    document.removeEventListener('keydown', controlHandler);
+    document.removeEventListener('keyup', controlHandler);
+    document.addEventListener('keydown', reverseControlHandler);
+    document.addEventListener('keyup', reverseControlHandler);
+}
+
+function reverseControlHandler(e) {
+    if (gameMode === 'player-vs-ai' || gameMode === 'multiplayer') {
+        if (e.type === 'keydown') {
+            if (e.key === 'w') player1Y = Math.min(player1Y + 5, canvas.height - paddleHeight);
+            if (e.key === 's') player1Y = Math.max(player1Y - 5, 0);
+            if (e.key === 'ArrowUp') player2Speed = 5;
+            if (e.key === 'ArrowDown') player2Speed = -5;
+        } else if (e.type === 'keyup') {
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') player2Speed = 0;
+        }
+    }
+}
+
+function controlHandler(e) {
+    if (gameMode === 'player-vs-ai') {
+        if (e.key === 'ArrowUp') player2Speed = -5;
+        else if (e.key === 'ArrowDown') player2Speed = 5;
+    } else if (gameMode === 'multiplayer') {
+        if (e.key === 'w') player1Y = Math.max(player1Y - 5, 0);
+        else if (e.key === 's') player1Y = Math.min(player1Y + 5, canvas.height - paddleHeight);
+        if (e.key === 'ArrowUp') player2Speed = -5;
+        else if (e.key === 'ArrowDown') player2Speed = 5;
     }
 }
 
@@ -234,7 +277,7 @@ function draw() {
     ctx.stroke();
 
     if (powerUpActive && powerUpVisible) {
-        drawCircle(powerUpX, powerUpY, 15, currentPowerUpType === 'speed' ? '#FFD700' : '#FF6347');
+        drawCircle(powerUpX, powerUpY, 15, getPowerUpColor(currentPowerUpType));
     }
 
     if (showWinScreen) {
@@ -243,6 +286,14 @@ function draw() {
         ctx.fillStyle = '#FFF';
         ctx.fillText(`${winner} Wins!`, canvas.width / 2 - 80, canvas.height / 2);
         ctx.fillText('Game restarts in ' + countdown + '...', canvas.width / 2 - 150, canvas.height / 2 + 50);
+    }
+}
+
+function getPowerUpColor(type) {
+    switch (type) {
+        case 'speed': return '#FFD700';
+        case 'shrinkPaddle': return '#FF6347';
+        case 'reverseControls': return '#8A2BE2';
     }
 }
 
@@ -265,35 +316,8 @@ function gameLoop() {
     }
 }
 
-document.addEventListener('keydown', (e) => {
-    if (gameMode === 'player-vs-ai') {
-        if (e.key === 'ArrowUp') {
-            player2Speed = -5;
-        } else if (e.key === 'ArrowDown') {
-            player2Speed = 5;
-        }
-    } else if (gameMode === 'multiplayer') {
-        if (e.key === 'w') {
-            player1Y = Math.max(player1Y - 5, 0);
-        } else if (e.key === 's') {
-            player1Y = Math.min(player1Y + 5, canvas.height - paddleHeight);
-        }
-        if (e.key === 'ArrowUp') {
-            player2Speed = -5;
-        } else if (e.key === 'ArrowDown') {
-            player2Speed = 5;
-        }
-    }
-});
-
-document.addEventListener('keyup', (e) => {
-    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-        player2Speed = 0;
-    }
-    if (e.key === 'w' || e.key === 's') {
-        player2Speed = 0;
-    }
-});
+document.addEventListener('keydown', controlHandler);
+document.addEventListener('keyup', controlHandler);
 
 // New feature: Display FPS
 let lastFrameTime = 0;
