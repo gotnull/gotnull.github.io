@@ -73,6 +73,7 @@ function startGame(mode) {
     balls = [createBall()];
     resetBall(balls[0]);
     spawnPowerUp();
+    document.getElementById('backgroundMusic').play();
     gameLoop();
 }
 
@@ -99,6 +100,7 @@ function changeTheme() {
 function toggleSound() {
     soundEnabled = !soundEnabled;
     document.getElementById('toggleSound').innerText = soundEnabled ? 'Sound: On' : 'Sound: Off';
+    document.getElementById('backgroundMusic').muted = !soundEnabled;
 }
 
 function drawRect(x, y, width, height, color) {
