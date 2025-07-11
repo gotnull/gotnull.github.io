@@ -1,12 +1,10 @@
-name: Generate AGI Blog Post
+name: Improve Pong Game
 
 on:
-  schedule:
-    - cron: '11 13 * * *'  # 11:11 PM AEST = 13:11 UTC
-  workflow_dispatch:
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-  ghost-writer:
+  improve-pong:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,18 +16,17 @@ jobs:
         python-version: '3.11'
 
     - name: Install dependencies
-      run: |
-        pip install openai requests beautifulsoup4 python-dotenv pyyaml
+      run: pip install openai
 
-    - name: Run ghost writer
+    - name: Run Pong Improver
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: python ghost/ghost_writer.py
+      run: python ghost/pong_improver.py
 
-    - name: Commit changes
+    - name: Commit changes to pong.js
       run: |
         git config --global user.name 'Lester Knight Chaykin'
         git config --global user.email 'lester@4511932.com'
-        git add _posts/*.md
-        git commit -m "Automated AGI blog post" || echo "No changes to commit"
+        git add assets/js/pong.js
+        git commit -m "Automated Pong game improvement" || echo "No changes to commit"
         git push
