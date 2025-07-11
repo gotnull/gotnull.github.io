@@ -1,4 +1,4 @@
-// Added feature: Power-up to temporarily reverse player controls and refactored code for readability
+// Added feature: New "Invisible Ball" power-up and refactored code for better organization
 
 const canvas = document.getElementById('pongCanvas');
 const ctx = canvas.getContext('2d');
@@ -42,8 +42,9 @@ const winSound = new Audio('/assets/audio/win.mp3');
 const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
 let currentTheme = 0;
 
-const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls'];
+const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall'];
 let currentPowerUpType = '';
+let ballVisible = true; // New variable to handle invisible ball state
 
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
@@ -78,6 +79,7 @@ function startGame(mode) {
     gameMode = mode;
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
     ballSpeedMultiplier = 1; // Reset multiplier at the start of a new game
+    ballVisible = true; // Ensure ball is visible at the start of the game
     resetBall();
     spawnPowerUp();
     gameLoop();
@@ -157,6 +159,12 @@ function handlePowerUpEffect() {
             setTimeout(() => {
                 reverseControls(); // Revert controls after 10 seconds
             }, 10000);
+            break;
+        case 'invisibleBall':
+            ballVisible = false;
+            setTimeout(() => {
+                ballVisible = true; // Make the ball visible again after 5 seconds
+            }, 5000);
             break;
     }
 }
@@ -262,7 +270,7 @@ function draw() {
     drawRect(0, 0, canvas.width, canvas.height, '#000');
     drawRect(0, player1Y, paddleWidth, paddleHeight, '#FFF');
     drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, '#FFF');
-    drawCircle(ballX, ballY, ballSize, '#FFF');
+    if (ballVisible) drawCircle(ballX, ballY, ballSize, '#FFF');
 
     ctx.font = '30px Arial';
     ctx.fillStyle = '#FFF';
@@ -294,6 +302,7 @@ function getPowerUpColor(type) {
         case 'speed': return '#FFD700';
         case 'shrinkPaddle': return '#FF6347';
         case 'reverseControls': return '#8A2BE2';
+        case 'invisibleBall': return '#00CED1';
     }
 }
 
