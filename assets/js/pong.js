@@ -1,4 +1,4 @@
-// Added feature: New "Invisible Ball" power-up and refactored code for better organization
+// Added feature: New "Multiball" power-up that introduces multiple balls into play
 
 const canvas = document.getElementById('pongCanvas');
 const ctx = canvas.getContext('2d');
@@ -11,12 +11,10 @@ const soundEffect = new Audio('/assets/audio/bounce.mp3');
 
 let player1Y = canvas.height / 2 - paddleHeight / 2;
 let player2Y = canvas.height / 2 - paddleHeight / 2;
-let ballX = canvas.width / 2;
-let ballY = canvas.height / 2;
-const INITIAL_BALL_SPEED = 5;
-let ballSpeedX = INITIAL_BALL_SPEED;
-let ballSpeedY = INITIAL_BALL_SPEED;
+let initialBall = { x: canvas.width / 2, y: canvas.height / 2, speedX: INITIAL_BALL_SPEED, speedY: INITIAL_BALL_SPEED };
+let balls = [initialBall];
 
+const INITIAL_BALL_SPEED = 5;
 let ballSpeedMultiplier = 1;
 
 let player1Score = 0;
@@ -36,15 +34,14 @@ let winner = '';
 let countdown = 5;
 let countdownInterval;
 
-// New variables for sound effects, themes, power-up types, and new multiplayer feature
 const hitSound = new Audio('/assets/audio/hit.mp3');
 const winSound = new Audio('/assets/audio/win.mp3');
 const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
 let currentTheme = 0;
 
-const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall'];
+const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall', 'multiball'];
 let currentPowerUpType = '';
-let ballVisible = true; // New variable to handle invisible ball state
+let ballVisible = true;
 
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
@@ -53,7 +50,6 @@ document.getElementById('toggleSound').addEventListener('click', toggleSound);
 
 let soundEnabled = true;
 
-// New feature: Local Storage for saving high scores
 let highScores = JSON.parse(localStorage.getItem('highScores')) || { player1: 0, player2: 0 };
 
 function displayHighScores() {
@@ -78,8 +74,9 @@ function startGame(mode) {
     player2Score = 0;
     gameMode = mode;
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
-    ballSpeedMultiplier = 1; // Reset multiplier at the start of a new game
-    ballVisible = true; // Ensure ball is visible at the start of the game
+    ballSpeedMultiplier = 1;
+    ballVisible = true;
+    balls = [initialBall]; // Reset balls
     resetBall();
     spawnPowerUp();
     gameLoop();
@@ -116,10 +113,12 @@ function drawCircle(x, y, radius, color) {
 }
 
 function resetBall() {
-    ballX = canvas.width / 2;
-    ballY = canvas.height / 2;
-    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
-    ballSpeedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
+    balls.forEach(ball => {
+        ball.x = canvas.width / 2;
+        ball.y = canvas.height / 2;
+        ball.speedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
+        ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
+    });
 }
 
 function spawnPowerUp() {
@@ -134,9 +133,9 @@ function spawnPowerUp() {
     }, 10000);
 }
 
-function checkPowerUpCollision() {
-    const distX = Math.abs(ballX - powerUpX);
-    const distY = Math.abs(ballY - powerUpY);
+function checkPowerUpCollision(ball) {
+    const distX = Math.abs(ball.x - powerUpX);
+    const distY = Math.abs(ball.y - powerUpY);
     if (distX < ballSize && distY < ballSize) {
         handlePowerUpEffect();
         powerUpVisible = false;
@@ -151,21 +150,30 @@ function handlePowerUpEffect() {
         case 'shrinkPaddle':
             paddleHeight = Math.max(paddleHeight - 20, 40);
             setTimeout(() => {
-                paddleHeight = 100; // Reset paddle size after 10 seconds
+                paddleHeight = 100;
             }, 10000);
             break;
         case 'reverseControls':
             reverseControls();
             setTimeout(() => {
-                reverseControls(); // Revert controls after 10 seconds
+                reverseControls();
             }, 10000);
             break;
         case 'invisibleBall':
             ballVisible = false;
             setTimeout(() => {
-                ballVisible = true; // Make the ball visible again after 5 seconds
+                ballVisible = true;
             }, 5000);
             break;
+        case 'multiball':
+            addAdditionalBalls();
+            break;
+    }
+}
+
+function addAdditionalBalls() {
+    if (balls.length < 3) {
+        balls.push({ x: canvas.width / 2, y: canvas.height / 2, speedX: INITIAL_BALL_SPEED, speedY: INITIAL_BALL_SPEED });
     }
 }
 
@@ -204,65 +212,67 @@ function controlHandler(e) {
 function update() {
     if (!gameRunning || showWinScreen) return;
 
-    player1Y += (ballY - (player1Y + paddleHeight / 2)) * 0.1;
+    player1Y += (balls[0].y - (player1Y + paddleHeight / 2)) * 0.1;
     player1Y = Math.max(0, Math.min(canvas.height - paddleHeight, player1Y));
 
-    ballX += ballSpeedX;
-    ballY += ballSpeedY;
+    balls.forEach(ball => {
+        ball.x += ball.speedX;
+        ball.y += ball.speedY;
 
-    if (ballY < 0 || ballY > canvas.height - ballSize) {
-        ballSpeedY = -ballSpeedY;
-        if (soundEnabled) hitSound.play();
-    }
-
-    if (ballX < paddleWidth && ballY > player1Y && ballY < player1Y + paddleHeight) {
-        ballSpeedX = -ballSpeedX;
-        let deltaY = ballY - (player1Y + paddleHeight / 2);
-        ballSpeedY = deltaY * 0.35;
-        if (soundEnabled) hitSound.play();
-    } else if (ballX > canvas.width - paddleWidth - ballSize && ballY > player2Y && ballY < player2Y + paddleHeight) {
-        ballSpeedX = -ballSpeedX;
-        let deltaY = ballY - (player2Y + paddleHeight / 2);
-        ballSpeedY = deltaY * 0.35;
-        if (soundEnabled) hitSound.play();
-    }
-
-    if (ballX < 0) {
-        player2Score++;
-        if (player2Score >= winningScore) {
-            winner = 'Player 2';
-            showWinScreen = true;
-            if (soundEnabled) winSound.play();
-            gameRunning = false;
-            updateHighScores();
-            startCountdown();
+        if (ball.y < 0 || ball.y > canvas.height - ballSize) {
+            ball.speedY = -ball.speedY;
+            if (soundEnabled) hitSound.play();
         }
-        resetBall();
-        if (!powerUpActive) spawnPowerUp();
-    } else if (ballX > canvas.width - ballSize) {
-        player1Score++;
-        if (player1Score >= winningScore) {
-            winner = 'Player 1';
-            showWinScreen = true;
-            if (soundEnabled) winSound.play();
-            gameRunning = false;
-            updateHighScores();
-            startCountdown();
+
+        if (ball.x < paddleWidth && ball.y > player1Y && ball.y < player1Y + paddleHeight) {
+            ball.speedX = -ball.speedX;
+            let deltaY = ball.y - (player1Y + paddleHeight / 2);
+            ball.speedY = deltaY * 0.35;
+            if (soundEnabled) hitSound.play();
+        } else if (ball.x > canvas.width - paddleWidth - ballSize && ball.y > player2Y && ball.y < player2Y + paddleHeight) {
+            ball.speedX = -ball.speedX;
+            let deltaY = ball.y - (player2Y + paddleHeight / 2);
+            ball.speedY = deltaY * 0.35;
+            if (soundEnabled) hitSound.play();
         }
-        resetBall();
-        if (!powerUpActive) spawnPowerUp();
-    }
+
+        if (ball.x < 0) {
+            player2Score++;
+            if (player2Score >= winningScore) {
+                winner = 'Player 2';
+                showWinScreen = true;
+                if (soundEnabled) winSound.play();
+                gameRunning = false;
+                updateHighScores();
+                startCountdown();
+            }
+            resetBall();
+            if (!powerUpActive) spawnPowerUp();
+        } else if (ball.x > canvas.width - ballSize) {
+            player1Score++;
+            if (player1Score >= winningScore) {
+                winner = 'Player 1';
+                showWinScreen = true;
+                if (soundEnabled) winSound.play();
+                gameRunning = false;
+                updateHighScores();
+                startCountdown();
+            }
+            resetBall();
+            if (!powerUpActive) spawnPowerUp();
+        }
+
+        if (powerUpActive && powerUpVisible) {
+            checkPowerUpCollision(ball);
+        }
+    });
 
     if (gameMode === 'ai-vs-ai') {
-        player2Y += (ballY - (player2Y + paddleHeight / 2)) * 0.1;
+        player2Y += (balls[0].y - (player2Y + paddleHeight / 2)) * 0.1;
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
     } else if (gameMode === 'player-vs-ai') {
         player2Y += player2Speed;
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
-    }
-
-    if (powerUpActive && powerUpVisible) {
-        checkPowerUpCollision();
     }
 }
 
@@ -270,7 +280,9 @@ function draw() {
     drawRect(0, 0, canvas.width, canvas.height, '#000');
     drawRect(0, player1Y, paddleWidth, paddleHeight, '#FFF');
     drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, '#FFF');
-    if (ballVisible) drawCircle(ballX, ballY, ballSize, '#FFF');
+    balls.forEach(ball => {
+        if (ballVisible) drawCircle(ball.x, ball.y, ballSize, '#FFF');
+    });
 
     ctx.font = '30px Arial';
     ctx.fillStyle = '#FFF';
@@ -303,6 +315,7 @@ function getPowerUpColor(type) {
         case 'shrinkPaddle': return '#FF6347';
         case 'reverseControls': return '#8A2BE2';
         case 'invisibleBall': return '#00CED1';
+        case 'multiball': return '#32CD32';
     }
 }
 
@@ -328,7 +341,6 @@ function gameLoop() {
 document.addEventListener('keydown', controlHandler);
 document.addEventListener('keyup', controlHandler);
 
-// New feature: Display FPS
 let lastFrameTime = 0;
 function showFPS(time) {
     const delta = time - lastFrameTime;
@@ -341,17 +353,18 @@ function showFPS(time) {
 }
 requestAnimationFrame(showFPS);
 
-// New Feature: Game Speed Adjustment
 let gameSpeed = 1;
 document.getElementById('increaseSpeed').addEventListener('click', () => adjustGameSpeed(0.1));
 document.getElementById('decreaseSpeed').addEventListener('click', () => adjustGameSpeed(-0.1));
 
 function adjustGameSpeed(amount) {
     gameSpeed = Math.max(0.5, Math.min(2, gameSpeed + amount));
-    ballSpeedX *= (1 + amount);
-    ballSpeedY *= (1 + amount);
+    balls.forEach(ball => {
+        ball.speedX *= (1 + amount);
+        ball.speedY *= (1 + amount);
+    });
     player2Speed *= (1 + amount);
 }
 
-displayHighScores(); // Display high scores on load
+displayHighScores();
 startGame('ai-vs-ai');
