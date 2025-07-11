@@ -24,11 +24,16 @@ let player2Speed = 0;
 let powerUpActive = false;
 let powerUpX, powerUpY;
 
-// Start and pause game buttons
+// Add new feature: Set winning score and show victory message
+const winningScore = 5;
+let showWinScreen = false;
+let winner = '';
+
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
 
 function startGame(mode) {
+    showWinScreen = false;
     gameRunning = true;
     player1Score = 0;
     player2Score = 0;
@@ -40,6 +45,7 @@ function startGame(mode) {
 }
 
 function togglePause() {
+    if (showWinScreen) return; // Prevent pause after game ends
     gameRunning = !gameRunning;
     if (gameRunning) {
         gameLoop();
@@ -85,7 +91,7 @@ function checkPowerUpCollision() {
 }
 
 function update() {
-    if (!gameRunning) return;
+    if (!gameRunning || showWinScreen) return;
 
     player1Y += (ballY - (player1Y + paddleHeight / 2)) * 0.1;
     player1Y = Math.max(0, Math.min(canvas.height - paddleHeight, player1Y));
@@ -112,10 +118,18 @@ function update() {
 
     if (ballX < 0) {
         player2Score++;
+        if (player2Score >= winningScore) {
+            winner = 'Player 2';
+            showWinScreen = true;
+        }
         resetBall();
         if (!powerUpActive) spawnPowerUp();
     } else if (ballX > canvas.width - ballSize) {
         player1Score++;
+        if (player1Score >= winningScore) {
+            winner = 'Player 1';
+            showWinScreen = true;
+        }
         resetBall();
         if (!powerUpActive) spawnPowerUp();
     }
@@ -153,6 +167,14 @@ function draw() {
 
     if (powerUpActive) {
         drawCircle(powerUpX, powerUpY, 15, '#FFD700'); // Draw power-up in gold color
+    }
+
+    if (showWinScreen) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#FFF';
+        ctx.fillText(`${winner} Wins!`, canvas.width / 2 - 80, canvas.height / 2);
+        ctx.fillText('Press Start to Play Again', canvas.width / 2 - 150, canvas.height / 2 + 50);
     }
 }
 
