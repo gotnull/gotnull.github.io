@@ -1129,6 +1129,49 @@ body.dark-mode .blog-post #post-toc li a.active {
   border-left-color: #3CB371;
 }
 
+body.dark-mode .box-success {
+  background-color: #98FB98 !important;
+  border-left-color: #3CB371 !important;
+  color: #404040 !important; /* Ensure text is dark */
+}
+
+body.dark-mode .box-note {
+  background-color: #eee !important;
+  border-left-color: #2980b9 !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .box-warning {
+  background-color: #fdf5d4 !important;
+  border-left-color: #f1c40f !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .box-error {
+  background-color: #f4dddb !important;
+  border-left-color: #c0392b !important;
+  color: #404040 !important;
+}
+
+body.dark-mode table tr {
+  background-color: #ffffff !important;
+}
+
+body.dark-mode table tr:nth-child(2n) {
+  background-color: #f8f8f8 !important;
+}
+
+body.dark-mode table tr th,
+body.dark-mode table tr td {
+  border-color: #cccccc !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .jumbotron {
+  background: #EEE !important;
+  color: #404040 !important;
+}
+
 /* --- Misc blog post styles --- */
 
 .blog-post :first-child {
