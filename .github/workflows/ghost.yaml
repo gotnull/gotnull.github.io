@@ -26,6 +26,11 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: python ghost/ghost_writer.py
 
+    - name: Improve Pong Game
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: python ghost/pong_improver.py
+
     - name: Commit changes
       run: |
         git config --global user.name 'Lester Knight Chaykin'
