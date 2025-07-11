@@ -18,7 +18,7 @@ jobs:
         python-version: '3.11'
 
     - name: Install dependencies
-      run: pip install openai
+      run: pip install openai pyyaml
 
     - name: Run Pong Improver
       env:
