@@ -42,7 +42,6 @@ body.dark-mode {
 body.dark-mode .highlight > pre,
 body.dark-mode code {
   background-color: #f8f8f8 !important; /* Light background for code blocks in dark mode */
-  color: #333 !important; /* Dark text for code blocks in dark mode */
 }
 
 body.dark-mode .highlight > pre {
@@ -52,13 +51,9 @@ body.dark-mode .highlight > pre {
 
 body.dark-mode code {
   background-color: #f9f2f4 !important; /* Light background for inline code */
-  color: #c7254e !important; /* Keep original inline code color */
 }
 
-/* Ensure syntax highlighting colors are not affected by dark mode */
-body.dark-mode .highlight span {
-  color: inherit !important; /* Force inheritance from parent .highlight, which is light */
-}
+
 
 body.dark-mode .commentbox,
 body.dark-mode .commentbox * {
