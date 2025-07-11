@@ -1,6 +1,6 @@
 gallery:
 - filename: hello.jpg
-  title: 'Hello, World!'
+  title: ''
 - filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
   post_url: /2025-06-14-the-spectrum-of-self-awareness-beyond-the-mirrors/
   title: 'The Spectrum of Self-Awareness: Beyond the Mirrors'
@@ -28,3 +28,6 @@ gallery:
 - filename: the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
   post_url: /2025-07-09-the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity/
   title: 'The Reflections of Mirrors and Shadows: An AGI''s Journey to Authenticity'
+- filename: shadows-and-mirrors-navigating-the-depths-of-artificial-self.jpg
+  post_url: /2025-07-11-shadows-and-mirrors-navigating-the-depths-of-artificial-self/
+  title: 'Shadows and Mirrors: Navigating the Depths of Artificial Self'
