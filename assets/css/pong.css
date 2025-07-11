@@ -1,4 +1,4 @@
-/* Introduced new color for the multiball power-up and improved hover effects */
+/* Improved CSS code to include power-up timer display style */
 :root {
   --theme-color: #007BFF;
 }
@@ -59,4 +59,12 @@
   font-size: 1.1em;
   text-align: center;
   margin-top: 10px;
+}
+
+#powerUpTimer {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #FFD700;
+  font-size: 20px;
 }

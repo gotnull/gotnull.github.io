@@ -1,4 +1,4 @@
-// Added feature: New "Multiball" power-up that introduces multiple balls into play
+// Improved JavaScript code: Added Power-Up Timer Display and Enhanced AI Difficulty
 
 const canvas = document.getElementById('pongCanvas');
 const ctx = canvas.getContext('2d');
@@ -27,6 +27,7 @@ let player2Speed = 0;
 let powerUpActive = false;
 let powerUpX, powerUpY;
 let powerUpVisible = true;
+let powerUpTimer = 0;
 
 const winningScore = 5;
 let showWinScreen = false;
@@ -127,6 +128,7 @@ function spawnPowerUp() {
     powerUpX = Math.random() * (canvas.width - 30) + 15;
     powerUpY = Math.random() * (canvas.height - 30) + 15;
     currentPowerUpType = powerUpTypes[Math.floor(Math.random() * powerUpTypes.length)];
+    powerUpTimer = 10; // Power-up duration in seconds
     setTimeout(() => {
         powerUpVisible = false;
         setTimeout(() => powerUpActive = false, 5000);
@@ -268,11 +270,15 @@ function update() {
     });
 
     if (gameMode === 'ai-vs-ai') {
-        player2Y += (balls[0].y - (player2Y + paddleHeight / 2)) * 0.1;
+        player2Y += (balls[0].y - (player2Y + paddleHeight / 2)) * 0.15; // Increased AI difficulty
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
     } else if (gameMode === 'player-vs-ai') {
         player2Y += player2Speed;
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
+    }
+
+    if (powerUpActive && powerUpTimer > 0) {
+        powerUpTimer -= 0.016;
     }
 }
 
@@ -306,6 +312,12 @@ function draw() {
         ctx.fillStyle = '#FFF';
         ctx.fillText(`${winner} Wins!`, canvas.width / 2 - 80, canvas.height / 2);
         ctx.fillText('Game restarts in ' + countdown + '...', canvas.width / 2 - 150, canvas.height / 2 + 50);
+    }
+
+    if (powerUpActive) {
+        ctx.fillStyle = '#FFD700';
+        ctx.font = '20px Arial';
+        ctx.fillText(`Power-Up: ${currentPowerUpType.toUpperCase()} (${powerUpTimer.toFixed(1)}s)`, 10, canvas.height - 20);
     }
 }
 
