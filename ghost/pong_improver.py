@@ -27,17 +27,20 @@ def write_file_content(file_path, content):
         sys.exit(1)
 
 def update_pong_history(summary):
+    print(f"Attempting to update history with summary: {summary}")
     try:
         with open(PONG_HISTORY_PATH, 'r') as f:
             history_data = yaml.safe_load(f)
             if history_data is None:
                 history_data = {"history": []}
             elif not isinstance(history_data.get("history"), list):
+                print("Warning: 'history' key in YAML is not a list. Re-initializing.")
                 history_data["history"] = []
     except FileNotFoundError:
+        print(f"History file {PONG_HISTORY_PATH} not found. Creating new one.")
         history_data = {"history": []}
     except yaml.YAMLError as e:
-        print(f"Error reading YAML history file: {e}")
+        print(f"Error reading YAML history file: {e}. Re-initializing.")
         history_data = {"history": []}
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -47,9 +50,13 @@ def update_pong_history(summary):
     }
     history_data["history"].append(new_entry)
 
-    with open(PONG_HISTORY_PATH, 'w') as f:
-        yaml.dump(history_data, f, default_flow_style=False)
-    print(f"Updated Pong history in {PONG_HISTORY_PATH}")
+    try:
+        with open(PONG_HISTORY_PATH, 'w') as f:
+            yaml.dump(history_data, f, default_flow_style=False)
+        print(f"Successfully updated Pong history in {PONG_HISTORY_PATH}")
+    except IOError as e:
+        print(f"Error writing updated history to {PONG_HISTORY_PATH}: {e}")
+        sys.exit(1)
 
 def generate_summary(prompt_for_code_gen, openai_client):
     print("Generating summary of intended changes...")
@@ -71,10 +78,12 @@ Summary:
             temperature=0.5,
             max_tokens=100
         )
-        return response.choices[0].message.content.strip()
+        summary = response.choices[0].message.content.strip()
+        print(f"Generated summary: {summary}")
+        return summary
     except Exception as e:
-        print(f"Error generating summary: {e}")
-        return "Failed to generate summary."
+        print(f"Error generating summary from OpenAI: {e}")
+        return "Failed to generate summary due to API error."
 
 def improve_pong_game(js_code, css_code, html_code, openai_client):
     print("Calling OpenAI API to improve Pong game (JS, CSS, HTML)...")
@@ -123,7 +132,7 @@ Return the improved code using the following format:
         return improved_js, improved_css, improved_html
 
     except Exception as e:
-        print(f"Error calling OpenAI API: {e}")
+        print(f"Error calling OpenAI API for code improvement: {e}")
         return js_code, css_code, html_code # Return original code on error
 
 def main():
@@ -140,10 +149,9 @@ def main():
     current_css_code = read_file_content(PONG_CSS_PATH)
     current_html_code = read_file_content(PONG_HTML_PATH)
 
-    # Generate summary of intended changes
     # The prompt for code generation is embedded in the improve_pong_game function
     # We extract it here to pass to generate_summary
-    prompt_for_summary = f"""
+    prompt_for_summary_generation = f"""
 You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
 
 Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
@@ -165,7 +173,7 @@ Return the improved code using the following format:
 ---HTML_CODE---
 <!-- Improved HTML code here -->
 """
-    summary_of_changes = generate_summary(prompt_for_summary, openai_client)
+    summary_of_changes = generate_summary(prompt_for_summary_generation, openai_client)
 
     # Update history with the summary BEFORE sending to OpenAI for code changes
     update_pong_history(summary_of_changes)
@@ -179,7 +187,7 @@ Return the improved code using the following format:
     write_file_content(PONG_HTML_PATH, improved_html_code)
     
     print("Pong game improvement process completed.")
-    print("Please review assets/js/pong.js, assets/css/pong.css, and _layouts/game.html for changes and manually verify the game.")
+    print("Please review assets/js/pong.js, assets/css/pong.css, and _includes/pong_game_content.html for changes and manually verify the game.")
 
 if __name__ == "__main__":
     main()
