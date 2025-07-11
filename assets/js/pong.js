@@ -116,6 +116,14 @@ function draw() {
     ctx.fillStyle = '#FFF';
     ctx.fillText(player1Score, canvas.width / 4, 50);
     ctx.fillText(player2Score, canvas.width * 3 / 4, 50);
+    
+    // Center Line
+    ctx.strokeStyle = '#FFF';
+    ctx.beginPath();
+    ctx.setLineDash([5, 15]);
+    ctx.moveTo(canvas.width / 2, 0);
+    ctx.lineTo(canvas.width / 2, canvas.height);
+    ctx.stroke();
 }
 
 function gameLoop() {
