@@ -69,6 +69,14 @@
   font-size: 20px;
 }
 
+#instructions {
+  color: #FFF;
+  font-size: 1.1em;
+  text-align: center;
+  margin-top: 10px;
+  display: none;
+}
+
 #backgroundMusic {
   display: none;
 }

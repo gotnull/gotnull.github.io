@@ -11,6 +11,7 @@ let ballSpeedMultiplier = 1;
 const soundEffect = new Audio('/assets/audio/bounce.mp3');
 const hitSound = new Audio('/assets/audio/hit.mp3');
 const winSound = new Audio('/assets/audio/win.mp3');
+const countdownSound = new Audio('/assets/audio/countdown.mp3');
 
 let player1Y = canvas.height / 2 - paddleHeight / 2;
 let player2Y = canvas.height / 2 - paddleHeight / 2;
@@ -50,6 +51,7 @@ document.getElementById('toggleSound').addEventListener('click', toggleSound);
 document.getElementById('increaseSpeed').addEventListener('click', () => adjustGameSpeed(0.1));
 document.getElementById('decreaseSpeed').addEventListener('click', () => adjustGameSpeed(-0.1));
 document.getElementById('resetHighScores').addEventListener('click', resetHighScores);
+document.getElementById('instructionsButton').addEventListener('click', toggleInstructions);
 
 function displayHighScores() {
     document.getElementById('highScores').innerText = `High Scores - Player 1: ${highScores.player1}, Player 2: ${highScores.player2}`;
@@ -335,6 +337,7 @@ function startCountdown() {
     countdown = 5;
     countdownInterval = setInterval(() => {
         countdown--;
+        if (soundEnabled) countdownSound.play();
         if (countdown <= 0) {
             clearInterval(countdownInterval);
             startGame('ai-vs-ai');
@@ -371,6 +374,11 @@ function showFPS(time) {
     requestAnimationFrame(showFPS);
 }
 requestAnimationFrame(showFPS);
+
+function toggleInstructions() {
+    const instructions = document.getElementById('instructions');
+    instructions.style.display = (instructions.style.display === 'none' || !instructions.style.display) ? 'block' : 'none';
+}
 
 displayHighScores();
 startGame('ai-vs-ai');
