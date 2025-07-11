@@ -16,12 +16,7 @@
           {% for entry in site.data.pong_history.history reversed %}
             <div class="history-entry mb-4" style="border-bottom: 1px dashed #eee; padding-bottom: 10px;">
               <h3>Update at {{ entry.timestamp }}</h3>
-              <h4>JavaScript (pong.js)</h4>
-              <pre><code class="language-javascript">{{ entry.js_code | escape }}</code></pre>
-              <h4>CSS (pong.css)</h4>
-              <pre><code class="language-css">{{ entry.css_code | escape }}</code></pre>
-              <h4>HTML (_layouts/game.html)</h4>
-              <pre><code class="language-html">{{ entry.html_code | escape }}</code></pre>
+              <p>{{ entry.summary }}</p>
             </div>
           {% endfor %}
         {% else %}

@@ -26,7 +26,7 @@ def write_file_content(file_path, content):
         print(f"Error writing to {file_path}: {e}")
         sys.exit(1)
 
-def update_pong_history(js_code, css_code, html_code):
+def update_pong_history(summary):
     try:
         with open(PONG_HISTORY_PATH, 'r') as f:
             history_data = yaml.safe_load(f)
@@ -43,15 +43,38 @@ def update_pong_history(js_code, css_code, html_code):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_entry = {
         "timestamp": timestamp,
-        "js_code": js_code,
-        "css_code": css_code,
-        "html_code": html_code
+        "summary": summary
     }
     history_data["history"].append(new_entry)
 
     with open(PONG_HISTORY_PATH, 'w') as f:
         yaml.dump(history_data, f, default_flow_style=False)
     print(f"Updated Pong history in {PONG_HISTORY_PATH}")
+
+def generate_summary(prompt_for_code_gen, openai_client):
+    print("Generating summary of intended changes...")
+    try:
+        summary_prompt = f"""
+Based on the following prompt for code generation, provide a concise, human-readable summary (1-2 sentences) of the intended improvements or features. Focus on what the AI is being asked to do, not how it will do it.
+
+Prompt:
+"""{prompt_for_code_gen}"""
+
+Summary:
+"""
+        response = openai_client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant that summarizes code generation prompts."},
+                {"role": "user", "content": summary_prompt}
+            ],
+            temperature=0.5,
+            max_tokens=100
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        print(f"Error generating summary: {e}")
+        return "Failed to generate summary."
 
 def improve_pong_game(js_code, css_code, html_code, openai_client):
     print("Calling OpenAI API to improve Pong game (JS, CSS, HTML)...")
@@ -117,8 +140,35 @@ def main():
     current_css_code = read_file_content(PONG_CSS_PATH)
     current_html_code = read_file_content(PONG_HTML_PATH)
 
-    # Update history BEFORE sending to OpenAI
-    update_pong_history(current_js_code, current_css_code, current_html_code)
+    # Generate summary of intended changes
+    # The prompt for code generation is embedded in the improve_pong_game function
+    # We extract it here to pass to generate_summary
+    prompt_for_summary = f"""
+You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements or add substantial new features to the provided JavaScript, CSS, and HTML code for a Pong game, ensuring that existing functionality is not broken. Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, improving AI difficulty, adding power-ups, or refining visual elements.
+
+Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
+
+---JS_CODE---
+{current_js_code}
+---CSS_CODE---
+{current_css_code}
+---HTML_CODE---
+{current_html_code}
+
+Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.
+Return the improved code using the following format:
+
+---JS_CODE---
+// Improved JavaScript code here
+---CSS_CODE---
+/* Improved CSS code here */
+---HTML_CODE---
+<!-- Improved HTML code here -->
+"""
+    summary_of_changes = generate_summary(prompt_for_summary, openai_client)
+
+    # Update history with the summary BEFORE sending to OpenAI for code changes
+    update_pong_history(summary_of_changes)
 
     improved_js_code, improved_css_code, improved_html_code = improve_pong_game(
         current_js_code, current_css_code, current_html_code, openai_client
