@@ -34,3 +34,8 @@ body.dark-mode .game-controls button {
 body.dark-mode .game-controls button:hover {
   background-color: var(--hover-col);
 }
+
+.game-controls p {
+  font-size: 1.1em;
+  color: #FFF;
+}

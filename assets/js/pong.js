@@ -46,7 +46,7 @@ function drawCircle(x, y, radius, color) {
 function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
-    ballSpeedX = -ballSpeedX; // Serve to the other side
+    ballSpeedX = ballSpeedX > 0 ? -5 : 5; // Ensure ball always serves in opposite direction
     ballSpeedY = (Math.random() * 10) - 5; // Random vertical speed
 }
 
@@ -54,11 +54,7 @@ function update() {
     if (!gameRunning) return;
 
     // AI for player 1 (left paddle) - always AI controlled
-    if (player1Y + paddleHeight / 2 < ballY) {
-        player1Y += 4;
-    } else if (player1Y + paddleHeight / 2 > ballY) {
-        player1Y -= 4;
-    }
+    player1Y += (ballY - (player1Y + paddleHeight / 2)) * 0.1;
     player1Y = Math.max(0, Math.min(canvas.height - paddleHeight, player1Y));
 
     // Move ball
@@ -93,11 +89,7 @@ function update() {
     // Player 2 control based on game mode
     if (gameMode === 'ai-vs-ai') {
         // AI for player 2 (right paddle)
-        if (player2Y + paddleHeight / 2 < ballY) {
-            player2Y += 4;
-        } else if (player2Y + paddleHeight / 2 > ballY) {
-            player2Y -= 4;
-        }
+        player2Y += (ballY - (player2Y + paddleHeight / 2)) * 0.1;
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
     } else if (gameMode === 'player-vs-ai') {
         // Player 2 (right paddle) controlled by user
