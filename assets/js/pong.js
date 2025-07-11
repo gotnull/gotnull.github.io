@@ -27,6 +27,8 @@ let powerUpX, powerUpY;
 const winningScore = 5;
 let showWinScreen = false;
 let winner = '';
+let countdown = 5;
+let countdownInterval;
 
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
@@ -120,6 +122,8 @@ function update() {
         if (player2Score >= winningScore) {
             winner = 'Player 2';
             showWinScreen = true;
+            gameRunning = false;
+            startCountdown();
         }
         resetBall();
         if (!powerUpActive) spawnPowerUp();
@@ -128,6 +132,8 @@ function update() {
         if (player1Score >= winningScore) {
             winner = 'Player 1';
             showWinScreen = true;
+            gameRunning = false;
+            startCountdown();
         }
         resetBall();
         if (!powerUpActive) spawnPowerUp();
@@ -173,8 +179,19 @@ function draw() {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = '#FFF';
         ctx.fillText(`${winner} Wins!`, canvas.width / 2 - 80, canvas.height / 2);
-        ctx.fillText('Press Start to Play Again', canvas.width / 2 - 150, canvas.height / 2 + 50);
+        ctx.fillText('Game restarts in ' + countdown + '...', canvas.width / 2 - 150, canvas.height / 2 + 50);
     }
+}
+
+function startCountdown() {
+    countdown = 5;
+    countdownInterval = setInterval(() => {
+        countdown--;
+        if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            startGame('ai-vs-ai');
+        }
+    }, 1000);
 }
 
 function gameLoop() {
