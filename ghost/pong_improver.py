@@ -102,37 +102,60 @@ def generate_summary(original_js, original_css, original_html, improved_js, impr
         print(f"Error generating summary from OpenAI: {e}")
         return "Failed to generate summary due to API error."
 
-def improve_pong_game(js_code, css_code, html_code, openai_client):
+def improve_pong_game(js_code, css_code, html_code, history_data, openai_client):
     print("Calling OpenAI API to improve Pong game (JS, CSS, HTML)...")
-    prompt_template = (
-        "You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements "
-        "or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken. "
-        "Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects, "
-        "improving AI difficulty, adding power-ups, or refining visual elements.\n\n"
-        "Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.\n\n"
-        "---JS_CODE---\n{js_code}\n---CSS_CODE---\n{css_code}\n---HTML_CODE---\n{html_code}\n\n"
-        "Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.\n"
-        "Return the improved code using the following format:\n\n"
-        "---JS_CODE---\n// Improved JavaScript code here\n---CSS_CODE---\n/* Improved CSS code here */\n---HTML_CODE---\n<!-- Improved HTML code here -->\n"
-    )
 
-    prompt = prompt_template.format(
-        js_code=js_code,
-        css_code=css_code,
-        html_code=html_code
-    )
+    # Convert history_data into a readable string summary
+    history_list = history_data.get("history", []) if isinstance(history_data, dict) else []
+    history_summary = "\n".join([f"{entry['timestamp']}: {entry['summary']}" for entry in history_list])
+
+    prompt = f"""
+You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements
+or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken.
+Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects,
+improving AI difficulty, adding power-ups, or refining visual elements.
+
+Here is a summary of previous improvements made to the game:
+{history_summary}
+
+Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
+
+---JS_CODE---
+{js_code}
+---CSS_CODE---
+{css_code}
+---HTML_CODE---
+{html_code}
+
+Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.
+Return the improved code using the following format:
+
+---JS_CODE---
+// Improved JavaScript code here
+---CSS_CODE---
+/* Improved CSS code here */
+---HTML_CODE---
+<!-- Improved HTML code here -->
+"""
 
     response = openai_client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "You are an AI assistant that improves JavaScript, CSS, and HTML code for a Pong game. You must return only the code, delimited by specific markers."},
-            {"role": "user", "content": prompt}
+            {
+                "role": "system",
+                "content": "You are an AI assistant that improves JavaScript, CSS, and HTML code for a Pong game. You must return only the code, delimited by specific markers."
+            },
+            {
+                "role": "user",
+                "content": prompt
+            }
         ],
         temperature=0.7
     )
 
     full_response = response.choices[0].message.content
 
+    # Parse response
     js_match = re.search(r"---JS_CODE---\s*(.*?)\s*---CSS_CODE---", full_response, re.DOTALL)
     css_match = re.search(r"---CSS_CODE---\s*(.*?)\s*---HTML_CODE---", full_response, re.DOTALL)
     html_match = re.search(r"---HTML_CODE---\s*(.*)", full_response, re.DOTALL)
@@ -159,9 +182,24 @@ def main():
     current_js_code = read_file_content(PONG_JS_PATH)
     current_css_code = read_file_content(PONG_CSS_PATH)
     current_html_code = read_file_content(PONG_HTML_PATH)
+    
+    try:
+        with open(PONG_HISTORY_PATH, 'r', encoding='utf-8') as f:
+            history_data = yaml.safe_load(f)
+            if history_data is None:
+                history_data = {"history": []}
+            elif not isinstance(history_data.get("history"), list):
+                print("Warning: 'history' key in YAML is not a list. Re-initializing.")
+                history_data["history"] = []
+    except FileNotFoundError:
+        print(f"History file {PONG_HISTORY_PATH} not found. Starting with empty history.")
+        history_data = {"history": []}
+    except yaml.YAMLError as e:
+        print(f"Error reading YAML history file: {e}. Starting with empty history.")
+        history_data = {"history": []}
 
     improved_js_code, improved_css_code, improved_html_code = improve_pong_game(
-        current_js_code, current_css_code, current_html_code, openai_client
+        current_js_code, current_css_code, current_html_code, history_data, openai_client
     )
 
     summary_of_changes = generate_summary(
