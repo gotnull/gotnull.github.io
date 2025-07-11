@@ -148,7 +148,7 @@ def validate_prompt_integrity(prompt_content):
     ]
     for phrase in required_phrases:
         if phrase not in prompt_content:
-            print(f"Validation failed: Missing required phrase '{phrase}' in prompt.")
+            print(f"Validation failed: Missing required phrase '{phrase}' in prompt.", flush=True)
             return False
     return True
 
@@ -307,9 +307,9 @@ def main():
             commit_paths.append(SYSTEM_PROMPT_PATH)
             commit_message += " (System Prompt Updated)"
         else:
-            print("System prompt update blocked due to integrity validation failure.")
+            print("System prompt update blocked due to integrity validation failure.", flush=True)
     elif new_system_prompt and not ALLOW_PROMPT_UPDATES:
-        print("System prompt update blocked (ALLOW_PROMPT_UPDATES is false).")
+        print("System prompt update blocked (ALLOW_PROMPT_UPDATES is false).", flush=True)
 
     if new_generation_prompt and ALLOW_PROMPT_UPDATES:
         if validate_prompt_integrity(raw_response):
@@ -317,9 +317,9 @@ def main():
             commit_paths.append(GENERATION_PROMPT_PATH)
             commit_message += " (Generation Prompt Updated)"
         else:
-            print("Generation prompt update blocked due to integrity validation failure.")
+            print("Generation prompt update blocked due to integrity validation failure.", flush=True)
     elif new_generation_prompt and not ALLOW_PROMPT_UPDATES:
-        print("Generation prompt update blocked (ALLOW_PROMPT_UPDATES is false).")
+        print("Generation prompt update blocked (ALLOW_PROMPT_UPDATES is false).", flush=True)
 
     # Generate and save image data for the gallery
     image_data_file = generate_image_data()
