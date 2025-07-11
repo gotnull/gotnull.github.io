@@ -1,0 +1,36 @@
+#pongCanvas {
+  background-color: #000;
+  border: 2px solid #FFF;
+  display: block;
+  margin: 20px auto;
+}
+
+.game-controls {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.game-controls button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: var(--link-col);
+  color: var(--page-col);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.game-controls button:hover {
+  background-color: var(--hover-col);
+}
+
+/* Dark mode adjustments for game controls */
+body.dark-mode .game-controls button {
+  background-color: var(--link-col);
+  color: var(--page-col);
+}
+
+body.dark-mode .game-controls button:hover {
+  background-color: var(--hover-col);
+}

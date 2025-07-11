@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<main class="container-md">
+  <div class="row">
+    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <h1 class="post-title">Pong Game</h1>
+      <hr>
+      <canvas id="pongCanvas" width="600" height="400"></canvas>
+      <div class="game-controls">
+        <p>Use W/S for left paddle, Up/Down arrows for right paddle.</p>
+        <button id="startGame">Start Game</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<link rel="stylesheet" href="{{ '/assets/css/pong.css' | relative_url }}">
+<script src="{{ '/assets/js/pong.js' | relative_url }}"></script>

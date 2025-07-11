@@ -23,6 +23,7 @@ author: Lester Knight Chaykin
 navbar-links:
   About Me: "aboutme"
   Gallery: "gallery"
+  Pong Game: "pong-game"
   Resources:
     - Another World: "/"
   Author's home: "/"
