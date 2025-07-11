@@ -21,7 +21,10 @@ let gameRunning = false;
 let gameMode = 'ai-vs-ai';
 
 let player2Speed = 0;
+let powerUpActive = false;
+let powerUpX, powerUpY;
 
+// Start and pause game buttons
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
 
@@ -32,6 +35,7 @@ function startGame(mode) {
     gameMode = mode;
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
     resetBall();
+    spawnPowerUp();
     gameLoop();
 }
 
@@ -59,6 +63,25 @@ function resetBall() {
     ballY = canvas.height / 2;
     ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5;
     ballSpeedY = (Math.random() * 10) - 5;
+}
+
+function spawnPowerUp() {
+    powerUpActive = true;
+    powerUpX = Math.random() * (canvas.width - 30) + 15;
+    powerUpY = Math.random() * (canvas.height - 30) + 15;
+    setTimeout(() => {
+        powerUpActive = false;
+    }, 10000);
+}
+
+function checkPowerUpCollision() {
+    const distX = Math.abs(ballX - powerUpX);
+    const distY = Math.abs(ballY - powerUpY);
+    if (distX < ballSize && distY < ballSize) {
+        ballSpeedX *= 1.5;
+        ballSpeedY *= 1.5;
+        powerUpActive = false;
+    }
 }
 
 function update() {
@@ -90,9 +113,11 @@ function update() {
     if (ballX < 0) {
         player2Score++;
         resetBall();
+        if (!powerUpActive) spawnPowerUp();
     } else if (ballX > canvas.width - ballSize) {
         player1Score++;
         resetBall();
+        if (!powerUpActive) spawnPowerUp();
     }
 
     if (gameMode === 'ai-vs-ai') {
@@ -101,6 +126,10 @@ function update() {
     } else if (gameMode === 'player-vs-ai') {
         player2Y += player2Speed;
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
+    }
+
+    if (powerUpActive) {
+        checkPowerUpCollision();
     }
 }
 
@@ -121,6 +150,10 @@ function draw() {
     ctx.moveTo(canvas.width / 2, 0);
     ctx.lineTo(canvas.width / 2, canvas.height);
     ctx.stroke();
+
+    if (powerUpActive) {
+        drawCircle(powerUpX, powerUpY, 15, '#FFD700'); // Draw power-up in gold color
+    }
 }
 
 function gameLoop() {
