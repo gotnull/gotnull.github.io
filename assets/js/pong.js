@@ -40,6 +40,8 @@ function startGame(mode) {
     player2Score = 0;
     gameMode = mode;
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
+    ballSpeedX = 5; // Reset ball speed to initial value
+    ballSpeedY = 5; // Reset ball speed to initial value
     resetBall();
     spawnPowerUp();
     gameLoop();
@@ -68,8 +70,8 @@ function drawCircle(x, y, radius, color) {
 function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
-    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5;
-    ballSpeedY = (Math.random() * 10) - 5;
+    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5; // Reset to initial speed
+    ballSpeedY = (Math.random() * 10) - 5; // Reset to initial speed
 }
 
 function spawnPowerUp() {

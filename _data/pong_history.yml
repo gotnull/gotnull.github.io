@@ -26,3 +26,7 @@ history:
   timestamp: '2025-07-11 05:40:00'
 - summary: The game now displays a countdown from 5 to 1 on the win screen before restarting in AI vs AI mode.
   timestamp: '2025-07-11 05:45:00'
+- summary: Fixed an issue where the game would speed up after each restart by ensuring the ball's speed is reset to its initial value in the `resetBall()` function.
+  timestamp: '2025-07-11 05:50:00'
+- summary: Corrected the game speed issue by explicitly resetting ballSpeedX and ballSpeedY to their initial values within the startGame function, ensuring consistent game speed across restarts.
+  timestamp: '2025-07-11 05:55:00'
