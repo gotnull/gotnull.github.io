@@ -24,3 +24,5 @@ history:
   timestamp: '2025-07-11 05:33:22'
 - summary: The bounce.mp3 file was moved to assets/audio/ and its path updated in pong.js. The game now starts automatically in AI vs AI mode on page load, and after a win, a 5-second countdown is displayed before the game restarts in AI vs AI mode.
   timestamp: '2025-07-11 05:40:00'
+- summary: The game now displays a countdown from 5 to 1 on the win screen before restarting in AI vs AI mode.
+  timestamp: '2025-07-11 05:45:00'

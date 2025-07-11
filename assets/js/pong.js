@@ -197,7 +197,7 @@ function startCountdown() {
 function gameLoop() {
     update();
     draw();
-    if (gameRunning) {
+    if (gameRunning || showWinScreen) {
         requestAnimationFrame(gameLoop);
     }
 }
