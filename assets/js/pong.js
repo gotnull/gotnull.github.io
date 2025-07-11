@@ -30,6 +30,7 @@ function startGame(mode) {
     player1Score = 0;
     player2Score = 0;
     gameMode = mode;
+    document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
     resetBall();
     gameLoop();
 }
