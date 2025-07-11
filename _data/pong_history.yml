@@ -51,3 +51,5 @@ history:
     controls. Additionally, the JavaScript logic now checks if sound is enabled before
     playing any audio effects.'
   timestamp: '2025-07-11 06:12:04'
+- summary: Implemented a `ballSpeedMultiplier` to prevent cumulative speed increases. The multiplier is applied to ball speed calculations and reset to 1 at the start of each game, ensuring consistent speed across restarts regardless of power-up activations.
+  timestamp: '2025-07-11 06:15:00'

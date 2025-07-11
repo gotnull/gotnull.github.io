@@ -15,6 +15,8 @@ const INITIAL_BALL_SPEED = 5;
 let ballSpeedX = INITIAL_BALL_SPEED;
 let ballSpeedY = INITIAL_BALL_SPEED;
 
+let ballSpeedMultiplier = 1;
+
 let player1Score = 0;
 let player2Score = 0;
 
@@ -51,8 +53,7 @@ function startGame(mode) {
     player2Score = 0;
     gameMode = mode;
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
-    ballSpeedX = INITIAL_BALL_SPEED;
-    ballSpeedY = INITIAL_BALL_SPEED;
+    ballSpeedMultiplier = 1; // Reset multiplier at the start of a new game
     resetBall();
     spawnPowerUp();
     gameLoop();
@@ -91,8 +92,8 @@ function drawCircle(x, y, radius, color) {
 function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
-    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED;
-    ballSpeedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED;
+    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
+    ballSpeedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * ballSpeedMultiplier;
 }
 
 function spawnPowerUp() {
@@ -108,8 +109,7 @@ function checkPowerUpCollision() {
     const distX = Math.abs(ballX - powerUpX);
     const distY = Math.abs(ballY - powerUpY);
     if (distX < ballSize && distY < ballSize) {
-        ballSpeedX *= 1.5;
-        ballSpeedY *= 1.5;
+        ballSpeedMultiplier = 1.5;
         powerUpActive = false;
     }
 }
