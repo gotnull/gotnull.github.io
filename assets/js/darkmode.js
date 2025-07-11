@@ -25,11 +25,9 @@
   // Check for saved preference and apply on load
   const savedMode = localStorage.getItem('dark-mode');
   let initialDarkMode = false;
-  if (savedMode === 'enabled') {
-    document.body.classList.add('dark-mode');
-    initialDarkMode = true;
-  } else if (savedMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    // If no preference saved, check system preference
+  if (savedMode === 'disabled') {
+    // User explicitly chose light mode, do nothing
+  } else { // savedMode is 'enabled' or null (no preference saved)
     document.body.classList.add('dark-mode');
     initialDarkMode = true;
   }
