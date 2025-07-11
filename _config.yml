@@ -150,6 +150,7 @@ footer-hover-col: "#0085A1"
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
+
 navbar-img: "/assets/img/background.png"
 footer-img: "/assets/img/background.png"
 page-img: "/assets/img/background.png"
@@ -185,6 +186,11 @@ gtag: "G-VVS9YL1KNG"
 #  site_id: "9"
 #  uri: "demo.wiki.pro"
 #  opt-out: true
+
+# Google Universal Analytics ID -- deprecated
+# As of July 2023 this is no longer supported by Google! If you are still using `google_analytics`,
+# you should switch to using the `gtag` field above instead.
+#google_analytics: "UA-XXXXXXXX-X"
 
 ####################
 # --- Comments --- #
