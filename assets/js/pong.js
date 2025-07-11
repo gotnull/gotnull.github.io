@@ -308,5 +308,17 @@ function showFPS(time) {
 }
 requestAnimationFrame(showFPS);
 
+// New Feature: Game Speed Adjustment
+let gameSpeed = 1;
+document.getElementById('increaseSpeed').addEventListener('click', () => adjustGameSpeed(0.1));
+document.getElementById('decreaseSpeed').addEventListener('click', () => adjustGameSpeed(-0.1));
+
+function adjustGameSpeed(amount) {
+    gameSpeed = Math.max(0.5, Math.min(2, gameSpeed + amount));
+    ballSpeedX *= (1 + amount);
+    ballSpeedY *= (1 + amount);
+    player2Speed *= (1 + amount);
+}
+
 displayHighScores(); // Display high scores on load
 startGame('ai-vs-ai');
