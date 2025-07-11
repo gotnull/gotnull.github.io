@@ -26,6 +26,7 @@ let gameMode = 'ai-vs-ai';
 let player2Speed = 0;
 let powerUpActive = false;
 let powerUpX, powerUpY;
+let powerUpVisible = true;
 
 const winningScore = 5;
 let showWinScreen = false;
@@ -101,11 +102,13 @@ function resetBall() {
 
 function spawnPowerUp() {
     powerUpActive = true;
+    powerUpVisible = true;
     powerUpX = Math.random() * (canvas.width - 30) + 15;
     powerUpY = Math.random() * (canvas.height - 30) + 15;
     currentPowerUpType = powerUpTypes[Math.floor(Math.random() * powerUpTypes.length)];
     setTimeout(() => {
-        powerUpActive = false;
+        powerUpVisible = false;
+        setTimeout(() => powerUpActive = false, 5000);
     }, 10000);
 }
 
@@ -114,7 +117,7 @@ function checkPowerUpCollision() {
     const distY = Math.abs(ballY - powerUpY);
     if (distX < ballSize && distY < ballSize) {
         handlePowerUpEffect();
-        powerUpActive = false;
+        powerUpVisible = false;
     }
 }
 
@@ -187,7 +190,7 @@ function update() {
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
     }
 
-    if (powerUpActive) {
+    if (powerUpActive && powerUpVisible) {
         checkPowerUpCollision();
     }
 }
@@ -210,7 +213,7 @@ function draw() {
     ctx.lineTo(canvas.width / 2, canvas.height);
     ctx.stroke();
 
-    if (powerUpActive) {
+    if (powerUpActive && powerUpVisible) {
         drawCircle(powerUpX, powerUpY, 15, currentPowerUpType === 'speed' ? '#FFD700' : '#FF6347');
     }
 

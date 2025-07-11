@@ -61,3 +61,9 @@ history:
     speed power-up. It also includes a visual indicator for different power-up types
     by changing the power-up's color based on its effect, enhancing gameplay dynamics.
   timestamp: '2025-07-11 06:18:53'
+- summary: The improved JavaScript code introduces a new variable `powerUpVisible`
+    to manage the visibility of power-ups separately from their activity, ensuring
+    power-ups disappear visually before being deactivated. Additionally, the `spawnPowerUp`
+    function is updated to reflect this change, enhancing the game's visual feedback
+    when power-ups are collected. The CSS and HTML remain unchanged.
+  timestamp: '2025-07-11 06:30:43'
