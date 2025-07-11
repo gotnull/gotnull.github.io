@@ -34,7 +34,7 @@ let winner = '';
 let countdown = 5;
 let countdownInterval;
 
-// New variables for sound effects, themes, and power-up types
+// New variables for sound effects, themes, power-up types, and new multiplayer feature
 const hitSound = new Audio('/assets/audio/hit.mp3');
 const winSound = new Audio('/assets/audio/win.mp3');
 const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
@@ -252,11 +252,25 @@ document.addEventListener('keydown', (e) => {
         } else if (e.key === 'ArrowDown') {
             player2Speed = 5;
         }
+    } else if (gameMode === 'multiplayer') {
+        if (e.key === 'w') {
+            player1Y = Math.max(player1Y - 5, 0);
+        } else if (e.key === 's') {
+            player1Y = Math.min(player1Y + 5, canvas.height - paddleHeight);
+        }
+        if (e.key === 'ArrowUp') {
+            player2Speed = -5;
+        } else if (e.key === 'ArrowDown') {
+            player2Speed = 5;
+        }
     }
 });
 
 document.addEventListener('keyup', (e) => {
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        player2Speed = 0;
+    }
+    if (e.key === 'w' || e.key === 's') {
         player2Speed = 0;
     }
 });

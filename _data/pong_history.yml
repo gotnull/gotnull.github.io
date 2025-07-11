@@ -67,3 +67,8 @@ history:
     function is updated to reflect this change, enhancing the game's visual feedback
     when power-ups are collected. The CSS and HTML remain unchanged.
   timestamp: '2025-07-11 06:30:43'
+- summary: The improved code introduces a new multiplayer mode allowing two players
+    to control paddles using 'W/S' keys for the left paddle and 'Up/Down' arrows for
+    the right paddle. Additionally, the HTML instructions have been updated to reflect
+    these new controls, while the CSS remains unchanged.
+  timestamp: '2025-07-11 07:03:29'
