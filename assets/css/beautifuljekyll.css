@@ -55,6 +55,27 @@ body.dark-mode code {
   color: #c7254e; /* Keep original inline code color */
 }
 
+body.dark-mode .commentbox,
+body.dark-mode .commentbox * {
+  background-color: #ffffff !important; /* Force light background */
+  color: #404040 !important; /* Force dark text */
+  border-color: #dddddd !important; /* Force light border */
+}
+
+body.dark-mode .commentbox input,
+body.dark-mode .commentbox textarea {
+  background-color: #ffffff !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .commentbox a {
+  color: #008AFF !important; /* Force light theme link color */
+}
+
+body.dark-mode .commentbox a:hover {
+  color: #0085A1 !important; /* Force light theme hover color */
+}
+
 
 /* --- General --- */
 
