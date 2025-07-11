@@ -33,11 +33,14 @@ let winner = '';
 let countdown = 5;
 let countdownInterval;
 
-// New variables for sound effects and themes
+// New variables for sound effects, themes, and power-up types
 const hitSound = new Audio('/assets/audio/hit.mp3');
 const winSound = new Audio('/assets/audio/win.mp3');
 const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
 let currentTheme = 0;
+
+const powerUpTypes = ['speed', 'shrinkPaddle'];
+let currentPowerUpType = '';
 
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
@@ -100,6 +103,7 @@ function spawnPowerUp() {
     powerUpActive = true;
     powerUpX = Math.random() * (canvas.width - 30) + 15;
     powerUpY = Math.random() * (canvas.height - 30) + 15;
+    currentPowerUpType = powerUpTypes[Math.floor(Math.random() * powerUpTypes.length)];
     setTimeout(() => {
         powerUpActive = false;
     }, 10000);
@@ -109,8 +113,19 @@ function checkPowerUpCollision() {
     const distX = Math.abs(ballX - powerUpX);
     const distY = Math.abs(ballY - powerUpY);
     if (distX < ballSize && distY < ballSize) {
-        ballSpeedMultiplier = 1.5;
+        handlePowerUpEffect();
         powerUpActive = false;
+    }
+}
+
+function handlePowerUpEffect() {
+    if (currentPowerUpType === 'speed') {
+        ballSpeedMultiplier = 1.5;
+    } else if (currentPowerUpType === 'shrinkPaddle') {
+        paddleHeight = Math.max(paddleHeight - 20, 40);
+        setTimeout(() => {
+            paddleHeight = 100; // Reset paddle size after 10 seconds
+        }, 10000);
     }
 }
 
@@ -196,7 +211,7 @@ function draw() {
     ctx.stroke();
 
     if (powerUpActive) {
-        drawCircle(powerUpX, powerUpY, 15, '#FFD700');
+        drawCircle(powerUpX, powerUpY, 15, currentPowerUpType === 'speed' ? '#FFD700' : '#FF6347');
     }
 
     if (showWinScreen) {
