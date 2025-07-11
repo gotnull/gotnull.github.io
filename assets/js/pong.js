@@ -26,6 +26,7 @@ document.getElementById('startGame').addEventListener('click', () => {
     player1Score = 0;
     player2Score = 0;
     gameMode = 'player-vs-ai'; // Switch mode when player starts
+    console.log('Game mode switched to:', gameMode);
     resetBall();
     // No need to call gameLoop() again if it's already running
 });
@@ -131,7 +132,21 @@ function gameLoop() {
     }
 }
 
+document.addEventListener('keydown', (e) => {
+    if (gameMode === 'player-vs-ai') {
+        if (e.key === 'ArrowUp') {
+            player2Speed = -5; // Move up
+        } else if (e.key === 'ArrowDown') {
+            player2Speed = 5; // Move down
+        }
+    }
+});
 
+document.addEventListener('keyup', (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        player2Speed = 0; // Stop movement
+    }
+});
 
 // Initial game start
 gameLoop();
