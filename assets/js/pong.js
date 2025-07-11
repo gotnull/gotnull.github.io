@@ -30,8 +30,15 @@ let winner = '';
 let countdown = 5;
 let countdownInterval;
 
+// New variables for sound effects and themes
+const hitSound = new Audio('/assets/audio/hit.mp3');
+const winSound = new Audio('/assets/audio/win.mp3');
+const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
+let currentTheme = 0;
+
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
+document.getElementById('changeTheme').addEventListener('click', changeTheme);
 
 function startGame(mode) {
     showWinScreen = false;
@@ -40,8 +47,8 @@ function startGame(mode) {
     player2Score = 0;
     gameMode = mode;
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
-    ballSpeedX = 5; // Reset ball speed to initial value
-    ballSpeedY = 5; // Reset ball speed to initial value
+    ballSpeedX = 5;
+    ballSpeedY = 5;
     resetBall();
     spawnPowerUp();
     gameLoop();
@@ -53,6 +60,11 @@ function togglePause() {
     if (gameRunning) {
         gameLoop();
     }
+}
+
+function changeTheme() {
+    currentTheme = (currentTheme + 1) % themes.length;
+    document.documentElement.style.setProperty('--theme-color', themes[currentTheme]);
 }
 
 function drawRect(x, y, width, height, color) {
@@ -70,8 +82,8 @@ function drawCircle(x, y, radius, color) {
 function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
-    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5; // Reset to initial speed
-    ballSpeedY = (Math.random() * 10) - 5; // Reset to initial speed
+    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5;
+    ballSpeedY = (Math.random() * 10) - 5;
 }
 
 function spawnPowerUp() {
@@ -104,19 +116,19 @@ function update() {
 
     if (ballY < 0 || ballY > canvas.height - ballSize) {
         ballSpeedY = -ballSpeedY;
-        soundEffect.play();
+        hitSound.play();
     }
 
     if (ballX < paddleWidth && ballY > player1Y && ballY < player1Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player1Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
-        soundEffect.play();
+        hitSound.play();
     } else if (ballX > canvas.width - paddleWidth - ballSize && ballY > player2Y && ballY < player2Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player2Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
-        soundEffect.play();
+        hitSound.play();
     }
 
     if (ballX < 0) {
@@ -124,6 +136,7 @@ function update() {
         if (player2Score >= winningScore) {
             winner = 'Player 2';
             showWinScreen = true;
+            winSound.play();
             gameRunning = false;
             startCountdown();
         }
@@ -134,6 +147,7 @@ function update() {
         if (player1Score >= winningScore) {
             winner = 'Player 1';
             showWinScreen = true;
+            winSound.play();
             gameRunning = false;
             startCountdown();
         }
