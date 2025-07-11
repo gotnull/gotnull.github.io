@@ -53,6 +53,7 @@ document.getElementById('decreaseSpeed').addEventListener('click', () => adjustG
 document.getElementById('resetHighScores').addEventListener('click', resetHighScores);
 document.getElementById('instructionsButton').addEventListener('click', toggleInstructions);
 document.getElementById('difficultyLevel').addEventListener('change', adjustAIDifficulty);
+document.getElementById('fullscreenButton').addEventListener('click', toggleFullscreen);
 
 function displayHighScores() {
     document.getElementById('highScores').innerText = `High Scores - Player 1: ${highScores.player1}, Player 2: ${highScores.player2}`;
@@ -364,6 +365,16 @@ function adjustGameSpeed(amount) {
 function adjustAIDifficulty() {
     const difficulty = document.getElementById('difficultyLevel').value;
     player2Speed = difficulty === 'easy' ? 0.1 : difficulty === 'medium' ? 0.15 : 0.2;
+}
+
+function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+        canvas.requestFullscreen().catch(err => {
+            alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
 }
 
 document.addEventListener('keydown', controlHandler);
