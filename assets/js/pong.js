@@ -5,6 +5,8 @@ const paddleWidth = 10;
 const paddleHeight = 100;
 const ballSize = 10;
 
+const soundEffect = new Audio('bounce.mp3'); // Add sound effect for ball collision
+
 let player1Y = canvas.height / 2 - paddleHeight / 2;
 let player2Y = canvas.height / 2 - paddleHeight / 2;
 let ballX = canvas.width / 2;
@@ -15,15 +17,12 @@ let ballSpeedY = 5;
 let player1Score = 0;
 let player2Score = 0;
 
-let gameRunning = false; // Game starts paused by default
-let gameMode = 'ai-vs-ai'; // Default mode is AI vs AI
+let gameRunning = false;
+let gameMode = 'ai-vs-ai';
 
-let player2Speed = 0; // Speed for player 2 when user controlled
+let player2Speed = 0;
 
-document.getElementById('startGame').addEventListener('click', () => {
-    startGame('player-vs-ai');
-});
-
+document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
 
 function startGame(mode) {
@@ -31,7 +30,6 @@ function startGame(mode) {
     player1Score = 0;
     player2Score = 0;
     gameMode = mode;
-    console.log('Game mode switched to:', gameMode);
     resetBall();
     gameLoop();
 }
@@ -58,38 +56,36 @@ function drawCircle(x, y, radius, color) {
 function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
-    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5; // Random starting direction
-    ballSpeedY = (Math.random() * 10) - 5; // Random vertical speed
+    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5;
+    ballSpeedY = (Math.random() * 10) - 5;
 }
 
 function update() {
     if (!gameRunning) return;
 
-    // AI for player 1 (left paddle) - always AI controlled
     player1Y += (ballY - (player1Y + paddleHeight / 2)) * 0.1;
     player1Y = Math.max(0, Math.min(canvas.height - paddleHeight, player1Y));
 
-    // Move ball
     ballX += ballSpeedX;
     ballY += ballSpeedY;
 
-    // Ball collision with top/bottom walls
     if (ballY < 0 || ballY > canvas.height - ballSize) {
         ballSpeedY = -ballSpeedY;
+        soundEffect.play(); // Play sound on wall collision
     }
 
-    // Ball collision with paddles
     if (ballX < paddleWidth && ballY > player1Y && ballY < player1Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player1Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
+        soundEffect.play(); // Play sound on paddle collision
     } else if (ballX > canvas.width - paddleWidth - ballSize && ballY > player2Y && ballY < player2Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player2Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
+        soundEffect.play(); // Play sound on paddle collision
     }
 
-    // Ball out of bounds (scoring)
     if (ballX < 0) {
         player2Score++;
         resetBall();
@@ -98,36 +94,26 @@ function update() {
         resetBall();
     }
 
-    // Player 2 control based on game mode
     if (gameMode === 'ai-vs-ai') {
-        // AI for player 2 (right paddle)
         player2Y += (ballY - (player2Y + paddleHeight / 2)) * 0.1;
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
     } else if (gameMode === 'player-vs-ai') {
-        // Player 2 (right paddle) controlled by user
         player2Y += player2Speed;
         player2Y = Math.max(0, Math.min(canvas.height - paddleHeight, player2Y));
     }
 }
 
 function draw() {
-    // Background
     drawRect(0, 0, canvas.width, canvas.height, '#000');
-
-    // Paddles
     drawRect(0, player1Y, paddleWidth, paddleHeight, '#FFF');
     drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, '#FFF');
-
-    // Ball
     drawCircle(ballX, ballY, ballSize, '#FFF');
 
-    // Scores
     ctx.font = '30px Arial';
     ctx.fillStyle = '#FFF';
     ctx.fillText(player1Score, canvas.width / 4, 50);
     ctx.fillText(player2Score, canvas.width * 3 / 4, 50);
-    
-    // Center Line
+
     ctx.strokeStyle = '#FFF';
     ctx.beginPath();
     ctx.setLineDash([5, 15]);
@@ -147,20 +133,19 @@ function gameLoop() {
 document.addEventListener('keydown', (e) => {
     if (gameMode === 'player-vs-ai') {
         if (e.key === 'ArrowUp') {
-            player2Speed = -5; // Move up
+            player2Speed = -5;
         } else if (e.key === 'ArrowDown') {
-            player2Speed = 5; // Move down
+            player2Speed = 5;
         }
     }
 });
 
 document.addEventListener('keyup', (e) => {
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
-        player2Speed = 0; // Stop movement
+        player2Speed = 0;
     }
 });
 
-// Initial instructions
 drawRect(0, 0, canvas.width, canvas.height, '#000');
 ctx.font = '30px Arial';
 ctx.fillStyle = '#FFF';

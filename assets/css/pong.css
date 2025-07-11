@@ -4,6 +4,7 @@
   display: block;
   margin: 20px auto;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  border-radius: 10px; /* Rounded corners for canvas */
 }
 
 .game-controls {
@@ -19,15 +20,15 @@
   color: var(--page-col);
   border: none;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease;
   margin: 0 5px;
 }
 
 .game-controls button:hover {
   background-color: var(--hover-col);
+  transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
-/* Dark mode adjustments for game controls */
 body.dark-mode .game-controls button {
   background-color: var(--link-col);
   color: var(--page-col);
