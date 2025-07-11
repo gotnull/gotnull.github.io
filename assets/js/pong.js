@@ -11,8 +11,9 @@ let player1Y = canvas.height / 2 - paddleHeight / 2;
 let player2Y = canvas.height / 2 - paddleHeight / 2;
 let ballX = canvas.width / 2;
 let ballY = canvas.height / 2;
-let ballSpeedX = 5;
-let ballSpeedY = 5;
+const INITIAL_BALL_SPEED = 5;
+let ballSpeedX = INITIAL_BALL_SPEED;
+let ballSpeedY = INITIAL_BALL_SPEED;
 
 let player1Score = 0;
 let player2Score = 0;
@@ -47,8 +48,8 @@ function startGame(mode) {
     player2Score = 0;
     gameMode = mode;
     document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' vs ').toUpperCase()}`;
-    ballSpeedX = 5;
-    ballSpeedY = 5;
+    ballSpeedX = INITIAL_BALL_SPEED;
+    ballSpeedY = INITIAL_BALL_SPEED;
     resetBall();
     spawnPowerUp();
     gameLoop();
@@ -82,8 +83,8 @@ function drawCircle(x, y, radius, color) {
 function resetBall() {
     ballX = canvas.width / 2;
     ballY = canvas.height / 2;
-    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * 5;
-    ballSpeedY = (Math.random() * 10) - 5;
+    ballSpeedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED;
+    ballSpeedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED;
 }
 
 function spawnPowerUp() {

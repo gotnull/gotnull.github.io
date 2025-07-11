@@ -42,3 +42,5 @@ history:
     CSS variable for the theme color. This enhances user experience by providing auditory
     feedback and visual customization options.
   timestamp: '2025-07-11 05:55:49'
+- summary: Further refined the ball speed reset logic by ensuring `ballSpeedY` is also reset to `INITIAL_BALL_SPEED` in `resetBall()` and `startGame()` to prevent cumulative speed increases from power-ups across game restarts.
+  timestamp: '2025-07-11 06:00:00'
