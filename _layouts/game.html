@@ -12,6 +12,26 @@ layout: default
         <p>Use Up/Down arrows to move the right paddle.</p>
         <button id="startGame">Start Game</button>
       </div>
+
+      <h2 class="mt-5">Code Evolution History</h2>
+      <div class="code-history" style="max-height: 500px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;">
+        {% if site.data.pong_history.history %}
+          {% for entry in site.data.pong_history.history reversed %}
+            <div class="history-entry mb-4" style="border-bottom: 1px dashed #eee; padding-bottom: 10px;">
+              <h3>Update at {{ entry.timestamp }}</h3>
+              <h4>JavaScript (pong.js)</h4>
+              <pre><code class="language-javascript">{{ entry.js_code | escape }}</code></pre>
+              <h4>CSS (pong.css)</h4>
+              <pre><code class="language-css">{{ entry.css_code | escape }}</code></pre>
+              <h4>HTML (_layouts/game.html)</h4>
+              <pre><code class="language-html">{{ entry.html_code | escape }}</code></pre>
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No history available yet. Run the 'Improve Pong Game' workflow to generate history.</p>
+        {% endif %}
+      </div>
+
     </div>
   </div>
 </main>
