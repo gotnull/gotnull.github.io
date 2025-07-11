@@ -83,3 +83,8 @@ history:
     mode has been introduced, and a feature to display the game's FPS (frames per
     second) on the screen has been added.
   timestamp: '2025-07-11 11:22:22'
+- summary: The improved code introduces a new feature that tracks and displays high
+    scores using local storage, allowing the game to save and retrieve the highest
+    scores for both players across sessions. Additionally, the HTML and CSS were updated
+    to include a new section for displaying these high scores.
+  timestamp: '2025-07-11 11:53:17'

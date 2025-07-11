@@ -50,6 +50,24 @@ document.getElementById('toggleSound').addEventListener('click', toggleSound);
 
 let soundEnabled = true;
 
+// New feature: Local Storage for saving high scores
+let highScores = JSON.parse(localStorage.getItem('highScores')) || { player1: 0, player2: 0 };
+
+function displayHighScores() {
+    document.getElementById('highScores').innerText = `High Scores - Player 1: ${highScores.player1}, Player 2: ${highScores.player2}`;
+}
+
+function updateHighScores() {
+    if (player1Score > highScores.player1) {
+        highScores.player1 = player1Score;
+    }
+    if (player2Score > highScores.player2) {
+        highScores.player2 = player2Score;
+    }
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    displayHighScores();
+}
+
 function startGame(mode) {
     showWinScreen = false;
     gameRunning = true;
@@ -165,6 +183,7 @@ function update() {
             showWinScreen = true;
             if (soundEnabled) winSound.play();
             gameRunning = false;
+            updateHighScores();
             startCountdown();
         }
         resetBall();
@@ -176,6 +195,7 @@ function update() {
             showWinScreen = true;
             if (soundEnabled) winSound.play();
             gameRunning = false;
+            updateHighScores();
             startCountdown();
         }
         resetBall();
@@ -288,4 +308,5 @@ function showFPS(time) {
 }
 requestAnimationFrame(showFPS);
 
+displayHighScores(); // Display high scores on load
 startGame('ai-vs-ai');
