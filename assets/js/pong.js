@@ -40,6 +40,9 @@ let currentTheme = 0;
 document.getElementById('startGame').addEventListener('click', () => startGame('player-vs-ai'));
 document.getElementById('pauseGame').addEventListener('click', togglePause);
 document.getElementById('changeTheme').addEventListener('click', changeTheme);
+document.getElementById('toggleSound').addEventListener('click', toggleSound);
+
+let soundEnabled = true;
 
 function startGame(mode) {
     showWinScreen = false;
@@ -66,6 +69,11 @@ function togglePause() {
 function changeTheme() {
     currentTheme = (currentTheme + 1) % themes.length;
     document.documentElement.style.setProperty('--theme-color', themes[currentTheme]);
+}
+
+function toggleSound() {
+    soundEnabled = !soundEnabled;
+    document.getElementById('toggleSound').innerText = soundEnabled ? 'Sound: On' : 'Sound: Off';
 }
 
 function drawRect(x, y, width, height, color) {
@@ -117,19 +125,19 @@ function update() {
 
     if (ballY < 0 || ballY > canvas.height - ballSize) {
         ballSpeedY = -ballSpeedY;
-        hitSound.play();
+        if (soundEnabled) hitSound.play();
     }
 
     if (ballX < paddleWidth && ballY > player1Y && ballY < player1Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player1Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
-        hitSound.play();
+        if (soundEnabled) hitSound.play();
     } else if (ballX > canvas.width - paddleWidth - ballSize && ballY > player2Y && ballY < player2Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player2Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
-        hitSound.play();
+        if (soundEnabled) hitSound.play();
     }
 
     if (ballX < 0) {
@@ -137,7 +145,7 @@ function update() {
         if (player2Score >= winningScore) {
             winner = 'Player 2';
             showWinScreen = true;
-            winSound.play();
+            if (soundEnabled) winSound.play();
             gameRunning = false;
             startCountdown();
         }
@@ -148,7 +156,7 @@ function update() {
         if (player1Score >= winningScore) {
             winner = 'Player 1';
             showWinScreen = true;
-            winSound.play();
+            if (soundEnabled) winSound.play();
             gameRunning = false;
             startCountdown();
         }
