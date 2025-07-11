@@ -5,7 +5,7 @@ const paddleWidth = 10;
 const paddleHeight = 100;
 const ballSize = 10;
 
-const soundEffect = new Audio('bounce.mp3'); // Add sound effect for ball collision
+const soundEffect = new Audio('bounce.mp3');
 
 let player1Y = canvas.height / 2 - paddleHeight / 2;
 let player2Y = canvas.height / 2 - paddleHeight / 2;
@@ -24,7 +24,6 @@ let player2Speed = 0;
 let powerUpActive = false;
 let powerUpX, powerUpY;
 
-// Add new feature: Set winning score and show victory message
 const winningScore = 5;
 let showWinScreen = false;
 let winner = '';
@@ -45,7 +44,7 @@ function startGame(mode) {
 }
 
 function togglePause() {
-    if (showWinScreen) return; // Prevent pause after game ends
+    if (showWinScreen) return;
     gameRunning = !gameRunning;
     if (gameRunning) {
         gameLoop();
@@ -101,19 +100,19 @@ function update() {
 
     if (ballY < 0 || ballY > canvas.height - ballSize) {
         ballSpeedY = -ballSpeedY;
-        soundEffect.play(); // Play sound on wall collision
+        soundEffect.play();
     }
 
     if (ballX < paddleWidth && ballY > player1Y && ballY < player1Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player1Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
-        soundEffect.play(); // Play sound on paddle collision
+        soundEffect.play();
     } else if (ballX > canvas.width - paddleWidth - ballSize && ballY > player2Y && ballY < player2Y + paddleHeight) {
         ballSpeedX = -ballSpeedX;
         let deltaY = ballY - (player2Y + paddleHeight / 2);
         ballSpeedY = deltaY * 0.35;
-        soundEffect.play(); // Play sound on paddle collision
+        soundEffect.play();
     }
 
     if (ballX < 0) {
@@ -166,7 +165,7 @@ function draw() {
     ctx.stroke();
 
     if (powerUpActive) {
-        drawCircle(powerUpX, powerUpY, 15, '#FFD700'); // Draw power-up in gold color
+        drawCircle(powerUpX, powerUpY, 15, '#FFD700');
     }
 
     if (showWinScreen) {
