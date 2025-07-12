@@ -120,3 +120,33 @@ select {
     color: white;
     margin-right: 5px;
 }
+
+/* Chat message styling */
+#chatBox p {
+    margin: 5px 0;
+    padding: 5px 8px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.my-message {
+    background-color: #007bff; /* Blue for my messages */
+    align-self: flex-end;
+    text-align: right;
+}
+
+.other-message {
+    background-color: #555; /* Grey for other messages */
+    align-self: flex-start;
+    text-align: left;
+}
+
+.username {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: #bbb;
+}

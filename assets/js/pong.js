@@ -1,62 +1,65 @@
-// Added chat feature for online multiplayer using WebSockets
-
-const canvas = document.getElementById('pongCanvas');
-const ctx = canvas.getContext('2d');
-const websocket = new WebSocket('wss://yourserver.com/pong');
-
-// Constants
 const paddleWidth = 10;
 const INITIAL_PADDLE_HEIGHT = 100;
-const ballSize = 10;
 const INITIAL_BALL_SPEED = 5;
+const ballSize = 10;
 const winningScore = 5;
 const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall', 'multiball'];
-const themes = ['#007BFF', '#28A745', '#FFC107', '#DC3545'];
+const themes = ['#000', '#1a1a1a', '#333'];
 
-// Game State
+let paddleHeight;
+let ballSpeedMultiplier;
+let gameSpeed;
+let player1Y, player2Y, player2Speed;
+let player1Score, player2Score;
+let powerUpActive, powerUpVisible;
+let powerUpX, powerUpY, currentPowerUpType, powerUpTimer;
+let ballVisible, controlsReversed;
+let balls = [];
+let gameMode;
 let gameRunning = false;
-let gameMode = 'ai-vs-ai';
 let showWinScreen = false;
 let winner = '';
 let countdown = 5;
-let countdownInterval = null;
-let animationFrameId = null;
-
-// Player & Ball State
-let paddleHeight = INITIAL_PADDLE_HEIGHT;
-let ballSpeedMultiplier = 1;
-let gameSpeed = 1;
-let player1Y, player2Y, player2Speed;
-let balls = [];
-let player1Score = 0, player2Score = 0;
-
-// Power-Ups
-let powerUpActive = false;
-let powerUpVisible = false;
-let powerUpX = 0, powerUpY = 0, currentPowerUpType = '';
-let powerUpTimer = 0;
-let powerUpsEnabled = true;
-let ballVisible = true;
-let controlsReversed = false;
-
-// Options
-let soundEnabled = true;
-let currentTheme = 0;
+let soundEnabled = false;
 let aiDifficulty = 0.15;
-
-// Audio (mock for no audio files)
-const createMockAudio = () => ({ play: () => {}, pause: () => {}, muted: false });
-const soundEffect = createMockAudio();
-const hitSound = createMockAudio();
-const winSound = createMockAudio();
-const countdownSound = createMockAudio();
-
-// Storage
+let powerUpsEnabled = true;
+let currentTheme = 0;
 let highScores = JSON.parse(localStorage.getItem('highScores')) || { player1: 0, player2: 0 };
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+const hitSound = new Audio('/assets/audio/hit.mp3');
+const winSound = new Audio('/assets/audio/win.mp3');
+const countdownSound = new Audio('/assets/audio/bounce.mp3');
+let canvas, ctx;
+let ably, channel;
+let animationFrameId;
+let countdownInterval;
+let currentUsername;
 
-// Init
-document.addEventListener('DOMContentLoaded', () => {
+function generateRandomUsername() {
+    const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
+    const nouns = ["Panda", "Tiger", "Eagle", "Shark", "Wolf", "Lion", "Bear", "Fox", "Hawk", "Owl"];
+    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
+    return `${randomAdjective}${randomNoun}${Math.floor(Math.random() * 100)}`;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    canvas = document.getElementById('pongCanvas');
+    ctx = canvas.getContext('2d');
+
+    ably = new Ably.Realtime("iS2_UQ.Yk8bNA:gWf506yEprURhapCNSjwxZTt-_Gh4CX-zr5TyyGMLgg");
+    channel = ably.channels.get('pong-game');
+
+    currentUsername = generateRandomUsername();
+
+    channel.subscribe('chat', (message) => {
+        handleAblyMessage(message.data);
+    });
+
+    console.log("jQuery is loaded: " + (typeof $ !== 'undefined'));
+    console.log("Lightbox is loaded: " + (typeof lightbox !== 'undefined'));
+    console.log("Ably is loaded:", typeof Ably !== 'undefined');
+
     bindUI();
     resetEventListeners();
     initializeGame();
@@ -67,27 +70,23 @@ const VIRTUAL_WIDTH = 800;
 const VIRTUAL_HEIGHT = 400; // match your canvas aspect ratio
 
 function resizeCanvas() {
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
 
-  const scale = Math.min(windowWidth / VIRTUAL_WIDTH, windowHeight / VIRTUAL_HEIGHT);
+    const scale = Math.min(windowWidth / VIRTUAL_WIDTH, windowHeight / VIRTUAL_HEIGHT);
 
-  canvas.style.width = (VIRTUAL_WIDTH * scale) + 'px';
-  canvas.style.height = (VIRTUAL_HEIGHT * scale) + 'px';
+    canvas.style.width = (VIRTUAL_WIDTH * scale) + 'px';
+    canvas.style.height = (VIRTUAL_HEIGHT * scale) + 'px';
 
-  canvas.width = VIRTUAL_WIDTH;
-  canvas.height = VIRTUAL_HEIGHT;
+    canvas.width = VIRTUAL_WIDTH;
+    canvas.height = VIRTUAL_HEIGHT;
 }
 
 // Then, near your init calls at the bottom:
 
 window.addEventListener('resize', resizeCanvas);
 window.addEventListener('orientationchange', resizeCanvas);
-window.addEventListener('load', () => {
-  resizeCanvas();
-  initializeGame();
-  startGame(gameMode); // or your default mode
-});
+
 
 // UI Binding
 function bindUI() {
@@ -148,27 +147,13 @@ function startGame(mode) {
 }
 
 function startOnlineMultiplayer() {
-    websocket.send(JSON.stringify({ type: 'joinGame' }));
-    websocket.onmessage = (event) => {
-        const message = JSON.parse(event.data);
-        handleWebSocketMessage(message);
-    };
+    channel.publish('join-game', { clientId: ably.auth.clientId });
 }
 
-function handleWebSocketMessage(message) {
-    switch(message.type) {
-        case 'startGame':
-            startGame('online-multiplayer');
-            break;
-        case 'update':
-            player1Y = message.player1Y;
-            player2Y = message.player2Y;
-            balls = message.balls;
-            player1Score = message.player1Score;
-            player2Score = message.player2Score;
-            break;
+function handleAblyMessage(message) {
+    switch (message.type) {
         case 'chat':
-            displayChatMessage(message.content);
+            displayChatMessage(message.username, message.content, message.timestamp);
             break;
     }
 }
@@ -282,29 +267,18 @@ function update() {
     }
 
     if (powerUpActive && powerUpTimer > 0) powerUpTimer -= 1 / 60;
-
-    if (gameMode === 'online-multiplayer') {
-        websocket.send(JSON.stringify({
-            type: 'update',
-            player1Y,
-            player2Y,
-            balls,
-            player1Score,
-            player2Score
-        }));
-    }
 }
 
 function handleInput() {
     if (gameMode === 'player-vs-ai') {
         player2Speed = keysPressed['ArrowUp'] ? (controlsReversed ? 5 : -5)
-                      : keysPressed['ArrowDown'] ? (controlsReversed ? -5 : 5) : 0;
+            : keysPressed['ArrowDown'] ? (controlsReversed ? -5 : 5) : 0;
     } else if (gameMode === 'multiplayer') {
         if (keysPressed['w'] || keysPressed['W']) player1Y -= (controlsReversed ? -5 : 5);
         if (keysPressed['s'] || keysPressed['S']) player1Y += (controlsReversed ? -5 : 5);
 
         player2Speed = keysPressed['ArrowUp'] ? (controlsReversed ? 5 : -5)
-                      : keysPressed['ArrowDown'] ? (controlsReversed ? -5 : 5) : 0;
+            : keysPressed['ArrowDown'] ? (controlsReversed ? -5 : 5) : 0;
 
         player1Y = clamp(player1Y, 0, canvas.height - paddleHeight);
     }
@@ -442,7 +416,7 @@ function addAdditionalBalls() {
 }
 
 function getPowerUpColor(type) {
-    switch(type) {
+    switch (type) {
         case 'speed': return '#FFD700';
         case 'shrinkPaddle': return '#FF6347';
         case 'reverseControls': return '#8A2BE2';
@@ -485,8 +459,8 @@ function resetHighScores() {
 function updateLeaderboardDisplay() {
     const container = document.getElementById('leaderboard');
     container.innerHTML = '<h3>Leaderboard</h3>';
-    leaderboard.sort((a,b) => b.score - a.score).slice(0,5).forEach((entry, i) => {
-        container.innerHTML += `<p>${i+1}. ${entry.name}: ${entry.score}</p>`;
+    leaderboard.sort((a, b) => b.score - a.score).slice(0, 5).forEach((entry, i) => {
+        container.innerHTML += `<p>${i + 1}. ${entry.name}: ${entry.score}</p>`;
     });
 }
 
@@ -577,17 +551,39 @@ function sendMessage() {
     const chatInput = document.getElementById('chatInput');
     const message = chatInput.value;
     if (message.trim() !== '') {
-        websocket.send(JSON.stringify({
+        const sanitizedMessage = sanitizeInput(message);
+        channel.publish('chat', {
             type: 'chat',
-            content: message
-        }));
-        displayChatMessage(`You: ${message}`);
+            username: currentUsername,
+            content: sanitizedMessage,
+            timestamp: new Date().toISOString()
+        });
         chatInput.value = '';
     }
 }
 
-function displayChatMessage(message) {
+function displayChatMessage(username, content, timestamp) {
     const chatBox = document.getElementById('chatBox');
-    chatBox.innerHTML += `<p>${message}</p>`;
+    const messageElement = document.createElement('p');
+    const date = new Date(timestamp);
+    const timeString = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    let messageClass = '';
+    if (username === currentUsername) {
+        messageClass = 'my-message';
+    } else {
+        messageClass = 'other-message';
+    }
+
+    messageElement.classList.add(messageClass);
+    messageElement.innerHTML = `<span class="timestamp">[${timeString}]</span> <span class="username">${username}:</span> ${content}`;
+    chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+function sanitizeInput(input) {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(input));
+    return div.innerHTML;
+}
+

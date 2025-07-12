@@ -105,6 +105,8 @@ share-links-active:
 # Remove this if you don't want a link in the footer
 url-pretty: "4511932.com"
 
+ably_api_key: "iS2_UQ.Yk8bNA:gWf506yEprURhapCNSjwxZTt-_Gh4CX-zr5TyyGMLgg"
+
 # Add the website title to the title of every page
 title-on-all-pages: true
 
@@ -163,8 +165,8 @@ footer-hover-col: "#0085A1"
 #  - "/assets/css/custom-styles.css"
 
 # If you have common JavaScript files that should be included in every page, list them here
-#site-js:
-#  - "/assets/js/custom-script.js"
+site-js:
+  - "https://cdn.ably.com/lib/ably.min-2.js"
 
 #################################
 # --- Web Analytics Section --- #
