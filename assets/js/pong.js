@@ -85,13 +85,9 @@ function resizeCanvas() {
     canvas.height = VIRTUAL_HEIGHT;
 }
 
-// Then, near your init calls at the bottom:
-
 window.addEventListener('resize', resizeCanvas);
 window.addEventListener('orientationchange', resizeCanvas);
 
-
-// UI Binding
 function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
     document.getElementById('startAI').onclick = () => startGame('ai-vs-ai');
@@ -136,7 +132,6 @@ function initializeGame() {
     updateLeaderboardDisplay();
 }
 
-// Game
 function startGame(mode) {
     initializeGame();
     gameMode = mode;
@@ -185,7 +180,6 @@ function resetBall(ball) {
     ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * gameSpeed;
 }
 
-// Input
 let keysPressed = {};
 function resetEventListeners() {
     document.removeEventListener('keydown', handleKeyDown);
@@ -196,13 +190,11 @@ function resetEventListeners() {
 function handleKeyDown(e) { keysPressed[e.key] = true; }
 function handleKeyUp(e) { keysPressed[e.key] = false; }
 
-// Update
 function update() {
     if (!gameRunning || showWinScreen) return;
 
     handleInput();
 
-    // AI
     if (balls.length) {
         const ball = balls[0];
         player1Y += (ball.y - (player1Y + paddleHeight / 2)) * aiDifficulty;
@@ -228,7 +220,6 @@ function update() {
             if (soundEnabled) hitSound.play();
         }
 
-        // Paddle collisions
         if (ball.x <= paddleWidth && ball.y >= player1Y && ball.y <= player1Y + paddleHeight) {
             ball.speedX = Math.abs(ball.speedX);
             ball.speedY = (ball.y - (player1Y + paddleHeight / 2)) * 0.35;
@@ -239,7 +230,6 @@ function update() {
             if (soundEnabled) hitSound.play();
         }
 
-        // Power-up
         if (powerUpActive && powerUpVisible) {
             const dx = Math.abs(ball.x - powerUpX);
             const dy = Math.abs(ball.y - powerUpY);
@@ -250,7 +240,6 @@ function update() {
             }
         }
 
-        // Scoring
         if (ball.x < 0) {
             player2Score++;
             balls.splice(i, 1);
@@ -287,21 +276,16 @@ function handleInput() {
     }
 }
 
-// Drawing
 function draw() {
-    // Clear
     drawRect(0, 0, canvas.width, canvas.height, '#000');
 
-    // Paddles
     drawRect(0, player1Y, paddleWidth, paddleHeight, '#FFF');
     drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, '#FFF');
 
-    // Balls
     balls.forEach(ball => {
         if (ballVisible) drawCircle(ball.x, ball.y, ballSize, '#FFF');
     });
 
-    // Center line
     ctx.setLineDash([5, 15]);
     ctx.strokeStyle = '#FFF';
     ctx.beginPath();
@@ -310,25 +294,21 @@ function draw() {
     ctx.stroke();
     ctx.setLineDash([]);
 
-    // Scores
     ctx.font = '30px Arial';
     ctx.fillStyle = '#FFF';
     ctx.fillText(player1Score, canvas.width / 4, 50);
     ctx.fillText(player2Score, canvas.width * 3 / 4, 50);
 
-    // Power-up
     if (powerUpActive && powerUpVisible) {
         drawCircle(powerUpX, powerUpY, 15, getPowerUpColor(currentPowerUpType));
     }
 
-    // Power-up timer text
     if (powerUpActive) {
         ctx.fillStyle = '#FFD700';
         ctx.font = '16px Arial';
         ctx.fillText(`Power-Up: ${currentPowerUpType.toUpperCase()} (${powerUpTimer.toFixed(1)}s)`, 10, canvas.height - 20);
     }
 
-    // Win screen
     if (showWinScreen) {
         ctx.fillStyle = 'rgba(0,0,0,0.7)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -339,11 +319,9 @@ function draw() {
         ctx.fillText(`Game restarts in ${countdown}...`, canvas.width / 2 - 120, canvas.height / 2 + 50);
     }
 
-    // FPS display
     drawFPS();
 }
 
-// Utility draw functions
 function drawRect(x, y, w, h, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, w, h);
@@ -358,7 +336,6 @@ function clamp(val, min, max) {
     return Math.min(Math.max(val, min), max);
 }
 
-// Power-ups
 function spawnPowerUp() {
     if (!powerUpsEnabled) return;
     powerUpActive = true;
@@ -429,7 +406,6 @@ function getPowerUpColor(type) {
     }
 }
 
-// Score and Leaderboard
 function checkWinCondition() {
     if (player1Score >= winningScore || player2Score >= winningScore) {
         winner = player1Score >= winningScore ? 'Player 1' : 'Player 2';
@@ -486,7 +462,6 @@ function startCountdown() {
     }, 1000);
 }
 
-// FPS
 let lastFrameTime = 0;
 let fps = 0;
 
@@ -502,7 +477,6 @@ function drawFPS() {
     ctx.fillText(`FPS: ${fps}`, 10, 20);
 }
 
-// Settings and UI
 function changeTheme() {
     currentTheme = (currentTheme + 1) % themes.length;
     document.documentElement.style.setProperty('--theme-color', themes[currentTheme]);
@@ -549,7 +523,6 @@ function toggleInstructions() {
     instructions.style.display = (instructions.style.display === 'none' || !instructions.style.display) ? 'block' : 'none';
 }
 
-// Chat
 function sendMessage() {
     const chatInput = document.getElementById('chatInput');
     const message = chatInput.value;
@@ -592,7 +565,7 @@ function sanitizeInput(input) {
 
 async function loadChatHistory() {
     const chatBox = document.getElementById('chatBox');
-    chatBox.innerHTML = ''; // Clear chatbox before loading history
+    chatBox.innerHTML = '';
     try {
         let page = await channel.history({ limit: 50, direction: 'forwards' });
         page.items.forEach(message => {
