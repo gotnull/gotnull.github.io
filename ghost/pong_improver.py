@@ -4,7 +4,16 @@ import re
 import yaml
 from datetime import datetime
 from openai import OpenAI
-from yaml.scalarstring import DoubleQuotedScalarString
+import yaml
+from yaml.representer import SafeRepresenter
+
+class QuotedString(str):
+    pass
+
+def quoted_str_presenter(dumper, data):
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data, style='"')
+
+yaml.add_representer(QuotedString, quoted_str_presenter)
 
 PONG_JS_PATH = "assets/js/pong.js"
 PONG_CSS_PATH = "assets/css/pong.css"
@@ -47,7 +56,7 @@ def update_pong_history(summary):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_entry = {
         "timestamp": timestamp,
-        "summary": DoubleQuotedScalarString(summary)
+        "summary": QuotedString(summary)
     }
     history_data["history"].append(new_entry)
 
