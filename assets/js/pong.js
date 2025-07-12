@@ -65,6 +65,7 @@ window.addEventListener('DOMContentLoaded', () => {
     bindUI();
     resetEventListeners();
     initializeGame();
+    toggleSound(); // Set initial sound button text
     startGame('ai-vs-ai');
 });
 
