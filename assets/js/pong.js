@@ -490,7 +490,11 @@ function draw() {
 
     // Draw power-up
     if (powerUpActive && powerUpVisible) {
-        drawCircle(powerUpX, powerUpY, 15, getPowerUpColor(currentPowerUpType));
+ctx.save();
+ctx.shadowColor = getPowerUpColor(currentPowerUpType);
+ctx.shadowBlur = 20;
+drawCircle(powerUpX, powerUpY, 15, getPowerUpColor(currentPowerUpType));
+ctx.restore();
     }
 
     // Draw power-up info
