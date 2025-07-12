@@ -1,54 +1,54 @@
-    <div id="gameContainer">
-        <canvas id="pongCanvas" width="800" height="400"></canvas>
-        
-        <div id="controls">
-            <button id="startGame">Start Player vs AI</button>
-            <button id="startAI">Start AI vs AI</button>
-            <button id="startMultiplayer">Start Multiplayer</button>
-            <button id="pauseGame">Pause</button>
-            <button id="changeTheme">Change Theme</button>
-            <button id="toggleSound">Sound: On</button>
-            <button id="togglePowerUps">Power-Ups: On</button>
-            <button id="instructionsButton">Instructions</button>
-            <button id="fullscreenButton">Fullscreen</button>
-        </div>
-        
-        <div id="gameInfo">
-            <div id="gameModeDisplay">Mode: AI vs AI</div>
-            <div id="highScores">High Scores - Player 1: 0, Player 2: 0</div>
-            <div>
-                <label for="difficultyLevel">AI Difficulty:</label>
-                <select id="difficultyLevel">
-                    <option value="easy">Easy</option>
-                    <option value="medium" selected>Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-            </div>
-        </div>
-        
-        <div id="speedControls">
-            <button id="decreaseSpeed">Slower</button>
-            <span id="speedDisplay">Speed: 1.0x</span>
-            <button id="increaseSpeed">Faster</button>
-            <button id="resetHighScores">Reset High Scores</button>
-        </div>
-        
-        <div id="leaderboard"></div>
-        
-        <div id="instructions">
-            <h3>Instructions</h3>
-            <p><strong>Player vs AI:</strong> Use Arrow Keys to control right paddle</p>
-            <p><strong>Multiplayer:</strong> Player 1 uses W/S keys, Player 2 uses Arrow Keys</p>
-            <p><strong>Power-ups:</strong> Hit the colored circles for special effects!</p>
-            <ul>
-                <li>Speed (Gold): Increases ball speed</li>
-                <li>Shrink Paddle (Red): Makes paddles smaller</li>
-                <li>Reverse Controls (Purple): Reverses player controls</li>
-                <li>Invisible Ball (Cyan): Makes ball invisible</li>
-                <li>Multiball (Green): Adds extra balls</li>
-            </ul>
+<div id="gameContainer">
+    <canvas id="pongCanvas" width="800" height="400"></canvas>
+    
+    <div id="controls">
+        <button id="startGame">Start Player vs AI</button>
+        <button id="startAI">Start AI vs AI</button>
+        <button id="startMultiplayer">Start Multiplayer</button>
+        <button id="pauseGame">Pause</button>
+        <button id="changeTheme">Change Theme</button>
+        <button id="toggleSound">Sound: On</button>
+        <button id="togglePowerUps">Power-Ups: On</button>
+        <button id="instructionsButton">Instructions</button>
+        <button id="fullscreenButton">Fullscreen</button>
+    </div>
+    
+    <div id="gameInfo">
+        <div id="gameModeDisplay">Mode: AI vs AI</div>
+        <div id="highScores">High Scores - Player 1: 0, Player 2: 0</div>
+        <div>
+            <label for="difficultyLevel">AI Difficulty:</label>
+            <select id="difficultyLevel">
+                <option value="easy">Easy</option>
+                <option value="medium" selected>Medium</option>
+                <option value="hard">Hard</option>
+            </select>
         </div>
     </div>
+    
+    <div id="speedControls">
+        <button id="decreaseSpeed">Slower</button>
+        <span id="speedDisplay">Speed: 1.0x</span>
+        <button id="increaseSpeed">Faster</button>
+        <button id="resetHighScores">Reset High Scores</button>
+    </div>
+    
+    <div id="leaderboard"></div>
+    
+    <div id="instructions">
+        <h3>Instructions</h3>
+        <p><strong>Player vs AI:</strong> Use Arrow Keys to control right paddle</p>
+        <p><strong>Multiplayer:</strong> Player 1 uses W/S keys, Player 2 uses Arrow Keys</p>
+        <p><strong>Power-ups:</strong> Hit the colored circles for special effects!</p>
+        <ul>
+            <li>Speed (Gold): Increases ball speed</li>
+            <li>Shrink Paddle (Red): Makes paddles smaller</li>
+            <li>Reverse Controls (Purple): Reverses player controls</li>
+            <li>Invisible Ball (Cyan): Makes ball invisible</li>
+            <li>Multiball (Green): Adds extra balls</li>
+        </ul>
+    </div>
+</div>
 <audio id="backgroundMusic" loop>
   <source src="/assets/audio/background.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
