@@ -60,6 +60,34 @@ document.addEventListener('DOMContentLoaded', () => {
     startGame('ai-vs-ai');
 });
 
+
+
+const VIRTUAL_WIDTH = 800;
+const VIRTUAL_HEIGHT = 400; // match your canvas aspect ratio
+
+function resizeCanvas() {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+
+  const scale = Math.min(windowWidth / VIRTUAL_WIDTH, windowHeight / VIRTUAL_HEIGHT);
+
+  canvas.style.width = (VIRTUAL_WIDTH * scale) + 'px';
+  canvas.style.height = (VIRTUAL_HEIGHT * scale) + 'px';
+
+  canvas.width = VIRTUAL_WIDTH;
+  canvas.height = VIRTUAL_HEIGHT;
+}
+
+// Then, near your init calls at the bottom:
+
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', resizeCanvas);
+window.addEventListener('load', () => {
+  resizeCanvas();
+  initializeGame();
+  startGame(gameMode); // or your default mode
+});
+
 // UI Binding
 function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
@@ -500,3 +528,4 @@ function toggleInstructions() {
     const instructions = document.getElementById('instructions');
     instructions.style.display = (instructions.style.display === 'none' || !instructions.style.display) ? 'block' : 'none';
 }
+
