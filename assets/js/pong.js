@@ -1,5 +1,8 @@
+// Added multiplayer online capability using WebSockets
+
 const canvas = document.getElementById('pongCanvas');
 const ctx = canvas.getContext('2d');
+const websocket = new WebSocket('wss://yourserver.com/pong');
 
 // Constants
 const paddleWidth = 10;
@@ -60,8 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     startGame('ai-vs-ai');
 });
 
-
-
 const VIRTUAL_WIDTH = 800;
 const VIRTUAL_HEIGHT = 400; // match your canvas aspect ratio
 
@@ -103,6 +104,7 @@ function bindUI() {
     document.getElementById('difficultyLevel').onchange = adjustAIDifficulty;
     document.getElementById('fullscreenButton').onclick = toggleFullscreen;
     document.getElementById('togglePowerUps').onclick = togglePowerUps;
+    document.getElementById('startOnlineMultiplayer').onclick = startOnlineMultiplayer;
 }
 
 function initializeGame() {
@@ -139,6 +141,29 @@ function startGame(mode) {
     resetBall(balls[0]);
     if (powerUpsEnabled) spawnPowerUp();
     gameLoop();
+}
+
+function startOnlineMultiplayer() {
+    websocket.send(JSON.stringify({ type: 'joinGame' }));
+    websocket.onmessage = (event) => {
+        const message = JSON.parse(event.data);
+        handleWebSocketMessage(message);
+    };
+}
+
+function handleWebSocketMessage(message) {
+    switch(message.type) {
+        case 'startGame':
+            startGame('online-multiplayer');
+            break;
+        case 'update':
+            player1Y = message.player1Y;
+            player2Y = message.player2Y;
+            balls = message.balls;
+            player1Score = message.player1Score;
+            player2Score = message.player2Score;
+            break;
+    }
 }
 
 function gameLoop(timestamp) {
@@ -250,6 +275,17 @@ function update() {
     }
 
     if (powerUpActive && powerUpTimer > 0) powerUpTimer -= 1 / 60;
+
+    if (gameMode === 'online-multiplayer') {
+        websocket.send(JSON.stringify({
+            type: 'update',
+            player1Y,
+            player2Y,
+            balls,
+            player1Score,
+            player2Score
+        }));
+    }
 }
 
 function handleInput() {
@@ -528,4 +564,3 @@ function toggleInstructions() {
     const instructions = document.getElementById('instructions');
     instructions.style.display = (instructions.style.display === 'none' || !instructions.style.display) ? 'block' : 'none';
 }
-
