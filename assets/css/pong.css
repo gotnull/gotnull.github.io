@@ -1,107 +1,64 @@
-:root {
-  --theme-color: #007BFF;
-}
-
-#pongCanvas {
-  background-color: #000;
-  border: 2px solid var(--theme-color);
-  display: block;
-  margin: 20px auto;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  position: relative;
-}
-
-.game-controls {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.game-controls button,
-.game-controls select {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  cursor: pointer;
-  background-color: var(--theme-color);
-  color: #FFF;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-  margin: 0 5px;
-}
-
-.game-controls button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-.game-controls select {
-  cursor: pointer;
-}
-
-.game-controls p {
-  font-size: 1.1em;
-  color: #FFF;
-}
-
-@media (max-width: 600px) {
-  #pongCanvas {
-    width: 100%;
-    height: auto;
-  }
-}
-
-#fpsDisplay {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #FFF;
-  font-size: 14px;
-}
-
-#highScores {
-  color: #FFF;
-  font-size: 1.1em;
-  text-align: center;
-  margin-top: 10px;
-}
-
-#powerUpTimer {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: #FFD700;
-  font-size: 20px;
-}
-
-#instructions {
-  color: #FFF;
-  font-size: 1.1em;
-  text-align: center;
-  margin-top: 10px;
-  display: none;
-}
-
-#leaderboard {
-  color: #FFF;
-  font-size: 1.1em;
-  text-align: center;
-  margin-top: 10px;
-}
-
-#backgroundMusic {
-  display: none;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-.pulse {
-  animation: pulse 0.5s infinite;
-}
+  :root {
+            --theme-color: #007BFF;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        #gameContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        #pongCanvas {
+            border: 2px solid var(--theme-color);
+            background-color: #000;
+        }
+        
+        #controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        button {
+            padding: 10px 15px;
+            background-color: var(--theme-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        #gameInfo {
+            display: flex;
+            gap: 30px;
+            text-align: center;
+        }
+        
+        #instructions {
+            display: none;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        select {
+            padding: 5px;
+            margin: 5px;
+        }
