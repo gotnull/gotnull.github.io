@@ -56,6 +56,8 @@ window.addEventListener('DOMContentLoaded', () => {
         handleAblyMessage(message.data);
     });
 
+    loadChatHistory();
+
     console.log("jQuery is loaded: " + (typeof $ !== 'undefined'));
     console.log("Lightbox is loaded: " + (typeof lightbox !== 'undefined'));
     console.log("Ably is loaded:", typeof Ably !== 'undefined');
@@ -585,5 +587,20 @@ function sanitizeInput(input) {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode(input));
     return div.innerHTML;
+}
+
+async function loadChatHistory() {
+    const chatBox = document.getElementById('chatBox');
+    chatBox.innerHTML = ''; // Clear chatbox before loading history
+    try {
+        let page = await channel.history({ limit: 50, direction: 'forwards' });
+        page.items.forEach(message => {
+            if (message.data.type === 'chat') {
+                displayChatMessage(message.data.username, message.data.content, message.data.timestamp);
+            }
+        });
+    } catch (err) {
+        console.error('Error loading chat history:', err);
+    }
 }
 
