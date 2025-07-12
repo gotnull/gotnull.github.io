@@ -179,12 +179,11 @@ function adjustAIDifficulty() {
 }
 
 function toggleFullscreen() {
+    const elem = document.documentElement;
     if (!document.fullscreenElement) {
-        canvas.requestFullscreen().catch(err => {
-            alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
+        (elem.requestFullscreen || elem.webkitRequestFullscreen || elem.mozRequestFullScreen || elem.msRequestFullscreen)?.call(elem);
     } else {
-        document.exitFullscreen();
+        (document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen)?.call(document);
     }
 }
 
@@ -359,7 +358,9 @@ function update() {
             return Math.abs(ball.x - 0) < Math.abs(closest.x - 0) ? ball : closest;
         }, balls[0]);
         
-        player1Y += (target.y - (player1Y + paddleHeight / 2)) * aiDifficulty;
+if (target.y >= 0 && target.y <= canvas.height) {
+    player1Y += (target.y - (player1Y + paddleHeight / 2)) * aiDifficulty;
+}
         player1Y = Math.max(0, Math.min(canvas.height - paddleHeight, player1Y));
     }
 
@@ -369,7 +370,9 @@ function update() {
             return Math.abs(ball.x - canvas.width) < Math.abs(closest.x - canvas.width) ? ball : closest;
         }, balls[0]);
         
-        player2Y += (target.y - (player2Y + paddleHeight / 2)) * aiDifficulty;
+if (target.y >= 0 && target.y <= canvas.height) {
+    player2Y += (target.y - (player2Y + paddleHeight / 2)) * aiDifficulty;
+}
     } else if (gameMode === 'player-vs-ai' || gameMode === 'multiplayer') {
         player2Y += player2Speed;
     }
@@ -404,13 +407,14 @@ function update() {
 
         // Ball collision with power-up
         if (powerUpActive && powerUpVisible) {
-            const distX = Math.abs(ball.x - powerUpX);
-            const distY = Math.abs(ball.y - powerUpY);
-            if (distX < ballSize && distY < ballSize) {
-                handlePowerUpEffect();
-                powerUpVisible = false;
-                powerUpActive = false;
-            }
+            const dx = ball.x - powerUpX;
+const dy = ball.y - powerUpY;
+const distance = Math.sqrt(dx * dx + dy * dy);
+if (distance < ballSize + 15) {
+    handlePowerUpEffect();
+    powerUpVisible = false;
+    powerUpActive = false;
+}
         }
 
         // Scoring
@@ -426,7 +430,7 @@ function update() {
     }
 
     // Add new ball if all balls are gone
-    if (balls.length === 0 && !showWinScreen) {
+if (balls.length === 0 && !showWinScreen && gameRunning) {
         let newBall = createBall();
         resetBall(newBall);
         balls.push(newBall);
@@ -498,14 +502,18 @@ function draw() {
 
     // Draw win screen
     if (showWinScreen) {
-        ctx.fillStyle = 'rgba(0,0,0,0.7)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#FFF';
-        ctx.font = '30px Arial';
-        ctx.fillText(`${winner} Wins!`, canvas.width / 2 - 80, canvas.height / 2);
-        ctx.font = '20px Arial';
-        ctx.fillText(`Game restarts in ${countdown}...`, canvas.width / 2 - 120, canvas.height / 2 + 50);
-    }
+    ctx.fillStyle = 'rgba(0,0,0,0.7)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#FFF';
+    ctx.font = '30px Arial';
+    const message = `${winner} Wins!`;
+    const restartMsg = `Game restarts in ${countdown}...`;
+    const msgWidth = ctx.measureText(message).width;
+    const restartWidth = ctx.measureText(restartMsg).width;
+    ctx.fillText(message, (canvas.width - msgWidth) / 2, canvas.height / 2);
+    ctx.font = '20px Arial';
+    ctx.fillText(restartMsg, (canvas.width - restartWidth) / 2, canvas.height / 2 + 50);
+}
 
     // Draw FPS
     drawFPS();
@@ -582,6 +590,15 @@ function gameLoop(timestamp) {
         requestAnimationFrame(gameLoop);
     }
 }
+
+function resizeCanvas() {
+    canvas.width = Math.floor(window.innerWidth * 0.9);
+    canvas.height = Math.floor(window.innerHeight * 0.6);
+    initializeGame();
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Initial call
 
 // Initialize event listeners
 resetEventListeners();
