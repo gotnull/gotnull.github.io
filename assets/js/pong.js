@@ -55,7 +55,9 @@ document.getElementById('instructionsButton').addEventListener('click', toggleIn
 document.getElementById('difficultyLevel').addEventListener('change', adjustAIDifficulty);
 document.getElementById('fullscreenButton').addEventListener('click', toggleFullscreen);
 
-// New Feature: Leaderboard system
+// New Feature: Power-Up Toggle
+document.getElementById('togglePowerUps').addEventListener('click', togglePowerUps);
+
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 updateLeaderboardDisplay();
 
@@ -101,7 +103,7 @@ function startGame(mode) {
     ballVisible = true;
     balls = [createBall()];
     resetBall(balls[0]);
-    spawnPowerUp();
+    if (powerUpsEnabled) spawnPowerUp();
     document.getElementById('backgroundMusic').play();
     gameLoop();
 }
@@ -414,6 +416,13 @@ requestAnimationFrame(showFPS);
 function toggleInstructions() {
     const instructions = document.getElementById('instructions');
     instructions.style.display = (instructions.style.display === 'none' || !instructions.style.display) ? 'block' : 'none';
+}
+
+let powerUpsEnabled = true;
+function togglePowerUps() {
+    powerUpsEnabled = !powerUpsEnabled;
+    document.getElementById('togglePowerUps').innerText = powerUpsEnabled ? 'Power-Ups: On' : 'Power-Ups: Off';
+    if (!powerUpsEnabled) powerUpActive = false;
 }
 
 displayHighScores();
