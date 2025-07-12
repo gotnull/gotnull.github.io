@@ -604,4 +604,3 @@ async function loadChatHistory() {
         console.error('Error loading chat history:', err);
     }
 }
-
