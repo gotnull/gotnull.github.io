@@ -4,6 +4,7 @@ import re
 import yaml
 from datetime import datetime
 from openai import OpenAI
+from yaml.scalarstring import DoubleQuotedScalarString
 
 PONG_JS_PATH = "assets/js/pong.js"
 PONG_CSS_PATH = "assets/css/pong.css"
@@ -46,7 +47,7 @@ def update_pong_history(summary):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_entry = {
         "timestamp": timestamp,
-        "summary": yaml.scalarstring.DoubleQuotedScalarString(summary)
+        "summary": DoubleQuotedScalarString(summary)
     }
     history_data["history"].append(new_entry)
 
