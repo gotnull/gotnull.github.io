@@ -46,7 +46,7 @@ def update_pong_history(summary):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_entry = {
         "timestamp": timestamp,
-        "summary": summary
+        "summary": yaml.scalarstring.DoubleQuotedScalarString(summary)
     }
     history_data["history"].append(new_entry)
 
