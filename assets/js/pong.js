@@ -1,4 +1,4 @@
-// Added multiplayer online capability using WebSockets
+// Added chat feature for online multiplayer using WebSockets
 
 const canvas = document.getElementById('pongCanvas');
 const ctx = canvas.getContext('2d');
@@ -105,6 +105,10 @@ function bindUI() {
     document.getElementById('fullscreenButton').onclick = toggleFullscreen;
     document.getElementById('togglePowerUps').onclick = togglePowerUps;
     document.getElementById('startOnlineMultiplayer').onclick = startOnlineMultiplayer;
+    document.getElementById('sendMessage').onclick = sendMessage;
+    document.getElementById('chatInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
 }
 
 function initializeGame() {
@@ -162,6 +166,9 @@ function handleWebSocketMessage(message) {
             balls = message.balls;
             player1Score = message.player1Score;
             player2Score = message.player2Score;
+            break;
+        case 'chat':
+            displayChatMessage(message.content);
             break;
     }
 }
@@ -563,4 +570,24 @@ function togglePowerUps() {
 function toggleInstructions() {
     const instructions = document.getElementById('instructions');
     instructions.style.display = (instructions.style.display === 'none' || !instructions.style.display) ? 'block' : 'none';
+}
+
+// Chat
+function sendMessage() {
+    const chatInput = document.getElementById('chatInput');
+    const message = chatInput.value;
+    if (message.trim() !== '') {
+        websocket.send(JSON.stringify({
+            type: 'chat',
+            content: message
+        }));
+        displayChatMessage(`You: ${message}`);
+        chatInput.value = '';
+    }
+}
+
+function displayChatMessage(message) {
+    const chatBox = document.getElementById('chatBox');
+    chatBox.innerHTML += `<p>${message}</p>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
 }

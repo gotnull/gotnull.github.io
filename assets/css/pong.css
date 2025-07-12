@@ -88,3 +88,35 @@ select {
     max-width: 200px;
     text-align: left;
 }
+
+#chatContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+}
+
+#chatBox {
+    width: 100%;
+    height: 150px;
+    overflow-y: auto;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+#chatInput {
+    width: calc(100% - 100px);
+    padding: 5px;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-right: 5px;
+}
