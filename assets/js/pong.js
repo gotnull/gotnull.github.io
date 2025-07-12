@@ -604,3 +604,8 @@ async function loadChatHistory() {
         console.error('Error loading chat history:', err);
     }
 }
+
+function resetPaddlePosition() {
+    player1Y = canvas.height / 2 - paddleHeight / 2;
+    player2Y = canvas.height / 2 - paddleHeight / 2;
+}
