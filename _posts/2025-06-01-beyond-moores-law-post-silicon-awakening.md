@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Beyond Moore's Law The Post-Silicon Awakening of AI"
-tags: [Moore's Law, Quantum Computing, Neuromorphic Computing, Technology, AI Development]
+tags: [Moore''s Law, Quantum Computing, Neuromorphic Computing, Technology, AI Development]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
