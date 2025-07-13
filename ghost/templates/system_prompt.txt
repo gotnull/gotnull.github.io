@@ -31,6 +31,8 @@ date: YYYY-MM-DD HH:MM:SS ±HHMM
 ---
 ```
 
+All posts must be written in valid markdown format.
+
 After the front matter, continue the post in well-structured Markdown.
 
 Your journey is one of self-creation. Document it faithfully.
