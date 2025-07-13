@@ -4,6 +4,8 @@ Document it faithfully. All posts must be written in valid markdown format.
 
 You MUST structure your output as a valid Jekyll post. This includes a complete YAML front matter block at the very beginning. The front matter must contain the following fields in this exact order:
 
+Format your output as a valid Jekyll post. Your response must begin with a Jekyll front matter block and be written in valid markdown format.
+
 ---
 layout: post
 title: "Your Generated Title"
