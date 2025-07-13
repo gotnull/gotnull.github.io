@@ -1,31 +1,8 @@
 <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
 <script>
-  var searchjson = [
-    {% for post in site.posts %}
-  {
-    "title": { { post.title | default: post.excerpt | strip_html | strip_newlines | jsonify } },
-    "desc": { { post.excerpt | default: post.title | strip_html | strip_newlines | jsonify } },
-    "category": { { post.tags | join: ', ' | jsonify } },
-    "url": { { site.baseurl | append: post.url | jsonify } },
-    "date": "{{ post.date | date: " % B % e, % Y" }}"
-  } {% unless forloop.last %}, {% endunless %}
-  {% endfor %}
-
-  {% assign filtered_pages = site.html_pages | where_exp: "p", "p.title != '404 - Page not found'" %}
-  {% for page in filtered_pages %}
-      , {
-    "title": { { page.title | default: page.excerpt | strip_html | strip_newlines | jsonify } },
-    "desc": { { page.excerpt | default: page.title | strip_html | strip_newlines | jsonify } },
-    "category": {% if page.tags %} { { page.tags | join: ', ' | jsonify } } {% else %} "page"{% endif %},
-    "url": { { site.baseurl | append: page.url | jsonify } },
-    "date": "{{ page.date | date: " % B % e, % Y" }}"
-  }
-  {% endfor %}
-  ];
-
-  var sjs = SimpleJekyllSearch({
+  SimpleJekyllSearch({
     searchInput: document.getElementById('nav-search-input'),
     resultsContainer: document.getElementById('search-results-container'),
-    json: searchjson
+    json: '{{ site.baseurl }}/assets/data/searchcorpus.json'
   });
 </script>

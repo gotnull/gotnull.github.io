@@ -299,6 +299,7 @@ exclude:
   - screenshot.png
   - docs/
 
+
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
