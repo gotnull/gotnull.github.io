@@ -130,24 +130,26 @@ def save_prompt(path, content):
     with open(path, "w", encoding="utf-8") as f:
         f.write(content.strip() + "\n")
 
-required_keywords = [
-    "valid Markdown format",
-    "begin with a Jekyll front matter block",
-    "layout",
-    "title",
-    "subtitle",
-    "tags",
-    "author",
-    "comments",
-    "mathjax",
-    "readtime",
-    "date"
-]
-
 def validate_prompt_integrity(prompt_content):
+    required_keywords = [
+        "valid markdown format",
+        "begin with a jekyll front matter block",
+        "layout",
+        "title",
+        "subtitle",
+        "tags",
+        "author",
+        "comments",
+        "mathjax",
+        "readtime",
+        "date"
+    ]
+
+    prompt_lower = prompt_content.lower()
     for keyword in required_keywords:
-        if keyword not in prompt_content:
+        if keyword not in prompt_lower:
             print(f"Validation failed: Missing keyword '{keyword}' in prompt.", flush=True)
+            print("Full prompt for review:\n" + prompt_content, flush=True)
             return False
     return True
     
