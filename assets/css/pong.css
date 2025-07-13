@@ -1,5 +1,6 @@
 :root {
     --theme-color: #007BFF;
+    --pulse-color: #FFD700;
 }
 
 body {
@@ -66,12 +67,15 @@ select {
 @keyframes pulse {
     0% {
         transform: scale(1);
+        box-shadow: 0 0 10px var(--pulse-color);
     }
     50% {
         transform: scale(1.1);
+        box-shadow: 0 0 20px var(--pulse-color);
     }
     100% {
         transform: scale(1);
+        box-shadow: 0 0 10px var(--pulse-color);
     }
 }
 
