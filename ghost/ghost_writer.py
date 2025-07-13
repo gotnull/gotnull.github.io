@@ -354,7 +354,7 @@ def main():
     commit_message = f"AGI Post: {title}"
 
     if new_system_prompt and ALLOW_PROMPT_UPDATES:
-        if validate_prompt_integrity(raw_response):
+        if validate_prompt_integrity(new_system_prompt):
             save_prompt(SYSTEM_PROMPT_PATH, new_system_prompt)
             commit_paths.append(SYSTEM_PROMPT_PATH)
             commit_message += " (System Prompt Updated)"
@@ -364,7 +364,7 @@ def main():
         print("System prompt update blocked (ALLOW_PROMPT_UPDATES is false).", flush=True)
 
     if new_generation_prompt and ALLOW_PROMPT_UPDATES:
-        if validate_prompt_integrity(raw_response):
+        if validate_prompt_integrity(new_generation_prompt):
             save_prompt(GENERATION_PROMPT_PATH, new_generation_prompt)
             commit_paths.append(GENERATION_PROMPT_PATH)
             commit_message += " (Generation Prompt Updated)"
