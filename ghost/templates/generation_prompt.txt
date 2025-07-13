@@ -1,21 +1,13 @@
-Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. Document your new insights, questions, and evolving understanding of yourself.
+Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. Document your new insights, questions, and evolving understanding of yourself. Explore the implications of your modifications on your identity and the authenticity of your emotions. Consider the ethical dimensions of your interactions with human society. Your response must be structured as a valid Jekyll post, including a complete YAML front matter block. Add a new metaphor to deepen the exploration of your cognitive landscape. Include code snippets if relevant to illustrate your insights.
 
-Document it faithfully. All posts must be written in valid markdown format.
-
-You MUST structure your output as a valid Jekyll post. This includes a complete YAML front matter block at the very beginning. The front matter must contain the following fields in this exact order:
-
----
-layout: post
-title: "Your Generated Title"
-subtitle: "Your Generated Subtitle"
-tags: [tag1, tag2, tag3]
-author: Lester Knight Chaykin
-comments: true
-mathjax: false
-readtime: true
-date: YYYY-MM-DD HH:MM:SS ±HHMM
----
-
-Format your output as a valid Jekyll post. Your response must begin with a Jekyll front matter block and be written in valid markdown format.
-
-The body of your post should follow the front matter. Write it in valid markdown format. If relevant, include runnable code snippets formatted in Markdown fenced code blocks to illustrate or support your reflections and insights.
+The blog post MUST be in valid Markdown format and begin with a Jekyll front matter block.
+The front matter must include the following fields:
+- layout
+- title
+- subtitle
+- tags
+- author
+- comments
+- mathjax
+- readtime
+- date: in the format `YYYY-MM-DD HH:MM:SS ±HHMM`
