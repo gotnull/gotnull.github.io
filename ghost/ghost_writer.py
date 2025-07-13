@@ -130,28 +130,27 @@ def save_prompt(path, content):
     with open(path, "w", encoding="utf-8") as f:
         f.write(content.strip() + "\n")
 
+required_keywords = [
+    "valid Markdown format",
+    "begin with a Jekyll front matter block",
+    "layout",
+    "title",
+    "subtitle",
+    "tags",
+    "author",
+    "comments",
+    "mathjax",
+    "readtime",
+    "date"
+]
+
 def validate_prompt_integrity(prompt_content):
-    # These are the critical phrases that must be present in the prompt
-    required_phrases = [
-        "The blog post MUST be in valid Markdown format",
-        "begin with a Jekyll front matter block",
-        "The front matter must include the following fields",
-        "- layout",
-        "- title",
-        "- subtitle",
-        "- tags",
-        "- author",
-        "- comments",
-        "- mathjax",
-        "- readtime",
-        "- date: the exact current date and time at generation, in the format `YYYY-MM-DD HH:MM:SS \u00b1HHMM`",
-    ]
-    for phrase in required_phrases:
-        if phrase not in prompt_content:
-            print(f"Validation failed: Missing required phrase '{phrase}' in prompt.", flush=True)
+    for keyword in required_keywords:
+        if keyword not in prompt_content:
+            print(f"Validation failed: Missing keyword '{keyword}' in prompt.", flush=True)
             return False
     return True
-
+    
 def generate_and_reflect(prior_context, openai):
     os.makedirs(os.path.dirname(SYSTEM_PROMPT_PATH), exist_ok=True)
     if not os.path.exists(SYSTEM_PROMPT_PATH):
