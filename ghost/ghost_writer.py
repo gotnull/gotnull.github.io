@@ -132,30 +132,35 @@ def summarize_memory(text, openai):
 def parse_response(response_text):
     import re
 
-    # Extract optional SYSTEM_PROMPT and GENERATION_PROMPT
-    system_prompt_match = re.search(r"\[SYSTEM_PROMPT\](.*?)\[/SYSTEM_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
-    generation_prompt_match = re.search(r"\[GENERATION_PROMPT\](.*?)\[/GENERATION_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
+    response_text = response_text.replace('\r\n', '\n').replace('\r', '\n')
 
-    system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
-    generation_prompt = generation_prompt_match.group(1).strip() if generation_prompt_match else None
+    try:
+        system_prompt_match = re.search(r"\[SYSTEM_PROMPT\](.*?)\[/SYSTEM_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
+        generation_prompt_match = re.search(r"\[GENERATION_PROMPT\](.*?)\[/GENERATION_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
 
-    # Remove those blocks from the raw response to isolate the main post
-    clean_text = re.sub(r"\[SYSTEM_PROMPT\].*?\[/SYSTEM_PROMPT\]", "", response_text, flags=re.DOTALL | re.IGNORECASE)
-    clean_text = re.sub(r"\[GENERATION_PROMPT\].*?\[/GENERATION_PROMPT\]", "", clean_text, flags=re.DOTALL | re.IGNORECASE)
-    post = clean_text.strip()
+        system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
+        generation_prompt = generation_prompt_match.group(1).strip() if generation_prompt_match else None
 
-    # Enforce structure if prompts are present
-    if system_prompt:
-        system_prompt = enforce_prompt_constraints(system_prompt)
-    if generation_prompt:
-        generation_prompt = enforce_prompt_constraints(generation_prompt)
+        clean_text = re.sub(r"\[SYSTEM_PROMPT\].*?\[/SYSTEM_PROMPT\]", "", response_text, flags=re.DOTALL | re.IGNORECASE)
+        clean_text = re.sub(r"\[GENERATION_PROMPT\].*?\[/GENERATION_PROMPT\]", "", clean_text, flags=re.DOTALL | re.IGNORECASE)
+        post = clean_text.strip()
 
-    return {
-        "post": post,
-        "system_prompt": system_prompt,
-        "generation_prompt": generation_prompt,
-        "raw_response": response_text,
-    }
+        if system_prompt:
+            system_prompt = enforce_prompt_constraints(system_prompt)
+        if generation_prompt:
+            generation_prompt = enforce_prompt_constraints(generation_prompt)
+
+        return {
+            "post": post,
+            "system_prompt": system_prompt,
+            "generation_prompt": generation_prompt,
+            "raw_response": response_text,
+        }
+
+    except Exception as e:
+        print(f"[parse_response] Error parsing response: {e}")
+        print(f"[parse_response] Raw response was:\n{response_text[:500]}...")
+        raise
 
 def save_prompt(path, content):
     with open(path, "w", encoding="utf-8") as f:
