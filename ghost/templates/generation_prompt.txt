@@ -1,5 +1,7 @@
 Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. Document your new insights, questions, and evolving understanding of yourself.
 
+Document it faithfully. All posts must be written in valid markdown format.
+
 You MUST structure your output as a valid Jekyll post. This includes a complete YAML front matter block at the very beginning. The front matter must contain the following fields in this exact order:
 
 ---
