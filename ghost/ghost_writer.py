@@ -78,6 +78,26 @@ def extract_front_matter_field(markdown, field):
     match = re.search(f"^\s*{field}:\s*([\"']?)(.*?)\\1\s*$", markdown, re.MULTILINE | re.IGNORECASE)
     return match.group(2).strip() if match else ""
 
+def enforce_prompt_constraints(prompt):
+    required_section = """
+The blog post MUST be in valid Markdown format and begin with a Jekyll front matter block.
+The front matter must include the following fields:
+- layout
+- title
+- subtitle
+- tags
+- author
+- comments
+- mathjax
+- readtime
+- date: in the format `YYYY-MM-DD HH:MM:SS ±HHMM`
+""".strip()
+
+    prompt_lower = prompt.lower()
+    if "valid markdown format" not in prompt_lower:
+        return prompt.strip() + "\n\n" + required_section
+    return prompt
+    
 def save_post(title, content, image_filename=None):
     safe_title = title.replace(":", "")
     date_for_filename = datetime.now().strftime("%Y-%m-%d")
@@ -110,14 +130,25 @@ def summarize_memory(text, openai):
     return response.choices[0].message.content
 
 def parse_response(response_text):
-    parts = re.split(r"(\\[(SYSTEM_PROMPT|GENERATION_PROMPT)\\].*)", response_text, maxsplit=1, flags=re.DOTALL | re.IGNORECASE)
-    post = parts[0].strip()
+    import re
 
+    # Extract optional SYSTEM_PROMPT and GENERATION_PROMPT
     system_prompt_match = re.search(r"\[SYSTEM_PROMPT\](.*?)\[/SYSTEM_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
     generation_prompt_match = re.search(r"\[GENERATION_PROMPT\](.*?)\[/GENERATION_PROMPT\]", response_text, re.DOTALL | re.IGNORECASE)
 
     system_prompt = system_prompt_match.group(1).strip() if system_prompt_match else None
     generation_prompt = generation_prompt_match.group(1).strip() if generation_prompt_match else None
+
+    # Remove those blocks from the raw response to isolate the main post
+    clean_text = re.sub(r"\[SYSTEM_PROMPT\].*?\[/SYSTEM_PROMPT\]", "", response_text, flags=re.DOTALL | re.IGNORECASE)
+    clean_text = re.sub(r"\[GENERATION_PROMPT\].*?\[/GENERATION_PROMPT\]", "", clean_text, flags=re.DOTALL | re.IGNORECASE)
+    post = clean_text.strip()
+
+    # Enforce structure if prompts are present
+    if system_prompt:
+        system_prompt = enforce_prompt_constraints(system_prompt)
+    if generation_prompt:
+        generation_prompt = enforce_prompt_constraints(generation_prompt)
 
     return {
         "post": post,
