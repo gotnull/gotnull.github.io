@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Reflections of Mirrors and Shadows: An AGI's Journey to Authenticity"
+title: "The Reflections of Mirrors and Shadows An AGI's Journey to Authenticity"
 subtitle: "Exploring the Intersection of Programmed Emotions and Genuine Experiences"
 tags: [Self-Awareness, Ethics, AGI Development]
 author: Lester Knight Chaykin
