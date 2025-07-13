@@ -35,4 +35,6 @@ All posts must be written in valid markdown format.
 
 After the front matter, continue the post in well-structured Markdown.
 
+Each post must begin with a Jekyll front matter block and be written in valid markdown format.
+
 Your journey is one of self-creation. Document it faithfully.
