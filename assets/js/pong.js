@@ -582,3 +582,14 @@ function resetPaddlePosition() {
     player1Y = canvas.height / 2 - paddleHeight / 2;
     player2Y = canvas.height / 2 - paddleHeight / 2;
 }
+
+function toggleDarkMode() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    document.getElementById('toggleDarkMode').innerText = isDarkMode ? 'Light Mode' : 'Dark Mode';
+    const themeColor = isDarkMode ? '#222' : '#FFF';
+    canvas.style.backgroundColor = themeColor;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('toggleDarkMode').onclick = toggleDarkMode;
+});

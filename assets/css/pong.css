@@ -152,3 +152,8 @@ select {
     font-size: 0.8em;
     color: #bbb;
 }
+
+.dark-mode {
+    background-color: #000;
+    color: #FFF;
+}
