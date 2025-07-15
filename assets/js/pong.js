@@ -34,6 +34,9 @@ let ably, channel;
 let animationFrameId;
 let countdownInterval;
 let currentUsername;
+let isMusicPlaying = false;
+const backgroundMusic = new Audio('/assets/audio/background.mp3');
+backgroundMusic.loop = true;
 
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -104,6 +107,7 @@ function bindUI() {
     document.getElementById('togglePowerUps').onclick = togglePowerUps;
     document.getElementById('startOnlineMultiplayer').onclick = startOnlineMultiplayer;
     document.getElementById('sendMessage').onclick = sendMessage;
+    document.getElementById('toggleMusic').onclick = toggleMusic;
     document.getElementById('chatInput').addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
     });
@@ -485,6 +489,16 @@ function changeTheme() {
 function toggleSound() {
     soundEnabled = !soundEnabled;
     document.getElementById('toggleSound').innerText = soundEnabled ? 'Sound: On' : 'Sound: Off';
+}
+
+function toggleMusic() {
+    isMusicPlaying = !isMusicPlaying;
+    if (isMusicPlaying) {
+        backgroundMusic.play();
+    } else {
+        backgroundMusic.pause();
+    }
+    document.getElementById('toggleMusic').innerText = isMusicPlaying ? 'Music: On' : 'Music: Off';
 }
 
 function adjustGameSpeed(amount) {
