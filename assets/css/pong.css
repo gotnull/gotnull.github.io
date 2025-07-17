@@ -143,6 +143,19 @@ select {
     text-align: left;
 }
 
+.recent-message {
+    animation: highlight 1s infinite alternate;
+}
+
+@keyframes highlight {
+    from {
+        background-color: #444;
+    }
+    to {
+        background-color: #555;
+    }
+}
+
 .username {
     font-weight: bold;
     margin-right: 5px;

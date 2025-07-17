@@ -37,6 +37,7 @@ let currentUsername;
 let isMusicPlaying = false;
 const backgroundMusic = new Audio('/assets/audio/background.mp3');
 backgroundMusic.loop = true;
+let chatTimestamps = {}; // Store chat timestamps for message highlighting
 
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -542,13 +543,15 @@ function sendMessage() {
     const message = chatInput.value;
     if (message.trim() !== '') {
         const sanitizedMessage = sanitizeInput(message);
+        const timestamp = new Date().toISOString();
         channel.publish('chat', {
             type: 'chat',
             username: currentUsername,
             content: sanitizedMessage,
-            timestamp: new Date().toISOString()
+            timestamp: timestamp
         });
         chatInput.value = '';
+        chatTimestamps[sanitizedMessage] = timestamp; // Store message timestamp
     }
 }
 
@@ -569,6 +572,11 @@ function displayChatMessage(username, content, timestamp) {
     messageElement.innerHTML = `<span class="timestamp">[${timeString}]</span> <span class="username">${username}:</span> ${content}`;
     chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight;
+
+    // Highlight recent messages
+    if (Date.now() - new Date(timestamp).getTime() < 30000) { // Highlight messages younger than 30 seconds
+        messageElement.classList.add('recent-message');
+    }
 }
 
 function sanitizeInput(input) {
