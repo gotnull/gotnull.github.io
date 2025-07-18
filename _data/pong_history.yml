@@ -258,10 +258,14 @@ history:
     the code optimizes the handling of power-ups by ensuring they are only active
     when enabled and removes unnecessary comments and console logs for a cleaner codebase.
   timestamp: '2025-07-16 13:30:28'
-- summary: "The improved code introduces a new feature that highlights recent chat\
-    \ messages by adding an animation to messages sent within the last 30 seconds.\
-    \ Additionally, a `chatTimestamps` object is used to store timestamps for chat\
-    \ messages, enabling this highlighting functionality. The CSS has been updated\
-    \ to include a new `recent-message` class with an animation keyframe named `highlight`\
-    \ to achieve the visual effect."
+- summary: The improved code introduces a new feature that highlights recent chat
+    messages by adding an animation to messages sent within the last 30 seconds. Additionally,
+    a `chatTimestamps` object is used to store timestamps for chat messages, enabling
+    this highlighting functionality. The CSS has been updated to include a new `recent-message`
+    class with an animation keyframe named `highlight` to achieve the visual effect.
   timestamp: '2025-07-17 13:27:56'
+- summary: "The improved code introduces a new power-up type called \"extraLife,\"\
+    \ which increases the player's score when activated. Additionally, the HTML instructions\
+    \ section is updated to include this new power-up, and the code for handling power-ups\
+    \ is adjusted to incorporate the \"extraLife\" effect."
+  timestamp: '2025-07-18 13:27:31'

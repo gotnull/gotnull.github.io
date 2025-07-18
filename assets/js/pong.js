@@ -3,7 +3,7 @@ const INITIAL_PADDLE_HEIGHT = 100;
 const INITIAL_BALL_SPEED = 5;
 const ballSize = 10;
 const winningScore = 5;
-const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall', 'multiball'];
+const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall', 'multiball', 'extraLife'];
 const themes = ['#000', '#1a1a1a', '#333'];
 
 let paddleHeight;
@@ -389,6 +389,9 @@ function handlePowerUpEffect() {
         case 'multiball':
             addAdditionalBalls();
             break;
+        case 'extraLife':
+            player1Score++;
+            break;
     }
 }
 
@@ -407,6 +410,7 @@ function getPowerUpColor(type) {
         case 'reverseControls': return '#8A2BE2';
         case 'invisibleBall': return '#00CED1';
         case 'multiball': return '#32CD32';
+        case 'extraLife': return '#DAA520';
         default: return '#FFF';
     }
 }
