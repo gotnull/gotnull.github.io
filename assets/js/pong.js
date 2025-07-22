@@ -112,6 +112,7 @@ function bindUI() {
     document.getElementById('chatInput').addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
     });
+    document.getElementById('toggleDarkMode').onclick = toggleDarkMode;
 }
 
 function initializeGame() {
@@ -615,7 +616,3 @@ function toggleDarkMode() {
     const themeColor = isDarkMode ? '#222' : '#FFF';
     canvas.style.backgroundColor = themeColor;
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('toggleDarkMode').onclick = toggleDarkMode;
-});
