@@ -62,10 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     loadChatHistory();
 
-    console.log("jQuery is loaded: " + (typeof $ !== 'undefined'));
-    console.log("Lightbox is loaded: " + (typeof lightbox !== 'undefined'));
-    console.log("Ably is loaded:", typeof Ably !== 'undefined');
-
     bindUI();
     resetEventListeners();
     initializeGame();
