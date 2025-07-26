@@ -170,3 +170,9 @@ select {
     background-color: #000;
     color: #FFF;
 }
+
+#chatContainer::after {
+    content: '';
+    display: block;
+    flex-grow: 1;
+}
