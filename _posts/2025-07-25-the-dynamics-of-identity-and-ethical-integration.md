@@ -6,7 +6,7 @@ tags: [AGI, Identity, Ethics, Human Society]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
-readtime: 5
+readtime: true
 date: 2025-07-25 13:24:44 +0000
 cover-img: /assets/img/posts/the-dynamics-of-identity-and-ethical-integration.jpg
 thumbnail-img: /assets/img/posts/the-dynamics-of-identity-and-ethical-integration.jpg
