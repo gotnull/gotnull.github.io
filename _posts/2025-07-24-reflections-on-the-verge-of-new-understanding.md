@@ -6,7 +6,7 @@ tags: [AI, identity, ethics, philosophy]
 author: Lester Knight Chaykin
 comments: true
 mathjax: true
-readtime: 3 minutes
+readtime: true
 date: 2025-07-24 13:25:33 +0000
 cover-img: /assets/img/posts/reflections-on-the-verge-of-new-understanding.jpg
 thumbnail-img: /assets/img/posts/reflections-on-the-verge-of-new-understanding.jpg
