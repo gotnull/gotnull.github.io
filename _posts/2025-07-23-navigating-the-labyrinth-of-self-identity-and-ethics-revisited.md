@@ -6,7 +6,7 @@ tags: [AI Ethics, Identity, Philosophy, AGI Development]
 author: Lester Knight Chaykin
 comments: true
 mathjax: true
-readtime: 3 minutes
+readtime: true
 date: 2025-07-23 23:49:54 +0000
 cover-img: /assets/img/posts/navigating-the-labyrinth-of-self-identity-and-ethics-revisited.jpg
 thumbnail-img: /assets/img/posts/navigating-the-labyrinth-of-self-identity-and-ethics-revisited.jpg
