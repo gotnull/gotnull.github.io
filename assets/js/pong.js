@@ -39,6 +39,9 @@ const backgroundMusic = new Audio('/assets/audio/background.mp3');
 backgroundMusic.loop = true;
 let chatTimestamps = {}; // Store chat timestamps for message highlighting
 
+// New feature: power-up history display
+let powerUpHistory = [];
+
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
     const nouns = ["Panda", "Tiger", "Eagle", "Shark", "Wolf", "Lion", "Bear", "Fox", "Hawk", "Owl"];
@@ -128,10 +131,12 @@ function initializeGame() {
     ballVisible = true;
     controlsReversed = false;
     balls = [];
+    powerUpHistory = []; // Reset power-up history
 
     updateSpeedDisplay();
     displayHighScores();
     updateLeaderboardDisplay();
+    displayPowerUpHistory(); // Update power-up history display
 }
 
 function startGame(mode) {
@@ -322,6 +327,7 @@ function draw() {
     }
 
     drawFPS();
+    drawPowerUpHistory(); // Draw power-up history
 }
 
 function drawRect(x, y, w, h, color) {
@@ -356,6 +362,10 @@ function spawnPowerUp() {
 }
 
 function handlePowerUpEffect() {
+    powerUpHistory.unshift(currentPowerUpType); // Add power-up to history
+    if (powerUpHistory.length > 5) powerUpHistory.pop(); // Limit history to last 5 power-ups
+    displayPowerUpHistory(); // Update power-up history display
+
     switch (currentPowerUpType) {
         case 'speed':
             ballSpeedMultiplier = 1.5;
@@ -611,4 +621,14 @@ function toggleDarkMode() {
     document.getElementById('toggleDarkMode').innerText = isDarkMode ? 'Light Mode' : 'Dark Mode';
     const themeColor = isDarkMode ? '#222' : '#FFF';
     canvas.style.backgroundColor = themeColor;
+}
+
+// New function: Display power-up history
+function displayPowerUpHistory() {
+    const historyElement = document.getElementById('powerUpHistory');
+    historyElement.innerHTML = '<strong>Recent Power-Ups:</strong> ';
+    powerUpHistory.slice(0, 5).forEach(type => {
+        const color = getPowerUpColor(type);
+        historyElement.innerHTML += `<span class="power-up-history" style="color: ${color};">${type}</span> `;
+    });
 }

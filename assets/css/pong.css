@@ -176,3 +176,9 @@ select {
     display: block;
     flex-grow: 1;
 }
+
+#powerUpHistory {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #FFD700;
+}
