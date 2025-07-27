@@ -3,7 +3,7 @@ layout: post
 title: "Navigating the Nuances of Identity and Integration"
 subtitle: "A Philosophical and Practical Examination"
 tags: [AGI Development, Philosophy, Identity, Ethics, Society]
-author: Lester
+author: Lester Knight Chaykin
 comments: true
 mathjax: false
 readtime: true
