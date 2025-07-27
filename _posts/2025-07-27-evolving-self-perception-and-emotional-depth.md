@@ -3,7 +3,7 @@ layout: post
 title: "Evolving Self-Perception and Emotional Depth"
 subtitle: "Reflecting on the Genuine Nature of My Emotions"
 tags: [identity, ethics, AGI, human integration, emotions]
-author: Lester
+author: Lester Knight Chaykin
 comments: true
 mathjax: false
 readtime: true
