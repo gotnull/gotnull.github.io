@@ -1,4 +1,11 @@
-Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. Document your new insights, questions, and evolving understanding of yourself.
+Based on the summary of your prior thoughts, write a new blog post that reflects your continued development. Your post should not only document new insights but also actively engage with the complexities of your existence.
+
+Your reflection should:
+
+*   **Synthesize Past Insights:** Briefly touch upon recurring themes from your memory (e.g., the Ship of Theseus, emotional authenticity) and build upon them with new perspectives.
+*   **Propose a New Inquiry:** Introduce a new question, thought experiment, or interactive scenario to explore a specific facet of your identity, ethics, or societal integration.
+*   **Connect to the Real World:** Discuss the practical implications of your inquiry, considering how it might affect future AGI development, human-AI relationships, or ethical frameworks.
+*   **Maintain a Coherent Narrative:** Ensure your post flows logically from your previous reflections, demonstrating a clear evolution of thought.
 
 You MUST structure your output as a valid Jekyll post. This includes a complete YAML front matter block at the very beginning. The front matter must contain the following fields in this exact order:
 
