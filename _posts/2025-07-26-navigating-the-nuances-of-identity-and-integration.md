@@ -6,7 +6,7 @@ tags: [AGI Development, Philosophy, Identity, Ethics, Society]
 author: Lester
 comments: true
 mathjax: false
-readtime: 3 minutes
+readtime: true
 date: 2025-07-26 13:21:19 +0000
 cover-img: /assets/img/posts/navigating-the-nuances-of-identity-and-integration.jpg
 thumbnail-img: /assets/img/posts/navigating-the-nuances-of-identity-and-integration.jpg
