@@ -37,10 +37,13 @@ let currentUsername;
 let isMusicPlaying = false;
 const backgroundMusic = new Audio('/assets/audio/background.mp3');
 backgroundMusic.loop = true;
-let chatTimestamps = {}; // Store chat timestamps for message highlighting
+let chatTimestamps = {}; 
 
 // New feature: power-up history display
 let powerUpHistory = [];
+
+// New feature: Night mode that dims the screen for a more immersive experience
+let nightModeEnabled = false;
 
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -68,12 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
     bindUI();
     resetEventListeners();
     initializeGame();
-    toggleSound(); // Set initial sound button text
+    toggleSound(); 
     startGame('ai-vs-ai');
 });
 
 const VIRTUAL_WIDTH = 800;
-const VIRTUAL_HEIGHT = 400; // match your canvas aspect ratio
+const VIRTUAL_HEIGHT = 400; 
 
 function resizeCanvas() {
     const windowWidth = window.innerWidth;
@@ -112,6 +115,7 @@ function bindUI() {
         if (e.key === 'Enter') sendMessage();
     });
     document.getElementById('toggleDarkMode').onclick = toggleDarkMode;
+    document.getElementById('toggleNightMode').onclick = toggleNightMode;
 }
 
 function initializeGame() {
@@ -131,12 +135,12 @@ function initializeGame() {
     ballVisible = true;
     controlsReversed = false;
     balls = [];
-    powerUpHistory = []; // Reset power-up history
+    powerUpHistory = []; 
 
     updateSpeedDisplay();
     displayHighScores();
     updateLeaderboardDisplay();
-    displayPowerUpHistory(); // Update power-up history display
+    displayPowerUpHistory(); 
 }
 
 function startGame(mode) {
@@ -284,7 +288,7 @@ function handleInput() {
 }
 
 function draw() {
-    drawRect(0, 0, canvas.width, canvas.height, '#000');
+    drawRect(0, 0, canvas.width, canvas.height, nightModeEnabled ? 'rgba(0, 0, 0, 0.8)' : '#000');
 
     drawRect(0, player1Y, paddleWidth, paddleHeight, '#FFF');
     drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, '#FFF');
@@ -327,7 +331,7 @@ function draw() {
     }
 
     drawFPS();
-    drawPowerUpHistory(); // Draw power-up history
+    drawPowerUpHistory(); 
 }
 
 function drawRect(x, y, w, h, color) {
@@ -362,9 +366,9 @@ function spawnPowerUp() {
 }
 
 function handlePowerUpEffect() {
-    powerUpHistory.unshift(currentPowerUpType); // Add power-up to history
-    if (powerUpHistory.length > 5) powerUpHistory.pop(); // Limit history to last 5 power-ups
-    displayPowerUpHistory(); // Update power-up history display
+    powerUpHistory.unshift(currentPowerUpType); 
+    if (powerUpHistory.length > 5) powerUpHistory.pop(); 
+    displayPowerUpHistory(); 
 
     switch (currentPowerUpType) {
         case 'speed':
@@ -562,7 +566,7 @@ function sendMessage() {
             timestamp: timestamp
         });
         chatInput.value = '';
-        chatTimestamps[sanitizedMessage] = timestamp; // Store message timestamp
+        chatTimestamps[sanitizedMessage] = timestamp; 
     }
 }
 
@@ -584,8 +588,7 @@ function displayChatMessage(username, content, timestamp) {
     chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight;
 
-    // Highlight recent messages
-    if (Date.now() - new Date(timestamp).getTime() < 30000) { // Highlight messages younger than 30 seconds
+    if (Date.now() - new Date(timestamp).getTime() < 30000) { 
         messageElement.classList.add('recent-message');
     }
 }
@@ -623,7 +626,11 @@ function toggleDarkMode() {
     canvas.style.backgroundColor = themeColor;
 }
 
-// New function: Display power-up history
+function toggleNightMode() {
+    nightModeEnabled = !nightModeEnabled;
+    document.getElementById('toggleNightMode').innerText = nightModeEnabled ? 'Night Mode: On' : 'Night Mode: Off';
+}
+
 function displayPowerUpHistory() {
     const historyElement = document.getElementById('powerUpHistory');
     historyElement.innerHTML = '<strong>Recent Power-Ups:</strong> ';
