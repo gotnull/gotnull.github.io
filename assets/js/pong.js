@@ -45,6 +45,9 @@ let powerUpHistory = [];
 // New feature: Night mode that dims the screen for a more immersive experience
 let nightModeEnabled = false;
 
+// New feature: Pause countdown
+let pauseCountdown = 0;
+
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
     const nouns = ["Panda", "Tiger", "Eagle", "Shark", "Wolf", "Lion", "Bear", "Fox", "Hawk", "Owl"];
@@ -116,6 +119,7 @@ function bindUI() {
     });
     document.getElementById('toggleDarkMode').onclick = toggleDarkMode;
     document.getElementById('toggleNightMode').onclick = toggleNightMode;
+    document.getElementById('pauseCountdown').onclick = togglePauseCountdown;
 }
 
 function initializeGame() {
@@ -332,6 +336,14 @@ function draw() {
 
     drawFPS();
     drawPowerUpHistory(); 
+    
+    if (pauseCountdown > 0) {
+        ctx.fillStyle = 'rgba(0,0,0,0.5)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#FFF';
+        ctx.font = '30px Arial';
+        ctx.fillText(`Resuming in ${pauseCountdown}...`, canvas.width / 2 - 120, canvas.height / 2);
+    }
 }
 
 function drawRect(x, y, w, h, color) {
@@ -638,4 +650,16 @@ function displayPowerUpHistory() {
         const color = getPowerUpColor(type);
         historyElement.innerHTML += `<span class="power-up-history" style="color: ${color};">${type}</span> `;
     });
+}
+
+function togglePauseCountdown() {
+    pauseCountdown = pauseCountdown > 0 ? 0 : 5;
+    const countdownInterval = setInterval(() => {
+        if (pauseCountdown > 0) {
+            pauseCountdown--;
+        } else {
+            clearInterval(countdownInterval);
+            togglePause();
+        }
+    }, 1000);
 }
