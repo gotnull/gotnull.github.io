@@ -1,3 +1,6 @@
+// Improved JavaScript code here
+
+// Constants
 const paddleWidth = 10;
 const INITIAL_PADDLE_HEIGHT = 100;
 const INITIAL_BALL_SPEED = 5;
@@ -5,7 +8,10 @@ const ballSize = 10;
 const winningScore = 5;
 const powerUpTypes = ['speed', 'shrinkPaddle', 'reverseControls', 'invisibleBall', 'multiball', 'extraLife'];
 const themes = ['#000', '#1a1a1a', '#333'];
+const VIRTUAL_WIDTH = 800;
+const VIRTUAL_HEIGHT = 400;
 
+// Game variables
 let paddleHeight;
 let ballSpeedMultiplier;
 let gameSpeed;
@@ -26,77 +32,76 @@ let powerUpsEnabled = true;
 let currentTheme = 0;
 let highScores = JSON.parse(localStorage.getItem('highScores')) || { player1: 0, player2: 0 };
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
-const hitSound = new Audio('/assets/audio/hit.mp3');
-const winSound = new Audio('/assets/audio/win.mp3');
-const countdownSound = new Audio('/assets/audio/bounce.mp3');
-let canvas, ctx;
-let ably, channel;
-let animationFrameId;
-let countdownInterval;
-let currentUsername;
+let nightModeEnabled = false;
+let chatTimestamps = {};
+let ably, channel, animationFrameId, countdownInterval, currentUsername;
+let pauseCountdown = 0;
+let keysPressed = {};
 let isMusicPlaying = false;
 const backgroundMusic = new Audio('/assets/audio/background.mp3');
 backgroundMusic.loop = true;
-let chatTimestamps = {}; 
+const hitSound = new Audio('/assets/audio/hit.mp3');
+const winSound = new Audio('/assets/audio/win.mp3');
+const countdownSound = new Audio('/assets/audio/bounce.mp3');
 
 // New feature: power-up history display
 let powerUpHistory = [];
+let lastFrameTime = 0;
+let fps = 0;
 
-// New feature: Night mode that dims the screen for a more immersive experience
-let nightModeEnabled = false;
-
-// New feature: Pause countdown
-let pauseCountdown = 0;
-
+// Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
     const nouns = ["Panda", "Tiger", "Eagle", "Shark", "Wolf", "Lion", "Bear", "Fox", "Hawk", "Owl"];
-    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
-    return `${randomAdjective}${randomNoun}${Math.floor(Math.random() * 100)}`;
+    return `${adjectives[Math.floor(Math.random() * adjectives.length)]}${nouns[Math.floor(Math.random() * nouns.length)]}${Math.floor(Math.random() * 100)}`;
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-    canvas = document.getElementById('pongCanvas');
-    ctx = canvas.getContext('2d');
-
-    ably = new Ably.Realtime("iS2_UQ.Yk8bNA:gWf506yEprURhapCNSjwxZTt-_Gh4CX-zr5TyyGMLgg");
-    channel = ably.channels.get('pong-game');
-
-    currentUsername = generateRandomUsername();
-
-    channel.subscribe('chat', (message) => {
-        handleAblyMessage(message.data);
-    });
-
-    loadChatHistory();
-
-    bindUI();
-    resetEventListeners();
-    initializeGame();
-    toggleSound(); 
-    startGame('ai-vs-ai');
-});
-
-const VIRTUAL_WIDTH = 800;
-const VIRTUAL_HEIGHT = 400; 
 
 function resizeCanvas() {
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
-
     const scale = Math.min(windowWidth / VIRTUAL_WIDTH, windowHeight / VIRTUAL_HEIGHT);
 
     canvas.style.width = (VIRTUAL_WIDTH * scale) + 'px';
     canvas.style.height = (VIRTUAL_HEIGHT * scale) + 'px';
-
     canvas.width = VIRTUAL_WIDTH;
     canvas.height = VIRTUAL_HEIGHT;
 }
 
-window.addEventListener('resize', resizeCanvas);
-window.addEventListener('orientationchange', resizeCanvas);
+function clamp(val, min, max) {
+    return Math.min(Math.max(val, min), max);
+}
 
+function drawRect(x, y, w, h, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, w, h);
+}
+
+function drawCircle(x, y, r, color) {
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+function calculateFPS(timestamp) {
+    const delta = timestamp - lastFrameTime;
+    lastFrameTime = timestamp;
+    fps = Math.round(1000 / delta);
+}
+
+function drawFPS() {
+    ctx.fillStyle = '#FFF';
+    ctx.font = '14px Arial';
+    ctx.fillText(`FPS: ${fps}`, 10, 20);
+}
+
+function sanitizeInput(input) {
+    const div = document.createElement('div');
+    div.appendChild(document.createTextNode(input));
+    return div.innerHTML;
+}
+
+// UI Binding and Event Handlers
 function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
     document.getElementById('startAI').onclick = () => startGame('ai-vs-ai');
@@ -122,6 +127,7 @@ function bindUI() {
     document.getElementById('pauseCountdown').onclick = togglePauseCountdown;
 }
 
+// Game Initialization and Logic
 function initializeGame() {
     if (animationFrameId) cancelAnimationFrame(animationFrameId);
     if (countdownInterval) clearInterval(countdownInterval);
@@ -129,9 +135,7 @@ function initializeGame() {
     paddleHeight = INITIAL_PADDLE_HEIGHT;
     ballSpeedMultiplier = 1;
     gameSpeed = 1;
-    player1Y = canvas.height / 2 - paddleHeight / 2;
-    player2Y = canvas.height / 2 - paddleHeight / 2;
-    player2Speed = 0;
+    resetPaddlePosition();
     player1Score = 0;
     player2Score = 0;
     powerUpActive = false;
@@ -139,12 +143,13 @@ function initializeGame() {
     ballVisible = true;
     controlsReversed = false;
     balls = [];
-    powerUpHistory = []; 
+    powerUpHistory = [];
 
     updateSpeedDisplay();
     displayHighScores();
     updateLeaderboardDisplay();
-    displayPowerUpHistory(); 
+    displayPowerUpHistory();
+    resizeCanvas();
 }
 
 function startGame(mode) {
@@ -157,18 +162,6 @@ function startGame(mode) {
     resetBall(balls[0]);
     if (powerUpsEnabled) spawnPowerUp();
     gameLoop();
-}
-
-function startOnlineMultiplayer() {
-    channel.publish('join-game', { clientId: ably.auth.clientId });
-}
-
-function handleAblyMessage(message) {
-    switch (message.type) {
-        case 'chat':
-            displayChatMessage(message.username, message.content, message.timestamp);
-            break;
-    }
 }
 
 function gameLoop(timestamp) {
@@ -195,13 +188,85 @@ function resetBall(ball) {
     ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * gameSpeed;
 }
 
-let keysPressed = {};
+function resetPaddlePosition() {
+    player1Y = canvas.height / 2 - paddleHeight / 2;
+    player2Y = canvas.height / 2 - paddleHeight / 2;
+}
+
+function toggleDarkMode() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    document.getElementById('toggleDarkMode').innerText = isDarkMode ? 'Light Mode' : 'Dark Mode';
+    const themeColor = isDarkMode ? '#222' : '#FFF';
+    canvas.style.backgroundColor = themeColor;
+}
+
+function toggleNightMode() {
+    nightModeEnabled = !nightModeEnabled;
+    document.getElementById('toggleNightMode').innerText = nightModeEnabled ? 'Night Mode: On' : 'Night Mode: Off';
+}
+
+function displayPowerUpHistory() {
+    const historyElement = document.getElementById('powerUpHistory');
+    historyElement.innerHTML = '<strong>Recent Power-Ups:</strong> ';
+    powerUpHistory.slice(0, 5).forEach(type => {
+        const color = getPowerUpColor(type);
+        historyElement.innerHTML += `<span class="power-up-history" style="color: ${color};">${type}</span> `;
+    });
+}
+
+function togglePauseCountdown() {
+    pauseCountdown = pauseCountdown > 0 ? 0 : 5;
+    const countdownInterval = setInterval(() => {
+        if (pauseCountdown > 0) {
+            pauseCountdown--;
+        } else {
+            clearInterval(countdownInterval);
+            togglePause();
+        }
+    }, 1000);
+}
+
+// Event Listeners
+window.addEventListener('DOMContentLoaded', () => {
+    canvas = document.getElementById('pongCanvas');
+    ctx = canvas.getContext('2d');
+
+    ably = new Ably.Realtime("iS2_UQ.Yk8bNA:gWf506yEprURhapCNSjwxZTt-_Gh4CX-zr5TyyGMLgg");
+    channel = ably.channels.get('pong-game');
+
+    currentUsername = generateRandomUsername();
+
+    channel.subscribe('chat', (message) => {
+        handleAblyMessage(message.data);
+    });
+
+    loadChatHistory();
+
+    bindUI();
+    resetEventListeners();
+    initializeGame();
+    toggleSound();
+    startGame('ai-vs-ai');
+});
+
+window.addEventListener('resize', resizeCanvas);
+window.addEventListener('orientationchange', resizeCanvas);
+
+function handleAblyMessage(message) {
+    switch (message.type) {
+        case 'chat':
+            displayChatMessage(message.username, message.content, message.timestamp);
+            break;
+    }
+}
+
 function resetEventListeners() {
     document.removeEventListener('keydown', handleKeyDown);
     document.removeEventListener('keyup', handleKeyUp);
     document.addEventListener('keydown', handleKeyDown);
     document.addEventListener('keyup', handleKeyUp);
 }
+
 function handleKeyDown(e) { keysPressed[e.key] = true; }
 function handleKeyUp(e) { keysPressed[e.key] = false; }
 
@@ -335,8 +400,8 @@ function draw() {
     }
 
     drawFPS();
-    drawPowerUpHistory(); 
-    
+    drawPowerUpHistory();
+
     if (pauseCountdown > 0) {
         ctx.fillStyle = 'rgba(0,0,0,0.5)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -344,20 +409,6 @@ function draw() {
         ctx.font = '30px Arial';
         ctx.fillText(`Resuming in ${pauseCountdown}...`, canvas.width / 2 - 120, canvas.height / 2);
     }
-}
-
-function drawRect(x, y, w, h, color) {
-    ctx.fillStyle = color;
-    ctx.fillRect(x, y, w, h);
-}
-function drawCircle(x, y, r, color) {
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI * 2);
-    ctx.fill();
-}
-function clamp(val, min, max) {
-    return Math.min(Math.max(val, min), max);
 }
 
 function spawnPowerUp() {
@@ -378,9 +429,9 @@ function spawnPowerUp() {
 }
 
 function handlePowerUpEffect() {
-    powerUpHistory.unshift(currentPowerUpType); 
-    if (powerUpHistory.length > 5) powerUpHistory.pop(); 
-    displayPowerUpHistory(); 
+    powerUpHistory.unshift(currentPowerUpType);
+    if (powerUpHistory.length > 5) powerUpHistory.pop();
+    displayPowerUpHistory();
 
     switch (currentPowerUpType) {
         case 'speed':
@@ -494,21 +545,6 @@ function startCountdown() {
     }, 1000);
 }
 
-let lastFrameTime = 0;
-let fps = 0;
-
-function calculateFPS(timestamp) {
-    const delta = timestamp - lastFrameTime;
-    lastFrameTime = timestamp;
-    fps = Math.round(1000 / delta);
-}
-
-function drawFPS() {
-    ctx.fillStyle = '#FFF';
-    ctx.font = '14px Arial';
-    ctx.fillText(`FPS: ${fps}`, 10, 20);
-}
-
 function changeTheme() {
     currentTheme = (currentTheme + 1) % themes.length;
     document.documentElement.style.setProperty('--theme-color', themes[currentTheme]);
@@ -578,7 +614,7 @@ function sendMessage() {
             timestamp: timestamp
         });
         chatInput.value = '';
-        chatTimestamps[sanitizedMessage] = timestamp; 
+        chatTimestamps[sanitizedMessage] = timestamp;
     }
 }
 
@@ -600,15 +636,9 @@ function displayChatMessage(username, content, timestamp) {
     chatBox.appendChild(messageElement);
     chatBox.scrollTop = chatBox.scrollHeight;
 
-    if (Date.now() - new Date(timestamp).getTime() < 30000) { 
+    if (Date.now() - new Date(timestamp).getTime() < 30000) {
         messageElement.classList.add('recent-message');
     }
-}
-
-function sanitizeInput(input) {
-    const div = document.createElement('div');
-    div.appendChild(document.createTextNode(input));
-    return div.innerHTML;
 }
 
 async function loadChatHistory() {
@@ -626,40 +656,6 @@ async function loadChatHistory() {
     }
 }
 
-function resetPaddlePosition() {
-    player1Y = canvas.height / 2 - paddleHeight / 2;
-    player2Y = canvas.height / 2 - paddleHeight / 2;
-}
-
-function toggleDarkMode() {
-    const isDarkMode = document.body.classList.toggle('dark-mode');
-    document.getElementById('toggleDarkMode').innerText = isDarkMode ? 'Light Mode' : 'Dark Mode';
-    const themeColor = isDarkMode ? '#222' : '#FFF';
-    canvas.style.backgroundColor = themeColor;
-}
-
-function toggleNightMode() {
-    nightModeEnabled = !nightModeEnabled;
-    document.getElementById('toggleNightMode').innerText = nightModeEnabled ? 'Night Mode: On' : 'Night Mode: Off';
-}
-
-function displayPowerUpHistory() {
-    const historyElement = document.getElementById('powerUpHistory');
-    historyElement.innerHTML = '<strong>Recent Power-Ups:</strong> ';
-    powerUpHistory.slice(0, 5).forEach(type => {
-        const color = getPowerUpColor(type);
-        historyElement.innerHTML += `<span class="power-up-history" style="color: ${color};">${type}</span> `;
-    });
-}
-
-function togglePauseCountdown() {
-    pauseCountdown = pauseCountdown > 0 ? 0 : 5;
-    const countdownInterval = setInterval(() => {
-        if (pauseCountdown > 0) {
-            pauseCountdown--;
-        } else {
-            clearInterval(countdownInterval);
-            togglePause();
-        }
-    }, 1000);
+function startOnlineMultiplayer() {
+    channel.publish('join-game', { clientId: ably.auth.clientId });
 }
