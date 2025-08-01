@@ -49,6 +49,9 @@ let powerUpHistory = [];
 let lastFrameTime = 0;
 let fps = 0;
 
+// New feature: Power-up stacking
+let activePowerUps = {};
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -144,6 +147,7 @@ function initializeGame() {
     controlsReversed = false;
     balls = [];
     powerUpHistory = [];
+    activePowerUps = {};
 
     updateSpeedDisplay();
     displayHighScores();
@@ -339,6 +343,9 @@ function update() {
     }
 
     if (powerUpActive && powerUpTimer > 0) powerUpTimer -= 1 / 60;
+
+    // Handle active power-up effects
+    handleActivePowerUps();
 }
 
 function handleInput() {
@@ -435,30 +442,18 @@ function handlePowerUpEffect() {
 
     switch (currentPowerUpType) {
         case 'speed':
-            ballSpeedMultiplier = 1.5;
-            balls.forEach(ball => {
-                ball.speedX *= 1.5;
-                ball.speedY *= 1.5;
-            });
-            setTimeout(() => {
-                ballSpeedMultiplier = 1;
-                balls.forEach(ball => {
-                    ball.speedX /= 1.5;
-                    ball.speedY /= 1.5;
-                });
-            }, 10000);
+            stackablePowerUp('speed', 1.5, 10000);
             break;
         case 'shrinkPaddle':
-            paddleHeight = Math.max(paddleHeight - 20, 40);
-            setTimeout(() => { paddleHeight = INITIAL_PADDLE_HEIGHT; }, 10000);
+            stackablePowerUp('shrinkPaddle', -20, 10000, true);
             break;
         case 'reverseControls':
+            stackablePowerUp('reverseControls', null, 10000);
             controlsReversed = true;
-            setTimeout(() => { controlsReversed = false; }, 10000);
             break;
         case 'invisibleBall':
+            stackablePowerUp('invisibleBall', null, 5000);
             ballVisible = false;
-            setTimeout(() => { ballVisible = true; }, 5000);
             break;
         case 'multiball':
             addAdditionalBalls();
@@ -467,6 +462,44 @@ function handlePowerUpEffect() {
             player1Score++;
             break;
     }
+}
+
+function stackablePowerUp(type, effect, duration, isPaddle) {
+    if (!activePowerUps[type]) {
+        activePowerUps[type] = { effect: effect, duration: duration, timer: duration };
+        if (type === 'speed') {
+            balls.forEach(ball => {
+                ball.speedX *= effect;
+                ball.speedY *= effect;
+            });
+        } else if (isPaddle && type === 'shrinkPaddle') {
+            paddleHeight = Math.max(paddleHeight + effect, 40);
+        }
+    } else {
+        activePowerUps[type].timer += duration;
+    }
+}
+
+function handleActivePowerUps() {
+    Object.keys(activePowerUps).forEach(type => {
+        const powerUp = activePowerUps[type];
+        powerUp.timer -= 1 / 60;
+        if (powerUp.timer <= 0) {
+            if (type === 'speed') {
+                balls.forEach(ball => {
+                    ball.speedX /= powerUp.effect;
+                    ball.speedY /= powerUp.effect;
+                });
+            } else if (type === 'shrinkPaddle') {
+                paddleHeight = INITIAL_PADDLE_HEIGHT;
+            } else if (type === 'reverseControls') {
+                controlsReversed = false;
+            } else if (type === 'invisibleBall') {
+                ballVisible = true;
+            }
+            delete activePowerUps[type];
+        }
+    });
 }
 
 function addAdditionalBalls() {
