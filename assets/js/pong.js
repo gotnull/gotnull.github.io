@@ -52,6 +52,11 @@ let fps = 0;
 // New feature: Power-up stacking
 let activePowerUps = {};
 
+// New feature: Replay functionality
+let replayData = [];
+let replayMode = false;
+let replayFrameIndex = 0;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -104,6 +109,46 @@ function sanitizeInput(input) {
     return div.innerHTML;
 }
 
+// New Function: Save game state for replay
+function saveReplayState() {
+    if (!replayMode) {
+        replayData.push({
+            player1Y,
+            player2Y,
+            balls: balls.map(ball => ({ ...ball })),
+            player1Score,
+            player2Score
+        });
+    }
+}
+
+// New Function: Start replay
+function startReplay() {
+    if (replayData.length > 0) {
+        replayMode = true;
+        replayFrameIndex = 0;
+        replayLoop();
+    }
+}
+
+// New Function: Replay loop
+function replayLoop() {
+    if (replayFrameIndex < replayData.length) {
+        const frame = replayData[replayFrameIndex];
+        player1Y = frame.player1Y;
+        player2Y = frame.player2Y;
+        balls = frame.balls.map(ball => ({ ...ball }));
+        player1Score = frame.player1Score;
+        player2Score = frame.player2Score;
+        replayFrameIndex++;
+        setTimeout(replayLoop, 1000 / 60); // Replay at 60 FPS
+    } else {
+        replayMode = false;
+        initializeGame();
+    }
+    draw();
+}
+
 // UI Binding and Event Handlers
 function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
@@ -128,6 +173,7 @@ function bindUI() {
     document.getElementById('toggleDarkMode').onclick = toggleDarkMode;
     document.getElementById('toggleNightMode').onclick = toggleNightMode;
     document.getElementById('pauseCountdown').onclick = togglePauseCountdown;
+    document.getElementById('replayButton').onclick = startReplay;
 }
 
 // Game Initialization and Logic
@@ -148,6 +194,8 @@ function initializeGame() {
     balls = [];
     powerUpHistory = [];
     activePowerUps = {};
+    replayData = [];
+    replayMode = false;
 
     updateSpeedDisplay();
     displayHighScores();
@@ -176,7 +224,7 @@ function gameLoop(timestamp) {
 }
 
 function togglePause() {
-    if (showWinScreen) return;
+    if (showWinScreen || replayMode) return;
     gameRunning = !gameRunning;
     if (gameRunning) gameLoop();
 }
@@ -275,9 +323,10 @@ function handleKeyDown(e) { keysPressed[e.key] = true; }
 function handleKeyUp(e) { keysPressed[e.key] = false; }
 
 function update() {
-    if (!gameRunning || showWinScreen) return;
+    if (!gameRunning || showWinScreen || replayMode) return;
 
     handleInput();
+    saveReplayState();
 
     if (balls.length) {
         const ball = balls[0];
