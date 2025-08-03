@@ -349,8 +349,13 @@ history:
     focusing on ensuring the new functionality is incorporated smoothly into the existing
     game structure.
   timestamp: '2025-08-01 13:28:11'
-- summary: "The improved code introduces a replay functionality that allows users\
-    \ to replay past game states, capturing player positions, ball states, and scores.\
-    \ Additionally, a new \"Replay\" button was added to the HTML interface to activate\
-    \ this feature."
+- summary: The improved code introduces a replay functionality that allows users to
+    replay past game states, capturing player positions, ball states, and scores.
+    Additionally, a new "Replay" button was added to the HTML interface to activate
+    this feature.
   timestamp: '2025-08-02 13:24:59'
+- summary: "The improved code adds local multiplayer support with gamepad input, allowing\
+    \ players to control paddles using connected game controllers. Additionally, the\
+    \ instructions section has been updated to include guidance for local multiplayer\
+    \ with gamepads."
+  timestamp: '2025-08-03 13:32:41'

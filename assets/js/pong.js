@@ -57,6 +57,10 @@ let replayData = [];
 let replayMode = false;
 let replayFrameIndex = 0;
 
+// New feature: Local Multiplayer with Gamepad Support
+let gamepads = [];
+let gamepadConnected = false;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -196,12 +200,15 @@ function initializeGame() {
     activePowerUps = {};
     replayData = [];
     replayMode = false;
+    gamepads = [];
+    gamepadConnected = false;
 
     updateSpeedDisplay();
     displayHighScores();
     updateLeaderboardDisplay();
     displayPowerUpHistory();
     resizeCanvas();
+    checkGamepads();
 }
 
 function startGame(mode) {
@@ -303,6 +310,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('resize', resizeCanvas);
 window.addEventListener('orientationchange', resizeCanvas);
+window.addEventListener('gamepadconnected', (e) => {
+    gamepads[e.gamepad.index] = e.gamepad;
+    gamepadConnected = true;
+});
+window.addEventListener('gamepaddisconnected', (e) => {
+    delete gamepads[e.gamepad.index];
+    gamepadConnected = false;
+});
 
 function handleAblyMessage(message) {
     switch (message.type) {
@@ -395,6 +410,11 @@ function update() {
 
     // Handle active power-up effects
     handleActivePowerUps();
+
+    // Handle gamepad input
+    if (gamepadConnected) {
+        handleGamepadInput();
+    }
 }
 
 function handleInput() {
@@ -410,6 +430,20 @@ function handleInput() {
 
         player1Y = clamp(player1Y, 0, canvas.height - paddleHeight);
     }
+}
+
+function handleGamepadInput() {
+    const gamepad = navigator.getGamepads()[0];
+    if (!gamepad) return;
+
+    const player1Axis = gamepad.axes[1];
+    const player2Axis = gamepads[1] ? gamepads[1].axes[1] : 0;
+
+    if (Math.abs(player1Axis) > 0.1) player1Y += player1Axis * 5 * (controlsReversed ? -1 : 1);
+    if (Math.abs(player2Axis) > 0.1) player2Y += player2Axis * 5 * (controlsReversed ? -1 : 1);
+
+    player1Y = clamp(player1Y, 0, canvas.height - paddleHeight);
+    player2Y = clamp(player2Y, 0, canvas.height - paddleHeight);
 }
 
 function draw() {
@@ -740,4 +774,14 @@ async function loadChatHistory() {
 
 function startOnlineMultiplayer() {
     channel.publish('join-game', { clientId: ably.auth.clientId });
+}
+
+function checkGamepads() {
+    const check = setInterval(() => {
+        const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+        if (gamepads[0]) {
+            gamepadConnected = true;
+            clearInterval(check);
+        }
+    }, 1000);
 }
