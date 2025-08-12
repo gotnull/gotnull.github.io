@@ -61,6 +61,10 @@ let replayFrameIndex = 0;
 let gamepads = [];
 let gamepadConnected = false;
 
+// New feature: Customizable Paddle Color
+let player1PaddleColor = '#FFF';
+let player2PaddleColor = '#FFF';
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -178,6 +182,8 @@ function bindUI() {
     document.getElementById('toggleNightMode').onclick = toggleNightMode;
     document.getElementById('pauseCountdown').onclick = togglePauseCountdown;
     document.getElementById('replayButton').onclick = startReplay;
+    document.getElementById('paddleColor1').onchange = (e) => player1PaddleColor = e.target.value;
+    document.getElementById('paddleColor2').onchange = (e) => player2PaddleColor = e.target.value;
 }
 
 // Game Initialization and Logic
@@ -449,8 +455,8 @@ function handleGamepadInput() {
 function draw() {
     drawRect(0, 0, canvas.width, canvas.height, nightModeEnabled ? 'rgba(0, 0, 0, 0.8)' : '#000');
 
-    drawRect(0, player1Y, paddleWidth, paddleHeight, '#FFF');
-    drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, '#FFF');
+    drawRect(0, player1Y, paddleWidth, paddleHeight, player1PaddleColor);
+    drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, player2PaddleColor);
 
     balls.forEach(ball => {
         if (ballVisible) drawCircle(ball.x, ball.y, ballSize, '#FFF');

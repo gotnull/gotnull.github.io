@@ -354,8 +354,12 @@ history:
     Additionally, a new "Replay" button was added to the HTML interface to activate
     this feature.
   timestamp: '2025-08-02 13:24:59'
-- summary: "The improved code adds local multiplayer support with gamepad input, allowing\
-    \ players to control paddles using connected game controllers. Additionally, the\
-    \ instructions section has been updated to include guidance for local multiplayer\
-    \ with gamepads."
+- summary: The improved code adds local multiplayer support with gamepad input, allowing
+    players to control paddles using connected game controllers. Additionally, the
+    instructions section has been updated to include guidance for local multiplayer
+    with gamepads.
   timestamp: '2025-08-03 13:32:41'
+- summary: "The improved code introduces a new feature allowing players to customize\
+    \ their paddle colors via color input elements in the HTML. This feature is supported\
+    \ by additional JavaScript code that updates paddle colors based on user selection."
+  timestamp: '2025-08-12 13:26:32'
