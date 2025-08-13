@@ -65,6 +65,22 @@ let gamepadConnected = false;
 let player1PaddleColor = '#FFF';
 let player2PaddleColor = '#FFF';
 
+// New feature: Custom Game Modes
+let customGameModes = {
+    'fastBall': {
+        ballSpeed: INITIAL_BALL_SPEED * 1.5,
+        paddleSpeed: 1.2
+    },
+    'tinyPaddles': {
+        paddleHeight: INITIAL_PADDLE_HEIGHT / 2,
+        paddleSpeed: 1
+    },
+    'giantBall': {
+        ballSize: ballSize * 2,
+        paddleSpeed: 1
+    }
+};
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -184,6 +200,11 @@ function bindUI() {
     document.getElementById('replayButton').onclick = startReplay;
     document.getElementById('paddleColor1').onchange = (e) => player1PaddleColor = e.target.value;
     document.getElementById('paddleColor2').onchange = (e) => player2PaddleColor = e.target.value;
+
+    // New Game Mode Buttons
+    document.getElementById('fastBallMode').onclick = () => startCustomGameMode('fastBall');
+    document.getElementById('tinyPaddlesMode').onclick = () => startCustomGameMode('tinyPaddles');
+    document.getElementById('giantBallMode').onclick = () => startCustomGameMode('giantBall');
 }
 
 // Game Initialization and Logic
@@ -229,6 +250,24 @@ function startGame(mode) {
     gameLoop();
 }
 
+function startCustomGameMode(mode) {
+    const settings = customGameModes[mode];
+    if (settings) {
+        initializeGame();
+        gameMode = mode;
+        gameRunning = true;
+        showWinScreen = false;
+        ballSpeedMultiplier = settings.ballSpeed || 1;
+        paddleHeight = settings.paddleHeight || INITIAL_PADDLE_HEIGHT;
+        gameSpeed = settings.paddleSpeed || 1;
+        document.getElementById('gameModeDisplay').innerText = `Mode: ${mode.replace('-', ' ').toUpperCase()}`;
+        balls = [createBall()];
+        resetBall(balls[0]);
+        if (powerUpsEnabled) spawnPowerUp();
+        gameLoop();
+    }
+}
+
 function gameLoop(timestamp) {
     animationFrameId = requestAnimationFrame(gameLoop);
     calculateFPS(timestamp);
@@ -249,8 +288,8 @@ function createBall() {
 function resetBall(ball) {
     ball.x = canvas.width / 2;
     ball.y = canvas.height / 2;
-    ball.speedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * gameSpeed;
-    ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * gameSpeed;
+    ball.speedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * gameSpeed * ballSpeedMultiplier;
+    ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED * gameSpeed * ballSpeedMultiplier;
 }
 
 function resetPaddlePosition() {
