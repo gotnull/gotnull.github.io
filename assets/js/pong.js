@@ -81,6 +81,10 @@ let customGameModes = {
     }
 };
 
+// New feature: Online Multiplayer with WebRTC
+let peerConnection;
+let dataChannel;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -133,6 +137,47 @@ function sanitizeInput(input) {
     return div.innerHTML;
 }
 
+// WebRTC Functions
+async function startWebRTC() {
+    peerConnection = new RTCPeerConnection();
+
+    dataChannel = peerConnection.createDataChannel('gameData');
+    dataChannel.onmessage = (event) => handleDataChannelMessage(event.data);
+
+    peerConnection.onicecandidate = async (event) => {
+        if (event.candidate) {
+            await sendSignal({ candidate: event.candidate });
+        }
+    };
+
+    const offer = await peerConnection.createOffer();
+    await peerConnection.setLocalDescription(offer);
+
+    await sendSignal({ offer: offer });
+}
+
+async function handleSignal(signal) {
+    if (signal.answer) {
+        await peerConnection.setRemoteDescription(new RTCSessionDescription(signal.answer));
+    } else if (signal.offer) {
+        await peerConnection.setRemoteDescription(new RTCSessionDescription(signal.offer));
+        const answer = await peerConnection.createAnswer();
+        await peerConnection.setLocalDescription(answer);
+        await sendSignal({ answer: answer });
+    } else if (signal.candidate) {
+        await peerConnection.addIceCandidate(new RTCIceCandidate(signal.candidate));
+    }
+}
+
+function handleDataChannelMessage(data) {
+    const gameState = JSON.parse(data);
+    player1Y = gameState.player1Y;
+    player2Y = gameState.player2Y;
+    balls = gameState.balls;
+    player1Score = gameState.player1Score;
+    player2Score = gameState.player2Score;
+}
+
 // New Function: Save game state for replay
 function saveReplayState() {
     if (!replayMode) {
@@ -178,6 +223,7 @@ function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
     document.getElementById('startAI').onclick = () => startGame('ai-vs-ai');
     document.getElementById('startMultiplayer').onclick = () => startGame('multiplayer');
+    document.getElementById('startOnlineMultiplayer').onclick = startOnlineMultiplayer;
     document.getElementById('pauseGame').onclick = togglePause;
     document.getElementById('changeTheme').onclick = changeTheme;
     document.getElementById('toggleSound').onclick = toggleSound;
@@ -188,7 +234,6 @@ function bindUI() {
     document.getElementById('difficultyLevel').onchange = adjustAIDifficulty;
     document.getElementById('fullscreenButton').onclick = toggleFullscreen;
     document.getElementById('togglePowerUps').onclick = togglePowerUps;
-    document.getElementById('startOnlineMultiplayer').onclick = startOnlineMultiplayer;
     document.getElementById('sendMessage').onclick = sendMessage;
     document.getElementById('toggleMusic').onclick = toggleMusic;
     document.getElementById('chatInput').addEventListener('keypress', (e) => {
@@ -369,6 +414,9 @@ function handleAblyMessage(message) {
         case 'chat':
             displayChatMessage(message.username, message.content, message.timestamp);
             break;
+        case 'signal':
+            handleSignal(message.signal);
+            break;
     }
 }
 
@@ -459,6 +507,18 @@ function update() {
     // Handle gamepad input
     if (gamepadConnected) {
         handleGamepadInput();
+    }
+
+    // Send game state over WebRTC for online multiplayer
+    if (dataChannel && dataChannel.readyState === 'open') {
+        const gameState = JSON.stringify({
+            player1Y: player1Y,
+            player2Y: player2Y,
+            balls: balls,
+            player1Score: player1Score,
+            player2Score: player2Score
+        });
+        dataChannel.send(gameState);
     }
 }
 
@@ -817,7 +877,8 @@ async function loadChatHistory() {
     }
 }
 
-function startOnlineMultiplayer() {
+async function startOnlineMultiplayer() {
+    await startWebRTC();
     channel.publish('join-game', { clientId: ably.auth.clientId });
 }
 
