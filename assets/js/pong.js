@@ -85,6 +85,9 @@ let customGameModes = {
 let peerConnection;
 let dataChannel;
 
+// New Feature: Dynamic Weather Effects
+let weatherEffect = 'none'; // Options: 'none', 'rain', 'snow'
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -135,6 +138,27 @@ function sanitizeInput(input) {
     const div = document.createElement('div');
     div.appendChild(document.createTextNode(input));
     return div.innerHTML;
+}
+
+// New Feature: Weather Effects
+function drawWeatherEffects() {
+    if (weatherEffect === 'rain') {
+        for (let i = 0; i < 100; i++) {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            ctx.fillStyle = 'rgba(173, 216, 230, 0.5)';
+            ctx.fillRect(x, y, 2, 10);
+        }
+    } else if (weatherEffect === 'snow') {
+        for (let i = 0; i < 100; i++) {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height;
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
 }
 
 // WebRTC Functions
@@ -250,6 +274,15 @@ function bindUI() {
     document.getElementById('fastBallMode').onclick = () => startCustomGameMode('fastBall');
     document.getElementById('tinyPaddlesMode').onclick = () => startCustomGameMode('tinyPaddles');
     document.getElementById('giantBallMode').onclick = () => startCustomGameMode('giantBall');
+
+    // Weather Effect Buttons
+    document.getElementById('weatherNone').onclick = () => setWeatherEffect('none');
+    document.getElementById('weatherRain').onclick = () => setWeatherEffect('rain');
+    document.getElementById('weatherSnow').onclick = () => setWeatherEffect('snow');
+}
+
+function setWeatherEffect(effect) {
+    weatherEffect = effect;
 }
 
 // Game Initialization and Logic
@@ -596,6 +629,7 @@ function draw() {
 
     drawFPS();
     drawPowerUpHistory();
+    drawWeatherEffects();
 
     if (pauseCountdown > 0) {
         ctx.fillStyle = 'rgba(0,0,0,0.5)';

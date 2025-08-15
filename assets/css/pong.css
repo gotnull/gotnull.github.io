@@ -192,3 +192,10 @@ select {
     gap: 10px;
     margin-top: 20px;
 }
+
+#weatherEffects {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
