@@ -376,8 +376,13 @@ history:
     and new custom game modes. These changes improve the game's functionality and
     user experience by offering more gameplay options and connectivity features.
   timestamp: '2025-08-14 13:28:56'
-- summary: "The improved code introduces a new feature: dynamic weather effects, including\
-    \ options for rain and snow, which can be toggled via new buttons in the HTML\
-    \ interface. The JavaScript code includes a function to draw these weather effects\
-    \ on the game canvas, enhancing the visual experience."
+- summary: 'The improved code introduces a new feature: dynamic weather effects, including
+    options for rain and snow, which can be toggled via new buttons in the HTML interface.
+    The JavaScript code includes a function to draw these weather effects on the game
+    canvas, enhancing the visual experience.'
   timestamp: '2025-08-15 13:26:25'
+- summary: "The improved code introduces a new feature to manage power-up cooldowns,\
+    \ preventing continuous activation by implementing a cooldown period of 5 seconds\
+    \ after a power-up is used. Additionally, the JavaScript, CSS, and HTML structures\
+    \ remain largely unchanged, maintaining the existing functionality and layout."
+  timestamp: '2025-08-16 13:24:59'

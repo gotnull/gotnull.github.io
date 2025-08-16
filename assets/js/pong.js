@@ -88,6 +88,9 @@ let dataChannel;
 // New Feature: Dynamic Weather Effects
 let weatherEffect = 'none'; // Options: 'none', 'rain', 'snow'
 
+// New Feature: Power-Up Cooldown
+let powerUpCooldown = false;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -507,10 +510,12 @@ function update() {
         if (powerUpActive && powerUpVisible) {
             const dx = Math.abs(ball.x - powerUpX);
             const dy = Math.abs(ball.y - powerUpY);
-            if (dx < ballSize && dy < ballSize) {
+            if (dx < ballSize && dy < ballSize && !powerUpCooldown) {
                 handlePowerUpEffect();
                 powerUpVisible = false;
                 powerUpActive = false;
+                powerUpCooldown = true;
+                setTimeout(() => powerUpCooldown = false, 5000); // 5 seconds cooldown
             }
         }
 
@@ -641,7 +646,7 @@ function draw() {
 }
 
 function spawnPowerUp() {
-    if (!powerUpsEnabled) return;
+    if (!powerUpsEnabled || powerUpCooldown) return;
     powerUpActive = true;
     powerUpVisible = true;
     powerUpX = Math.random() * (canvas.width - 30) + 15;
