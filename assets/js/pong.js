@@ -91,6 +91,9 @@ let weatherEffect = 'none'; // Options: 'none', 'rain', 'snow'
 // New Feature: Power-Up Cooldown
 let powerUpCooldown = false;
 
+// New Feature: Game Recording
+let recordingData = [];
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -245,6 +248,35 @@ function replayLoop() {
     draw();
 }
 
+// New Function: Start Recording
+function startRecording() {
+    recordingData = [];
+    recordGameState();
+}
+
+// New Function: Record Game State
+function recordGameState() {
+    if (gameRunning) {
+        recordingData.push({
+            player1Y,
+            player2Y,
+            balls: balls.map(ball => ({ ...ball })),
+            player1Score,
+            player2Score
+        });
+        setTimeout(recordGameState, 1000 / 60);
+    }
+}
+
+// New Function: Play Recording
+function playRecording() {
+    if (recordingData.length > 0) {
+        replayMode = true;
+        replayFrameIndex = 0;
+        replayLoop();
+    }
+}
+
 // UI Binding and Event Handlers
 function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
@@ -282,6 +314,10 @@ function bindUI() {
     document.getElementById('weatherNone').onclick = () => setWeatherEffect('none');
     document.getElementById('weatherRain').onclick = () => setWeatherEffect('rain');
     document.getElementById('weatherSnow').onclick = () => setWeatherEffect('snow');
+
+    // New Recording Control Buttons
+    document.getElementById('startRecording').onclick = startRecording;
+    document.getElementById('playRecording').onclick = playRecording;
 }
 
 function setWeatherEffect(effect) {
