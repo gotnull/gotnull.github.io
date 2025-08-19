@@ -94,6 +94,9 @@ let powerUpCooldown = false;
 // New Feature: Game Recording
 let recordingData = [];
 
+// New Feature: Leaderboard Persistence and Sorting
+let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -277,6 +280,13 @@ function playRecording() {
     }
 }
 
+// New Feature: Leaderboard Sorting
+function sortLeaderboard() {
+    leaderboard.sort((a, b) => b.score - a.score);
+    localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+    updateLeaderboardDisplay();
+}
+
 // UI Binding and Event Handlers
 function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
@@ -318,6 +328,9 @@ function bindUI() {
     // New Recording Control Buttons
     document.getElementById('startRecording').onclick = startRecording;
     document.getElementById('playRecording').onclick = playRecording;
+
+    // Sort Leaderboard
+    document.getElementById('sortLeaderboard').onclick = sortLeaderboard;
 }
 
 function setWeatherEffect(effect) {
@@ -793,6 +806,7 @@ function checkWinCondition() {
         if (soundEnabled) winSound.play();
         updateHighScores();
         addToLeaderboard(winner, Math.max(player1Score, player2Score));
+        sortLeaderboard();
         startCountdown();
     }
 }
@@ -817,7 +831,7 @@ function resetHighScores() {
 function updateLeaderboardDisplay() {
     const container = document.getElementById('leaderboard');
     container.innerHTML = '<h3>Leaderboard</h3>';
-    leaderboard.sort((a, b) => b.score - a.score).slice(0, 5).forEach((entry, i) => {
+    leaderboard.slice(0, 5).forEach((entry, i) => {
         container.innerHTML += `<p>${i + 1}. ${entry.name}: ${entry.score}</p>`;
     });
 }
@@ -825,7 +839,6 @@ function updateLeaderboardDisplay() {
 function addToLeaderboard(name, score) {
     leaderboard.push({ name, score });
     localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
-    updateLeaderboardDisplay();
 }
 
 function startCountdown() {
