@@ -97,6 +97,10 @@ let recordingData = [];
 // New Feature: Leaderboard Persistence and Sorting
 let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 
+// New Feature: Game Timer
+let gameTime = 0;
+let gameTimer;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -287,6 +291,22 @@ function sortLeaderboard() {
     updateLeaderboardDisplay();
 }
 
+// New Feature: Start Game Timer
+function startGameTimer() {
+    gameTime = 0;
+    gameTimer = setInterval(() => {
+        gameTime++;
+        displayGameTime();
+    }, 1000);
+}
+
+// New Feature: Display Game Timer
+function displayGameTime() {
+    const minutes = Math.floor(gameTime / 60);
+    const seconds = gameTime % 60;
+    document.getElementById('gameTimer').innerText = `Time: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
 // UI Binding and Event Handlers
 function bindUI() {
     document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
@@ -366,6 +386,7 @@ function initializeGame() {
     displayPowerUpHistory();
     resizeCanvas();
     checkGamepads();
+    startGameTimer();
 }
 
 function startGame(mode) {
@@ -408,7 +429,12 @@ function gameLoop(timestamp) {
 function togglePause() {
     if (showWinScreen || replayMode) return;
     gameRunning = !gameRunning;
-    if (gameRunning) gameLoop();
+    if (gameRunning) {
+        gameLoop();
+        startGameTimer();
+    } else {
+        clearInterval(gameTimer);
+    }
 }
 
 function createBall() {
@@ -803,6 +829,7 @@ function checkWinCondition() {
         winner = player1Score >= winningScore ? 'Player 1' : 'Player 2';
         showWinScreen = true;
         gameRunning = false;
+        clearInterval(gameTimer);
         if (soundEnabled) winSound.play();
         updateHighScores();
         addToLeaderboard(winner, Math.max(player1Score, player2Score));
