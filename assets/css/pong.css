@@ -205,3 +205,14 @@ select {
     color: #FFD700;
     margin-top: 10px;
 }
+
+#tutorialBox {
+    display: none;
+    background-color: #222;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20px;
+}

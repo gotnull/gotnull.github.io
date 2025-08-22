@@ -101,6 +101,16 @@ let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 let gameTime = 0;
 let gameTimer;
 
+// New Feature: Tutorial Mode
+let tutorialMode = false;
+let tutorialStep = 0;
+const tutorialSteps = [
+    "Step 1: Use the arrow keys to move your paddle.",
+    "Step 2: Hit the ball with your paddle to score points.",
+    "Step 3: Watch out for power-ups that appear on the screen.",
+    "Step 4: First player to reach the winning score wins the game!",
+];
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -171,6 +181,31 @@ function drawWeatherEffects() {
             ctx.arc(x, y, 2, 0, Math.PI * 2);
             ctx.fill();
         }
+    }
+}
+
+// Tutorial Mode Functions
+function startTutorial() {
+    tutorialMode = true;
+    tutorialStep = 0;
+    displayTutorialStep();
+}
+
+function displayTutorialStep() {
+    if (tutorialStep < tutorialSteps.length) {
+        const tutorialBox = document.getElementById('tutorialBox');
+        tutorialBox.innerText = tutorialSteps[tutorialStep];
+        tutorialBox.style.display = 'block';
+    } else {
+        tutorialMode = false;
+        document.getElementById('tutorialBox').style.display = 'none';
+    }
+}
+
+function nextTutorialStep() {
+    if (tutorialMode) {
+        tutorialStep++;
+        displayTutorialStep();
     }
 }
 
@@ -334,6 +369,7 @@ function bindUI() {
     document.getElementById('replayButton').onclick = startReplay;
     document.getElementById('paddleColor1').onchange = (e) => player1PaddleColor = e.target.value;
     document.getElementById('paddleColor2').onchange = (e) => player2PaddleColor = e.target.value;
+    document.getElementById('startTutorial').onclick = startTutorial;
 
     // New Game Mode Buttons
     document.getElementById('fastBallMode').onclick = () => startCustomGameMode('fastBall');
@@ -379,6 +415,7 @@ function initializeGame() {
     replayMode = false;
     gamepads = [];
     gamepadConnected = false;
+    tutorialMode = false;
 
     updateSpeedDisplay();
     displayHighScores();
