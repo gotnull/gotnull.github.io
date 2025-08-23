@@ -111,6 +111,16 @@ const tutorialSteps = [
     "Step 4: First player to reach the winning score wins the game!",
 ];
 
+// New Feature: Voice Announcements
+let announcementsEnabled = true;
+const voiceAnnouncements = {
+    "start": "Game starting!",
+    "pause": "Game paused.",
+    "resume": "Game resumed.",
+    "win": (winner) => `${winner} wins the game!`,
+    "powerUp": (type) => `Power-up activated: ${type}.`
+};
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -182,6 +192,14 @@ function drawWeatherEffects() {
             ctx.fill();
         }
     }
+}
+
+// New Function: Play Voice Announcement
+function playVoiceAnnouncement(announcement, ...args) {
+    if (!announcementsEnabled) return;
+    const message = typeof announcement === 'function' ? announcement(...args) : announcement;
+    const utterance = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(utterance);
 }
 
 // Tutorial Mode Functions
@@ -344,9 +362,9 @@ function displayGameTime() {
 
 // UI Binding and Event Handlers
 function bindUI() {
-    document.getElementById('startGame').onclick = () => startGame('player-vs-ai');
-    document.getElementById('startAI').onclick = () => startGame('ai-vs-ai');
-    document.getElementById('startMultiplayer').onclick = () => startGame('multiplayer');
+    document.getElementById('startGame').onclick = () => { startGame('player-vs-ai'); playVoiceAnnouncement(voiceAnnouncements.start); };
+    document.getElementById('startAI').onclick = () => { startGame('ai-vs-ai'); playVoiceAnnouncement(voiceAnnouncements.start); };
+    document.getElementById('startMultiplayer').onclick = () => { startGame('multiplayer'); playVoiceAnnouncement(voiceAnnouncements.start); };
     document.getElementById('startOnlineMultiplayer').onclick = startOnlineMultiplayer;
     document.getElementById('pauseGame').onclick = togglePause;
     document.getElementById('changeTheme').onclick = changeTheme;
@@ -370,6 +388,7 @@ function bindUI() {
     document.getElementById('paddleColor1').onchange = (e) => player1PaddleColor = e.target.value;
     document.getElementById('paddleColor2').onchange = (e) => player2PaddleColor = e.target.value;
     document.getElementById('startTutorial').onclick = startTutorial;
+    document.getElementById('toggleAnnouncements').onclick = toggleAnnouncements;
 
     // New Game Mode Buttons
     document.getElementById('fastBallMode').onclick = () => startCustomGameMode('fastBall');
@@ -466,6 +485,7 @@ function gameLoop(timestamp) {
 function togglePause() {
     if (showWinScreen || replayMode) return;
     gameRunning = !gameRunning;
+    playVoiceAnnouncement(gameRunning ? voiceAnnouncements.resume : voiceAnnouncements.pause);
     if (gameRunning) {
         gameLoop();
         startGameTimer();
@@ -778,6 +798,7 @@ function handlePowerUpEffect() {
     powerUpHistory.unshift(currentPowerUpType);
     if (powerUpHistory.length > 5) powerUpHistory.pop();
     displayPowerUpHistory();
+    playVoiceAnnouncement(voiceAnnouncements.powerUp, currentPowerUpType);
 
     switch (currentPowerUpType) {
         case 'speed':
@@ -868,6 +889,7 @@ function checkWinCondition() {
         gameRunning = false;
         clearInterval(gameTimer);
         if (soundEnabled) winSound.play();
+        playVoiceAnnouncement(voiceAnnouncements.win, winner);
         updateHighScores();
         addToLeaderboard(winner, Math.max(player1Score, player2Score));
         sortLeaderboard();
@@ -1042,4 +1064,9 @@ function checkGamepads() {
             clearInterval(check);
         }
     }, 1000);
+}
+
+function toggleAnnouncements() {
+    announcementsEnabled = !announcementsEnabled;
+    document.getElementById('toggleAnnouncements').innerText = announcementsEnabled ? 'Announcements: On' : 'Announcements: Off';
 }

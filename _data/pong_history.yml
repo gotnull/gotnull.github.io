@@ -419,9 +419,14 @@ history:
     the HTML and CSS have been updated to support these features, with new buttons
     and UI elements for controlling game modes, weather effects, and recording options.
   timestamp: '2025-08-21 13:29:30'
-- summary: "The improved code introduces a new \"Tutorial Mode\" feature that guides\
-    \ players through the game with step-by-step instructions, enhancing the user\
-    \ experience for beginners. Additionally, a new button for starting the tutorial\
-    \ is added to the HTML interface, and corresponding CSS styles for the tutorial\
-    \ display are included."
+- summary: The improved code introduces a new "Tutorial Mode" feature that guides
+    players through the game with step-by-step instructions, enhancing the user experience
+    for beginners. Additionally, a new button for starting the tutorial is added to
+    the HTML interface, and corresponding CSS styles for the tutorial display are
+    included.
   timestamp: '2025-08-22 13:28:12'
+- summary: "The improved code introduces a new feature for voice announcements, which\
+    \ provides audio feedback for game events such as starting, pausing, resuming,\
+    \ winning, and activating power-ups. Additionally, a toggle button for these voice\
+    \ announcements is added to the HTML interface."
+  timestamp: '2025-08-23 13:24:39'
