@@ -121,6 +121,13 @@ const voiceAnnouncements = {
     "powerUp": (type) => `Power-up activated: ${type}.`
 };
 
+// New Feature: Achievements
+let achievements = {
+    "firstWin": false,
+    "highScore": false,
+    "multiballMadness": false
+};
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -440,6 +447,7 @@ function initializeGame() {
     displayHighScores();
     updateLeaderboardDisplay();
     displayPowerUpHistory();
+    checkAchievements();
     resizeCanvas();
     checkGamepads();
     startGameTimer();
@@ -892,6 +900,7 @@ function checkWinCondition() {
         playVoiceAnnouncement(voiceAnnouncements.win, winner);
         updateHighScores();
         addToLeaderboard(winner, Math.max(player1Score, player2Score));
+        checkAchievements();
         sortLeaderboard();
         startCountdown();
     }
@@ -1069,4 +1078,20 @@ function checkGamepads() {
 function toggleAnnouncements() {
     announcementsEnabled = !announcementsEnabled;
     document.getElementById('toggleAnnouncements').innerText = announcementsEnabled ? 'Announcements: On' : 'Announcements: Off';
+}
+
+// New Function: Check Achievements
+function checkAchievements() {
+    if (!achievements.firstWin && (player1Score >= winningScore || player2Score >= winningScore)) {
+        achievements.firstWin = true;
+        alert("Achievement Unlocked: First Win!");
+    }
+    if (!achievements.highScore && Math.max(player1Score, player2Score) > 10) {
+        achievements.highScore = true;
+        alert("Achievement Unlocked: High Score!");
+    }
+    if (!achievements.multiballMadness && balls.length > 1) {
+        achievements.multiballMadness = true;
+        alert("Achievement Unlocked: Multiball Madness!");
+    }
 }

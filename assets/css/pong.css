@@ -216,3 +216,10 @@ select {
     text-align: center;
     margin-top: 20px;
 }
+
+#achievements {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #FFD700;
+    display: none;
+}
