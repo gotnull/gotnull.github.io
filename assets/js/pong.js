@@ -128,6 +128,12 @@ let achievements = {
     "multiballMadness": false
 };
 
+// New Feature: Player Statistics
+let playerStats = {
+    player1: { hits: 0, misses: 0 },
+    player2: { hits: 0, misses: 0 }
+};
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -442,6 +448,10 @@ function initializeGame() {
     gamepads = [];
     gamepadConnected = false;
     tutorialMode = false;
+    playerStats = {
+        player1: { hits: 0, misses: 0 },
+        player2: { hits: 0, misses: 0 }
+    };
 
     updateSpeedDisplay();
     displayHighScores();
@@ -641,10 +651,24 @@ function update() {
             ball.speedX = Math.abs(ball.speedX);
             ball.speedY = (ball.y - (player1Y + paddleHeight / 2)) * 0.35;
             if (soundEnabled) hitSound.play();
+            playerStats.player1.hits++;
         } else if (ball.x >= canvas.width - paddleWidth - ballSize && ball.y >= player2Y && ball.y <= player2Y + paddleHeight) {
             ball.speedX = -Math.abs(ball.speedX);
             ball.speedY = (ball.y - (player2Y + paddleHeight / 2)) * 0.35;
             if (soundEnabled) hitSound.play();
+            playerStats.player2.hits++;
+        } else {
+            if (ball.x < 0) {
+                player2Score++;
+                playerStats.player1.misses++;
+                balls.splice(i, 1);
+                checkWinCondition();
+            } else if (ball.x > canvas.width) {
+                player1Score++;
+                playerStats.player2.misses++;
+                balls.splice(i, 1);
+                checkWinCondition();
+            }
         }
 
         if (powerUpActive && powerUpVisible) {
@@ -657,16 +681,6 @@ function update() {
                 powerUpCooldown = true;
                 setTimeout(() => powerUpCooldown = false, 5000); // 5 seconds cooldown
             }
-        }
-
-        if (ball.x < 0) {
-            player2Score++;
-            balls.splice(i, 1);
-            checkWinCondition();
-        } else if (ball.x > canvas.width) {
-            player1Score++;
-            balls.splice(i, 1);
-            checkWinCondition();
         }
     }
 
@@ -1094,4 +1108,12 @@ function checkAchievements() {
         achievements.multiballMadness = true;
         alert("Achievement Unlocked: Multiball Madness!");
     }
+    displayPlayerStats();
+}
+
+// New Function: Display Player Statistics
+function displayPlayerStats() {
+    const statsElement = document.getElementById('playerStats');
+    statsElement.innerHTML = `<strong>Player 1:</strong> Hits: ${playerStats.player1.hits}, Misses: ${playerStats.player1.misses} | 
+                              <strong>Player 2:</strong> Hits: ${playerStats.player2.hits}, Misses: ${playerStats.player2.misses}`;
 }

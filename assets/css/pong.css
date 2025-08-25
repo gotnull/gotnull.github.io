@@ -223,3 +223,9 @@ select {
     color: #FFD700;
     display: none;
 }
+
+#playerStats {
+    font-size: 14px;
+    color: #FFD700;
+    margin-top: 10px;
+}
