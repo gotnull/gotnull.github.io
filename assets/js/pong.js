@@ -134,6 +134,9 @@ let playerStats = {
     player2: { hits: 0, misses: 0 }
 };
 
+// New Feature: Save and Load Game State
+let savedGameState = null;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -321,6 +324,55 @@ function replayLoop() {
     draw();
 }
 
+// New Function: Save Game State
+function saveGameState() {
+    savedGameState = {
+        player1Y,
+        player2Y,
+        balls: balls.map(ball => ({ ...ball })),
+        player1Score,
+        player2Score,
+        gameMode,
+        powerUpActive,
+        powerUpVisible,
+        powerUpX,
+        powerUpY,
+        currentPowerUpType,
+        powerUpTimer,
+        ballVisible,
+        controlsReversed,
+        activePowerUps: JSON.parse(JSON.stringify(activePowerUps))
+    };
+    localStorage.setItem('savedGameState', JSON.stringify(savedGameState));
+    alert('Game saved!');
+}
+
+// New Function: Load Game State
+function loadGameState() {
+    const savedState = JSON.parse(localStorage.getItem('savedGameState'));
+    if (savedState) {
+        player1Y = savedState.player1Y;
+        player2Y = savedState.player2Y;
+        balls = savedState.balls.map(ball => ({ ...ball }));
+        player1Score = savedState.player1Score;
+        player2Score = savedState.player2Score;
+        gameMode = savedState.gameMode;
+        powerUpActive = savedState.powerUpActive;
+        powerUpVisible = savedState.powerUpVisible;
+        powerUpX = savedState.powerUpX;
+        powerUpY = savedState.powerUpY;
+        currentPowerUpType = savedState.currentPowerUpType;
+        powerUpTimer = savedState.powerUpTimer;
+        ballVisible = savedState.ballVisible;
+        controlsReversed = savedState.controlsReversed;
+        activePowerUps = JSON.parse(JSON.stringify(savedState.activePowerUps));
+        alert('Game loaded!');
+        draw();
+    } else {
+        alert('No saved game found!');
+    }
+}
+
 // New Function: Start Recording
 function startRecording() {
     recordingData = [];
@@ -402,6 +454,8 @@ function bindUI() {
     document.getElementById('paddleColor2').onchange = (e) => player2PaddleColor = e.target.value;
     document.getElementById('startTutorial').onclick = startTutorial;
     document.getElementById('toggleAnnouncements').onclick = toggleAnnouncements;
+    document.getElementById('saveGame').onclick = saveGameState;
+    document.getElementById('loadGame').onclick = loadGameState;
 
     // New Game Mode Buttons
     document.getElementById('fastBallMode').onclick = () => startCustomGameMode('fastBall');
