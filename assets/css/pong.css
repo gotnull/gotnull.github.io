@@ -200,6 +200,13 @@ select {
     margin-top: 20px;
 }
 
+#backgroundPatterns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 #gameTimer {
     font-size: 14px;
     color: #FFD700;

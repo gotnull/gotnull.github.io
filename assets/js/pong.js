@@ -137,6 +137,9 @@ let playerStats = {
 // New Feature: Save and Load Game State
 let savedGameState = null;
 
+// New Feature: Background Animation
+let backgroundPattern = 'none'; // Options: 'none', 'stripes', 'grid'
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -206,6 +209,30 @@ function drawWeatherEffects() {
             ctx.beginPath();
             ctx.arc(x, y, 2, 0, Math.PI * 2);
             ctx.fill();
+        }
+    }
+}
+
+// New Feature: Background Animation
+function drawBackgroundPattern() {
+    if (backgroundPattern === 'stripes') {
+        for (let i = 0; i < canvas.width; i += 20) {
+            ctx.strokeStyle = i % 40 === 0 ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.05)';
+            ctx.beginPath();
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, canvas.height);
+            ctx.stroke();
+        }
+    } else if (backgroundPattern === 'grid') {
+        for (let i = 0; i < canvas.width; i += 20) {
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+            ctx.beginPath();
+            ctx.moveTo(i, 0);
+            ctx.lineTo(i, canvas.height);
+            ctx.stroke();
+            ctx.moveTo(0, i);
+            ctx.lineTo(canvas.width, i);
+            ctx.stroke();
         }
     }
 }
@@ -473,10 +500,19 @@ function bindUI() {
 
     // Sort Leaderboard
     document.getElementById('sortLeaderboard').onclick = sortLeaderboard;
+
+    // Background Animation Buttons
+    document.getElementById('backgroundPatternNone').onclick = () => setBackgroundPattern('none');
+    document.getElementById('backgroundPatternStripes').onclick = () => setBackgroundPattern('stripes');
+    document.getElementById('backgroundPatternGrid').onclick = () => setBackgroundPattern('grid');
 }
 
 function setWeatherEffect(effect) {
     weatherEffect = effect;
+}
+
+function setBackgroundPattern(pattern) {
+    backgroundPattern = pattern;
 }
 
 // Game Initialization and Logic
@@ -799,6 +835,7 @@ function handleGamepadInput() {
 
 function draw() {
     drawRect(0, 0, canvas.width, canvas.height, nightModeEnabled ? 'rgba(0, 0, 0, 0.8)' : '#000');
+    drawBackgroundPattern();
 
     drawRect(0, player1Y, paddleWidth, paddleHeight, player1PaddleColor);
     drawRect(canvas.width - paddleWidth, player2Y, paddleWidth, paddleHeight, player2PaddleColor);
@@ -976,7 +1013,7 @@ function checkWinCondition() {
 
 function updateHighScores() {
     if (player1Score > highScores.player1) highScores.player1 = player1Score;
-    if (player2Score > highScores.player2) highScores.player2 = player2Score;
+    if (player2Score > highScores.player2) player2Score = player2Score;
     localStorage.setItem('highScores', JSON.stringify(highScores));
     displayHighScores();
 }
