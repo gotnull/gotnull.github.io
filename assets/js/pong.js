@@ -140,6 +140,9 @@ let savedGameState = null;
 // New Feature: Background Animation
 let backgroundPattern = 'none'; // Options: 'none', 'stripes', 'grid'
 
+// New Feature: Difficulty Adjustment
+let difficultyLevel = 'medium';
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
