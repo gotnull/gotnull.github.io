@@ -143,6 +143,9 @@ let backgroundPattern = 'none'; // Options: 'none', 'stripes', 'grid'
 // New Feature: Difficulty Adjustment
 let difficultyLevel = 'medium';
 
+// New Feature: Mini-Map
+let miniMapEnabled = true;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -508,6 +511,9 @@ function bindUI() {
     document.getElementById('backgroundPatternNone').onclick = () => setBackgroundPattern('none');
     document.getElementById('backgroundPatternStripes').onclick = () => setBackgroundPattern('stripes');
     document.getElementById('backgroundPatternGrid').onclick = () => setBackgroundPattern('grid');
+
+    // Mini-map Toggle
+    document.getElementById('toggleMiniMap').onclick = toggleMiniMap;
 }
 
 function setWeatherEffect(effect) {
@@ -883,6 +889,7 @@ function draw() {
     drawFPS();
     drawPowerUpHistory();
     drawWeatherEffects();
+    drawMiniMap();
 
     if (pauseCountdown > 0) {
         ctx.fillStyle = 'rgba(0,0,0,0.5)';
@@ -891,6 +898,32 @@ function draw() {
         ctx.font = '30px Arial';
         ctx.fillText(`Resuming in ${pauseCountdown}...`, canvas.width / 2 - 120, canvas.height / 2);
     }
+}
+
+function drawMiniMap() {
+    if (!miniMapEnabled) return;
+
+    const mapWidth = 150;
+    const mapHeight = 75;
+    const scaleX = mapWidth / canvas.width;
+    const scaleY = mapHeight / canvas.height;
+
+    // Drawing the minimap background
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+    ctx.fillRect(canvas.width - mapWidth - 10, 10, mapWidth, mapHeight);
+
+    // Drawing paddles and balls on the minimap
+    ctx.fillStyle = player1PaddleColor;
+    ctx.fillRect((canvas.width - mapWidth - 10) + player1Y * scaleX, 10, paddleWidth * scaleX, paddleHeight * scaleY);
+    ctx.fillStyle = player2PaddleColor;
+    ctx.fillRect((canvas.width - mapWidth - 10) + player2Y * scaleX, 10, paddleWidth * scaleX, paddleHeight * scaleY);
+
+    balls.forEach(ball => {
+        ctx.fillStyle = '#FFF';
+        ctx.beginPath();
+        ctx.arc((canvas.width - mapWidth - 10) + ball.x * scaleX, 10 + ball.y * scaleY, ballSize * scaleX, 0, Math.PI * 2);
+        ctx.fill();
+    });
 }
 
 function spawnPowerUp() {
@@ -1210,4 +1243,10 @@ function displayPlayerStats() {
     const statsElement = document.getElementById('playerStats');
     statsElement.innerHTML = `<strong>Player 1:</strong> Hits: ${playerStats.player1.hits}, Misses: ${playerStats.player1.misses} | 
                               <strong>Player 2:</strong> Hits: ${playerStats.player2.hits}, Misses: ${playerStats.player2.misses}`;
+}
+
+// New Function: Toggle Mini Map
+function toggleMiniMap() {
+    miniMapEnabled = !miniMapEnabled;
+    document.getElementById('toggleMiniMap').innerText = miniMapEnabled ? 'Mini-Map: On' : 'Mini-Map: Off';
 }
