@@ -146,6 +146,33 @@ let difficultyLevel = 'medium';
 // New Feature: Mini-Map
 let miniMapEnabled = true;
 
+// New Feature: Multi-language Support
+let language = 'en';
+const translations = {
+    en: {
+        start: "Start",
+        pause: "Pause",
+        replay: "Replay",
+        powerUps: "Power-Ups",
+        achievements: "Achievements",
+        multiplayer: "Multiplayer",
+        singleplayer: "Singleplayer",
+        settings: "Settings",
+        tutorial: "Tutorial"
+    },
+    es: {
+        start: "Iniciar",
+        pause: "Pausa",
+        replay: "Repetir",
+        powerUps: "Potenciadores",
+        achievements: "Logros",
+        multiplayer: "Multijugador",
+        singleplayer: "Un jugador",
+        settings: "Configuraciones",
+        tutorial: "Tutorial"
+    }
+};
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -514,6 +541,9 @@ function bindUI() {
 
     // Mini-map Toggle
     document.getElementById('toggleMiniMap').onclick = toggleMiniMap;
+
+    // Language Toggle
+    document.getElementById('toggleLanguage').onclick = toggleLanguage;
 }
 
 function setWeatherEffect(effect) {
@@ -522,6 +552,24 @@ function setWeatherEffect(effect) {
 
 function setBackgroundPattern(pattern) {
     backgroundPattern = pattern;
+}
+
+// New Function: Toggle Language
+function toggleLanguage() {
+    language = language === 'en' ? 'es' : 'en';
+    updateUIText();
+}
+
+function updateUIText() {
+    document.getElementById('startGame').innerText = translations[language].start;
+    document.getElementById('pauseGame').innerText = translations[language].pause;
+    document.getElementById('replayButton').innerText = translations[language].replay;
+    document.getElementById('togglePowerUps').innerText = translations[language].powerUps;
+    document.getElementById('achievements').innerText = translations[language].achievements;
+    document.getElementById('startMultiplayer').innerText = translations[language].multiplayer;
+    document.getElementById('startGame').innerText = translations[language].singleplayer;
+    document.getElementById('startTutorial').innerText = translations[language].tutorial;
+    document.getElementById('settings').innerText = translations[language].settings;
 }
 
 // Game Initialization and Logic

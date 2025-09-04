@@ -236,3 +236,16 @@ select {
     color: #FFD700;
     margin-top: 10px;
 }
+
+#languageToggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: var(--theme-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+}
