@@ -344,7 +344,7 @@ function handleDataChannelMessage(data) {
     player2Score = gameState.player2Score;
 }
 
-// New Function: Save game state for replay
+// New Function: Save replay state
 function saveReplayState() {
     if (!replayMode) {
         replayData.push({
