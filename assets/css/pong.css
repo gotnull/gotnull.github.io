@@ -249,3 +249,10 @@ select {
     font-size: 14px;
     padding: 5px 10px;
 }
+
+#powerUpPreview {
+    font-size: 14px;
+    color: #FFD700;
+    display: none;
+    margin-top: 10px;
+}

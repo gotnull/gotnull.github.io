@@ -173,6 +173,9 @@ const translations = {
     }
 };
 
+// New Feature: Power-Up Preview
+let powerUpPreviewEnabled = false;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -544,6 +547,9 @@ function bindUI() {
 
     // Language Toggle
     document.getElementById('toggleLanguage').onclick = toggleLanguage;
+
+    // New Power-Up Preview Button
+    document.getElementById('togglePowerUpPreview').onclick = togglePowerUpPreview;
 }
 
 function setWeatherEffect(effect) {
@@ -708,6 +714,12 @@ function togglePauseCountdown() {
     }, 1000);
 }
 
+// New Function: Toggle Power-Up Preview
+function togglePowerUpPreview() {
+    powerUpPreviewEnabled = !powerUpPreviewEnabled;
+    document.getElementById('togglePowerUpPreview').innerText = powerUpPreviewEnabled ? 'Power-Up Preview: On' : 'Power-Up Preview: Off';
+}
+
 // Event Listeners
 window.addEventListener('DOMContentLoaded', () => {
     canvas = document.getElementById('pongCanvas');
@@ -859,6 +871,11 @@ function update() {
         });
         dataChannel.send(gameState);
     }
+
+    // Display power-up preview if enabled
+    if (powerUpPreviewEnabled && powerUpActive && powerUpVisible) {
+        displayPowerUpPreview();
+    }
 }
 
 function handleInput() {
@@ -946,6 +963,13 @@ function draw() {
         ctx.font = '30px Arial';
         ctx.fillText(`Resuming in ${pauseCountdown}...`, canvas.width / 2 - 120, canvas.height / 2);
     }
+}
+
+// New Function: Display Power-Up Preview
+function displayPowerUpPreview() {
+    const previewElement = document.getElementById('powerUpPreview');
+    previewElement.innerText = `Upcoming Power-Up: ${currentPowerUpType.toUpperCase()}`;
+    previewElement.style.display = 'block';
 }
 
 function drawMiniMap() {
