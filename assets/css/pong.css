@@ -256,3 +256,9 @@ select {
     display: none;
     margin-top: 10px;
 }
+
+#gameStatistics {
+    font-size: 14px;
+    color: #FFD700;
+    margin-top: 10px;
+}

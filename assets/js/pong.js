@@ -176,6 +176,12 @@ const translations = {
 // New Feature: Power-Up Preview
 let powerUpPreviewEnabled = false;
 
+// New Feature: Game Statistics
+let gameStatistics = {
+    totalGamesPlayed: 0,
+    totalPowerUpsCollected: 0
+};
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -626,6 +632,8 @@ function startGame(mode) {
     resetBall(balls[0]);
     if (powerUpsEnabled) spawnPowerUp();
     gameLoop();
+    gameStatistics.totalGamesPlayed++;
+    updateGameStatisticsDisplay();
 }
 
 function startCustomGameMode(mode) {
@@ -720,6 +728,13 @@ function togglePowerUpPreview() {
     document.getElementById('togglePowerUpPreview').innerText = powerUpPreviewEnabled ? 'Power-Up Preview: On' : 'Power-Up Preview: Off';
 }
 
+// New Function: Update Game Statistics Display
+function updateGameStatisticsDisplay() {
+    const statsElement = document.getElementById('gameStatistics');
+    statsElement.innerHTML = `<strong>Games Played:</strong> ${gameStatistics.totalGamesPlayed} | 
+                              <strong>Power-Ups Collected:</strong> ${gameStatistics.totalPowerUpsCollected}`;
+}
+
 // Event Listeners
 window.addEventListener('DOMContentLoaded', () => {
     canvas = document.getElementById('pongCanvas');
@@ -741,6 +756,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initializeGame();
     toggleSound();
     startGame('ai-vs-ai');
+    updateGameStatisticsDisplay();
 });
 
 window.addEventListener('resize', resizeCanvas);
@@ -1017,6 +1033,8 @@ function spawnPowerUp() {
 
 function handlePowerUpEffect() {
     powerUpHistory.unshift(currentPowerUpType);
+    gameStatistics.totalPowerUpsCollected++;
+    updateGameStatisticsDisplay();
     if (powerUpHistory.length > 5) powerUpHistory.pop();
     displayPowerUpHistory();
     playVoiceAnnouncement(voiceAnnouncements.powerUp, currentPowerUpType);
