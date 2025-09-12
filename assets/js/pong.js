@@ -182,6 +182,9 @@ let gameStatistics = {
     totalPowerUpsCollected: 0
 };
 
+// New Feature: Multi-Ball Mode
+let multiBallMode = false;
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -556,6 +559,9 @@ function bindUI() {
 
     // New Power-Up Preview Button
     document.getElementById('togglePowerUpPreview').onclick = togglePowerUpPreview;
+
+    // Multi-Ball Mode Toggle
+    document.getElementById('toggleMultiBallMode').onclick = toggleMultiBallMode;
 }
 
 function setWeatherEffect(effect) {
@@ -607,6 +613,7 @@ function initializeGame() {
     gamepads = [];
     gamepadConnected = false;
     tutorialMode = false;
+    multiBallMode = false;
     playerStats = {
         player1: { hits: 0, misses: 0 },
         player2: { hits: 0, misses: 0 }
@@ -733,6 +740,21 @@ function updateGameStatisticsDisplay() {
     const statsElement = document.getElementById('gameStatistics');
     statsElement.innerHTML = `<strong>Games Played:</strong> ${gameStatistics.totalGamesPlayed} | 
                               <strong>Power-Ups Collected:</strong> ${gameStatistics.totalPowerUpsCollected}`;
+}
+
+// New Function: Toggle Multi-Ball Mode
+function toggleMultiBallMode() {
+    multiBallMode = !multiBallMode;
+    document.getElementById('toggleMultiBallMode').innerText = multiBallMode ? 'Multi-Ball Mode: On' : 'Multi-Ball Mode: Off';
+    if (multiBallMode) {
+        while (balls.length < 3) {
+            let newBall = createBall();
+            resetBall(newBall);
+            balls.push(newBall);
+        }
+    } else {
+        balls = balls.slice(0, 1);
+    }
 }
 
 // Event Listeners
