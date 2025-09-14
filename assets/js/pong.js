@@ -185,6 +185,11 @@ let gameStatistics = {
 // New Feature: Multi-Ball Mode
 let multiBallMode = false;
 
+// New Feature: Enhanced AI with Learning
+let aiLearningEnabled = true;
+let aiReactionTime = 200; // in milliseconds
+let aiExperience = [];
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -562,6 +567,9 @@ function bindUI() {
 
     // Multi-Ball Mode Toggle
     document.getElementById('toggleMultiBallMode').onclick = toggleMultiBallMode;
+
+    // Enhanced AI Learning Toggle
+    document.getElementById('toggleAILearning').onclick = toggleAILearning;
 }
 
 function setWeatherEffect(effect) {
@@ -755,6 +763,12 @@ function toggleMultiBallMode() {
     } else {
         balls = balls.slice(0, 1);
     }
+}
+
+// New Function: Toggle AI Learning
+function toggleAILearning() {
+    aiLearningEnabled = !aiLearningEnabled;
+    document.getElementById('toggleAILearning').innerText = aiLearningEnabled ? 'AI Learning: On' : 'AI Learning: Off';
 }
 
 // Event Listeners
