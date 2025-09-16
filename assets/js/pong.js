@@ -190,6 +190,27 @@ let aiLearningEnabled = true;
 let aiReactionTime = 200; // in milliseconds
 let aiExperience = [];
 
+// New Feature: Night Mode with Gradual Transition
+function toggleNightMode() {
+    nightModeEnabled = !nightModeEnabled;
+    document.getElementById('toggleNightMode').innerText = nightModeEnabled ? 'Night Mode: On' : 'Night Mode: Off';
+    const transitionOverlay = document.createElement('div');
+    transitionOverlay.style.position = 'fixed';
+    transitionOverlay.style.top = 0;
+    transitionOverlay.style.left = 0;
+    transitionOverlay.style.width = '100%';
+    transitionOverlay.style.height = '100%';
+    transitionOverlay.style.backgroundColor = 'black';
+    transitionOverlay.style.opacity = 0;
+    transitionOverlay.style.transition = 'opacity 1s';
+    document.body.appendChild(transitionOverlay);
+
+    setTimeout(() => {
+        transitionOverlay.style.opacity = nightModeEnabled ? 0.8 : 0;
+        setTimeout(() => document.body.removeChild(transitionOverlay), 1000);
+    }, 0);
+}
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -709,11 +730,6 @@ function toggleDarkMode() {
     document.getElementById('toggleDarkMode').innerText = isDarkMode ? 'Light Mode' : 'Dark Mode';
     const themeColor = isDarkMode ? '#222' : '#FFF';
     canvas.style.backgroundColor = themeColor;
-}
-
-function toggleNightMode() {
-    nightModeEnabled = !nightModeEnabled;
-    document.getElementById('toggleNightMode').innerText = nightModeEnabled ? 'Night Mode: On' : 'Night Mode: Off';
 }
 
 function displayPowerUpHistory() {
