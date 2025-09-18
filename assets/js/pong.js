@@ -211,6 +211,17 @@ function toggleNightMode() {
     }, 0);
 }
 
+// New Feature: Power-Up Notifications
+function showPowerUpNotification(type) {
+    const notification = document.createElement('div');
+    notification.className = 'power-up-notification';
+    notification.innerText = `Power-Up: ${type.toUpperCase()} Activated!`;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+        document.body.removeChild(notification);
+    }, 3000);
+}
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -1090,6 +1101,7 @@ function handlePowerUpEffect() {
     if (powerUpHistory.length > 5) powerUpHistory.pop();
     displayPowerUpHistory();
     playVoiceAnnouncement(voiceAnnouncements.powerUp, currentPowerUpType);
+    showPowerUpNotification(currentPowerUpType);
 
     switch (currentPowerUpType) {
         case 'speed':
