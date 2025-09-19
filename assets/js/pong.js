@@ -222,6 +222,17 @@ function showPowerUpNotification(type) {
     }, 3000);
 }
 
+// New Feature: In-Game Chat Notifications
+function showChatNotification(message, username) {
+    const chatNotification = document.createElement('div');
+    chatNotification.className = 'chat-notification';
+    chatNotification.innerText = `${username}: ${message}`;
+    document.body.appendChild(chatNotification);
+    setTimeout(() => {
+        document.body.removeChild(chatNotification);
+    }, 5000);
+}
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -810,6 +821,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     channel.subscribe('chat', (message) => {
         handleAblyMessage(message.data);
+        showChatNotification(message.data.content, message.data.username);
     });
 
     loadChatHistory();
