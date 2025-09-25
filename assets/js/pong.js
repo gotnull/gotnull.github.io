@@ -1215,7 +1215,7 @@ function checkWinCondition() {
 
 function updateHighScores() {
     if (player1Score > highScores.player1) highScores.player1 = player1Score;
-    if (player2Score > highScores.player2) player2Score = player2Score;
+    if (player2Score > highScores.player2) highScores.player2 = player2Score;
     localStorage.setItem('highScores', JSON.stringify(highScores));
     displayHighScores();
 }
