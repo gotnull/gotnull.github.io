@@ -233,6 +233,31 @@ function showChatNotification(message, username) {
     }, 5000);
 }
 
+// New Feature: Practice Mode
+let practiceMode = false;
+let practiceBall;
+function togglePracticeMode() {
+    practiceMode = !practiceMode;
+    document.getElementById('togglePracticeMode').innerText = practiceMode ? 'Practice Mode: On' : 'Practice Mode: Off';
+    if (practiceMode) {
+        initializePracticeMode();
+    } else {
+        endPracticeMode();
+    }
+}
+
+function initializePracticeMode() {
+    practiceBall = createBall();
+    resetBall(practiceBall);
+    gameRunning = true;
+    gameLoop();
+}
+
+function endPracticeMode() {
+    gameRunning = false;
+    practiceBall = null;
+}
+
 // Helper Functions
 function generateRandomUsername() {
     const adjectives = ["Swift", "Brave", "Clever", "Daring", "Eager", "Fierce", "Grand", "Humble", "Jolly", "Keen"];
@@ -613,6 +638,9 @@ function bindUI() {
 
     // Enhanced AI Learning Toggle
     document.getElementById('toggleAILearning').onclick = toggleAILearning;
+
+    // Practice Mode Toggle
+    document.getElementById('togglePracticeMode').onclick = togglePracticeMode;
 }
 
 function setWeatherEffect(effect) {
@@ -720,7 +748,7 @@ function gameLoop(timestamp) {
 }
 
 function togglePause() {
-    if (showWinScreen || replayMode) return;
+    if (showWinScreen || replayMode || practiceMode) return;
     gameRunning = !gameRunning;
     playVoiceAnnouncement(gameRunning ? voiceAnnouncements.resume : voiceAnnouncements.pause);
     if (gameRunning) {
@@ -867,7 +895,7 @@ function handleKeyDown(e) { keysPressed[e.key] = true; }
 function handleKeyUp(e) { keysPressed[e.key] = false; }
 
 function update() {
-    if (!gameRunning || showWinScreen || replayMode) return;
+    if (!gameRunning || showWinScreen || replayMode || practiceMode) return;
 
     handleInput();
     saveReplayState();
@@ -981,6 +1009,10 @@ function handleInput() {
             : keysPressed['ArrowDown'] ? (controlsReversed ? -5 : 5) : 0;
 
         player1Y = clamp(player1Y, 0, canvas.height - paddleHeight);
+    } else if (practiceMode) {
+        if (keysPressed['ArrowUp']) practiceBall.y -= 5;
+        if (keysPressed['ArrowDown']) practiceBall.y += 5;
+        practiceBall.y = clamp(practiceBall.y, 0, canvas.height - ballSize);
     }
 }
 
@@ -1053,6 +1085,10 @@ function draw() {
         ctx.fillStyle = '#FFF';
         ctx.font = '30px Arial';
         ctx.fillText(`Resuming in ${pauseCountdown}...`, canvas.width / 2 - 120, canvas.height / 2);
+    }
+
+    if (practiceMode && practiceBall) {
+        drawCircle(practiceBall.x, practiceBall.y, ballSize, '#FFF');
     }
 }
 
