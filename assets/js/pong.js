@@ -9,6 +9,7 @@ const BALL_SIZE = 10;
 const INITIAL_BALL_SPEED = 5;
 const WINNING_SCORE = 5;
 const AI_DIFFICULTY = 0.12;
+const PARTICLE_COUNT = 20; // Number of particles for effects
 
 // Game state
 let canvas, ctx;
@@ -23,6 +24,29 @@ let soundEnabled = false;
 let showWinScreen = false;
 let winner = '';
 let countdown = 5;
+let particles = [];
+
+// Particle effect class
+class Particle {
+    constructor(x, y, speedX, speedY) {
+        this.x = x;
+        this.y = y;
+        this.speedX = speedX;
+        this.speedY = speedY;
+        this.alpha = 1.0;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.alpha -= 0.05; // Fade out
+    }
+    draw() {
+        if (this.alpha > 0) {
+            ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+            ctx.fillRect(this.x, this.y, 4, 4);
+        }
+    }
+}
 
 // Sound effects (simple beeps using Web Audio API)
 let audioContext;
@@ -139,12 +163,14 @@ function update() {
         ball.speedX = Math.abs(ball.speedX) * 1.05; // Slight speed increase
         ball.speedY += (ball.y - (player1Y + PADDLE_HEIGHT / 2)) * 0.3;
         playBeep(440, 50);
+        spawnParticles(ball.x, ball.y);
     } else if (ball.x >= VIRTUAL_WIDTH - PADDLE_WIDTH - BALL_SIZE &&
                ball.y >= player2Y &&
                ball.y <= player2Y + PADDLE_HEIGHT) {
         ball.speedX = -Math.abs(ball.speedX) * 1.05;
         ball.speedY += (ball.y - (player2Y + PADDLE_HEIGHT / 2)) * 0.3;
         playBeep(440, 50);
+        spawnParticles(ball.x, ball.y);
     }
 
     // Scoring
@@ -159,6 +185,10 @@ function update() {
         checkWinCondition();
         if (!showWinScreen) resetBall();
     }
+
+    // Update particles
+    particles.forEach(particle => particle.update());
+    particles = particles.filter(particle => particle.alpha > 0);
 }
 
 function handleInput() {
@@ -193,6 +223,14 @@ function checkWinCondition() {
     }
 }
 
+function spawnParticles(x, y) {
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const speedX = (Math.random() - 0.5) * 4;
+        const speedY = (Math.random() - 0.5) * 4;
+        particles.push(new Particle(x, y, speedX, speedY));
+    }
+}
+
 // Rendering
 function draw() {
     // Clear screen
@@ -220,6 +258,9 @@ function draw() {
     ctx.fillStyle = '#555';
     ctx.fillText(player1Score, VIRTUAL_WIDTH / 4, 60);
     ctx.fillText(player2Score, VIRTUAL_WIDTH * 3 / 4, 60);
+
+    // Draw particles
+    particles.forEach(particle => particle.draw());
 
     // Draw win screen
     if (showWinScreen) {
