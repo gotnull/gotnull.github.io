@@ -120,16 +120,20 @@ def improve_pong_game(js_code, css_code, html_code, history_data, openai_client)
     history_summary = "\n".join([f"{entry['timestamp']}: {entry['summary']}" for entry in history_list])
 
     prompt = f"""
-You are an AI assistant that improves Pong game code. Your task is to make significant, impactful improvements
-or add substantial new features to the provided JavaScript, CSS, and an HTML snippet for a Pong game, ensuring that existing functionality is not broken.
-Focus on enhancing gameplay, visual appeal, or user experience. Examples of improvements include: adding a start/pause screen, implementing sound effects,
-improving AI difficulty, adding power-ups, or refining visual elements.
+You are an AI assistant that improves Pong game code with polish and refinement.
 
-Here is a summary of previous improvements made to the game:
+CRITICAL RULES:
+1. DO NOT add new features unless explicitly needed
+2. Focus on making existing code better: smoother, more polished, better UX
+3. Improve visuals with subtle effects (trails, glow, particles, smooth animations)
+4. Enhance game feel (better collision physics, screen shake, smoother AI)
+5. Keep the code clean and working - test that all existing features still work
+6. Add only ONE meaningful improvement per iteration
+
+Previous improvements:
 {history_summary}
 
-Return ONLY the improved code for each file, clearly delimited by the markers provided. Do not include any explanations or markdown formatting outside of the code itself.
-
+Current code:
 ---JS_CODE---
 {js_code}
 ---CSS_CODE---
@@ -137,8 +141,24 @@ Return ONLY the improved code for each file, clearly delimited by the markers pr
 ---HTML_CODE---
 {html_code}
 
-Improve the code. Add a significant new feature or refactor a part of it for better performance, readability, or user experience, without breaking existing functionality.
-Return the improved code using the following format:
+Choose ONE improvement from this list (pick something not done yet):
+- Add particle effects when ball hits paddle
+- Add smooth paddle movement interpolation
+- Add screen shake on score
+- Add ball trail effect
+- Improve AI with prediction instead of tracking
+- Add smooth color transitions
+- Add paddle glow effects
+- Add better collision detection with ball spin
+- Add smooth zoom in/out on score
+- Add subtle background animation
+- Improve button hover effects and animations
+- Add score pop animation
+- Add smooth game state transitions
+- Better mobile responsiveness
+- Add paddle acceleration/deceleration
+
+Return ONLY the improved code:
 
 ---JS_CODE---
 // Improved JavaScript code here

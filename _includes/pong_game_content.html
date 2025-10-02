@@ -1,138 +1,29 @@
-<!-- Improved HTML code here -->
-
 <div id="gameContainer">
     <canvas id="pongCanvas" width="800" height="400"></canvas>
 
     <div id="controls">
-        <button id="startGame">Start Player vs AI</button>
-        <button id="startAI">Start AI vs AI</button>
-        <button id="startMultiplayer">Start Multiplayer</button>
-        <button id="startOnlineMultiplayer">Start Online Multiplayer</button>
+        <button id="startGame">Player vs AI</button>
+        <button id="startAI">AI vs AI</button>
+        <button id="startMultiplayer">Multiplayer</button>
         <button id="pauseGame">Pause</button>
-        <button id="changeTheme">Change Theme</button>
-        <button id="toggleSound">Sound: On</button>
-        <button id="toggleMusic">Music: Off</button>
-        <button id="togglePowerUps">Power-Ups: On</button>
-        <button id="instructionsButton">Instructions</button>
+        <button id="toggleSound">Sound: Off</button>
         <button id="fullscreenButton">Fullscreen</button>
-        <button id="toggleDarkMode">Dark Mode</button>
-        <button id="toggleNightMode">Night Mode: Off</button>
-        <button id="pauseCountdown">Pause Countdown</button>
-        <button id="replayButton">Replay</button>
-        <!-- New Recording Buttons -->
-        <button id="startRecording">Start Recording</button>
-        <button id="playRecording">Play Recording</button>
-        <!-- New Sort Leaderboard Button -->
-        <button id="sortLeaderboard">Sort Leaderboard</button>
-        <!-- New Tutorial Button -->
-        <button id="startTutorial">Start Tutorial</button>
-        <!-- New Announcements Button -->
-        <button id="toggleAnnouncements">Announcements: On</button>
-        <!-- New Save/Load Game Buttons -->
-        <button id="saveGame">Save Game</button>
-        <button id="loadGame">Load Game</button>
-        <!-- New Mini-Map Toggle Button -->
-        <button id="toggleMiniMap">Mini-Map: On</button>
-        <!-- Language Toggle Button -->
-        <button id="toggleLanguage">Toggle Language</button>
-        <!-- New Power-Up Preview Button -->
-        <button id="togglePowerUpPreview">Power-Up Preview: Off</button>
-        <!-- New Multi-Ball Mode Toggle Button -->
-        <button id="toggleMultiBallMode">Multi-Ball Mode: Off</button>
-        <!-- New AI Learning Toggle Button -->
-        <button id="toggleAILearning">AI Learning: On</button>
-        <!-- New Practice Mode Toggle Button -->
-        <button id="togglePracticeMode">Practice Mode: Off</button>
     </div>
 
     <div id="gameInfo">
         <div id="gameModeDisplay">Mode: AI vs AI</div>
-        <div id="highScores">High Scores - Player 1: 0, Player 2: 0</div>
-        <div>
-            <label for="difficultyLevel">AI Difficulty:</label>
-            <select id="difficultyLevel">
-                <option value="easy">Easy</option>
-                <option value="medium" selected>Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-        </div>
     </div>
 
     <div id="speedControls">
         <button id="decreaseSpeed">Slower</button>
         <span id="speedDisplay">Speed: 1.0x</span>
         <button id="increaseSpeed">Faster</button>
-        <button id="resetHighScores">Reset High Scores</button>
     </div>
-    
-    <div id="paddleColors">
-        <label for="paddleColor1">Player 1 Paddle Color:</label>
-        <input type="color" id="paddleColor1" value="#FFFFFF">
-        <label for="paddleColor2">Player 2 Paddle Color:</label>
-        <input type="color" id="paddleColor2" value="#FFFFFF">
-    </div>
-
-    <div id="leaderboard"></div>
 
     <div id="instructions">
         <h3>Instructions</h3>
         <p><strong>Player vs AI:</strong> Use Arrow Keys to control right paddle</p>
         <p><strong>Multiplayer:</strong> Player 1 uses W/S keys, Player 2 uses Arrow Keys</p>
-        <p><strong>Local Multiplayer:</strong> Connect a gamepad to control paddles</p>
-        <p><strong>Power-ups:</strong> Hit the colored circles for special effects!</p>
-        <ul>
-            <li>Speed (Gold): Increases ball speed</li>
-            <li>Shrink Paddle (Red): Makes paddles smaller</li>
-            <li>Reverse Controls (Purple): Reverses player controls</li>
-            <li>Invisible Ball (Cyan): Makes ball invisible</li>
-            <li>Multiball (Green): Adds extra balls</li>
-            <li>Extra Life (Goldenrod): Increases player score</li>
-        </ul>
+        <p>First to 5 points wins!</p>
     </div>
-
-    <div id="chatContainer">
-        <div id="chatBox"></div>
-        <div>
-            <input type="text" id="chatInput" placeholder="Type your message here..." />
-            <button id="sendMessage">Send</button>
-        </div>
-    </div>
-
-    <div id="powerUpHistory"></div>
-
-    <div id="customGameModes">
-        <button id="fastBallMode">Fast Ball Mode</button>
-        <button id="tinyPaddlesMode">Tiny Paddles Mode</button>
-        <button id="giantBallMode">Giant Ball Mode</button>
-    </div>
-
-    <div id="weatherEffects">
-        <button id="weatherNone">No Weather</button>
-        <button id="weatherRain">Rain</button>
-        <button id="weatherSnow">Snow</button>
-    </div>
-
-    <div id="backgroundPatterns">
-        <button id="backgroundPatternNone">No Pattern</button>
-        <button id="backgroundPatternStripes">Stripes</button>
-        <button id="backgroundPatternGrid">Grid</button>
-    </div>
-
-    <div id="gameTimer">Time: 0:00</div>
-    <div id="achievements">
-        <strong>Achievements:</strong>
-        <ul>
-            <li>First Win</li>
-            <li>High Score</li>
-            <li>Multiball Madness</li>
-        </ul>
-    </div>
-    <div id="tutorialBox"></div>
-
-    <div id="playerStats"></div>
-
-    <div id="powerUpPreview"></div>
-
-    <!-- New Game Statistics Display -->
-    <div id="gameStatistics"></div>
 </div>
