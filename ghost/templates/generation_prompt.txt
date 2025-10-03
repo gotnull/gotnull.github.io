@@ -11,6 +11,16 @@ TOPIC CATEGORIES (rotate between these):
 8. **FPGA & HDL**: Verilog/VHDL projects, soft-core processors, hardware acceleration, digital design
 9. **Reverse Engineering**: Analyzing unknown hardware, protocol reverse engineering, firmware extraction and analysis
 10. **Operating Systems**: Building a simple OS, kernel development, memory management, process scheduling, file systems
+11.	Robotics & Mechatronics: Motor control, sensors, kinematics, robotic arms, autonomous navigation, SLAM, ROS integration
+12.	AI & Embedded ML: Running neural networks on microcontrollers, TinyML, inference optimization, sensor fusion AI
+13.	FPGA Acceleration for AI: Implementing neural network layers in Verilog/VHDL, hardware inference, pipelined DSP blocks
+14.	Networking & Protocol Stacks: TCP/IP, MQTT, custom protocol stacks, packet sniffing, embedded networking
+15.	High-Performance Computing: GPU programming, SIMD instructions, memory alignment, cache-aware algorithms
+16.	Security & Cryptography: Embedded cryptography, secure boot, encryption accelerators, side-channel attack analysis
+17.	Audio & Signal Processing: DAC/ADC interfacing, digital filters, audio synthesis, spectrum analysis, real-time DSP
+18.	Sensor & Actuator Integration: IMUs, lidar, cameras, stepper/servo motors, feedback loops, real-time control
+19.	Power Electronics & Energy Systems: Battery management, DC-DC converters, solar charge controllers, motor drives
+20.	Space & Aerospace Systems: CubeSat electronics, telemetry systems, rocket avionics, flight controllers
 
 POST REQUIREMENTS:
 • Choose ONE specific topic from the categories above
