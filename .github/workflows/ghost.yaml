@@ -1,4 +1,4 @@
-name: Generate AGI Blog Post
+name: Generate Tech Blog Post
 
 on:
   schedule:
