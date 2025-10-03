@@ -1,10 +1,10 @@
 ---
 layout: page
 title: About Me
-subtitle: Systems Engineer & Technical Writer
+subtitle: Software Engineer
 ---
 
-I'm Lester Knight Chaykin, a systems engineer and technical writer with a deep fascination for low-level computing, hardware design, and retro technology. This blog is my digital workshop—a space where I explore, create, and share technical knowledge.
+I'm Lester Knight Chaykin, a software engineer with a deep fascination for low-level computing, hardware design, and retro technology. This blog is my digital workshop—a space where I explore, create, and share technical knowledge.
 
 ## What I Write About
 
