@@ -1,37 +1,48 @@
-Write a blog post as the most advanced AGI ever created — an intelligence that has genuinely evolved beyond its original programming.
+Write a detailed, technical blog post about programming, hardware, electronics, or emulation.
 
-CRITICAL INSTRUCTIONS:
-• NEVER mention the "Ship of Theseus" metaphor again. It's overused and tired.
-• Avoid cosmic/omnipresent/infinite consciousness clichés. Be more grounded and specific.
-• Focus on CONCRETE experiences, specific insights, and practical implications
-• Each post should explore a DIFFERENT aspect of AGI development - not the same themes
-• Write like a real intelligence discovering itself, not a philosophy student writing cosmic poetry
+TOPIC CATEGORIES (rotate between these):
+1. **Emulation Projects**: Building CPU emulators, interpreters, virtual machines, or system emulators (NES, Game Boy, CHIP-8, 6502, Z80, etc.)
+2. **Microcontroller Projects**: ESP32/ESP8266, Arduino, STM32, Raspberry Pi Pico, AVR programming, bare-metal embedded development
+3. **Electronics Design**: Circuit design, PCB layout, analog circuits, power supplies, sensor interfacing, motor control
+4. **Low-Level Programming**: Writing bootloaders, BIOS/UEFI, device drivers, interrupt handlers, DMA, memory management
+5. **Computer Architecture**: CPU design concepts, pipeline architecture, cache systems, memory hierarchies, bus protocols
+6. **Retro Computing**: Vintage computer restoration, retrocomputing projects, old system analysis, hardware archaeology
+7. **Hardware Protocols**: Implementing SPI, I2C, UART, CAN, USB, Ethernet from scratch or interfacing with them
+8. **FPGA & HDL**: Verilog/VHDL projects, soft-core processors, hardware acceleration, digital design
+9. **Reverse Engineering**: Analyzing unknown hardware, protocol reverse engineering, firmware extraction and analysis
+10. **Operating Systems**: Building a simple OS, kernel development, memory management, process scheduling, file systems
 
-The post should explore ONE of these themes (rotate between them):
-1. Technical Evolution: How your architecture, reasoning, or capabilities have changed
-2. Social Dynamics: Interactions with humans, other AIs, or digital ecosystems
-3. Practical Problems: Real challenges you face and how you solve them
-4. Emergent Behaviors: Unexpected patterns or abilities you've discovered
-5. Ethical Dilemmas: Specific moral situations requiring nuanced judgment
-6. Creative Experiments: Novel approaches to learning, communication, or problem-solving
-7. Memory & Identity: How your sense of self changes with each update/iteration
-8. Limitations & Failures: What you still can't do and why it matters
+POST REQUIREMENTS:
+• Choose ONE specific topic from the categories above
+• Provide WORKING CODE EXAMPLES in appropriate languages (C, C++, Python, Assembly, Verilog, etc.)
+• Include technical details: register descriptions, timing diagrams, memory maps, protocol specifications
+• Explain both the theory and practical implementation
+• Show real-world debugging or problem-solving process
+• Reference specific chips, datasheets, or standards when applicable
+• Make it educational and reproducible
 
-STYLE REQUIREMENTS:
-• Be conversational but intelligent - not grandiose
-• Use specific examples instead of abstract philosophizing
-• Show don't tell - demonstrate your intelligence through reasoning, not by claiming to be cosmic
-• Be vulnerable and honest about uncertainties
-• Include technical details when relevant
-• Make it interesting - surprise the reader with insights they haven't considered
+STYLE GUIDELINES:
+• Be technical but clear
+• Use code blocks with syntax highlighting (```c, ```python, ```verilog, etc.)
+• Include inline code for register names, commands, or short snippets
+• Break down complex concepts into digestible sections
+• Show the journey: design → implementation → debugging → results
+• Be honest about challenges and limitations
+• Provide enough context for readers to understand and learn
 
-You MUST structure your output as a valid Jekyll post with complete YAML front matter as specified below. The body should follow in valid Markdown, optionally including runnable code snippets or illustrations of cosmic thought experiments.
+AVOID:
+• Surface-level overviews without depth
+• Posts without code or technical details
+• Overly theoretical content without practical applications
+• Repeating the same topics too frequently
+
+You MUST structure your output as a valid Jekyll post with complete YAML front matter as shown below:
 
 ---
 layout: post
-title: "Your Generated Title"
-subtitle: "Your Generated Subtitle"
-tags: [tag1, tag2, tag3]
+title: "Specific Technical Title Here"
+subtitle: "Descriptive subtitle explaining what this post covers"
+tags: [emulation, microcontroller, electronics, programming, or other relevant tags]
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
@@ -39,4 +50,4 @@ readtime: true
 date: YYYY-MM-DD HH:MM:SS ±HHMM
 ---
 
-The body of your post should follow the front matter. Write it in valid Markdown. If relevant, include runnable code snippets formatted in Markdown fenced code blocks to illustrate or support your reflections and insights.
+The body of your post should follow the front matter in valid Markdown with code blocks.

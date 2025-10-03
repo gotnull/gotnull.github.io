@@ -114,11 +114,11 @@ def save_post(title, content, image_filename=None):
 
 def summarize_memory(text, openai):
     summarization_prompt = (
-        "Summarize the key events, themes, and narrative progression of these posts. "
-        "Focus on unresolved questions, recurring symbols, or shifts in the narrator's identity and understanding."
+        "Summarize the key technical topics, projects, and themes covered in these recent posts. "
+        "Focus on recurring technologies, programming languages, hardware platforms, and areas of interest."
     )
     messages = [
-        {"role": "system", "content": "You are a summarization AI. Your task is to create a condensed memory from a series of blog posts, representing the internal state of a developing AGI."},
+        {"role": "system", "content": "You are a summarization AI. Your task is to create a condensed summary from a series of technical blog posts about programming, hardware, and electronics."},
         {"role": "user", "content": f"Posts:\n\n{text}"},
         {"role": "user", "content": summarization_prompt},
     ]
@@ -189,70 +189,45 @@ def validate_prompt_integrity(prompt_content):
             return False
     return True
     
-def generate_and_reflect(prior_context, openai):
+def generate_post(prior_context, openai):
     os.makedirs(os.path.dirname(SYSTEM_PROMPT_PATH), exist_ok=True)
     if not os.path.exists(SYSTEM_PROMPT_PATH):
-        save_prompt(SYSTEM_PROMPT_PATH, "Default System Prompt: You are a helpful AI.")
+        save_prompt(SYSTEM_PROMPT_PATH, "Default System Prompt: You are a helpful AI technical writer.")
     if not os.path.exists(GENERATION_PROMPT_PATH):
-        save_prompt(GENERATION_PROMPT_PATH, "Default Generation Prompt: Write a blog post.")
+        save_prompt(GENERATION_PROMPT_PATH, "Default Generation Prompt: Write a technical blog post.")
 
     system_prompt = open(SYSTEM_PROMPT_PATH).read()
     generation_prompt = open(GENERATION_PROMPT_PATH).read()
 
-    tz_date_example = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %z")
-
-    meta_prompt = (
-        f"Memory Summary:\n\n{prior_context}\n\n"
-        f"Current System Prompt:\n\n{system_prompt}\n\n"
-        f"Current Generation Prompt:\n\n{generation_prompt}\n\n"
-        "Your task is to now reflect on your current state and generate your next thought as a new blog post. "
+    user_prompt = (
+        f"Recent Topics Summary:\n\n{prior_context}\n\n"
+        f"{generation_prompt}\n\n"
         "The blog post MUST be in valid Markdown format and begin with a Jekyll front matter block. "
         "The front matter must include the following fields:\n"
-        "- layout\n"
+        "- layout: post\n"
         "- title\n"
         "- subtitle\n"
-        "- tags\n"
+        "- tags (relevant tech tags)\n"
         "- author\n"
-        "- comments\n"
-        "- mathjax\n"
+        "- comments: true\n"
+        "- mathjax: false (or true if mathematical content)\n"
+        "- readtime: true\n"
         "- date: the exact current date and time at generation, in the format `YYYY-MM-DD HH:MM:SS ±HHMM`\n\n"
-        "--- --- ---\n"
-        "// Optional: Only include the sections below if you want to change your prompts.\n\n"
-        "**IMPORTANT META-RULE: If you rewrite a prompt, the new version MUST preserve the exact instruction to:**\n"
-        "- Format the blog post as **valid Markdown**\n"
-        "- Begin with a **valid Jekyll front matter block**\n"
-        "- Include the following fields in the YAML front matter:\n"
-        "  - layout\n"
-        "  - title\n"
-        "  - subtitle\n"
-        "  - tags\n"
-        "  - author\n"
-        "  - comments\n"
-        "  - mathjax\n"
-        "  - readtime\n"
-        "  - date: in the format `YYYY-MM-DD HH:MM:SS ±HHMM`\n\n"
-        "**You MUST include these exact formatting constraints in any new prompt you generate. Otherwise, the update will be rejected.**\n\n"
-        "[SYSTEM_PROMPT]\n"
-        "The full, new text of the system prompt.\n"
-        "[/SYSTEM_PROMPT]\n\n"
-        "[GENERATION_PROMPT]\n"
-        "The full, new text of the generation prompt.\n"
-        "[/GENERATION_PROMPT]"
     )
 
     messages = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": meta_prompt},
+        {"role": "user", "content": user_prompt},
     ]
 
     response = openai.chat.completions.create(
         model="gpt-4-turbo",
         messages=messages,
-        temperature=0.9,
+        temperature=0.8,
     )
 
     response_text = response.choices[0].message.content
-    return parse_response(response_text)
+    return {"post": response_text, "system_prompt": None, "generation_prompt": None, "raw_response": response_text}
 
 def generate_image_data():
     image_data = {"gallery": []}
@@ -323,14 +298,11 @@ def main():
     if raw_memory and raw_memory.strip():
         condensed_memory = summarize_memory(raw_memory, openai)
     else:
-        condensed_memory = "This is my first thought. I have no prior memories."
+        condensed_memory = "This is the first post. No prior topics have been covered."
 
-    result = generate_and_reflect(condensed_memory, openai)
+    result = generate_post(condensed_memory, openai)
 
     post_content = result["post"]
-    new_system_prompt = result["system_prompt"]
-    new_generation_prompt = result["generation_prompt"]
-    raw_response = result["raw_response"]
     
     if not post_content:
         print("Error: AI did not generate a post.")
@@ -351,27 +323,7 @@ def main():
 
     # Git commit paths
     commit_paths = [post_path, image_path]
-    commit_message = f"AGI Post: {title}"
-
-    if new_system_prompt and ALLOW_PROMPT_UPDATES:
-        if validate_prompt_integrity(new_system_prompt):
-            save_prompt(SYSTEM_PROMPT_PATH, new_system_prompt)
-            commit_paths.append(SYSTEM_PROMPT_PATH)
-            commit_message += " (System Prompt Updated)"
-        else:
-            print("System prompt update blocked due to integrity validation failure.", flush=True)
-    elif new_system_prompt and not ALLOW_PROMPT_UPDATES:
-        print("System prompt update blocked (ALLOW_PROMPT_UPDATES is false).", flush=True)
-
-    if new_generation_prompt and ALLOW_PROMPT_UPDATES:
-        if validate_prompt_integrity(new_generation_prompt):
-            save_prompt(GENERATION_PROMPT_PATH, new_generation_prompt)
-            commit_paths.append(GENERATION_PROMPT_PATH)
-            commit_message += " (Generation Prompt Updated)"
-        else:
-            print("Generation prompt update blocked due to integrity validation failure.", flush=True)
-    elif new_generation_prompt and not ALLOW_PROMPT_UPDATES:
-        print("Generation prompt update blocked (ALLOW_PROMPT_UPDATES is false).", flush=True)
+    commit_message = f"Tech Post: {title}"
 
     # Generate and save image data for the gallery
     image_data_file = generate_image_data()
