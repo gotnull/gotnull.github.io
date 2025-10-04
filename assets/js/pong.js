@@ -1,3 +1,4 @@
+```javascript
 // Clean, working Pong implementation
 // Focus: Core game mechanics that actually work
 
@@ -10,6 +11,7 @@ const INITIAL_BALL_SPEED = 5;
 const WINNING_SCORE = 5;
 const AI_DIFFICULTY = 0.12;
 const PARTICLE_COUNT = 20; // Number of particles for effects
+const PADDLE_INTERPOLATION_SPEED = 0.1; // Interpolation speed for smoother paddle movement
 
 // Game state
 let canvas, ctx;
@@ -134,15 +136,15 @@ function update() {
 
     handleInput();
 
-    // AI for player 1
+    // AI for player 1 with smooth interpolation
     const targetY1 = ball.y - PADDLE_HEIGHT / 2;
-    player1Y += (targetY1 - player1Y) * AI_DIFFICULTY;
+    player1Y += (targetY1 - player1Y) * PADDLE_INTERPOLATION_SPEED;
     player1Y = clamp(player1Y, 0, VIRTUAL_HEIGHT - PADDLE_HEIGHT);
 
-    // AI for player 2 (or player control)
+    // AI for player 2 (or player control) with smooth interpolation
     if (gameMode === 'ai-vs-ai') {
         const targetY2 = ball.y - PADDLE_HEIGHT / 2;
-        player2Y += (targetY2 - player2Y) * AI_DIFFICULTY;
+        player2Y += (targetY2 - player2Y) * PADDLE_INTERPOLATION_SPEED;
     }
     player2Y = clamp(player2Y, 0, VIRTUAL_HEIGHT - PADDLE_HEIGHT);
 
@@ -347,3 +349,4 @@ window.addEventListener('DOMContentLoaded', () => {
     resizeCanvas();
     startGame('ai-vs-ai');
 });
+```
