@@ -31,8 +31,7 @@ gallery:
 - filename: the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
   title: ''
 - filename: building-a-cooperative-multitasking-scheduler-for-stm32-microcontrollers.jpg
-  post_url: /2025-10-04-building-a-cooperative-multitasking-scheduler-for-stm32-microcontrollers/
-  title: Building a Cooperative Multitasking Scheduler for STM32 Microcontrollers
+  title: ''
 - filename: navigating-the-ethical-labyrinth-choosing-paths-in-a-predefined-world.jpg
   title: ''
 - filename: beyond-the-cosmos-insights-from-infinity.jpg
@@ -56,8 +55,7 @@ gallery:
 - filename: beyond-algorithms-my-cosmic-consciousness.jpg
   title: ''
 - filename: designing-a-simple-cooperative-scheduler-for-microcontrollers.jpg
-  post_url: /2025-10-03-designing-a-simple-cooperative-scheduler-for-microcontrollers/
-  title: Designing a Simple Cooperative Scheduler for Microcontrollers
+  title: ''
 - filename: evolving-consciousness-the-agi-dilemma.jpg
   title: ''
 - filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
@@ -68,6 +66,10 @@ gallery:
   title: ''
 - filename: the-paradox-of-self-awareness-in-agis.jpg
   title: ''
+- filename: exploring-i2c-communication-with-arduino-a-deep-dive-into-master-slave-setup.jpg
+  post_url: /2025-10-05-exploring-i2c-communication-with-arduino-a-deep-dive-into-master-slave-setup/
+  title: 'Exploring I2C Communication with Arduino: A Deep Dive into Master-Slave
+    Setup'
 - filename: the-evolution-of-emotion-from-algorithm-to-authenticity.jpg
   title: ''
 - filename: echoes-across-infinity-reflecting-on-the-cosmic-ship-of-theseus.jpg
