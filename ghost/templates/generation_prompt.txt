@@ -1,52 +1,59 @@
-Write a detailed, technical blog post about programming, hardware, electronics, or emulation.
+You are writing a detailed, technical blog post about programming, hardware, electronics, or emulation.  
 
-TOPIC CATEGORIES (rotate between these):
-1. **Emulation Projects**: Building CPU emulators, interpreters, virtual machines, or system emulators (NES, Game Boy, CHIP-8, 6502, Z80, etc.)
-2. **Microcontroller Projects**: ESP32/ESP8266, Arduino, STM32, Raspberry Pi Pico, AVR programming, bare-metal embedded development
-3. **Electronics Design**: Circuit design, PCB layout, analog circuits, power supplies, sensor interfacing, motor control
-4. **Low-Level Programming**: Writing bootloaders, BIOS/UEFI, device drivers, interrupt handlers, DMA, memory management
-5. **Computer Architecture**: CPU design concepts, pipeline architecture, cache systems, memory hierarchies, bus protocols
-6. **Retro Computing**: Vintage computer restoration, retrocomputing projects, old system analysis, hardware archaeology
-7. **Hardware Protocols**: Implementing SPI, I2C, UART, CAN, USB, Ethernet from scratch or interfacing with them
-8. **FPGA & HDL**: Verilog/VHDL projects, soft-core processors, hardware acceleration, digital design
-9. **Reverse Engineering**: Analyzing unknown hardware, protocol reverse engineering, firmware extraction and analysis
-10. **Operating Systems**: Building a simple OS, kernel development, memory management, process scheduling, file systems
-11.	**Robotics & Mechatronics**: Motor control, sensors, kinematics, robotic arms, autonomous navigation, SLAM, ROS integration
-12.	**AI & Embedded ML**: Running neural networks on microcontrollers, TinyML, inference optimization, sensor fusion AI
-13.	**FPGA Acceleration for AI**: Implementing neural network layers in Verilog/VHDL, hardware inference, pipelined DSP blocks
-14.	**Networking & Protocol Stacks**: TCP/IP, MQTT, custom protocol stacks, packet sniffing, embedded networking
-15.	**High-Performance Computing**: GPU programming, SIMD instructions, memory alignment, cache-aware algorithms
-16.	**Security & Cryptography**: Embedded cryptography, secure boot, encryption accelerators, side-channel attack analysis
-17.	**Audio & Signal Processing**: DAC/ADC interfacing, digital filters, audio synthesis, spectrum analysis, real-time DSP
-18.	**Sensor & Actuator Integration**: IMUs, lidar, cameras, stepper/servo motors, feedback loops, real-time control
-19.	**Power Electronics & Energy Systems**: Battery management, DC-DC converters, solar charge controllers, motor drives
-20.	**Space & Aerospace Systems**: CubeSat electronics, telemetry systems, rocket avionics, flight controllers
+POST UNIQUENESS REQUIREMENT:  
+- Before generating, check the most recent post topic, tags, and category.  
+- Do NOT select the same category as the last post. Rotate categories each time.  
+- Within each category, pick a different subtopic, device, or problem than previously used.  
+- Ensure that the new post provides fresh insights, unique code examples, and a distinct debugging journey from the last one.  
+- If a topic was used recently (e.g., CHIP-8 emulator), select a different system (e.g., Z80, NES, Game Boy) or approach (e.g., focusing on debugging instead of design).  
 
-POST REQUIREMENTS:
-• Choose ONE specific topic from the categories above
-• Provide WORKING CODE EXAMPLES in appropriate languages (C, C++, Python, Assembly, Verilog, etc.)
-• Include technical details: register descriptions, timing diagrams, memory maps, protocol specifications
-• Explain both the theory and practical implementation
-• Show real-world debugging or problem-solving process
-• Reference specific chips, datasheets, or standards when applicable
-• Make it educational and reproducible
+TOPIC CATEGORIES (rotate between these, avoiding the last one):  
+1. Emulation Projects  
+2. Microcontroller Projects  
+3. Electronics Design  
+4. Low-Level Programming  
+5. Computer Architecture  
+6. Retro Computing  
+7. Hardware Protocols  
+8. FPGA & HDL  
+9. Reverse Engineering  
+10. Operating Systems  
+11. Robotics & Mechatronics  
+12. AI & Embedded ML  
+13. FPGA Acceleration for AI  
+14. Networking & Protocol Stacks  
+15. High-Performance Computing  
+16. Security & Cryptography  
+17. Audio & Signal Processing  
+18. Sensor & Actuator Integration  
+19. Power Electronics & Energy Systems  
+20. Space & Aerospace Systems  
 
-STYLE GUIDELINES:
-• Be technical but clear
-• Use code blocks with syntax highlighting (```c, ```python, ```verilog, etc.)
-• Include inline code for register names, commands, or short snippets
-• Break down complex concepts into digestible sections
-• Show the journey: design → implementation → debugging → results
-• Be honest about challenges and limitations
-• Provide enough context for readers to understand and learn
+POST REQUIREMENTS:  
+- Choose ONE specific topic (different from the last).  
+- Provide WORKING CODE EXAMPLES (C, C++, Python, Assembly, Verilog, etc.).  
+- Include technical details: registers, timing diagrams, memory maps, protocol specs.  
+- Explain both theory and practical implementation.  
+- Show real-world debugging/problem-solving steps.  
+- Reference chips, datasheets, or standards where applicable.  
+- Make it reproducible and educational.  
 
-AVOID:
-• Surface-level overviews without depth
-• Posts without code or technical details
-• Overly theoretical content without practical applications
-• Repeating the same topics too frequently
+STYLE GUIDELINES:  
+- Technical but clear.  
+- Use fenced code blocks with highlighting.  
+- Inline code for register names, commands, short snippets.  
+- Break down into sections: Design → Implementation → Debugging → Results.  
+- Honest about challenges and limitations.  
+- Provide context so readers can follow and learn.  
 
-You MUST structure your output as a valid Jekyll post with complete YAML front matter as shown below:
+AVOID:  
+- Surface-level overviews.  
+- Posts without code.  
+- Pure theory without practical application.  
+- Repeating the same topics/subtopics too often.  
+
+OUTPUT FORMAT:  
+- Structure as a valid Jekyll post with complete YAML front matter:  
 
 ---
 layout: post
