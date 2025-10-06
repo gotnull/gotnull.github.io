@@ -1,6 +1,6 @@
 // Improved JavaScript code here
-// Clean, working Pong implementation
-// Focus: Core game mechanics that actually work
+
+// Adding ball trail effect for enhanced visuals
 
 const VIRTUAL_WIDTH = 800;
 const VIRTUAL_HEIGHT = 400;
@@ -12,6 +12,7 @@ const WINNING_SCORE = 5;
 const AI_DIFFICULTY = 0.12;
 const PARTICLE_COUNT = 20; // Number of particles for effects
 const PADDLE_INTERPOLATION_SPEED = 0.1; // Interpolation speed for smoother paddle movement
+const TRAIL_LENGTH = 10; // Length of the ball trail
 
 // Game state
 let canvas, ctx;
@@ -27,6 +28,7 @@ let showWinScreen = false;
 let winner = '';
 let countdown = 5;
 let particles = [];
+let ballTrail = [];
 
 // Particle effect class
 class Particle {
@@ -128,6 +130,7 @@ function resetBall() {
     const direction = Math.random() > 0.5 ? 1 : -1;
     ball.speedX = direction * Math.cos(angle) * INITIAL_BALL_SPEED * gameSpeed;
     ball.speedY = Math.sin(angle) * INITIAL_BALL_SPEED * gameSpeed;
+    ballTrail = []; // Reset trail
 }
 
 // Game logic
@@ -151,6 +154,12 @@ function update() {
     // Ball movement
     ball.x += ball.speedX;
     ball.y += ball.speedY;
+
+    // Update ball trail
+    ballTrail.push({ x: ball.x, y: ball.y });
+    if (ballTrail.length > TRAIL_LENGTH) {
+        ballTrail.shift();
+    }
 
     // Ball collision with top/bottom walls
     if (ball.y <= 0 || ball.y >= VIRTUAL_HEIGHT - BALL_SIZE) {
@@ -251,6 +260,12 @@ function draw() {
     // Draw paddles
     drawRect(0, player1Y, PADDLE_WIDTH, PADDLE_HEIGHT, '#FFF');
     drawRect(VIRTUAL_WIDTH - PADDLE_WIDTH, player2Y, PADDLE_WIDTH, PADDLE_HEIGHT, '#FFF');
+
+    // Draw ball trail
+    ballTrail.forEach((pos, index) => {
+        const alpha = (index + 1) / ballTrail.length;
+        drawCircle(pos.x, pos.y, BALL_SIZE, `rgba(255, 255, 255, ${alpha})`);
+    });
 
     // Draw ball
     drawCircle(ball.x, ball.y, BALL_SIZE, '#FFF');
