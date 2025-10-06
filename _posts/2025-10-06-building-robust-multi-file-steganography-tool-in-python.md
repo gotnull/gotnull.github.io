@@ -7,7 +7,7 @@ author: Lester Knight Chaykin
 comments: true
 mathjax: false
 readtime: true
-date: 2025-10-06 16:00:00 +0000
+date: 2025-10-05 16:00:00 +0000
 ---
 
 ## Introduction
