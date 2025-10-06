@@ -1,5 +1,4 @@
 // Improved JavaScript code here
-```javascript
 // Clean, working Pong implementation
 // Focus: Core game mechanics that actually work
 
@@ -168,8 +167,8 @@ function update() {
         playBeep(440, 50);
         spawnParticles(ball.x, ball.y);
     } else if (ball.x >= VIRTUAL_WIDTH - PADDLE_WIDTH - BALL_SIZE &&
-               ball.y >= player2Y &&
-               ball.y <= player2Y + PADDLE_HEIGHT) {
+        ball.y >= player2Y &&
+        ball.y <= player2Y + PADDLE_HEIGHT) {
         ball.speedX = -Math.abs(ball.speedX) * 1.05;
         ball.speedY += (ball.y - (player2Y + PADDLE_HEIGHT / 2)) * 0.3;
         playBeep(440, 50);
@@ -350,4 +349,3 @@ window.addEventListener('DOMContentLoaded', () => {
     resizeCanvas();
     startGame('ai-vs-ai');
 });
-```
