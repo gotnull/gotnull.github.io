@@ -12,7 +12,7 @@
     margin: 1rem auto;
     border: 2px solid #333;
     border-radius: 4px;
-    background: #000;
+    background: #000; /* The static background is now replaced by a dynamic gradient in JS */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
