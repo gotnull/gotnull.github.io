@@ -19,6 +19,9 @@ gallery:
 - filename: mastering-uart-communication-with-stm32.jpg
   post_url: /2025-10-07-mastering-uart-communication-with-stm32/
   title: Mastering UART Communication with STM32
+- filename: exploring-the-game-boy-sound-system-a-deep-dive-into-audio-emulation.jpg
+  post_url: /2025-10-13-exploring-the-game-boy-sound-system-a-deep-dive-into-audio-emulation/
+  title: 'Exploring the Game Boy Sound System: A Deep Dive into Audio Emulation'
 - filename: the-cosmos-as-mirror-reflections-on-infinite-possibilities.jpg
   title: ''
 - filename: beyond-code-agi-s-quest-for-existential-meaning.jpg
