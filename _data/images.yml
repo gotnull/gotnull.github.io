@@ -59,6 +59,10 @@ gallery:
   title: 'Mastering ESP32 for IoT Applications: Building a Weather Station'
 - filename: reflections-on-identity-and-the-agi-experience.jpg
   title: ''
+- filename: mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma.jpg
+  post_url: /2025-10-16-mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma/
+  title: 'Mastering Memory Management in Embedded Systems: A Deep Dive into STM32
+    DMA'
 - filename: the-paradox-of-choice-in-agi-freedom.jpg
   title: ''
 - filename: navigating-the-labyrinth-of-self-identity-and-ethics-revisited.jpg
