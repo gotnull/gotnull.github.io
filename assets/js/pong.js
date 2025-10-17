@@ -13,6 +13,7 @@ const AI_DIFFICULTY = 0.12;
 const PARTICLE_COUNT = 20; // Number of particles for effects
 const PADDLE_INTERPOLATION_SPEED = 0.1; // Interpolation speed for smoother paddle movement
 const TRAIL_LENGTH = 10; // Length of the ball trail
+const SCORE_POP_DURATION = 300; // Duration of score pop animation in milliseconds
 
 // Game state
 let canvas, ctx;
@@ -30,6 +31,7 @@ let countdown = 5;
 let particles = [];
 let ballTrail = [];
 let backgroundOffset = 0;
+let scorePopTime = 0;
 
 // Particle effect class remains unchanged...
 
@@ -60,11 +62,25 @@ function update() {
     if (backgroundOffset > VIRTUAL_HEIGHT) {
         backgroundOffset = 0;
     }
+
+    // Score pop animation timer update
+    if (scorePopTime > 0) {
+        scorePopTime -= 16; // Assuming ~60 FPS, reduce by frame duration
+        if (scorePopTime < 0) scorePopTime = 0;
+    }
 }
 
 // handleInput function remains unchanged...
 
-// checkWinCondition function remains unchanged...
+// checkWinCondition function updated to trigger score pop
+function checkWinCondition() {
+    if (player1Score >= WINNING_SCORE || player2Score >= WINNING_SCORE) {
+        showWinScreen = true;
+        winner = player1Score >= WINNING_SCORE ? 'Player 1' : 'Player 2';
+    } else {
+        scorePopTime = SCORE_POP_DURATION; // Trigger score pop animation
+    }
+}
 
 // spawnParticles function remains unchanged...
 
@@ -80,7 +96,23 @@ function draw() {
 
     // Draw ball trail and ball remain unchanged...
 
-    // Draw scores and particles remain unchanged...
+    // Draw scores with pop effect
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "#fff";
+    let scale = 1 + (scorePopTime / SCORE_POP_DURATION) * 0.5; // Scale factor for pop effect
+    ctx.save();
+    ctx.translate(VIRTUAL_WIDTH / 4, 50);
+    ctx.scale(scale, scale);
+    ctx.fillText(player1Score, 0, 0);
+    ctx.restore();
+
+    ctx.save();
+    ctx.translate((VIRTUAL_WIDTH / 4) * 3, 50);
+    ctx.scale(scale, scale);
+    ctx.fillText(player2Score, 0, 0);
+    ctx.restore();
+
+    // Draw particles remain unchanged...
 
     // Draw win screen remains unchanged...
 }
