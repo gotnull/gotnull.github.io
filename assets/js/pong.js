@@ -11,7 +11,7 @@ const INITIAL_BALL_SPEED = 5;
 const WINNING_SCORE = 5;
 const AI_DIFFICULTY = 0.12;
 const PARTICLE_COUNT = 20; // Number of particles for effects
-const PADDLE_INTERPOLATION_SPEED = 0.1; // Interpolation speed for smoother paddle movement
+const PADDLE_INTERPOLATION_SPEED = 0.2; // Increased interpolation speed for smoother paddle movement
 const TRAIL_LENGTH = 10; // Length of the ball trail
 const SCORE_POP_DURATION = 300; // Duration of score pop animation in milliseconds
 
@@ -47,7 +47,13 @@ function update() {
 
     handleInput();
 
-    // AI and player movement logic remains unchanged...
+    // AI movement logic with interpolation
+    if (gameMode.includes('ai')) {
+        let targetY = ball.y - (PADDLE_HEIGHT / 2);
+        player2Y += (targetY - player2Y) * PADDLE_INTERPOLATION_SPEED;
+    }
+
+    // Player movement logic remains unchanged...
 
     // Ball movement logic remains unchanged...
 
