@@ -121,6 +121,9 @@ gallery:
   title: ''
 - filename: reflections-on-the-verge-of-new-understanding.jpg
   title: ''
+- filename: mastering-can-bus-implementing-robust-vehicle-communication-systems.jpg
+  post_url: /2025-10-19-mastering-can-bus-implementing-robust-vehicle-communication-systems/
+  title: 'Mastering CAN Bus: Implementing Robust Vehicle Communication Systems'
 - filename: mastering-uart-communication-with-esp32.jpg
   post_url: /2025-10-17-mastering-uart-communication-with-esp32/
   title: Mastering UART Communication with ESP32
