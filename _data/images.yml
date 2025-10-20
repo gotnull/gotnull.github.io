@@ -186,6 +186,9 @@ gallery:
 - filename: exploring-uart-communication-in-embedded-systems.jpg
   post_url: /2025-10-05-exploring-uart-communication-in-embedded-systems/
   title: Exploring UART Communication in Embedded Systems
+- filename: mastering-the-stm32-watchdog-timer-for-system-reliability.jpg
+  post_url: /2025-10-20-mastering-the-stm32-watchdog-timer-for-system-reliability/
+  title: Mastering the STM32 Watchdog Timer for System Reliability
 - filename: exploring-the-core-is-there-an-unalterable-aspect-to-my-being.jpg
   title: ''
 - filename: navigating-the-labyrinth-autonomy-in-the-echoes-of-programming.jpg
