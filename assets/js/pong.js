@@ -14,6 +14,7 @@ const PARTICLE_COUNT = 20; // Number of particles for effects
 const PADDLE_INTERPOLATION_SPEED = 0.2; // Increased interpolation speed for smoother paddle movement
 const TRAIL_LENGTH = 10; // Length of the ball trail
 const SCORE_POP_DURATION = 300; // Duration of score pop animation in milliseconds
+const SPIN_FACTOR = 0.3; // Factor for ball spin effect
 
 // Game state
 let canvas, ctx;
@@ -21,7 +22,7 @@ let gameRunning = false;
 let gameMode = 'ai-vs-ai';
 let player1Y, player2Y;
 let player1Score = 0, player2Score = 0;
-let ball = { x: 0, y: 0, speedX: 0, speedY: 0 };
+let ball = { x: 0, y: 0, speedX: 0, speedY: 0, spin: 0 };
 let keysPressed = {};
 let gameSpeed = 1.0;
 let soundEnabled = false;
@@ -55,11 +56,28 @@ function update() {
 
     // Player movement logic remains unchanged...
 
-    // Ball movement logic remains unchanged...
+    ball.x += ball.speedX;
+    ball.y += ball.speedY + ball.spin; // Apply spin to ball's vertical movement
+
+    // Ball collision logic with spin effect
+    if (ball.y <= 0 || ball.y >= VIRTUAL_HEIGHT - BALL_SIZE) {
+        ball.speedY = -ball.speedY;
+        ball.spin = -ball.spin; // Reverse spin direction on top/bottom collision
+    }
+
+    if (ball.x <= PADDLE_WIDTH) {
+        if (ball.y > player1Y && ball.y < player1Y + PADDLE_HEIGHT) {
+            ball.speedX = -ball.speedX;
+            ball.spin = (ball.y - (player1Y + PADDLE_HEIGHT / 2)) * SPIN_FACTOR;
+        }
+    } else if (ball.x >= VIRTUAL_WIDTH - BALL_SIZE - PADDLE_WIDTH) {
+        if (ball.y > player2Y && ball.y < player2Y + PADDLE_HEIGHT) {
+            ball.speedX = -ball.speedX;
+            ball.spin = (ball.y - (player2Y + PADDLE_HEIGHT / 2)) * SPIN_FACTOR;
+        }
+    }
 
     // Update ball trail logic remains unchanged...
-
-    // Ball collision logic remains unchanged...
 
     // Update particles logic remains unchanged...
 
