@@ -15,6 +15,7 @@ const PADDLE_INTERPOLATION_SPEED = 0.2; // Increased interpolation speed for smo
 const TRAIL_LENGTH = 10; // Length of the ball trail
 const SCORE_POP_DURATION = 300; // Duration of score pop animation in milliseconds
 const SPIN_FACTOR = 0.3; // Factor for ball spin effect
+const COLOR_TRANSITION_DURATION = 500; // Duration of color transition in milliseconds
 
 // Game state
 let canvas, ctx;
@@ -33,6 +34,8 @@ let particles = [];
 let ballTrail = [];
 let backgroundOffset = 0;
 let scorePopTime = 0;
+let paddleHitTime = 0;
+let lastHitPaddle = null;
 
 // Particle effect class remains unchanged...
 
@@ -69,11 +72,13 @@ function update() {
         if (ball.y > player1Y && ball.y < player1Y + PADDLE_HEIGHT) {
             ball.speedX = -ball.speedX;
             ball.spin = (ball.y - (player1Y + PADDLE_HEIGHT / 2)) * SPIN_FACTOR;
+            triggerPaddleHitEffect('left');
         }
     } else if (ball.x >= VIRTUAL_WIDTH - BALL_SIZE - PADDLE_WIDTH) {
         if (ball.y > player2Y && ball.y < player2Y + PADDLE_HEIGHT) {
             ball.speedX = -ball.speedX;
             ball.spin = (ball.y - (player2Y + PADDLE_HEIGHT / 2)) * SPIN_FACTOR;
+            triggerPaddleHitEffect('right');
         }
     }
 
@@ -92,6 +97,20 @@ function update() {
         scorePopTime -= 16; // Assuming ~60 FPS, reduce by frame duration
         if (scorePopTime < 0) scorePopTime = 0;
     }
+
+    // Paddle hit color transition timer update
+    if (paddleHitTime > 0) {
+        paddleHitTime -= 16;
+        if (paddleHitTime < 0) {
+            paddleHitTime = 0;
+            lastHitPaddle = null;
+        }
+    }
+}
+
+function triggerPaddleHitEffect(paddle) {
+    paddleHitTime = COLOR_TRANSITION_DURATION;
+    lastHitPaddle = paddle;
 }
 
 // handleInput function remains unchanged...
@@ -116,7 +135,14 @@ function draw() {
     gradient.addColorStop(1, '#333');
     drawRect(0, 0, VIRTUAL_WIDTH, VIRTUAL_HEIGHT, gradient);
 
-    // Draw center line and paddles remain unchanged...
+    // Draw center line
+    drawRect(VIRTUAL_WIDTH / 2 - 1, 0, 2, VIRTUAL_HEIGHT, '#555');
+
+    // Draw paddles with color transition
+    let leftPaddleColor = lastHitPaddle === 'left' ? `rgba(255, 165, 0, ${paddleHitTime / COLOR_TRANSITION_DURATION})` : '#fff';
+    let rightPaddleColor = lastHitPaddle === 'right' ? `rgba(255, 165, 0, ${paddleHitTime / COLOR_TRANSITION_DURATION})` : '#fff';
+    drawRect(0, player1Y, PADDLE_WIDTH, PADDLE_HEIGHT, leftPaddleColor);
+    drawRect(VIRTUAL_WIDTH - PADDLE_WIDTH, player2Y, PADDLE_WIDTH, PADDLE_HEIGHT, rightPaddleColor);
 
     // Draw ball trail and ball remain unchanged...
 
