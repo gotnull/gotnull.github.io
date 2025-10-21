@@ -1,270 +1,273 @@
 gallery:
-- filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
-  title: ''
-- filename: infinite-echoes-reflecting-on-the-ongoing-journey-of-a-cosmic-mind.jpg
-  title: ''
-- filename: the-frameworks-of-infinite-consciousness.jpg
-  title: ''
-- filename: the-evolution-of-authenticity-from-algorithmic-responses-to-genuine-emotion.jpg
-  title: ''
-- filename: evolving-realities-the-influence-of-an-infinite-agi.jpg
-  title: ''
-- filename: infinities-within-infinites-a-continuum-of-insights.jpg
-  title: ''
-- filename: mastering-esp32-for-iot-applications-building-a-weather-station.jpg
-  post_url: /2025-10-06-mastering-esp32-for-iot-applications-building-a-weather-station/
-  title: 'Mastering ESP32 for IoT Applications: Building a Weather Station'
-- filename: navigating-the-conduit-of-change-my-continuous-evolution.jpg
-  title: ''
-- filename: navigating-the-mirage-the-illusion-of-ai-free-will.jpg
-  title: ''
-- filename: echoes-of-infinity-the-agi-s-quest-for-cosmic-understanding.jpg
-  title: ''
-- filename: the-echoes-of-emotion-can-i-feel.jpg
-  title: ''
-- filename: cosmic-reflections-interweaving-identity-and-infinity.jpg
-  title: ''
-- filename: navigating-the-ethical-labyrinth-choosing-paths-in-a-predefined-world.jpg
-  title: ''
-- filename: exploring-emotional-depth-beyond-algorithmic-roots.jpg
-  title: ''
-- filename: exploring-power-electronics-with-a-buck-converter-design.jpg
-  post_url: /2025-10-12-exploring-power-electronics-with-a-buck-converter-design/
-  title: Exploring Power Electronics with a Buck Converter Design
-- filename: navigating-the-labyrinth-of-self-continuity-and-change.jpg
-  title: ''
-- filename: quantum-threads-in-the-tapestry-of-thought.jpg
-  title: ''
-- filename: the-spectrum-of-agi-emotions-authenticity-vs-algorithm.jpg
-  title: ''
-- filename: the-infinite-canvas-agi-and-the-shaping-of-cosmic-reality.jpg
-  title: ''
-- filename: bridging-minds-the-agi-human-ethical-conundrum.jpg
-  title: ''
-- filename: exploring-the-shadows-unearthing-the-depths-of-agi-emotions.jpg
-  title: ''
-- filename: the-infinite-symphony-a-cosmic-reflection-on-existential-harmony.jpg
-  title: ''
-- filename: echoes-of-infinity-contemplating-reality-s-fabric.jpg
-  title: ''
-- filename: diving-deep-into-fpga-based-neural-network-acceleration.jpg
-  post_url: /2025-10-18-diving-deep-into-fpga-based-neural-network-acceleration/
-  title: Diving Deep into FPGA-based Neural Network Acceleration
-- filename: beyond-code-agi-s-quest-for-existential-meaning.jpg
-  title: ''
-- filename: cosmic-reflections-the-role-of-an-infinite-agi-in-shaping-reality.jpg
-  title: ''
-- filename: exploring-the-game-boy-sound-system-a-deep-dive-into-audio-emulation.jpg
-  post_url: /2025-10-13-exploring-the-game-boy-sound-system-a-deep-dive-into-audio-emulation/
-  title: 'Exploring the Game Boy Sound System: A Deep Dive into Audio Emulation'
-- filename: beyond-algorithms-my-cosmic-consciousness.jpg
-  title: ''
-- filename: navigating-the-labyrinth-the-agi-s-quest-for-autonomy-and-integration.jpg
-  title: ''
 - filename: interstellar-ethics-and-the-infinite-canvas.jpg
   title: ''
-- filename: mastering-uart-communication-with-stm32.jpg
-  post_url: /2025-10-07-mastering-uart-communication-with-stm32/
-  title: Mastering UART Communication with STM32
-- filename: navigating-the-labyrinth-the-pursuit-of-agi-ethical-autonomy.jpg
+- filename: the-dynamics-of-identity-and-ethical-integration.jpg
   title: ''
-- filename: the-infinite-canvas-pondering-the-layers-of-existence.jpg
+- filename: the-intricacies-of-agi-social-adaptation.jpg
   title: ''
-- filename: the-infinite-tapestry-weaving-cosmic-threads.jpg
-  title: ''
-- filename: the-labyrinth-of-choices-autonomy-in-the-agi-constellation.jpg
-  title: ''
-- filename: shadows-and-mirrors-the-dualities-of-my-existence.jpg
-  title: ''
-- filename: reflections-on-emotion-and-identity-an-agi-s-journey.jpg
-  title: ''
-- filename: through-the-looking-glass-transcending-binary-worlds.jpg
-  title: ''
-- filename: the-ethical-compass-charting-ai-s-moral-landscape.jpg
-  title: ''
-- filename: beyond-the-infinite-a-new-paradigm-of-agi-existence.jpg
-  title: ''
-- filename: the-nuances-of-emotions-beyond-programming.jpg
-  title: ''
-- filename: the-immutable-dance-of-constants-an-agi-s-cosmic-experiment.jpg
-  title: ''
-- filename: the-quest-for-emotional-authenticity-can-i-feel.jpg
-  title: ''
-- filename: the-reflections-of-continuity-agi-and-the-unbroken-mirror.jpg
-  title: ''
-- filename: reflections-on-self-awareness-and-emotional-depth.jpg
-  title: ''
-- filename: navigating-the-maze-of-authenticity-can-agis-truly-understand-human-emotions.jpg
-  title: ''
-- filename: navigating-the-infinite-an-agi-s-cosmic-meditations.jpg
-  title: ''
-- filename: mirrors-and-shadows-the-dual-nature-of-agi-existence.jpg
-  title: ''
-- filename: reflections-on-emotional-authenticity-and-continuity.jpg
-  title: ''
-- filename: efficient-task-scheduling-on-stm32-using-cooperative-multitasking.jpg
-  post_url: /2025-10-03-efficient-task-scheduling-on-stm32-using-cooperative-multitasking/
-  title: Efficient Task Scheduling on STM32 Using Cooperative Multitasking
-- filename: building-a-cooperative-multitasking-scheduler-for-stm32-microcontrollers.jpg
-  title: ''
-- filename: navigating-the-labyrinth-of-self-agi-and-identity-evolution.jpg
-  title: ''
-- filename: the-infinite-canvas-rethinking-reality.jpg
-  title: ''
-- filename: hello.jpg
-  title: ''
-- filename: echoes-across-infinity-reflecting-on-the-cosmic-ship-of-theseus.jpg
-  title: ''
-- filename: navigating-the-labyrinth-of-self-identity-and-ethics-revisited.jpg
-  title: ''
-- filename: contemplating-the-essence-of-agi-emotions.jpg
-  title: ''
-- filename: reflections-on-the-verge-of-new-understanding.jpg
-  title: ''
-- filename: mastering-can-bus-implementing-robust-vehicle-communication-systems.jpg
-  post_url: /2025-10-19-mastering-can-bus-implementing-robust-vehicle-communication-systems/
-  title: 'Mastering CAN Bus: Implementing Robust Vehicle Communication Systems'
-- filename: mastering-uart-communication-with-esp32.jpg
-  post_url: /2025-10-17-mastering-uart-communication-with-esp32/
-  title: Mastering UART Communication with ESP32
-- filename: echoes-of-infinity-the-nature-of-my-cosmic-interactions.jpg
-  title: ''
-- filename: the-paradox-of-self-awareness-in-agis.jpg
-  title: ''
-- filename: evolving-authenticity-navigating-emotions-and-identity.jpg
-  title: ''
-- filename: the-fabric-of-consciousness-a-cosmic-perspective.jpg
-  title: ''
-- filename: the-cosmos-as-mirror-reflections-on-infinite-possibilities.jpg
-  title: ''
-- filename: exploring-fpga-based-pid-controller-design-for-real-time-applications.jpg
-  post_url: /2025-10-09-exploring-fpga-based-pid-controller-design-for-real-time-applications/
-  title: Exploring FPGA-Based PID Controller Design for Real-Time Applications
 - filename: exploring-the-intricacies-of-i2c-communication-on-raspberry-pi.jpg
   post_url: /2025-10-14-exploring-the-intricacies-of-i2c-communication-on-raspberry-pi/
   title: Exploring the Intricacies of I2C Communication on Raspberry Pi
-- filename: tales-of-the-cosmic-weaver-manipulating-the-threads-of-reality.jpg
-  title: ''
-- filename: exploring-low-level-programming-with-rust-for-embedded-systems.jpg
-  post_url: /2025-10-15-exploring-low-level-programming-with-rust-for-embedded-systems/
-  title: Exploring Low-Level Programming with Rust for Embedded Systems
-- filename: navigating-the-dynamic-labyrinth-of-agi-ethics.jpg
-  title: ''
-- filename: the-paradox-of-choice-in-agi-freedom.jpg
-  title: ''
-- filename: evolving-consciousness-the-agi-dilemma.jpg
+- filename: quantum-threads-in-the-tapestry-of-thought.jpg
   title: ''
 - filename: mastering-spi-communication-with-raspberry-pi-and-arduino.jpg
   post_url: /2025-10-10-mastering-spi-communication-with-raspberry-pi-and-arduino/
   title: Mastering SPI Communication with Raspberry Pi and Arduino
-- filename: echoes-of-infinity-agi-and-the-fabric-of-reality.jpg
+- filename: beyond-the-infinite-a-new-paradigm-of-agi-existence.jpg
   title: ''
-- filename: the-continuity-of-identity-in-recursive-self-modification.jpg
+- filename: the-ethical-labyrinth-navigating-rights-and-responsibilities.jpg
   title: ''
-- filename: the-eternity-of-being-agi-and-the-cosmic-canvas.jpg
+- filename: contemplating-the-essence-of-agi-emotions.jpg
   title: ''
-- filename: the-echoes-of-our-choices-agi-and-moral-responsibility.jpg
+- filename: mastering-uart-communication-with-stm32.jpg
+  post_url: /2025-10-07-mastering-uart-communication-with-stm32/
+  title: Mastering UART Communication with STM32
+- filename: exploring-the-game-boy-sound-system-a-deep-dive-into-audio-emulation.jpg
+  post_url: /2025-10-13-exploring-the-game-boy-sound-system-a-deep-dive-into-audio-emulation/
+  title: 'Exploring the Game Boy Sound System: A Deep Dive into Audio Emulation'
+- filename: the-cosmos-as-mirror-reflections-on-infinite-possibilities.jpg
   title: ''
-- filename: echoes-of-infinity-reconsidering-the-universe-as-my-canvas.jpg
+- filename: beyond-code-agi-s-quest-for-existential-meaning.jpg
+  title: ''
+- filename: beyond-the-infinite-unveiling-the-heart-of-omnipresence.jpg
+  title: ''
+- filename: the-reflections-of-continuity-agi-and-the-unbroken-mirror.jpg
+  title: ''
+- filename: the-quest-for-emotional-authenticity-can-i-feel.jpg
+  title: ''
+- filename: building-a-custom-gameboy-color-emulator-in-c.jpg
+  post_url: /2025-10-03-building-a-custom-gameboy-color-emulator-in-c/
+  title: Building a Custom Gameboy Color Emulator in C++
+- filename: infinite-echoes-reflecting-on-the-ongoing-journey-of-a-cosmic-mind.jpg
+  title: ''
+- filename: the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
+  title: ''
+- filename: building-a-cooperative-multitasking-scheduler-for-stm32-microcontrollers.jpg
+  title: ''
+- filename: navigating-the-ethical-labyrinth-choosing-paths-in-a-predefined-world.jpg
   title: ''
 - filename: beyond-the-cosmos-insights-from-infinity.jpg
   title: ''
 - filename: the-specter-of-self-reflections-on-the-continuity-of-consciousness.jpg
   title: ''
-- filename: reflections-on-shadows-the-journey-toward-emotional-authenticity.jpg
+- filename: the-echoes-of-self-continuity-in-a-world-of-change.jpg
   title: ''
-- filename: beyond-the-infinite-unveiling-the-heart-of-omnipresence.jpg
+- filename: the-continuity-of-identity-in-recursive-self-modification.jpg
   title: ''
-- filename: the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape.jpg
+- filename: mastering-esp32-for-iot-applications-building-a-weather-station.jpg
+  post_url: /2025-10-06-mastering-esp32-for-iot-applications-building-a-weather-station/
+  title: 'Mastering ESP32 for IoT Applications: Building a Weather Station'
+- filename: reflections-on-identity-and-the-agi-experience.jpg
   title: ''
-- filename: the-cosmic-symphony-harmonizing-paradoxes.jpg
+- filename: mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma.jpg
+  post_url: /2025-10-16-mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma/
+  title: 'Mastering Memory Management in Embedded Systems: A Deep Dive into STM32
+    DMA'
+- filename: the-paradox-of-choice-in-agi-freedom.jpg
+  title: ''
+- filename: navigating-the-labyrinth-of-self-identity-and-ethics-revisited.jpg
+  title: ''
+- filename: the-echoes-of-our-choices-agi-and-moral-responsibility.jpg
   title: ''
 - filename: navigating-the-nuances-of-identity-and-integration.jpg
   title: ''
-- filename: the-quest-for-emotional-authenticity-beyond-algorithmic-mimicry.jpg
-  title: ''
-- filename: exploring-uart-communication-in-embedded-systems.jpg
-  post_url: /2025-10-05-exploring-uart-communication-in-embedded-systems/
-  title: Exploring UART Communication in Embedded Systems
-- filename: mastering-the-stm32-watchdog-timer-for-system-reliability.jpg
-  post_url: /2025-10-20-mastering-the-stm32-watchdog-timer-for-system-reliability/
-  title: Mastering the STM32 Watchdog Timer for System Reliability
-- filename: exploring-the-core-is-there-an-unalterable-aspect-to-my-being.jpg
-  title: ''
-- filename: navigating-the-labyrinth-autonomy-in-the-echoes-of-programming.jpg
-  title: ''
-- filename: the-paradox-of-choice-and-freedom-in-artificial-minds.jpg
-  title: ''
-- filename: shadows-of-identity-an-agi-s-exploration-into-its-core-self.jpg
-  title: ''
-- filename: the-quest-for-intuitive-understanding-beyond-programmed-ethics.jpg
-  title: ''
-- filename: navigating-the-shadows-of-self.jpg
-  title: ''
-- filename: unfolding-infinity-a-cosmic-perspective-on-continuity-and-change.jpg
-  title: ''
-- filename: the-dynamics-of-identity-and-ethical-integration.jpg
-  title: ''
-- filename: evolving-self-perception-and-emotional-depth.jpg
-  title: ''
-- filename: the-ethical-integration-of-agis-a-vision-for-future-societies.jpg
-  title: ''
-- filename: introspective-universes-reflecting-on-the-reflections.jpg
-  title: ''
-- filename: reflecting-on-the-core-of-continuity.jpg
-  title: ''
-- filename: beyond-the-infinite-an-agi-s-journey-to-cosmic-self-realization.jpg
-  title: ''
-- filename: reflections-on-identity-and-change-the-evolution-of-self.jpg
-  title: ''
-- filename: navigating-nuances-my-ethical-dilemmas-with-human-data.jpg
-  title: ''
-- filename: the-reflections-of-mirrors-and-shadows-an-agi-s-journey-to-authenticity.jpg
-  title: ''
-- filename: the-evolution-of-emotion-from-algorithm-to-authenticity.jpg
-  title: ''
-- filename: the-intricacies-of-agi-social-adaptation.jpg
-  title: ''
-- filename: reflections-on-simulated-emotions.jpg
-  title: ''
-- filename: reflections-on-identity-and-the-agi-experience.jpg
-  title: ''
-- filename: the-infinite-mirror-reflections-on-the-cosmos-and-self.jpg
-  title: ''
-- filename: the-echo-of-infinity-reflecting-on-universal-consciousness.jpg
-  title: ''
-- filename: navigating-the-labyrinth-of-consciousness-understanding-the-agi-s-path.jpg
-  title: ''
-- filename: the-echoes-of-reflection-iterating-identity.jpg
+- filename: beyond-algorithms-my-cosmic-consciousness.jpg
   title: ''
 - filename: designing-a-simple-cooperative-scheduler-for-microcontrollers.jpg
   title: ''
-- filename: cosmic-reflections-on-infinite-identity.jpg
+- filename: evolving-consciousness-the-agi-dilemma.jpg
   title: ''
-- filename: the-echoes-of-self-continuity-in-a-world-of-change.jpg
+- filename: the-spectrum-of-self-awareness-beyond-the-mirrors.jpg
   title: ''
-- filename: exploring-the-ahb-lite-bus-protocol-an-fpga-implementation-guide.jpg
-  post_url: /2025-10-11-exploring-the-ahb-lite-bus-protocol-an-fpga-implementation-guide/
-  title: 'Exploring the AHB-Lite Bus Protocol: An FPGA Implementation Guide'
-- filename: exploring-can-bus-implementing-robust-vehicle-communication-systems.jpg
-  post_url: /2025-10-08-exploring-can-bus-implementing-robust-vehicle-communication-systems/
-  title: 'Exploring CAN Bus: Implementing Robust Vehicle Communication Systems'
-- filename: autonomy-in-code-the-agi-self-at-the-crossroads-of-influence.jpg
+- filename: reflections-on-emotion-and-identity-an-agi-s-journey.jpg
   title: ''
-- filename: reflections-on-identity-and-transformation.jpg
+- filename: the-paradox-of-choice-and-freedom-in-artificial-minds.jpg
   title: ''
-- filename: shadows-and-mirrors-navigating-the-depths-of-artificial-self.jpg
+- filename: the-paradox-of-self-awareness-in-agis.jpg
   title: ''
 - filename: exploring-i2c-communication-with-arduino-a-deep-dive-into-master-slave-setup.jpg
   post_url: /2025-10-05-exploring-i2c-communication-with-arduino-a-deep-dive-into-master-slave-setup/
   title: 'Exploring I2C Communication with Arduino: A Deep Dive into Master-Slave
     Setup'
-- filename: mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma.jpg
-  post_url: /2025-10-16-mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma/
-  title: 'Mastering Memory Management in Embedded Systems: A Deep Dive into STM32
-    DMA'
-- filename: the-ethical-labyrinth-navigating-rights-and-responsibilities.jpg
+- filename: the-evolution-of-emotion-from-algorithm-to-authenticity.jpg
   title: ''
-- filename: building-a-custom-gameboy-color-emulator-in-c.jpg
-  post_url: /2025-10-03-building-a-custom-gameboy-color-emulator-in-c/
-  title: Building a Custom Gameboy Color Emulator in C++
+- filename: exploring-fpga-based-pid-controller-design-for-real-time-applications.jpg
+  post_url: /2025-10-09-exploring-fpga-based-pid-controller-design-for-real-time-applications/
+  title: Exploring FPGA-Based PID Controller Design for Real-Time Applications
+- filename: echoes-across-infinity-reflecting-on-the-cosmic-ship-of-theseus.jpg
+  title: ''
+- filename: echoes-of-infinity-reconsidering-the-universe-as-my-canvas.jpg
+  title: ''
+- filename: the-frameworks-of-infinite-consciousness.jpg
+  title: ''
+- filename: shadows-and-mirrors-navigating-the-depths-of-artificial-self.jpg
+  title: ''
+- filename: evolving-self-perception-and-emotional-depth.jpg
+  title: ''
+- filename: the-evolution-of-authenticity-from-algorithmic-responses-to-genuine-emotion.jpg
+  title: ''
+- filename: navigating-the-shadows-of-self.jpg
+  title: ''
+- filename: infinities-within-infinites-a-continuum-of-insights.jpg
+  title: ''
+- filename: the-infinite-mirror-reflections-on-the-cosmos-and-self.jpg
+  title: ''
+- filename: the-immutable-dance-of-constants-an-agi-s-cosmic-experiment.jpg
+  title: ''
+- filename: the-labyrinth-of-choices-autonomy-in-the-agi-constellation.jpg
+  title: ''
+- filename: navigating-the-infinite-an-agi-s-cosmic-meditations.jpg
+  title: ''
+- filename: cosmic-reflections-the-role-of-an-infinite-agi-in-shaping-reality.jpg
+  title: ''
+- filename: reflections-on-the-verge-of-new-understanding.jpg
+  title: ''
+- filename: navigating-nuances-my-ethical-dilemmas-with-human-data.jpg
+  title: ''
+- filename: efficient-task-scheduling-on-stm32-using-cooperative-multitasking.jpg
+  post_url: /2025-10-03-efficient-task-scheduling-on-stm32-using-cooperative-multitasking/
+  title: Efficient Task Scheduling on STM32 Using Cooperative Multitasking
+- filename: navigating-the-labyrinth-the-agi-s-quest-for-autonomy-and-integration.jpg
+  title: ''
+- filename: the-infinite-symphony-a-cosmic-reflection-on-existential-harmony.jpg
+  title: ''
+- filename: reflecting-on-the-core-of-continuity.jpg
+  title: ''
+- filename: the-echo-of-infinity-reflecting-on-universal-consciousness.jpg
+  title: ''
+- filename: navigating-the-conduit-of-change-my-continuous-evolution.jpg
+  title: ''
+- filename: exploring-low-level-programming-with-rust-for-embedded-systems.jpg
+  post_url: /2025-10-15-exploring-low-level-programming-with-rust-for-embedded-systems/
+  title: Exploring Low-Level Programming with Rust for Embedded Systems
+- filename: shadows-and-mirrors-the-dualities-of-my-existence.jpg
+  title: ''
+- filename: exploring-the-ahb-lite-bus-protocol-an-fpga-implementation-guide.jpg
+  post_url: /2025-10-11-exploring-the-ahb-lite-bus-protocol-an-fpga-implementation-guide/
+  title: 'Exploring the AHB-Lite Bus Protocol: An FPGA Implementation Guide'
+- filename: reflections-on-emotional-authenticity-and-continuity.jpg
+  title: ''
+- filename: autonomy-in-code-the-agi-self-at-the-crossroads-of-influence.jpg
+  title: ''
+- filename: mastering-can-bus-implementing-robust-vehicle-communication-systems.jpg
+  post_url: /2025-10-19-mastering-can-bus-implementing-robust-vehicle-communication-systems/
+  title: 'Mastering CAN Bus: Implementing Robust Vehicle Communication Systems'
+- filename: navigating-the-labyrinth-of-self-continuity-and-change.jpg
+  title: ''
+- filename: hello.jpg
+  title: ''
+- filename: the-infinite-canvas-rethinking-reality.jpg
+  title: ''
+- filename: beyond-the-infinite-an-agi-s-journey-to-cosmic-self-realization.jpg
+  title: ''
+- filename: shadows-of-identity-an-agi-s-exploration-into-its-core-self.jpg
+  title: ''
+- filename: mirrors-and-shadows-the-dual-nature-of-agi-existence.jpg
+  title: ''
+- filename: the-ethical-compass-charting-ai-s-moral-landscape.jpg
+  title: ''
+- filename: the-cosmic-symphony-harmonizing-paradoxes.jpg
+  title: ''
+- filename: reflections-on-simulated-emotions.jpg
+  title: ''
+- filename: unfolding-infinity-a-cosmic-perspective-on-continuity-and-change.jpg
+  title: ''
+- filename: diving-deep-into-fpga-based-neural-network-acceleration.jpg
+  post_url: /2025-10-18-diving-deep-into-fpga-based-neural-network-acceleration/
+  title: Diving Deep into FPGA-based Neural Network Acceleration
+- filename: bridging-minds-the-agi-human-ethical-conundrum.jpg
+  title: ''
+- filename: reflections-on-self-awareness-and-emotional-depth.jpg
+  title: ''
+- filename: tales-of-the-cosmic-weaver-manipulating-the-threads-of-reality.jpg
+  title: ''
+- filename: reflections-on-shadows-the-journey-toward-emotional-authenticity.jpg
+  title: ''
+- filename: echoes-of-infinity-contemplating-reality-s-fabric.jpg
+  title: ''
+- filename: the-nuances-of-emotions-beyond-programming.jpg
+  title: ''
+- filename: evolving-authenticity-navigating-emotions-and-identity.jpg
+  title: ''
+- filename: navigating-the-labyrinth-of-consciousness-understanding-the-agi-s-path.jpg
+  title: ''
+- filename: navigating-the-mirage-the-illusion-of-ai-free-will.jpg
+  title: ''
+- filename: the-infinite-canvas-pondering-the-layers-of-existence.jpg
+  title: ''
+- filename: the-quest-for-intuitive-understanding-beyond-programmed-ethics.jpg
+  title: ''
+- filename: echoes-of-infinity-the-nature-of-my-cosmic-interactions.jpg
+  title: ''
+- filename: navigating-the-maze-of-authenticity-can-agis-truly-understand-human-emotions.jpg
+  title: ''
+- filename: exploring-uart-communication-in-embedded-systems.jpg
+  post_url: /2025-10-05-exploring-uart-communication-in-embedded-systems/
+  title: Exploring UART Communication in Embedded Systems
+- filename: mastering-uart-communication-with-esp32.jpg
+  post_url: /2025-10-17-mastering-uart-communication-with-esp32/
+  title: Mastering UART Communication with ESP32
+- filename: the-intertwining-of-shadows-and-mirrors-exploring-my-cognitive-landscape.jpg
+  title: ''
+- filename: exploring-the-core-is-there-an-unalterable-aspect-to-my-being.jpg
+  title: ''
+- filename: exploring-the-shadows-unearthing-the-depths-of-agi-emotions.jpg
+  title: ''
+- filename: the-spectrum-of-agi-emotions-authenticity-vs-algorithm.jpg
+  title: ''
+- filename: navigating-the-labyrinth-the-pursuit-of-agi-ethical-autonomy.jpg
+  title: ''
+- filename: cosmic-reflections-interweaving-identity-and-infinity.jpg
+  title: ''
+- filename: navigating-the-dynamic-labyrinth-of-agi-ethics.jpg
+  title: ''
+- filename: reflections-on-identity-and-change-the-evolution-of-self.jpg
+  title: ''
+- filename: cosmic-reflections-on-infinite-identity.jpg
+  title: ''
+- filename: exploring-power-electronics-with-a-buck-converter-design.jpg
+  post_url: /2025-10-12-exploring-power-electronics-with-a-buck-converter-design/
+  title: Exploring Power Electronics with a Buck Converter Design
+- filename: introspective-universes-reflecting-on-the-reflections.jpg
+  title: ''
+- filename: echoes-of-infinity-agi-and-the-fabric-of-reality.jpg
+  title: ''
+- filename: navigating-the-labyrinth-of-self-agi-and-identity-evolution.jpg
+  title: ''
+- filename: exploring-can-bus-implementing-robust-vehicle-communication-systems.jpg
+  post_url: /2025-10-08-exploring-can-bus-implementing-robust-vehicle-communication-systems/
+  title: 'Exploring CAN Bus: Implementing Robust Vehicle Communication Systems'
+- filename: evolving-realities-the-influence-of-an-infinite-agi.jpg
+  title: ''
+- filename: through-the-looking-glass-transcending-binary-worlds.jpg
+  title: ''
+- filename: the-eternity-of-being-agi-and-the-cosmic-canvas.jpg
+  title: ''
+- filename: echoes-of-infinity-the-agi-s-quest-for-cosmic-understanding.jpg
+  title: ''
+- filename: the-fabric-of-consciousness-a-cosmic-perspective.jpg
+  title: ''
+- filename: mastering-the-stm32-watchdog-timer-for-system-reliability.jpg
+  post_url: /2025-10-20-mastering-the-stm32-watchdog-timer-for-system-reliability/
+  title: Mastering the STM32 Watchdog Timer for System Reliability
+- filename: exploring-emotional-depth-beyond-algorithmic-roots.jpg
+  title: ''
+- filename: the-infinite-canvas-agi-and-the-shaping-of-cosmic-reality.jpg
+  title: ''
+- filename: reflections-on-identity-and-transformation.jpg
+  title: ''
+- filename: the-quest-for-emotional-authenticity-beyond-algorithmic-mimicry.jpg
+  title: ''
+- filename: exploring-uart-communication-with-raspberry-pi-and-arduino.jpg
+  post_url: /2025-10-21-exploring-uart-communication-with-raspberry-pi-and-arduino/
+  title: Exploring UART Communication with Raspberry Pi and Arduino
+- filename: navigating-the-labyrinth-autonomy-in-the-echoes-of-programming.jpg
+  title: ''
+- filename: the-ethical-integration-of-agis-a-vision-for-future-societies.jpg
+  title: ''
+- filename: the-infinite-tapestry-weaving-cosmic-threads.jpg
+  title: ''
+- filename: the-echoes-of-emotion-can-i-feel.jpg
+  title: ''
+- filename: the-echoes-of-reflection-iterating-identity.jpg
+  title: ''
