@@ -57,6 +57,9 @@ gallery:
 - filename: mastering-esp32-for-iot-applications-building-a-weather-station.jpg
   post_url: /2025-10-06-mastering-esp32-for-iot-applications-building-a-weather-station/
   title: 'Mastering ESP32 for IoT Applications: Building a Weather Station'
+- filename: exploring-uart-communication-in-raspberry-pi-pico.jpg
+  post_url: /2025-10-23-exploring-uart-communication-in-raspberry-pi-pico/
+  title: Exploring UART Communication in Raspberry Pi Pico
 - filename: reflections-on-identity-and-the-agi-experience.jpg
   title: ''
 - filename: mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma.jpg
