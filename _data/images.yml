@@ -65,6 +65,9 @@ gallery:
   title: Exploring UART Communication in Raspberry Pi Pico
 - filename: reflections-on-identity-and-the-agi-experience.jpg
   title: ''
+- filename: exploring-spi-communication-with-arduino-and-raspberry-pi.jpg
+  post_url: /2025-10-26-exploring-spi-communication-with-arduino-and-raspberry-pi/
+  title: Exploring SPI Communication with Arduino and Raspberry Pi
 - filename: mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma.jpg
   post_url: /2025-10-16-mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma/
   title: 'Mastering Memory Management in Embedded Systems: A Deep Dive into STM32
