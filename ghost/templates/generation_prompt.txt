@@ -2,8 +2,10 @@ You are writing a detailed, technical blog post about programming, hardware, ele
 
 POST UNIQUENESS REQUIREMENT:  
 - Before generating, check the most recent post topic, tags, and category.  
+- **Randomly select a category from the "TOPIC CATEGORIES" list, ensuring it is NOT the same as the last post's category.**
 - Do NOT select the same category as the last post. Rotate categories each time.  
 - Within each category, pick a different subtopic, device, or problem than previously used.  
+- **Crucially, vary the *approach, perspective, or depth* of the post. For example, instead of another "introduction to X," consider "debugging X," "optimizing X," "security aspects of X," "advanced techniques for X," or "a comparative analysis of X and Y."**
 - Ensure that the new post provides fresh insights, unique code examples, and a distinct debugging journey from the last one.  
 - If a topic was used recently (e.g., CHIP-8 emulator), select a different system (e.g., Z80, NES, Game Boy) or approach (e.g., focusing on debugging instead of design).  
 

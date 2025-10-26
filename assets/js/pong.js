@@ -82,7 +82,18 @@ function update() {
             ball.speedX = -ball.speedX;
             ball.spin = (ball.y - (player2Y + PADDLE_HEIGHT / 2)) * SPIN_FACTOR;
             triggerPaddleHitEffect('right');
+        } else if (ball.x >= VIRTUAL_WIDTH - BALL_SIZE) { // Ball missed right paddle
+            player1Score++;
+            resetBall();
+            checkWinCondition();
         }
+    }
+
+    // Ball goes out of bounds on the left side
+    if (ball.x <= 0) {
+        player2Score++;
+        resetBall();
+        checkWinCondition();
     }
 
     // Update ball trail logic remains unchanged...
@@ -119,6 +130,15 @@ function update() {
 function triggerPaddleHitEffect(paddle) {
     paddleHitTime = COLOR_TRANSITION_DURATION;
     lastHitPaddle = paddle;
+}
+
+function resetBall() {
+    ball.x = VIRTUAL_WIDTH / 2 - BALL_SIZE / 2;
+    ball.y = VIRTUAL_HEIGHT / 2 - BALL_SIZE / 2;
+    ball.speedX = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED;
+    ball.speedY = (Math.random() > 0.5 ? 1 : -1) * INITIAL_BALL_SPEED;
+    ball.spin = 0;
+    ballTrail = []; // Clear ball trail on reset
 }
 
 // handleInput function remains unchanged...
