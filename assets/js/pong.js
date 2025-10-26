@@ -16,6 +16,8 @@ const TRAIL_LENGTH = 10; // Length of the ball trail
 const SCORE_POP_DURATION = 300; // Duration of score pop animation in milliseconds
 const SPIN_FACTOR = 0.3; // Factor for ball spin effect
 const COLOR_TRANSITION_DURATION = 500; // Duration of color transition in milliseconds
+const SCREEN_SHAKE_DURATION = 20; // Duration of screen shake effect in frames
+const SCREEN_SHAKE_INTENSITY = 5; // Intensity of the screen shake effect
 
 // Game state
 let canvas, ctx;
@@ -36,6 +38,7 @@ let backgroundOffset = 0;
 let scorePopTime = 0;
 let paddleHitTime = 0;
 let lastHitPaddle = null;
+let screenShakeTime = 0;
 
 // Particle effect class remains unchanged...
 
@@ -106,6 +109,11 @@ function update() {
             lastHitPaddle = null;
         }
     }
+
+    // Screen shake timer update
+    if (screenShakeTime > 0) {
+        screenShakeTime--;
+    }
 }
 
 function triggerPaddleHitEffect(paddle) {
@@ -115,13 +123,14 @@ function triggerPaddleHitEffect(paddle) {
 
 // handleInput function remains unchanged...
 
-// checkWinCondition function updated to trigger score pop
+// checkWinCondition function updated to trigger score pop and screen shake
 function checkWinCondition() {
     if (player1Score >= WINNING_SCORE || player2Score >= WINNING_SCORE) {
         showWinScreen = true;
         winner = player1Score >= WINNING_SCORE ? 'Player 1' : 'Player 2';
     } else {
         scorePopTime = SCORE_POP_DURATION; // Trigger score pop animation
+        screenShakeTime = SCREEN_SHAKE_DURATION; // Trigger screen shake effect
     }
 }
 
@@ -129,6 +138,13 @@ function checkWinCondition() {
 
 // Rendering
 function draw() {
+    // Apply screen shake effect
+    if (screenShakeTime > 0) {
+        const shakeX = (Math.random() * 2 - 1) * SCREEN_SHAKE_INTENSITY;
+        const shakeY = (Math.random() * 2 - 1) * SCREEN_SHAKE_INTENSITY;
+        ctx.translate(shakeX, shakeY);
+    }
+
     // Clear screen with animated background
     const gradient = ctx.createLinearGradient(0, backgroundOffset, 0, VIRTUAL_HEIGHT + backgroundOffset);
     gradient.addColorStop(0, '#111');
