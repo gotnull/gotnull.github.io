@@ -1,0 +1,26 @@
+TASK BRIEF (deterministic seed: {seed} | date: {dateIso})
+Create the Agency Atlas daily mission JSON adhering to the classic schema. Requirements:
+
+STRUCTURE
+- difficulty is "extreme". estimated_playtime_minutes between 45-70.
+- Provide 3-5 cities. Each city has city_name, country, order_in_chase (1-indexed), and exactly three locations with fields: name, npc_dialogue, clue_type, clue_value, point_value (integer between 45-120).
+- suspect_database contains 4-6 suspects with the canonical fields (name, gender, hair_color, hobby, vehicle, favorite_food) and you may add background/motive/behavioral_pattern fields for flavor.
+- suspect_traits is a map containing the definitive traits (gender, hair_color, hobby, vehicle, favorite_food) of the correct suspect.
+- Include final_city, arrest_location, correct_suspect, rewards {experience_points, credits_earned, badge_name, unlocked_regions[]}.
+- poster_image_url and banner_image_url may be empty strings if no artwork is needed.
+
+DESIGN
+- Embed 3-5 subtle contradictions, red herrings, or mirrored details. These must be internally coherent yet misleading.
+- Hide decisive evidence inside linguistic nuance: metaphor, allusion, idiom, cultural reference, temporal hint, or behavioral micro-detail. No explicit "the answer is..." phrasing.
+- At least three suspects must appear equally plausible when skimming. Only one suspect may satisfy all encoded clues and suspect_traits simultaneously.
+- Geography, timelines, and cultural references must be accurate. Mentioned routes/travel need to make sense.
+- Ensure narrative text, npc_dialogue, and clue_value content reward deep inference and cross-domain reasoning (psychology, semantics, culture, geography).
+- Absolutely no trivia-style direct facts—every hint must require interpretation.
+
+ANALYZER (INTERNAL ONLY)
+- internal_analyzer must contain: reasoning_chain (list of concise steps showing why the correct suspect is unique), solvability_score (0–1), validation {format:[], facts_checked:[], errors:[]}, and difficulty_analysis with ambiguity_score, plausibility_overlap, solution_uniqueness (0–1 floats).
+- Confirm determinism by referencing the seed/date inside internal_analyzer.
+
+OUTPUT RULES
+- Output strict JSON only. No markdown, comments, or explanatory prose.
+- Deterministic: the same seed/date combination always yields identical output.

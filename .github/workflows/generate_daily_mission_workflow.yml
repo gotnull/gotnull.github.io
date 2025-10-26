@@ -1,0 +1,44 @@
+name: Generate Daily Mission
+
+on:
+  schedule:
+    - cron: "30 02 * * *"  # 02:30 UTC daily
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Optional UTC date (YYYY-MM-DD) override"
+        required: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install openai==1.51.0
+
+      - name: Generate daily mission
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          INPUT_DATE: ${{ github.event.inputs.date }}
+        run: |
+          if [ -n "$INPUT_DATE" ]; then
+            python scripts/generate_daily_mission.py --date "$INPUT_DATE"
+          else
+            python scripts/generate_daily_mission.py
+          fi
+
+      - name: Upload mission artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-mission
+          path: assets/daily_mission.json
