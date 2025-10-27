@@ -432,38 +432,21 @@ def main() -> None:
 
     # Define Thumbnail Image Prompt
     thumbnail_prompt_text = (
-        f"You are a famous pixel artist specializing in retro 16-bit game art. You have been asked to create an original image that appeals to an adult based on the following criteria:
-
-"
-        f"Main Theme: A retro 16-bit pixel art scene depicting a key landmark or atmospheric location from {mission_region}, related to the mission '{mission_title}'.
-"
-        f"It should be colorful, realistic (within pixel art style), minimalistic, and somewhat of a challenge to replicate.
-"
-        f"It should only contain the \"Main Theme\" (the scene) and no other elements in the foreground, background or surrounding space that are not part of the scene itself.
-"
-        f"It should not divide the \"Main Theme\" into separate parts of the image nor imply any variations of it.
-"
-        f"It should not contain any text, labels, borders, measurements nor design elements of any kind.
-"
-        f"The image should be suitable for digital printing without any instructional or guiding elements.
-"
-        f"The \"Main Theme\" (the scene) should consume the entire 1024x1024 space, with no margins.
-"
-        f"Style requirements:
-"
-        f"- Classic 16-bit pixel art aesthetic (like SNES/Sega Genesis era)
-"
-        f"- Vibrant, colorful palette with clean pixels
-"
-        f"- Include a subtle sense of mystery or investigation
-"
-        f"- Agency Atlas detective game visual style
-"
-        f"- Landscape orientation
-"
-        f"- Family-friendly and educational tone
-
-"
+        f"You are a famous pixel artist specializing in retro 16-bit game art. You have been asked to create an original image that appeals to an adult based on the following criteria:\n\n"
+        f"Main Theme: A retro 16-bit pixel art scene depicting a key landmark or atmospheric location from {mission_region}, related to the mission '{mission_title}'.\n"
+        f"It should be colorful, realistic (within pixel art style), minimalistic, and somewhat of a challenge to replicate.\n"
+        f"It should only contain the \"Main Theme\" (the scene) and no other elements in the foreground, background or surrounding space that are not part of the scene itself.\n"
+        f"It should not divide the \"Main Theme\" into separate parts of the image nor imply any variations of it.\n"
+        f"It should not contain any text, labels, borders, measurements nor design elements of any kind.\n"
+        f"The image should be suitable for digital printing without any instructional or guiding elements.\n"
+        f"The \"Main Theme\" (the scene) should consume the entire 1024x1024 space, with no margins.\n"
+        f"Style requirements:\n"
+        f"- Classic 16-bit pixel art aesthetic (like SNES/Sega Genesis era)\n"
+        f"- Vibrant, colorful palette with clean pixels\n"
+        f"- Include a subtle sense of mystery or investigation\n"
+        f"- Agency Atlas detective game visual style\n"
+        f"- Landscape orientation\n"
+        f"- Family-friendly and educational tone\n\n"
         f"Focus on making it look like authentic retro game art from the 1990s."
     )
 
