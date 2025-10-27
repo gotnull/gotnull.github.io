@@ -1,5 +1,9 @@
 name: Beautiful Jekyll CI
-on: [push, pull_request]
+on:
+  push:
+    paths-ignore:
+      - 'assets/daily_mission/**'
+  pull_request:
 jobs:
   build:
     name: Build Jekyll

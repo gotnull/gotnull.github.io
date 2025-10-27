@@ -117,7 +117,7 @@ def generate_dalle_image(
     print(f"Generating DALL-E image with prompt: {prompt_text[:100]}... (size: {size})")
     try:
         response = client.images.generate(
-            model="gpt-4o",
+            model="dall-e-3",
             prompt=prompt_text,
             size=size,
             quality=quality,
