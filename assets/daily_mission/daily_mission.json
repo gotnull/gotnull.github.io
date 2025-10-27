@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Old Town Square",
+  "arrest_location": "Louvre Museum",
   "banner_image_url": "/assets/daily_mission/banner_20251027.png",
   "cities": [
     {
-      "city_name": "Prague",
-      "country": "Czech Republic",
+      "city_name": "Paris",
+      "country": "France",
       "locations": [
         {
           "clue_type": "metaphor",
-          "clue_value": "The past is a shadow that never fades.",
-          "name": "Old Town Square",
-          "npc_dialogue": "They say the clock knows more than it tells. Time is a fickle friend, isn't it?",
-          "point_value": 90
+          "clue_value": "The art of deception is often framed in beauty.",
+          "name": "Louvre Museum",
+          "npc_dialogue": "They say the art speaks in whispers, but only the keenest ears can hear the truth.",
+          "point_value": 100
         },
         {
           "clue_type": "cultural reference",
-          "clue_value": "The stones remember what the water forgets.",
-          "name": "Charles Bridge",
-          "npc_dialogue": "Crossing this bridge is like crossing into another world. Beware the echoes of the past.",
-          "point_value": 75
+          "clue_value": "A brushstroke can hide a thousand secrets.",
+          "name": "Montmartre",
+          "npc_dialogue": "The artists here paint with colors of the soul, but beware of the shadows lurking behind the canvas.",
+          "point_value": 80
         },
         {
           "clue_type": "idiom",
-          "clue_value": "All that glitters is not gold.",
-          "name": "Prague Castle",
-          "npc_dialogue": "The crown jewels are not the only treasures hidden here. Look beyond the glimmer.",
+          "clue_value": "Don't let the current sweep you away from the truth.",
+          "name": "Seine River",
+          "npc_dialogue": "The river flows with stories untold, but some are better left submerged.",
           "point_value": 60
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Budapest",
-      "country": "Hungary",
+      "city_name": "Berlin",
+      "country": "Germany",
       "locations": [
         {
-          "clue_type": "behavioral micro-detail",
-          "clue_value": "The view is clearer when you look through the right lens.",
-          "name": "Fisherman's Bastion",
-          "npc_dialogue": "From here, you can see the whole city, but can you see the truth?",
-          "point_value": 80
+          "clue_type": "historical reference",
+          "clue_value": "What was once a barrier can become a bridge.",
+          "name": "Brandenburg Gate",
+          "npc_dialogue": "History stands tall here, but the past can be a deceptive guide.",
+          "point_value": 90
         },
         {
-          "clue_type": "allusion",
-          "clue_value": "The past is a tapestry woven with lies.",
-          "name": "Buda Castle",
-          "npc_dialogue": "Legends are often rooted in reality, but reality can be a slippery slope.",
+          "clue_type": "behavioral pattern",
+          "clue_value": "The eyes of the past watch every move.",
+          "name": "Checkpoint Charlie",
+          "npc_dialogue": "Crossing lines can lead to unexpected encounters; trust is a rare commodity.",
           "point_value": 70
         },
         {
-          "clue_type": "temporal hint",
-          "clue_value": "Time flows like the Danube, but not all currents are visible.",
-          "name": "Chain Bridge",
-          "npc_dialogue": "This bridge connects more than just two banks; it connects stories untold.",
-          "point_value": 65
+          "clue_type": "metaphor",
+          "clue_value": "Every mural has a story, but not all are meant to be told.",
+          "name": "East Side Gallery",
+          "npc_dialogue": "Art can be a voice for the voiceless, but it can also mask the truth.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Vienna",
-      "country": "Austria",
+      "city_name": "Rome",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "semantic nuance",
-          "clue_value": "The higher you climb, the deeper the shadows.",
-          "name": "St. Stephen's Cathedral",
-          "npc_dialogue": "The spire reaches for the heavens, but the truth lies beneath the surface.",
-          "point_value": 85
+          "clue_type": "cultural reference",
+          "clue_value": "Not all battles are fought in the open.",
+          "name": "Colosseum",
+          "npc_dialogue": "The arena of history holds many tales, but beware the echoes of the past.",
+          "point_value": 110
         },
         {
           "clue_type": "metaphor",
-          "clue_value": "A rose by any other name still has thorns.",
-          "name": "Belvedere Palace",
-          "npc_dialogue": "Beauty can be deceiving; the gardens hide secrets of their own.",
-          "point_value": 75
+          "clue_value": "A halo can hide a devil's grin.",
+          "name": "Vatican City",
+          "npc_dialogue": "Divine secrets are often cloaked in shadows; the faithful may not always be true.",
+          "point_value": 120
         },
         {
           "clue_type": "idiom",
-          "clue_value": "Silence is the loudest scream.",
-          "name": "Vienna State Opera",
-          "npc_dialogue": "The music may be sweet, but the silence speaks volumes.",
-          "point_value": 70
+          "clue_value": "Still waters run deep.",
+          "name": "Piazza Navona",
+          "npc_dialogue": "The fountains flow with inspiration, but some waters run deep with deceit.",
+          "point_value": 75
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Marek Novak",
-  "description": "In the heart of Prague, a series of cryptic messages have surfaced, hinting at a clandestine operation that intertwines the past with the present. As you delve deeper, the lines between ally and adversary blur, revealing a web of deceit that challenges your perception of truth. Can you decipher the whispers before they consume you?",
+  "correct_suspect": "Julien Moreau",
+  "description": "In the heart of Paris, a series of cryptic messages have surfaced, hinting at a clandestine operation involving a stolen artifact. As you delve deeper, the lines between ally and adversary blur, revealing a web of deceit that stretches across the continent. Can you decipher the clues hidden in the shadows before it's too late?",
   "difficulty": "extreme",
   "estimated_playtime_minutes": 60,
-  "final_city": "Prague",
-  "generated_at_utc": "2025-10-27T00:42:08Z",
+  "final_city": "Paris",
+  "generated_at_utc": "2025-10-27T05:07:00Z",
   "id": "daily_20251027",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.8,
+      "ambiguity_score": 0.8,
+      "plausibility_overlap": 0.9,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identified linguistic clues emphasizing shadows and hidden truths.",
-      "Connected Marek's background as a journalist to the thematic elements of the mission.",
-      "Noted the metaphorical language used by NPCs that aligns with Marek's behavior.",
-      "Eliminated other suspects based on inconsistencies with the clues."
+      "Identify the thematic elements of art and deception.",
+      "Analyze NPC dialogues for metaphors and cultural references.",
+      "Connect suspect hobbies to the clues provided.",
+      "Determine which suspect's traits align with the hidden meanings in the clues."
     ],
     "solvability_score": 1,
     "validation": {
@@ -115,78 +115,67 @@
   },
   "mission_id": "daily_20251027",
   "poster_image_url": "",
-  "region": "Eastern Europe",
+  "region": "Western Europe",
   "rewards": {
-    "badge_name": "Shadow Seeker",
-    "credits_earned": 200,
-    "experience_points": 150,
+    "badge_name": "Master of Deception",
+    "credits_earned": 300,
+    "experience_points": 500,
     "unlocked_regions": []
   },
   "seed": "12a5a511e5088fb7439a768ff3f413e8710f3d8684367a51fc103046d2f2a080",
-  "solution": "The clues reveal that Marek Novak's obsession with capturing hidden truths aligns with the metaphorical language used throughout the mission, particularly the emphasis on shadows and the past.",
+  "solution": "Connect the metaphor of art as deception with Julien's street art hobby, revealing his deeper understanding of the hidden truths in the art world.",
   "suspect_database": [
     {
-      "background": "A local journalist with a penchant for uncovering hidden truths.",
-      "behavioral_pattern": "Often seen lurking in shadows, capturing moments.",
-      "favorite_food": "goulash",
+      "background": "A local artist known for his provocative murals, Julien has a penchant for the dramatic.",
+      "behavioral_pattern": "Often speaks in riddles, making it hard to discern his true intentions.",
+      "favorite_food": "croissant",
       "gender": "male",
       "hair_color": "brown",
-      "hobby": "photography",
-      "motive": "Desire to expose corruption.",
-      "name": "Marek Novak",
-      "vehicle": "motorcycle"
+      "hobby": "street art",
+      "motive": "Desire to expose the truth behind the art world.",
+      "name": "Julien Moreau",
+      "vehicle": "scooter"
     },
     {
-      "background": "A chef with ties to the underground culinary scene.",
-      "behavioral_pattern": "Frequently uses metaphors in conversation.",
-      "favorite_food": "strudel",
+      "background": "A photographer who captures the essence of urban life, Clara has a keen eye for detail.",
+      "behavioral_pattern": "Tends to focus on the surface, missing deeper meanings.",
+      "favorite_food": "pasta",
       "gender": "female",
       "hair_color": "blonde",
-      "hobby": "cooking",
-      "motive": "Protecting her family's legacy.",
-      "name": "Elena Varga",
+      "hobby": "photography",
+      "motive": "To document the hidden stories of the city.",
+      "name": "Clara Schmidt",
       "vehicle": "bicycle"
     },
     {
-      "background": "A musician with a mysterious past.",
-      "behavioral_pattern": "Often speaks in riddles.",
-      "favorite_food": "schnitzel",
+      "background": "A chef with a flair for Italian cuisine, Marco is known for his fiery temper.",
+      "behavioral_pattern": "Often uses food metaphors to express his feelings.",
+      "favorite_food": "pizza",
       "gender": "male",
       "hair_color": "black",
-      "hobby": "music",
-      "motive": "Seeking revenge for a betrayal.",
-      "name": "Lukas Schmidt",
-      "vehicle": "car"
+      "hobby": "cooking",
+      "motive": "To reclaim his family's lost culinary heritage.",
+      "name": "Marco Rossi",
+      "vehicle": "motorcycle"
     },
     {
-      "background": "An artist known for her abstract interpretations of reality.",
-      "behavioral_pattern": "Uses vivid imagery in her speech.",
-      "favorite_food": "borscht",
+      "background": "A dancer who embodies the spirit of the city, Sofia is both graceful and cunning.",
+      "behavioral_pattern": "Her movements are often unpredictable, reflecting her complex nature.",
+      "favorite_food": "gelato",
       "gender": "female",
       "hair_color": "red",
-      "hobby": "painting",
-      "motive": "Desire to create a masterpiece.",
-      "name": "Anya Petrov",
-      "vehicle": "none"
-    },
-    {
-      "background": "A retired historian with a wealth of knowledge.",
-      "behavioral_pattern": "Often references historical events.",
-      "favorite_food": "pierogi",
-      "gender": "male",
-      "hair_color": "gray",
-      "hobby": "reading",
-      "motive": "To preserve history at all costs.",
-      "name": "Tomasz Kaczmarek",
-      "vehicle": "scooter"
+      "hobby": "dance",
+      "motive": "To find freedom through art.",
+      "name": "Sofia Bellini",
+      "vehicle": "convertible"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "goulash",
+    "favorite_food": "croissant",
     "gender": "male",
     "hair_color": "brown",
-    "hobby": "photography",
-    "vehicle": "motorcycle"
+    "hobby": "street art",
+    "vehicle": "scooter"
   },
   "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251027.png",
   "title": "The Whispering Shadows"
