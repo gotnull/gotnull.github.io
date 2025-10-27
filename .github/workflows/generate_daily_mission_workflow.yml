@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install openai
+          pip install openai requests
 
       - name: Generate daily mission
         env:
