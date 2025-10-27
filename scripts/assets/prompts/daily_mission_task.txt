@@ -17,6 +17,7 @@ DESIGN
 - The mission title must be unique and varied for each generated mission, reflecting the specific details and region of the mission, and should not repeat previous titles.
 - Suspect hobbies should be specific and contextually relevant to the mission's region, theme, or narrative, rather than generic. They should offer subtle clues or red herrings that require cultural or geographical understanding.
 - Ensure the mission's narrative, NPC dialogue, and clues clearly, yet subtly, guide the player to understand how suspect traits (gender, hair_color, hobby, vehicle, favorite_food) are relevant to solving the case. The connection should be discoverable through inference, not explicit statements.
+- If the mission involves multiple cities, ensure the narrative focus and clue distribution are reasonably balanced across them, rather than heavily concentrating on a single city in the description or primary narrative.
 - Embed 3-5 subtle contradictions, red herrings, or mirrored details. These must be internally coherent yet misleading.
 - Hide decisive evidence inside linguistic nuance: metaphor, allusion, idiom, cultural reference, temporal hint, or behavioral micro-detail. No explicit "the answer is..." phrasing.
 - At least three suspects must appear equally plausible when skimming. Only one suspect may satisfy all encoded clues and suspect_traits simultaneously.

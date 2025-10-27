@@ -432,41 +432,59 @@ def main() -> None:
 
     # Define Thumbnail Image Prompt
     thumbnail_prompt_text = (
-        f"Create a retro 16-bit pixel art style image for a geography investigation game mission.\n\n"
-        f"Mission: {mission_title}\n"
-        f"Region: {mission_region}\n"
-        f"Synopsis: {mission_synopsis}\n\n"
-        f"Style requirements:\n"
-        f"- Classic 16-bit pixel art aesthetic (like SNES/Sega Genesis era)\n"
-        f"- Vibrant, colorful palette with clean pixels\n"
-        f"- Show an iconic landmark or scene from {mission_region}\n"
-        f"- Include a subtle sense of mystery or investigation\n"
-        f"- Agency Atlas detective game visual style\n"
-        f"- Landscape orientation\n"
-        f"- Render only the environment/landmark — absolutely no characters, signage, UI overlays, letters, numbers, logos, or text-like marks anywhere in the art\n"
-        f"- No text or words in the image under any circumstance\n"
-        f"- IMPORTANT: Absolutely no text, words, letters, numbers, or symbols of any kind in the image.\n"
-        f"- Family-friendly and educational tone\n\n"
+        f"You are a famous pixel artist specializing in retro 16-bit game art. You have been asked to create an original image that appeals to an adult based on the following criteria:
+
+"
+        f"Main Theme: A retro 16-bit pixel art scene depicting a key landmark or atmospheric location from {mission_region}, related to the mission '{mission_title}'.
+"
+        f"It should be colorful, realistic (within pixel art style), minimalistic, and somewhat of a challenge to replicate.
+"
+        f"It should only contain the \"Main Theme\" (the scene) and no other elements in the foreground, background or surrounding space that are not part of the scene itself.
+"
+        f"It should not divide the \"Main Theme\" into separate parts of the image nor imply any variations of it.
+"
+        f"It should not contain any text, labels, borders, measurements nor design elements of any kind.
+"
+        f"The image should be suitable for digital printing without any instructional or guiding elements.
+"
+        f"The \"Main Theme\" (the scene) should consume the entire 1024x1024 space, with no margins.
+"
+        f"Style requirements:
+"
+        f"- Classic 16-bit pixel art aesthetic (like SNES/Sega Genesis era)
+"
+        f"- Vibrant, colorful palette with clean pixels
+"
+        f"- Include a subtle sense of mystery or investigation
+"
+        f"- Agency Atlas detective game visual style
+"
+        f"- Landscape orientation
+"
+        f"- Family-friendly and educational tone
+
+"
         f"Focus on making it look like authentic retro game art from the 1990s."
     )
 
     # Define Banner Image Prompt
+    # Define Banner Image Prompt
     banner_prompt_text = (
-        f"Create a wide, retro 16-bit pixel art banner for a geography investigation game.\n\n"
-        f"Mission: {mission_title}\n"
-        f"Region: {mission_region}\n\n"
+        f"You are a famous pixel artist specializing in retro 16-bit game art. You have been asked to create an original image that appeals to an adult based on the following criteria:\n\n"
+        f"Main Theme: A wide, retro 16-bit pixel art panoramic view of {mission_region}, related to the mission '{mission_title}'.\n"
+        f"It should be colorful, realistic (within pixel art style), minimalistic, and somewhat of a challenge to replicate.\n"
+        f"It should only contain the \"Main Theme\" (the panoramic scene) and no other elements in the foreground, background or surrounding space that are not part of the scene itself.\n"
+        f"It should not divide the \"Main Theme\" into separate parts of the image nor imply any variations of it.\n"
+        f"It should not contain any text, labels, borders, measurements nor design elements of any kind.\n"
+        f"The image should be suitable for digital printing without any instructional or guiding elements.\n"
+        f"The \"Main Theme\" (the panoramic scene) should consume the entire 1792x1024 space, with no margins.\n"
         f"Style requirements:\n"
         f"- Classic 16-bit pixel art (SNES/Genesis era)\n"
-        f"- Wide panoramic view of {mission_region}\n"
         f"- Vibrant retro game colors\n"
         f"- Atmospheric and mysterious mood\n"
         f"- Agency Atlas detective game aesthetic\n"
         f"- Render only the scenery — absolutely no characters, signage, UI overlays, letters, numbers, logos, or any text-like marks\n"
-        f"- No text or words in the image under any circumstance\n"
-        f"- IMPORTANT: Absolutely no text, words, letters, numbers, or symbols of any kind in the image.\n"
-        f"- 1792x1024 landscape orientation\n"
-        f"- No text or words in the image\n"
-        f"- Iconic landmarks or scenery from {mission_region}\n\n"
+        f"- 1792x1024 landscape orientation\n\n"
         f"Make it feel like a classic 90s adventure game title screen."
     )
 
