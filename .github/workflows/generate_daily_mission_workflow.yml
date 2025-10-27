@@ -45,3 +45,12 @@ jobs:
         with:
           name: daily-mission
           path: assets/daily_mission.json
+
+      - name: Commit and push updated assets
+        run: |
+          git config user.name "gotnull"
+          git config user.email "gotnull@4511932.com"
+          git add assets/daily_mission/daily_mission.json
+          git add assets/daily_mission/*.png
+          git commit -m "Update daily mission assets" || echo "No changes to commit"
+          git push
