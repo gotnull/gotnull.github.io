@@ -213,9 +213,26 @@ def load_prompt(path: Path) -> str:
     return path.read_text(encoding="utf-8").strip()
 
 
-def build_task_prompt(seed_hex: str, date_iso: str) -> str:
+def build_task_prompt(seed_hex: str, date_iso: str, previous_mission: Dict[str, Any] | None) -> str:
     task_template = load_prompt(TASK_PROMPT_PATH)
-    return task_template.replace("{seed}", seed_hex).replace("{dateIso}", date_iso)
+    previous_mission_str = ""
+    if previous_mission:
+        # Extract key elements from previous mission for comparison
+        prev_title = previous_mission.get("title", "N/A")
+        prev_region = previous_mission.get("region", "N/A")
+        prev_difficulty = previous_mission.get("difficulty", "N/A")
+        prev_solution_snippet = previous_mission.get("solution", "N/A")[:100] # Snippet to avoid hitting token limits
+        
+        previous_mission_str = (
+            f"\n\nPREVIOUS MISSION DETAILS (for uniqueness comparison):\n"
+            f"Title: {prev_title}\n"
+            f"Region: {prev_region}\n"
+            f"Difficulty: {prev_difficulty}\n"
+            f"Solution Snippet: {prev_solution_snippet}...\n"
+            f"---\n"
+        )
+
+    return task_template.replace("{seed}", seed_hex).replace("{dateIso}", date_iso).replace("{previousMissionDetails}", previous_mission_str)
 
 
 def request_mission(
@@ -334,6 +351,17 @@ def write_output(mission: Dict[str, Any], output_path: Path) -> None:
         encoding="utf-8",
     )
 
+def read_previous_mission(path: Path) -> Dict[str, Any] | None:
+    if path.exists():
+        try:
+            content = path.read_text(encoding="utf-8")
+            return json.loads(content)
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            print(f"Warning: Could not read or parse previous mission from {path}: {e}", file=sys.stderr)
+            return None
+    return None
+
+
 
 def main() -> None:
     print("Starting generate_daily_mission.py script...")
@@ -345,12 +373,18 @@ def main() -> None:
     config = parse_args()
     print(f"Parsed arguments: date_iso={config.date_iso}, output_path={config.output_path}, model={config.model}, max_tokens={config.max_tokens}, temperature={config.temperature}")
 
+    previous_mission = read_previous_mission(config.output_path)
+    if previous_mission:
+        print("Previous mission found and loaded.")
+    else:
+        print("No previous mission found or could not be loaded.")
+
     seed_hex = compute_seed(config.date_iso)
     print(f"Computed seed: {seed_hex}")
 
     system_prompt = load_prompt(SYSTEM_PROMPT_PATH)
     print(f"Loaded system prompt from {SYSTEM_PROMPT_PATH}")
-    task_prompt = build_task_prompt(seed_hex, config.date_iso)
+    task_prompt = build_task_prompt(seed_hex, config.date_iso, previous_mission)
     print(f"Built task prompt: {task_prompt[:200]}...") # Print first 200 chars
 
     client = OpenAI(api_key=api_key)

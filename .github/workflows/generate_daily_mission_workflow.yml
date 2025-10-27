@@ -2,7 +2,7 @@ name: Generate Daily Mission
 
 on:
   schedule:
-    - cron: "30 02 * * *"  # 02:30 UTC daily
+    - cron: "0 0 * * *"  # 12:00 AM UTC daily
   workflow_dispatch:
     inputs:
       date:

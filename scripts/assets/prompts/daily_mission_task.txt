@@ -1,8 +1,8 @@
-TASK BRIEF (deterministic seed: {seed} | date: {dateIso})
+TASK BRIEF (deterministic seed: {seed} | date: {dateIso}){previousMissionDetails}
 Create the Agency Atlas daily mission JSON adhering to the classic schema. Requirements:
 
 STRUCTURE
-- difficulty: estimated_playtime_minutes between 45-70. Difficulty can be Easy, Medium, or Hard, and should reflect the complexity of connecting clues to suspect traits.
+- difficulty: estimated_playtime_minutes between 45-70. Difficulty MUST vary and can be Easy, Medium, or Hard. It should reflect the complexity of connecting clues to suspect traits, and should NOT always be 'extreme'.
 - Include a top-level 'region' field: a string describing the primary geographical region of the mission.
 - Provide 3-5 cities. Each city has city_name, country, order_in_chase (1-indexed), and exactly three locations with fields: name, npc_dialogue, clue_type, clue_value, point_value (integer between 45-120).
 - suspect_database contains 4-6 suspects with the canonical fields (name, gender, hair_color, hobby, vehicle, favorite_food) and you may add background/motive/behavioral_pattern fields for flavor.
@@ -12,6 +12,9 @@ STRUCTURE
 - poster_image_url and banner_image_url may be empty strings if no artwork is needed.
 
 DESIGN
+- If previous mission details are provided, ensure the new mission is significantly different in its core elements (title, region, main suspect traits, solution approach) to avoid repetition.
+- Every aspect of the generated mission (title, description, cities, suspects, traits, clues, solution, etc.) must be highly creative, distinct, and varied. Avoid generic or repetitive patterns in themes, specific locations, suspect profiles, or clue types within this single mission generation.
+- The mission title must be unique and varied for each generated mission, reflecting the specific details and region of the mission, and should not repeat previous titles.
 - Suspect hobbies should be specific and contextually relevant to the mission's region, theme, or narrative, rather than generic. They should offer subtle clues or red herrings that require cultural or geographical understanding.
 - Ensure the mission's narrative, NPC dialogue, and clues clearly, yet subtly, guide the player to understand how suspect traits (gender, hair_color, hobby, vehicle, favorite_food) are relevant to solving the case. The connection should be discoverable through inference, not explicit statements.
 - Embed 3-5 subtle contradictions, red herrings, or mirrored details. These must be internally coherent yet misleading.
