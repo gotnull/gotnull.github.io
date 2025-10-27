@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Rijksmuseum",
+  "arrest_location": "National Gallery",
   "banner_image_url": "/assets/daily_mission/banner_20251027.png",
   "cities": [
     {
-      "city_name": "Paris",
-      "country": "France",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
           "clue_type": "metaphor",
-          "clue_value": "The true masterpiece is often hidden behind layers of paint.",
-          "name": "Louvre Museum",
-          "npc_dialogue": "Art speaks where words are unable to explain. But beware, not all that glitters is gold.",
+          "clue_value": "whispers of betrayal",
+          "name": "Charles Bridge",
+          "npc_dialogue": "They say the stones whisper secrets of the past. Listen closely, and you might hear the truth.",
           "point_value": 100
         },
         {
-          "clue_type": "cultural_reference",
-          "clue_value": "In the city of lights, shadows often dance with the truth.",
-          "name": "Montmartre",
-          "npc_dialogue": "The artists here paint with their souls, but some brush strokes hide darker intentions.",
+          "clue_type": "cultural reference",
+          "clue_value": "time's deception",
+          "name": "Old Town Square",
+          "npc_dialogue": "The clock strikes, but time is a fickle friend. What you see may not be what you get.",
           "point_value": 80
         },
         {
-          "clue_type": "idiom",
-          "clue_value": "Not everything that flows is clear; some depths conceal the murkiest truths.",
-          "name": "Seine River",
-          "npc_dialogue": "The river flows with secrets, but only the keenest eyes can read its currents.",
-          "point_value": 90
+          "clue_type": "behavioral nuance",
+          "clue_value": "hidden truths",
+          "name": "National Gallery",
+          "npc_dialogue": "Art reflects life, but sometimes it conceals more than it reveals. Look beyond the canvas.",
+          "point_value": 120
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Berlin",
-      "country": "Germany",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "historical_reference",
-          "clue_value": "The past often whispers to those who listen closely.",
-          "name": "Brandenburg Gate",
-          "npc_dialogue": "A symbol of unity, yet it stands as a reminder of division. What lies beneath the surface?",
+          "clue_type": "metaphor",
+          "clue_value": "overlooking details",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "From here, you can see the whole city, but can you see the whole picture?",
+          "point_value": 90
+        },
+        {
+          "clue_type": "historical reference",
+          "clue_value": "misunderstood intentions",
+          "name": "Heroes' Square",
+          "npc_dialogue": "Heroes are often misunderstood. Their stories are not always what they seem.",
           "point_value": 70
         },
         {
-          "clue_type": "behavioral_pattern",
-          "clue_value": "The most guarded secrets are often shared in the most casual of conversations.",
-          "name": "Checkpoint Charlie",
-          "npc_dialogue": "Crossing borders is easy; crossing minds is where the challenge lies.",
+          "clue_type": "social behavior",
+          "clue_value": "laughter as a mask",
+          "name": "Ruin Bar",
+          "npc_dialogue": "In the chaos of laughter, secrets are shared. Listen for the laughter that hides the truth.",
           "point_value": 60
-        },
-        {
-          "clue_type": "symbolism",
-          "clue_value": "Colors can deceive; the message is often in the brush strokes.",
-          "name": "East Side Gallery",
-          "npc_dialogue": "Art can be a weapon or a shield. Which one do you think it is here?",
-          "point_value": 75
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Amsterdam",
-      "country": "Netherlands",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "allusion",
-          "clue_value": "The night watchman sees all, yet remains unseen.",
-          "name": "Rijksmuseum",
-          "npc_dialogue": "Every painting tells a story, but some stories are better left untold.",
-          "point_value": 85
-        },
-        {
           "clue_type": "metaphor",
-          "clue_value": "Reflections can be deceiving; the truth lies beneath the surface.",
-          "name": "Canal Ring",
-          "npc_dialogue": "The canals reflect the city, but they also hide its secrets. What do you see?",
-          "point_value": 95
+          "clue_value": "secrets beneath",
+          "name": "St. Stephen's Cathedral",
+          "npc_dialogue": "The spires reach for the heavens, but the ground holds the weight of secrets.",
+          "point_value": 110
         },
         {
-          "clue_type": "temporal_hint",
-          "clue_value": "The past is a ghost that haunts the present.",
-          "name": "Anne Frank House",
-          "npc_dialogue": "In the silence of history, voices echo. Can you hear them?",
-          "point_value": 90
+          "clue_type": "artistic reference",
+          "clue_value": "surface beauty",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "Beauty can be deceiving. What lies beneath the surface is often more telling.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "cultural reference",
+          "clue_value": "betrayal in flavors",
+          "name": "Naschmarkt",
+          "npc_dialogue": "The market is alive with flavors, but beware of the taste of betrayal.",
+          "point_value": 85
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Sophie van Dijk",
-  "description": "In the heart of Paris, a series of cryptic messages have surfaced, hinting at a clandestine operation involving high-stakes espionage. As you delve deeper, the lines between ally and adversary blur, leading you through a labyrinth of linguistic puzzles and cultural references. Can you decipher the truth hidden within the shadows?",
+  "correct_suspect": "Marek Novak",
+  "description": "In the heart of Prague, a series of cryptic messages have surfaced, hinting at a clandestine operation that intertwines art, espionage, and betrayal. As you delve deeper, the lines between friend and foe blur, leading you through a labyrinth of linguistic puzzles and cultural references. Can you decipher the truth hidden within the shadows?",
   "difficulty": "extreme",
   "estimated_playtime_minutes": 60,
-  "final_city": "Amsterdam",
-  "generated_at_utc": "2025-10-27T05:50:01Z",
+  "final_city": "Prague",
+  "generated_at_utc": "2025-10-27T05:57:25Z",
   "id": "daily_20251027",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.5,
+      "plausibility_overlap": 0.8,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identify the culinary references in the clues.",
-      "Match the references to the suspect traits.",
-      "Sophie van Dijk's profile aligns with the clues about cooking and societal issues.",
-      "Other suspects have plausible traits but lack the specific culinary connection."
+      "Identify the thematic clues related to time and deception.",
+      "Connect Marek's hobby of collecting clocks to the metaphor of time's fickleness.",
+      "Analyze NPC dialogues for linguistic nuances that hint at betrayal.",
+      "Cross-reference suspect traits with the clues to find the unique match."
     ],
     "solvability_score": 1,
     "validation": {
@@ -115,63 +115,73 @@
   },
   "mission_id": "daily_20251027",
   "poster_image_url": "",
-  "region": "Western Europe",
+  "region": "Eastern Europe",
   "rewards": {
     "badge_name": "Master of Deception",
-    "credits_earned": 200,
-    "experience_points": 150,
+    "credits_earned": 300,
+    "experience_points": 500,
     "unlocked_regions": []
   },
-  "seed": "12a5a511e5088fb7439a768ff3f413e8710f3d8684367a51fc103046d2f2a080",
-  "solution": "Connect the culinary references in the clues to Sophie van Dijk's hobby and favorite food, revealing her as the true suspect.",
+  "seed": "90eb0acf622a0c2efb9f04b059bdd7f0425d2e007a01cfba1b60a091ef378982",
+  "solution": "Connect the clues about time and deception to identify Marek, whose hobby of collecting vintage clocks reflects the theme of hidden truths and betrayal.",
   "suspect_database": [
     {
-      "background": "A local artist known for his provocative murals, often seen in Montmartre.",
-      "favorite_food": "croissant",
+      "background": "A clockmaker with a penchant for history, Marek often speaks in riddles.",
+      "favorite_food": "goulash",
       "gender": "male",
       "hair_color": "brown",
-      "hobby": "street art",
-      "motive": "To expose the hidden truths of society through art.",
-      "name": "Julien Moreau",
-      "vehicle": "bicycle"
+      "hobby": "collecting vintage clocks",
+      "motive": "Desire to protect his family's legacy.",
+      "name": "Marek Novak",
+      "vehicle": "black motorcycle"
     },
     {
-      "background": "A freelance photographer who captures the essence of urban life.",
-      "favorite_food": "stroopwafels",
+      "background": "An artist known for her vibrant works, Elena has a mysterious past.",
+      "favorite_food": "strudel",
       "gender": "female",
       "hair_color": "blonde",
-      "hobby": "photography",
-      "motive": "To document the stories of the city, but perhaps too closely.",
-      "name": "Clara Schmidt",
-      "vehicle": "scooter"
+      "hobby": "painting abstract art",
+      "motive": "Seeking revenge for a past betrayal.",
+      "name": "Elena Varga",
+      "vehicle": "red bicycle"
     },
     {
-      "background": "A historian with a penchant for the darker sides of history.",
-      "favorite_food": "sauerkraut",
+      "background": "A strategic thinker, Tomasz is often seen in cafes pondering life.",
+      "favorite_food": "pierogi",
       "gender": "male",
       "hair_color": "black",
-      "hobby": "history",
-      "motive": "To uncover secrets that should remain buried.",
-      "name": "Hans M\u00fcller",
-      "vehicle": "car"
+      "hobby": "playing chess",
+      "motive": "Wants to outsmart the competition.",
+      "name": "Tomasz Kaczmarek",
+      "vehicle": "blue sedan"
     },
     {
-      "background": "A chef who believes in the power of food to tell stories.",
-      "favorite_food": "haring",
+      "background": "A poet with a flair for the dramatic, Zofia's words often hide deeper meanings.",
+      "favorite_food": "sushi",
       "gender": "female",
       "hair_color": "red",
-      "hobby": "cooking",
-      "motive": "To create culinary art that reflects societal issues.",
-      "name": "Sophie van Dijk",
-      "vehicle": "motorcycle"
+      "hobby": "writing poetry",
+      "motive": "Searching for inspiration in dark places.",
+      "name": "Zofia Nowak",
+      "vehicle": "green scooter"
+    },
+    {
+      "background": "A photographer who captures the unseen, Jakub has a knack for finding hidden stories.",
+      "favorite_food": "pasta",
+      "gender": "male",
+      "hair_color": "brown",
+      "hobby": "photography",
+      "motive": "Wants to expose the truth behind the facade.",
+      "name": "Jakub Sokol",
+      "vehicle": "white van"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "haring",
-    "gender": "female",
-    "hair_color": "red",
-    "hobby": "cooking",
-    "vehicle": "motorcycle"
+    "favorite_food": "goulash",
+    "gender": "male",
+    "hair_color": "brown",
+    "hobby": "collecting vintage clocks",
+    "vehicle": "black motorcycle"
   },
   "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251027.png",
   "title": "The Whispering Shadows"
