@@ -3,6 +3,7 @@ Create the Agency Atlas daily mission JSON adhering to the classic schema. Requi
 
 STRUCTURE
 - difficulty is "extreme". estimated_playtime_minutes between 45-70.
+- Include a top-level 'region' field: a string describing the primary geographical region of the mission.
 - Provide 3-5 cities. Each city has city_name, country, order_in_chase (1-indexed), and exactly three locations with fields: name, npc_dialogue, clue_type, clue_value, point_value (integer between 45-120).
 - suspect_database contains 4-6 suspects with the canonical fields (name, gender, hair_color, hobby, vehicle, favorite_food) and you may add background/motive/behavioral_pattern fields for flavor.
 - suspect_traits is a map containing the definitive traits (gender, hair_color, hobby, vehicle, favorite_food) of the correct suspect.

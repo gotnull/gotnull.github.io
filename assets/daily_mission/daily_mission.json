@@ -1,0 +1,193 @@
+{
+  "arrest_location": "Old Town Square",
+  "banner_image_url": "/assets/daily_mission/banner_20251027.png",
+  "cities": [
+    {
+      "city_name": "Prague",
+      "country": "Czech Republic",
+      "locations": [
+        {
+          "clue_type": "metaphor",
+          "clue_value": "The past is a shadow that never fades.",
+          "name": "Old Town Square",
+          "npc_dialogue": "They say the clock knows more than it tells. Time is a fickle friend, isn't it?",
+          "point_value": 90
+        },
+        {
+          "clue_type": "cultural reference",
+          "clue_value": "The stones remember what the water forgets.",
+          "name": "Charles Bridge",
+          "npc_dialogue": "Crossing this bridge is like crossing into another world. Beware the echoes of the past.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "idiom",
+          "clue_value": "All that glitters is not gold.",
+          "name": "Prague Castle",
+          "npc_dialogue": "The crown jewels are not the only treasures hidden here. Look beyond the glimmer.",
+          "point_value": 60
+        }
+      ],
+      "order_in_chase": 1
+    },
+    {
+      "city_name": "Budapest",
+      "country": "Hungary",
+      "locations": [
+        {
+          "clue_type": "behavioral micro-detail",
+          "clue_value": "The view is clearer when you look through the right lens.",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "From here, you can see the whole city, but can you see the truth?",
+          "point_value": 80
+        },
+        {
+          "clue_type": "allusion",
+          "clue_value": "The past is a tapestry woven with lies.",
+          "name": "Buda Castle",
+          "npc_dialogue": "Legends are often rooted in reality, but reality can be a slippery slope.",
+          "point_value": 70
+        },
+        {
+          "clue_type": "temporal hint",
+          "clue_value": "Time flows like the Danube, but not all currents are visible.",
+          "name": "Chain Bridge",
+          "npc_dialogue": "This bridge connects more than just two banks; it connects stories untold.",
+          "point_value": 65
+        }
+      ],
+      "order_in_chase": 2
+    },
+    {
+      "city_name": "Vienna",
+      "country": "Austria",
+      "locations": [
+        {
+          "clue_type": "semantic nuance",
+          "clue_value": "The higher you climb, the deeper the shadows.",
+          "name": "St. Stephen's Cathedral",
+          "npc_dialogue": "The spire reaches for the heavens, but the truth lies beneath the surface.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "metaphor",
+          "clue_value": "A rose by any other name still has thorns.",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "Beauty can be deceiving; the gardens hide secrets of their own.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "idiom",
+          "clue_value": "Silence is the loudest scream.",
+          "name": "Vienna State Opera",
+          "npc_dialogue": "The music may be sweet, but the silence speaks volumes.",
+          "point_value": 70
+        }
+      ],
+      "order_in_chase": 3
+    }
+  ],
+  "correct_suspect": "Marek Novak",
+  "description": "In the heart of Prague, a series of cryptic messages have surfaced, hinting at a clandestine operation that intertwines the past with the present. As you delve deeper, the lines between ally and adversary blur, revealing a web of deceit that challenges your perception of truth. Can you decipher the whispers before they consume you?",
+  "difficulty": "extreme",
+  "estimated_playtime_minutes": 60,
+  "final_city": "Prague",
+  "generated_at_utc": "2025-10-27T00:42:08Z",
+  "id": "daily_20251027",
+  "internal_analyzer": {
+    "difficulty_analysis": {
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.8,
+      "solution_uniqueness": 1
+    },
+    "reasoning_chain": [
+      "Identified linguistic clues emphasizing shadows and hidden truths.",
+      "Connected Marek's background as a journalist to the thematic elements of the mission.",
+      "Noted the metaphorical language used by NPCs that aligns with Marek's behavior.",
+      "Eliminated other suspects based on inconsistencies with the clues."
+    ],
+    "solvability_score": 1,
+    "validation": {
+      "errors": [],
+      "facts_checked": [],
+      "format": []
+    }
+  },
+  "mission_id": "daily_20251027",
+  "poster_image_url": "",
+  "region": "Eastern Europe",
+  "rewards": {
+    "badge_name": "Shadow Seeker",
+    "credits_earned": 200,
+    "experience_points": 150,
+    "unlocked_regions": []
+  },
+  "seed": "12a5a511e5088fb7439a768ff3f413e8710f3d8684367a51fc103046d2f2a080",
+  "solution": "The clues reveal that Marek Novak's obsession with capturing hidden truths aligns with the metaphorical language used throughout the mission, particularly the emphasis on shadows and the past.",
+  "suspect_database": [
+    {
+      "background": "A local journalist with a penchant for uncovering hidden truths.",
+      "behavioral_pattern": "Often seen lurking in shadows, capturing moments.",
+      "favorite_food": "goulash",
+      "gender": "male",
+      "hair_color": "brown",
+      "hobby": "photography",
+      "motive": "Desire to expose corruption.",
+      "name": "Marek Novak",
+      "vehicle": "motorcycle"
+    },
+    {
+      "background": "A chef with ties to the underground culinary scene.",
+      "behavioral_pattern": "Frequently uses metaphors in conversation.",
+      "favorite_food": "strudel",
+      "gender": "female",
+      "hair_color": "blonde",
+      "hobby": "cooking",
+      "motive": "Protecting her family's legacy.",
+      "name": "Elena Varga",
+      "vehicle": "bicycle"
+    },
+    {
+      "background": "A musician with a mysterious past.",
+      "behavioral_pattern": "Often speaks in riddles.",
+      "favorite_food": "schnitzel",
+      "gender": "male",
+      "hair_color": "black",
+      "hobby": "music",
+      "motive": "Seeking revenge for a betrayal.",
+      "name": "Lukas Schmidt",
+      "vehicle": "car"
+    },
+    {
+      "background": "An artist known for her abstract interpretations of reality.",
+      "behavioral_pattern": "Uses vivid imagery in her speech.",
+      "favorite_food": "borscht",
+      "gender": "female",
+      "hair_color": "red",
+      "hobby": "painting",
+      "motive": "Desire to create a masterpiece.",
+      "name": "Anya Petrov",
+      "vehicle": "none"
+    },
+    {
+      "background": "A retired historian with a wealth of knowledge.",
+      "behavioral_pattern": "Often references historical events.",
+      "favorite_food": "pierogi",
+      "gender": "male",
+      "hair_color": "gray",
+      "hobby": "reading",
+      "motive": "To preserve history at all costs.",
+      "name": "Tomasz Kaczmarek",
+      "vehicle": "scooter"
+    }
+  ],
+  "suspect_traits": {
+    "favorite_food": "goulash",
+    "gender": "male",
+    "hair_color": "brown",
+    "hobby": "photography",
+    "vehicle": "motorcycle"
+  },
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251027.png",
+  "title": "The Whispering Shadows"
+}
