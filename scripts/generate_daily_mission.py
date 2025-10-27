@@ -255,8 +255,9 @@ def validate_mission(mission: Dict[str, Any]) -> None:
     if missing:
         raise SystemExit(f"Generated mission missing keys: {', '.join(missing)}")
 
-    if str(mission.get("difficulty", "")).lower() != "extreme":
-        raise SystemExit("Daily mission difficulty must be 'extreme'.")
+    # No longer strictly enforcing 'extreme' difficulty as per user feedback.
+    # if str(mission.get("difficulty", "")).lower() != "extreme":
+    #     raise SystemExit("Daily mission difficulty must be 'extreme'.")
 
     cities = mission.get("cities")
     if not isinstance(cities, list) or not (3 <= len(cities) <= 5):
