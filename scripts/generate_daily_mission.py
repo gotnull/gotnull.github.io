@@ -199,7 +199,11 @@ def normalise_date(raw_date: str | None) -> str:
 
 
 def compute_seed(date_iso: str) -> str:
-    payload = f"agency_atlas_daily::{date_iso}"
+    # To ensure a new mission is generated each time the workflow is run (even on the same day),
+    # we incorporate the current timestamp into the seed.
+    # If a specific date is provided, it's still part of the seed, but the timestamp ensures uniqueness per run.
+    current_timestamp = datetime.now(timezone.utc).isoformat()
+    payload = f"agency_atlas_daily::{date_iso}::{current_timestamp}"
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
