@@ -7,6 +7,7 @@ STRUCTURE
 - suspect_database contains 4-6 suspects with the canonical fields (name, gender, hair_color, hobby, vehicle, favorite_food) and you may add background/motive/behavioral_pattern fields for flavor.
 - suspect_traits is a map containing the definitive traits (gender, hair_color, hobby, vehicle, favorite_food) of the correct suspect.
 - Include final_city, arrest_location, correct_suspect, rewards {experience_points, credits_earned, badge_name, unlocked_regions[]}.
+- Include a 'solution' field: a concise string explaining how to solve the mission based on the clues.
 - poster_image_url and banner_image_url may be empty strings if no artwork is needed.
 
 DESIGN

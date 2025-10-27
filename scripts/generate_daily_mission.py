@@ -23,23 +23,24 @@ except ImportError as exc:  # pragma: no cover - handled at runtime
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_ROOT = Path(__file__).resolve().parent
-_ASSET_BASE_CANDIDATES = [
+_PROMPT_BASE_CANDIDATES = [
     REPO_ROOT / "assets",
     SCRIPT_ROOT / "assets",
 ]
 
 
-def _resolve_assets_root() -> Path:
-    for base in _ASSET_BASE_CANDIDATES:
+def _resolve_prompt_root() -> Path:
+    for base in _PROMPT_BASE_CANDIDATES:
         if (base / "prompts").exists():
             return base
-    return _ASSET_BASE_CANDIDATES[-1]
+    return _PROMPT_BASE_CANDIDATES[-1]
 
 
-ASSETS_ROOT = _resolve_assets_root()
-SYSTEM_PROMPT_PATH = ASSETS_ROOT / "prompts" / "daily_mission_system.txt"
-TASK_PROMPT_PATH = ASSETS_ROOT / "prompts" / "daily_mission_task.txt"
-DEFAULT_OUTPUT_PATH = ASSETS_ROOT / "daily_mission.json"
+PROMPT_ROOT = _resolve_prompt_root()
+OUTPUT_ROOT = REPO_ROOT / "assets"
+SYSTEM_PROMPT_PATH = PROMPT_ROOT / "prompts" / "daily_mission_system.txt"
+TASK_PROMPT_PATH = PROMPT_ROOT / "prompts" / "daily_mission_task.txt"
+DEFAULT_OUTPUT_PATH = OUTPUT_ROOT / "daily_mission.json"
 REQUIRED_TOP_LEVEL_KEYS = [
     "title",
     "description",
@@ -59,6 +60,13 @@ CITY_REQUIRED_KEYS = ["city_name", "country", "locations"]
 LOCATION_REQUIRED_KEYS = ["name", "npc_dialogue", "clue_type", "clue_value"]
 SUSPECT_REQUIRED_KEYS = [
     "name",
+    "gender",
+    "hair_color",
+    "hobby",
+    "vehicle",
+    "favorite_food",
+]
+TRAIT_REQUIRED_KEYS = [
     "gender",
     "hair_color",
     "hobby",
@@ -227,7 +235,7 @@ def validate_mission(mission: Dict[str, Any]) -> None:
     traits = mission.get("suspect_traits")
     if not isinstance(traits, dict):
         raise SystemExit("suspect_traits must be an object.")
-    for key in SUSPECT_REQUIRED_KEYS:
+    for key in TRAIT_REQUIRED_KEYS:
         value = traits.get(key)
         if not isinstance(value, str) or not value.strip():
             raise SystemExit(f"suspect_traits missing non-empty '{key}'.")
@@ -266,16 +274,27 @@ def write_output(mission: Dict[str, Any], output_path: Path) -> None:
 
 
 def main() -> None:
+    print("Starting generate_daily_mission.py script...")
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         raise SystemExit("OPENAI_API_KEY environment variable is required.")
+    print("OPENAI_API_KEY found.")
 
     config = parse_args()
+    print(f"Parsed arguments: date_iso={config.date_iso}, output_path={config.output_path}, model={config.model}, max_tokens={config.max_tokens}, temperature={config.temperature}")
+
     seed_hex = compute_seed(config.date_iso)
+    print(f"Computed seed: {seed_hex}")
+
     system_prompt = load_prompt(SYSTEM_PROMPT_PATH)
+    print(f"Loaded system prompt from {SYSTEM_PROMPT_PATH}")
     task_prompt = build_task_prompt(seed_hex, config.date_iso)
+    print(f"Built task prompt: {task_prompt[:200]}...") # Print first 200 chars
 
     client = OpenAI(api_key=api_key)
+    print("OpenAI client initialized.")
+
+    print("Requesting mission from OpenAI API...")
     payload = request_mission(
         client,
         system_prompt=system_prompt,
@@ -284,21 +303,31 @@ def main() -> None:
         max_tokens=config.max_tokens,
         temperature=config.temperature,
     )
+    print("Received response from OpenAI API.")
+    print(f"Raw OpenAI payload: {payload[:500]}...") # Print first 500 chars of raw payload
 
     mission = parse_json_payload(payload)
+    print("JSON payload parsed successfully.")
+
+    print("Validating mission structure...")
     validate_mission(mission)
+    print("Mission structure validated.")
 
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     mission_id = f"daily_{config.date_iso.replace('-', '')}"
+    print(f"Generated mission_id: {mission_id}, generated_at: {generated_at}")
+
     mission = augment_mission(
         mission,
         mission_id=mission_id,
         seed_hex=seed_hex,
         generated_at_iso=generated_at,
     )
+    print("Mission augmented with ID and timestamp.")
 
     write_output(mission, config.output_path)
-    print(f"Daily mission written to {config.output_path}")
+    print(f"Daily mission successfully written to {config.output_path}")
+    print("Script finished.")
 
 
 if __name__ == "__main__":
@@ -306,4 +335,9 @@ if __name__ == "__main__":
         main()
     except SystemExit as exc:
         print(str(exc), file=sys.stderr)
-        raise
+        sys.exit(exc.code if isinstance(exc.code, int) else 1) # Ensure proper exit code
+    except Exception as exc:
+        print(f"An unexpected error occurred: {exc}", file=sys.stderr)
+        import traceback
+        traceback.print_exc(file=sys.stderr)
+        sys.exit(1)
