@@ -44,7 +44,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: daily-mission
-          path: assets/daily_mission.json
+          path: assets/daily_mission/daily_mission.json
 
       - name: Commit and push updated assets
         run: |
