@@ -117,7 +117,7 @@ def generate_dalle_image(
     print(f"Generating DALL-E image with prompt: {prompt_text[:100]}... (size: {size})")
     try:
         response = client.images.generate(
-            model="dall-e-3",
+            model="gpt-4o",
             prompt=prompt_text,
             size=size,
             quality=quality,
@@ -450,7 +450,6 @@ def main() -> None:
         f"Focus on making it look like authentic retro game art from the 1990s."
     )
 
-    # Define Banner Image Prompt
     # Define Banner Image Prompt
     banner_prompt_text = (
         f"You are a famous pixel artist specializing in retro 16-bit game art. You have been asked to create an original image that appeals to an adult based on the following criteria:\n\n"
