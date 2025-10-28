@@ -53,4 +53,5 @@ jobs:
           git add assets/daily_mission/daily_mission.json
           git add assets/daily_mission/*.png
           git commit -m "Update daily mission assets" || echo "No changes to commit"
+          git pull --rebase origin master
           git push
