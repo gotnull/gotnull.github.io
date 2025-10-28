@@ -1,110 +1,111 @@
 {
-  "arrest_location": "Notre-Dame de la Garde",
+  "arrest_location": "Piazza della Signoria",
   "banner_image_url": "/assets/daily_mission/banner_20251028.png",
   "cities": [
     {
-      "city_name": "Lisbon",
-      "country": "Portugal",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "historical_reference",
-          "clue_value": "The tower's architecture reflects the age of exploration, hinting at a journey that never truly ended.",
-          "name": "Belem Tower",
-          "npc_dialogue": "They say the tower holds secrets of the sea, but what if the real treasure is hidden in plain sight?",
+          "clue_type": "Behavioral",
+          "clue_value": "Nervous demeanor",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone suspicious near the beach, but I can't recall their face. Just a feeling, you know?",
           "point_value": 75
         },
         {
-          "clue_type": "cultural_reference",
-          "clue_value": "Fado's melancholic tones echo the sorrow of betrayal, a reminder that not all is as it seems.",
-          "name": "Alfama District",
-          "npc_dialogue": "In the alleys of Alfama, whispers of fado music carry tales of lost loves and hidden agendas.",
+          "clue_type": "Physical",
+          "clue_value": "Distinctive jewelry",
+          "name": "Old Town",
+          "npc_dialogue": "The market was bustling, but I noticed a woman with a peculiar necklace. It seemed out of place.",
           "point_value": 60
         },
         {
-          "clue_type": "symbolic_reference",
-          "clue_value": "The intricate carvings may hold clues to a pact made long ago, one that binds the past to the present.",
-          "name": "Jer\u00f3nimos Monastery",
-          "npc_dialogue": "The monks once chronicled the voyages of great explorers. Perhaps they also chronicled something more sinister?",
+          "clue_type": "Verbal",
+          "clue_value": "Hidden stash",
+          "name": "Castle Hill",
+          "npc_dialogue": "The view is breathtaking, but I overheard a conversation about a hidden stash.",
           "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Barcelona",
-      "country": "Spain",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "architectural_reference",
-          "clue_value": "The unfinished towers symbolize aspirations unfulfilled, much like the ambitions of those who seek power.",
-          "name": "Sagrada Familia",
-          "npc_dialogue": "Gaud\u00ed's masterpiece is a testament to time, but time can also be a thief of secrets.",
+          "clue_type": "Behavioral",
+          "clue_value": "Gambling habits",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "I saw a man with a striking red car. He seemed too interested in the high rollers.",
           "point_value": 80
         },
         {
-          "clue_type": "historical_reference",
-          "clue_value": "The shadows of the past linger, suggesting that betrayal often hides in the most familiar places.",
-          "name": "Gothic Quarter",
-          "npc_dialogue": "Every stone here has a story, but some stories are better left untold.",
+          "clue_type": "Physical",
+          "clue_value": "Sketchbook",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "A woman was sketching the exhibits, but her eyes were darting around suspiciously.",
           "point_value": 70
         },
         {
-          "clue_type": "symbolic_reference",
-          "clue_value": "The vibrant mosaics may conceal a darker narrative, one that intertwines with the city's secrets.",
-          "name": "Park G\u00fcell",
-          "npc_dialogue": "Nature and art collide here, but beware, for beauty can mask treachery.",
+          "clue_type": "Verbal",
+          "clue_value": "Calm demeanor",
+          "name": "Prince's Palace",
+          "npc_dialogue": "I overheard a couple discussing a recent theft. They seemed too calm about it.",
           "point_value": 85
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "nautical_reference",
-          "clue_value": "The tides may reveal hidden paths, much like the currents of intrigue that flow through the city.",
-          "name": "Old Port",
-          "npc_dialogue": "The waters here have seen countless ships, but some carry more than just cargo.",
+          "clue_type": "Behavioral",
+          "clue_value": "Time-conscious",
+          "name": "Genoa Aquarium",
+          "npc_dialogue": "A man was taking pictures of the exhibits, but he kept glancing at his watch.",
           "point_value": 65
         },
         {
-          "clue_type": "spiritual_reference",
-          "clue_value": "The guardian of the city may hold the key to understanding the motives of those who dwell below.",
-          "name": "Notre-Dame de la Garde",
-          "npc_dialogue": "From the heights, one can see all, but can one truly understand what lies beneath?",
-          "point_value": 90
+          "clue_type": "Physical",
+          "clue_value": "Large bag",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "I saw a woman with a large bag. She seemed to be in a hurry, almost anxious.",
+          "point_value": 75
         },
         {
-          "clue_type": "cultural_reference",
-          "clue_value": "The vibrant murals tell stories of rebellion, hinting at a deeper conspiracy lurking in the shadows.",
-          "name": "Le Panier",
-          "npc_dialogue": "In this neighborhood, art and crime dance a delicate tango, each step revealing more than the last.",
-          "point_value": 75
+          "clue_type": "Verbal",
+          "clue_value": "Thief escaping",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "There was a commotion earlier. Someone shouted about a thief escaping.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Isabella Costa",
-  "description": "In the heart of Lisbon, a series of cryptic messages have surfaced, hinting at a clandestine operation that intertwines the city's rich maritime history with modern espionage. As you delve deeper, the echoes of the past reveal a web of deceit, where every clue is a reflection of a hidden truth. Can you navigate through the labyrinth of misdirection to uncover the mastermind behind this intricate plot?",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Moreau",
+  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the truth hides in the whispers of the wind. Your task is to unravel the threads connecting the suspects to the stolen artifacts, each with their own secrets and alibis. Can you discern the truth from the lies before the thief escapes to a new city?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Marseille",
-  "generated_at_utc": "2025-10-28T00:13:09Z",
+  "final_city": "Florence, Italy",
+  "generated_at_utc": "2025-10-28T02:54:33Z",
   "id": "daily_20251028",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.7,
-      "plausibility_overlap": 0.5,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identify the maritime theme connecting the cities.",
-      "Analyze NPC dialogues for cultural and historical references.",
-      "Match suspect traits with clues related to maritime archaeology.",
-      "Isabella's background aligns with the maritime clues, while others do not."
+      "Clara's blonde hair and red sports car match the descriptions from witnesses.",
+      "Her hobby of photography aligns with her being seen at art-related locations.",
+      "The large bag seen with Sofia does not match Clara's profile, eliminating her.",
+      "Julien's gambling habits do not connect to the thefts, as he was at the casino.",
+      "Marco's antique collecting does not fit the theft of modern artifacts."
     ],
     "solvability_score": 1,
     "validation": {
@@ -114,80 +115,68 @@
     }
   },
   "mission_id": "daily_20251028",
-  "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master of Intrigue",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "67d39c825b7363d4ba12af7343242bbb55ef914f364931707dc469c754448aa6",
-  "solution": "Connect Isabella's maritime archaeology hobby to the historical references found in Lisbon, revealing her manipulation of maritime narratives for personal gain.",
+  "seed": "fceb5a427dbb003ef8e7a28f59e73fea22d3afa5219909c6aad32bfb6c90d691",
+  "solution": "Connect Clara's photography hobby to her presence at the theft locations, revealing her as the thief using her art as a cover.",
   "suspect_database": [
     {
-      "background": "A passionate archaeologist with a penchant for uncovering maritime secrets, Isabella has spent years studying the history of the Mediterranean.",
-      "behavioral_pattern": "Often found at historical sites, she tends to blend in with tourists, but her keen eye for detail sets her apart.",
-      "favorite_food": "seafood paella",
-      "gender": "female",
-      "hair_color": "black",
-      "hobby": "maritime archaeology",
-      "motive": "Her obsession with the past may lead her to manipulate historical narratives for personal gain.",
-      "name": "Isabella Costa",
-      "vehicle": "scooter"
+      "background": "An art student with a penchant for the dramatic.",
+      "behavioral_pattern": "Often seen near art galleries and museums.",
+      "favorite_food": "Seafood",
+      "gender": "Female",
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "Desire to fund her studies through illicit means.",
+      "name": "Clara Moreau",
+      "vehicle": "Red sports car"
     },
     {
-      "background": "A local chef known for his vibrant dishes, Marco has a love for the culinary arts that rivals his passion for history.",
-      "behavioral_pattern": "Frequently seen at food festivals, he often shares stories of his family's history, but his tales may be embellished.",
-      "favorite_food": "tapas",
-      "gender": "male",
-      "hair_color": "brown",
-      "hobby": "cooking",
-      "motive": "His desire to elevate his restaurant's status may lead him to engage in dubious dealings.",
-      "name": "Marco Silva",
-      "vehicle": "bicycle"
+      "background": "A high-stakes gambler with debts.",
+      "behavioral_pattern": "Frequent visitor to casinos.",
+      "favorite_food": "Steak",
+      "gender": "Male",
+      "hair_color": "Brown",
+      "hobby": "Gambling",
+      "motive": "Desperation to pay off gambling debts.",
+      "name": "Julien Dupont",
+      "vehicle": "Black sedan"
     },
     {
-      "background": "A travel photographer with a knack for capturing the essence of cities, Lucia has a keen interest in urban legends.",
-      "behavioral_pattern": "Often found in the company of artists, she has a tendency to romanticize her subjects, which can cloud her judgment.",
-      "favorite_food": "croissants",
-      "gender": "female",
-      "hair_color": "blonde",
-      "hobby": "photography",
-      "motive": "Her quest for the perfect shot may lead her to trespass into dangerous territories.",
-      "name": "Lucia Moreau",
-      "vehicle": "car"
+      "background": "A local artist struggling to make ends meet.",
+      "behavioral_pattern": "Often seen sketching in public spaces.",
+      "favorite_food": "Pasta",
+      "gender": "Female",
+      "hair_color": "Black",
+      "hobby": "Sketching",
+      "motive": "Frustration over lack of recognition.",
+      "name": "Sofia Rossi",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A seasoned sailor with a deep connection to the sea, Thiago has a reputation for being a free spirit.",
-      "behavioral_pattern": "Often seen at the docks, he has a tendency to boast about his exploits, which may mask deeper insecurities.",
-      "favorite_food": "grilled fish",
-      "gender": "male",
-      "hair_color": "black",
-      "hobby": "sailing",
-      "motive": "His love for adventure may lead him to take risks that endanger others.",
-      "name": "Thiago Mendes",
-      "vehicle": "motorboat"
-    },
-    {
-      "background": "A vibrant dancer with a flair for the dramatic, Sofia is known for her captivating performances.",
-      "behavioral_pattern": "Often found at dance clubs, she has a tendency to exaggerate her experiences, which can lead to misunderstandings.",
-      "favorite_food": "sushi",
-      "gender": "female",
-      "hair_color": "red",
-      "hobby": "dancing",
-      "motive": "Her desire for fame may lead her to engage in risky behavior to gain attention.",
-      "name": "Sofia Rojas",
-      "vehicle": "skateboard"
+      "background": "An antique dealer with a shady past.",
+      "behavioral_pattern": "Known to frequent auctions and estate sales.",
+      "favorite_food": "Pizza",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Collecting antiques",
+      "motive": "To acquire rare artifacts for his collection.",
+      "name": "Marco Bellini",
+      "vehicle": "Vintage car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "seafood paella",
-    "gender": "female",
-    "hair_color": "black",
-    "hobby": "maritime archaeology",
-    "vehicle": "scooter"
+    "favorite_food": "Seafood",
+    "gender": "Female",
+    "hair_color": "Blonde",
+    "hobby": "Photography",
+    "vehicle": "Red sports car"
   },
   "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251028.png",
-  "title": "Echoes of the Past"
+  "title": "Whispers in the Wind"
 }
