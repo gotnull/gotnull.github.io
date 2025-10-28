@@ -8,6 +8,8 @@ STRUCTURE
 - suspect_database contains 4-6 suspects with the canonical fields (name, gender, hair_color, hobby, vehicle, favorite_food) and you may add background/motive/behavioral_pattern fields for flavor.
 - suspect_traits is a map containing the definitive traits (gender, hair_color, hobby, vehicle, favorite_food) of the correct suspect.
 - Include final_city (formatted as "CityName, CountryName"), arrest_location, correct_suspect, rewards {experience_points, credits_earned, badge_name, unlocked_regions[]}.
+- CRITICAL arrest_location: The 'arrest_location' MUST be a real and plausible location within the 'final_city'.
+- CRITICAL internal_analyzer: This field is for internal use only and MUST contain: reasoning_chain (list of concise steps showing why the correct suspect is unique), solvability_score (0–1), validation {format:[], facts_checked:[], errors:[]}, and difficulty_analysis with ambiguity_score, plausibility_overlap, solution_uniqueness (0–1 floats). Confirm determinism by referencing the seed/date inside internal_analyzer.
 - Include a 'solution' field: a concise string explaining how to solve the mission based on the clues.
 - poster_image_url and banner_image_url may be empty strings if no artwork is needed.
 
