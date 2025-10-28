@@ -283,6 +283,26 @@ def validate_mission(mission: Dict[str, Any]) -> None:
     cities = mission.get("cities")
     if not isinstance(cities, list) or not (3 <= len(cities) <= 5):
         raise SystemExit("Mission must contain 3-5 cities.")
+
+    # Validate order_in_chase sequential and 1-indexed
+    order_values = sorted([city.get("order_in_chase") for city in cities if isinstance(city, dict) and "order_in_chase" in city])
+    if not order_values or order_values[0] != 1 or order_values != list(range(1, len(order_values) + 1)):
+        raise SystemExit("order_in_chase values must be 1-indexed and sequential (1, 2, 3, ...).")
+
+    city_names_in_chase = [city.get("city_name") for city in cities if isinstance(city, dict) and "city_name" in city]
+
+    final_city = mission.get("final_city")
+    if not isinstance(final_city, str) or "," not in final_city:
+        raise SystemExit("final_city must be formatted as \"CityName, CountryName\".")
+    
+    # Validate final_city does NOT appear in any city in the cities array
+    final_city_name = final_city.split(",")[0].strip()
+    if final_city_name in city_names_in_chase:
+        raise SystemExit(f"CRITICAL: final_city ('{final_city_name}') MUST NOT appear in the cities array.")
+
+    # Geographic plausibility of final_city (hard to validate programmatically, relies on LLM)
+    # arrest_location is a real/plausible location in the final_city (hard to validate programmatically, relies on LLM)
+
     for city in cities:
         if not isinstance(city, dict):
             raise SystemExit("City entries must be JSON objects.")
@@ -303,21 +323,32 @@ def validate_mission(mission: Dict[str, Any]) -> None:
     suspects = mission.get("suspect_database")
     if not isinstance(suspects, list) or not (4 <= len(suspects) <= 6):
         raise SystemExit("suspect_database must contain 4-6 suspects.")
+
+    correct_suspect_name = mission.get("correct_suspect")
+    if not isinstance(correct_suspect_name, str) or not correct_suspect_name.strip():
+        raise SystemExit("correct_suspect name is missing or empty.")
+
+    # Validate correct_suspect matches one name in suspect_database
+    found_correct_suspect = None
     for suspect in suspects:
-        if not isinstance(suspect, dict):
-            raise SystemExit("Suspect entries must be JSON objects.")
-        for key in SUSPECT_REQUIRED_KEYS:
-            value = suspect.get(key)
-            if not isinstance(value, str) or not value.strip():
-                raise SystemExit(f"Suspect missing non-empty '{key}'.")
+        if isinstance(suspect, dict) and suspect.get("name") == correct_suspect_name:
+            found_correct_suspect = suspect
+            break
+    if not found_correct_suspect:
+        raise SystemExit(f"correct_suspect ('{correct_suspect_name}') does not match any name in suspect_database.")
 
     traits = mission.get("suspect_traits")
     if not isinstance(traits, dict):
         raise SystemExit("suspect_traits must be an object.")
+    
+    # Validate suspect_traits matches the correct suspect's traits exactly
     for key in TRAIT_REQUIRED_KEYS:
-        value = traits.get(key)
-        if not isinstance(value, str) or not value.strip():
+        trait_value_from_mission = traits.get(key)
+        trait_value_from_suspect = found_correct_suspect.get(key)
+        if not isinstance(trait_value_from_mission, str) or not trait_value_from_mission.strip():
             raise SystemExit(f"suspect_traits missing non-empty '{key}'.")
+        if trait_value_from_mission != trait_value_from_suspect:
+            raise SystemExit(f"suspect_traits '{key}' ('{trait_value_from_mission}') does not match correct suspect's trait ('{trait_value_from_suspect}').")
 
     rewards = mission.get("rewards")
     if not isinstance(rewards, dict):
@@ -431,24 +462,24 @@ def main() -> None:
     mission_synopsis = mission.get("description", "A mysterious mission.")
 
     # Define Thumbnail Image Prompt
-    thumbnail_prompt_text = (
-        f"You are a famous pixel artist specializing in retro 16-bit game art. You have been asked to create an original image that appeals to an adult based on the following criteria:\n\n"
-        f"Main Theme: A retro 16-bit pixel art scene depicting a key landmark or atmospheric location from {mission_region}, related to the mission '{mission_title}'.\n"
-        f"It should be colorful, realistic (within pixel art style), minimalistic, and somewhat of a challenge to replicate.\n"
-        f"It should only contain the \"Main Theme\" (the scene) and no other elements in the foreground, background or surrounding space that are not part of the scene itself.\n"
-        f"It should not divide the \"Main Theme\" into separate parts of the image nor imply any variations of it.\n"
-        f"It should not contain any text, labels, borders, measurements nor design elements of any kind.\n"
-        f"The image should be suitable for digital printing without any instructional or guiding elements.\n"
-        f"The \"Main Theme\" (the scene) should consume the entire 1024x1024 space, with no margins.\n"
-        f"Style requirements:\n"
-        f"- Classic 16-bit pixel art aesthetic (like SNES/Sega Genesis era)\n"
-        f"- Vibrant, colorful palette with clean pixels\n"
-        f"- Include a subtle sense of mystery or investigation\n"
-        f"- Agency Atlas detective game visual style\n"
-        f"- Landscape orientation\n"
-        f"- Family-friendly and educational tone\n\n"
-        f"Focus on making it look like authentic retro game art from the 1990s."
-    )
+    thumbnail_prompt_text = f"""You are a famous pixel artist specializing in retro 16-bit game art. You have been asked to create an original image that appeals to an adult based on the following criteria:
+
+Main Theme: A retro 16-bit pixel art scene depicting a key landmark or atmospheric location from {mission_region}, related to the mission '{mission_title}'.
+It should be colorful, realistic (within pixel art style), minimalistic, and somewhat of a challenge to replicate.
+It should only contain the "Main Theme" (the scene) and no other elements in the foreground, background or surrounding space that are not part of the scene itself.
+It should not divide the "Main Theme" into separate parts of the image nor imply any variations of it.
+It should not contain any text, labels, borders, measurements nor design elements of any kind.
+The image should be suitable for digital printing without any instructional or guiding elements.
+The "Main Theme" (the scene) should consume the entire 1024x1024 space, with no margins.
+Style requirements:
+- Classic 16-bit pixel art aesthetic (like SNES/Sega Genesis era)
+- Vibrant, colorful palette with clean pixels
+- Include a subtle sense of mystery or investigation
+- Agency Atlas detective game visual style
+- Landscape orientation
+- Family-friendly and educational tone
+
+Focus on making it look like authentic retro game art from the 1990s."""
 
     # Define Banner Image Prompt
     banner_prompt_text = (

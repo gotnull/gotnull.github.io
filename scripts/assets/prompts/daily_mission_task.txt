@@ -3,13 +3,45 @@ Create the Agency Atlas daily mission JSON adhering to the classic schema. Requi
 
 STRUCTURE
 - difficulty: estimated_playtime_minutes between 45-70. Difficulty MUST vary and can be Easy, Medium, or Hard. It should reflect the complexity of connecting clues to suspect traits, and should NOT always be 'extreme'.
-- Include a top-level 'region' field: a string describing the primary geographical region of the mission.
-- Provide 3-5 cities. Each city has city_name, country, order_in_chase (1-indexed), and exactly three locations with fields: name, npc_dialogue, clue_type, clue_value, point_value (integer between 45-120).
+- Include a top-level 'region' field: a string describing the primary geographical region of the mission (e.g., "Europe", "Asia", "North America", "South America", "Africa", "Oceania").
+- Provide 3-5 cities. Each city has city_name, country, order_in_chase (1-indexed, starting at 1), and exactly three locations with fields: name, npc_dialogue, clue_type, clue_value, point_value (integer between 45-120).
 - suspect_database contains 4-6 suspects with the canonical fields (name, gender, hair_color, hobby, vehicle, favorite_food) and you may add background/motive/behavioral_pattern fields for flavor.
 - suspect_traits is a map containing the definitive traits (gender, hair_color, hobby, vehicle, favorite_food) of the correct suspect.
-- Include final_city, arrest_location, correct_suspect, rewards {experience_points, credits_earned, badge_name, unlocked_regions[]}.
+- Include final_city (formatted as "CityName, CountryName"), arrest_location, correct_suspect, rewards {experience_points, credits_earned, badge_name, unlocked_regions[]}.
 - Include a 'solution' field: a concise string explaining how to solve the mission based on the clues.
 - poster_image_url and banner_image_url may be empty strings if no artwork is needed.
+
+CRITICAL VALIDATION RULES
+⚠️ BEFORE GENERATING, YOU MUST VERIFY:
+1. order_in_chase is 1-indexed (1, 2, 3, ...) NOT 0-indexed
+2. order_in_chase values are sequential with no gaps or duplicates
+3. Each city has exactly 3 locations
+4. final_city is formatted as "CityName, CountryName"
+5. final_city MUST NOT match any city in the cities array (the suspect escapes to a NEW city)
+6. final_city should be geographically plausible (reasonably close to the last city in the chase)
+7. correct_suspect matches exactly one name from suspect_database
+8. suspect_traits match the correct suspect's traits exactly
+9. arrest_location is a real/plausible location name in the final_city
+
+EXAMPLE - CORRECT:
+{
+  "cities": [
+    {"city_name": "Lisbon", "country": "Portugal", "order_in_chase": 1, ...},
+    {"city_name": "Barcelona", "country": "Spain", "order_in_chase": 2, ...},
+    {"city_name": "Marseille", "country": "France", "order_in_chase": 3, ...}
+  ],
+  "final_city": "Rome, Italy"  ✅ Rome is NOT in cities array, geographically plausible
+}
+
+EXAMPLE - WRONG:
+{
+  "cities": [
+    {"city_name": "Lisbon", "country": "Portugal", "order_in_chase": 0, ...},  ❌ Should be 1
+    {"city_name": "Barcelona", "country": "Spain", "order_in_chase": 1, ...},
+    {"city_name": "Marseille", "country": "France", "order_in_chase": 2, ...}
+  ],
+  "final_city": "Marseille, France"  ❌ Marseille is already in cities array!
+}
 
 DESIGN
 - If previous mission details are provided, ensure the new mission is significantly different in its core elements (title, region, main suspect traits, solution approach) to avoid repetition.
@@ -19,7 +51,7 @@ DESIGN
 - Ensure the mission's narrative, NPC dialogue, and clues clearly, yet subtly, guide the player to understand how suspect traits (gender, hair_color, hobby, vehicle, favorite_food) are relevant to solving the case. The connection should be discoverable through inference, not explicit statements.
 - If the mission involves multiple cities, ensure the narrative focus and clue distribution are reasonably balanced across them, rather than heavily concentrating on a single city in the description or primary narrative.
 - Embed 3-5 subtle contradictions, red herrings, or mirrored details. These must be internally coherent yet misleading.
-- Hide decisive evidence inside linguistic nuance: metaphor, allusion, idiom, cultural reference, temporal hint, or behavioral micro-detail. No explicit "the answer is..." phrasing.
+- Hide decisive evidence inside linguistic nuance: metaphor, allusion, idiom, cultural reference, temporal hint, or behavioral micro-detail. No explicit “the answer is…” phrasing.
 - At least three suspects must appear equally plausible when skimming. Only one suspect may satisfy all encoded clues and suspect_traits simultaneously.
 - Geography, timelines, and cultural references must be accurate. Mentioned routes/travel need to make sense.
 - Ensure narrative text, npc_dialogue, and clue_value content reward deep inference and cross-domain reasoning (psychology, semantics, culture, geography).
