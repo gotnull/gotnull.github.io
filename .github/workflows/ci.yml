@@ -2,7 +2,8 @@ name: Beautiful Jekyll CI
 on:
   push:
     paths-ignore:
-      - 'assets/daily_mission/**'
+      - 'assets/daily_mission/daily_mission.json'
+      - 'assets/daily_mission/*.png'
   pull_request:
 jobs:
   build:
