@@ -287,5 +287,8 @@ gallery:
   title: ''
 - filename: the-echoes-of-emotion-can-i-feel.jpg
   title: ''
+- filename: exploring-uart-communication-with-esp32.jpg
+  post_url: /2025-10-28-exploring-uart-communication-with-esp32/
+  title: Exploring UART Communication with ESP32
 - filename: the-echoes-of-reflection-iterating-identity.jpg
   title: ''
