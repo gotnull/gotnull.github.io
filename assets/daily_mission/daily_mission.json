@@ -1,111 +1,110 @@
 {
-  "arrest_location": "Piazza della Signoria",
-  "banner_image_url": "/assets/daily_mission/banner_20251028.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20251029.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "Behavioral",
-          "clue_value": "Nervous demeanor",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone suspicious near the beach, but I can't recall their face. Just a feeling, you know?",
-          "point_value": 75
+          "clue_type": "Witness Account",
+          "clue_value": "A tall figure with dark hair was seen.",
+          "name": "Museum of Fine Arts",
+          "npc_dialogue": "I saw someone lurking near the exhibit just before the gala started.",
+          "point_value": 100
         },
         {
-          "clue_type": "Physical",
-          "clue_value": "Distinctive jewelry",
-          "name": "Old Town",
-          "npc_dialogue": "The market was bustling, but I noticed a woman with a peculiar necklace. It seemed out of place.",
-          "point_value": 60
+          "clue_type": "Order Details",
+          "clue_value": "An espresso with a twist of lemon.",
+          "name": "Caf\u00e9 Central",
+          "npc_dialogue": "The barista mentioned a peculiar order from a regular who seemed nervous.",
+          "point_value": 80
         },
         {
-          "clue_type": "Verbal",
-          "clue_value": "Hidden stash",
-          "name": "Castle Hill",
-          "npc_dialogue": "The view is breathtaking, but I overheard a conversation about a hidden stash.",
+          "clue_type": "Artistic Observation",
+          "clue_value": "The sketch revealed hidden entrances.",
+          "name": "St. Stephen's Cathedral",
+          "npc_dialogue": "A local artist claimed to have seen someone sketching the museum's layout.",
           "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "Behavioral",
-          "clue_value": "Gambling habits",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "I saw a man with a striking red car. He seemed too interested in the high rollers.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Physical",
-          "clue_value": "Sketchbook",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "A woman was sketching the exhibits, but her eyes were darting around suspiciously.",
+          "clue_type": "Eavesdropping",
+          "clue_value": "Mention of a getaway vehicle.",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "I overheard a conversation about a 'big score' near the river.",
           "point_value": 70
         },
         {
-          "clue_type": "Verbal",
-          "clue_value": "Calm demeanor",
-          "name": "Prince's Palace",
-          "npc_dialogue": "I overheard a couple discussing a recent theft. They seemed too calm about it.",
-          "point_value": 85
+          "clue_type": "Tattoo Description",
+          "clue_value": "A dragon wrapped around a sword.",
+          "name": "Sz\u00e9chenyi Thermal Bath",
+          "npc_dialogue": "A visitor mentioned seeing someone with a unique tattoo.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "Performance Insight",
+          "clue_value": "A group of three was acting strangely.",
+          "name": "Heroes' Square",
+          "npc_dialogue": "A street performer claimed to have seen suspicious activity.",
+          "point_value": 75
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "Behavioral",
-          "clue_value": "Time-conscious",
-          "name": "Genoa Aquarium",
-          "npc_dialogue": "A man was taking pictures of the exhibits, but he kept glancing at his watch.",
-          "point_value": 65
+          "clue_type": "Key Discovery",
+          "clue_value": "The key has an unusual engraving.",
+          "name": "Charles Bridge",
+          "npc_dialogue": "A vendor saw someone drop a key near the bridge.",
+          "point_value": 85
         },
         {
-          "clue_type": "Physical",
-          "clue_value": "Large bag",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "I saw a woman with a large bag. She seemed to be in a hurry, almost anxious.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "Verbal",
-          "clue_value": "Thief escaping",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "There was a commotion earlier. Someone shouted about a thief escaping.",
+          "clue_type": "Tourist Observation",
+          "clue_value": "A person wearing a red scarf.",
+          "name": "Old Town Square",
+          "npc_dialogue": "A tourist mentioned a suspicious character near the clock tower.",
           "point_value": 90
+        },
+        {
+          "clue_type": "Guard Report",
+          "clue_value": "The figure was carrying a large bag.",
+          "name": "Prague Castle",
+          "npc_dialogue": "A guard reported seeing someone enter the castle grounds late at night.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moreau",
-  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the truth hides in the whispers of the wind. Your task is to unravel the threads connecting the suspects to the stolen artifacts, each with their own secrets and alibis. Can you discern the truth from the lies before the thief escapes to a new city?",
-  "difficulty": "Medium",
+  "correct_suspect": "Lukas Novak",
+  "description": "In the heart of Vienna, a priceless artifact has vanished from the museum during a gala. As whispers of betrayal fill the air, you must navigate through a web of lies and hidden motives to uncover the truth. Each suspect holds a piece of the puzzle, but only one is the mastermind behind the theft. Can you decipher the echoes of deceit before the trail goes cold?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Florence, Italy",
-  "generated_at_utc": "2025-10-28T02:54:33Z",
-  "id": "daily_20251028",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2025-10-29T00:02:19Z",
+  "id": "daily_20251029",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
       "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1
+      "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "Clara's blonde hair and red sports car match the descriptions from witnesses.",
-      "Her hobby of photography aligns with her being seen at art-related locations.",
-      "The large bag seen with Sofia does not match Clara's profile, eliminating her.",
-      "Julien's gambling habits do not connect to the thefts, as he was at the casino.",
-      "Marco's antique collecting does not fit the theft of modern artifacts."
+      "Lukas Novak's hobby of sketching aligns with the artistic observations made at the museum.",
+      "Witness accounts describe a tall figure with dark hair, matching Lukas's description.",
+      "The unique key found near Charles Bridge has engravings that match Lukas's artistic style.",
+      "His motive to fund art projects explains the theft of a valuable artifact."
     ],
     "solvability_score": 1,
     "validation": {
@@ -114,7 +113,7 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251028",
+  "mission_id": "daily_20251029",
   "region": "Europe",
   "rewards": {
     "badge_name": "Master Detective",
@@ -122,61 +121,61 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "fceb5a427dbb003ef8e7a28f59e73fea22d3afa5219909c6aad32bfb6c90d691",
-  "solution": "Connect Clara's photography hobby to her presence at the theft locations, revealing her as the thief using her art as a cover.",
+  "seed": "311028a082f60ca697ed1c28f265f4ede59ea53e29cb5419bf972d7161d8f49f",
+  "solution": "Connect Lukas's sketching hobby to the detailed layout of the museum he drew, revealing his plan to steal the artifact.",
   "suspect_database": [
     {
-      "background": "An art student with a penchant for the dramatic.",
-      "behavioral_pattern": "Often seen near art galleries and museums.",
-      "favorite_food": "Seafood",
+      "background": "An artist known for his detailed sketches of historical sites.",
+      "behavioral_pattern": "Often seen near museums and galleries.",
+      "favorite_food": "Goulash",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Sketching",
+      "motive": "Desire to fund his art projects.",
+      "name": "Lukas Novak",
+      "vehicle": "Motorcycle"
+    },
+    {
+      "background": "A photographer who captures events at high-profile gatherings.",
+      "behavioral_pattern": "Frequently mingles with influential people.",
+      "favorite_food": "Schnitzel",
       "gender": "Female",
       "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "Desire to fund her studies through illicit means.",
-      "name": "Clara Moreau",
-      "vehicle": "Red sports car"
-    },
-    {
-      "background": "A high-stakes gambler with debts.",
-      "behavioral_pattern": "Frequent visitor to casinos.",
-      "favorite_food": "Steak",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Gambling",
-      "motive": "Desperation to pay off gambling debts.",
-      "name": "Julien Dupont",
-      "vehicle": "Black sedan"
-    },
-    {
-      "background": "A local artist struggling to make ends meet.",
-      "behavioral_pattern": "Often seen sketching in public spaces.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Sketching",
-      "motive": "Frustration over lack of recognition.",
-      "name": "Sofia Rossi",
+      "motive": "To gain fame and recognition.",
+      "name": "Eva Schmidt",
       "vehicle": "Bicycle"
     },
     {
-      "background": "An antique dealer with a shady past.",
-      "behavioral_pattern": "Known to frequent auctions and estate sales.",
-      "favorite_food": "Pizza",
+      "background": "A chef with a passion for culinary arts.",
+      "behavioral_pattern": "Often attends food festivals.",
+      "favorite_food": "Pasta",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Collecting antiques",
-      "motive": "To acquire rare artifacts for his collection.",
-      "name": "Marco Bellini",
-      "vehicle": "Vintage car"
+      "hair_color": "Brown",
+      "hobby": "Cooking",
+      "motive": "To open a restaurant with a unique theme.",
+      "name": "Marek Jelinek",
+      "vehicle": "Car"
+    },
+    {
+      "background": "A dancer who performs at various cultural events.",
+      "behavioral_pattern": "Seen at nightlife spots.",
+      "favorite_food": "Tacos",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Dancing",
+      "motive": "To fund her dance school.",
+      "name": "Sofia Kral",
+      "vehicle": "Skateboard"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Seafood",
-    "gender": "Female",
-    "hair_color": "Blonde",
-    "hobby": "Photography",
-    "vehicle": "Red sports car"
+    "favorite_food": "Goulash",
+    "gender": "Male",
+    "hair_color": "Black",
+    "hobby": "Sketching",
+    "vehicle": "Motorcycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251028.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251029.png",
+  "title": "Echoes of Deceit"
 }
