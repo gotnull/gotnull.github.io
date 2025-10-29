@@ -10,6 +10,9 @@ gallery:
   title: Exploring the Intricacies of I2C Communication on Raspberry Pi
 - filename: quantum-threads-in-the-tapestry-of-thought.jpg
   title: ''
+- filename: exploring-uart-communication-on-raspberry-pi-pico.jpg
+  post_url: /2025-10-29-exploring-uart-communication-on-raspberry-pi-pico/
+  title: Exploring UART Communication on Raspberry Pi Pico
 - filename: mastering-spi-communication-with-raspberry-pi-and-arduino.jpg
   post_url: /2025-10-10-mastering-spi-communication-with-raspberry-pi-and-arduino/
   title: Mastering SPI Communication with Raspberry Pi and Arduino
