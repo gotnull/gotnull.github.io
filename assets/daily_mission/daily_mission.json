@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Piazza Castello",
-  "banner_image_url": "/assets/daily_mission/banner_20251030.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A red scarf caught in the railing.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea breeze carries secrets, but I saw nothing unusual today.",
-          "point_value": 75
+          "clue_type": "behavioral",
+          "clue_value": "nervous",
+          "name": "Hofburg Palace",
+          "npc_dialogue": "The gala was splendid, but I noticed something amiss with the curator's behavior.",
+          "point_value": 100
         },
         {
-          "clue_type": "Witness Account",
-          "clue_value": "A vendor with a peculiar accent selling rare spices.",
-          "name": "Old Town Market",
-          "npc_dialogue": "Everyone loves the fresh produce here, but did you notice the strange vendor?",
+          "clue_type": "overheard",
+          "clue_value": "secret auction",
+          "name": "St. Stephen's Cathedral",
+          "npc_dialogue": "I overheard a conversation about a secret auction. It sounded quite lucrative.",
+          "point_value": 80
+        },
+        {
+          "clue_type": "sighting",
+          "clue_value": "suspicious person",
+          "name": "Naschmarkt",
+          "npc_dialogue": "The market is bustling, but I saw someone acting suspiciously near the antique stalls.",
           "point_value": 60
-        },
-        {
-          "clue_type": "Eavesdropping",
-          "clue_value": "Two figures discussing a 'big score' in hushed tones.",
-          "name": "Castle Hill",
-          "npc_dialogue": "The view is breathtaking, but I overheard a heated argument earlier.",
-          "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A man with a distinctive watch glancing around nervously.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle friend, but I did see someone acting suspiciously near the high rollers.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Artifact",
-          "clue_value": "A rare artifact missing from the display.",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "The exhibits are fascinating, but the real treasure is the knowledge hidden within.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "Witness Account",
-          "clue_value": "A woman with a sunhat digging near the shoreline.",
-          "name": "Larvotto Beach",
-          "npc_dialogue": "The waves hide many things, but I saw someone burying something in the sand.",
+          "clue_type": "feeling",
+          "clue_value": "watched",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "The view is breathtaking, but I can't shake the feeling that someone is watching us.",
           "point_value": 70
+        },
+        {
+          "clue_type": "sighting",
+          "clue_value": "red scarf",
+          "name": "Heroes' Square",
+          "npc_dialogue": "I saw a woman with a striking red scarf. She seemed out of place.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "whispers",
+          "clue_value": "deal gone wrong",
+          "name": "Great Market Hall",
+          "npc_dialogue": "The vendors are lively, but I heard whispers about a deal gone wrong.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "Celebrity Sighting",
-          "clue_value": "A famous actress known for her roles in thrillers.",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "The glitz and glamour can be deceiving; I saw a familiar face among the crowd.",
+          "clue_type": "sighting",
+          "clue_value": "shiny object",
+          "name": "Charles Bridge",
+          "npc_dialogue": "The bridge is beautiful, but I saw a man drop something shiny into the river.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "rumor",
+          "clue_value": "hidden passage",
+          "name": "Old Town Square",
+          "npc_dialogue": "The clock tower chimes, but I heard a rumor about a hidden passage.",
           "point_value": 85
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "Two men exchanging a small package.",
-          "name": "La Croisette",
-          "npc_dialogue": "The promenade is always bustling, but I noticed a couple of shady characters.",
+          "clue_type": "behavioral",
+          "clue_value": "friendly guard",
+          "name": "Prague Castle",
+          "npc_dialogue": "The guards are vigilant, but I noticed one acting unusually friendly with a visitor.",
           "point_value": 65
-        },
-        {
-          "clue_type": "Eavesdropping",
-          "clue_value": "A conversation about a 'heist' planned for the festival.",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "Events come and go, but secrets linger long after.",
-          "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Sophie Dubois",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, shadows of suspicion loom large. Your task is to unravel the threads of deceit woven by a cunning thief who has left behind a trail of cryptic clues. Each suspect appears innocent, but their hidden motives may reveal the truth. Can you connect the dots before the thief slips away into the night?",
-  "difficulty": "Medium",
+  "correct_suspect": "Elena Novak",
+  "description": "In the heart of Vienna, a priceless artifact has vanished during a gala at the historic Hofburg Palace. As whispers of betrayal echo through the opulent halls, you must navigate a web of deceit to uncover the true thief. Each suspect presents a fa\u00e7ade, but only one holds the key to the mystery. Can you decipher the clues hidden in their words and actions before the thief slips away?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Turin, Italy",
-  "generated_at_utc": "2025-10-30T00:02:19Z",
-  "id": "daily_20251030",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2025-10-31T00:02:46Z",
+  "id": "daily_20251031",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,10 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Sophie Dubois is the only suspect with a motive tied to financial troubles.",
-      "Her hobby of collecting antiques aligns with the missing artifact clue.",
-      "Witness accounts point to her vehicle and presence at key locations.",
-      "Other suspects have hobbies and motives that do not connect as strongly."
+      "1. The clues point to a theft involving rare artifacts.",
+      "2. Elena Novak's hobby of collecting rare artifacts aligns with the motive.",
+      "3. The behavioral clues indicate nervousness around the curator, suggesting insider knowledge.",
+      "4. Other suspects have motives that do not directly connect to the artifact theft."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,66 +113,75 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251030",
+  "mission_id": "daily_20251031",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Artifact Hunter",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "ef63f99757cc029d9fa9108a201246fe747ab8134f348bc67baa87e31163e89d",
-  "solution": "Connect the clues about the antique dealer's financial troubles and her presence at the festival to reveal her as the thief.",
+  "seed": "b43d282cbce2fac117dc958f15f3ca525a1db920198ac5a5a27a65667fbaa21f",
+  "solution": "Analyze the behavioral clues and the connections between the suspects' hobbies and the stolen artifact to identify Elena Novak as the thief.",
   "suspect_database": [
     {
-      "background": "A local photographer known for capturing the essence of the C\u00f4te d'Azur.",
-      "favorite_food": "Bouillabaisse",
+      "background": "An art dealer with a keen eye for valuable items.",
+      "favorite_food": "Sushi",
+      "gender": "Female",
+      "hair_color": "Black",
+      "hobby": "Collecting rare artifacts",
+      "motive": "Desire to possess the artifact for her collection.",
+      "name": "Elena Novak",
+      "vehicle": "Luxury sedan"
+    },
+    {
+      "background": "A photographer who often captures events at high-profile gatherings.",
+      "favorite_food": "Goulash",
       "gender": "Male",
       "hair_color": "Brown",
       "hobby": "Photography",
-      "motive": "Desire for fame and recognition.",
-      "name": "Julien Moreau",
-      "vehicle": "Black motorcycle"
+      "motive": "Seeking fame through a scandal.",
+      "name": "Marek Kral",
+      "vehicle": "Motorcycle"
     },
     {
-      "background": "An antique dealer with a keen eye for valuable items.",
-      "favorite_food": "Ratatouille",
+      "background": "A dancer who performs at various cultural events.",
+      "favorite_food": "Pasta",
       "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "Collecting antiques",
-      "motive": "Financial troubles leading to desperate measures.",
-      "name": "Sophie Dubois",
-      "vehicle": "Red convertible"
+      "hobby": "Dancing",
+      "motive": "Wants to fund her dance school.",
+      "name": "Sofia Petrov",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A laid-back surfer who frequents the beaches.",
-      "favorite_food": "Tacos",
+      "background": "A chef known for his culinary skills and connections in the art world.",
+      "favorite_food": "Steak",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Surfing",
-      "motive": "A need for quick cash to fund his surfing trips.",
-      "name": "Marc Lefevre",
-      "vehicle": "White van"
+      "hobby": "Cooking",
+      "motive": "To create a culinary art exhibit.",
+      "name": "Lukas Schmidt",
+      "vehicle": "Van"
     },
     {
-      "background": "A chef with a passion for culinary arts and a hidden past.",
-      "favorite_food": "Cr\u00eapes",
+      "background": "A poet who frequents art events for inspiration.",
+      "favorite_food": "Chocolate",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Cooking",
-      "motive": "A secret life that could unravel her career.",
-      "name": "Claire Martin",
-      "vehicle": "Silver sedan"
+      "hobby": "Writing poetry",
+      "motive": "To write a bestseller based on the theft.",
+      "name": "Anna Weiss",
+      "vehicle": "Compact car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Ratatouille",
+    "favorite_food": "Sushi",
     "gender": "Female",
-    "hair_color": "Blonde",
-    "hobby": "Collecting antiques",
-    "vehicle": "Red convertible"
+    "hair_color": "Black",
+    "hobby": "Collecting rare artifacts",
+    "vehicle": "Luxury sedan"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251030.png",
-  "title": "Whispers in the Wind"
+  "title": "Shadows of Deceit"
 }
