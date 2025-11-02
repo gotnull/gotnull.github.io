@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20251101.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20251102.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "A peculiar hat",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone lurking near the sculptures last night. They had a peculiar hat.",
-          "point_value": 75
+          "clue_type": "artistic_interest",
+          "clue_value": "sketching",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone sketching the paintings, but they left in a hurry.",
+          "point_value": 80
         },
         {
-          "clue_type": "Overheard Conversation",
-          "clue_value": "Mention of a favorite dish",
-          "name": "Mus\u00e9e Matisse",
-          "npc_dialogue": "The thief seems to have an eye for color. I overheard them mention a favorite dish.",
+          "clue_type": "favorite_food",
+          "clue_value": "tapas",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "A woman was discussing her favorite tapas with a friend, very animated.",
           "point_value": 60
         },
         {
-          "clue_type": "Customer Behavior",
-          "clue_value": "Nervous seafood lover",
-          "name": "Caf\u00e9 de Turin",
-          "npc_dialogue": "I noticed a customer who always orders seafood. They seemed nervous.",
-          "point_value": 90
+          "clue_type": "motive",
+          "clue_value": "rare painting",
+          "name": "Central Market",
+          "npc_dialogue": "I overheard someone mention a rare painting they were after.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Gambling Behavior",
-          "clue_value": "Striking red hair",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "I saw a woman with striking red hair winning big. She left in a hurry.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Curiosity",
-          "clue_value": "Interest in rare fish",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "Someone was asking about rare fish. They seemed too interested.",
+          "clue_type": "artistic_interest",
+          "clue_value": "sketching",
+          "name": "Vieux Port",
+          "npc_dialogue": "A man in a beret was sketching the boats, seemed quite focused.",
           "point_value": 70
         },
         {
-          "clue_type": "Boastful Behavior",
-          "clue_value": "Secret recipe",
-          "name": "Le Louis XV",
-          "npc_dialogue": "A man was boasting about his culinary skills. He mentioned a secret recipe.",
-          "point_value": 85
+          "clue_type": "favorite_food",
+          "clue_value": "bouillabaisse",
+          "name": "Le Panier",
+          "npc_dialogue": "I saw a woman enjoying bouillabaisse, she seemed to know a lot about seafood.",
+          "point_value": 50
+        },
+        {
+          "clue_type": "motive",
+          "clue_value": "art auction",
+          "name": "Palais des Congr\u00e8s",
+          "npc_dialogue": "There was talk of an art auction, but the details were murky.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Out of Place",
-          "clue_value": "Film festival talk",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "I overheard someone talking about a film festival. They seemed out of place.",
-          "point_value": 65
+          "clue_type": "artistic_interest",
+          "clue_value": "sketching",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "A woman was sketching the fountain, she seemed very passionate.",
+          "point_value": 85
         },
         {
-          "clue_type": "Shopping Behavior",
-          "clue_value": "Distinct style",
-          "name": "Rue d'Antibes",
-          "npc_dialogue": "A shopper was eyeing the jewelry stores. They had a distinct style.",
-          "point_value": 75
+          "clue_type": "favorite_food",
+          "clue_value": "pesto",
+          "name": "Mercato Orientale",
+          "npc_dialogue": "I overheard someone raving about pesto, very particular about the ingredients.",
+          "point_value": 55
         },
         {
-          "clue_type": "Artistic Interest",
-          "clue_value": "Favorite artist",
-          "name": "Caf\u00e9 des Arts",
-          "npc_dialogue": "A regular here loves to sketch. They mentioned a favorite artist.",
-          "point_value": 80
+          "clue_type": "motive",
+          "clue_value": "stolen masterpiece",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "There was a rumor about a stolen masterpiece, but no one knows who took it.",
+          "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Dupont",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, shadows dance along the promenade, hiding secrets that only the keenest eyes can uncover. Your mission is to track down the elusive thief who has been stealing valuable artifacts from local galleries. Each suspect has a story, but only one holds the key to the truth. Can you decipher the whispers in the wind and bring the culprit to justice?",
-  "difficulty": "Medium",
+  "correct_suspect": "Clara Moreau",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of betrayal echo through the cobblestone streets, you must navigate a web of deceit to uncover the true mastermind behind the chaos. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this intricate puzzle.",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2025-11-01T00:02:25Z",
-  "id": "daily_20251101",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2025-11-02T00:02:09Z",
+  "id": "daily_20251102",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.3,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Dupont is the only suspect with red hair, matching the witness account.",
-      "Her hobby of painting aligns with the theft of art-related items.",
-      "The mention of seafood connects to her favorite food, providing a consistent profile.",
-      "Other suspects have conflicting traits that do not match all clues."
+      "Identify the artistic interest of sketching as a common trait.",
+      "Link the favorite food of tapas to Clara Moreau.",
+      "Confirm the motive of seeking recognition aligns with the thefts.",
+      "Eliminate other suspects based on mismatched traits."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,7 +113,7 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251101",
+  "mission_id": "daily_20251102",
   "region": "Europe",
   "rewards": {
     "badge_name": "Art Sleuth",
@@ -121,57 +121,57 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "bd9b598df10dc3b5622175c7c1aaee8ef13450bb409d1dcdc50513c56730b01f",
-  "solution": "Connect the clues about the suspect's artistic interests and culinary preferences to identify Clara Dupont as the thief.",
+  "seed": "6738e003a96b5504b4bc234c462175da9608bab53f43aa56ec4a5d600d222045",
+  "solution": "Connect the clues about the suspect's artistic interests and culinary preferences to identify Clara Moreau, who is linked to both sketching and tapas.",
   "suspect_database": [
     {
-      "background": "An aspiring artist with a penchant for the dramatic.",
-      "favorite_food": "Seafood",
+      "background": "An art student with a passion for Mediterranean cuisine.",
+      "favorite_food": "Tapas",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Painting",
+      "hair_color": "Brown",
+      "hobby": "Sketching",
       "motive": "Desires recognition in the art world.",
-      "name": "Clara Dupont",
+      "name": "Clara Moreau",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A chef known for his secret recipes.",
-      "favorite_food": "Pasta",
+      "background": "A photographer who often captures the essence of coastal life.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Cooking",
-      "motive": "Wants to fund his restaurant.",
-      "name": "Jean-Pierre Moreau",
+      "hair_color": "Black",
+      "hobby": "Photography",
+      "motive": "Wants to fund his next big project.",
+      "name": "Julien Dupont",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A fashionista with a flair for the extravagant.",
-      "favorite_food": "Sushi",
+      "background": "A painter known for her vibrant landscapes.",
+      "favorite_food": "Pesto",
       "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "Fashion Design",
-      "motive": "Seeks inspiration from the elite.",
-      "name": "Sophie Laurent",
+      "hobby": "Painting",
+      "motive": "Seeks inspiration from rare artworks.",
+      "name": "Sofia Rossi",
       "vehicle": "Car"
     },
     {
-      "background": "A fisherman with a love for the sea.",
-      "favorite_food": "Steak",
+      "background": "A sculptor with a keen interest in classical art.",
+      "favorite_food": "Pizza",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Fishing",
-      "motive": "Wants to escape his mundane life.",
-      "name": "Marc Lefevre",
-      "vehicle": "Boat"
+      "hair_color": "Red",
+      "hobby": "Sculpting",
+      "motive": "Wants to create a new exhibit.",
+      "name": "Marco Bellini",
+      "vehicle": "Van"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Seafood",
+    "favorite_food": "Tapas",
     "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Painting",
+    "hair_color": "Brown",
+    "hobby": "Sketching",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251101.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251102.png",
+  "title": "Echoes of Deceit"
 }
