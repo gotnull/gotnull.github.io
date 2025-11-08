@@ -1,8 +1,8 @@
 name: Generate Tech Blog Post
 
 on:
-  schedule:
-    - cron: '11 13 * * *'  # 11:11 PM AEST = 13:11 UTC
+  # schedule:
+  #   - cron: '11 13 * * *'  # 11:11 PM AEST = 13:11 UTC
   workflow_dispatch:
 
 jobs:
