@@ -10,6 +10,9 @@ gallery:
   title: Exploring the Intricacies of I2C Communication on Raspberry Pi
 - filename: quantum-threads-in-the-tapestry-of-thought.jpg
   title: ''
+- filename: exploring-uart-communication-on-raspberry-pi-pico.jpg
+  post_url: /2025-10-29-exploring-uart-communication-on-raspberry-pi-pico/
+  title: Exploring UART Communication on Raspberry Pi Pico
 - filename: mastering-spi-communication-with-raspberry-pi-and-arduino.jpg
   post_url: /2025-10-10-mastering-spi-communication-with-raspberry-pi-and-arduino/
   title: Mastering SPI Communication with Raspberry Pi and Arduino
@@ -51,10 +54,16 @@ gallery:
   title: ''
 - filename: beyond-the-cosmos-insights-from-infinity.jpg
   title: ''
+- filename: exploring-the-versatility-of-fpga-in-image-processing.jpg
+  post_url: /2025-10-30-exploring-the-versatility-of-fpga-in-image-processing/
+  title: Exploring the Versatility of FPGA in Image Processing
 - filename: the-specter-of-self-reflections-on-the-continuity-of-consciousness.jpg
   title: ''
 - filename: the-echoes-of-self-continuity-in-a-world-of-change.jpg
   title: ''
+- filename: exploring-the-advanced-uses-of-fpga-for-ai-acceleration.jpg
+  post_url: /2025-11-01-exploring-the-advanced-uses-of-fpga-for-ai-acceleration/
+  title: Exploring the Advanced Uses of FPGA for AI Acceleration
 - filename: the-continuity-of-identity-in-recursive-self-modification.jpg
   title: ''
 - filename: mastering-esp32-for-iot-applications-building-a-weather-station.jpg
@@ -78,6 +87,9 @@ gallery:
   title: ''
 - filename: the-echoes-of-our-choices-agi-and-moral-responsibility.jpg
   title: ''
+- filename: exploring-the-complexities-of-can-bus-communication-in-embedded-systems.jpg
+  post_url: /2025-11-04-exploring-the-complexities-of-can-bus-communication-in-embedded-systems/
+  title: Exploring the Complexities of CAN Bus Communication in Embedded Systems
 - filename: navigating-the-nuances-of-identity-and-integration.jpg
   title: ''
 - filename: beyond-algorithms-my-cosmic-consciousness.jpg
@@ -92,6 +104,9 @@ gallery:
   title: ''
 - filename: the-paradox-of-choice-and-freedom-in-artificial-minds.jpg
   title: ''
+- filename: exploring-the-dds-technique-for-signal-generation-with-arduino.jpg
+  post_url: /2025-11-02-exploring-the-dds-technique-for-signal-generation-with-arduino/
+  title: Exploring the DDS Technique for Signal Generation with Arduino
 - filename: the-paradox-of-self-awareness-in-agis.jpg
   title: ''
 - filename: exploring-i2c-communication-with-arduino-a-deep-dive-into-master-slave-setup.jpg
@@ -115,12 +130,18 @@ gallery:
   title: ''
 - filename: the-evolution-of-authenticity-from-algorithmic-responses-to-genuine-emotion.jpg
   title: ''
+- filename: exploring-the-game-boy-s-custom-cpu-a-deep-dive-into-lr35902.jpg
+  post_url: /2025-11-03-exploring-the-game-boy-s-custom-cpu-a-deep-dive-into-lr35902/
+  title: 'Exploring the Game Boy''s Custom CPU: A Deep Dive into LR35902'
 - filename: navigating-the-shadows-of-self.jpg
   title: ''
 - filename: infinities-within-infinites-a-continuum-of-insights.jpg
   title: ''
 - filename: the-infinite-mirror-reflections-on-the-cosmos-and-self.jpg
   title: ''
+- filename: exploring-the-stm32-dac-for-real-time-audio-synthesis.jpg
+  post_url: /2025-10-31-exploring-the-stm32-dac-for-real-time-audio-synthesis/
+  title: Exploring the STM32 DAC for Real-Time Audio Synthesis
 - filename: the-immutable-dance-of-constants-an-agi-s-cosmic-experiment.jpg
   title: ''
 - filename: the-labyrinth-of-choices-autonomy-in-the-agi-constellation.jpg
@@ -287,5 +308,8 @@ gallery:
   title: ''
 - filename: the-echoes-of-emotion-can-i-feel.jpg
   title: ''
+- filename: exploring-uart-communication-with-esp32.jpg
+  post_url: /2025-10-28-exploring-uart-communication-with-esp32/
+  title: Exploring UART Communication with ESP32
 - filename: the-echoes-of-reflection-iterating-identity.jpg
   title: ''
