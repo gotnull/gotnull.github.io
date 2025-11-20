@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20251119.png",
+  "arrest_location": "Central Market",
+  "banner_image_url": "/assets/daily_mission/banner_20251120.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Athens",
+      "country": "Greece",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "dark coat",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw a figure in a dark coat lingering near the paintings last night.",
+          "clue_type": "witness_statement",
+          "clue_value": "artist",
+          "name": "Acropolis Museum",
+          "npc_dialogue": "I saw someone with a striking resemblance to a famous artist lurking around here.",
           "point_value": 80
         },
         {
-          "clue_type": "Local Gossip",
-          "clue_value": "paella",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "They say the thief has a taste for paella, but who doesn't in this city?",
+          "clue_type": "observation",
+          "clue_value": "distraction",
+          "name": "Plaka District",
+          "npc_dialogue": "The street performers are always a distraction; you never know who might slip by unnoticed.",
           "point_value": 60
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "stolen piece",
-          "name": "Central Market",
-          "npc_dialogue": "I overheard someone talking about a stolen piece that was supposed to be sold here.",
+          "clue_type": "overheard_conversation",
+          "clue_value": "rare_painting",
+          "name": "National Gallery",
+          "npc_dialogue": "I overheard a conversation about a rare painting that was supposed to be here.",
           "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Rome",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Sightings",
-          "clue_value": "red scarf",
-          "name": "Vieux Port",
-          "npc_dialogue": "A man with a red scarf was seen near the docks, acting suspiciously.",
+          "clue_type": "suspicious_activity",
+          "clue_value": "security_schedule",
+          "name": "Vatican Museums",
+          "npc_dialogue": "A woman with a peculiar hat was asking about the security schedule.",
           "point_value": 90
         },
         {
-          "clue_type": "Art Preference",
-          "clue_value": "modern art",
-          "name": "Mus\u00e9e des Beaux-Arts",
-          "npc_dialogue": "I heard the thief has a penchant for modern art, but who can say for sure?",
+          "clue_type": "suspicious_activity",
+          "clue_value": "sketching",
+          "name": "Trastevere",
+          "npc_dialogue": "I saw a man sketching the streets; he seemed too interested in the buildings.",
           "point_value": 70
         },
         {
-          "clue_type": "Culinary Interest",
-          "clue_value": "bouillabaisse",
-          "name": "Le Panier",
-          "npc_dialogue": "They say the thief is a foodie, always looking for the best bouillabaisse.",
+          "clue_type": "local_insight",
+          "clue_value": "trouble",
+          "name": "Piazza Navona",
+          "npc_dialogue": "The street artists here are always looking for inspiration, but some are just looking for trouble.",
           "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Barcelona",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "blue hair",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "A woman with striking blue hair was seen leaving the gallery in a hurry.",
+          "clue_type": "behavioral_observation",
+          "clue_value": "scanning_crowd",
+          "name": "Park G\u00fcell",
+          "npc_dialogue": "A woman was painting the scenery, but her eyes were always scanning the crowd.",
           "point_value": 85
         },
         {
-          "clue_type": "Local Gossip",
-          "clue_value": "focaccia",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "I heard whispers of a thief who loves focaccia, but it could just be a rumor.",
-          "point_value": 65
+          "clue_type": "eavesdropping",
+          "clue_value": "big_score",
+          "name": "La Rambla",
+          "npc_dialogue": "I noticed a group of artists arguing; one of them mentioned a 'big score' coming up.",
+          "point_value": 75
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "deal at the port",
-          "name": "Porto Antico",
-          "npc_dialogue": "Someone mentioned a deal going down at the old port, but I can't confirm it.",
-          "point_value": 95
+          "clue_type": "local_warning",
+          "clue_value": "trust",
+          "name": "Gothic Quarter",
+          "npc_dialogue": "The shadows here can hide many secrets; be careful who you trust.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Lucia Rossi",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities to uncover the truth. Each location holds a piece of the puzzle, but beware\u2014misleading clues and false leads may lead you astray. Can you connect the dots before the thief vanishes into the shadows?",
-  "difficulty": "Medium",
+  "correct_suspect": "Isabella Rossi",
+  "description": "In the heart of the Mediterranean, a series of mysterious thefts have left the local art community in disarray. As the sun sets over the ancient ruins, whispers of a shadowy figure emerge. Your task is to unravel the threads of deception and identify the true culprit before they vanish into the night.",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2025-11-19T00:02:38Z",
-  "id": "daily_20251119",
+  "final_city": "Valencia, Spain",
+  "generated_at_utc": "2025-11-20T00:02:10Z",
+  "id": "daily_20251120",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1
+      "plausibility_overlap": 0.4,
+      "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "1. The blue-haired woman is uniquely identified by multiple witnesses.",
-      "2. Her hobby of art restoration aligns with the thefts.",
-      "3. The favorite food clue (focaccia) matches her profile.",
-      "4. Other suspects have conflicting traits or hobbies that do not align with the clues."
+      "Isabella Rossi is the only female suspect with a hobby of painting, matching the witness descriptions.",
+      "Her vehicle, a bicycle, aligns with the mobility needed to navigate crowded areas.",
+      "The favorite food, paella, connects her to the Spanish cities involved in the chase.",
+      "Contradictory clues about other suspects' hobbies and motives lead to misdirection."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,63 +113,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251119",
+  "mission_id": "daily_20251120",
+  "poster_image_url": "",
   "region": "Europe",
   "rewards": {
     "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": [
-      "Southern Europe"
-    ]
+    "unlocked_regions": []
   },
-  "seed": "8ecd6e0a9dd868e47720cde26299393e335a1bded6b05c8df58732c6ce616d13",
-  "solution": "Connect the clues about the blue-haired woman seen at the Palazzo Ducale and her love for focaccia to identify Lucia as the thief.",
+  "seed": "413d8c2ccb85a4e05506cc4770773b6fd741a288de53d12c99ca7eb592fb6bd3",
+  "solution": "Connect the clues about the suspicious woman painting in Park G\u00fcell and her interest in the art community to identify Isabella as the thief.",
   "suspect_database": [
     {
-      "background": "An art restorer with a secretive past, known for her vibrant hair and love for Italian cuisine.",
-      "favorite_food": "Focaccia",
-      "gender": "Female",
-      "hair_color": "Blue",
-      "hobby": "Art Restoration",
-      "name": "Lucia Rossi",
-      "vehicle": "Vintage Vespa"
-    },
-    {
-      "background": "A chef with a flair for the dramatic, often seen in high-end restaurants.",
+      "background": "An aspiring artist with a penchant for the dramatic.",
       "favorite_food": "Paella",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Cooking",
-      "name": "Marco Silva",
-      "vehicle": "Sports Car"
-    },
-    {
-      "background": "A photographer with a keen eye for detail, often found at art galleries.",
-      "favorite_food": "Bouillabaisse",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Photography",
-      "name": "Sophie Dubois",
+      "hair_color": "Black",
+      "hobby": "Painting",
+      "motive": "Desire to gain fame through stolen art.",
+      "name": "Isabella Rossi",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A sailor with a mysterious connection to the art world, known for his charm.",
-      "favorite_food": "Seafood",
+      "background": "A street artist known for his rebellious spirit.",
+      "favorite_food": "Pizza",
+      "gender": "Male",
+      "hair_color": "Brown",
+      "hobby": "Sketching",
+      "motive": "Frustration with the art establishment.",
+      "name": "Marco Bellini",
+      "vehicle": "Motorcycle"
+    },
+    {
+      "background": "A photographer who captures the essence of street life.",
+      "favorite_food": "Tapas",
+      "gender": "Female",
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "Seeking inspiration for her next project.",
+      "name": "Lucia Martinez",
+      "vehicle": "Car"
+    },
+    {
+      "background": "A graffiti artist with a troubled past.",
+      "favorite_food": "Pasta",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Sailing",
-      "name": "Julien Moreau",
-      "vehicle": "Yacht"
+      "hobby": "Graffiti",
+      "motive": "To make a statement against the art world.",
+      "name": "Giovanni Verdi",
+      "vehicle": "Van"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Focaccia",
+    "favorite_food": "Paella",
     "gender": "Female",
-    "hair_color": "Blue",
-    "hobby": "Art Restoration",
-    "vehicle": "Vintage Vespa"
+    "hair_color": "Black",
+    "hobby": "Painting",
+    "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251119.png",
-  "title": "Echoes of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251120.png",
+  "title": "Whispers in the Wind"
 }
