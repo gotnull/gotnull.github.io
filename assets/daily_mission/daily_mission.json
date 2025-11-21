@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Central Market",
-  "banner_image_url": "/assets/daily_mission/banner_20251120.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20251121.png",
   "cities": [
     {
-      "city_name": "Athens",
-      "country": "Greece",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "witness_statement",
-          "clue_value": "artist",
-          "name": "Acropolis Museum",
-          "npc_dialogue": "I saw someone with a striking resemblance to a famous artist lurking around here.",
+          "clue_type": "artifact",
+          "clue_value": "A rare Egyptian amulet",
+          "name": "Kunsthistorisches Museum",
+          "npc_dialogue": "The curator mentioned a peculiar interest in ancient artifacts. Could it be more than just admiration?",
           "point_value": 80
         },
         {
-          "clue_type": "observation",
-          "clue_value": "distraction",
-          "name": "Plaka District",
-          "npc_dialogue": "The street performers are always a distraction; you never know who might slip by unnoticed.",
-          "point_value": 60
+          "clue_type": "auction",
+          "clue_value": "A painting by Gustav Klimt",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "I overheard a conversation about a secret auction. It seems someone is desperate to acquire a certain piece.",
+          "point_value": 90
         },
         {
-          "clue_type": "overheard_conversation",
-          "clue_value": "rare_painting",
-          "name": "National Gallery",
-          "npc_dialogue": "I overheard a conversation about a rare painting that was supposed to be here.",
-          "point_value": 100
+          "clue_type": "suspicion",
+          "clue_value": "A wealthy art dealer",
+          "name": "Naschmarkt",
+          "npc_dialogue": "The market is buzzing with rumors of a collector who has been acting suspiciously. They say he has a taste for the extravagant.",
+          "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Rome",
-      "country": "Italy",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "suspicious_activity",
-          "clue_value": "security_schedule",
-          "name": "Vatican Museums",
-          "npc_dialogue": "A woman with a peculiar hat was asking about the security schedule.",
-          "point_value": 90
+          "clue_type": "sketch",
+          "clue_value": "A drawing of a stolen painting",
+          "name": "Old Town Square",
+          "npc_dialogue": "I saw a woman with a striking resemblance to a famous artist. She was sketching something unusual.",
+          "point_value": 85
         },
         {
-          "clue_type": "suspicious_activity",
-          "clue_value": "sketching",
-          "name": "Trastevere",
-          "npc_dialogue": "I saw a man sketching the streets; he seemed too interested in the buildings.",
-          "point_value": 70
+          "clue_type": "meeting",
+          "clue_value": "A clandestine gathering of collectors",
+          "name": "Charles Bridge",
+          "npc_dialogue": "There's talk of a secret meeting happening at the castle. It could be worth investigating.",
+          "point_value": 75
         },
         {
-          "clue_type": "local_insight",
-          "clue_value": "trouble",
-          "name": "Piazza Navona",
-          "npc_dialogue": "The street artists here are always looking for inspiration, but some are just looking for trouble.",
-          "point_value": 50
+          "clue_type": "figure",
+          "clue_value": "A shadowy art enthusiast",
+          "name": "Prague Castle",
+          "npc_dialogue": "The guards mentioned a mysterious figure who frequents the castle grounds at odd hours.",
+          "point_value": 95
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Barcelona",
-      "country": "Spain",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "behavioral_observation",
-          "clue_value": "scanning_crowd",
-          "name": "Park G\u00fcell",
-          "npc_dialogue": "A woman was painting the scenery, but her eyes were always scanning the crowd.",
-          "point_value": 85
+          "clue_type": "disguise",
+          "clue_value": "A painted face",
+          "name": "Heroes' Square",
+          "npc_dialogue": "A local artist claimed to have seen someone resembling the thief near the square. Art can be a powerful disguise.",
+          "point_value": 60
         },
         {
-          "clue_type": "eavesdropping",
-          "clue_value": "big_score",
-          "name": "La Rambla",
-          "npc_dialogue": "I noticed a group of artists arguing; one of them mentioned a 'big score' coming up.",
-          "point_value": 75
+          "clue_type": "smuggling",
+          "clue_value": "A hidden passage",
+          "name": "Buda Castle",
+          "npc_dialogue": "Rumor has it that a rare piece was smuggled through the castle. The guards are tight-lipped, but I can help you.",
+          "point_value": 100
         },
         {
-          "clue_type": "local_warning",
-          "clue_value": "trust",
-          "name": "Gothic Quarter",
-          "npc_dialogue": "The shadows here can hide many secrets; be careful who you trust.",
-          "point_value": 65
+          "clue_type": "collector",
+          "clue_value": "A gourmet art lover",
+          "name": "Central Market Hall",
+          "npc_dialogue": "I overheard a conversation about a collector who has a penchant for rare spices and rare art.",
+          "point_value": 70
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Isabella Rossi",
-  "description": "In the heart of the Mediterranean, a series of mysterious thefts have left the local art community in disarray. As the sun sets over the ancient ruins, whispers of a shadowy figure emerge. Your task is to unravel the threads of deception and identify the true culprit before they vanish into the night.",
-  "difficulty": "Hard",
+  "correct_suspect": "Elena Novak",
+  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. The stolen pieces are rumored to hold secrets of a hidden treasure. As you delve into the world of art collectors and historians, you must navigate through a web of deceit and misdirection to uncover the true thief. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to the mystery.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Valencia, Spain",
-  "generated_at_utc": "2025-11-20T00:02:10Z",
-  "id": "daily_20251120",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2025-11-21T00:02:31Z",
+  "id": "daily_20251121",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.4,
-      "solution_uniqueness": 0.9
+      "plausibility_overlap": 0.2,
+      "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Isabella Rossi is the only female suspect with a hobby of painting, matching the witness descriptions.",
-      "Her vehicle, a bicycle, aligns with the mobility needed to navigate crowded areas.",
-      "The favorite food, paella, connects her to the Spanish cities involved in the chase.",
-      "Contradictory clues about other suspects' hobbies and motives lead to misdirection."
+      "Identify the suspect traits from the clues provided.",
+      "Match the traits to the suspects in the database.",
+      "Elena Novak is the only suspect with black hair and a hobby of painting.",
+      "Other suspects have conflicting traits or motives that do not align with the clues."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,8 +113,7 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251120",
-  "poster_image_url": "",
+  "mission_id": "daily_20251121",
   "region": "Europe",
   "rewards": {
     "badge_name": "Art Sleuth",
@@ -122,57 +121,57 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "413d8c2ccb85a4e05506cc4770773b6fd741a288de53d12c99ca7eb592fb6bd3",
-  "solution": "Connect the clues about the suspicious woman painting in Park G\u00fcell and her interest in the art community to identify Isabella as the thief.",
+  "seed": "6b8056a81a365bee8ab4c48ab8c5f0d089476272d65b24732abb26ef22e8508f",
+  "solution": "Connect the clues about the suspicious activities surrounding the art scene in Vienna, Prague, and Budapest, focusing on Elena's unique traits and her connection to the stolen pieces.",
   "suspect_database": [
     {
-      "background": "An aspiring artist with a penchant for the dramatic.",
-      "favorite_food": "Paella",
+      "background": "An art student with a mysterious past, known for her exceptional talent and secretive nature.",
+      "favorite_food": "Sushi",
       "gender": "Female",
       "hair_color": "Black",
       "hobby": "Painting",
-      "motive": "Desire to gain fame through stolen art.",
-      "name": "Isabella Rossi",
+      "motive": "Desire to fund her studies through illicit means.",
+      "name": "Elena Novak",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A street artist known for his rebellious spirit.",
-      "favorite_food": "Pizza",
+      "background": "A wealthy collector with a reputation for being ruthless in acquiring rare items.",
+      "favorite_food": "Goulash",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Sketching",
-      "motive": "Frustration with the art establishment.",
-      "name": "Marco Bellini",
+      "hobby": "Collecting antiques",
+      "motive": "To complete his collection at any cost.",
+      "name": "Marek Kral",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A photographer who captures the essence of street life.",
-      "favorite_food": "Tapas",
+      "background": "A photographer who often captures the essence of art, but has been seen in questionable company.",
+      "favorite_food": "Pasta",
       "gender": "Female",
       "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "Seeking inspiration for her next project.",
-      "name": "Lucia Martinez",
+      "motive": "To gain fame through scandal.",
+      "name": "Sofia Petrov",
       "vehicle": "Car"
     },
     {
-      "background": "A graffiti artist with a troubled past.",
-      "favorite_food": "Pasta",
+      "background": "A street artist with a rebellious streak, known for his bold statements in the art world.",
+      "favorite_food": "Pizza",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Graffiti",
-      "motive": "To make a statement against the art world.",
-      "name": "Giovanni Verdi",
-      "vehicle": "Van"
+      "hair_color": "Red",
+      "hobby": "Graffiti art",
+      "motive": "To make a name for himself by any means necessary.",
+      "name": "Lukas Varga",
+      "vehicle": "Skateboard"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Paella",
+    "favorite_food": "Sushi",
     "gender": "Female",
     "hair_color": "Black",
     "hobby": "Painting",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251120.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251121.png",
+  "title": "Echoes of the Past"
 }
