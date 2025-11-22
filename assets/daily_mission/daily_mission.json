@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Slovak National Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20251121.png",
+  "arrest_location": "Piazza Castello",
+  "banner_image_url": "/assets/daily_mission/banner_20251122.png",
   "cities": [
     {
-      "city_name": "Vienna",
-      "country": "Austria",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "artifact",
-          "clue_value": "A rare Egyptian amulet",
-          "name": "Kunsthistorisches Museum",
-          "npc_dialogue": "The curator mentioned a peculiar interest in ancient artifacts. Could it be more than just admiration?",
+          "clue_type": "artistic_reference",
+          "clue_value": "The artist's palette is as varied as the colors of the sunset.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "The sea whispers secrets, but only to those who listen closely.",
           "point_value": 80
         },
         {
-          "clue_type": "auction",
-          "clue_value": "A painting by Gustav Klimt",
-          "name": "Belvedere Palace",
-          "npc_dialogue": "I overheard a conversation about a secret auction. It seems someone is desperate to acquire a certain piece.",
+          "clue_type": "behavioral_pattern",
+          "clue_value": "The artist often painted in solitude, yet his works were always vibrant.",
+          "name": "Mus\u00e9e Marc Chagall",
+          "npc_dialogue": "Chagall painted dreams, but some dreams are nightmares.",
           "point_value": 90
         },
         {
-          "clue_type": "suspicion",
-          "clue_value": "A wealthy art dealer",
-          "name": "Naschmarkt",
-          "npc_dialogue": "The market is buzzing with rumors of a collector who has been acting suspiciously. They say he has a taste for the extravagant.",
+          "clue_type": "culinary_hint",
+          "clue_value": "A favorite spot for artists, where discussions turn into debates.",
+          "name": "Caf\u00e9 de Turin",
+          "npc_dialogue": "The best oysters in town, but beware of the hidden pearls.",
           "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Prague",
-      "country": "Czech Republic",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "sketch",
-          "clue_value": "A drawing of a stolen painting",
-          "name": "Old Town Square",
-          "npc_dialogue": "I saw a woman with a striking resemblance to a famous artist. She was sketching something unusual.",
+          "clue_type": "social_hub",
+          "clue_value": "High stakes and high art often collide in this glamorous setting.",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "Luck is a fickle friend, much like the artists who frequent here.",
           "point_value": 85
         },
         {
-          "clue_type": "meeting",
-          "clue_value": "A clandestine gathering of collectors",
-          "name": "Charles Bridge",
-          "npc_dialogue": "There's talk of a secret meeting happening at the castle. It could be worth investigating.",
+          "clue_type": "natural_reference",
+          "clue_value": "The rare plants here symbolize the rarity of true talent.",
+          "name": "Jardin Exotique",
+          "npc_dialogue": "Nature's beauty can be deceiving; not all blooms are what they seem.",
           "point_value": 75
         },
         {
-          "clue_type": "figure",
-          "clue_value": "A shadowy art enthusiast",
-          "name": "Prague Castle",
-          "npc_dialogue": "The guards mentioned a mysterious figure who frequents the castle grounds at odd hours.",
+          "clue_type": "wealth_indicator",
+          "clue_value": "Artists often sell their souls for a taste of luxury.",
+          "name": "Le Metropole",
+          "npc_dialogue": "A place where the elite gather, but secrets are the true currency.",
           "point_value": 95
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Budapest",
-      "country": "Hungary",
+      "city_name": "Cannes",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "disguise",
-          "clue_value": "A painted face",
-          "name": "Heroes' Square",
-          "npc_dialogue": "A local artist claimed to have seen someone resembling the thief near the square. Art can be a powerful disguise.",
-          "point_value": 60
-        },
-        {
-          "clue_type": "smuggling",
-          "clue_value": "A hidden passage",
-          "name": "Buda Castle",
-          "npc_dialogue": "Rumor has it that a rare piece was smuggled through the castle. The guards are tight-lipped, but I can help you.",
+          "clue_type": "event_reference",
+          "clue_value": "Film and art intertwine, revealing hidden narratives.",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "The spotlight shines bright, but shadows lurk behind the curtains.",
           "point_value": 100
         },
         {
-          "clue_type": "collector",
-          "clue_value": "A gourmet art lover",
-          "name": "Central Market Hall",
-          "npc_dialogue": "I overheard a conversation about a collector who has a penchant for rare spices and rare art.",
+          "clue_type": "commercial_hint",
+          "clue_value": "The street is lined with galleries, each hiding its own secrets.",
+          "name": "Rue d'Antibes",
+          "npc_dialogue": "Shopping for art is like hunting for treasure; not all that glitters is gold.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "environmental_clue",
+          "clue_value": "Artists often find inspiration here, but also distraction.",
+          "name": "Plage de la Croisette",
+          "npc_dialogue": "The beach is a canvas, but the tides can wash away the truth.",
           "point_value": 70
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Elena Novak",
-  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. The stolen pieces are rumored to hold secrets of a hidden treasure. As you delve into the world of art collectors and historians, you must navigate through a web of deceit and misdirection to uncover the true thief. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to the mystery.",
-  "difficulty": "Medium",
+  "correct_suspect": "Marc Lefevre",
+  "description": "A series of mysterious disappearances has left the coastal town of Nice, France, in turmoil. As the sun sets over the Mediterranean, shadows of doubt loom over the local art community. Investigate the intertwined lives of artists, collectors, and the secrets they harbor. Can you untangle the web of deceit before the final brushstroke is painted?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Bratislava, Slovakia",
-  "generated_at_utc": "2025-11-21T00:02:31Z",
-  "id": "daily_20251121",
+  "final_city": "Turin, Italy",
+  "generated_at_utc": "2025-11-22T00:02:30Z",
+  "id": "daily_20251122",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,9 +101,9 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identify the suspect traits from the clues provided.",
+      "Identify the suspect traits from the clues.",
       "Match the traits to the suspects in the database.",
-      "Elena Novak is the only suspect with black hair and a hobby of painting.",
+      "Marc Lefevre is the only suspect with black hair, a hobby of painting, and a luxury car.",
       "Other suspects have conflicting traits or motives that do not align with the clues."
     ],
     "solvability_score": 1,
@@ -113,7 +113,7 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251121",
+  "mission_id": "daily_20251122",
   "region": "Europe",
   "rewards": {
     "badge_name": "Art Sleuth",
@@ -121,57 +121,67 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "6b8056a81a365bee8ab4c48ab8c5f0d089476272d65b24732abb26ef22e8508f",
-  "solution": "Connect the clues about the suspicious activities surrounding the art scene in Vienna, Prague, and Budapest, focusing on Elena's unique traits and her connection to the stolen pieces.",
+  "seed": "6d3c79b5676c5b04eee0516d0c1c9d12d2b0876fc680686aebd33c662f9308ff",
+  "solution": "Connect the clues about the rivalry and jealousy in the art community, focusing on Marc Lefevre's financial troubles and his extravagant lifestyle.",
   "suspect_database": [
     {
-      "background": "An art student with a mysterious past, known for her exceptional talent and secretive nature.",
-      "favorite_food": "Sushi",
-      "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Painting",
-      "motive": "Desire to fund her studies through illicit means.",
-      "name": "Elena Novak",
-      "vehicle": "Bicycle"
-    },
-    {
-      "background": "A wealthy collector with a reputation for being ruthless in acquiring rare items.",
-      "favorite_food": "Goulash",
+      "background": "A reclusive sculptor known for his dramatic pieces.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Collecting antiques",
-      "motive": "To complete his collection at any cost.",
-      "name": "Marek Kral",
+      "hobby": "Sculpting",
+      "motive": "Jealousy over a rival's success.",
+      "name": "Julien Moreau",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A photographer who often captures the essence of art, but has been seen in questionable company.",
-      "favorite_food": "Pasta",
+      "background": "An ambitious photographer with a keen eye for detail.",
+      "favorite_food": "Ratatouille",
       "gender": "Female",
       "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "To gain fame through scandal.",
-      "name": "Sofia Petrov",
-      "vehicle": "Car"
+      "motive": "Desire for recognition in a male-dominated field.",
+      "name": "Claire Dubois",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A street artist with a rebellious streak, known for his bold statements in the art world.",
-      "favorite_food": "Pizza",
+      "background": "A flamboyant painter known for his extravagant lifestyle.",
+      "favorite_food": "Tart Tatin",
       "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Painting",
+      "motive": "Financial desperation due to gambling debts.",
+      "name": "Marc Lefevre",
+      "vehicle": "Luxury Car"
+    },
+    {
+      "background": "A dancer turned artist, often seen at high-profile events.",
+      "favorite_food": "Cr\u00eapes Suzette",
+      "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Graffiti art",
-      "motive": "To make a name for himself by any means necessary.",
-      "name": "Lukas Varga",
-      "vehicle": "Skateboard"
+      "hobby": "Dancing",
+      "motive": "Seeking revenge for a past betrayal.",
+      "name": "Sophie Laurent",
+      "vehicle": "Convertible"
+    },
+    {
+      "background": "An art collector with a mysterious past.",
+      "favorite_food": "Foie Gras",
+      "gender": "Male",
+      "hair_color": "Gray",
+      "hobby": "Collecting antiques",
+      "motive": "Protecting his collection at all costs.",
+      "name": "Antoine Girard",
+      "vehicle": "Classic Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Sushi",
-    "gender": "Female",
+    "favorite_food": "Tart Tatin",
+    "gender": "Male",
     "hair_color": "Black",
     "hobby": "Painting",
-    "vehicle": "Bicycle"
+    "vehicle": "Luxury Car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251121.png",
-  "title": "Echoes of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251122.png",
+  "title": "Whispers in the Wind"
 }
