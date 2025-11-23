@@ -1,119 +1,119 @@
 {
-  "arrest_location": "Piazza Castello",
-  "banner_image_url": "/assets/daily_mission/banner_20251122.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20251123.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "artistic_reference",
-          "clue_value": "The artist's palette is as varied as the colors of the sunset.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea whispers secrets, but only to those who listen closely.",
+          "clue_type": "Witness Account",
+          "clue_value": "A shadowy figure with a distinct hairstyle.",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone lurking near the paintings, but I couldn't make out their face.",
           "point_value": 80
         },
         {
-          "clue_type": "behavioral_pattern",
-          "clue_value": "The artist often painted in solitude, yet his works were always vibrant.",
-          "name": "Mus\u00e9e Marc Chagall",
-          "npc_dialogue": "Chagall painted dreams, but some dreams are nightmares.",
-          "point_value": 90
+          "clue_type": "Artistic Insight",
+          "clue_value": "Mood swings linked to artistic temperament.",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "The artist was known for their vibrant colors, but their mood was as dark as the night.",
+          "point_value": 60
         },
         {
-          "clue_type": "culinary_hint",
-          "clue_value": "A favorite spot for artists, where discussions turn into debates.",
-          "name": "Caf\u00e9 de Turin",
-          "npc_dialogue": "The best oysters in town, but beware of the hidden pearls.",
-          "point_value": 70
+          "clue_type": "Eavesdropping",
+          "clue_value": "Mention of a specific painting style.",
+          "name": "Caf\u00e9 de las Artes",
+          "npc_dialogue": "I overheard a conversation about a rare painting being sold for a fortune.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "social_hub",
-          "clue_value": "High stakes and high art often collide in this glamorous setting.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle friend, much like the artists who frequent here.",
-          "point_value": 85
+          "clue_type": "Local Gossip",
+          "clue_value": "A connection to the sea and art.",
+          "name": "Vieux Port",
+          "npc_dialogue": "The sea breeze carries secrets, but I can't recall any names.",
+          "point_value": 70
         },
         {
-          "clue_type": "natural_reference",
-          "clue_value": "The rare plants here symbolize the rarity of true talent.",
-          "name": "Jardin Exotique",
-          "npc_dialogue": "Nature's beauty can be deceiving; not all blooms are what they seem.",
-          "point_value": 75
+          "clue_type": "Vehicle Description",
+          "clue_value": "A vintage car with a unique color.",
+          "name": "Mus\u00e9e des Beaux-Arts",
+          "npc_dialogue": "I noticed a peculiar vehicle parked outside, but it left before I could see who was inside.",
+          "point_value": 90
         },
         {
-          "clue_type": "wealth_indicator",
-          "clue_value": "Artists often sell their souls for a taste of luxury.",
-          "name": "Le Metropole",
-          "npc_dialogue": "A place where the elite gather, but secrets are the true currency.",
-          "point_value": 95
+          "clue_type": "Behavioral Observation",
+          "clue_value": "An artist with a nervous demeanor.",
+          "name": "Le Panier District",
+          "npc_dialogue": "Artists often gather here, but one seemed out of place, always looking over their shoulder.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "event_reference",
-          "clue_value": "Film and art intertwine, revealing hidden narratives.",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "The spotlight shines bright, but shadows lurk behind the curtains.",
-          "point_value": 100
+          "clue_type": "Cultural Reference",
+          "clue_value": "Betrayal linked to artistic rivalry.",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "The fountain has seen many things, but the whispers of betrayal are the loudest.",
+          "point_value": 75
         },
         {
-          "clue_type": "commercial_hint",
-          "clue_value": "The street is lined with galleries, each hiding its own secrets.",
-          "name": "Rue d'Antibes",
-          "npc_dialogue": "Shopping for art is like hunting for treasure; not all that glitters is gold.",
-          "point_value": 60
+          "clue_type": "Rumor",
+          "clue_value": "A clandestine gathering of artists.",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "I heard a rumor about a secret meeting in the gallery last night.",
+          "point_value": 85
         },
         {
-          "clue_type": "environmental_clue",
-          "clue_value": "Artists often find inspiration here, but also distraction.",
-          "name": "Plage de la Croisette",
-          "npc_dialogue": "The beach is a canvas, but the tides can wash away the truth.",
-          "point_value": 70
+          "clue_type": "Personal Story",
+          "clue_value": "An artist's struggle with jealousy.",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "The streets are alive with stories, but one artist's tale stands out.",
+          "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Marc Lefevre",
-  "description": "A series of mysterious disappearances has left the coastal town of Nice, France, in turmoil. As the sun sets over the Mediterranean, shadows of doubt loom over the local art community. Investigate the intertwined lives of artists, collectors, and the secrets they harbor. Can you untangle the web of deceit before the final brushstroke is painted?",
-  "difficulty": "Hard",
+  "correct_suspect": "Lucia Rossi",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of betrayal echo through the cobblestone streets, you must navigate a web of deceit to uncover the true mastermind behind the chaos. Each suspect presents a fa\u00e7ade, but only one holds the key to the mystery. Can you decipher the clues hidden in their words and actions before the thief slips away?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Turin, Italy",
-  "generated_at_utc": "2025-11-22T00:02:30Z",
-  "id": "daily_20251122",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2025-11-23T00:02:32Z",
+  "id": "daily_20251123",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1
+      "plausibility_overlap": 0.4,
+      "solution_uniqueness": 0.8
     },
     "reasoning_chain": [
-      "Identify the suspect traits from the clues.",
-      "Match the traits to the suspects in the database.",
-      "Marc Lefevre is the only suspect with black hair, a hobby of painting, and a luxury car.",
-      "Other suspects have conflicting traits or motives that do not align with the clues."
+      "Identify clues related to artistic rivalry and jealousy.",
+      "Match suspect traits with clues about behavior and vehicle.",
+      "Lucia's background and motive align with the clues found.",
+      "Eliminate other suspects based on inconsistencies with clues."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.9,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20251122",
+  "mission_id": "daily_20251123",
   "region": "Europe",
   "rewards": {
     "badge_name": "Art Sleuth",
@@ -121,67 +121,57 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "6d3c79b5676c5b04eee0516d0c1c9d12d2b0876fc680686aebd33c662f9308ff",
-  "solution": "Connect the clues about the rivalry and jealousy in the art community, focusing on Marc Lefevre's financial troubles and his extravagant lifestyle.",
+  "seed": "5c5d8cfe33b6ad1d7c3c51f8360baa4ec338507d1592525da7254b776ac439b4",
+  "solution": "Analyze the clues about jealousy and artistic rivalry, focusing on Lucia's behavior and her connection to the stolen artworks.",
   "suspect_database": [
     {
-      "background": "A reclusive sculptor known for his dramatic pieces.",
-      "favorite_food": "Bouillabaisse",
+      "background": "A passionate artist known for her vibrant landscapes, but her jealousy of peers is well-documented.",
+      "favorite_food": "Pasta",
+      "gender": "Female",
+      "hair_color": "Black",
+      "hobby": "Painting",
+      "motive": "Desire to be the best in a competitive art scene.",
+      "name": "Lucia Rossi",
+      "vehicle": "Vintage Citro\u00ebn"
+    },
+    {
+      "background": "A sculptor with a reputation for being aloof, often seen as a loner.",
+      "favorite_food": "Pizza",
       "gender": "Male",
       "hair_color": "Brown",
       "hobby": "Sculpting",
-      "motive": "Jealousy over a rival's success.",
-      "name": "Julien Moreau",
+      "motive": "Frustration over lack of recognition.",
+      "name": "Marco Bellini",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "An ambitious photographer with a keen eye for detail.",
-      "favorite_food": "Ratatouille",
-      "gender": "Female",
+      "background": "A photographer who captures the essence of the sea, but has a hidden agenda.",
+      "favorite_food": "Seafood",
+      "gender": "Male",
       "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "Desire for recognition in a male-dominated field.",
-      "name": "Claire Dubois",
-      "vehicle": "Bicycle"
+      "motive": "To gain fame through any means necessary.",
+      "name": "Giovanni Verdi",
+      "vehicle": "Sports Car"
     },
     {
-      "background": "A flamboyant painter known for his extravagant lifestyle.",
-      "favorite_food": "Tart Tatin",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Painting",
-      "motive": "Financial desperation due to gambling debts.",
-      "name": "Marc Lefevre",
-      "vehicle": "Luxury Car"
-    },
-    {
-      "background": "A dancer turned artist, often seen at high-profile events.",
-      "favorite_food": "Cr\u00eapes Suzette",
+      "background": "An art critic with a sharp tongue, known for her biting reviews.",
+      "favorite_food": "Salad",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Dancing",
-      "motive": "Seeking revenge for a past betrayal.",
-      "name": "Sophie Laurent",
-      "vehicle": "Convertible"
-    },
-    {
-      "background": "An art collector with a mysterious past.",
-      "favorite_food": "Foie Gras",
-      "gender": "Male",
-      "hair_color": "Gray",
-      "hobby": "Collecting antiques",
-      "motive": "Protecting his collection at all costs.",
-      "name": "Antoine Girard",
-      "vehicle": "Classic Car"
+      "hobby": "Writing",
+      "motive": "To expose the truth behind the art world.",
+      "name": "Sofia Conti",
+      "vehicle": "Bicycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Tart Tatin",
-    "gender": "Male",
+    "favorite_food": "Pasta",
+    "gender": "Female",
     "hair_color": "Black",
     "hobby": "Painting",
-    "vehicle": "Luxury Car"
+    "vehicle": "Vintage Citro\u00ebn"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251122.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251123.png",
+  "title": "Shadows of Deceit"
 }
