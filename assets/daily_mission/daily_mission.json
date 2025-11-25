@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20251124.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20251125.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "message",
-          "clue_value": "The tides reveal what the heart conceals.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea whispers secrets, but only to those who listen closely.",
+          "clue_type": "witness_statement",
+          "clue_value": "blue scarf",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone with a striking blue scarf lurking around the gallery last night.",
           "point_value": 80
         },
         {
-          "clue_type": "artifact",
-          "clue_value": "A faded photograph of a woman with striking blue hair.",
-          "name": "Old Town",
-          "npc_dialogue": "In the shadows of the past, the truth lies hidden.",
+          "clue_type": "cultural_reference",
+          "clue_value": "seafood",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "The artist who painted that mural is known for his love of seafood.",
           "point_value": 60
         },
         {
-          "clue_type": "inscription",
-          "clue_value": "Only the brave dare to seek what is lost.",
-          "name": "Castle Hill",
-          "npc_dialogue": "From here, you can see everything. But can you see the truth?",
+          "clue_type": "eavesdropping",
+          "clue_value": "rare painting",
+          "name": "Central Market",
+          "npc_dialogue": "I overheard a conversation about a rare painting being sold for a fortune.",
           "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "betting slip",
-          "clue_value": "A wager placed on a number that never came up.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle friend; trust your instincts.",
+          "clue_type": "witness_statement",
+          "clue_value": "fiery red hair",
+          "name": "Vieux Port",
+          "npc_dialogue": "A woman with fiery red hair was seen arguing with a gallery owner.",
           "point_value": 90
         },
         {
-          "clue_type": "letter",
-          "clue_value": "A letter addressed to 'The Archivist' from a royal figure.",
-          "name": "Prince's Palace",
-          "npc_dialogue": "Royal secrets are often the most dangerous.",
+          "clue_type": "cultural_reference",
+          "clue_value": "fine wines",
+          "name": "Le Panier",
+          "npc_dialogue": "They say the thief has a taste for fine wines and gourmet cheeses.",
           "point_value": 70
         },
         {
-          "clue_type": "specimen",
-          "clue_value": "A rare shell with a unique pattern, resembling a fingerprint.",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "The depths hold more than just fish; they hold stories.",
+          "clue_type": "eavesdropping",
+          "clue_value": "famous chef",
+          "name": "Mus\u00e9e des Civilisations",
+          "npc_dialogue": "I heard someone mention a connection to a famous chef.",
           "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Turin",
+      "city_name": "Genoa",
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "blueprint",
-          "clue_value": "A blueprint of the building with annotations in the margins.",
-          "name": "Mole Antonelliana",
-          "npc_dialogue": "Look up, but remember to look down; the ground holds its own tales.",
-          "point_value": 110
+          "clue_type": "witness_statement",
+          "clue_value": "vintage car",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "A man with a vintage car was seen near the art district.",
+          "point_value": 85
         },
         {
-          "clue_type": "artifact",
-          "clue_value": "A small statue of a goddess with a missing eye.",
-          "name": "Egyptian Museum",
-          "npc_dialogue": "Ancient mysteries can illuminate modern truths.",
-          "point_value": 120
+          "clue_type": "cultural_reference",
+          "clue_value": "opera",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "The thief is rumored to have a penchant for opera.",
+          "point_value": 75
         },
         {
-          "clue_type": "map",
-          "clue_value": "A map with a route marked in red, leading to an unknown destination.",
-          "name": "Piazza Castello",
-          "npc_dialogue": "Every corner has a story; some are just better hidden.",
+          "clue_type": "eavesdropping",
+          "clue_value": "large bag",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "I saw a suspicious figure with a large bag leaving the gallery.",
           "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Elena Rossi",
-  "description": "In the heart of the Mediterranean, a series of cryptic messages have surfaced, hinting at a long-buried secret. As you traverse the sun-drenched streets of Nice, France, and beyond, you must decipher the clues left behind by a mysterious figure known only as 'The Archivist'. Each location holds a piece of the puzzle, but beware\u2014misleading trails and false identities abound. Can you uncover the truth before the Archivist slips away?",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Moreau",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of betrayal echo through the cobblestone streets, you must navigate a web of deceit to uncover the true mastermind behind the chaos. Each suspect holds a piece of the puzzle, but only one is the true thief. Can you connect the dots before they vanish into the shadows?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2025-11-24T00:02:53Z",
-  "id": "daily_20251124",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2025-11-25T00:02:26Z",
+  "id": "daily_20251125",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.8,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identify the unique traits of the correct suspect, Elena Rossi, which match the clues.",
-      "Analyze the clues for references to jealousy and photography, linking them to Elena.",
-      "Confirm that other suspects do not match all traits or motives as closely as Elena.",
-      "Establish the geographical plausibility of the final city, Genoa, as a logical escape route."
+      "Identify the suspect traits from the clues.",
+      "Match the traits to the suspects in the database.",
+      "Eliminate suspects based on conflicting clues.",
+      "Confirm Clara Moreau as the only suspect fitting all traits."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,75 +113,75 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251124",
+  "mission_id": "daily_20251125",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Archivist Hunter",
-    "credits_earned": 150,
-    "experience_points": 300,
+    "badge_name": "Art Sleuth",
+    "credits_earned": 200,
+    "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "f533bfdbd1d92b57b9eaba9ed59f7906c5d35d64f1416903f2e5e82f342a577d",
-  "solution": "Connect the clues about the blue-haired photographer and her jealousy towards rivals, leading to her hiding the truth in Genoa.",
+  "seed": "b6ba11418d52963c6e0914096da4f6a97d7ef6a1eb795c65b88808fc3009f3d4",
+  "solution": "Connect the clues about the red-haired chef's culinary background and her connections to the art world, leading to her motive for theft.",
   "suspect_database": [
     {
-      "background": "A local artist known for her vibrant street art, often seen near the coast.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
-      "hair_color": "Blue",
-      "hobby": "Photography",
-      "motive": "Jealousy over a rival's success.",
-      "name": "Elena Rossi",
-      "vehicle": "Bicycle"
-    },
-    {
-      "background": "A high-stakes gambler with connections to the underworld.",
+      "background": "A renowned chef with a flair for the dramatic, Clara has been known to dabble in the art world.",
       "favorite_food": "Seafood",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Gambling",
-      "motive": "Financial gain from a hidden treasure.",
-      "name": "Marco Bellini",
-      "vehicle": "Sports Car"
-    },
-    {
-      "background": "A dancer with a mysterious past, rumored to have ties to the Archivist.",
-      "favorite_food": "Gelato",
       "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Dancing",
+      "hair_color": "Red",
+      "hobby": "Culinary Arts",
       "motive": "Desire for fame and recognition.",
-      "name": "Sofia Moretti",
-      "vehicle": "Scooter"
+      "name": "Clara Moreau",
+      "vehicle": "Luxury Sedan"
     },
     {
-      "background": "An antique dealer with a keen eye for valuable items.",
+      "background": "An art collector with a passion for speed, Marco is often seen at high-profile events.",
+      "favorite_food": "Pasta",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Collecting Vintage Cars",
+      "motive": "Greed and envy of other collectors.",
+      "name": "Marco Rossi",
+      "vehicle": "Vintage Sports Car"
+    },
+    {
+      "background": "An opera singer with a dramatic flair, Sofia has connections in both the culinary and art worlds.",
+      "favorite_food": "Cheese",
+      "gender": "Female",
+      "hair_color": "Blonde",
+      "hobby": "Opera Singing",
+      "motive": "Jealousy towards rival artists.",
+      "name": "Sofia Bellini",
+      "vehicle": "Compact Car"
+    },
+    {
+      "background": "A photographer who captures the essence of art, Luca has a keen eye for detail.",
       "favorite_food": "Pizza",
       "gender": "Male",
-      "hair_color": "Blonde",
-      "hobby": "Collecting antiques",
-      "motive": "To sell the secrets for profit.",
+      "hair_color": "Brown",
+      "hobby": "Photography",
+      "motive": "Desire to expose the art world\u2019s secrets.",
       "name": "Luca Ferraro",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A writer who often draws inspiration from the past.",
-      "favorite_food": "Risotto",
+      "background": "An up-and-coming artist, Giulia is desperate to make a name for herself.",
+      "favorite_food": "Gelato",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Writing",
-      "motive": "To uncover a family secret.",
+      "hair_color": "Black",
+      "hobby": "Painting",
+      "motive": "Ambition and desperation.",
       "name": "Giulia Conti",
-      "vehicle": "Convertible"
+      "vehicle": "Bicycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Pasta",
+    "favorite_food": "Seafood",
     "gender": "Female",
-    "hair_color": "Blue",
-    "hobby": "Photography",
-    "vehicle": "Bicycle"
+    "hair_color": "Red",
+    "hobby": "Culinary Arts",
+    "vehicle": "Luxury Sedan"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251124.png",
-  "title": "Whispers of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251125.png",
+  "title": "Shadows of Deceit"
 }
