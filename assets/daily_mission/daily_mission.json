@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Acropolis Museum",
-  "banner_image_url": "/assets/daily_mission/banner_20251127.png",
+  "arrest_location": "Piazza Castello",
+  "banner_image_url": "/assets/daily_mission/banner_20251128.png",
   "cities": [
     {
-      "city_name": "Valletta",
-      "country": "Malta",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "art_reference",
-          "clue_value": "Van Dyck",
-          "name": "National Museum of Fine Arts",
-          "npc_dialogue": "I saw someone with a keen eye for detail lingering near the Van Dyck.",
-          "point_value": 80
+          "clue_type": "Behavioral",
+          "clue_value": "The suspect is adept at blending in.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone suspicious near the beach, but they blended in with the tourists.",
+          "point_value": 75
         },
         {
-          "clue_type": "behavioral_hint",
-          "clue_value": "extravagance",
-          "name": "St. John's Co-Cathedral",
-          "npc_dialogue": "The thief has a taste for the extravagant, much like the gilded interiors here.",
+          "clue_type": "Behavioral",
+          "clue_value": "The suspect has an unusual interest in culinary items.",
+          "name": "Old Town Market",
+          "npc_dialogue": "A woman was asking about rare spices. I thought it was odd.",
           "point_value": 60
         },
         {
-          "clue_type": "secret_sale",
-          "clue_value": "rare painting",
-          "name": "Upper Barracca Gardens",
-          "npc_dialogue": "I overheard a conversation about a rare painting being sold in secret.",
-          "point_value": 100
+          "clue_type": "Behavioral",
+          "clue_value": "The suspect is planning an escape route.",
+          "name": "Castle Hill",
+          "npc_dialogue": "I overheard someone talking about a getaway plan. It sounded too rehearsed.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Catania",
-      "country": "Italy",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "local_rumor",
-          "clue_value": "shadow lurking",
-          "name": "Castello Ursino",
-          "npc_dialogue": "The art scene here is buzzing, but there's a shadow lurking.",
+          "clue_type": "Physical",
+          "clue_value": "The suspect has a distinctive look.",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "A man with a striking appearance was betting heavily. He seemed nervous.",
+          "point_value": 80
+        },
+        {
+          "clue_type": "Behavioral",
+          "clue_value": "The suspect has artistic tendencies.",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "I noticed someone sketching the exhibits. They had a peculiar focus.",
           "point_value": 70
         },
         {
-          "clue_type": "suspicious_behavior",
-          "clue_value": "distracted",
-          "name": "Piazza del Duomo",
-          "npc_dialogue": "I saw a woman sketching the fountain, but her eyes were elsewhere.",
-          "point_value": 50
-        },
-        {
-          "clue_type": "thematic_connection",
-          "clue_value": "intertwine",
-          "name": "Teatro Massimo Bellini",
-          "npc_dialogue": "Art and music often intertwine, but so do thieves and their tales.",
-          "point_value": 90
+          "clue_type": "Behavioral",
+          "clue_value": "The suspect has access to a fast vehicle.",
+          "name": "Monaco Grand Prix Track",
+          "npc_dialogue": "I heard whispers about a fast car. Someone's planning a quick escape.",
+          "point_value": 85
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Palermo",
-      "country": "Italy",
+      "city_name": "Cannes",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "character_trait",
-          "clue_value": "dramatic",
-          "name": "Palermo Cathedral",
-          "npc_dialogue": "The thief has a penchant for the dramatic, much like this architecture.",
-          "point_value": 75
+          "clue_type": "Physical",
+          "clue_value": "The suspect has a connection to the film industry.",
+          "name": "Cannes Film Festival",
+          "npc_dialogue": "A woman was seen with a stolen trophy. She was acting strangely.",
+          "point_value": 95
         },
         {
-          "clue_type": "physical_description",
-          "clue_value": "striking resemblance",
-          "name": "Quattro Canti",
-          "npc_dialogue": "I noticed a man with a striking resemblance to a famous artist.",
-          "point_value": 85
+          "clue_type": "Behavioral",
+          "clue_value": "The suspect is using a camera for ulterior motives.",
+          "name": "La Croisette",
+          "npc_dialogue": "I saw someone with a camera, but they weren't taking pictures of the scenery.",
+          "point_value": 65
         },
         {
-          "clue_type": "theft_story",
-          "clue_value": "broad daylight",
-          "name": "Mercato di Ballar\u00f2",
-          "npc_dialogue": "The market is alive with stories, but one stands out\u2014a theft in broad daylight.",
-          "point_value": 100
+          "clue_type": "Behavioral",
+          "clue_value": "The suspect is planning a heist during a public event.",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "A person was overheard discussing a heist during the festival.",
+          "point_value": 80
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Bianchi",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious art thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the shadows. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to unraveling this intricate web of deception.",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Moreau",
+  "description": "A series of mysterious thefts have plagued the coastal town of Nice, France. As the sun sets, shadows lengthen, and whispers of a notorious thief echo through the streets. Your task is to uncover the identity of the elusive suspect before they vanish into the night. Each clue leads you deeper into a web of deception, where nothing is as it seems.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Athens, Greece",
-  "generated_at_utc": "2025-11-27T00:02:22Z",
-  "id": "daily_20251127",
+  "final_city": "Turin, Italy",
+  "generated_at_utc": "2025-11-28T00:02:50Z",
+  "id": "daily_20251128",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,9 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. Clara Bianchi is the only female suspect with a hobby of sketching, matching the suspect traits.",
-      "2. Her vehicle, a bicycle, aligns with the mobility needed for quick escapes.",
-      "3. The clues about her being distracted while sketching and her mysterious past suggest deeper motives.",
-      "4. Other suspects do not match all traits or have conflicting motives."
+      "Clara Moreau is the only suspect with a photography hobby, linking her to the film festival theft.",
+      "Her red sports car matches the description of a fast getaway vehicle.",
+      "The clues about her blending in and planning an escape align with her artistic background."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,75 +112,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251127",
+  "mission_id": "daily_20251128",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "5938ce00ccfd5f7eabd3e068df0c978ca673c8f37539f92232f0f949b7782cea",
-  "solution": "Connect the clues about the suspicious behavior of Clara Bianchi, her artistic obsession, and her presence near the thefts to identify her as the thief.",
+  "seed": "5a6e881e52b508a4ee222af3120b1c07741a5f73f95831383e9e0ab9653c0692",
+  "solution": "Connect the clues about Clara Moreau's photography hobby, her distinctive vehicle, and her presence at the film festival to reveal her as the thief.",
   "suspect_database": [
     {
-      "background": "A local artist known for his dramatic flair, often seen in the company of wealthy patrons.",
-      "favorite_food": "Pasta",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Painting",
-      "motive": "Desire for recognition and wealth.",
-      "name": "Giovanni Rossi",
-      "vehicle": "Motorcycle"
-    },
-    {
-      "background": "An aspiring artist with a mysterious past, rumored to have connections to the black market.",
-      "favorite_food": "Gelato",
+      "background": "An aspiring photographer with a penchant for the dramatic.",
+      "favorite_food": "Macarons",
       "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "Sketching",
-      "motive": "Financial desperation.",
-      "name": "Clara Bianchi",
-      "vehicle": "Bicycle"
+      "hobby": "Photography",
+      "motive": "Desires fame and recognition in the art world.",
+      "name": "Clara Moreau",
+      "vehicle": "Red sports car"
     },
     {
-      "background": "A collector with a keen eye for valuable items, often seen at auctions.",
-      "favorite_food": "Pizza",
+      "background": "A chef with a secretive past.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Collecting antiques",
-      "motive": "Greed.",
-      "name": "Marco Verdi",
-      "vehicle": "Car"
+      "hobby": "Cooking",
+      "motive": "Wants to fund his restaurant dreams.",
+      "name": "Julien Dupont",
+      "vehicle": "Black sedan"
     },
     {
-      "background": "A photographer who captures the essence of art, but her true intentions are unclear.",
-      "favorite_food": "Seafood",
+      "background": "An artist known for her vibrant street art.",
+      "favorite_food": "Tart Tatin",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Photography",
-      "motive": "Artistic obsession.",
-      "name": "Sofia Romano",
-      "vehicle": "Scooter"
+      "hobby": "Sketching",
+      "motive": "Seeks inspiration through chaos.",
+      "name": "Sophie Laurent",
+      "vehicle": "Blue hatchback"
     },
     {
-      "background": "A musician with a passion for the arts, often performing at galleries.",
-      "favorite_food": "Risotto",
+      "background": "A collector with a taste for the finer things.",
+      "favorite_food": "Cheese platter",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Music",
-      "motive": "Desire for fame.",
-      "name": "Luca Ferraro",
-      "vehicle": "Van"
+      "hobby": "Collecting antiques",
+      "motive": "Wants to sell stolen items for profit.",
+      "name": "Marc Girard",
+      "vehicle": "Vintage convertible"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Gelato",
+    "favorite_food": "Macarons",
     "gender": "Female",
     "hair_color": "Blonde",
-    "hobby": "Sketching",
-    "vehicle": "Bicycle"
+    "hobby": "Photography",
+    "vehicle": "Red sports car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251127.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251128.png",
+  "title": "Whispers in the Wind"
 }
