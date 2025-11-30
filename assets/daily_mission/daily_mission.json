@@ -1,109 +1,110 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20251129.png",
+  "arrest_location": "Piazza Castello",
+  "banner_image_url": "/assets/daily_mission/banner_20251130.png",
   "cities": [
-    {
-      "city_name": "Valencia",
-      "country": "Spain",
-      "locations": [
-        {
-          "clue_type": "art_style",
-          "clue_value": "Impressionism",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw someone sketching the paintings, but they left in a hurry.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "suspect_description",
-          "clue_value": "red scarf",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "A woman with a striking red scarf was here, talking about a rare painting.",
-          "point_value": 60
-        },
-        {
-          "clue_type": "favorite_food",
-          "clue_value": "paella",
-          "name": "Central Market",
-          "npc_dialogue": "I overheard a man discussing his favorite dish, something exotic.",
-          "point_value": 50
-        }
-      ],
-      "order_in_chase": 1
-    },
-    {
-      "city_name": "Marseille",
-      "country": "France",
-      "locations": [
-        {
-          "clue_type": "hobby",
-          "clue_value": "sketching",
-          "name": "Vieux Port",
-          "npc_dialogue": "A tall figure was seen near the boats, sketching the harbor.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "vehicle",
-          "clue_value": "bicycle",
-          "name": "Le Panier",
-          "npc_dialogue": "I noticed a woman with a unique bicycle, always stopping to admire the street art.",
-          "point_value": 70
-        },
-        {
-          "clue_type": "exhibition",
-          "clue_value": "rare exhibition",
-          "name": "Palais des Congr\u00e8s",
-          "npc_dialogue": "Someone mentioned a rare exhibition, but I can't recall the details.",
-          "point_value": 65
-        }
-      ],
-      "order_in_chase": 2
-    },
     {
       "city_name": "Nice",
       "country": "France",
       "locations": [
         {
-          "clue_type": "behavior",
-          "clue_value": "distracted",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "A man was painting the sunset, but he seemed distracted.",
-          "point_value": 55
+          "clue_type": "Witness Account",
+          "clue_value": "A figure with a distinctive hat was seen.",
+          "name": "Old Town Market",
+          "npc_dialogue": "I saw someone darting between the stalls, but I couldn't catch a glimpse of their face.",
+          "point_value": 80
         },
         {
-          "clue_type": "artist_preference",
-          "clue_value": "Chagall",
-          "name": "Mus\u00e9e Marc Chagall",
-          "npc_dialogue": "I overheard a couple discussing their favorite artist, but they were vague.",
+          "clue_type": "Sound Clue",
+          "clue_value": "A melody played on a violin was heard nearby.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "The sea breeze carries secrets, but I only heard laughter and music.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "Visual Clue",
+          "clue_value": "A flash of red fabric caught my eye.",
+          "name": "Castle Hill",
+          "npc_dialogue": "From up here, you can see everything. But I saw nothing unusual... or did I?",
+          "point_value": 100
+        }
+      ],
+      "order_in_chase": 1
+    },
+    {
+      "city_name": "Monaco",
+      "country": "Monaco",
+      "locations": [
+        {
+          "clue_type": "Eavesdropping",
+          "clue_value": "Mention of a recent theft was made.",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "High stakes and high tension. I overheard someone talking about a 'big score'.",
           "point_value": 90
         },
         {
-          "clue_type": "suspicious_behavior",
-          "clue_value": "glancing",
-          "name": "Cours Saleya",
-          "npc_dialogue": "A woman was selling flowers, but she kept glancing at the gallery.",
+          "clue_type": "Cultural Reference",
+          "clue_value": "A reference to a famous thief from history was made.",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "The exhibits are fascinating, but the real treasure is the stories they tell.",
+          "point_value": 70
+        },
+        {
+          "clue_type": "Physical Description",
+          "clue_value": "A tattoo of a compass was visible.",
+          "name": "Larvotto Beach",
+          "npc_dialogue": "The waves hide many things, but I saw someone with a peculiar tattoo.",
+          "point_value": 50
+        }
+      ],
+      "order_in_chase": 2
+    },
+    {
+      "city_name": "Cannes",
+      "country": "France",
+      "locations": [
+        {
+          "clue_type": "Behavioral Observation",
+          "clue_value": "A person was seen avoiding the cameras.",
+          "name": "Cannes Film Festival",
+          "npc_dialogue": "Glamour and glitz, but I noticed someone acting strangely.",
+          "point_value": 110
+        },
+        {
+          "clue_type": "Atmospheric Detail",
+          "clue_value": "The figure seemed out of place.",
+          "name": "La Croisette",
+          "npc_dialogue": "The promenade is always bustling, but I felt a chill when I saw a figure in a trench coat.",
           "point_value": 60
+        },
+        {
+          "clue_type": "Secret Plan",
+          "clue_value": "A heist was being discussed.",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "Everyone is here for the show, but I overheard a plan being whispered.",
+          "point_value": 80
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moreau",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this mystery. Can you discern the truth from the echoes of the past?",
+  "correct_suspect": "Marc Lefevre",
+  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, the locals whisper of a shadowy figure seen near the markets. Your task is to unravel the threads of deception and identify the true culprit before they slip away into the night.",
   "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2025-11-29T00:02:37Z",
-  "id": "daily_20251129",
+  "final_city": "Turin, Italy",
+  "generated_at_utc": "2025-11-30T00:02:29Z",
+  "id": "daily_20251130",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
       "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1.0
+      "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Moreau is the only suspect with red hair and a hobby of sketching.",
-      "The clues about the red scarf and bicycle align with Clara's profile.",
-      "Other suspects have conflicting traits that do not match all clues."
+      "Witness accounts mention a figure with a distinctive hat, aligning with Marc's violin performances.",
+      "The mention of a melody on the Promenade links to Marc's hobby.",
+      "The behavioral observation at the Cannes Film Festival suggests someone trying to avoid attention, fitting Marc's character.",
+      "The clues about the heist and the tattoo do not match other suspects, narrowing it down to Marc."
     ],
     "solvability_score": 1,
     "validation": {
@@ -112,62 +113,75 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251129",
-  "poster_image_url": "",
+  "mission_id": "daily_20251130",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "bcdfd95cd7817be1a4ea651ec336d7349fa6ab273bfb96b85cd9b3d5b33c3e09",
-  "solution": "Connect the clues about the red scarf, sketching hobby, and bicycle to identify Clara Moreau as the thief.",
+  "seed": "ca89151a8eb7d7182fdbaee5cc7ade7aed03f77bb6974fc2a955f1701b848812",
+  "solution": "Connect the clues about the violin melody, the figure in the trench coat, and the mention of a heist to identify Marc Lefevre as the thief.",
   "suspect_database": [
     {
-      "background": "An art student with a passion for Impressionism, Clara has been known to frequent galleries.",
-      "favorite_food": "ratatouille",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "sketching",
-      "name": "Clara Moreau",
-      "vehicle": "bicycle"
-    },
-    {
-      "background": "A photographer who often captures street art, Julien has a keen eye for detail.",
-      "favorite_food": "croissant",
+      "background": "A local with a penchant for the finer things in life, Julien has been seen near the markets.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "photography",
-      "name": "Julien Dupont",
-      "vehicle": "motorcycle"
+      "hobby": "Collecting rare coins",
+      "motive": "Financial troubles have led him to desperate measures.",
+      "name": "Julien Moreau",
+      "vehicle": "Motorcycle"
     },
     {
-      "background": "A painter who loves to explore the coast, Sophie is often seen at art fairs.",
-      "favorite_food": "tarte tatin",
+      "background": "An aspiring photographer who often captures the essence of the city.",
+      "favorite_food": "Ratatouille",
       "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "painting",
-      "name": "Sophie Laurent",
-      "vehicle": "car"
+      "hobby": "Photography",
+      "motive": "She seeks fame and fortune through her art.",
+      "name": "Sophie Dubois",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A collector of rare art pieces, Marc has connections in the art world.",
-      "favorite_food": "bouillabaisse",
+      "background": "A street musician known for his haunting melodies.",
+      "favorite_food": "Tarte Tatin",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "collecting",
+      "hobby": "Playing the violin",
+      "motive": "He believes art should be free, even if it means stealing.",
       "name": "Marc Lefevre",
-      "vehicle": "scooter"
+      "vehicle": "Car"
+    },
+    {
+      "background": "A fashionista with a flair for the dramatic.",
+      "favorite_food": "Macarons",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Fashion design",
+      "motive": "She craves attention and will do anything to stand out.",
+      "name": "Claire Fontaine",
+      "vehicle": "Scooter"
+    },
+    {
+      "background": "An elderly man who tends to his garden but has a mysterious past.",
+      "favorite_food": "Quiche Lorraine",
+      "gender": "Male",
+      "hair_color": "Gray",
+      "hobby": "Gardening",
+      "motive": "He may be hiding secrets from his youth.",
+      "name": "Antoine Girard",
+      "vehicle": "None"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "ratatouille",
-    "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "sketching",
-    "vehicle": "bicycle"
+    "favorite_food": "Tarte Tatin",
+    "gender": "Male",
+    "hair_color": "Black",
+    "hobby": "Playing the violin",
+    "vehicle": "Car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251129.png",
-  "title": "Echoes of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251130.png",
+  "title": "Whispers in the Wind"
 }
