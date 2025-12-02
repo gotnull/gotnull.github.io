@@ -1,109 +1,111 @@
 {
-  "arrest_location": "Monte Carlo Casino",
-  "banner_image_url": "/assets/daily_mission/banner_20251201.png",
+  "arrest_location": "Piazza De Ferrari",
+  "banner_image_url": "/assets/daily_mission/banner_20251202.png",
   "cities": [
-    {
-      "city_name": "Valencia",
-      "country": "Spain",
-      "locations": [
-        {
-          "clue_type": "message",
-          "clue_value": "The saffron threads are not just for flavor.",
-          "name": "Central Market",
-          "npc_dialogue": "They say the best paella is made with a secret ingredient. But what if the real secret is hidden in plain sight?",
-          "point_value": 75
-        },
-        {
-          "clue_type": "sighting",
-          "clue_value": "A red notebook was spotted near the fountain.",
-          "name": "Turia Gardens",
-          "npc_dialogue": "I often see a figure sketching here, always with a red notebook. Strange, isn't it?",
-          "point_value": 60
-        },
-        {
-          "clue_type": "artwork",
-          "clue_value": "Look closely at the mural; it tells a story.",
-          "name": "City of Arts and Sciences",
-          "npc_dialogue": "Art imitates life, or is it the other way around? Sometimes, the truth is hidden in the details.",
-          "point_value": 90
-        }
-      ],
-      "order_in_chase": 1
-    },
     {
       "city_name": "Nice",
       "country": "France",
       "locations": [
         {
-          "clue_type": "tale",
-          "clue_value": "The fisherman spoke of a treasure buried beneath the waves.",
+          "clue_type": "behavioral",
+          "clue_value": "peculiar hat",
           "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea whispers secrets to those who listen. Have you heard the tales of the old fisherman?",
+          "npc_dialogue": "I saw someone with a peculiar hat near the beach, but I can't recall their face.",
           "point_value": 80
         },
         {
-          "clue_type": "viewpoint",
-          "clue_value": "A shadow passed by the old castle gate.",
+          "clue_type": "food preference",
+          "clue_value": "pastries",
+          "name": "Old Town Market",
+          "npc_dialogue": "The thief loves pastries, especially the ones from the corner bakery.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "vehicle",
+          "clue_value": "vintage car",
           "name": "Castle Hill",
-          "npc_dialogue": "From up here, you can see everything. But can you see the truth?",
+          "npc_dialogue": "I overheard a conversation about a vintage car. It was quite the spectacle!",
+          "point_value": 100
+        }
+      ],
+      "order_in_chase": 1
+    },
+    {
+      "city_name": "Monaco",
+      "country": "Monaco",
+      "locations": [
+        {
+          "clue_type": "appearance",
+          "clue_value": "striking red hair",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "A woman with striking red hair was seen leaving with a large bag. Quite suspicious, if you ask me.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "hobby",
+          "clue_value": "sailing",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "I heard someone mention a love for sailing. They seemed quite passionate about it.",
           "point_value": 70
         },
         {
-          "clue_type": "transaction",
-          "clue_value": "A transaction was made for a rare spice.",
-          "name": "Old Town",
-          "npc_dialogue": "They say the market is where the real deals happen. But what about the deals that are never spoken of?",
-          "point_value": 85
+          "clue_type": "food preference",
+          "clue_value": "seafood",
+          "name": "Exotic Garden",
+          "npc_dialogue": "There was a man who kept talking about his favorite dish, something with seafood.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Cannes",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "shipment",
-          "clue_value": "A ship arrived with unusual crates.",
-          "name": "Port of Genoa",
-          "npc_dialogue": "Ships come and go, but some carry more than just cargo. Keep your eyes peeled.",
+          "clue_type": "appearance",
+          "clue_value": "tall figure in black coat",
+          "name": "Cannes Film Festival",
+          "npc_dialogue": "I saw a tall figure in a black coat. They seemed to blend in with the crowd.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "behavioral",
+          "clue_value": "eyeing expensive jewelry",
+          "name": "La Croisette",
+          "npc_dialogue": "The thief was spotted near the luxury shops, eyeing the expensive jewelry.",
           "point_value": 95
         },
         {
-          "clue_type": "key",
-          "clue_value": "A key was found near the fountain's base.",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "The fountain has seen many things. Some say it holds the key to the city's secrets.",
-          "point_value": 65
-        },
-        {
-          "clue_type": "architecture",
-          "clue_value": "A hidden door was discovered behind a false wall.",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "The architecture tells stories of the past. But beware, not all stories are true.",
-          "point_value": 100
+          "clue_type": "hobby",
+          "clue_value": "fine wines",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "I overheard someone mention a fondness for fine wines. They were quite animated about it.",
+          "point_value": 75
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Marco Rossi",
-  "description": "In the heart of the Mediterranean, a series of cryptic messages have surfaced, hinting at a long-buried secret. As you traverse the sun-soaked streets of three vibrant cities, each clue leads you deeper into a web of deception. Can you untangle the threads before the suspect slips away?",
-  "difficulty": "Medium",
+  "correct_suspect": "Juliette Moreau",
+  "description": "A series of mysterious thefts have left the coastal town of Nice in disarray. As the sun sets, shadows lengthen, and whispers of a notorious thief echo through the streets. Your mission is to uncover the identity of the elusive suspect before they vanish into the night. Follow the trail of clues hidden in the local culture and the behaviors of the townsfolk to reveal the truth.",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Monaco, Monaco",
-  "generated_at_utc": "2025-12-01T00:02:40Z",
-  "id": "daily_20251201",
+  "final_city": "Genoa, Italy",
+  "generated_at_utc": "2025-12-02T00:02:13Z",
+  "id": "daily_20251202",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.8,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identified Marco Rossi's unique hobby of collecting rare spices, which aligns with the clues about spices in Valencia.",
-      "Noted his frequent presence in markets and ports, matching NPC dialogues.",
-      "Cross-referenced his vehicle and favorite food with the clues provided, confirming consistency."
+      "Identify the suspect traits from the clues: red hair, sailing hobby, vintage car, seafood preference.",
+      "Match these traits to the suspects in the database.",
+      "Juliette Moreau is the only suspect that fits all the traits.",
+      "The clues about the vintage car and sailing directly point to her.",
+      "The final city, Genoa, is a plausible escape route from Cannes."
     ],
     "solvability_score": 1,
     "validation": {
@@ -112,81 +114,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251201",
+  "mission_id": "daily_20251202",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Master Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "4257e5c9278ae4d6e797b19e801de68f0e173d1a973d564dc25257364e74b8f0",
-  "solution": "Connect the clues about the rare spices, the sightings of Marco near markets, and the hidden messages in the art to identify him as the suspect.",
+  "seed": "c52df7b754ca6a939b039a17e68d17362481f42f4f82c79cba83da95e5f0467d",
+  "solution": "Connect the clues about the red-haired woman, her love for sailing, and the vintage car to identify Juliette Moreau as the thief.",
   "suspect_database": [
     {
-      "background": "A culinary enthusiast with a penchant for the exotic.",
-      "behavioral_pattern": "Often seen near markets and ports.",
-      "favorite_food": "Seafood risotto",
+      "background": "A local sailor with a penchant for the finer things in life.",
+      "favorite_food": "Seafood",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Sailing",
+      "motive": "Desire for wealth and luxury.",
+      "name": "Juliette Moreau",
+      "vehicle": "Vintage Car"
+    },
+    {
+      "background": "A photographer who frequents the markets for inspiration.",
+      "favorite_food": "Pastries",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Collecting rare spices",
-      "motive": "Desire to uncover hidden recipes.",
-      "name": "Marco Rossi",
+      "hobby": "Photography",
+      "motive": "Artistic expression.",
+      "name": "Marc Dupont",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "An artist who draws inspiration from her surroundings.",
-      "behavioral_pattern": "Frequent visitor to parks and gardens.",
-      "favorite_food": "Paella",
+      "background": "A fashion designer known for her extravagant tastes.",
+      "favorite_food": "Fine Wines",
       "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Painting landscapes",
-      "motive": "To capture the essence of the Mediterranean.",
-      "name": "Elena Martinez",
-      "vehicle": "Bicycle"
-    },
-    {
-      "background": "A photographer known for capturing the beauty of coastal towns.",
-      "behavioral_pattern": "Often found at scenic viewpoints.",
-      "favorite_food": "Pasta",
-      "gender": "Male",
       "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "To document the hidden gems of the region.",
-      "name": "Luca Bianchi",
-      "vehicle": "Car"
+      "hobby": "Fashion Design",
+      "motive": "To fund her lavish lifestyle.",
+      "name": "Claire Fontaine",
+      "vehicle": "Luxury Sedan"
     },
     {
-      "background": "A poet who finds inspiration in the mundane.",
-      "behavioral_pattern": "Seen in cafes and by the water.",
-      "favorite_food": "Gelato",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Writing poetry",
-      "motive": "To write a collection of poems about the sea.",
-      "name": "Sofia Conti",
-      "vehicle": "Scooter"
-    },
-    {
-      "background": "A retired fisherman with many tales to tell.",
-      "behavioral_pattern": "Often at the port or fishing spots.",
-      "favorite_food": "Grilled fish",
+      "background": "An antique collector with a mysterious past.",
+      "favorite_food": "Cheese",
       "gender": "Male",
-      "hair_color": "Gray",
-      "hobby": "Fishing",
-      "motive": "To pass on his knowledge of the sea.",
-      "name": "Giovanni Verdi",
-      "vehicle": "Boat"
+      "hair_color": "Black",
+      "hobby": "Collecting Antiques",
+      "motive": "To acquire rare items.",
+      "name": "Lucien Girard",
+      "vehicle": "Sports Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Seafood risotto",
-    "gender": "Male",
-    "hair_color": "Brown",
-    "hobby": "Collecting rare spices",
-    "vehicle": "Motorcycle"
+    "favorite_food": "Seafood",
+    "gender": "Female",
+    "hair_color": "Red",
+    "hobby": "Sailing",
+    "vehicle": "Vintage Car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251201.png",
-  "title": "Echoes of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251202.png",
+  "title": "Whispers in the Wind"
 }
