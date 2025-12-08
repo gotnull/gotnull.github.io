@@ -1,109 +1,109 @@
 {
-  "arrest_location": "Slovak National Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20251207.png",
+  "arrest_location": "Piazza De Ferrari",
+  "banner_image_url": "/assets/daily_mission/banner_20251208.png",
   "cities": [
     {
-      "city_name": "Vienna",
-      "country": "Austria",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "artifact",
-          "clue_value": "Ancient Coin",
-          "name": "Kunsthistorisches Museum",
-          "npc_dialogue": "I saw someone suspicious near the ancient artifacts. They seemed too interested in the past.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "conversation",
-          "clue_value": "Hidden Painting",
-          "name": "Belvedere Palace",
-          "npc_dialogue": "The gardens are beautiful, but I overheard a conversation about a hidden painting.",
+          "clue_type": "Witness Account",
+          "clue_value": "Red scarf",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone with a red scarf lurking around here. They seemed too interested in the tourists.",
           "point_value": 80
         },
         {
-          "clue_type": "sighting",
-          "clue_value": "Red-haired Woman",
-          "name": "Naschmarkt",
-          "npc_dialogue": "A woman with striking red hair was buying art supplies. She seemed nervous.",
+          "clue_type": "Behavioral Observation",
+          "clue_value": "Peculiar laugh",
+          "name": "Old Town Market",
+          "npc_dialogue": "A woman was buying a lot of pastries. She had a peculiar laugh that echoed through the stalls.",
           "point_value": 60
+        },
+        {
+          "clue_type": "Eavesdropping",
+          "clue_value": "Bright blue scooter",
+          "name": "Castle Hill",
+          "npc_dialogue": "I overheard someone talking about a getaway vehicle parked near the beach. It was a bright blue scooter.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Budapest",
-      "country": "Hungary",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "whisper",
-          "clue_value": "Red Thread",
-          "name": "Fisherman's Bastion",
-          "npc_dialogue": "I heard whispers of a thief planning their next move. They mentioned a 'red thread'.",
+          "clue_type": "Observation",
+          "clue_value": "Striking green eyes",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "I noticed a woman with striking green eyes playing the slots. She seemed nervous, like she was waiting for someone.",
           "point_value": 90
         },
         {
-          "clue_type": "sighting",
-          "clue_value": "Dark-coated Man",
-          "name": "Heroes' Square",
-          "npc_dialogue": "A man in a dark coat was sketching the statues. He seemed to be looking for something.",
+          "clue_type": "Argument Overheard",
+          "clue_value": "Stolen necklace",
+          "name": "Larvotto Beach",
+          "npc_dialogue": "A man in a leather jacket was arguing with a woman. They were discussing something about a stolen necklace.",
           "point_value": 70
         },
         {
-          "clue_type": "food_order",
-          "clue_value": "Exotic Spices",
-          "name": "Central Market Hall",
-          "npc_dialogue": "I saw a woman with a unique taste in food. She ordered something unusual.",
+          "clue_type": "Surveillance",
+          "clue_value": "Camera",
+          "name": "Monaco Grand Prix Track",
+          "npc_dialogue": "I saw a woman with a camera taking pictures of the cars. She seemed too focused on the crowd.",
           "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Prague",
-      "country": "Czech Republic",
+      "city_name": "Cannes",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "discussion",
-          "clue_value": "Masterpiece",
-          "name": "Charles Bridge",
-          "npc_dialogue": "A group of artists was discussing a recent theft. They mentioned a 'masterpiece'.",
+          "clue_type": "Glamorous Exit",
+          "clue_value": "Distinct perfume",
+          "name": "Cannes Film Festival",
+          "npc_dialogue": "A woman in a glamorous dress was seen sneaking away from a party. She had a distinct perfume.",
           "point_value": 110
         },
         {
-          "clue_type": "sighting",
-          "clue_value": "Sketchbook",
-          "name": "Old Town Square",
-          "npc_dialogue": "I saw a woman with a sketchbook. She was drawing something that looked like a stolen piece.",
-          "point_value": 75
+          "clue_type": "Eavesdropping",
+          "clue_value": "Heist",
+          "name": "La Croisette",
+          "npc_dialogue": "I overheard someone mention a 'heist' while sipping champagne. They were quite animated.",
+          "point_value": 80
         },
         {
-          "clue_type": "rumor",
-          "clue_value": "Hidden Gallery",
-          "name": "Prague Castle",
-          "npc_dialogue": "There was a rumor about a hidden gallery. Only a few know its location.",
-          "point_value": 85
+          "clue_type": "Suspicious Behavior",
+          "clue_value": "Large bag",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "A man was seen with a large bag, looking around suspiciously. He left in a hurry.",
+          "point_value": 60
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Elena Novak",
-  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. The stolen pieces are rumored to hold secrets of a forgotten era. As you delve deeper, you uncover a web of deceit, where every suspect has a motive, but only one holds the key to the truth. Can you untangle the threads of history and catch the thief before they vanish into the night?",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Dupont",
+  "description": "A series of mysterious thefts have plagued the coastal town of Nice, France. As the sun sets, shadows dance along the promenade, and whispers of a notorious thief echo through the alleys. Your mission is to uncover the identity of the thief before they vanish into the night. Follow the clues hidden in the conversations of the locals and piece together the puzzle of their true identity.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Bratislava, Slovakia",
-  "generated_at_utc": "2025-12-07T00:02:26Z",
-  "id": "daily_20251207",
+  "final_city": "Genoa, Italy",
+  "generated_at_utc": "2025-12-08T00:02:41Z",
+  "id": "daily_20251208",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.3,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Elena is the only suspect with red hair, matching the sighting clues.",
-      "Her hobby of painting aligns with the theft of art pieces.",
-      "The dialogue hints about her nervousness and interest in art supplies point to her involvement.",
+      "Clara Dupont is the only suspect with a bright blue scooter, matching the vehicle clue.",
+      "The witness accounts and observations point towards a female suspect with a unique laugh.",
+      "Clara's background in photography aligns with her presence at high-profile events.",
       "Other suspects have conflicting traits or motives that do not align with the clues."
     ],
     "solvability_score": 1,
@@ -113,69 +113,75 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251207",
+  "mission_id": "daily_20251208",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "da95e554534ab937773adc245b72a21d590ac75f3d74d7f1068ff4e74501fd44",
-  "solution": "Connect the clues about the red-haired woman seen near art supplies and the hidden painting to identify Elena as the thief.",
+  "seed": "36f033011815280dd40fbe13013be0b95f1d45eea5240e8360880714880bd242",
+  "solution": "Connect the clues about the bright blue scooter and the peculiar laugh to identify Clara Dupont as the thief.",
   "suspect_database": [
     {
-      "background": "An aspiring artist with a passion for history.",
-      "behavioral_pattern": "Often seen near art supplies and galleries.",
-      "favorite_food": "Sushi",
+      "background": "A local photographer known for her vibrant images of the French Riviera.",
+      "favorite_food": "Macarons",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Painting",
-      "motive": "Desires to reclaim her family's lost art.",
-      "name": "Elena Novak",
-      "vehicle": "Bicycle"
-    },
-    {
-      "background": "A photographer with a keen eye for detail.",
-      "behavioral_pattern": "Frequently visits art exhibitions.",
-      "favorite_food": "Pizza",
-      "gender": "Male",
       "hair_color": "Brown",
       "hobby": "Photography",
-      "motive": "Wants to capture the essence of stolen art.",
-      "name": "Marek Kral",
-      "vehicle": "Motorcycle"
+      "motive": "Desire for fame and recognition in the art world.",
+      "name": "Clara Dupont",
+      "vehicle": "Bright blue scooter"
     },
     {
-      "background": "A collector with a secretive past.",
-      "behavioral_pattern": "Often seen at auctions.",
-      "favorite_food": "Pasta",
+      "background": "A high-stakes gambler with a penchant for luxury.",
+      "favorite_food": "Steak tartare",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Collecting antiques",
-      "motive": "Hopes to sell stolen art for profit.",
-      "name": "Tomasz Wozniak",
-      "vehicle": "Car"
+      "hobby": "Gambling",
+      "motive": "Debt from gambling losses.",
+      "name": "Julien Moreau",
+      "vehicle": "Red sports car"
     },
     {
-      "background": "A chef with a love for culinary arts.",
-      "behavioral_pattern": "Works in a local restaurant.",
-      "favorite_food": "Chocolate",
+      "background": "A chef with a popular restaurant in Nice.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Female",
       "hair_color": "Blonde",
       "hobby": "Cooking",
-      "motive": "Believes art should be shared, not hoarded.",
-      "name": "Anna Horvath",
-      "vehicle": "None"
+      "motive": "Frustration over a failed restaurant venture.",
+      "name": "Sophie Laurent",
+      "vehicle": "Bicycle"
+    },
+    {
+      "background": "An antique dealer with a shady past.",
+      "favorite_food": "Cheese platter",
+      "gender": "Male",
+      "hair_color": "Red",
+      "hobby": "Collecting antiques",
+      "motive": "Desire to fund his collection.",
+      "name": "Marc Petit",
+      "vehicle": "Motorcycle"
+    },
+    {
+      "background": "A dancer who frequents high-profile events.",
+      "favorite_food": "Seafood paella",
+      "gender": "Female",
+      "hair_color": "Black",
+      "hobby": "Dancing",
+      "motive": "Seeking attention and validation.",
+      "name": "Elise Martin",
+      "vehicle": "Luxury sedan"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Sushi",
+    "favorite_food": "Macarons",
     "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Painting",
-    "vehicle": "Bicycle"
+    "hair_color": "Brown",
+    "hobby": "Photography",
+    "vehicle": "Bright blue scooter"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251207.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251208.png",
+  "title": "Whispers in the Wind"
 }
