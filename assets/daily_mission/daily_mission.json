@@ -1,109 +1,110 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20251211.png",
+  "arrest_location": "Piazza Castello",
+  "banner_image_url": "/assets/daily_mission/banner_20251212.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A tall figure with a distinctive hat was seen near the gallery.",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw someone with a keen eye for art lurking around here. They seemed too interested in the paintings.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "Gossip",
-          "clue_value": "The artist's favorite dish is a local specialty.",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "You know, the artist who painted that mural has a peculiar taste in food. Always raving about paella.",
+          "clue_type": "Witness Account",
+          "clue_value": "A tall figure with a dark coat was seen.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone suspicious near the beach, but I can't recall their face.",
           "point_value": 80
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "A red sports car was linked to the theft.",
-          "name": "Calle de la Paz",
-          "npc_dialogue": "I overheard a conversation about a stolen piece. They mentioned a red sports car.",
-          "point_value": 120
+          "clue_type": "Observation",
+          "clue_value": "The woman seemed to be looking for something.",
+          "name": "Old Town",
+          "npc_dialogue": "The market was bustling, but I noticed a woman with a red scarf acting strangely.",
+          "point_value": 70
+        },
+        {
+          "clue_type": "Visual Clue",
+          "clue_value": "A blue convertible was parked near the entrance.",
+          "name": "Castle Hill",
+          "npc_dialogue": "From up here, you can see everything. I think I saw a car parked suspiciously.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A sketchbook was left behind, filled with drawings of boats and art.",
-          "name": "Vieux Port",
-          "npc_dialogue": "The sea breeze carries secrets. I saw someone sketching the boats, but they seemed distracted.",
-          "point_value": 90
-        },
-        {
           "clue_type": "Gossip",
-          "clue_value": "The thief's favorite food is a local dish.",
-          "name": "Le Panier",
-          "npc_dialogue": "There's a rumor about a thief who loves bouillabaisse. They say it fuels their creativity.",
-          "point_value": 70
+          "clue_value": "He mentioned a 'big score' that would change everything.",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "High stakes and high tension. I overheard a man bragging about his winnings.",
+          "point_value": 85
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "A specific guest was excluded from the list.",
-          "name": "Palais des Congr\u00e8s",
-          "npc_dialogue": "I heard someone mention a gallery opening. They were very particular about the guest list.",
-          "point_value": 110
+          "clue_type": "Personal Connection",
+          "clue_value": "She was wearing a distinctive necklace.",
+          "name": "Larvotto Beach",
+          "npc_dialogue": "I saw a couple arguing. The woman had a striking resemblance to someone I know.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "Vehicle Identification",
+          "clue_value": "A red sports car was parked in the VIP area.",
+          "name": "Monaco Grand Prix Circuit",
+          "npc_dialogue": "Racers come and go, but I noticed a car that didn't belong.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Cannes",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "The sketch depicted a famous local landmark.",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "A figure in a dark coat was seen near the fountain, sketching something. It looked suspicious.",
-          "point_value": 95
-        },
-        {
-          "clue_type": "Gossip",
-          "clue_value": "The thief's favorite drink is a local wine.",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "They say the thief has a taste for fine wines. Always seen at the best enotecas.",
-          "point_value": 85
+          "clue_type": "Celebrity Sighting",
+          "clue_value": "A famous actress was seen with a suspicious man.",
+          "name": "Cannes Film Festival",
+          "npc_dialogue": "Celebrities everywhere, but one stood out. She was too interested in the crowd.",
+          "point_value": 90
         },
         {
           "clue_type": "Eavesdropping",
-          "clue_value": "A getaway vehicle was described as sleek and fast.",
-          "name": "Porto Antico",
-          "npc_dialogue": "I overheard a couple of art dealers talking about a heist. They mentioned a getaway vehicle.",
-          "point_value": 115
+          "clue_value": "They mentioned a 'hidden stash' near the beach.",
+          "name": "La Croisette",
+          "npc_dialogue": "I overheard a conversation about a heist. They were too loud for their own good.",
+          "point_value": 80
+        },
+        {
+          "clue_type": "Security Breach",
+          "clue_value": "A man in a tuxedo was acting suspiciously.",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "The security here is tight, but I saw someone slip through unnoticed.",
+          "point_value": 85
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Lucia Rossi",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues that intertwine art, deception, and a hidden agenda. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this intricate web of crime.",
-  "difficulty": "Hard",
+  "correct_suspect": "Sophie Dubois",
+  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets, shadows dance along the Promenade des Anglais, where secrets linger. Your task is to uncover the truth behind the thefts, connecting the dots between the suspects and their hidden motives. Each clue you gather will lead you closer to the mastermind behind this intricate web of deception.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2025-12-11T00:02:37Z",
-  "id": "daily_20251211",
+  "final_city": "Turin, Italy",
+  "generated_at_utc": "2025-12-12T00:02:29Z",
+  "id": "daily_20251212",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.8,
-      "solution_uniqueness": 1
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
+      "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "Identify the favorite food linked to the suspect traits.",
-      "Match the vehicle type with the clues about the getaway car.",
-      "Correlate the hobby of sketching with the observations made in the cities."
+      "1. Witness accounts point to a tall figure and a woman with a red scarf.",
+      "2. The red sports car links directly to Sophie Dubois.",
+      "3. Her motive for fame aligns with the thefts.",
+      "4. Other suspects have conflicting traits or motives."
     ],
     "solvability_score": 1,
     "validation": {
@@ -112,75 +113,68 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251211",
+  "mission_id": "daily_20251212",
+  "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
-    "credits_earned": 150,
-    "experience_points": 300,
-    "unlocked_regions": []
+    "badge_name": "Master Detective",
+    "credits_earned": 200,
+    "experience_points": 150,
+    "unlocked_regions": [
+      "Southern Europe"
+    ]
   },
-  "seed": "29f24aebd72ca12a8b6abccbe8e90a230fbdc407d8265f1d2acc76a8bd895a5c",
-  "solution": "Connect the clues about the red sports car, the favorite food of paella, and the sketching hobby to identify Lucia Rossi as the thief.",
+  "seed": "2a784ddbeebb578ba525939856d5d21ad491110b6065d418233aae7581d5db6d",
+  "solution": "Connect the clues about the suspicious woman with the red scarf and the red sports car to identify Sophie Dubois as the mastermind behind the thefts.",
   "suspect_database": [
     {
-      "background": "An art student with a passion for local cuisine.",
-      "favorite_food": "Paella",
-      "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Sketching",
-      "motive": "Desire to fund her art projects.",
-      "name": "Lucia Rossi",
-      "vehicle": "Red sports car"
-    },
-    {
-      "background": "A sommelier with connections to the art world.",
+      "background": "A local photographer with a keen eye for detail.",
       "favorite_food": "Bouillabaisse",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Wine tasting",
-      "motive": "To impress influential art collectors.",
-      "name": "Marco Bellini",
-      "vehicle": "Blue sedan"
-    },
-    {
-      "background": "A photographer who often collaborates with artists.",
-      "favorite_food": "Pasta",
-      "gender": "Male",
-      "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "To gain fame through controversial art.",
-      "name": "Giovanni Verdi",
-      "vehicle": "Black SUV"
+      "motive": "Jealousy over a rival's success.",
+      "name": "Julien Moreau",
+      "vehicle": "Blue Convertible"
     },
     {
-      "background": "A chef with a secret passion for art theft.",
-      "favorite_food": "Risotto",
+      "background": "An aspiring actress with a flair for drama.",
+      "favorite_food": "Ratatouille",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Cooking",
-      "motive": "To create a culinary art fusion.",
-      "name": "Sofia Conti",
-      "vehicle": "Green hatchback"
+      "hair_color": "Blonde",
+      "hobby": "Acting",
+      "motive": "Desire for fame and fortune.",
+      "name": "Sophie Dubois",
+      "vehicle": "Red Sports Car"
     },
     {
-      "background": "An antique dealer with a shady past.",
-      "favorite_food": "Pizza",
+      "background": "A high-stakes gambler with a risky lifestyle.",
+      "favorite_food": "Steak Tartare",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Collecting antiques",
-      "motive": "To sell stolen art for profit.",
-      "name": "Alessandro Moretti",
-      "vehicle": "Silver coupe"
+      "hobby": "Gambling",
+      "motive": "Debt to dangerous people.",
+      "name": "Marc Lefevre",
+      "vehicle": "Black Sedan"
+    },
+    {
+      "background": "A dancer with connections to the elite.",
+      "favorite_food": "Cr\u00eapes",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Dancing",
+      "motive": "Seeking revenge for a past betrayal.",
+      "name": "Claire Martin",
+      "vehicle": "White SUV"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Paella",
+    "favorite_food": "Ratatouille",
     "gender": "Female",
-    "hair_color": "Black",
-    "hobby": "Sketching",
-    "vehicle": "Red sports car"
+    "hair_color": "Blonde",
+    "hobby": "Acting",
+    "vehicle": "Red Sports Car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251211.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251212.png",
+  "title": "Whispers in the Wind"
 }
