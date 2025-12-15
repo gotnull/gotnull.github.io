@@ -1,59 +1,59 @@
 {
-  "arrest_location": "Uffizi Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20251214.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20251215.png",
   "cities": [
     {
       "city_name": "Valencia",
       "country": "Spain",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A man with a hat",
-          "name": "Central Market",
-          "npc_dialogue": "I saw a man with a peculiar hat lingering near the spice stalls. He seemed out of place.",
-          "point_value": 75
+          "clue_type": "Witness Account",
+          "clue_value": "Artist resemblance",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw a man with a striking resemblance to a famous artist. He was sketching in the corner.",
+          "point_value": 80
         },
         {
-          "clue_type": "Artistic Insight",
-          "clue_value": "Inspired by the sea",
-          "name": "City of Arts and Sciences",
-          "npc_dialogue": "The artist's latest work was inspired by the sea. I wonder if it holds a secret?",
-          "point_value": 90
-        },
-        {
-          "clue_type": "Gossip",
-          "clue_value": "Rare painting hidden",
-          "name": "Turia Gardens",
-          "npc_dialogue": "I overheard someone talking about a rare painting. It was said to be hidden in plain sight.",
+          "clue_type": "Behavioral Observation",
+          "clue_value": "Nervous performer",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "The street performers have been acting strangely. One of them keeps looking over his shoulder.",
           "point_value": 60
+        },
+        {
+          "clue_type": "Eavesdropping",
+          "clue_value": "Rare food knowledge",
+          "name": "Central Market",
+          "npc_dialogue": "I overheard someone talking about a rare food that only a true connoisseur would know.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Nice",
+      "city_name": "Marseille",
       "country": "France",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "Woman in a blue dress",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "A woman in a blue dress was sketching the coastline. She seemed very focused.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Artistic Insight",
-          "clue_value": "Connection to local artist",
-          "name": "Marc Chagall National Museum",
-          "npc_dialogue": "The curator mentioned a connection between Chagall and a local artist. It could be worth investigating.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "Artifact",
-          "clue_value": "Sketchbook with symbol",
-          "name": "Castle Hill",
-          "npc_dialogue": "I saw someone drop a sketchbook. It had a strange symbol on the cover.",
+          "clue_type": "Suspicious Inquiry",
+          "clue_value": "Interest in hiding art",
+          "name": "Vieux Port",
+          "npc_dialogue": "A woman was asking about the best places to hide art. She seemed too interested.",
           "point_value": 70
+        },
+        {
+          "clue_type": "Visual Identification",
+          "clue_value": "Red scarf",
+          "name": "Le Panier",
+          "npc_dialogue": "I saw a man with a red scarf. He was sketching the buildings, but his eyes were darting around.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "Event Insight",
+          "clue_value": "Mysterious guest",
+          "name": "Palais des Congr\u00e8s",
+          "npc_dialogue": "There was a gallery event last week. A mysterious guest left a lasting impression.",
+          "point_value": 60
         }
       ],
       "order_in_chase": 2
@@ -63,58 +63,57 @@
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "Conflict",
-          "clue_value": "Lost sculpture",
+          "clue_type": "Cultural Reference",
+          "clue_value": "Local dish",
           "name": "Piazza De Ferrari",
-          "npc_dialogue": "A man was arguing about a lost sculpture. He seemed very passionate.",
+          "npc_dialogue": "I heard someone mention a rare dish that only a true local would know. It sounded like a code.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "Expert Observation",
+          "clue_value": "Keen eye",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "A woman with a keen eye for detail was inspecting the art closely. She seemed to know too much.",
           "point_value": 85
         },
         {
-          "clue_type": "Event",
-          "clue_value": "Maritime art exhibit",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "The gallery is hosting an exhibit on maritime art. It might attract the thief.",
-          "point_value": 95
-        },
-        {
-          "clue_type": "Rumor",
-          "clue_value": "Secret meeting at docks",
-          "name": "Old Port",
-          "npc_dialogue": "I heard whispers about a secret meeting at the docks. Something big is happening.",
-          "point_value": 65
+          "clue_type": "Theft Report",
+          "clue_value": "Unique vehicle",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "There was a commotion about a stolen painting. The thief was said to have a unique vehicle.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Marco Rossi",
-  "description": "In the heart of the Mediterranean, a series of mysterious thefts have left the local art community in disarray. As whispers of a shadowy figure circulate, you must navigate through the vibrant streets of three cities, piecing together clues that intertwine art, culture, and deception. The trail leads you to a final confrontation in a city known for its ancient ruins and modern art scene.",
+  "correct_suspect": "Lucia Moretti",
+  "description": "In the heart of the Mediterranean, a series of art forgeries have left the local galleries in turmoil. As whispers of a master forger circulate, your investigation leads you through the vibrant streets of three cities, each holding a piece of the puzzle. Can you untangle the web of deceit before the forger slips away?",
   "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Florence, Italy",
-  "generated_at_utc": "2025-12-14T00:02:30Z",
-  "id": "daily_20251214",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2025-12-15T00:02:34Z",
+  "id": "daily_20251215",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.7,
-      "solution_uniqueness": 0.8
+      "plausibility_overlap": 0.2,
+      "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identify clues related to art thefts and suspicious behavior.",
-      "Analyze suspect traits and match them with the clues.",
-      "Marco Rossi's background as an art dealer aligns with the motive and clues.",
-      "Other suspects have hobbies and traits that do not match the clues as closely."
+      "1. Analyze the clues related to culinary arts and local dishes.",
+      "2. Identify the unique vehicle mentioned in the theft report.",
+      "3. Match the suspect traits with the clues gathered from the cities.",
+      "4. Confirm Lucia Moretti's background aligns with the motive for forgery."
     ],
-    "solvability_score": 0.9,
+    "solvability_score": 1,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20251214",
-  "poster_image_url": "",
+  "mission_id": "daily_20251215",
   "region": "Europe",
   "rewards": {
     "badge_name": "Art Sleuth",
@@ -122,61 +121,57 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "b442016c88b4d12e7641fa6bcfddcd306b80620a19809e91a3ad992c9ee457fe",
-  "solution": "Connect the clues about the rare art thefts and the suspicious activities of Marco Rossi, particularly his presence at art events and his obsession with unique pieces.",
+  "seed": "2c76cd2f7991475af8af8139c4e59fc58c5791e2e717af1dafe8240ebd35c6c2",
+  "solution": "Connect the culinary references and the unique vehicle to identify Lucia Moretti as the forger.",
   "suspect_database": [
     {
-      "background": "An art dealer with a penchant for the unusual.",
-      "behavioral_pattern": "Often seen at art shows, but rarely speaks to others.",
-      "favorite_food": "Pasta",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Collecting rare art",
-      "motive": "Desire to possess unique pieces.",
-      "name": "Marco Rossi",
-      "vehicle": "Black motorcycle"
-    },
-    {
-      "background": "A local artist known for her vibrant paintings.",
-      "behavioral_pattern": "Frequently visits galleries and cafes.",
-      "favorite_food": "Salad",
+      "background": "An art student with a passion for food, known for her vibrant personality.",
+      "favorite_food": "Pesto Pasta",
       "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Sketching landscapes",
-      "motive": "Wants to gain recognition in the art world.",
-      "name": "Elena Moreau",
-      "vehicle": "Red bicycle"
+      "hair_color": "Brown",
+      "hobby": "Culinary Arts",
+      "motive": "Desire to fund her culinary dreams through art forgery.",
+      "name": "Lucia Moretti",
+      "vehicle": "Red Vespa"
     },
     {
-      "background": "A photographer who captures the essence of urban life.",
-      "behavioral_pattern": "Often found in crowded places, blending in.",
-      "favorite_food": "Pizza",
+      "background": "A struggling artist with a knack for imitation.",
+      "favorite_food": "Risotto",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Photography",
-      "motive": "Seeks to document the art scene.",
-      "name": "Luca Bianchi",
-      "vehicle": "White van"
+      "hobby": "Sketching",
+      "motive": "Frustration with the art world, seeking recognition through forgery.",
+      "name": "Marco Rossi",
+      "vehicle": "Blue Bicycle"
     },
     {
-      "background": "A museum curator with a deep love for history.",
-      "behavioral_pattern": "Spends long hours in museums.",
-      "favorite_food": "Gelato",
+      "background": "A photographer who captures the essence of art, often seen at galleries.",
+      "favorite_food": "Tiramisu",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Visiting museums",
-      "motive": "Protects cultural heritage.",
-      "name": "Sofia Ricci",
-      "vehicle": "Blue scooter"
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "To create a buzz around her photography by associating with art forgery.",
+      "name": "Elena Bianchi",
+      "vehicle": "White Car"
+    },
+    {
+      "background": "An antique dealer with a secretive past.",
+      "favorite_food": "Truffle Risotto",
+      "gender": "Male",
+      "hair_color": "Gray",
+      "hobby": "Collecting Antiques",
+      "motive": "To sell forgeries as antiques for profit.",
+      "name": "Giovanni Ferraro",
+      "vehicle": "Black Sedan"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Pasta",
-    "gender": "Male",
+    "favorite_food": "Pesto Pasta",
+    "gender": "Female",
     "hair_color": "Brown",
-    "hobby": "Collecting rare art",
-    "vehicle": "Black motorcycle"
+    "hobby": "Culinary Arts",
+    "vehicle": "Red Vespa"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251214.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251215.png",
+  "title": "Shadows of Deceit"
 }
