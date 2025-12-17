@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Piazza Castello",
-  "banner_image_url": "/assets/daily_mission/banner_20251216.png",
+  "arrest_location": "Uffizi Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20251217.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "red scarf",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone with a red scarf slip past me, but I can't be sure if it was the thief.",
+          "clue_type": "art_style",
+          "clue_value": "Impressionism",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone with a keen eye for detail lingering around the sculptures.",
           "point_value": 80
         },
         {
-          "clue_type": "behavioral",
-          "clue_value": "favorite food",
-          "name": "Old Town Market",
-          "npc_dialogue": "The thief loves pastries, especially the ones from the corner bakery.",
+          "clue_type": "suspect_description",
+          "clue_value": "red hair",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "A woman with striking red hair was sketching the fountain. She seemed too focused.",
           "point_value": 60
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "getaway car",
-          "name": "Castle Hill",
-          "npc_dialogue": "I overheard someone talking about a getaway car parked near the beach.",
+          "clue_type": "conversation_topic",
+          "clue_value": "rare painting",
+          "name": "Caf\u00e9 de las Artes",
+          "npc_dialogue": "I overheard a conversation about a rare painting. It was quite heated.",
           "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "blue hair",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "I noticed a woman with striking blue hair placing large bets. She seemed nervous.",
-          "point_value": 90
-        },
-        {
-          "clue_type": "behavioral",
-          "clue_value": "hobby",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "Someone mentioned a thief who enjoys marine life. Odd, isn't it?",
+          "clue_type": "suspect_description",
+          "clue_value": "blue jacket",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "A man in a blue jacket was sketching the sea. He seemed out of place.",
           "point_value": 70
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "vehicle",
-          "name": "Formula 1 Track",
-          "npc_dialogue": "I saw a sleek black car speeding away. It looked like a getaway vehicle.",
+          "clue_type": "hobby",
+          "clue_value": "photography",
+          "name": "Mus\u00e9e Marc Chagall",
+          "npc_dialogue": "I noticed a woman with a camera taking pictures of the exhibits. Very suspicious.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "event",
+          "clue_value": "secret auction",
+          "name": "Caf\u00e9 de Flore",
+          "npc_dialogue": "Someone mentioned a secret auction happening soon. It could be linked to the thefts.",
           "point_value": 110
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "social",
-          "clue_value": "celebrity connection",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "A celebrity was seen with a suspicious character. They were sharing a meal.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "behavioral",
-          "clue_value": "love for attention",
-          "name": "La Croisette",
-          "npc_dialogue": "I overheard someone talking about a thief who loves the spotlight.",
+          "clue_type": "accessory",
+          "clue_value": "distinctive necklace",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "I saw a woman with a distinctive necklace. She was very interested in the art on display.",
           "point_value": 85
         },
         {
-          "clue_type": "event",
-          "clue_value": "stolen trophy",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "There was a commotion about a stolen trophy. It was quite the scandal!",
+          "clue_type": "behavior",
+          "clue_value": "knowledgeable",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "A man was discussing art thefts with a local. He seemed to know too much.",
           "point_value": 95
+        },
+        {
+          "clue_type": "theft_style",
+          "clue_value": "Impressionism",
+          "name": "Le Caf\u00e9 de Paris",
+          "npc_dialogue": "I overheard a couple talking about a thief who loves Impressionism. Quite the coincidence.",
+          "point_value": 75
         }
       ],
       "order_in_chase": 3
     }
   ],
   "correct_suspect": "Clara Dubois",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets, shadows dance along the Promenade des Anglais, where whispers of a notorious thief linger. Your mission is to uncover the identity of the elusive suspect before they vanish into the night. Follow the trail through the vibrant streets, but beware of the misdirections that may lead you astray.",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a unique story, but only one holds the key to unraveling this mystery. Can you connect the dots before the thief vanishes into the night?",
   "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Turin, Italy",
-  "generated_at_utc": "2025-12-16T00:02:25Z",
-  "id": "daily_20251216",
+  "final_city": "Florence, Italy",
+  "generated_at_utc": "2025-12-17T00:02:34Z",
+  "id": "daily_20251217",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
       "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1.0
+      "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clue about the red scarf points to a female suspect.",
-      "Blue hair mentioned in Monaco aligns with Clara Dubois.",
-      "Favorite food of pastries connects to Clara's profile.",
-      "Sleek black car is consistent with getaway vehicle clues."
+      "Identify the suspect traits from the clues.",
+      "Match the traits to the suspects in the database.",
+      "Eliminate suspects based on inconsistencies with clues.",
+      "Confirm Clara Dubois as the only suspect matching all traits."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,61 +113,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251216",
+  "mission_id": "daily_20251217",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Coastal Sleuth",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "9d80c3a77de9ae3407575be8b42660157047a9131779fd7091a84a9e6652c4c9",
-  "solution": "Connect the clues about the blue hair, love for pastries, and sleek black car to identify Clara Dubois as the thief.",
+  "seed": "6eda23865182b9e3e884a813505d77635611f2bfaabf9e3d0749aa95ab3d567c",
+  "solution": "Connect the clues about the red-haired sketch artist, her focus on Impressionism, and her presence at the art theft locations to identify Clara Dubois.",
   "suspect_database": [
     {
-      "background": "A former marine biologist turned thief, Clara uses her knowledge of the sea to plan heists.",
-      "favorite_food": "Pastries",
-      "gender": "Female",
-      "hair_color": "Blue",
-      "hobby": "Marine Biology",
+      "background": "An art student with a passion for Impressionism, Clara has been known to frequent galleries.",
+      "favorite_food": "tapas",
+      "gender": "female",
+      "hair_color": "red",
+      "hobby": "sketching",
+      "motive": "Desire to own a piece of art history.",
       "name": "Clara Dubois",
-      "vehicle": "Sleek Black Car"
+      "vehicle": "bicycle"
     },
     {
-      "background": "A photographer who captures the beauty of the coast, but has a hidden agenda.",
-      "favorite_food": "Sushi",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Photography",
-      "name": "Julien Moreau",
-      "vehicle": "Red Bicycle"
-    },
-    {
-      "background": "A fashion designer with a flair for the dramatic, often seen at high-profile events.",
-      "favorite_food": "Salads",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Fashion Design",
-      "name": "Sophie Laurent",
-      "vehicle": "Vintage Car"
-    },
-    {
-      "background": "A chef who has a passion for culinary arts, but also a taste for the finer things in life.",
-      "favorite_food": "Steak",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Cooking",
+      "background": "A photographer who often captures art events, Marc has a keen eye for detail.",
+      "favorite_food": "sushi",
+      "gender": "male",
+      "hair_color": "brown",
+      "hobby": "photography",
+      "motive": "To gain fame through art.",
       "name": "Marc Dupont",
-      "vehicle": "Motorcycle"
+      "vehicle": "sports car"
+    },
+    {
+      "background": "A wealthy collector with a taste for rare pieces, Sophie is often seen at auctions.",
+      "favorite_food": "pasta",
+      "gender": "female",
+      "hair_color": "blonde",
+      "hobby": "collecting",
+      "motive": "To expand her collection.",
+      "name": "Sophie Martin",
+      "vehicle": "luxury sedan"
+    },
+    {
+      "background": "A gambler with a penchant for high-stakes art deals, Julien is always looking for the next big score.",
+      "favorite_food": "steak",
+      "gender": "male",
+      "hair_color": "black",
+      "hobby": "gambling",
+      "motive": "To pay off debts.",
+      "name": "Julien Moreau",
+      "vehicle": "motorcycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Pastries",
-    "gender": "Female",
-    "hair_color": "Blue",
-    "hobby": "Marine Biology",
-    "vehicle": "Sleek Black Car"
+    "favorite_food": "tapas",
+    "gender": "female",
+    "hair_color": "red",
+    "hobby": "sketching",
+    "vehicle": "bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251216.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251217.png",
+  "title": "Echoes of the Past"
 }
