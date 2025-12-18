@@ -1,30 +1,30 @@
 {
   "arrest_location": "Piazza Castello",
-  "banner_image_url": "/assets/daily_mission/banner_20251105.png",
+  "banner_image_url": "/assets/daily_mission/banner_20251218.png",
   "cities": [
     {
       "city_name": "Nice",
       "country": "France",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "Red scarf",
+          "clue_type": "Observation",
+          "clue_value": "Striking hat",
           "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone with a red scarf lurking around here. They seemed out of place.",
+          "npc_dialogue": "I saw someone with a striking hat, blending in with the tourists. They seemed too comfortable here.",
           "point_value": 80
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "Peculiar hat",
-          "name": "Old Town",
-          "npc_dialogue": "The market was bustling, but I noticed a figure with a peculiar hat. They were too interested in the jewelry stalls.",
+          "clue_type": "Behavior",
+          "clue_value": "Admiring local cuisine",
+          "name": "Old Town Market",
+          "npc_dialogue": "The thief was seen near the stalls, but they were too busy admiring the local cuisine to be suspicious.",
           "point_value": 70
         },
         {
           "clue_type": "Eavesdropping",
-          "clue_value": "Blue car",
+          "clue_value": "Rare dish excitement",
           "name": "Castle Hill",
-          "npc_dialogue": "I overheard someone talking about a getaway vehicle. They mentioned something about a blue car.",
+          "npc_dialogue": "I overheard a conversation about a rare dish. It seemed to excite someone nearby.",
           "point_value": 90
         }
       ],
@@ -35,25 +35,25 @@
       "country": "Monaco",
       "locations": [
         {
-          "clue_type": "Eyewitness",
-          "clue_value": "Green eyes",
+          "clue_type": "Vehicle",
+          "clue_value": "Unique vehicle",
           "name": "Monte Carlo Casino",
-          "npc_dialogue": "A woman with striking green eyes was seen leaving the casino just before the thefts occurred.",
-          "point_value": 85
+          "npc_dialogue": "A person with a unique vehicle was seen leaving in a hurry. They had a taste for the finer things.",
+          "point_value": 100
         },
         {
-          "clue_type": "Artistic Clue",
-          "clue_value": "Artistic style",
+          "clue_type": "Artistic Behavior",
+          "clue_value": "Keen eye for detail",
           "name": "Oceanographic Museum",
-          "npc_dialogue": "I noticed a man sketching the exhibits. He had a unique style, very artistic.",
-          "point_value": 75
+          "npc_dialogue": "I noticed someone sketching the exhibits. They seemed to have a keen eye for detail.",
+          "point_value": 60
         },
         {
-          "clue_type": "Commotion",
-          "clue_value": "Boat",
-          "name": "Port Hercule",
-          "npc_dialogue": "There was a commotion near the docks. Someone mentioned a boat leaving in a hurry.",
-          "point_value": 60
+          "clue_type": "Incident",
+          "clue_value": "Eager to leave",
+          "name": "Monaco Grand Prix Track",
+          "npc_dialogue": "There was a commotion about a missing trophy. Someone was too eager to leave the scene.",
+          "point_value": 75
         }
       ],
       "order_in_chase": 2
@@ -63,127 +63,119 @@
       "country": "France",
       "locations": [
         {
-          "clue_type": "Suspicious Activity",
-          "clue_value": "Tall figure with a camera",
+          "clue_type": "Appearance",
+          "clue_value": "Distinctive hairstyle",
           "name": "Cannes Film Festival",
-          "npc_dialogue": "I saw a tall figure with a camera. They were taking pictures of the stars, but something felt off.",
-          "point_value": 95
+          "npc_dialogue": "I saw a person with a distinctive hairstyle mingling with the stars. They were very charming.",
+          "point_value": 85
         },
         {
-          "clue_type": "Argument",
-          "clue_value": "Distinctive bracelet",
+          "clue_type": "Behavior",
+          "clue_value": "Overly enthusiastic",
           "name": "La Croisette",
-          "npc_dialogue": "A couple was arguing about a missing necklace. The woman had a distinctive bracelet.",
-          "point_value": 70
+          "npc_dialogue": "Someone was handing out flyers for a new restaurant. They seemed overly enthusiastic.",
+          "point_value": 65
         },
         {
-          "clue_type": "Secret Meeting",
-          "clue_value": "Heist",
+          "clue_type": "Stealth",
+          "clue_value": "Slipping away unnoticed",
           "name": "Palais des Festivals",
-          "npc_dialogue": "I overheard someone mention a secret meeting. They were discussing a heist.",
-          "point_value": 80
+          "npc_dialogue": "A person was seen sneaking around backstage. They had a knack for slipping away unnoticed.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Juliette Moreau",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets, shadows lengthen, and whispers of a notorious thief echo through the streets. Your task is to unravel the threads of deception and identify the mastermind behind these crimes before they slip away into the night.",
+  "correct_suspect": "Sophie Dubois",
+  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets, shadows lengthen, and the whispers of the wind carry secrets of a thief who blends into the vibrant local culture. Your task is to uncover the identity of the elusive suspect before they vanish into the night.",
   "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
   "final_city": "Turin, Italy",
-  "generated_at_utc": "2025-11-05T00:02:28Z",
-  "id": "daily_20251105",
+  "generated_at_utc": "2025-12-18T00:02:27Z",
+  "id": "daily_20251218",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
       "plausibility_overlap": 0.2,
-      "solution_uniqueness": 0.9
+      "solution_uniqueness": 0.95
     },
     "reasoning_chain": [
-      "1. The red scarf is a unique identifier linked to Juliette.",
-      "2. The blue convertible matches her vehicle description.",
-      "3. The artistic style aligns with her hobby of photography.",
-      "4. Other suspects have conflicting traits or motives that do not align with the clues."
+      "1. Clue about the striking hat suggests a unique appearance.",
+      "2. The behavior of admiring local cuisine aligns with a culinary hobby.",
+      "3. The artistic behavior and distinctive hairstyle point towards Sophie Dubois.",
+      "4. Other suspects do not match all traits simultaneously."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.9,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20251105",
+  "mission_id": "daily_20251218",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Culinary Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": [
-      "Southern Europe"
-    ]
+    "unlocked_regions": []
   },
-  "seed": "0eb6a8eb09249e378d8257d7d085d3dd7b44bdfb0ddf0efdef35575ae1156d37",
-  "solution": "Connect the clues about the red scarf, the blue convertible, and the artistic style to identify Juliette as the mastermind behind the thefts.",
+  "seed": "946c83f4c0ff5cbdaab7784ee2567f77519c131a36874037c0904786428c9672",
+  "solution": "Connect the clues about the distinctive hairstyle, the enthusiasm for local cuisine, and the artistic behavior to identify Sophie Dubois as the thief.",
   "suspect_database": [
     {
-      "background": "A local artist known for her vibrant photography, often seen at social events.",
-      "favorite_food": "Macarons",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "Desire for fame and recognition.",
-      "name": "Juliette Moreau",
-      "vehicle": "Blue convertible"
-    },
-    {
-      "background": "A fisherman with a quiet demeanor, often overlooked in social settings.",
-      "favorite_food": "Seafood",
+      "background": "A local chef known for his culinary skills and charm.",
+      "behavioral_pattern": "Often seen in markets, blending in with food enthusiasts.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Fishing",
-      "motive": "Financial troubles.",
-      "name": "Marc Dupont",
-      "vehicle": "Red pickup truck"
+      "hobby": "Gourmet cooking",
+      "motive": "Desire to showcase his cooking talents through theft.",
+      "name": "Julien Moreau",
+      "vehicle": "Vintage scooter"
     },
     {
-      "background": "A fashion designer with a flair for the dramatic, often seen at high-profile events.",
-      "favorite_food": "Sushi",
+      "background": "An artist who frequents local festivals.",
+      "behavioral_pattern": "Often sketches in public spaces, drawing attention.",
+      "favorite_food": "Ratatouille",
       "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Fashion design",
-      "motive": "Jealousy of a rival.",
-      "name": "Sophie Laurent",
-      "vehicle": "Black sedan"
+      "hair_color": "Blonde",
+      "hobby": "Sketching",
+      "motive": "To fund her art projects through theft.",
+      "name": "Sophie Dubois",
+      "vehicle": "Luxury car"
     },
     {
-      "background": "An antique collector with a keen eye for valuable items.",
-      "favorite_food": "Cheese",
+      "background": "A competitive individual with a penchant for luxury.",
+      "behavioral_pattern": "Seen at high-profile events, often boasting.",
+      "favorite_food": "Steak tartare",
       "gender": "Male",
-      "hair_color": "Gray",
-      "hobby": "Collecting antiques",
-      "motive": "Greed.",
-      "name": "Antoine Girard",
-      "vehicle": "Vintage car"
+      "hair_color": "Black",
+      "hobby": "Collecting trophies",
+      "motive": "To impress others with his collection.",
+      "name": "Marc Lefevre",
+      "vehicle": "Sports car"
     },
     {
-      "background": "A dancer with a mysterious past, often seen in the nightlife.",
-      "favorite_food": "Pasta",
+      "background": "A photographer who captures the essence of local life.",
+      "behavioral_pattern": "Often found at events, capturing moments.",
+      "favorite_food": "Crepes",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Dancing",
-      "motive": "Thrill-seeking.",
-      "name": "Claire Fontaine",
-      "vehicle": "Motorcycle"
+      "hobby": "Photography",
+      "motive": "To gain fame through her work.",
+      "name": "Claire Martin",
+      "vehicle": "Compact car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Macarons",
+    "favorite_food": "Ratatouille",
     "gender": "Female",
     "hair_color": "Blonde",
-    "hobby": "Photography",
-    "vehicle": "Blue convertible"
+    "hobby": "Sketching",
+    "vehicle": "Luxury car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251105.png",
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251218.png",
   "title": "Whispers in the Wind"
 }
