@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20251226.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20251227.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
           "clue_type": "Witness Account",
-          "clue_value": "Red scarf",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone with a red scarf lurking around here. They seemed out of place.",
+          "clue_value": "dark coat",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw a figure in a dark coat lingering near the Van Gogh. They seemed too interested in the art.",
           "point_value": 80
         },
         {
-          "clue_type": "Artistic Reference",
-          "clue_value": "Sketching",
-          "name": "Old Town",
-          "npc_dialogue": "The artist down the street mentioned a peculiar visitor who sketches at night.",
+          "clue_type": "Local Insight",
+          "clue_value": "street performers",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "The street performers are always a distraction. I wonder if one of them is involved in the thefts.",
           "point_value": 60
         },
         {
-          "clue_type": "Heard Rumor",
-          "clue_value": "Stolen painting",
-          "name": "Castle Hill",
-          "npc_dialogue": "I overheard a conversation about a stolen painting. It was said to be worth a fortune.",
-          "point_value": 100
+          "clue_type": "Eavesdropping",
+          "clue_value": "paella",
+          "name": "Central Market",
+          "npc_dialogue": "I overheard someone talking about a rare painting. They mentioned a favorite dish that could be a clue.",
+          "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Suspicious Activity",
-          "clue_value": "Large bag",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "A woman with striking blue hair was seen leaving with a large bag. Suspicious, don't you think?",
+          "clue_type": "Suspicious Behavior",
+          "clue_value": "red hair",
+          "name": "Mus\u00e9e des Beaux-Arts",
+          "npc_dialogue": "A woman with striking red hair was asking about the security system here. Quite suspicious, if you ask me.",
           "point_value": 90
         },
         {
-          "clue_type": "Culinary Hint",
-          "clue_value": "Rare fish dish",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "I heard someone mention a rare fish dish that only the finest chefs prepare.",
-          "point_value": 70
+          "clue_type": "Observation",
+          "clue_value": "sketching",
+          "name": "Vieux Port",
+          "npc_dialogue": "I saw a man sketching by the harbor. He seemed to be drawing something that looked like a famous painting.",
+          "point_value": 50
         },
         {
-          "clue_type": "Eyewitness Report",
-          "clue_value": "Scaling walls",
-          "name": "Prince's Palace",
-          "npc_dialogue": "There was a commotion last night. Someone claimed to have seen a thief scaling the walls.",
-          "point_value": 85
+          "clue_type": "Culinary Reference",
+          "clue_value": "bouillabaisse",
+          "name": "Le Panier",
+          "npc_dialogue": "The locals here love their bouillabaisse. I wonder if it has anything to do with the art thefts.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Celebrity Insight",
-          "clue_value": "Sunglasses at night",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "A director mentioned a mysterious figure who always wears sunglasses, even at night.",
+          "clue_type": "Eyewitness",
+          "clue_value": "tall man",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "A tall man with a peculiar hat was seen leaving the gallery just before the alarm went off.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "Artistic Connection",
+          "clue_value": "Barolo",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "I heard someone mention a connection to a famous artist. They were talking about a specific type of wine.",
           "point_value": 75
         },
         {
-          "clue_type": "Artistic Observation",
-          "clue_value": "Capturing light",
-          "name": "La Croisette",
-          "npc_dialogue": "I saw someone sketching the sunset. They had a peculiar way of capturing light.",
-          "point_value": 65
-        },
-        {
-          "clue_type": "Local Gossip",
-          "clue_value": "Famous thief",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "Rumor has it that a famous thief is in town, blending in with the stars.",
-          "point_value": 95
+          "clue_type": "Local Talent",
+          "clue_value": "street artists",
+          "name": "Porto Antico",
+          "npc_dialogue": "The street artists here are quite talented. One of them might know something about the thefts.",
+          "point_value": 55
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Dupont",
-  "description": "A series of mysterious thefts have plagued the coastal town of Nice, France. As the sun sets, shadows lengthen, and the whispers of the wind carry secrets of a master thief. Your task is to unravel the threads of deception and identify the culprit before they vanish into the night.",
+  "correct_suspect": "Clara Moreau",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious art thief circulate, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the dialogue of locals and the art itself. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to unraveling this intricate web of deception.",
   "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2025-12-26T00:02:19Z",
-  "id": "daily_20251226",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2025-12-27T00:02:30Z",
+  "id": "daily_20251227",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,10 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. Clara is the only suspect with blue hair, matching the witness description.",
-      "2. The red scarf clue aligns with Clara's artistic persona, suggesting a connection to her.",
-      "3. The rare fish dish is her favorite food, linking her to the culinary hint.",
-      "4. Other suspects have conflicting traits that do not match all clues."
+      "Clara is the only suspect with red hair, matching the eyewitness account.",
+      "Her hobby of sketching aligns with the suspicious behavior observed in Marseille.",
+      "The favorite food of bouillabaisse connects her to the culinary clue in Marseille.",
+      "No other suspect matches all traits and clues simultaneously."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,65 +113,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251226",
+  "mission_id": "daily_20251227",
+  "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "84e2f32973e48d4abed14a556fa26670cfe944dca191637fbd4d440549d45feb",
-  "solution": "Connect the clues about the red scarf, sketching, and rare fish dish to identify Clara as the mastermind behind the thefts.",
+  "seed": "1e4fa84566c7d0d834e1d2510b01207daed44185af5e111b1bdc493f9ee98f31",
+  "solution": "Connect the clues about the red-haired woman sketching and her favorite dish to identify Clara as the master thief.",
   "suspect_database": [
     {
-      "background": "An artist known for her unique style, Clara has a penchant for the dramatic.",
-      "favorite_food": "Rare fish dish",
+      "background": "An art student with a passion for classic paintings, Clara has been seen frequenting galleries.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Female",
-      "hair_color": "Blue",
+      "hair_color": "Red",
       "hobby": "Sketching",
-      "motive": "Desire for fame and recognition in the art world.",
-      "name": "Clara Dupont",
+      "motive": "Desire to create a name for herself in the art world.",
+      "name": "Clara Moreau",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A local fisherman with a love for the sea, often seen at the docks.",
-      "favorite_food": "Seafood paella",
+      "background": "A chef known for his culinary skills, often seen in the market.",
+      "favorite_food": "Paella",
       "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Fishing",
-      "motive": "Financial troubles due to poor catches.",
-      "name": "Jean-Pierre Moreau",
+      "hair_color": "Black",
+      "hobby": "Cooking",
+      "motive": "To fund his restaurant dreams.",
+      "name": "Marco Rossi",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A chef at a renowned restaurant, known for her culinary skills.",
+      "background": "A photographer who captures street life, often seen near art events.",
       "favorite_food": "Pasta",
       "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Cooking",
-      "motive": "Jealousy of a rival chef's success.",
-      "name": "Sophie Laurent",
+      "hair_color": "Brown",
+      "hobby": "Photography",
+      "motive": "To gain fame through her art.",
+      "name": "Lucie Dupont",
       "vehicle": "Car"
     },
     {
-      "background": "A photographer who captures the essence of the French Riviera.",
-      "favorite_food": "Sushi",
+      "background": "A wine connoisseur with connections to the art world.",
+      "favorite_food": "Barolo",
       "gender": "Male",
       "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "Desire to create a viral sensation.",
-      "name": "Marc Lefevre",
-      "vehicle": "Van"
+      "hobby": "Wine Tasting",
+      "motive": "To impress his wealthy friends.",
+      "name": "Henri Lefevre",
+      "vehicle": "Luxury Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Rare fish dish",
+    "favorite_food": "Bouillabaisse",
     "gender": "Female",
-    "hair_color": "Blue",
+    "hair_color": "Red",
     "hobby": "Sketching",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251226.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251227.png",
+  "title": "Echoes of the Past"
 }
