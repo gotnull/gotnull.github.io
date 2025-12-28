@@ -1,59 +1,59 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20251227.png",
+  "arrest_location": "Piazza della Signoria",
+  "banner_image_url": "/assets/daily_mission/banner_20251228.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "dark coat",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw a figure in a dark coat lingering near the Van Gogh. They seemed too interested in the art.",
+          "clue_type": "cultural_reference",
+          "clue_value": "dancing",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "The sea breeze carries tales of a thief who dances with the waves.",
+          "point_value": 100
+        },
+        {
+          "clue_type": "favorite_food",
+          "clue_value": "socca",
+          "name": "Old Town",
+          "npc_dialogue": "They say the thief has a taste for the finer things, like the local cuisine.",
           "point_value": 80
         },
         {
-          "clue_type": "Local Insight",
-          "clue_value": "street performers",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "The street performers are always a distraction. I wonder if one of them is involved in the thefts.",
+          "clue_type": "behavioral_pattern",
+          "clue_value": "observant",
+          "name": "Castle Hill",
+          "npc_dialogue": "From up here, you can see everything. But can you see the truth?",
           "point_value": 60
-        },
-        {
-          "clue_type": "Eavesdropping",
-          "clue_value": "paella",
-          "name": "Central Market",
-          "npc_dialogue": "I overheard someone talking about a rare painting. They mentioned a favorite dish that could be a clue.",
-          "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "Suspicious Behavior",
-          "clue_value": "red hair",
-          "name": "Mus\u00e9e des Beaux-Arts",
-          "npc_dialogue": "A woman with striking red hair was asking about the security system here. Quite suspicious, if you ask me.",
+          "clue_type": "motive",
+          "clue_value": "gambling",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "Luck is a fickle friend, much like our thief.",
           "point_value": 90
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "sketching",
-          "name": "Vieux Port",
-          "npc_dialogue": "I saw a man sketching by the harbor. He seemed to be drawing something that looked like a famous painting.",
-          "point_value": 50
+          "clue_type": "background",
+          "clue_value": "noble",
+          "name": "Prince's Palace",
+          "npc_dialogue": "Royalty has its secrets, but so does the thief.",
+          "point_value": 70
         },
         {
-          "clue_type": "Culinary Reference",
-          "clue_value": "bouillabaisse",
-          "name": "Le Panier",
-          "npc_dialogue": "The locals here love their bouillabaisse. I wonder if it has anything to do with the art thefts.",
-          "point_value": 65
+          "clue_type": "hobby",
+          "clue_value": "marine biology",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "The ocean holds many mysteries, just like our suspect.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
@@ -63,48 +63,48 @@
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "Eyewitness",
-          "clue_value": "tall man",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "A tall man with a peculiar hat was seen leaving the gallery just before the alarm went off.",
-          "point_value": 85
-        },
-        {
-          "clue_type": "Artistic Connection",
-          "clue_value": "Barolo",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "I heard someone mention a connection to a famous artist. They were talking about a specific type of wine.",
+          "clue_type": "hobby",
+          "clue_value": "aquatic life",
+          "name": "Genoa Aquarium",
+          "npc_dialogue": "They say the thief has a fascination with the sea's wonders.",
           "point_value": 75
         },
         {
-          "clue_type": "Local Talent",
-          "clue_value": "street artists",
-          "name": "Porto Antico",
-          "npc_dialogue": "The street artists here are quite talented. One of them might know something about the thefts.",
-          "point_value": 55
+          "clue_type": "behavioral_pattern",
+          "clue_value": "charismatic",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "In the heart of the city, the thief blends in with the crowd.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "cultural_reference",
+          "clue_value": "history",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "The architecture here tells stories, but can it tell you about the thief?",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moreau",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious art thief circulate, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the dialogue of locals and the art itself. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to unraveling this intricate web of deception.",
-  "difficulty": "Medium",
+  "correct_suspect": "Lucia Rossi",
+  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the whispers of the wind carry secrets. Your task is to uncover the identity of the elusive thief who has left behind a trail of misdirection. Each clue is a piece of a larger puzzle, hidden in the nuances of local culture and behavior. Can you connect the dots before the thief vanishes into the night?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2025-12-27T00:02:30Z",
-  "id": "daily_20251227",
+  "final_city": "Florence, Italy",
+  "generated_at_utc": "2025-12-28T00:02:18Z",
+  "id": "daily_20251228",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.3,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara is the only suspect with red hair, matching the eyewitness account.",
-      "Her hobby of sketching aligns with the suspicious behavior observed in Marseille.",
-      "The favorite food of bouillabaisse connects her to the culinary clue in Marseille.",
-      "No other suspect matches all traits and clues simultaneously."
+      "1. Lucia Rossi's hobby of dancing aligns with the clue about the thief dancing with the waves.",
+      "2. The favorite food clue of socca matches Lucia's profile.",
+      "3. The behavioral pattern of being observant fits Lucia's character as a performer.",
+      "4. Other suspects have conflicting hobbies or motives that do not align with the clues."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,66 +113,68 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251227",
+  "mission_id": "daily_20251228",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": []
+    "unlocked_regions": [
+      "Southern Europe"
+    ]
   },
-  "seed": "1e4fa84566c7d0d834e1d2510b01207daed44185af5e111b1bdc493f9ee98f31",
-  "solution": "Connect the clues about the red-haired woman sketching and her favorite dish to identify Clara as the master thief.",
+  "seed": "49c37b6fef9f59b4497c0e9e7a1e2444c8fb6ad9339fdb61cd7914ae00ed734e",
+  "solution": "Connect the clues about the thief's love for dancing and local cuisine to identify Lucia as the suspect.",
   "suspect_database": [
     {
-      "background": "An art student with a passion for classic paintings, Clara has been seen frequenting galleries.",
-      "favorite_food": "Bouillabaisse",
+      "background": "A local performer with a flair for the dramatic.",
+      "favorite_food": "socca",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Sketching",
-      "motive": "Desire to create a name for herself in the art world.",
-      "name": "Clara Moreau",
-      "vehicle": "Bicycle"
+      "hair_color": "Black",
+      "hobby": "dancing",
+      "motive": "Seeks attention and thrill.",
+      "name": "Lucia Rossi",
+      "vehicle": "scooter"
     },
     {
-      "background": "A chef known for his culinary skills, often seen in the market.",
-      "favorite_food": "Paella",
+      "background": "A high-stakes gambler with debts.",
+      "favorite_food": "pasta",
+      "gender": "Male",
+      "hair_color": "Brown",
+      "hobby": "gambling",
+      "motive": "Desperation for money.",
+      "name": "Marco Bellini",
+      "vehicle": "luxury car"
+    },
+    {
+      "background": "An environmentalist with a passion for the ocean.",
+      "favorite_food": "seafood",
+      "gender": "Female",
+      "hair_color": "Blonde",
+      "hobby": "marine biology",
+      "motive": "Protecting marine life.",
+      "name": "Sofia Conti",
+      "vehicle": "bicycle"
+    },
+    {
+      "background": "A historian with a love for ancient artifacts.",
+      "favorite_food": "pizza",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Cooking",
-      "motive": "To fund his restaurant dreams.",
-      "name": "Marco Rossi",
-      "vehicle": "Motorcycle"
-    },
-    {
-      "background": "A photographer who captures street life, often seen near art events.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
-      "hair_color": "Brown",
-      "hobby": "Photography",
-      "motive": "To gain fame through her art.",
-      "name": "Lucie Dupont",
-      "vehicle": "Car"
-    },
-    {
-      "background": "A wine connoisseur with connections to the art world.",
-      "favorite_food": "Barolo",
-      "gender": "Male",
-      "hair_color": "Blonde",
-      "hobby": "Wine Tasting",
-      "motive": "To impress his wealthy friends.",
-      "name": "Henri Lefevre",
-      "vehicle": "Luxury Car"
+      "hobby": "history",
+      "motive": "Curiosity about the past.",
+      "name": "Giovanni Verdi",
+      "vehicle": "motorcycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Bouillabaisse",
+    "favorite_food": "socca",
     "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Sketching",
-    "vehicle": "Bicycle"
+    "hair_color": "Black",
+    "hobby": "dancing",
+    "vehicle": "scooter"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251227.png",
-  "title": "Echoes of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251228.png",
+  "title": "Whispers in the Wind"
 }
