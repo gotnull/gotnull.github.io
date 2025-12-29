@@ -1,58 +1,58 @@
 {
-  "arrest_location": "Piazza della Signoria",
-  "banner_image_url": "/assets/daily_mission/banner_20251228.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20251229.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "cultural_reference",
-          "clue_value": "dancing",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea breeze carries tales of a thief who dances with the waves.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "favorite_food",
-          "clue_value": "socca",
-          "name": "Old Town",
-          "npc_dialogue": "They say the thief has a taste for the finer things, like the local cuisine.",
+          "clue_type": "art_style",
+          "clue_value": "Impressionism",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone sketching the paintings here, but they left in a hurry.",
           "point_value": 80
         },
         {
-          "clue_type": "behavioral_pattern",
-          "clue_value": "observant",
-          "name": "Castle Hill",
-          "npc_dialogue": "From up here, you can see everything. But can you see the truth?",
+          "clue_type": "suspect_description",
+          "clue_value": "tall woman, red scarf",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "A tall woman with a striking red scarf was asking about local artists.",
           "point_value": 60
+        },
+        {
+          "clue_type": "transaction",
+          "clue_value": "rare painting",
+          "name": "Caf\u00e9 de las Artes",
+          "npc_dialogue": "I overheard a conversation about a rare painting being sold for a fortune.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "motive",
-          "clue_value": "gambling",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle friend, much like our thief.",
-          "point_value": 90
-        },
-        {
-          "clue_type": "background",
-          "clue_value": "noble",
-          "name": "Prince's Palace",
-          "npc_dialogue": "Royalty has its secrets, but so does the thief.",
+          "clue_type": "suspect_description",
+          "clue_value": "man, blue beret",
+          "name": "Vieux Port",
+          "npc_dialogue": "A man in a blue beret was sketching the boats, but he seemed nervous.",
           "point_value": 70
         },
         {
-          "clue_type": "hobby",
-          "clue_value": "marine biology",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "The ocean holds many mysteries, just like our suspect.",
+          "clue_type": "forger_reference",
+          "clue_value": "famous forger",
+          "name": "Mus\u00e9e des Beaux-Arts",
+          "npc_dialogue": "I heard someone mention a connection to a famous forger from Paris.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "art_supplies",
+          "clue_value": "renowned artist",
+          "name": "Rue de la R\u00e9publique",
+          "npc_dialogue": "A woman was selling art supplies, claiming they were from a renowned artist.",
           "point_value": 50
         }
       ],
@@ -63,48 +63,49 @@
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "hobby",
-          "clue_value": "aquatic life",
-          "name": "Genoa Aquarium",
-          "npc_dialogue": "They say the thief has a fascination with the sea's wonders.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "behavioral_pattern",
-          "clue_value": "charismatic",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "In the heart of the city, the thief blends in with the crowd.",
+          "clue_type": "authenticity",
+          "clue_value": "painting authenticity",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "I saw a couple arguing about a painting's authenticity.",
           "point_value": 85
         },
         {
-          "clue_type": "cultural_reference",
-          "clue_value": "history",
+          "clue_type": "suspect_description",
+          "clue_value": "woman, resemblance to artist",
           "name": "Via Garibaldi",
-          "npc_dialogue": "The architecture here tells stories, but can it tell you about the thief?",
-          "point_value": 65
+          "npc_dialogue": "A woman with a striking resemblance to a famous artist was here yesterday.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "suspicious_sale",
+          "clue_value": "too good to be true",
+          "name": "Mercato Orientale",
+          "npc_dialogue": "Someone was trying to sell a painting that looked too good to be true.",
+          "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Lucia Rossi",
-  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the whispers of the wind carry secrets. Your task is to uncover the identity of the elusive thief who has left behind a trail of misdirection. Each clue is a piece of a larger puzzle, hidden in the nuances of local culture and behavior. Can you connect the dots before the thief vanishes into the night?",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Moreau",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a master forger circulate, you must navigate through the vibrant streets of three cities, piecing together the clues hidden in the art world. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to unraveling this intricate web of deception.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Florence, Italy",
-  "generated_at_utc": "2025-12-28T00:02:18Z",
-  "id": "daily_20251228",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2025-12-29T00:02:30Z",
+  "id": "daily_20251229",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.3,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. Lucia Rossi's hobby of dancing aligns with the clue about the thief dancing with the waves.",
-      "2. The favorite food clue of socca matches Lucia's profile.",
-      "3. The behavioral pattern of being observant fits Lucia's character as a performer.",
-      "4. Other suspects have conflicting hobbies or motives that do not align with the clues."
+      "Clara is the only suspect with red hair, matching the description from Valencia.",
+      "Her hobby of painting aligns with the Impressionist clue found in Valencia.",
+      "The mention of a tall woman in Valencia and a woman resembling an artist in Genoa misdirects towards other suspects.",
+      "Julien's blue beret and Sofia's art supplies do not connect to the forgeries.",
+      "Clara's motive of funding her studies through forgery is consistent with her background."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,68 +114,75 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251228",
-  "poster_image_url": "",
+  "mission_id": "daily_20251229",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": [
-      "Southern Europe"
-    ]
+    "unlocked_regions": []
   },
-  "seed": "49c37b6fef9f59b4497c0e9e7a1e2444c8fb6ad9339fdb61cd7914ae00ed734e",
-  "solution": "Connect the clues about the thief's love for dancing and local cuisine to identify Lucia as the suspect.",
+  "seed": "5a5ac7e51c3be6456db270d6c94ae8968acbdd3f1b03c890bc6bd4608b12f1fd",
+  "solution": "Connect the clues about the red scarf and the Impressionist style to identify Clara as the forger.",
   "suspect_database": [
     {
-      "background": "A local performer with a flair for the dramatic.",
-      "favorite_food": "socca",
-      "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "dancing",
-      "motive": "Seeks attention and thrill.",
-      "name": "Lucia Rossi",
-      "vehicle": "scooter"
-    },
-    {
-      "background": "A high-stakes gambler with debts.",
-      "favorite_food": "pasta",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "gambling",
-      "motive": "Desperation for money.",
-      "name": "Marco Bellini",
-      "vehicle": "luxury car"
-    },
-    {
-      "background": "An environmentalist with a passion for the ocean.",
-      "favorite_food": "seafood",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "marine biology",
-      "motive": "Protecting marine life.",
-      "name": "Sofia Conti",
+      "background": "An art student with a passion for Impressionism, Clara has been known to frequent galleries.",
+      "favorite_food": "tapas",
+      "gender": "female",
+      "hair_color": "red",
+      "hobby": "painting",
+      "motive": "Desire to create forgeries to fund her studies.",
+      "name": "Clara Moreau",
       "vehicle": "bicycle"
     },
     {
-      "background": "A historian with a love for ancient artifacts.",
-      "favorite_food": "pizza",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "history",
-      "motive": "Curiosity about the past.",
-      "name": "Giovanni Verdi",
+      "background": "A street artist with a reputation for his blue beret, Julien often mingles with art circles.",
+      "favorite_food": "croissants",
+      "gender": "male",
+      "hair_color": "black",
+      "hobby": "sketching",
+      "motive": "Wants to gain fame through controversial art.",
+      "name": "Julien Dupont",
       "vehicle": "motorcycle"
+    },
+    {
+      "background": "A local vendor who sells art supplies, Sofia has connections to many artists.",
+      "favorite_food": "pasta",
+      "gender": "female",
+      "hair_color": "brown",
+      "hobby": "collecting art supplies",
+      "motive": "To sell counterfeit supplies at a premium.",
+      "name": "Sofia Rossi",
+      "vehicle": "scooter"
+    },
+    {
+      "background": "A photographer who captures art events, Marco has a keen eye for detail.",
+      "favorite_food": "pizza",
+      "gender": "male",
+      "hair_color": "blonde",
+      "hobby": "photography",
+      "motive": "To expose forgers for personal gain.",
+      "name": "Marco Bellini",
+      "vehicle": "car"
+    },
+    {
+      "background": "An aspiring sculptor who often critiques paintings, Elena has a sharp tongue.",
+      "favorite_food": "gelato",
+      "gender": "female",
+      "hair_color": "black",
+      "hobby": "sculpting",
+      "motive": "To prove her superiority in the art world.",
+      "name": "Elena Vitale",
+      "vehicle": "none"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "socca",
-    "gender": "Female",
-    "hair_color": "Black",
-    "hobby": "dancing",
-    "vehicle": "scooter"
+    "favorite_food": "tapas",
+    "gender": "female",
+    "hair_color": "red",
+    "hobby": "painting",
+    "vehicle": "bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251228.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251229.png",
+  "title": "Shadows of Deceit"
 }
