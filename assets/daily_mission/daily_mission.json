@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20251230.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20251231.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "witness_statement",
-          "clue_value": "peculiar hat",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone with a peculiar hat near the beach. They seemed to be in a hurry.",
+          "clue_type": "sketch",
+          "clue_value": "A detailed sketch of a painting",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone sketching the paintings here, but they left in a hurry.",
           "point_value": 80
         },
         {
-          "clue_type": "witness_statement",
-          "clue_value": "woman with a basket",
-          "name": "Old Town",
-          "npc_dialogue": "The market was bustling, but I noticed a woman with a basket full of stolen goods.",
-          "point_value": 70
+          "clue_type": "witness",
+          "clue_value": "Description of a woman",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "A woman with a red scarf was asking about the gallery hours.",
+          "point_value": 60
         },
         {
           "clue_type": "overheard_conversation",
-          "clue_value": "secret rendezvous",
-          "name": "Castle Hill",
-          "npc_dialogue": "I overheard someone talking about a secret rendezvous at the harbor.",
-          "point_value": 90
+          "clue_value": "Mention of rare art",
+          "name": "Central Market",
+          "npc_dialogue": "I overheard a man talking about rare art pieces.",
+          "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "witness_statement",
-          "clue_value": "man in a tailored suit",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "A man in a tailored suit was acting suspiciously, glancing around as if he was waiting for someone.",
+          "clue_type": "sighting",
+          "clue_value": "Tall man in blue jacket",
+          "name": "Vieux Port",
+          "npc_dialogue": "A tall man with a blue jacket was seen near the docks.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "sighting",
+          "clue_value": "Woman with a sketchbook",
+          "name": "Mus\u00e9e des Beaux-Arts",
+          "npc_dialogue": "I noticed a woman with a sketchbook lingering around the exhibits.",
           "point_value": 85
         },
         {
-          "clue_type": "witness_statement",
-          "clue_value": "woman sketching",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "I saw a woman sketching the exhibits. She seemed too focused on her drawing to notice anything else.",
-          "point_value": 60
-        },
-        {
-          "clue_type": "overheard_conversation",
-          "clue_value": "thief on a jet ski",
-          "name": "Larvotto Beach",
-          "npc_dialogue": "There was a commotion earlier; someone claimed to have seen a thief escape on a jet ski.",
-          "point_value": 75
+          "clue_type": "rumor",
+          "clue_value": "Secret auction",
+          "name": "Rue de la R\u00e9publique",
+          "npc_dialogue": "Someone mentioned a secret auction happening soon.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "gossip",
-          "clue_value": "famous actress",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "I heard a rumor about a famous actress being involved in something shady.",
-          "point_value": 65
+          "clue_type": "suspicious_sale",
+          "clue_value": "Familiar painting",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "A man was trying to sell a painting that looked suspiciously familiar.",
+          "point_value": 90
         },
         {
           "clue_type": "overheard_conversation",
-          "clue_value": "hidden stash",
-          "name": "La Croisette",
-          "npc_dialogue": "A couple was arguing loudly; the man mentioned something about a hidden stash.",
-          "point_value": 80
+          "clue_value": "Thief loves Italian food",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "I overheard a couple discussing a thief who loves Italian cuisine.",
+          "point_value": 50
         },
         {
-          "clue_type": "witness_statement",
-          "clue_value": "suspicious character",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "I saw a suspicious character lurking around the entrance, but I couldn't catch a good look.",
+          "clue_type": "sighting",
+          "clue_value": "Distracted woman sketching",
+          "name": "Porto Antico",
+          "npc_dialogue": "A woman was seen sketching the harbor, but she seemed distracted.",
           "point_value": 70
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Juliette Moreau",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets, shadows dance along the Promenade des Anglais, where whispers of a notorious thief linger. Your mission is to uncover the identity of the elusive suspect before they vanish into the night. Follow the clues hidden in the conversations of the locals and the artifacts left behind, but beware of the misdirections that may lead you astray.",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Moretti",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As the clock ticks down to the New Year, you must unravel the tangled web of deceit and find the mastermind behind the chaos. Each suspect holds a piece of the puzzle, but only one is the true thief. Can you connect the dots before the final stroke of midnight?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2025-12-30T00:02:30Z",
-  "id": "daily_20251230",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2025-12-31T00:02:24Z",
+  "id": "daily_20251231",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,10 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. Juliette is the only suspect with a hobby (sketching) that aligns with the clues about the artistic environment.",
-      "2. The peculiar hat mentioned in Nice is a direct reference to Juliette's artistic persona.",
-      "3. The witness statements about the woman with a basket and the secret rendezvous point to her as the thief.",
-      "4. Other suspects have motives that do not align with the artistic thefts."
+      "Clara is the only female suspect with red hair and a hobby of sketching.",
+      "Witnesses consistently describe a woman sketching in various locations.",
+      "The clues about Italian cuisine align with Clara's favorite food.",
+      "Other suspects have conflicting traits or motives that do not match the clues."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,66 +113,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20251230",
+  "mission_id": "daily_20251231",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "4c36c175e7b179336d3121664e13cb348ab434992baf1c94fedcc0497f7589fe",
-  "solution": "Connect the clues about the peculiar hat and the woman with a basket to identify Juliette as the thief, who uses her sketching hobby to blend in with the artistic crowd.",
+  "seed": "32d453bc5668b37b30676a54569a35678adcb0ccff70176fb8b4965cd83af798",
+  "solution": "Connect the clues about the sketching woman and her love for pasta to identify Clara as the thief.",
   "suspect_database": [
     {
-      "background": "An aspiring artist with a penchant for the dramatic.",
-      "favorite_food": "Croissants",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Sketching",
-      "motive": "Desire for fame and recognition.",
-      "name": "Juliette Moreau",
-      "vehicle": "Bicycle"
-    },
-    {
-      "background": "A high-stakes gambler with debts.",
-      "favorite_food": "Steak",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Gambling",
-      "motive": "Financial desperation.",
-      "name": "Marc Dupont",
-      "vehicle": "Luxury Car"
-    },
-    {
-      "background": "A photographer with a mysterious past.",
+      "background": "An art student with a passion for classical paintings.",
       "favorite_food": "Pasta",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Photography",
-      "motive": "Seeking adventure.",
-      "name": "Sophie Laurent",
+      "hobby": "Sketching",
+      "motive": "Desires to fund her studies through art theft.",
+      "name": "Clara Moretti",
+      "vehicle": "Bicycle"
+    },
+    {
+      "background": "A collector with a shady past in art dealings.",
+      "favorite_food": "Pizza",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Collecting rare coins",
+      "motive": "Wants to sell stolen art to fund his collection.",
+      "name": "Marco Rossi",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A thrill-seeker with a love for the ocean.",
+      "background": "A chef who frequents art galleries for inspiration.",
+      "favorite_food": "Risotto",
+      "gender": "Female",
+      "hair_color": "Brown",
+      "hobby": "Cooking",
+      "motive": "Seeks to create a culinary art fusion.",
+      "name": "Sofia Bianchi",
+      "vehicle": "Car"
+    },
+    {
+      "background": "A photographer who captures art in unusual ways.",
       "favorite_food": "Seafood",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Surfing",
-      "motive": "Revenge against the elite.",
-      "name": "Antoine Girard",
-      "vehicle": "Jet Ski"
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "Wants to expose the art world\u2019s secrets.",
+      "name": "Luca Ferraro",
+      "vehicle": "Van"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Croissants",
+    "favorite_food": "Pasta",
     "gender": "Female",
-    "hair_color": "Blonde",
+    "hair_color": "Red",
     "hobby": "Sketching",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251230.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20251231.png",
+  "title": "Echoes of the Past"
 }
