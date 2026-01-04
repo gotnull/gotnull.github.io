@@ -1,86 +1,86 @@
 {
   "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260103.png",
+  "banner_image_url": "/assets/daily_mission/banner_20260104.png",
   "cities": [
-    {
-      "city_name": "Valencia",
-      "country": "Spain",
-      "locations": [
-        {
-          "clue_type": "art_style",
-          "clue_value": "Impressionism",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "The thief has a taste for the classics, but their style is anything but traditional.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "clothing",
-          "clue_value": "red scarf",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "I saw someone with a striking red scarf, but they were gone before I could ask.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "favorite_food",
-          "clue_value": "paella",
-          "name": "Central Market",
-          "npc_dialogue": "They say the thief has a penchant for paella, but who doesn't in this city?",
-          "point_value": 60
-        }
-      ],
-      "order_in_chase": 1
-    },
-    {
-      "city_name": "Marseille",
-      "country": "France",
-      "locations": [
-        {
-          "clue_type": "hobby",
-          "clue_value": "sailing",
-          "name": "Vieux Port",
-          "npc_dialogue": "The sea breeze carries tales of a thief who loves the ocean as much as art.",
-          "point_value": 90
-        },
-        {
-          "clue_type": "location_hint",
-          "clue_value": "Nice",
-          "name": "Le Panier",
-          "npc_dialogue": "I overheard someone mention a gallery in Nice. Could it be a lead?",
-          "point_value": 70
-        },
-        {
-          "clue_type": "vehicle",
-          "clue_value": "vintage car",
-          "name": "Palais des Congr\u00e8s",
-          "npc_dialogue": "They say the thief drives a vintage car, but I can't recall which model.",
-          "point_value": 50
-        }
-      ],
-      "order_in_chase": 2
-    },
     {
       "city_name": "Nice",
       "country": "France",
       "locations": [
         {
-          "clue_type": "art_reference",
-          "clue_value": "Chagall",
-          "name": "Mus\u00e9e Marc Chagall",
-          "npc_dialogue": "The colors in the thief's work remind me of Chagall's palette.",
-          "point_value": 110
-        },
-        {
-          "clue_type": "clothing",
+          "clue_type": "witness_account",
           "clue_value": "red scarf",
           "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw a figure with a red scarf here, but they vanished into the crowd.",
+          "npc_dialogue": "I saw someone with a red scarf near the beach last night. They seemed to be in a hurry.",
           "point_value": 80
         },
         {
-          "clue_type": "favorite_food",
-          "clue_value": "seafood",
-          "name": "Cours Saleya",
-          "npc_dialogue": "They say the thief has a taste for fine dining, especially seafood.",
+          "clue_type": "overheard_conversation",
+          "clue_value": "ratatouille",
+          "name": "Old Town",
+          "npc_dialogue": "The thief loves the local cuisine, especially the ratatouille. I overheard them talking about it.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "suspicious_activity",
+          "clue_value": "sketchbook",
+          "name": "Castle Hill",
+          "npc_dialogue": "I noticed a figure sketching the view. They had a sketchbook and seemed very focused.",
+          "point_value": 70
+        }
+      ],
+      "order_in_chase": 1
+    },
+    {
+      "city_name": "Monaco",
+      "country": "Monaco",
+      "locations": [
+        {
+          "clue_type": "suspicious_vehicle",
+          "clue_value": "black vehicle",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "I heard someone mention a getaway car parked outside. It was a sleek black vehicle.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "suspicious_activity",
+          "clue_value": "sketching fish",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "There was a person here who seemed to know a lot about marine life. They were sketching fish.",
+          "point_value": 50
+        },
+        {
+          "clue_type": "witness_account",
+          "clue_value": "nervous demeanor",
+          "name": "Monaco Harbor",
+          "npc_dialogue": "I saw someone with a red scarf boarding a yacht. They looked nervous.",
+          "point_value": 75
+        }
+      ],
+      "order_in_chase": 2
+    },
+    {
+      "city_name": "Cannes",
+      "country": "France",
+      "locations": [
+        {
+          "clue_type": "overheard_conversation",
+          "clue_value": "famous director",
+          "name": "Cannes Film Festival",
+          "npc_dialogue": "I overheard a conversation about a famous director. The thief might be trying to blend in.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "witness_account",
+          "clue_value": "taking pictures",
+          "name": "La Croisette",
+          "npc_dialogue": "Someone was seen taking pictures of the stars. They had a red scarf wrapped around their neck.",
+          "point_value": 65
+        },
+        {
+          "clue_type": "suspicious_activity",
+          "clue_value": "acting strangely",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "I think I saw them at the gala last night. They were acting strangely, like they were out of place.",
           "point_value": 70
         }
       ],
@@ -88,23 +88,24 @@
     }
   ],
   "correct_suspect": "Julien Moreau",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this mystery. Can you discern the truth from the shadows?",
-  "difficulty": "Hard",
+  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, the locals whisper of a shadowy figure who has been seen near the harbor. Your mission is to uncover the identity of this elusive thief before they vanish into the night. Follow the clues hidden in the conversations of the townsfolk and piece together the puzzle of their motives and means.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
   "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-01-03T00:02:25Z",
-  "id": "daily_20260103",
+  "generated_at_utc": "2026-01-04T00:02:22Z",
+  "id": "daily_20260104",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.3,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Julien Moreau is the only suspect with a hobby of sailing, matching the clue from Marseille.",
-      "The vintage car aligns with the clue about the vehicle from Marseille.",
-      "The favorite food of paella is consistent with the clue from Valencia.",
-      "The red scarf mentioned in both Valencia and Nice points to a male suspect, eliminating female suspects."
+      "The red scarf is a consistent detail across multiple witness accounts.",
+      "Julien Moreau's favorite food, ratatouille, aligns with the overheard conversation in Nice.",
+      "His hobby of sketching connects to the suspicious activity noted in both Nice and Monaco.",
+      "The black sports car matches the description of the getaway vehicle.",
+      "No other suspect fits all these traits and clues simultaneously."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,70 +114,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260103",
+  "mission_id": "daily_20260104",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "eed5284ca113cf0df4af80b3b9690873cd709bc88530065aa6ff83a3ccbfc01c",
-  "solution": "Connect the clues about the red scarf and the love for sailing to identify Julien Moreau as the thief.",
+  "seed": "380a1e8bbae3c2cc4c401d7bc13660307d5c413f89a1a488e135380134d51292",
+  "solution": "Connect the clues about the red scarf, the love for ratatouille, and the sketching activity to identify Julien Moreau as the thief.",
   "suspect_database": [
     {
-      "background": "An art dealer with a mysterious past, known for his charm and elusive nature.",
-      "favorite_food": "paella",
+      "background": "An aspiring artist with a penchant for the dramatic.",
+      "favorite_food": "Ratatouille",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "sailing",
+      "hobby": "Sketching",
+      "motive": "Desire for fame and recognition.",
       "name": "Julien Moreau",
-      "vehicle": "vintage car"
+      "vehicle": "Black sports car"
     },
     {
-      "background": "A local artist with a passion for the sea, often seen at galleries.",
-      "favorite_food": "seafood",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "painting",
-      "name": "Sophie Dubois",
-      "vehicle": "bicycle"
-    },
-    {
-      "background": "A photographer who captures the essence of the Mediterranean lifestyle.",
-      "favorite_food": "pasta",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "photography",
-      "name": "Marc Lefevre",
-      "vehicle": "motorcycle"
-    },
-    {
-      "background": "A chef known for her culinary skills and connections in the art world.",
-      "favorite_food": "paella",
+      "background": "A photographer known for her work at film festivals.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "cooking",
-      "name": "Claire Martin",
-      "vehicle": "scooter"
+      "hobby": "Photography",
+      "motive": "Seeking inspiration for her next project.",
+      "name": "Claire Dubois",
+      "vehicle": "Red convertible"
     },
     {
-      "background": "A wealthy collector with a keen eye for art and a taste for the finer things.",
-      "favorite_food": "sushi",
+      "background": "A chef with a secret life as a thief.",
+      "favorite_food": "Tarte Tatin",
       "gender": "Male",
-      "hair_color": "Gray",
-      "hobby": "collecting",
-      "name": "Antoine Girard",
-      "vehicle": "luxury car"
+      "hair_color": "Black",
+      "hobby": "Cooking",
+      "motive": "Financial troubles.",
+      "name": "Marc Lefevre",
+      "vehicle": "White van"
+    },
+    {
+      "background": "A dancer who frequents high-profile events.",
+      "favorite_food": "Salmon tartare",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Dancing",
+      "motive": "To fund her dance career.",
+      "name": "Sophie Martin",
+      "vehicle": "Blue bicycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "paella",
+    "favorite_food": "Ratatouille",
     "gender": "Male",
     "hair_color": "Brown",
-    "hobby": "sailing",
-    "vehicle": "vintage car"
+    "hobby": "Sketching",
+    "vehicle": "Black sports car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260103.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260104.png",
+  "title": "Whispers in the Wind"
 }
