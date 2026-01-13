@@ -1,110 +1,109 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260112.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20260113.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "behavioral",
-          "clue_value": "prefers simplicity",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "They say the thief has a taste for the finer things, but I saw someone with a simple bike.",
+          "clue_type": "food_reference",
+          "clue_value": "paella",
+          "name": "Central Market",
+          "npc_dialogue": "They say the best paella is made with a secret ingredient, but I can't remember who told me that.",
           "point_value": 80
         },
         {
-          "clue_type": "food",
-          "clue_value": "loves seafood",
-          "name": "Old Town Market",
-          "npc_dialogue": "I overheard a conversation about a rare fish dish. It seemed to excite someone.",
+          "clue_type": "physical_description",
+          "clue_value": "dark hair",
+          "name": "City of Arts and Sciences",
+          "npc_dialogue": "I once saw a man sketching here, his hair as dark as the night sky.",
           "point_value": 60
         },
         {
-          "clue_type": "sighting",
-          "clue_value": "quick and elusive",
-          "name": "Castle Hill",
-          "npc_dialogue": "The view from up here is breathtaking, but I saw a figure darting away with something shiny.",
-          "point_value": 100
+          "clue_type": "emotional_reference",
+          "clue_value": "lost love",
+          "name": "Turia Gardens",
+          "npc_dialogue": "The flowers bloom beautifully here, but they remind me of a lost love.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "vehicle",
-          "clue_value": "drives a luxury car",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "I noticed someone with a flashy car, but they seemed to be more interested in the games.",
-          "point_value": 90
-        },
-        {
-          "clue_type": "food",
-          "clue_value": "fascinated by marine life",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "The exhibits here remind me of the ocean's bounty. Someone mentioned a rare catch recently.",
+          "clue_type": "hobby_reference",
+          "clue_value": "ocean lover",
+          "name": "Old Port",
+          "npc_dialogue": "Fishermen often tell tales of the sea, but one spoke of a woman who loved the ocean too much.",
           "point_value": 70
         },
         {
-          "clue_type": "sighting",
-          "clue_value": "associated with speed",
-          "name": "Monaco Grand Prix Track",
-          "npc_dialogue": "I saw a figure in a racing suit, but they vanished before I could get a closer look.",
-          "point_value": 85
+          "clue_type": "metaphor",
+          "clue_value": "shadows",
+          "name": "Notre-Dame de la Garde",
+          "npc_dialogue": "From up here, you can see everything, even the shadows of those who hide.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "vehicle_reference",
+          "clue_value": "roaring car",
+          "name": "Palais des Congr\u00e8s",
+          "npc_dialogue": "I overheard someone mention a car that roars like a lion, but I can't recall who it was.",
+          "point_value": 60
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "hobby",
-          "clue_value": "has a secret passion for acting",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "The glitz and glamour attract many, but I overheard someone talking about a hidden talent.",
+          "clue_type": "wisdom_reference",
+          "clue_value": "wisdom",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "The fountain flows like the secrets of the city, but only the wise can drink from it.",
           "point_value": 75
         },
         {
-          "clue_type": "appearance",
-          "clue_value": "distinctive hair",
-          "name": "La Croisette",
-          "npc_dialogue": "I saw someone with a unique hairstyle, but they blended in with the crowd.",
-          "point_value": 65
+          "clue_type": "hobby_reference",
+          "clue_value": "sketching",
+          "name": "Genoa Aquarium",
+          "npc_dialogue": "I saw a woman sketching fish here, her hair flowing like the water.",
+          "point_value": 85
         },
         {
-          "clue_type": "behavioral",
-          "clue_value": "acts suspiciously",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "The atmosphere here is electric, but I sensed someone was out of place.",
-          "point_value": 80
+          "clue_type": "art_reference",
+          "clue_value": "hidden stories",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "They say the best stories are hidden in plain sight, just like the art on these walls.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Claire Martin",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in disarray. As the sun sets over the Mediterranean, the shadows of the past begin to reveal secrets. Your task is to uncover the identity of the thief who has been eluding capture, using the clues hidden in the whispers of the locals and the echoes of the sea.",
-  "difficulty": "Hard",
+  "correct_suspect": "Isabella Rossi",
+  "description": "A series of cryptic messages have surfaced, hinting at a long-buried secret in the heart of the Mediterranean. As you follow the trail, you must decipher the clues left behind by a master of disguise, leading you through vibrant cities and into the depths of a historical conspiracy. Can you uncover the truth before the suspect vanishes into the shadows?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-01-12T00:02:15Z",
-  "id": "daily_20260112",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2026-01-13T00:02:24Z",
+  "id": "daily_20260113",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.3,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identify the suspect traits from the clues.",
-      "Match the traits to the suspects in the database.",
-      "Claire Martin is the only suspect with red hair, a bicycle, and a love for seafood.",
-      "Other suspects have conflicting traits or motives."
+      "Isabella is the only female suspect with black hair and a hobby of sketching, matching the clues.",
+      "The references to seafood and the ocean align with her favorite food and background.",
+      "Other suspects have conflicting traits or motives that do not align with the clues provided."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,75 +112,67 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260112",
+  "mission_id": "daily_20260113",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Coastal Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": []
+    "unlocked_regions": [
+      "Southern Europe"
+    ]
   },
-  "seed": "620103c039b23b3277b3b08222d8fe393e8bd2eb652809cdab5d46e2bd6a6397",
-  "solution": "Connect the clues about the suspect's love for seafood and her photography hobby to identify Claire Martin, who uses her bicycle to navigate the coastal towns.",
+  "seed": "6fe3d691a75ae366d9eb3f05721cd8c28ef30e9c6f1c72c9c6d87a5abb974d14",
+  "solution": "Connect the clues about the suspect's love for the sea and her artistic hobby to identify Isabella as the mastermind behind the conspiracy.",
   "suspect_database": [
     {
-      "background": "A local fisherman with a knack for the high life.",
+      "background": "An artist with a passion for the sea, Isabella has a mysterious past linked to the Mediterranean.",
       "favorite_food": "Seafood",
+      "gender": "Female",
+      "hair_color": "Black",
+      "hobby": "Sketching",
+      "motive": "To protect a family secret.",
+      "name": "Isabella Rossi",
+      "vehicle": "Vintage Fiat"
+    },
+    {
+      "background": "A chef known for his culinary skills, Marco has connections to the underworld.",
+      "favorite_food": "Pasta",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Fishing",
-      "motive": "Desire for wealth and recognition.",
-      "name": "Julien Moreau",
-      "vehicle": "Luxury yacht"
-    },
-    {
-      "background": "An aspiring actress with a taste for the dramatic.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Acting",
-      "motive": "To fund her acting career.",
-      "name": "Sophie Dubois",
-      "vehicle": "Sports car"
-    },
-    {
-      "background": "A former racer turned mechanic.",
-      "favorite_food": "Steak",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Racing",
-      "motive": "To pay off gambling debts.",
-      "name": "Marc Lefevre",
+      "hobby": "Cooking",
+      "motive": "To gain power through influence.",
+      "name": "Marco Bellini",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A photographer who captures the beauty of the coast.",
-      "favorite_food": "Seafood",
+      "background": "A dancer with a flair for the dramatic, Lucia is often seen at high-profile events.",
+      "favorite_food": "Pizza",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Photography",
-      "motive": "To fund her next big project.",
-      "name": "Claire Martin",
-      "vehicle": "Bicycle"
+      "hair_color": "Blonde",
+      "hobby": "Dancing",
+      "motive": "To escape her past.",
+      "name": "Lucia Moretti",
+      "vehicle": "Luxury Sedan"
     },
     {
-      "background": "An antique dealer with a mysterious past.",
-      "favorite_food": "Cheese",
+      "background": "A fisherman with deep ties to the sea, Giovanni knows more than he lets on.",
+      "favorite_food": "Grilled Fish",
       "gender": "Male",
-      "hair_color": "Gray",
-      "hobby": "Collecting antiques",
-      "motive": "To acquire rare items.",
-      "name": "Antoine Girard",
-      "vehicle": "Classic car"
+      "hair_color": "Black",
+      "hobby": "Fishing",
+      "motive": "To protect his territory.",
+      "name": "Giovanni Conti",
+      "vehicle": "Pickup Truck"
     }
   ],
   "suspect_traits": {
     "favorite_food": "Seafood",
     "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Photography",
-    "vehicle": "Bicycle"
+    "hair_color": "Black",
+    "hobby": "Sketching",
+    "vehicle": "Vintage Fiat"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260112.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260113.png",
+  "title": "Echoes of the Past"
 }
