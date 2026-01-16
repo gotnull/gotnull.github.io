@@ -1,176 +1,179 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20260115.png",
+  "arrest_location": "Piazza De Ferrari",
+  "banner_image_url": "/assets/daily_mission/banner_20260116.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "red scarf",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw someone with a striking red scarf lingering near the paintings.",
+          "clue_type": "item",
+          "clue_value": "A broken watch",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "The sea breeze carries secrets, but the truth is buried beneath the waves.",
           "point_value": 80
         },
         {
-          "clue_type": "behavioral",
-          "clue_value": "sketching",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "A woman was sketching the cathedral, but her eyes were always darting around.",
+          "clue_type": "behavior",
+          "clue_value": "A suspicious transaction",
+          "name": "Old Town",
+          "npc_dialogue": "In the market, everyone is a friend, but some friends are more than they seem.",
           "point_value": 60
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "rare painting",
-          "name": "Central Market",
-          "npc_dialogue": "I overheard a conversation about a rare painting being sold for a fortune.",
-          "point_value": 70
+          "clue_type": "observation",
+          "clue_value": "A figure lurking in the shadows",
+          "name": "Castle Hill",
+          "npc_dialogue": "From up here, you can see everything, but can you see the truth?",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "blue cap",
-          "name": "Vieux Port",
-          "npc_dialogue": "A man with a blue cap was seen near the docks, acting suspiciously.",
-          "point_value": 75
+          "clue_type": "item",
+          "clue_value": "A casino chip with a name",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "Luck is a fickle mistress, but she often reveals the guilty.",
+          "point_value": 90
         },
         {
-          "clue_type": "behavioral",
-          "clue_value": "sketchbook",
-          "name": "Mus\u00e9e des Beaux-Arts",
-          "npc_dialogue": "I noticed someone with a sketchbook, but they left in a hurry.",
-          "point_value": 65
+          "clue_type": "behavior",
+          "clue_value": "A guard's unusual behavior",
+          "name": "Prince's Palace",
+          "npc_dialogue": "Royalty has its secrets, and so do the guards.",
+          "point_value": 70
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "seafood",
-          "name": "La Canebi\u00e8re",
-          "npc_dialogue": "There was talk of a thief who loves seafood; they say he can't resist a good bouillabaisse.",
+          "clue_type": "observation",
+          "clue_value": "Footprints leading away",
+          "name": "Larvotto Beach",
+          "npc_dialogue": "The tides change, but the truth remains hidden beneath the surface.",
           "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Cannes",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "famous artist",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "I saw a woman with a striking resemblance to a famous artist, but she was acting strangely.",
+          "clue_type": "item",
+          "clue_value": "A torn film ticket",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "Fame can be blinding, but the truth is often in the details.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "behavior",
+          "clue_value": "A celebrity acting strangely",
+          "name": "La Croisette",
+          "npc_dialogue": "Everyone is a star here, but not all stars shine bright.",
           "point_value": 85
         },
         {
-          "clue_type": "behavioral",
-          "clue_value": "vintage car",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "A local mentioned a thief who drives a vintage car; it\u2019s quite the sight.",
-          "point_value": 90
-        },
-        {
-          "clue_type": "auditory",
-          "clue_value": "specific cheese",
-          "name": "Mercato Orientale",
-          "npc_dialogue": "Someone was asking for a specific type of cheese, but it seemed out of place.",
-          "point_value": 55
+          "clue_type": "observation",
+          "clue_value": "A hidden stash of goods",
+          "name": "Cannes Market",
+          "npc_dialogue": "In the hustle and bustle, the guilty often slip through unnoticed.",
+          "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moretti",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this mystery. Can you discern the truth from the shadows?",
-  "difficulty": "Medium",
+  "correct_suspect": "Claire Martin",
+  "description": "A series of mysterious thefts have plagued the coastal town of Nice, France. As the sun sets, shadows lengthen, and whispers of betrayal fill the air. Your task is to uncover the truth behind the thefts, where every clue leads to a different suspect, and only one holds the key to the mystery. Navigate through the vibrant streets, decipher the hidden meanings in their words, and connect the dots before the thief slips away.",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2026-01-15T00:02:38Z",
-  "id": "daily_20260115",
+  "final_city": "Genoa, Italy",
+  "generated_at_utc": "2026-01-16T00:02:29Z",
+  "id": "daily_20260116",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
       "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1
+      "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "Clara Moretti is the only suspect with a hobby of sketching, matching the clue from Valencia.",
-      "Her vehicle, a vintage car, aligns with the clue from Genoa.",
-      "The favorite food of pasta connects her to the cultural context of Italy, where she was last seen."
+      "Identify the suspect traits from the clues.",
+      "Match the traits to the suspects in the database.",
+      "Eliminate suspects based on conflicting motives and behaviors.",
+      "Confirm Claire Martin's unique traits align with the clues."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.95,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260115",
+  "mission_id": "daily_20260116",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": []
+    "unlocked_regions": [
+      "Southern Europe"
+    ]
   },
-  "seed": "e98c80cf63de3f585154b630532bd2e991f1e8e92fe7882a4a43e44456aa95e9",
-  "solution": "Connect the clues about the red scarf, sketching, and the vintage car to identify Clara Moretti as the thief.",
+  "seed": "ce5f4eb7623b6989ac201f1ce9d49de502c882a17bf6c26810658ecd77fe5812",
+  "solution": "Connect the clues about the torn film ticket, the suspicious celebrity, and the hidden stash to identify Claire Martin as the thief.",
   "suspect_database": [
     {
-      "background": "An art student with a penchant for the dramatic.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
-      "hair_color": "Brown",
-      "hobby": "Sketching",
-      "motive": "Desire to fund her studies through art theft.",
-      "name": "Clara Moretti",
-      "vehicle": "Vintage Car"
-    },
-    {
-      "background": "A fisherman with a secret life as a thief.",
-      "favorite_food": "Bouillabaisse",
+      "background": "A local photographer with a keen eye for detail.",
+      "favorite_food": "Ratatouille",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Fishing",
-      "motive": "To escape his mundane life.",
+      "hair_color": "Brown",
+      "hobby": "Photography",
+      "motive": "Jealousy over a rival's success.",
       "name": "Julien Moreau",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A cheese merchant with a hidden talent for art.",
-      "favorite_food": "Cheese platter",
-      "gender": "Male",
+      "background": "A chef known for her exquisite dishes.",
+      "favorite_food": "Bouillabaisse",
+      "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "Collecting rare cheeses",
-      "motive": "To impress a wealthy patron.",
-      "name": "Marco Rossi",
+      "hobby": "Cooking",
+      "motive": "Desire for fame and recognition.",
+      "name": "Sophie Dubois",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A photographer who captures the beauty of art.",
-      "favorite_food": "Seafood",
+      "background": "A wealthy businessman with a taste for the finer things.",
+      "favorite_food": "Seafood Platter",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Sailing",
+      "motive": "Financial gain from the thefts.",
+      "name": "Marc Lefevre",
+      "vehicle": "Luxury Yacht"
+    },
+    {
+      "background": "An artist struggling to make a name for herself.",
+      "favorite_food": "Tarte Tatin",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Photography",
-      "motive": "To gain fame through scandal.",
-      "name": "Sofia Bellini",
-      "vehicle": "SUV"
+      "hobby": "Painting",
+      "motive": "Frustration over her lack of success.",
+      "name": "Claire Martin",
+      "vehicle": "Convertible"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Pasta",
+    "favorite_food": "Tarte Tatin",
     "gender": "Female",
-    "hair_color": "Brown",
-    "hobby": "Sketching",
-    "vehicle": "Vintage Car"
+    "hair_color": "Red",
+    "hobby": "Painting",
+    "vehicle": "Convertible"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260115.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260116.png",
+  "title": "Whispers in the Wind"
 }
