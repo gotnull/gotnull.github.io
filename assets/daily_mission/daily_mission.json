@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260116.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260117.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "item",
-          "clue_value": "A broken watch",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea breeze carries secrets, but the truth is buried beneath the waves.",
+          "clue_type": "witness_statement",
+          "clue_value": "suspicious_person",
+          "name": "Kunsthistorisches Museum",
+          "npc_dialogue": "I saw someone suspicious near the paintings last night. They had a peculiar taste in art.",
           "point_value": 80
         },
         {
-          "clue_type": "behavior",
-          "clue_value": "A suspicious transaction",
-          "name": "Old Town",
-          "npc_dialogue": "In the market, everyone is a friend, but some friends are more than they seem.",
-          "point_value": 60
+          "clue_type": "overheard_conversation",
+          "clue_value": "rare_painting",
+          "name": "Naschmarkt",
+          "npc_dialogue": "I overheard a conversation about a rare painting being sold. It sounded too good to be true.",
+          "point_value": 70
         },
         {
-          "clue_type": "observation",
-          "clue_value": "A figure lurking in the shadows",
-          "name": "Castle Hill",
-          "npc_dialogue": "From up here, you can see everything, but can you see the truth?",
-          "point_value": 100
+          "clue_type": "suspicious_activity",
+          "clue_value": "lurking_around",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "The gardens are beautiful, but I noticed someone lurking around the sculptures.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "item",
-          "clue_value": "A casino chip with a name",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle mistress, but she often reveals the guilty.",
-          "point_value": 90
+          "clue_type": "strange_inquiry",
+          "clue_value": "art_galleries",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "A stranger was asking about art galleries. I thought it was odd.",
+          "point_value": 60
         },
         {
-          "clue_type": "behavior",
-          "clue_value": "A guard's unusual behavior",
-          "name": "Prince's Palace",
-          "npc_dialogue": "Royalty has its secrets, and so do the guards.",
-          "point_value": 70
+          "clue_type": "suspicious_behavior",
+          "clue_value": "sketching_statues",
+          "name": "Heroes' Square",
+          "npc_dialogue": "I saw a woman sketching. She seemed too focused on the statues.",
+          "point_value": 75
         },
         {
-          "clue_type": "observation",
-          "clue_value": "Footprints leading away",
-          "name": "Larvotto Beach",
-          "npc_dialogue": "The tides change, but the truth remains hidden beneath the surface.",
-          "point_value": 50
+          "clue_type": "public_commotion",
+          "clue_value": "stolen_piece",
+          "name": "V\u00e1ci Street",
+          "npc_dialogue": "There was a commotion about a stolen piece. People were in a frenzy.",
+          "point_value": 85
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "item",
-          "clue_value": "A torn film ticket",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "Fame can be blinding, but the truth is often in the details.",
-          "point_value": 75
+          "clue_type": "suspicious_person",
+          "clue_value": "red_scarf",
+          "name": "Charles Bridge",
+          "npc_dialogue": "I noticed a man with a red scarf. He seemed out of place.",
+          "point_value": 70
         },
         {
-          "clue_type": "behavior",
-          "clue_value": "A celebrity acting strangely",
-          "name": "La Croisette",
-          "npc_dialogue": "Everyone is a star here, but not all stars shine bright.",
-          "point_value": 85
+          "clue_type": "local_rumor",
+          "clue_value": "thief_among_tourists",
+          "name": "Old Town Square",
+          "npc_dialogue": "There was a rumor about a thief hiding among the tourists.",
+          "point_value": 80
         },
         {
-          "clue_type": "observation",
-          "clue_value": "A hidden stash of goods",
-          "name": "Cannes Market",
-          "npc_dialogue": "In the hustle and bustle, the guilty often slip through unnoticed.",
-          "point_value": 95
+          "clue_type": "eavesdropped_conversation",
+          "clue_value": "heist_discussion",
+          "name": "Prague Castle",
+          "npc_dialogue": "I overheard someone discussing a heist. They were very secretive.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Claire Martin",
-  "description": "A series of mysterious thefts have plagued the coastal town of Nice, France. As the sun sets, shadows lengthen, and whispers of betrayal fill the air. Your task is to uncover the truth behind the thefts, where every clue leads to a different suspect, and only one holds the key to the mystery. Navigate through the vibrant streets, decipher the hidden meanings in their words, and connect the dots before the thief slips away.",
-  "difficulty": "Hard",
+  "correct_suspect": "Lukas Schmidt",
+  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. As whispers of a notorious art thief resurface, you must navigate through a web of deception and hidden motives. Each suspect holds a piece of the puzzle, but only one is the true mastermind behind the chaos. Can you unravel the clues before the thief vanishes into the shadows?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-01-16T00:02:29Z",
-  "id": "daily_20260116",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2026-01-17T00:02:21Z",
+  "id": "daily_20260117",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,10 @@
       "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "Identify the suspect traits from the clues.",
-      "Match the traits to the suspects in the database.",
-      "Eliminate suspects based on conflicting motives and behaviors.",
-      "Confirm Claire Martin's unique traits align with the clues."
+      "1. Lukas Schmidt is the only suspect with a motive tied to art theft.",
+      "2. His hobby of art collecting aligns with the clues about rare paintings.",
+      "3. The vehicle description matches the sightings near the crime scenes.",
+      "4. Other suspects have motives but lack the specific traits that match the clues."
     ],
     "solvability_score": 0.95,
     "validation": {
@@ -113,67 +113,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260116",
+  "mission_id": "daily_20260117",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": [
-      "Southern Europe"
-    ]
+    "unlocked_regions": []
   },
-  "seed": "ce5f4eb7623b6989ac201f1ce9d49de502c882a17bf6c26810658ecd77fe5812",
-  "solution": "Connect the clues about the torn film ticket, the suspicious celebrity, and the hidden stash to identify Claire Martin as the thief.",
+  "seed": "ebf0e6d94553bec52da1ec5350824067e929579bda5851b9d166b87e379095ed",
+  "solution": "Connect the clues about the suspicious person at the museum, the overheard conversation about a rare painting, and the witness statement regarding the art collector's behavior to identify Lukas Schmidt as the mastermind.",
   "suspect_database": [
     {
-      "background": "A local photographer with a keen eye for detail.",
-      "favorite_food": "Ratatouille",
+      "background": "A wealthy art collector with a penchant for rare pieces.",
+      "favorite_food": "Schnitzel",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Photography",
-      "motive": "Jealousy over a rival's success.",
-      "name": "Julien Moreau",
-      "vehicle": "Motorcycle"
+      "hobby": "Art collecting",
+      "motive": "Desire to possess the most exclusive artworks.",
+      "name": "Lukas Schmidt",
+      "vehicle": "Black motorcycle"
     },
     {
-      "background": "A chef known for her exquisite dishes.",
-      "favorite_food": "Bouillabaisse",
+      "background": "An aspiring artist who frequents galleries.",
+      "favorite_food": "Goulash",
       "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "Cooking",
-      "motive": "Desire for fame and recognition.",
-      "name": "Sophie Dubois",
-      "vehicle": "Bicycle"
+      "hobby": "Sketching",
+      "motive": "Frustration over being overlooked in the art world.",
+      "name": "Anna Novak",
+      "vehicle": "Red bicycle"
     },
     {
-      "background": "A wealthy businessman with a taste for the finer things.",
-      "favorite_food": "Seafood Platter",
+      "background": "A photographer who captures art events.",
+      "favorite_food": "Pasta",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Sailing",
-      "motive": "Financial gain from the thefts.",
-      "name": "Marc Lefevre",
-      "vehicle": "Luxury Yacht"
+      "hobby": "Photography",
+      "motive": "To gain fame through scandal.",
+      "name": "Marek Kral",
+      "vehicle": "Blue sedan"
     },
     {
-      "background": "An artist struggling to make a name for herself.",
-      "favorite_food": "Tarte Tatin",
+      "background": "A globe-trotter with connections in the art world.",
+      "favorite_food": "Pizza",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Painting",
-      "motive": "Frustration over her lack of success.",
-      "name": "Claire Martin",
-      "vehicle": "Convertible"
+      "hobby": "Traveling",
+      "motive": "To fund her travels through illicit means.",
+      "name": "Eva Horak",
+      "vehicle": "Green scooter"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Tarte Tatin",
-    "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Painting",
-    "vehicle": "Convertible"
+    "favorite_food": "Schnitzel",
+    "gender": "Male",
+    "hair_color": "Brown",
+    "hobby": "Art collecting",
+    "vehicle": "Black motorcycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260116.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260117.png",
+  "title": "Echoes of the Past"
 }
