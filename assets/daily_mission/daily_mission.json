@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Gothic Quarter",
-  "banner_image_url": "/assets/daily_mission/banner_20260118.png",
+  "arrest_location": "Piazza De Ferrari",
+  "banner_image_url": "/assets/daily_mission/banner_20260119.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "Hat",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone suspicious near the beach, but I can't recall their face. They were wearing a hat, though.",
-          "point_value": 75
+          "clue_type": "witness_account",
+          "clue_value": "sketching",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone sketching the paintings, but they left in a hurry.",
+          "point_value": 80
         },
         {
-          "clue_type": "Overheard Conversation",
-          "clue_value": "Shipment",
-          "name": "Old Town",
-          "npc_dialogue": "There was a commotion last night. A man was arguing about a shipment. I think he was from Italy.",
+          "clue_type": "suspicious_activity",
+          "clue_value": "red scarf",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "A woman with a red scarf was asking about art dealers.",
           "point_value": 60
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "Sketching",
-          "name": "Castle Hill",
-          "npc_dialogue": "I often see a woman sketching here. She seems to know a lot about the local art scene.",
-          "point_value": 90
+          "clue_type": "overheard_conversation",
+          "clue_value": "rare painting",
+          "name": "Calle de la Paz",
+          "npc_dialogue": "I overheard a conversation about a rare painting being sold.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Sailor Gossip",
-          "clue_value": "Big Score",
-          "name": "Porto Antico",
-          "npc_dialogue": "I overheard a couple of sailors talking about a 'big score' coming in soon. They seemed excited.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Suspicious Behavior",
-          "clue_value": "Beard",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "A man with a striking beard was seen leaving a gallery in a hurry. He looked nervous.",
+          "clue_type": "sighting",
+          "clue_value": "blue coat",
+          "name": "Vieux Port",
+          "npc_dialogue": "A man in a blue coat was seen near the galleries last night.",
           "point_value": 70
         },
         {
-          "clue_type": "Exchange",
-          "clue_value": "Red Scarf",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "I saw a woman with a red scarf talking to a man in a trench coat. They seemed to be exchanging something.",
-          "point_value": 85
+          "clue_type": "suspicious_activity",
+          "clue_value": "taking photos",
+          "name": "Mus\u00e9e des Beaux-Arts",
+          "npc_dialogue": "I noticed someone taking photos of the exhibits, very peculiar.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "incident_report",
+          "clue_value": "stolen sculpture",
+          "name": "Rue de la R\u00e9publique",
+          "npc_dialogue": "There was a commotion about a stolen sculpture.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Gambling Behavior",
-          "clue_value": "Tall Man",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "A tall man with dark hair was betting heavily. He seemed to be in a hurry to win.",
+          "clue_type": "sighting",
+          "clue_value": "sketchbook",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw a woman with a sketchbook sitting by the sea.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "suspicious_activity",
+          "clue_value": "art auctions",
+          "name": "Galerie d'Art",
+          "npc_dialogue": "A suspicious character was asking about art auctions.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "rumor",
+          "clue_value": "famous artist",
+          "name": "Place Mass\u00e9na",
+          "npc_dialogue": "Someone mentioned a connection to a famous artist.",
           "point_value": 95
-        },
-        {
-          "clue_type": "Observation",
-          "clue_value": "Tattoo",
-          "name": "Larvotto Beach",
-          "npc_dialogue": "I noticed a woman with a unique tattoo sunbathing. She was very secretive.",
-          "point_value": 65
-        },
-        {
-          "clue_type": "Rumor",
-          "clue_value": "Hidden Stash",
-          "name": "Prince's Palace",
-          "npc_dialogue": "There was a rumor about a hidden stash of art in the palace. I wonder if it's true.",
-          "point_value": 100
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moretti",
-  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As you follow the trail of clues, you uncover a web of deceit that leads to a notorious smuggler. Can you piece together the fragments of information before the suspect slips away?",
+  "correct_suspect": "Clara Moreau",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this mystery. Can you discern the truth from the shadows?",
   "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Barcelona, Spain",
-  "generated_at_utc": "2026-01-18T00:02:37Z",
-  "id": "daily_20260118",
+  "final_city": "Genoa, Italy",
+  "generated_at_utc": "2026-01-19T00:02:12Z",
+  "id": "daily_20260119",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,9 +101,10 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Moretti is the only suspect with the hobby of sketching, matching the clue from Nice.",
-      "Her presence in coastal towns aligns with the thefts occurring in the Mediterranean.",
-      "The other suspects have hobbies and behaviors that do not connect to the clues provided."
+      "Clara Moreau is the only suspect with a hobby of sketching, matching the clues from Valencia.",
+      "Witness accounts consistently point to a woman with a sketchbook, aligning with Clara's traits.",
+      "The red scarf mentioned in Valencia is a misdirection; Clara's brown hair and bicycle are more relevant.",
+      "The final city, Genoa, is a plausible escape route from Nice, where Clara was last seen."
     ],
     "solvability_score": 1,
     "validation": {
@@ -112,69 +113,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260118",
+  "mission_id": "daily_20260119",
+  "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Artful Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "5cf0ac706a807e672a77ac0f0fc14bc66eb0c0ac229125c2fc543cc1d4c9b7f5",
-  "solution": "Connect the clues about the suspicious woman sketching in Nice and her ties to the art scene to identify Clara Moretti as the suspect.",
+  "seed": "0892b0f37d11b660003aa0cbddf22027e8aecf32f42289e530a3458a2510d0c8",
+  "solution": "Connect the clues about the sketching woman in Valencia and her ties to the art scene to identify Clara Moreau as the thief.",
   "suspect_database": [
     {
-      "background": "An artist known for her vibrant street art, Clara has been seen in various coastal towns.",
-      "behavioral_pattern": "Often seen near art galleries.",
-      "favorite_food": "Pasta",
+      "background": "An aspiring artist with a penchant for the dramatic.",
+      "favorite_food": "Tarte Tatin",
       "gender": "Female",
       "hair_color": "Brown",
       "hobby": "Sketching",
-      "motive": "To fund her art projects.",
-      "name": "Clara Moretti",
+      "motive": "Desire to gain recognition in the art world.",
+      "name": "Clara Moreau",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A gambler with a penchant for high stakes, Marco frequents casinos.",
-      "behavioral_pattern": "Nervous when losing.",
-      "favorite_food": "Pizza",
+      "background": "A photographer known for capturing the essence of art.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Gambling",
-      "motive": "To pay off debts.",
-      "name": "Marco Rossi",
+      "hobby": "Photography",
+      "motive": "To expose the art underbelly.",
+      "name": "Julien Lefevre",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A sailor with connections to the smuggling trade.",
-      "behavioral_pattern": "Often seen near the docks.",
-      "favorite_food": "Seafood",
-      "gender": "Male",
+      "background": "A collector with a mysterious past.",
+      "favorite_food": "Ratatouille",
+      "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "Sailing",
-      "motive": "To expand his smuggling operations.",
-      "name": "Giovanni Bianchi",
-      "vehicle": "Yacht"
+      "hobby": "Collecting antiques",
+      "motive": "To acquire rare pieces for her collection.",
+      "name": "Sophie Dubois",
+      "vehicle": "Car"
     },
     {
-      "background": "An antique dealer with a mysterious past.",
-      "behavioral_pattern": "Secretive and elusive.",
-      "favorite_food": "Cheese",
-      "gender": "Female",
+      "background": "A painter with a troubled history.",
+      "favorite_food": "Cr\u00eapes",
+      "gender": "Male",
       "hair_color": "Red",
-      "hobby": "Collecting antiques",
-      "motive": "To acquire rare items.",
-      "name": "Sofia Romano",
-      "vehicle": "Car"
+      "hobby": "Painting",
+      "motive": "To fund his art through illicit means.",
+      "name": "Marc Dupont",
+      "vehicle": "Van"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Pasta",
+    "favorite_food": "Tarte Tatin",
     "gender": "Female",
     "hair_color": "Brown",
     "hobby": "Sketching",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260118.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260119.png",
+  "title": "Shadows of the Past"
 }
