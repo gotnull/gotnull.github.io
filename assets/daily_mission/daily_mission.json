@@ -1,59 +1,59 @@
 {
-  "arrest_location": "Uffizi Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20260120.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20260121.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
           "clue_type": "Witness Account",
-          "clue_value": "A tall figure with dark hair.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone lurking near the beach, but they were gone before I could get a good look.",
+          "clue_value": "A dark coat was seen near the museum.",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw a figure in a dark coat, sketching the paintings. It felt... off.",
           "point_value": 80
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "She wore a unique necklace that caught my eye.",
-          "name": "Old Town",
-          "npc_dialogue": "The market was bustling, but I noticed a woman with a peculiar taste in jewelry.",
+          "clue_type": "Local Insight",
+          "clue_value": "The artist's style contrasts with the thief's method.",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "The artist here is known for his vibrant colors, but he often paints in shadows.",
           "point_value": 60
         },
         {
-          "clue_type": "Vehicle Description",
-          "clue_value": "A red convertible, possibly a sports model.",
-          "name": "Castle Hill",
-          "npc_dialogue": "From up here, I could see someone driving a flashy car away from the scene.",
-          "point_value": 100
+          "clue_type": "Eavesdropping",
+          "clue_value": "A rare dish mentioned could link to the suspect's favorite food.",
+          "name": "Central Market",
+          "npc_dialogue": "I overheard someone talking about a rare food that only a true connoisseur would know.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Gossip",
-          "clue_value": "A collector with a penchant for the unusual.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "I overheard a conversation about a rare artifact being sold here.",
+          "clue_type": "Witness Account",
+          "clue_value": "The woman had a unique hairstyle that stood out.",
+          "name": "Vieux Port",
+          "npc_dialogue": "A woman with striking hair was seen near the docks, sketching the boats.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "Local Insight",
+          "clue_value": "The thief's culinary preferences might reveal their identity.",
+          "name": "Le Panier",
+          "npc_dialogue": "There's a rumor about a thief who loves Mediterranean cuisine.",
           "point_value": 70
         },
         {
-          "clue_type": "Behavioral Observation",
-          "clue_value": "She kept glancing at her watch.",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "A woman was sketching the exhibits, but she seemed distracted.",
-          "point_value": 50
-        },
-        {
-          "clue_type": "Vehicle Description",
-          "clue_value": "It had a distinctive racing stripe.",
-          "name": "Formula 1 Track",
-          "npc_dialogue": "I saw a car matching the description speeding away after the theft.",
-          "point_value": 90
+          "clue_type": "Witness Account",
+          "clue_value": "The suspect was in a rush, possibly to avoid detection.",
+          "name": "Mus\u00e9e des Civilisations de l'Europe et de la M\u00e9diterran\u00e9e",
+          "npc_dialogue": "I saw someone sketching the exhibits, but they left in a hurry.",
+          "point_value": 60
         }
       ],
       "order_in_chase": 2
@@ -63,24 +63,24 @@
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "Incident Report",
-          "clue_value": "A woman with a striking appearance.",
-          "name": "Porto Antico",
-          "npc_dialogue": "There was a commotion here last night; someone was trying to escape.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "Suspicious Activity",
-          "clue_value": "He was asking about a specific painting.",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "I noticed a suspicious character hanging around the art galleries.",
+          "clue_type": "Witness Account",
+          "clue_value": "The suspect's behavior was suspicious, focusing on escape routes.",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "A tall figure was seen admiring the art, but they seemed too interested in the exits.",
           "point_value": 85
         },
         {
-          "clue_type": "Witness Account",
-          "clue_value": "They had a unique style, reminiscent of the old masters.",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "A local artist mentioned seeing someone sketching the palace, but they left in a hurry.",
+          "clue_type": "Eavesdropping",
+          "clue_value": "The vehicle could be a key to identifying the suspect.",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "I heard someone mention a rare vehicle that only a few can afford.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "Physical Evidence",
+          "clue_value": "The wrapper could link to the suspect's favorite food.",
+          "name": "Aquarium of Genoa",
+          "npc_dialogue": "An artist was sketching the sea life, but they left behind a peculiar food wrapper.",
           "point_value": 65
         }
       ],
@@ -88,12 +88,12 @@
     }
   ],
   "correct_suspect": "Clara Moreau",
-  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets over the azure waters, whispers of a shadowy figure emerge. Your task is to unravel the threads of deception and identify the mastermind behind these crimes before they vanish into the night.",
-  "difficulty": "Hard",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities to uncover the truth. Each location holds a piece of the puzzle, but beware\u2014misleading clues and deceptive suspects lurk in the shadows.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Florence, Italy",
-  "generated_at_utc": "2026-01-20T00:02:44Z",
-  "id": "daily_20260120",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2026-01-21T00:02:30Z",
+  "id": "daily_20260121",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,10 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Moreau is the only suspect with black hair and a hobby of sketching, matching the witness accounts.",
-      "The red convertible vehicle matches the descriptions from multiple locations.",
-      "Her motive aligns with the thefts, as she seeks funding for her art projects.",
-      "Other suspects have conflicting traits or motives that do not align with the evidence."
+      "Witness accounts consistently describe a female artist with red hair.",
+      "Clara's hobby of sketching aligns with the descriptions from multiple locations.",
+      "The favorite food of seafood paella matches the clues found in Valencia and Genoa.",
+      "The vehicle type, a vintage Vespa, is unique and ties back to Clara's character."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,69 +113,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260120",
+  "mission_id": "daily_20260121",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Artful Detective",
+    "badge_name": "Artful Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "9e646ef96d94671bb024cb93a413c43fe8fe2a0e8b8445766cd8b5a0b00c180a",
-  "solution": "Connect the clues about the sketching woman in Nice and her distinctive vehicle to identify Clara Moreau as the mastermind behind the thefts.",
+  "seed": "5ea7a8f693175d61e845deb1315eeceeba27385832e654bc47faa2c90e5e9320",
+  "solution": "Connect the clues about the red-haired artist's sketching habits and her favorite food to identify Clara Moreau as the thief.",
   "suspect_database": [
     {
-      "background": "An art student with a flair for the dramatic.",
-      "behavioral_pattern": "Often seen near art galleries.",
-      "favorite_food": "Seafood",
+      "background": "An art student with a penchant for the dramatic.",
+      "favorite_food": "Seafood Paella",
       "gender": "Female",
-      "hair_color": "Black",
+      "hair_color": "Red",
       "hobby": "Sketching",
-      "motive": "Desire to fund her art projects.",
+      "motive": "Desire to fund her studies through art theft.",
       "name": "Clara Moreau",
-      "vehicle": "Red Convertible"
+      "vehicle": "Vintage Vespa"
     },
     {
-      "background": "A wealthy collector with a secretive past.",
-      "behavioral_pattern": "Frequently visits auctions.",
-      "favorite_food": "Cheese",
+      "background": "A chef with a secret life as a thief.",
+      "favorite_food": "Truffle Risotto",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Collecting antiques",
-      "motive": "To acquire rare artifacts.",
+      "hobby": "Cooking",
+      "motive": "Financial troubles led him to crime.",
       "name": "Julien Dupont",
-      "vehicle": "Black Sedan"
+      "vehicle": "Luxury Sedan"
     },
     {
-      "background": "A photographer with a keen eye for detail.",
-      "behavioral_pattern": "Often found at cultural events.",
-      "favorite_food": "Pasta",
+      "background": "A photographer who captures the beauty of art.",
+      "favorite_food": "Pasta Primavera",
       "gender": "Female",
-      "hair_color": "Blonde",
+      "hair_color": "Black",
       "hobby": "Photography",
-      "motive": "To capture the essence of beauty.",
+      "motive": "To gain fame through controversial means.",
       "name": "Sofia Rossi",
-      "vehicle": "Blue Hatchback"
+      "vehicle": "Compact Car"
     },
     {
-      "background": "A former racer with a love for speed.",
-      "behavioral_pattern": "Seen at racing events.",
-      "favorite_food": "Pizza",
+      "background": "An antique dealer with a shady past.",
+      "favorite_food": "Pizza Margherita",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Racing",
-      "motive": "To impress his peers.",
+      "hair_color": "Blonde",
+      "hobby": "Collecting Antiques",
+      "motive": "To fund his collection through theft.",
       "name": "Marco Bellini",
-      "vehicle": "Green Sports Car"
+      "vehicle": "Motorcycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Seafood",
+    "favorite_food": "Seafood Paella",
     "gender": "Female",
-    "hair_color": "Black",
+    "hair_color": "Red",
     "hobby": "Sketching",
-    "vehicle": "Red Convertible"
+    "vehicle": "Vintage Vespa"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260120.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260121.png",
+  "title": "Shadows of the Past"
 }
