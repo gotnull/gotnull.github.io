@@ -1,31 +1,31 @@
 {
   "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20260130.png",
+  "banner_image_url": "/assets/daily_mission/banner_20260131.png",
   "cities": [
     {
       "city_name": "Valencia",
       "country": "Spain",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A shadowy figure was seen near the art pieces.",
+          "clue_type": "art_style",
+          "clue_value": "dark colors",
           "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw someone suspicious lurking near the sculptures. They seemed too interested in the shadows.",
+          "npc_dialogue": "The curator mentioned a peculiar artist who favored dark colors. Strange, isn't it?",
           "point_value": 80
         },
         {
-          "clue_type": "Behavior",
-          "clue_value": "A vendor was acting strangely, avoiding eye contact.",
+          "clue_type": "suspect_description",
+          "clue_value": "dark hair",
           "name": "Plaza de la Virgen",
-          "npc_dialogue": "The artist's market was bustling, but one vendor was unusually quiet. I wonder what they were hiding.",
+          "npc_dialogue": "I saw a woman sketching here, her hair was as dark as the night sky.",
           "point_value": 60
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "Talk of a rare painting being sold under the table.",
-          "name": "Catedral de Valencia",
-          "npc_dialogue": "I overheard a conversation about a rare painting. It sounded like someone was planning something big.",
-          "point_value": 100
+          "clue_type": "favorite_food",
+          "clue_value": "croissants",
+          "name": "Caf\u00e9 de las Artes",
+          "npc_dialogue": "They say the best croissants are made by someone who loves to paint.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 1
@@ -35,25 +35,25 @@
       "country": "France",
       "locations": [
         {
-          "clue_type": "Rumor",
-          "clue_value": "Strange boats have been spotted at night near the port.",
+          "clue_type": "suspect_behavior",
+          "clue_value": "sketching",
           "name": "Vieux Port",
-          "npc_dialogue": "The fishermen have seen strange boats at night. They think something's fishy.",
+          "npc_dialogue": "A man in a blue coat was seen near the docks, sketching the boats.",
           "point_value": 70
         },
         {
-          "clue_type": "Gossip",
-          "clue_value": "A secret meeting was mentioned regarding stolen art.",
-          "name": "Le Panier",
-          "npc_dialogue": "A local artist mentioned a secret meeting. I wonder if it was about the stolen art.",
+          "clue_type": "art_preference",
+          "clue_value": "impressionist",
+          "name": "Mus\u00e9e des Beaux-Arts",
+          "npc_dialogue": "I overheard someone talking about a thief who loves impressionist art.",
           "point_value": 90
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "A woman with a red scarf was seen at an unrelated event.",
-          "name": "Palais des Congr\u00e8s",
-          "npc_dialogue": "I saw a woman with a striking red scarf. She seemed out of place at the conference.",
-          "point_value": 50
+          "clue_type": "hobby",
+          "clue_value": "baking",
+          "name": "Le Panier",
+          "npc_dialogue": "The baker here has a secret recipe, but only for those who appreciate fine art.",
+          "point_value": 60
         }
       ],
       "order_in_chase": 2
@@ -63,47 +63,47 @@
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "Incident",
-          "clue_value": "A commotion about a missing masterpiece was reported.",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "There was a commotion last night. Someone was shouting about a missing masterpiece.",
-          "point_value": 85
-        },
-        {
-          "clue_type": "Behavior",
-          "clue_value": "A man was sketching the palace, possibly gathering intel.",
+          "clue_type": "suspect_activity",
+          "clue_value": "sketching",
           "name": "Palazzo Ducale",
-          "npc_dialogue": "I noticed a man sketching the palace. He seemed too focused on the details.",
+          "npc_dialogue": "I saw a woman with a sketchbook, she seemed lost in thought.",
           "point_value": 75
         },
         {
-          "clue_type": "Witness Account",
-          "clue_value": "Someone was seen leaving with a large canvas.",
+          "clue_type": "favorite_food",
+          "clue_value": "seafood",
           "name": "Via Garibaldi",
-          "npc_dialogue": "A local said they saw someone with a large canvas leaving in a hurry.",
-          "point_value": 95
+          "npc_dialogue": "There's a rumor about a thief who loves seafood and fine wines.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "suspect_description",
+          "clue_value": "dark-haired woman",
+          "name": "Porto Antico",
+          "npc_dialogue": "A dark-haired woman was seen leaving the art gallery just before the theft.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 3
     }
   ],
   "correct_suspect": "Clara Moreau",
-  "description": "In the heart of the Mediterranean, a series of mysterious thefts have left the local art community in disarray. As whispers of betrayal echo through the narrow streets, you must navigate through a web of deceit to uncover the true culprit. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to the truth. Can you decipher the clues hidden in their stories and catch the thief before they vanish into the night?",
-  "difficulty": "Medium",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this mystery. Can you discern the truth from the shadows?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
   "final_city": "Nice, France",
-  "generated_at_utc": "2026-01-30T00:03:37Z",
-  "id": "daily_20260130",
+  "generated_at_utc": "2026-01-31T00:03:27Z",
+  "id": "daily_20260131",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.3,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Moreau is the only suspect with brown hair and a hobby of painting, matching the clues about the art community.",
-      "The clues about suspicious behavior and the red scarf align with Clara's character as an aspiring artist.",
-      "Other suspects have conflicting traits or motives that do not align with the evidence."
+      "Clara Moreau is the only female suspect with black hair and a hobby of sketching.",
+      "The clues about dark colors and croissants align with Clara's traits.",
+      "Other suspects have conflicting traits or motives that do not match the clues."
     ],
     "solvability_score": 1,
     "validation": {
@@ -112,7 +112,7 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260130",
+  "mission_id": "daily_20260131",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
@@ -121,67 +121,57 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "5946f2922e72107a89c47700de98f44f5c2b6cfe7880be1aafc4e036c76c14d7",
-  "solution": "Connect the clues about the suspicious behavior of the vendors and the red scarf to identify Clara Moreau, who is desperate for recognition.",
+  "seed": "8d4c7236d5be7279f3532ff77301856f891317faee0076179a9426deae7404bd",
+  "solution": "Connect the clues about the dark-haired woman sketching and her love for croissants to identify Clara Moreau.",
   "suspect_database": [
     {
-      "background": "An aspiring artist with a passion for the classics, Clara has been known to frequent art galleries.",
-      "favorite_food": "Ratatouille",
+      "background": "An aspiring artist with a penchant for impressionism, Clara has been known to frequent art galleries.",
+      "favorite_food": "Croissants",
       "gender": "Female",
-      "hair_color": "Brown",
-      "hobby": "Painting",
-      "motive": "Desperate for recognition, she may resort to theft to gain fame.",
+      "hair_color": "Black",
+      "hobby": "Sketching",
+      "motive": "Desire to fund her art studies.",
       "name": "Clara Moreau",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A photographer who captures the essence of street life, Julien has a keen eye for detail.",
-      "favorite_food": "Croissant",
+      "background": "A baker with a secret life, Julien has connections to the art world through his clientele.",
+      "favorite_food": "Seafood",
       "gender": "Male",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "He believes art should be shared, even if it means taking it.",
-      "name": "Julien Lefevre",
+      "hair_color": "Brown",
+      "hobby": "Baking",
+      "motive": "To gain fame through art.",
+      "name": "Julien Dupont",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A sculptor with a rebellious streak, Sofia often challenges the norms of the art world.",
+      "background": "A photographer who captures the essence of art, but has a hidden agenda.",
       "favorite_food": "Pasta",
       "gender": "Female",
-      "hair_color": "Black",
-      "hobby": "Sculpting",
-      "motive": "She feels undervalued and may steal to prove her worth.",
-      "name": "Sofia Rossi",
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "To expose the art underbelly.",
+      "name": "Sophie Laurent",
       "vehicle": "Car"
     },
     {
-      "background": "An antique collector with a shady past, Marco has connections in the underground art scene.",
+      "background": "An art collector with a shady past, Marco is known for his aggressive tactics.",
       "favorite_food": "Pizza",
       "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Collecting antiques",
-      "motive": "He seeks to profit from stolen art.",
-      "name": "Marco Bellini",
+      "hair_color": "Black",
+      "hobby": "Collecting",
+      "motive": "To acquire rare pieces.",
+      "name": "Marco Rossi",
       "vehicle": "Van"
-    },
-    {
-      "background": "A writer who documents the art world, Elena has a knack for storytelling.",
-      "favorite_food": "Gelato",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Writing",
-      "motive": "She may fabricate stories to cover her tracks.",
-      "name": "Elena Costa",
-      "vehicle": "Scooter"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Ratatouille",
+    "favorite_food": "Croissants",
     "gender": "Female",
-    "hair_color": "Brown",
-    "hobby": "Painting",
+    "hair_color": "Black",
+    "hobby": "Sketching",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260130.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260131.png",
+  "title": "Shadows of the Past"
 }
