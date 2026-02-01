@@ -1,59 +1,59 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20260131.png",
+  "arrest_location": "Teatro Massimo",
+  "banner_image_url": "/assets/daily_mission/banner_20260201.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "art_style",
-          "clue_value": "dark colors",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "The curator mentioned a peculiar artist who favored dark colors. Strange, isn't it?",
+          "clue_type": "witness_account",
+          "clue_value": "red scarf",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone with a red scarf slip past me, their eyes darting like a cat in the night.",
           "point_value": 80
         },
         {
-          "clue_type": "suspect_description",
-          "clue_value": "dark hair",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "I saw a woman sketching here, her hair was as dark as the night sky.",
+          "clue_type": "purchase_behavior",
+          "clue_value": "only buys olives",
+          "name": "Cours Saleya Market",
+          "npc_dialogue": "The vendor mentioned a peculiar customer who only buys olives and never pays in cash.",
           "point_value": 60
         },
         {
-          "clue_type": "favorite_food",
-          "clue_value": "croissants",
-          "name": "Caf\u00e9 de las Artes",
-          "npc_dialogue": "They say the best croissants are made by someone who loves to paint.",
-          "point_value": 50
+          "clue_type": "overheard_conversation",
+          "clue_value": "loves the sea",
+          "name": "Castle Hill",
+          "npc_dialogue": "I overheard a couple discussing a thief who loves the sea and has a taste for adventure.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "suspect_behavior",
-          "clue_value": "sketching",
-          "name": "Vieux Port",
-          "npc_dialogue": "A man in a blue coat was seen near the docks, sketching the boats.",
-          "point_value": 70
-        },
-        {
-          "clue_type": "art_preference",
-          "clue_value": "impressionist",
-          "name": "Mus\u00e9e des Beaux-Arts",
-          "npc_dialogue": "I overheard someone talking about a thief who loves impressionist art.",
+          "clue_type": "sighting",
+          "clue_value": "striking green eyes",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "A woman with striking green eyes was seen leaving just before the last heist.",
           "point_value": 90
         },
         {
-          "clue_type": "hobby",
-          "clue_value": "baking",
-          "name": "Le Panier",
-          "npc_dialogue": "The baker here has a secret recipe, but only for those who appreciate fine art.",
-          "point_value": 60
+          "clue_type": "eating_habit",
+          "clue_value": "never finishes their dish",
+          "name": "Le Metropole Shopping Center",
+          "npc_dialogue": "I noticed someone who always orders the same dish at the caf\u00e9, but never finishes it.",
+          "point_value": 70
+        },
+        {
+          "clue_type": "rumor",
+          "clue_value": "fascination with marine life",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "There was a rumor about a thief who has a fascination with marine life.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
@@ -63,47 +63,48 @@
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "suspect_activity",
-          "clue_value": "sketching",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "I saw a woman with a sketchbook, she seemed lost in thought.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "favorite_food",
-          "clue_value": "seafood",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "There's a rumor about a thief who loves seafood and fine wines.",
+          "clue_type": "sighting",
+          "clue_value": "dark coat",
+          "name": "Old Port",
+          "npc_dialogue": "I saw a figure in a dark coat, moving swiftly towards the docks. They seemed to know the area well.",
           "point_value": 85
         },
         {
-          "clue_type": "suspect_description",
-          "clue_value": "dark-haired woman",
-          "name": "Porto Antico",
-          "npc_dialogue": "A dark-haired woman was seen leaving the art gallery just before the theft.",
-          "point_value": 100
+          "clue_type": "artistic_behavior",
+          "clue_value": "sketches the sea",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "A local artist mentioned a thief who sketches the sea before making their move.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "food_preference",
+          "clue_value": "seafood pasta",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "I overheard someone say the thief has a penchant for seafood pasta.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moreau",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this mystery. Can you discern the truth from the shadows?",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Moretti",
+  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows dance along the alleyways, and whispers of a notorious thief reach your ears. Your mission is to uncover the identity of the elusive suspect before they vanish into the night. Follow the trail through vibrant markets and quiet cafes, piecing together the clues hidden in plain sight.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2026-01-31T00:03:27Z",
-  "id": "daily_20260131",
+  "final_city": "Palermo, Italy",
+  "generated_at_utc": "2026-02-01T00:03:00Z",
+  "id": "daily_20260201",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.3,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Moreau is the only female suspect with black hair and a hobby of sketching.",
-      "The clues about dark colors and croissants align with Clara's traits.",
-      "Other suspects have conflicting traits or motives that do not match the clues."
+      "1. The suspect is female with brown hair, matching Clara Moretti.",
+      "2. Clara's hobby of sketching aligns with the clue about the artist.",
+      "3. The favorite food of seafood pasta matches the clue from Genoa.",
+      "4. The vehicle type, a bicycle, fits the mobility described in the clues."
     ],
     "solvability_score": 1,
     "validation": {
@@ -112,66 +113,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260131",
-  "poster_image_url": "",
+  "mission_id": "daily_20260201",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Coastal Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "8d4c7236d5be7279f3532ff77301856f891317faee0076179a9426deae7404bd",
-  "solution": "Connect the clues about the dark-haired woman sketching and her love for croissants to identify Clara Moreau.",
+  "seed": "102bd7fae9c09a845869c95fe1223fd2e19b978c602e84c33246d43a43e757ca",
+  "solution": "Connect the clues about the red scarf, the fascination with marine life, and the habit of sketching the sea to identify Clara Moretti as the thief.",
   "suspect_database": [
     {
-      "background": "An aspiring artist with a penchant for impressionism, Clara has been known to frequent art galleries.",
-      "favorite_food": "Croissants",
+      "background": "An artist who travels along the coast, known for her vibrant sketches of marine life.",
+      "favorite_food": "Seafood Pasta",
       "gender": "Female",
-      "hair_color": "Black",
+      "hair_color": "Brown",
       "hobby": "Sketching",
-      "motive": "Desire to fund her art studies.",
-      "name": "Clara Moreau",
+      "motive": "Desire for adventure and thrill-seeking.",
+      "name": "Clara Moretti",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A baker with a secret life, Julien has connections to the art world through his clientele.",
-      "favorite_food": "Seafood",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Baking",
-      "motive": "To gain fame through art.",
-      "name": "Julien Dupont",
-      "vehicle": "Motorcycle"
-    },
-    {
-      "background": "A photographer who captures the essence of art, but has a hidden agenda.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "To expose the art underbelly.",
-      "name": "Sophie Laurent",
-      "vehicle": "Car"
-    },
-    {
-      "background": "An art collector with a shady past, Marco is known for his aggressive tactics.",
+      "background": "A local fisherman with a reputation for being a loner.",
       "favorite_food": "Pizza",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Collecting",
-      "motive": "To acquire rare pieces.",
+      "hobby": "Fishing",
+      "motive": "Financial troubles.",
       "name": "Marco Rossi",
-      "vehicle": "Van"
+      "vehicle": "Motorcycle"
+    },
+    {
+      "background": "A dancer who frequents the nightlife, often seen in upscale venues.",
+      "favorite_food": "Pasta",
+      "gender": "Female",
+      "hair_color": "Blonde",
+      "hobby": "Dancing",
+      "motive": "Seeking fame and fortune.",
+      "name": "Sofia Bianchi",
+      "vehicle": "Car"
+    },
+    {
+      "background": "A sailor with a love for the sea, often seen at the docks.",
+      "favorite_food": "Risotto",
+      "gender": "Male",
+      "hair_color": "Brown",
+      "hobby": "Sailing",
+      "motive": "Adventure and thrill.",
+      "name": "Luca Ferraro",
+      "vehicle": "Boat"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Croissants",
+    "favorite_food": "Seafood Pasta",
     "gender": "Female",
-    "hair_color": "Black",
+    "hair_color": "Brown",
     "hobby": "Sketching",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260131.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260201.png",
+  "title": "Whispers in the Wind"
 }
