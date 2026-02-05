@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20260204.png",
+  "arrest_location": "Piazza Castello",
+  "banner_image_url": "/assets/daily_mission/banner_20260205.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "art_reference",
-          "clue_value": "A sketch of a thief resembling a local artist.",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "The curator mentioned a peculiar artist who frequented here, always sketching in the shadows.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "witness_account",
-          "clue_value": "A red scarf often associated with a notorious art thief.",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "I saw someone with a striking red scarf, but they vanished before I could ask.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "food_reference",
-          "clue_value": "Saffron-infused paella, a favorite of the thief.",
-          "name": "Caf\u00e9 de las Artes",
-          "npc_dialogue": "The barista swears the thief ordered a dish with saffron, a local delicacy.",
+          "clue_type": "witness_statement",
+          "clue_value": "red scarf",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone with a red scarf lurking around here last night.",
           "point_value": 60
+        },
+        {
+          "clue_type": "local_custom",
+          "clue_value": "bouillabaisse",
+          "name": "Old Town",
+          "npc_dialogue": "They say the thief loves bouillabaisse. A local delicacy, you know.",
+          "point_value": 50
+        },
+        {
+          "clue_type": "behavioral_observation",
+          "clue_value": "sketching",
+          "name": "Castle Hill",
+          "npc_dialogue": "I overheard someone sketching the view. They seemed quite focused.",
+          "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "art_reference",
-          "clue_value": "A drawing of a boat with a hidden compartment.",
-          "name": "Vieux Port",
-          "npc_dialogue": "A mysterious figure was seen near the docks, sketching the boats.",
-          "point_value": 90
+          "clue_type": "sighting",
+          "clue_value": "blue hair",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "I noticed a woman with striking blue hair playing cards late last night.",
+          "point_value": 80
         },
         {
-          "clue_type": "hearsay",
-          "clue_value": "A description of a vintage car linked to the theft.",
-          "name": "Le Panier",
-          "npc_dialogue": "I overheard a conversation about a stolen painting and a getaway car.",
+          "clue_type": "rumor",
+          "clue_value": "luxury",
+          "name": "Prince's Palace",
+          "npc_dialogue": "The thief was rumored to have a taste for luxury. They might be hiding here.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "vehicle_sighting",
+          "clue_value": "red sports car",
+          "name": "Larvotto Beach",
+          "npc_dialogue": "I saw someone driving a flashy red sports car. They left in a hurry.",
           "point_value": 70
-        },
-        {
-          "clue_type": "food_reference",
-          "clue_value": "Bouillabaisse, a dish favored by the suspect.",
-          "name": "Caf\u00e9 des \u00c9crivains",
-          "npc_dialogue": "The regulars talk about a thief who loves bouillabaisse.",
-          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Cannes",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "art_reference",
-          "clue_value": "A sketch of the palace with a hidden message.",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "An artist was seen sketching the palace, but they left in a hurry.",
-          "point_value": 110
-        },
-        {
-          "clue_type": "witness_account",
-          "clue_value": "A blue beret linked to a local artist.",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "I saw someone with a blue beret, they seemed out of place.",
+          "clue_type": "celebrity_sighting",
+          "clue_value": "unique style",
+          "name": "Cannes Film Festival",
+          "npc_dialogue": "A mysterious figure was seen mingling with celebrities. They had a unique style.",
           "point_value": 75
         },
         {
-          "clue_type": "food_reference",
-          "clue_value": "Pesto pasta, a dish loved by the suspect.",
-          "name": "Trattoria da Maria",
-          "npc_dialogue": "The chef mentioned a thief who always orders pesto pasta.",
+          "clue_type": "favorite_food",
+          "clue_value": "ratatouille",
+          "name": "La Croisette",
+          "npc_dialogue": "I overheard someone mention a favorite food: ratatouille. Quite peculiar.",
+          "point_value": 50
+        },
+        {
+          "clue_type": "artistic_hobby",
+          "clue_value": "sketching",
+          "name": "Palais des Festivals",
+          "npc_dialogue": "They were sketching the red carpet. An artist, perhaps?",
           "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Sofia Conti",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of betrayal echo through the cobblestone streets, you must navigate a web of deceit to uncover the true mastermind behind the chaos. Each suspect presents a fa\u00e7ade, but only one holds the key to the truth. Can you decipher the clues hidden in their stories and catch the elusive thief before they vanish into the night?",
-  "difficulty": "Hard",
+  "correct_suspect": "Sofia",
+  "description": "A series of mysterious thefts have plagued the coastal town of Nice, France. As the sun sets, shadows dance along the promenade, and whispers of a notorious thief reach your ears. Can you unravel the tangled web of deceit and catch the culprit before they vanish into the night?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2026-02-04T00:03:54Z",
-  "id": "daily_20260204",
+  "final_city": "Turin, Italy",
+  "generated_at_utc": "2026-02-05T00:04:35Z",
+  "id": "daily_20260205",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.8,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. The red scarf is a unique identifier linked to Sofia.",
-      "2. Bouillabaisse is her favorite food, mentioned in multiple locations.",
-      "3. Sketching is her hobby, aligning with the art theft theme.",
-      "4. The Old Fiat is a plausible getaway vehicle for her."
+      "1. Witnesses mention a red scarf and bouillabaisse, linking to Sofia.",
+      "2. Sofia's hobby of sketching aligns with the artistic clues.",
+      "3. The red sports car matches the vehicle sightings.",
+      "4. Other suspects have conflicting traits or motives."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,66 +113,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260204",
+  "mission_id": "daily_20260205",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "711dcbea554470c1d5c1c8c996f79a0a3a6ad5659d4b3b7b9bc56be3645a6de9",
-  "solution": "Connect the clues about the red scarf, bouillabaisse, and the sketching habits to identify Sofia as the thief.",
+  "seed": "33d325e8bad2027cb06e3873d5d29411342ffa7e1882336b461c1367c67f576c",
+  "solution": "Connect the clues about the red scarf, bouillabaisse, and sketching habits to identify Sofia as the thief.",
   "suspect_database": [
     {
-      "background": "An art student with a penchant for the dramatic.",
+      "background": "A talented artist with a penchant for the dramatic.",
       "favorite_food": "Bouillabaisse",
-      "gender": "Female",
-      "hair_color": "Brown",
-      "hobby": "Painting",
-      "motive": "Desire to fund her art career.",
-      "name": "Lucia Rossi",
-      "vehicle": "Vintage Citro\u00ebn"
-    },
-    {
-      "background": "A sculptor known for his extravagant lifestyle.",
-      "favorite_food": "Saffron Risotto",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Sculpting",
-      "motive": "To gain fame through notoriety.",
-      "name": "Marco Bellini",
-      "vehicle": "Modern Tesla"
-    },
-    {
-      "background": "A photographer with a mysterious past.",
-      "favorite_food": "Pesto Pasta",
-      "gender": "Male",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "To capture the perfect shot of chaos.",
-      "name": "Giovanni Verdi",
-      "vehicle": "Motorcycle"
-    },
-    {
-      "background": "A street artist with a rebellious spirit.",
-      "favorite_food": "Paella",
       "gender": "Female",
       "hair_color": "Red",
       "hobby": "Sketching",
-      "motive": "To challenge the art establishment.",
-      "name": "Sofia Conti",
-      "vehicle": "Old Fiat"
+      "motive": "Desire for fame and recognition.",
+      "name": "Sofia",
+      "vehicle": "Red sports car"
+    },
+    {
+      "background": "A high-stakes gambler with a shady past.",
+      "favorite_food": "Ratatouille",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Gambling",
+      "motive": "Debt repayment.",
+      "name": "Marco",
+      "vehicle": "Luxury sedan"
+    },
+    {
+      "background": "A fashionista with connections to the elite.",
+      "favorite_food": "Sushi",
+      "gender": "Female",
+      "hair_color": "Blue",
+      "hobby": "Fashion design",
+      "motive": "Jealousy.",
+      "name": "Elena",
+      "vehicle": "Convertible"
+    },
+    {
+      "background": "A chef with a flair for the dramatic.",
+      "favorite_food": "Pasta",
+      "gender": "Male",
+      "hair_color": "Brown",
+      "hobby": "Cooking",
+      "motive": "Culinary fame.",
+      "name": "Luca",
+      "vehicle": "Motorcycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Paella",
+    "favorite_food": "Bouillabaisse",
     "gender": "Female",
     "hair_color": "Red",
     "hobby": "Sketching",
-    "vehicle": "Old Fiat"
+    "vehicle": "Red sports car"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260204.png",
-  "title": "Shadows of Deceit"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260205.png",
+  "title": "Whispers in the Wind"
 }
