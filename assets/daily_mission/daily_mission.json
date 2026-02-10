@@ -1,109 +1,111 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260209.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260210.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A red scarf caught in the railing.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea whispers secrets, but the wind carries lies.",
-          "point_value": 75
+          "clue_type": "Witness Account",
+          "clue_value": "A tall figure with dark hair was seen.",
+          "name": "Kunsthistorisches Museum",
+          "npc_dialogue": "I saw someone suspicious lurking near the paintings last night.",
+          "point_value": 100
         },
         {
-          "clue_type": "Heard",
-          "clue_value": "A conversation about a stolen family recipe.",
-          "name": "Old Town Market",
-          "npc_dialogue": "Everyone loves a good pastry, but not everyone shares their recipes.",
+          "clue_type": "Eavesdropping",
+          "clue_value": "Mention of a 'red scarf' and 'the gallery'.",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "The gardens are beautiful, but I overheard a conversation about a secret meeting.",
+          "point_value": 80
+        },
+        {
+          "clue_type": "Purchase Record",
+          "clue_value": "A large quantity of canvas and paint.",
+          "name": "Naschmarkt",
+          "npc_dialogue": "I sell art supplies, but I noticed someone buying unusual items lately.",
           "point_value": 60
-        },
-        {
-          "clue_type": "Sight",
-          "clue_value": "A figure in a dark coat disappearing into the shadows.",
-          "name": "Castle Hill",
-          "npc_dialogue": "From up here, you can see everything... or nothing at all.",
-          "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "Gossip",
-          "clue_value": "A rumor about a high-stakes game involving stolen goods.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle friend, but greed is a constant companion.",
-          "point_value": 80
+          "clue_type": "Rumor",
+          "clue_value": "A thief with a penchant for modern art.",
+          "name": "Hungarian National Gallery",
+          "npc_dialogue": "I heard rumors of a thief planning to strike here next.",
+          "point_value": 90
         },
         {
-          "clue_type": "Exhibit",
-          "clue_value": "An exhibit on piracy and lost artifacts.",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "The ocean holds many treasures, but some are better left buried.",
+          "clue_type": "Eyewitness",
+          "clue_value": "She seemed nervous and kept looking around.",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "A woman in a red scarf was seen near the entrance.",
           "point_value": 70
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "A guard mentioning a suspicious visitor.",
-          "name": "Prince's Palace",
-          "npc_dialogue": "Royalty has its secrets, but so do the common folk.",
-          "point_value": 85
+          "clue_type": "Overheard Conversation",
+          "clue_value": "Talk of a 'big score' and 'the gallery'.",
+          "name": "Great Market Hall",
+          "npc_dialogue": "I sell food, but I overheard a conversation about a big art deal.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "Heard",
-          "clue_value": "A director discussing a missing script.",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "Behind every great film is a story of ambition and betrayal.",
-          "point_value": 95
+          "clue_type": "Suspicious Activity",
+          "clue_value": "A man with a distinctive vehicle.",
+          "name": "Prague Castle",
+          "npc_dialogue": "I saw a suspicious character near the art exhibits.",
+          "point_value": 110
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "A celebrity with a peculiar tattoo.",
-          "name": "La Croisette",
-          "npc_dialogue": "The stars shine bright, but shadows lurk in their glow.",
-          "point_value": 80
+          "clue_type": "Local News",
+          "clue_value": "A painting resembling a famous piece was reported missing.",
+          "name": "Old Town Square",
+          "npc_dialogue": "There was a commotion about a stolen painting last week.",
+          "point_value": 75
         },
         {
-          "clue_type": "Gossip",
-          "clue_value": "Whispers of a scandal involving stolen awards.",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "Every award has a price, and some pay in more than just money.",
-          "point_value": 70
+          "clue_type": "Night Watch",
+          "clue_value": "They were in a hurry and seemed anxious.",
+          "name": "Charles Bridge",
+          "npc_dialogue": "I saw someone with a red scarf crossing the bridge at night.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Claire Martin",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, shadows dance along the promenade, concealing secrets. Your task is to unravel the threads of deception and identify the mastermind behind these crimes. Each suspect presents a fa\u00e7ade, but only one holds the key to the truth.",
-  "difficulty": "Medium",
+  "correct_suspect": "Lukas Novak",
+  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. As whispers of a notorious art thief resurface, you must navigate through a web of deception and hidden motives. Each suspect holds a piece of the puzzle, but only one is the true mastermind behind the heists. Can you unravel the truth before the thief vanishes into the shadows once more?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-02-09T00:04:43Z",
-  "id": "daily_20260209",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2026-02-10T00:08:10Z",
+  "id": "daily_20260210",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.8,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Identify the suspect traits that match the clues about cooking and family recipes.",
-      "Analyze the motives of each suspect to find the one with a personal stake in the thefts.",
-      "Cross-reference the clues from each city to eliminate suspects who do not fit the narrative."
+      "1. Witness accounts consistently mention a tall figure with dark hair.",
+      "2. The red scarf is a recurring detail linked to suspicious activities.",
+      "3. Lukas Novak's background in art restoration aligns with the thefts.",
+      "4. His vehicle matches descriptions from multiple locations.",
+      "5. Other suspects have conflicting hobbies or motives that do not align."
     ],
     "solvability_score": 1,
     "validation": {
@@ -112,76 +114,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260209",
+  "mission_id": "daily_20260210",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Culinary Sleuth",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "af3eb972891b904ff0fa811a1951cbb8c27aaec18a53a7816c40b6c79bb3e723",
-  "solution": "Connect the clues about the stolen family recipe and the red scarf to identify Claire Martin as the mastermind behind the thefts.",
+  "seed": "3f0912f4aca821239cc71b126ae16626c88ac847630f4da854a5b28ac024adcc",
+  "solution": "Connect the clues about the red scarf and the suspicious activities at the art locations to identify Lukas Novak as the mastermind behind the thefts.",
   "suspect_database": [
     {
-      "background": "A local sommelier with a taste for the finer things in life.",
-      "favorite_food": "Coq au vin",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Collecting rare wines",
-      "motive": "Desire to fund his extravagant lifestyle.",
-      "name": "Julien Moreau",
-      "vehicle": "Luxury sedan"
-    },
-    {
-      "background": "An aspiring photographer who captures the beauty of the French Riviera.",
-      "favorite_food": "Macarons",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "Seeking fame and recognition.",
-      "name": "Sophie Dubois",
-      "vehicle": "Bicycle"
-    },
-    {
-      "background": "A thrill-seeker who enjoys the adrenaline of the waves.",
-      "favorite_food": "Bouillabaisse",
+      "background": "A skilled restorer with a secretive past.",
+      "favorite_food": "Goulash",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Surfing",
-      "motive": "To fund his surfing expeditions.",
-      "name": "Marc Lefevre",
-      "vehicle": "Motorcycle"
+      "hobby": "Art Restoration",
+      "motive": "Desire to reclaim lost art for personal gain.",
+      "name": "Lukas Novak",
+      "vehicle": "Black Motorcycle"
     },
     {
-      "background": "A chef with a passion for culinary arts and a hidden agenda.",
-      "favorite_food": "Ratatouille",
+      "background": "A photographer who often captures art events.",
+      "favorite_food": "Schnitzel",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Cooking",
-      "motive": "To reclaim her family's stolen recipes.",
-      "name": "Claire Martin",
-      "vehicle": "Compact car"
+      "hobby": "Photography",
+      "motive": "Passion for art, but could be hiding something.",
+      "name": "Eva Schmidt",
+      "vehicle": "Red Bicycle"
     },
     {
-      "background": "A fisherman with deep ties to the local community.",
-      "favorite_food": "Seafood platter",
+      "background": "An antique collector with a keen eye for valuable items.",
+      "favorite_food": "Pasta",
       "gender": "Male",
-      "hair_color": "Gray",
-      "hobby": "Fishing",
-      "motive": "Protecting his territory from outsiders.",
-      "name": "Antoine Girard",
-      "vehicle": "Pickup truck"
+      "hair_color": "Brown",
+      "hobby": "Collecting Antiques",
+      "motive": "Wants to sell stolen art for profit.",
+      "name": "Marek Kral",
+      "vehicle": "Old Sedan"
+    },
+    {
+      "background": "An artist who frequents galleries.",
+      "favorite_food": "Borscht",
+      "gender": "Female",
+      "hair_color": "Blonde",
+      "hobby": "Sketching",
+      "motive": "Jealous of others' success in the art world.",
+      "name": "Sofia Petrov",
+      "vehicle": "Electric Scooter"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Ratatouille",
-    "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Cooking",
-    "vehicle": "Compact car"
+    "favorite_food": "Goulash",
+    "gender": "Male",
+    "hair_color": "Black",
+    "hobby": "Art Restoration",
+    "vehicle": "Black Motorcycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260209.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260210.png",
+  "title": "Shadows of the Past"
 }
