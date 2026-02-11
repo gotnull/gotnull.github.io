@@ -1,111 +1,110 @@
 {
-  "arrest_location": "Slovak National Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20260210.png",
+  "arrest_location": "Uffizi Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260211.png",
   "cities": [
     {
-      "city_name": "Vienna",
-      "country": "Austria",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "A tall figure with dark hair was seen.",
-          "name": "Kunsthistorisches Museum",
-          "npc_dialogue": "I saw someone suspicious lurking near the paintings last night.",
-          "point_value": 100
+          "clue_type": "artistic_reference",
+          "clue_value": "The artist's last painting featured a blue sea.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "The sea breeze carries tales of lost treasures. Have you heard about the artist who vanished?",
+          "point_value": 75
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "Mention of a 'red scarf' and 'the gallery'.",
-          "name": "Belvedere Palace",
-          "npc_dialogue": "The gardens are beautiful, but I overheard a conversation about a secret meeting.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Purchase Record",
-          "clue_value": "A large quantity of canvas and paint.",
-          "name": "Naschmarkt",
-          "npc_dialogue": "I sell art supplies, but I noticed someone buying unusual items lately.",
+          "clue_type": "witness_account",
+          "clue_value": "The figure was described as having dark hair.",
+          "name": "Old Town Market",
+          "npc_dialogue": "I saw a figure in a red scarf darting through the stalls. It was quite the sight!",
           "point_value": 60
+        },
+        {
+          "clue_type": "environmental_clue",
+          "clue_value": "A shadow was seen near the artist's studio.",
+          "name": "Castle Hill",
+          "npc_dialogue": "From up here, you can see everything. But did you notice the shadows moving below?",
+          "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Budapest",
-      "country": "Hungary",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "Rumor",
-          "clue_value": "A thief with a penchant for modern art.",
-          "name": "Hungarian National Gallery",
-          "npc_dialogue": "I heard rumors of a thief planning to strike here next.",
-          "point_value": 90
+          "clue_type": "overheard_conversation",
+          "clue_value": "Mention of a getaway vehicle.",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "High stakes and high drama. I overheard someone talking about a heist.",
+          "point_value": 80
         },
         {
-          "clue_type": "Eyewitness",
-          "clue_value": "She seemed nervous and kept looking around.",
-          "name": "Fisherman's Bastion",
-          "npc_dialogue": "A woman in a red scarf was seen near the entrance.",
+          "clue_type": "thematic_clue",
+          "clue_value": "A reference to the ocean in the thief's last message.",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "The exhibits are fascinating, but the real treasure is the knowledge hidden in the depths.",
           "point_value": 70
         },
         {
-          "clue_type": "Overheard Conversation",
-          "clue_value": "Talk of a 'big score' and 'the gallery'.",
-          "name": "Great Market Hall",
-          "npc_dialogue": "I sell food, but I overheard a conversation about a big art deal.",
-          "point_value": 50
+          "clue_type": "behavioral_clue",
+          "clue_value": "The sketch was of a red scarf.",
+          "name": "St. Nicholas Cathedral",
+          "npc_dialogue": "I saw someone sketching the cathedral. They seemed out of place.",
+          "point_value": 85
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Prague",
-      "country": "Czech Republic",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Suspicious Activity",
-          "clue_value": "A man with a distinctive vehicle.",
-          "name": "Prague Castle",
-          "npc_dialogue": "I saw a suspicious character near the art exhibits.",
-          "point_value": 110
+          "clue_type": "local_insight",
+          "clue_value": "A boat was seen leaving at dawn.",
+          "name": "Port of Genoa",
+          "npc_dialogue": "The docks are alive with stories. A thief could easily blend in here.",
+          "point_value": 95
         },
         {
-          "clue_type": "Local News",
-          "clue_value": "A painting resembling a famous piece was reported missing.",
-          "name": "Old Town Square",
-          "npc_dialogue": "There was a commotion about a stolen painting last week.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "Night Watch",
-          "clue_value": "They were in a hurry and seemed anxious.",
-          "name": "Charles Bridge",
-          "npc_dialogue": "I saw someone with a red scarf crossing the bridge at night.",
+          "clue_type": "suspicious_activity",
+          "clue_value": "The person had a distinct red scarf.",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "The fountain is beautiful, but did you notice the person lurking nearby?",
           "point_value": 65
+        },
+        {
+          "clue_type": "historical_reference",
+          "clue_value": "A painting of a thief in a red scarf hangs in the gallery.",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "Art and history collide here. But beware, not everything is as it seems.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Lukas Novak",
-  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. As whispers of a notorious art thief resurface, you must navigate through a web of deception and hidden motives. Each suspect holds a piece of the puzzle, but only one is the true mastermind behind the heists. Can you unravel the truth before the thief vanishes into the shadows once more?",
-  "difficulty": "Hard",
+  "correct_suspect": "Lucia Rossi",
+  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the truth hides in plain sight. Your task is to unravel the threads of deception woven by a cunning thief who has left behind a trail of misdirection. Each clue whispers secrets, but only the keenest observer will discern the truth.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Bratislava, Slovakia",
-  "generated_at_utc": "2026-02-10T00:08:10Z",
-  "id": "daily_20260210",
+  "final_city": "Florence, Italy",
+  "generated_at_utc": "2026-02-11T00:08:39Z",
+  "id": "daily_20260211",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.8,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. Witness accounts consistently mention a tall figure with dark hair.",
-      "2. The red scarf is a recurring detail linked to suspicious activities.",
-      "3. Lukas Novak's background in art restoration aligns with the thefts.",
-      "4. His vehicle matches descriptions from multiple locations.",
-      "5. Other suspects have conflicting hobbies or motives that do not align."
+      "The red scarf is a recurring motif linked to Lucia's artistic style.",
+      "Witness accounts consistently describe a female figure with black hair.",
+      "Lucia's motive aligns with the theft of her own artwork.",
+      "Clues about the ocean and artistic references point towards her background."
     ],
     "solvability_score": 1,
     "validation": {
@@ -114,66 +113,75 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260210",
-  "poster_image_url": "",
+  "mission_id": "daily_20260211",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Artful Detective",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "3f0912f4aca821239cc71b126ae16626c88ac847630f4da854a5b28ac024adcc",
-  "solution": "Connect the clues about the red scarf and the suspicious activities at the art locations to identify Lukas Novak as the mastermind behind the thefts.",
+  "seed": "afb9727cb4b77f09ed835412a288eaa42d2e4e2413ec5623e3dee9355605ba92",
+  "solution": "Connect the clues about the red scarf and the artist's last painting to identify Lucia as the thief.",
   "suspect_database": [
     {
-      "background": "A skilled restorer with a secretive past.",
-      "favorite_food": "Goulash",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Art Restoration",
-      "motive": "Desire to reclaim lost art for personal gain.",
-      "name": "Lukas Novak",
-      "vehicle": "Black Motorcycle"
-    },
-    {
-      "background": "A photographer who often captures art events.",
-      "favorite_food": "Schnitzel",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Photography",
-      "motive": "Passion for art, but could be hiding something.",
-      "name": "Eva Schmidt",
-      "vehicle": "Red Bicycle"
-    },
-    {
-      "background": "An antique collector with a keen eye for valuable items.",
+      "background": "An artist known for her vibrant depictions of the sea.",
       "favorite_food": "Pasta",
+      "gender": "Female",
+      "hair_color": "Black",
+      "hobby": "Painting",
+      "motive": "Desire to reclaim her stolen artwork.",
+      "name": "Lucia Rossi",
+      "vehicle": "Red scooter"
+    },
+    {
+      "background": "A fisherman with a penchant for storytelling.",
+      "favorite_food": "Seafood",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Collecting Antiques",
-      "motive": "Wants to sell stolen art for profit.",
-      "name": "Marek Kral",
-      "vehicle": "Old Sedan"
+      "hobby": "Fishing",
+      "motive": "To fund his fishing expeditions.",
+      "name": "Marco Bellini",
+      "vehicle": "Blue bicycle"
     },
     {
-      "background": "An artist who frequents galleries.",
-      "favorite_food": "Borscht",
-      "gender": "Female",
+      "background": "A collector with a mysterious past.",
+      "favorite_food": "Pizza",
+      "gender": "Male",
       "hair_color": "Blonde",
-      "hobby": "Sketching",
-      "motive": "Jealous of others' success in the art world.",
-      "name": "Sofia Petrov",
-      "vehicle": "Electric Scooter"
+      "hobby": "Collecting antiques",
+      "motive": "To sell stolen goods for profit.",
+      "name": "Giovanni Verdi",
+      "vehicle": "Black car"
+    },
+    {
+      "background": "A sculptor who often visits art galleries.",
+      "favorite_food": "Gelato",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Sculpting",
+      "motive": "To gain fame through controversial art.",
+      "name": "Sofia Conti",
+      "vehicle": "Green motorcycle"
+    },
+    {
+      "background": "A photographer who captures the essence of the coast.",
+      "favorite_food": "Risotto",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Photography",
+      "motive": "To document the thief's exploits.",
+      "name": "Alessandro Moretti",
+      "vehicle": "White van"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Goulash",
-    "gender": "Male",
+    "favorite_food": "Pasta",
+    "gender": "Female",
     "hair_color": "Black",
-    "hobby": "Art Restoration",
-    "vehicle": "Black Motorcycle"
+    "hobby": "Painting",
+    "vehicle": "Red scooter"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260210.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260211.png",
+  "title": "Whispers in the Wind"
 }
