@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Uffizi Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20260213.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260214.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "dark coat",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone in a dark coat lurking near the beach. They seemed out of place.",
+          "clue_type": "art_style",
+          "clue_value": "Impressionism",
+          "name": "Kunsthistorisches Museum",
+          "npc_dialogue": "I saw someone suspicious near the paintings last night. They had a peculiar taste in art.",
+          "point_value": 100
+        },
+        {
+          "clue_type": "hidden_location",
+          "clue_value": "Secret Garden",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "The gardens are beautiful, but I overheard a conversation about a hidden stash.",
           "point_value": 80
         },
         {
-          "clue_type": "Vehicle Description",
-          "clue_value": "bright red",
-          "name": "Old Town",
-          "npc_dialogue": "The local artist mentioned a peculiar vehicle parked nearby. It was bright red.",
+          "clue_type": "vehicle",
+          "clue_value": "Vintage Motorcycle",
+          "name": "Naschmarkt",
+          "npc_dialogue": "I noticed a person with a unique vehicle buying art supplies. They seemed nervous.",
           "point_value": 60
-        },
-        {
-          "clue_type": "Favorite Food",
-          "clue_value": "seafood",
-          "name": "Castle Hill",
-          "npc_dialogue": "I overheard a conversation about a favorite dish that involves seafood.",
-          "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "Suspect Description",
-          "clue_value": "striking hair",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "A woman with striking hair was seen leaving the casino just before the theft.",
+          "clue_type": "suspect_height",
+          "clue_value": "Tall",
+          "name": "Hungarian National Gallery",
+          "npc_dialogue": "A tall figure was seen leaving with a large canvas. They were quite agile.",
           "point_value": 90
         },
         {
-          "clue_type": "Hobby",
-          "clue_value": "painting",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "I heard someone mention a love for painting while admiring the exhibits.",
-          "point_value": 50
+          "clue_type": "connection",
+          "clue_value": "Vienna",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "I heard someone mention a connection to Vienna. They were very secretive.",
+          "point_value": 70
         },
         {
-          "clue_type": "Incident Report",
-          "clue_value": "stolen item",
-          "name": "Larvotto Beach",
-          "npc_dialogue": "There was a commotion about a stolen item that was last seen near the beach.",
-          "point_value": 100
+          "clue_type": "fashion_style",
+          "clue_value": "Bohemian",
+          "name": "Great Market Hall",
+          "npc_dialogue": "A woman was buying unusual food items. She had a distinct style.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "Vehicle Description",
-          "clue_value": "unique vehicle",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "I noticed a suspicious figure with a unique vehicle parked nearby.",
+          "clue_type": "hair_color",
+          "clue_value": "Red",
+          "name": "Prague Castle",
+          "npc_dialogue": "I saw a person sketching the castle. They had a unique hair color.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "accent",
+          "clue_value": "Austrian",
+          "name": "Charles Bridge",
+          "npc_dialogue": "A group was discussing art thefts. One had a very specific accent.",
           "point_value": 75
         },
         {
-          "clue_type": "Favorite Food",
-          "clue_value": "pasta",
-          "name": "Genoa Aquarium",
-          "npc_dialogue": "A local chef mentioned a favorite dish that includes pasta.",
+          "clue_type": "art_condition",
+          "clue_value": "New",
+          "name": "Old Town Square",
+          "npc_dialogue": "Someone was selling art pieces that looked suspiciously new.",
           "point_value": 65
-        },
-        {
-          "clue_type": "Artist Description",
-          "clue_value": "dark-haired artist",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "I overheard someone talking about a recent art exhibition and a dark-haired artist.",
-          "point_value": 85
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moreau",
-  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the truth hides behind layers of deception. Your task is to unravel the threads of this intricate web and catch the elusive thief before they vanish into the night.",
-  "difficulty": "Medium",
+  "correct_suspect": "Clara Weiss",
+  "description": "In the heart of Vienna, a series of art thefts have left the city in turmoil. As whispers of a notorious art thief circulate, you must navigate through the city's rich history and vibrant culture to uncover the truth. Each suspect holds a piece of the puzzle, but only one is the mastermind behind the heists. Can you connect the dots before the thief vanishes into the shadows?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Florence, Italy",
-  "generated_at_utc": "2026-02-13T00:05:27Z",
-  "id": "daily_20260213",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2026-02-14T00:05:04Z",
+  "id": "daily_20260214",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.3,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Moreau is the only suspect with a bright red vehicle and a seafood preference.",
-      "Witness accounts consistently point to a female figure with red hair.",
-      "The hobby of painting aligns with the artistic community in the coastal towns.",
-      "Contradictory clues about other suspects lead to misdirection."
+      "Clara is the only suspect with red hair, matching the clue from Prague Castle.",
+      "Her vehicle, a vintage motorcycle, aligns with the clue from Naschmarkt.",
+      "Her hobby of sketching connects her to the art world, making her a plausible thief.",
+      "The motive of funding her art career explains her need for stolen art."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,69 +113,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260213",
+  "mission_id": "daily_20260214",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "8449bd9a225dd9ebf72bfb9f8470beb60515723a6e9851250ee1968db95747ee",
-  "solution": "Connect the clues about the bright red sports car and the seafood preference to identify Clara as the thief.",
+  "seed": "81767d88b235389e06b2e3cf8e1a1ce52c34ba5a5281bd162a687ec1282a9d31",
+  "solution": "Connect the clues about the vintage motorcycle and the red hair to identify Clara as the thief.",
   "suspect_database": [
     {
-      "background": "An artist known for her vibrant paintings of coastal scenes.",
-      "behavioral_pattern": "Often seen near art galleries and coastal areas.",
-      "favorite_food": "Seafood",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Painting",
-      "motive": "Desire to fund her art projects.",
-      "name": "Clara Moreau",
-      "vehicle": "Bright Red Sports Car"
-    },
-    {
-      "background": "A chef with a passion for Italian cuisine.",
-      "behavioral_pattern": "Frequent visitor to local markets.",
-      "favorite_food": "Pasta",
-      "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Cooking",
-      "motive": "Financial troubles due to a failing restaurant.",
-      "name": "Marco Rossi",
-      "vehicle": "Black Sedan"
-    },
-    {
-      "background": "A photographer capturing the essence of the Mediterranean.",
-      "behavioral_pattern": "Often found at beaches and art shows.",
-      "favorite_food": "Sushi",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "Seeking inspiration for her next project.",
-      "name": "Sophie Dubois",
-      "vehicle": "White SUV"
-    },
-    {
-      "background": "A fisherman with a deep connection to the sea.",
-      "behavioral_pattern": "Spends time at the docks and local eateries.",
-      "favorite_food": "Seafood",
+      "background": "A wealthy art dealer with a penchant for the dramatic.",
+      "favorite_food": "Schnitzel",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Fishing",
-      "motive": "Desire to support his family.",
-      "name": "Luca Bianchi",
-      "vehicle": "Blue Pickup"
+      "hobby": "Collecting rare art",
+      "motive": "Desire to control the art market.",
+      "name": "Lukas Schmidt",
+      "vehicle": "Luxury Sedan"
+    },
+    {
+      "background": "An aspiring artist with a troubled past.",
+      "favorite_food": "Goulash",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Sketching",
+      "motive": "To fund her art career.",
+      "name": "Clara Weiss",
+      "vehicle": "Vintage Motorcycle"
+    },
+    {
+      "background": "A photographer who often mingles with the elite.",
+      "favorite_food": "Pasta",
+      "gender": "Male",
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "To gain fame through scandal.",
+      "name": "Hans M\u00fcller",
+      "vehicle": "Sports Car"
+    },
+    {
+      "background": "A chef with connections to the art world.",
+      "favorite_food": "Strudel",
+      "gender": "Female",
+      "hair_color": "Black",
+      "hobby": "Cooking",
+      "motive": "To elevate her restaurant's status.",
+      "name": "Sophie Klein",
+      "vehicle": "Compact Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Seafood",
+    "favorite_food": "Goulash",
     "gender": "Female",
     "hair_color": "Red",
-    "hobby": "Painting",
-    "vehicle": "Bright Red Sports Car"
+    "hobby": "Sketching",
+    "vehicle": "Vintage Motorcycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260213.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260214.png",
+  "title": "Shadows of the Past"
 }
