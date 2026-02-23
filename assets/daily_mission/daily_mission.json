@@ -1,110 +1,110 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20260221.png",
+  "arrest_location": "Uffizi Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260223.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A person was seen admiring art while pretending to shop.",
-          "name": "Central Market",
-          "npc_dialogue": "I saw someone with a peculiar taste in fruits, but they were more interested in the art stalls.",
-          "point_value": 75
+          "clue_type": "witness_sighting",
+          "clue_value": "A tall figure with a distinctive hat.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "They say the thief was last seen near the beach, blending in with the tourists.",
+          "point_value": 80
         },
         {
-          "clue_type": "Testimony",
-          "clue_value": "A visitor inquired about the museum's security protocols.",
-          "name": "Museum of Fine Arts",
-          "npc_dialogue": "The curator mentioned a strange visitor who asked about the security system.",
-          "point_value": 90
+          "clue_type": "art_reference",
+          "clue_value": "The Red Studio.",
+          "name": "Mus\u00e9e Matisse",
+          "npc_dialogue": "I overheard someone talking about a rare painting that was supposed to be here.",
+          "point_value": 100
         },
         {
-          "clue_type": "Gossip",
-          "clue_value": "Rumors of an underground art deal were circulating.",
-          "name": "Turia Gardens",
-          "npc_dialogue": "I overheard a conversation about a rare painting being sold under the table.",
+          "clue_type": "sighting",
+          "clue_value": "Blue hair, loves seafood.",
+          "name": "Caf\u00e9 de Turin",
+          "npc_dialogue": "I saw a woman with striking blue hair enjoying oysters here last week.",
           "point_value": 60
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Barcelona",
-      "country": "Spain",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "A red-haired woman was loitering around the gallery.",
-          "name": "Gothic Quarter",
-          "npc_dialogue": "A woman with striking red hair was seen near the art gallery, acting suspiciously.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Inquiry",
-          "clue_value": "A visitor showed no interest in the art after asking about value.",
-          "name": "Picasso Museum",
-          "npc_dialogue": "Someone asked about the most valuable pieces, but left without looking at them.",
-          "point_value": 85
-        },
-        {
-          "clue_type": "Observation",
-          "clue_value": "A man with a motorcycle was seen near the art gallery.",
-          "name": "La Rambla",
-          "npc_dialogue": "I saw a man with a motorcycle parked nearby, looking at the gallery.",
+          "clue_type": "gambler_description",
+          "clue_value": "Always wears sunglasses.",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "A mysterious gambler was here, always wearing sunglasses, even at night.",
           "point_value": 70
+        },
+        {
+          "clue_type": "artifact_reference",
+          "clue_value": "A piece from the shipwreck.",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "I heard someone mention a connection to the sea and a stolen artifact.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "dining_sighting",
+          "clue_value": "Loves gourmet food.",
+          "name": "Le Louis XV",
+          "npc_dialogue": "A woman with a taste for fine dining was seen here, discussing art.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Malaga",
-      "country": "Spain",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Artist's Insight",
-          "clue_value": "An artist spoke of a buyer who vanished after a deal.",
-          "name": "Calle Larios",
-          "npc_dialogue": "A local artist mentioned a deal gone wrong involving a mysterious buyer.",
-          "point_value": 65
-        },
-        {
-          "clue_type": "Historical Reference",
-          "clue_value": "A connection to a historical thief was made.",
-          "name": "Picasso's Birthplace",
-          "npc_dialogue": "I heard someone mention a connection to a famous thief from history.",
+          "clue_type": "sketching_sighting",
+          "clue_value": "Sketching the fountain.",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "I saw a man sketching the fountain, he seemed out of place.",
           "point_value": 75
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "A woman was more interested in the gallery than her sketch.",
-          "name": "Malaga Cathedral",
-          "npc_dialogue": "A woman was sketching the cathedral, but her eyes were on the gallery.",
-          "point_value": 80
+          "clue_type": "historical_reference",
+          "clue_value": "The thief of Genoa.",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "Rumor has it that a famous thief was once caught here.",
+          "point_value": 85
+        },
+        {
+          "clue_type": "shopping_sighting",
+          "clue_value": "Unique style, loves art.",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "A woman with a unique style was seen shopping for art supplies.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Ruiz",
-  "description": "In the heart of the Mediterranean, a series of mysterious thefts have left the local art community in disarray. As whispers of betrayal echo through the narrow streets, you must navigate the tangled web of deceit to uncover the truth. Each suspect holds a piece of the puzzle, but only one is the true mastermind behind the chaos. Can you decipher the clues hidden in their words and actions before the thief slips away?",
-  "difficulty": "Medium",
+  "correct_suspect": "Clara Voss",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, your mission is to unravel the tangled web of deceit and find the mastermind behind the chaos. Each clue leads you deeper into a world where art and crime intertwine, and the truth is hidden in plain sight.",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2026-02-21T00:05:00Z",
-  "id": "daily_20260221",
+  "final_city": "Florence, Italy",
+  "generated_at_utc": "2026-02-23T00:03:58Z",
+  "id": "daily_20260223",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.1,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Ruiz is the only suspect with red hair, matching the witness accounts.",
-      "Her motorcycle aligns with the sightings near the galleries.",
-      "Her hobby of art restoration connects her to the thefts.",
-      "Other suspects have conflicting traits or motives that do not align with the clues."
+      "Clara Voss is the only suspect with blue hair, matching the witness description.",
+      "Her hobby of art collecting aligns with the thefts.",
+      "The seafood preference connects her to the caf\u00e9 sighting in Nice.",
+      "No other suspect matches all traits simultaneously."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,7 +113,7 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260221",
+  "mission_id": "daily_20260223",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
@@ -122,57 +122,57 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "941227436eeef3518914ff84a524ad16d7165968a0590e799d81010903560758",
-  "solution": "Connect Clara's red hair and motorcycle to the sightings in Valencia and Barcelona, revealing her as the mastermind behind the thefts.",
+  "seed": "c54317579693ca98897bb8c29653571689593955b1fa714dc3f478887507720d",
+  "solution": "Connect the blue hair and seafood preference of Clara Voss with the sightings in Nice and Monaco, leading to her motive of reclaiming lost art.",
   "suspect_database": [
     {
-      "background": "A passionate art restorer with a keen eye for detail.",
-      "favorite_food": "Paella",
+      "background": "A former art student with a penchant for the unusual.",
+      "favorite_food": "Seafood",
       "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Art Restoration",
-      "motive": "Desire to acquire rare pieces for personal collection.",
-      "name": "Clara Ruiz",
-      "vehicle": "Motorcycle"
+      "hair_color": "Blue",
+      "hobby": "Art collecting",
+      "motive": "Desire to reclaim lost art.",
+      "name": "Clara Voss",
+      "vehicle": "Vintage scooter"
     },
     {
-      "background": "A photographer who frequents art galleries for inspiration.",
-      "favorite_food": "Tapas",
+      "background": "A high-stakes gambler with a history of theft.",
+      "favorite_food": "Pasta",
       "gender": "Male",
+      "hair_color": "Brown",
+      "hobby": "Gambling",
+      "motive": "To fund his gambling debts.",
+      "name": "Marco Rossi",
+      "vehicle": "Luxury car"
+    },
+    {
+      "background": "An artist known for her street art.",
+      "favorite_food": "Pizza",
+      "gender": "Female",
       "hair_color": "Black",
-      "hobby": "Photography",
-      "motive": "Seeking fame through controversial art pieces.",
-      "name": "Miguel Torres",
+      "hobby": "Sketching",
+      "motive": "To gain fame through notoriety.",
+      "name": "Elena Moretti",
       "vehicle": "Bicycle"
     },
     {
-      "background": "An antique collector with a taste for the unusual.",
-      "favorite_food": "Churros",
-      "gender": "Female",
-      "hair_color": "Brown",
-      "hobby": "Collecting Antiques",
-      "motive": "Wants to sell stolen art for profit.",
-      "name": "Sofia Martinez",
-      "vehicle": "Car"
-    },
-    {
-      "background": "A street artist known for his rebellious nature.",
-      "favorite_food": "Bocadillos",
+      "background": "A photographer with a keen eye for detail.",
+      "favorite_food": "Gelato",
       "gender": "Male",
       "hair_color": "Blonde",
-      "hobby": "Street Art",
-      "motive": "Desires to make a statement through theft.",
-      "name": "Carlos Jimenez",
-      "vehicle": "Skateboard"
+      "hobby": "Photography",
+      "motive": "To capture the perfect shot of the stolen art.",
+      "name": "Luca Bianchi",
+      "vehicle": "Motorcycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Paella",
+    "favorite_food": "Seafood",
     "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Art Restoration",
-    "vehicle": "Motorcycle"
+    "hair_color": "Blue",
+    "hobby": "Art collecting",
+    "vehicle": "Vintage scooter"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260221.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260223.png",
+  "title": "Shadows of the Past"
 }
