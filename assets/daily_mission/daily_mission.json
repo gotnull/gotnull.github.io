@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Place de la Bourse",
-  "banner_image_url": "/assets/daily_mission/banner_20260224.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20260225.png",
   "cities": [
     {
-      "city_name": "San Sebasti\u00e1n",
+      "city_name": "Valencia",
       "country": "Spain",
       "locations": [
         {
-          "clue_type": "sight",
-          "clue_value": "peculiar hat",
-          "name": "La Concha Beach",
-          "npc_dialogue": "I saw someone with a peculiar hat near the water. They seemed to be watching the surfers.",
+          "clue_type": "witness_statement",
+          "clue_value": "artist resemblance",
+          "name": "Museo de Bellas Artes",
+          "npc_dialogue": "I saw someone with a striking resemblance to a famous artist lurking around here.",
           "point_value": 80
         },
         {
-          "clue_type": "overheard conversation",
-          "clue_value": "seafood dish",
-          "name": "Old Town Market",
-          "npc_dialogue": "The thief loves seafood, or so the rumors say. I overheard them talking about a special dish.",
-          "point_value": 70
+          "clue_type": "local_hobby",
+          "clue_value": "paella lover",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "They say the thief has a taste for paella, but who doesn't in this city?",
+          "point_value": 60
         },
         {
-          "clue_type": "sight",
-          "clue_value": "striking hair",
-          "name": "Miramar Palace",
-          "npc_dialogue": "I noticed a figure with striking hair leaving the palace just before the thefts began.",
-          "point_value": 90
+          "clue_type": "overheard_conversation",
+          "clue_value": "rare painting",
+          "name": "Central Market",
+          "npc_dialogue": "I overheard someone talking about a rare painting they wanted to sell.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Bilbao",
-      "country": "Spain",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "sight",
-          "clue_value": "sketching",
-          "name": "Guggenheim Museum",
-          "npc_dialogue": "A person with a love for art was seen near the museum, sketching the building.",
-          "point_value": 60
+          "clue_type": "sighting",
+          "clue_value": "large canvas",
+          "name": "Vieux Port",
+          "npc_dialogue": "A mysterious figure was seen leaving the docks with a large canvas.",
+          "point_value": 90
         },
         {
-          "clue_type": "overheard conversation",
-          "clue_value": "favorite fish dish",
-          "name": "Ribera Market",
-          "npc_dialogue": "I heard someone mention a favorite dish that involves fish. It caught my attention.",
-          "point_value": 75
+          "clue_type": "local_hobby",
+          "clue_value": "seafood lover",
+          "name": "Le Panier",
+          "npc_dialogue": "I heard they prefer seafood over anything else. Quite the culinary choice!",
+          "point_value": 70
         },
         {
-          "clue_type": "sight",
-          "clue_value": "flashy vehicle",
-          "name": "Casco Viejo",
-          "npc_dialogue": "There was a commotion when a person with a flashy vehicle sped through the streets.",
-          "point_value": 85
+          "clue_type": "art_preference",
+          "clue_value": "modern art",
+          "name": "Mus\u00e9e des Civilisations",
+          "npc_dialogue": "The thief is said to have a penchant for modern art.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Pamplona",
-      "country": "Spain",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "sight",
-          "clue_value": "unique hairstyle",
-          "name": "Plaza del Castillo",
-          "npc_dialogue": "I saw someone with a unique hairstyle enjoying a drink at the caf\u00e9.",
-          "point_value": 70
+          "clue_type": "witness_statement",
+          "clue_value": "tall figure",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "I saw a tall figure with a unique hairstyle admiring the paintings here.",
+          "point_value": 85
         },
         {
-          "clue_type": "behavior",
-          "clue_value": "interested in the exit",
-          "name": "Navarre Museum",
-          "npc_dialogue": "A person was admiring the exhibits, but they seemed more interested in the exit.",
+          "clue_type": "local_hobby",
+          "clue_value": "gelato lover",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "They say the thief has a favorite gelato flavor, but I can't recall which one.",
           "point_value": 65
         },
         {
-          "clue_type": "overheard conversation",
-          "clue_value": "favorite dessert",
-          "name": "Estafeta Street",
-          "npc_dialogue": "I overheard someone talking about their love for a specific type of dessert.",
-          "point_value": 80
+          "clue_type": "overheard_conversation",
+          "clue_value": "secret auction",
+          "name": "Porto Antico",
+          "npc_dialogue": "I overheard a conversation about a secret auction happening soon.",
+          "point_value": 110
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Voss",
-  "description": "A series of mysterious thefts have left the coastal town of San Sebasti\u00e1n in turmoil. As the sun sets, shadows dance along the promenade, and whispers of a notorious thief echo through the streets. Your mission is to uncover the identity of the elusive suspect before they vanish into the night. Follow the trail through vibrant markets and hidden alcoves, but beware of the misdirections that may lead you astray.",
+  "correct_suspect": "Luca Romano",
+  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, your mission is to unravel the tangled web of deceit and find the mastermind behind the chaos. Each clue leads you deeper into a world where art and betrayal intertwine, and only the keenest observer can discern the truth from the lies.",
   "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Bordeaux, France",
-  "generated_at_utc": "2026-02-24T00:04:31Z",
-  "id": "daily_20260224",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2026-02-25T00:05:20Z",
+  "id": "daily_20260225",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,11 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. Clara Voss is the only suspect with red hair and a hobby of sketching.",
-      "2. The clues about seafood and the unique hairstyle point directly to her.",
-      "3. Other suspects have conflicting traits that do not match all clues.",
-      "4. The final city of Bordeaux is plausible given the chase route."
+      "1. Witness statements in Genoa describe a tall figure with black hair.",
+      "2. The suspect's favorite food aligns with the seafood references in Marseille.",
+      "3. The hobby of painting matches the art-related clues across cities.",
+      "4. The vehicle type (motorcycle) is consistent with a quick escape route.",
+      "5. No other suspect matches all these traits simultaneously."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,66 +114,61 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260224",
-  "poster_image_url": "",
+  "mission_id": "daily_20260225",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "7e1805cea37dc7395e160a7fe05e0dd06677df9e4c2c652cd848c3f8b2a254cb",
-  "solution": "Connect the clues about the striking hair and seafood preference to Clara Voss, who was seen sketching and has a sportscar.",
+  "seed": "59eaa3fff69c4776d41c5300e7c6bef5d3b5de47ded4ee48a4624f45df0b08fe",
+  "solution": "Connect the clues about the tall figure with black hair and the preference for seafood to Luca Romano, who was seen admiring modern art.",
   "suspect_database": [
     {
-      "background": "An art student with a penchant for the dramatic.",
-      "favorite_food": "Seafood paella",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Sketching",
-      "motive": "Desire for attention and thrill.",
-      "name": "Clara Voss",
-      "vehicle": "Sportscar"
-    },
-    {
-      "background": "A local surfer known for his laid-back attitude.",
-      "favorite_food": "Tacos",
+      "background": "An art student with a troubled past, known for his obsession with modern art.",
+      "favorite_food": "Seafood",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Surfing",
-      "motive": "Financial struggles.",
-      "name": "Marco Ruiz",
-      "vehicle": "Motorbike"
+      "hobby": "Painting",
+      "name": "Luca Romano",
+      "vehicle": "Motorcycle"
     },
     {
-      "background": "A chef with a love for culinary arts.",
-      "favorite_food": "Pasta",
+      "background": "A chef with a flair for the dramatic, often seen at art galleries.",
+      "favorite_food": "Paella",
       "gender": "Female",
       "hair_color": "Blonde",
       "hobby": "Cooking",
-      "motive": "Competition in the culinary scene.",
-      "name": "Sofia Martinez",
+      "name": "Clara Voss",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A photographer who travels frequently.",
-      "favorite_food": "Sushi",
+      "background": "A wealthy collector with a taste for rare art pieces.",
+      "favorite_food": "Gelato",
       "gender": "Male",
       "hair_color": "Brown",
+      "hobby": "Sailing",
+      "name": "Marco Bellini",
+      "vehicle": "Yacht"
+    },
+    {
+      "background": "A photographer who captures the essence of art, often mingling with artists.",
+      "favorite_food": "Pasta",
+      "gender": "Female",
+      "hair_color": "Red",
       "hobby": "Photography",
-      "motive": "Seeking inspiration for his work.",
-      "name": "Javier Torres",
-      "vehicle": "Van"
+      "name": "Sofia Ricci",
+      "vehicle": "Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Seafood paella",
-    "gender": "Female",
-    "hair_color": "Red",
-    "hobby": "Sketching",
-    "vehicle": "Sportscar"
+    "favorite_food": "Seafood",
+    "gender": "Male",
+    "hair_color": "Black",
+    "hobby": "Painting",
+    "vehicle": "Motorcycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260224.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260225.png",
+  "title": "Echoes of the Past"
 }
