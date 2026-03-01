@@ -1,110 +1,109 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260228.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260301.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "Red scarf",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone with a red scarf lurking around here. They seemed out of place.",
+          "clue_type": "art_piece",
+          "clue_value": "A missing painting of a historical figure",
+          "name": "Kunsthistorisches Museum",
+          "npc_dialogue": "The curator mentioned a peculiar visitor last week, someone with a keen eye for detail.",
+          "point_value": 100
+        },
+        {
+          "clue_type": "sketch",
+          "clue_value": "A drawing of a man in a hat",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "I saw a woman sketching the gardens, but she seemed distracted, as if she was waiting for someone.",
           "point_value": 80
         },
         {
-          "clue_type": "Behavioral Observation",
-          "clue_value": "Sketching",
-          "name": "Old Town",
-          "npc_dialogue": "The artist down the street has been acting strange lately. Always sketching the same spot.",
+          "clue_type": "food_item",
+          "clue_value": "Truffle oil from a secret supplier",
+          "name": "Naschmarkt",
+          "npc_dialogue": "I overheard a conversation about a rare food item that only a true connoisseur would know.",
           "point_value": 60
-        },
-        {
-          "clue_type": "Eavesdropping",
-          "clue_value": "Hidden stash",
-          "name": "Castle Hill",
-          "npc_dialogue": "I overheard a conversation about a hidden stash. Something about a 'treasure' in the hills.",
-          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "Eyewitness Report",
-          "clue_value": "Blue eyes",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "A woman with striking blue eyes was seen leaving with a large bag. She seemed nervous.",
+          "clue_type": "suspect_description",
+          "clue_value": "Tall, with a distinctive scar",
+          "name": "Hungarian National Gallery",
+          "npc_dialogue": "A man in a dark coat was asking about the same painting that was stolen in Vienna.",
           "point_value": 90
         },
         {
-          "clue_type": "Artistic Behavior",
-          "clue_value": "Peculiar sketching",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "I noticed someone sketching the exhibits. They had a peculiar way of drawing.",
+          "clue_type": "relationship",
+          "clue_value": "A lover's quarrel over stolen art",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "I saw a couple arguing about art thefts; the woman seemed particularly agitated.",
           "point_value": 70
         },
         {
-          "clue_type": "Rumor",
-          "clue_value": "Treasure",
-          "name": "Prince's Palace",
-          "npc_dialogue": "There was a commotion earlier. Someone mentioned a 'red scarf' and a 'treasure'.",
+          "clue_type": "auction_info",
+          "clue_value": "An exclusive event for high-profile collectors",
+          "name": "Great Market Hall",
+          "npc_dialogue": "There was a rumor about a secret auction happening soon, but only for the elite.",
           "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "Conflict Observation",
-          "clue_value": "Argument",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "I saw a man with a red scarf arguing with a woman. They seemed to be in a hurry.",
+          "clue_type": "canvas",
+          "clue_value": "A large, unmarked painting",
+          "name": "Prague Castle",
+          "npc_dialogue": "A woman was seen leaving with a large canvas, but no one stopped her.",
+          "point_value": 110
+        },
+        {
+          "clue_type": "meeting_info",
+          "clue_value": "A rendezvous at Caf\u00e9 Louvre",
+          "name": "Charles Bridge",
+          "npc_dialogue": "I heard someone mention a secret meeting at a caf\u00e9 nearby, but I couldn't catch the name.",
           "point_value": 75
         },
         {
-          "clue_type": "Artistic Focus",
-          "clue_value": "Focused sketching",
-          "name": "La Croisette",
-          "npc_dialogue": "A local artist was seen sketching the beach. They were very focused.",
-          "point_value": 85
-        },
-        {
-          "clue_type": "Eavesdropping",
-          "clue_value": "Hills",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "I overheard someone talking about a hidden stash. They mentioned 'the hills' again.",
-          "point_value": 95
+          "clue_type": "identity",
+          "clue_value": "A performer mimicking a renowned painter",
+          "name": "Old Town Square",
+          "npc_dialogue": "There was a street performer who looked suspiciously like a famous artist.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Elena Rossi",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets, shadows dance along the promenade, hinting at secrets hidden in plain sight. Your task is to unravel the threads of deception and identify the mastermind behind these crimes before they slip away into the night.",
-  "difficulty": "Medium",
+  "correct_suspect": "Clara Weiss",
+  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. The stolen pieces are rumored to hold secrets of a bygone era, and whispers of betrayal echo through the galleries. As you delve into the world of art and deception, you must navigate through a web of lies to uncover the true thief before they vanish into the night.",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-02-28T00:02:59Z",
-  "id": "daily_20260228",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2026-03-01T00:02:20Z",
+  "id": "daily_20260301",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.3,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Witness accounts consistently mention a red scarf, linking to Elena.",
-      "Sketching behavior aligns with Elena's hobby, while others have different hobbies.",
-      "The motive of funding art projects fits the context of thefts.",
-      "Behavioral patterns show Elena's presence in art-related areas."
+      "Clara Weiss is the only suspect with a hobby of sketching, which aligns with the clues about the sketch at Belvedere Palace.",
+      "Her favorite food, truffle pasta, connects to the clue about the rare food item at Naschmarkt.",
+      "The other suspects have hobbies and traits that do not align with the clues provided."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,70 +112,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260228",
+  "mission_id": "daily_20260301",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Artful Detective",
-    "credits_earned": 200,
-    "experience_points": 150,
+    "badge_name": "Art Sleuth",
+    "credits_earned": 150,
+    "experience_points": 300,
     "unlocked_regions": []
   },
-  "seed": "dda109b2f0301891236821d5a17b4483c4833bd6f83726eaeed35992a3baad9e",
-  "solution": "Connect the clues about the red scarf and the peculiar sketching to identify Elena Rossi as the mastermind behind the thefts.",
+  "seed": "aa8e80fcc1f9a3e407e5d570e9891867c1cf3c76102fadabcfa3a0aa71715725",
+  "solution": "Connect the clues about the sketching at Belvedere Palace and the truffle oil to identify Clara Weiss as the mastermind behind the thefts.",
   "suspect_database": [
     {
-      "background": "An artist known for her vibrant sketches of coastal landscapes.",
-      "behavioral_pattern": "Often seen near art galleries and cafes.",
-      "favorite_food": "Pasta",
+      "background": "An art student with a passion for historical pieces.",
+      "favorite_food": "Truffle pasta",
       "gender": "Female",
-      "hair_color": "Brown",
+      "hair_color": "Blonde",
       "hobby": "Sketching",
-      "motive": "Desire to fund her art projects.",
-      "name": "Elena Rossi",
+      "motive": "Desire to reclaim her family's lost art.",
+      "name": "Clara Weiss",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A collector with a penchant for rare items.",
-      "behavioral_pattern": "Frequent visitor to auctions.",
-      "favorite_food": "Pizza",
+      "background": "A food critic with connections to the art world.",
+      "favorite_food": "Sushi",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Collecting antiques",
-      "motive": "Financial troubles.",
-      "name": "Marco Bellini",
+      "hair_color": "Brown",
+      "hobby": "Collecting rare foods",
+      "motive": "To fund his culinary ventures.",
+      "name": "Lukas Novak",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "A photographer who captures the essence of the Mediterranean.",
-      "behavioral_pattern": "Often seen at high-profile events.",
-      "favorite_food": "Seafood",
-      "gender": "Female",
-      "hair_color": "Blonde",
+      "background": "A photographer who captures art events.",
+      "favorite_food": "Goulash",
+      "gender": "Male",
+      "hair_color": "Black",
       "hobby": "Photography",
-      "motive": "To gain fame and recognition.",
-      "name": "Sofia Moretti",
+      "motive": "To gain fame through scandal.",
+      "name": "Marek Dvorak",
       "vehicle": "Car"
     },
     {
-      "background": "A surfer with a laid-back attitude.",
-      "behavioral_pattern": "Spends time at the beach.",
-      "favorite_food": "Sushi",
-      "gender": "Male",
+      "background": "An artist known for her controversial works.",
+      "favorite_food": "Pasta",
+      "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Surfing",
-      "motive": "Adventure and thrill-seeking.",
-      "name": "Luca Ferraro",
-      "vehicle": "Van"
+      "hobby": "Painting",
+      "motive": "To create a buzz around her art.",
+      "name": "Eva Horak",
+      "vehicle": "None"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Pasta",
+    "favorite_food": "Truffle pasta",
     "gender": "Female",
-    "hair_color": "Brown",
+    "hair_color": "Blonde",
     "hobby": "Sketching",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260228.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260301.png",
+  "title": "Shadows of the Past"
 }
