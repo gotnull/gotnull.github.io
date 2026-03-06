@@ -1,99 +1,99 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20260305.png",
+  "arrest_location": "La Rambla",
+  "banner_image_url": "/assets/daily_mission/banner_20260306.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "red beret",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw someone with a striking red beret lingering near the sculptures.",
+          "clue_type": "Observation",
+          "clue_value": "A figure in a blue scarf was seen near the beach.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "The sea breeze carries secrets, but only the wise can hear them.",
           "point_value": 80
         },
         {
-          "clue_type": "cultural",
-          "clue_value": "paella",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "They say the thief has a taste for paella, but who doesn't in this city?",
-          "point_value": 60
+          "clue_type": "Art",
+          "clue_value": "A painting of a sunset was left behind, signed by 'L. Moreau'.",
+          "name": "Old Town",
+          "npc_dialogue": "They say the artist's brush can reveal the truth hidden in shadows.",
+          "point_value": 100
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "vintage car",
-          "name": "Central Market",
-          "npc_dialogue": "I overheard a conversation about a vintage car parked outside.",
-          "point_value": 70
+          "clue_type": "Witness",
+          "clue_value": "A witness claims to have seen a woman with red hair fleeing.",
+          "name": "Castle Hill",
+          "npc_dialogue": "From up here, you can see everything, but can you see the thief?",
+          "point_value": 60
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Florence",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "painting",
-          "name": "Vieux Port",
-          "npc_dialogue": "A woman with a penchant for painting was seen near the docks.",
-          "point_value": 75
+          "clue_type": "Heard",
+          "clue_value": "A local mentioned a thief who loves fine jewelry.",
+          "name": "Ponte Vecchio",
+          "npc_dialogue": "The bridge holds many stories, but some are better left untold.",
+          "point_value": 90
         },
         {
-          "clue_type": "cultural",
-          "clue_value": "bouillabaisse",
-          "name": "Le Panier",
-          "npc_dialogue": "I heard she loves bouillabaisse, but who can resist a good meal?",
-          "point_value": 65
+          "clue_type": "Art",
+          "clue_value": "A stolen piece was rumored to be hidden among the exhibits.",
+          "name": "Uffizi Gallery",
+          "npc_dialogue": "Art is a reflection of the soul; perhaps the thief's soul is revealed here.",
+          "point_value": 120
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "stolen art",
-          "name": "Palais des Congr\u00e8s",
-          "npc_dialogue": "There was a commotion about a stolen piece of art during the exhibition.",
-          "point_value": 85
+          "clue_type": "Gossip",
+          "clue_value": "A woman was seen arguing with a merchant about a missing necklace.",
+          "name": "Piazza della Signoria",
+          "npc_dialogue": "In the heart of the city, secrets are exchanged like currency.",
+          "point_value": 70
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "blue scarf",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "I saw a man with a blue scarf leaving the gallery in a hurry.",
-          "point_value": 90
+          "clue_type": "Transaction",
+          "clue_value": "A suspicious transaction involving a red scarf was noted.",
+          "name": "Central Market",
+          "npc_dialogue": "Fresh produce, but beware of the rotten deals lurking in the shadows.",
+          "point_value": 85
         },
         {
-          "clue_type": "cultural",
-          "clue_value": "gelato",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "They say the thief has a sweet tooth for gelato.",
-          "point_value": 50
+          "clue_type": "Observation",
+          "clue_value": "A woman with a blue scarf was seen leaving the area quickly.",
+          "name": "City of Arts and Sciences",
+          "npc_dialogue": "Innovation and deception often walk hand in hand.",
+          "point_value": 95
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "vintage car",
-          "name": "Porto Antico",
-          "npc_dialogue": "A vintage car was parked near the waterfront, but it was gone before I could take a closer look.",
-          "point_value": 80
+          "clue_type": "Witness",
+          "clue_value": "A jogger reported seeing a woman with red hair near the fountain.",
+          "name": "Turia Gardens",
+          "npc_dialogue": "Nature hides many truths; listen closely to the rustling leaves.",
+          "point_value": 75
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Dubois",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of a notorious thief resurface, you must navigate through the vibrant streets of three cities, piecing together clues hidden in the art world. Each suspect presents a fa\u00e7ade, but only one holds the key to unraveling this mystery. Can you discern the truth from the shadows?",
-  "difficulty": "Hard",
+  "correct_suspect": "Lucie Moreau",
+  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the truth hides behind the whispers of the wind. Your task is to uncover the identity of the thief before they vanish into the night. Follow the trail through the vibrant streets of Nice, the artistic alleys of Florence, and the bustling markets of Valencia, piecing together clues that reveal more than just a simple crime.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2026-03-05T00:04:21Z",
-  "id": "daily_20260305",
+  "final_city": "Barcelona, Spain",
+  "generated_at_utc": "2026-03-06T00:09:38Z",
+  "id": "daily_20260306",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
@@ -101,10 +101,10 @@
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara is the only suspect with a blonde hair color and a hobby of painting.",
-      "The vintage car clue aligns with Clara's vehicle choice.",
-      "The favorite food of bouillabaisse matches Clara's dialogue hints.",
-      "Other suspects have conflicting traits or hobbies that do not align with the clues."
+      "1. The red-haired woman is consistently mentioned across multiple cities.",
+      "2. Lucie's hobby of painting aligns with the artistic clues found.",
+      "3. The blue scarf connects her to the sightings in both Nice and Valencia.",
+      "4. The motive of seeking recognition fits the theft of valuable art."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,66 +113,66 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260305",
+  "mission_id": "daily_20260306",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "edcc3518ffd29982b6603a60f2adfcc18c4e1aee1551c29787451455a0f339fc",
-  "solution": "Connect the clues about the vintage car, bouillabaisse, and the painting hobby to identify Clara as the thief.",
+  "seed": "05bf270bd79b969d12c46c373e913c771402f160e74ba8026f85533a67190fcc",
+  "solution": "Connect the clues about the red-haired woman seen fleeing, the painting left behind, and the suspicious transactions to identify Lucie as the thief.",
   "suspect_database": [
     {
-      "background": "An art student with a flair for the dramatic, Clara has been known to frequent galleries.",
-      "favorite_food": "Bouillabaisse",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Painting",
-      "motive": "Desire for recognition in the art world.",
-      "name": "Clara Dubois",
-      "vehicle": "Vintage Car"
-    },
-    {
-      "background": "A chef with a passion for culinary arts, Marco has connections in the local food scene.",
+      "background": "An artist known for her vibrant landscapes, she has a penchant for the dramatic.",
       "favorite_food": "Paella",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Cooking",
-      "motive": "Financial troubles led him to desperate measures.",
-      "name": "Marco Rossi",
-      "vehicle": "Motorcycle"
-    },
-    {
-      "background": "A photographer who captures the essence of street life, Sophie is often seen at art events.",
-      "favorite_food": "Gelato",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Photography",
-      "motive": "Seeking inspiration for her next project.",
-      "name": "Sophie Martin",
+      "hobby": "Painting",
+      "motive": "Desire for recognition in the art world.",
+      "name": "Lucie Moreau",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A wealthy collector with a keen eye for valuable pieces, Julien is known for his charm.",
-      "favorite_food": "Ratatouille",
+      "background": "A chef with a flair for the culinary arts, often seen in local markets.",
+      "favorite_food": "Pizza",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Collecting Art",
-      "motive": "To acquire rare art pieces for his collection.",
-      "name": "Julien Lefevre",
-      "vehicle": "Luxury Sedan"
+      "hobby": "Cooking",
+      "motive": "Financial troubles led him to desperate measures.",
+      "name": "Marco Rossi",
+      "vehicle": "Scooter"
+    },
+    {
+      "background": "A dancer with a mysterious past, known for her charm.",
+      "favorite_food": "Tacos",
+      "gender": "Female",
+      "hair_color": "Brown",
+      "hobby": "Dancing",
+      "motive": "Seeking thrill and excitement.",
+      "name": "Sofia Garcia",
+      "vehicle": "Car"
+    },
+    {
+      "background": "A photographer who captures the beauty of life, but struggles with debts.",
+      "favorite_food": "Croissants",
+      "gender": "Male",
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "To pay off his mounting bills.",
+      "name": "Julien Dupont",
+      "vehicle": "Motorcycle"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Bouillabaisse",
+    "favorite_food": "Paella",
     "gender": "Female",
-    "hair_color": "Blonde",
+    "hair_color": "Red",
     "hobby": "Painting",
-    "vehicle": "Vintage Car"
+    "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260305.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260306.png",
+  "title": "Whispers in the Wind"
 }
