@@ -1,118 +1,118 @@
 {
-  "arrest_location": "Slovak National Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20260307.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20260308.png",
   "cities": [
     {
-      "city_name": "Vienna",
-      "country": "Austria",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
           "clue_type": "Witness Account",
-          "clue_value": "Dark coat",
-          "name": "Kunsthistorisches Museum",
-          "npc_dialogue": "I saw a figure in a dark coat lingering near the paintings. They seemed too interested in the details.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "Overheard Conversation",
-          "clue_value": "Hidden stash",
-          "name": "Belvedere Palace",
-          "npc_dialogue": "The gardens are beautiful, but I overheard someone talking about a hidden stash of art.",
+          "clue_value": "tall figure with a red scarf",
+          "name": "Central Market",
+          "npc_dialogue": "I saw a tall figure with a striking red scarf lurking around the stalls.",
           "point_value": 60
         },
         {
-          "clue_type": "Suspicious Behavior",
-          "clue_value": "Nervous woman",
-          "name": "Naschmarkt",
-          "npc_dialogue": "I noticed a woman buying unusual art supplies. She seemed nervous, like she was hiding something.",
+          "clue_type": "Missing Item",
+          "clue_value": "peculiar painting",
+          "name": "Museum of Fine Arts",
+          "npc_dialogue": "The curator mentioned a peculiar painting that was missing, last seen during a gala.",
+          "point_value": 80
+        },
+        {
+          "clue_type": "Eavesdropping",
+          "clue_value": "secret meeting at the cathedral",
+          "name": "Plaza de la Virgen",
+          "npc_dialogue": "I overheard someone talking about a secret meeting at the old cathedral.",
           "point_value": 70
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Budapest",
-      "country": "Hungary",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Sketch Artist",
-          "clue_value": "Peculiar hat",
-          "name": "Fisherman's Bastion",
-          "npc_dialogue": "A man with a peculiar hat was sketching the view. He left abruptly when I mentioned the thefts.",
-          "point_value": 75
+          "clue_type": "Witness Account",
+          "clue_value": "woman in a blue dress",
+          "name": "Old Port",
+          "npc_dialogue": "A woman in a blue dress was seen arguing with a man near the boats.",
+          "point_value": 50
         },
         {
-          "clue_type": "Argument",
-          "clue_value": "Passionate woman",
-          "name": "Heroes' Square",
-          "npc_dialogue": "I saw a couple arguing about a painting. The woman seemed very passionate about it.",
+          "clue_type": "Event Reference",
+          "clue_value": "gala with artists",
+          "name": "Palais des Congr\u00e8s",
+          "npc_dialogue": "There was a gala here last week; many artists were present.",
+          "point_value": 90
+        },
+        {
+          "clue_type": "Suspicious Activity",
+          "clue_value": "sketching in the square",
+          "name": "Le Panier",
+          "npc_dialogue": "I noticed a suspicious character sketching in the square, but I couldn't see their face.",
           "point_value": 65
-        },
-        {
-          "clue_type": "Vendor Tip",
-          "clue_value": "Secretive buyer",
-          "name": "Central Market Hall",
-          "npc_dialogue": "There was a vendor selling art replicas. He mentioned a buyer who was very secretive.",
-          "point_value": 85
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Prague",
-      "country": "Czech Republic",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Sketch Artist",
-          "clue_value": "Unique style",
-          "name": "Charles Bridge",
-          "npc_dialogue": "I saw a woman sketching the bridge. She had a unique style, very reminiscent of the stolen pieces.",
-          "point_value": 90
+          "clue_type": "Rumor",
+          "clue_value": "hidden stash in the lighthouse",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "I heard someone mention a hidden stash of art in the old lighthouse.",
+          "point_value": 75
         },
         {
-          "clue_type": "Street Performer",
-          "clue_value": "Secret meeting",
-          "name": "Old Town Square",
-          "npc_dialogue": "A street performer mentioned a secret meeting about art. He seemed to know more than he let on.",
-          "point_value": 50
+          "clue_type": "Security Report",
+          "clue_value": "man with a distinctive hat",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "The security guard saw a man with a distinctive hat leaving in a hurry.",
+          "point_value": 85
         },
         {
-          "clue_type": "Guard Tip",
-          "clue_value": "Late night delivery",
-          "name": "Prague Castle",
-          "npc_dialogue": "I overheard a guard talking about a suspicious delivery to a gallery. It was very late at night.",
-          "point_value": 100
+          "clue_type": "Artist Insight",
+          "clue_value": "rival acting strangely",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "A local artist mentioned a rival who has been acting strangely lately.",
+          "point_value": 60
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Elena Novak",
-  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. The stolen pieces are rumored to hold secrets of a hidden treasure. As you delve deeper, you uncover a web of deceit, where every suspect has a motive, but only one holds the key to the truth. Can you connect the dots before the thief vanishes into the shadows?",
-  "difficulty": "Hard",
-  "estimated_playtime_minutes": 60,
-  "final_city": "Bratislava, Slovakia",
-  "generated_at_utc": "2026-03-07T00:03:32Z",
-  "id": "daily_20260307",
+  "correct_suspect": "Lucia Rossi",
+  "description": "In the heart of the Mediterranean, a series of mysterious thefts have left the local art community in disarray. As whispers of betrayal echo through the narrow streets, you must navigate through a web of deceit to uncover the truth. Each suspect carries a piece of the puzzle, but only one holds the key to solving this intricate case.",
+  "difficulty": "Medium",
+  "estimated_playtime_minutes": 55,
+  "final_city": "Nice, France",
+  "generated_at_utc": "2026-03-08T00:02:51Z",
+  "id": "daily_20260308",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
+      "plausibility_overlap": 0.4,
       "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "1. The dark coat is a recurring theme linked to Elena's presence.",
-      "2. The nervous behavior at the market aligns with her emotional state regarding her family's art.",
-      "3. The unique style of the sketch artist matches the stolen pieces, hinting at Elena's involvement."
+      "1. The red scarf clue points to a tall figure, which matches Lucia's artistic persona.",
+      "2. The peculiar painting is linked to the gala, where Lucia was present.",
+      "3. The hidden stash rumor aligns with her motive for recognition in the art world."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.95,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260307",
+  "mission_id": "daily_20260308",
   "poster_image_url": "",
   "region": "Europe",
   "rewards": {
@@ -121,57 +121,57 @@
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "69a51782db3ce0bdaf2dd27c8af657dc35757a886b56556cf0c6fe9c9a69cb02",
-  "solution": "Connect the clues about the dark coat seen at the museum, the nervous woman at the market, and the unique style of the sketch artist to identify Elena as the true suspect.",
+  "seed": "000441aabc27c331b429957c0f3f7c40854acfb73410f5f06af23d46583dccb8",
+  "solution": "Connect the clues about the red scarf, the peculiar painting, and the hidden stash to identify Lucia as the artist seeking recognition.",
   "suspect_database": [
     {
-      "background": "An aspiring artist with a troubled past, known for her intense passion for art.",
-      "favorite_food": "Goulash",
+      "background": "An emerging artist with a passion for the old masters.",
+      "favorite_food": "Pasta",
       "gender": "Female",
       "hair_color": "Brown",
       "hobby": "Painting",
-      "motive": "Desire to reclaim her family's lost art pieces.",
-      "name": "Elena Novak",
+      "motive": "Desire to gain recognition in the art world.",
+      "name": "Lucia Rossi",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A collector with a reputation for being secretive about his acquisitions.",
-      "favorite_food": "Schnitzel",
+      "background": "A seasoned sailor with connections to the art community.",
+      "favorite_food": "Seafood",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Collecting antiques",
-      "motive": "To sell stolen art for profit.",
-      "name": "Marek Kral",
-      "vehicle": "Motorcycle"
+      "hobby": "Sailing",
+      "motive": "Financial troubles leading to desperate measures.",
+      "name": "Marco Bellini",
+      "vehicle": "Motorboat"
     },
     {
-      "background": "A street artist who often mingles with the elite, seeking inspiration.",
-      "favorite_food": "Pasta",
-      "gender": "Male",
-      "hair_color": "Blonde",
-      "hobby": "Sketching",
-      "motive": "To gain fame through controversial art.",
-      "name": "Tomas Havel",
-      "vehicle": "Car"
-    },
-    {
-      "background": "A photographer with a keen eye for detail, often seen at art events.",
-      "favorite_food": "Sushi",
+      "background": "A photographer known for her striking portraits of artists.",
+      "favorite_food": "Pizza",
       "gender": "Female",
-      "hair_color": "Red",
+      "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "To expose the art world\u2019s secrets.",
-      "name": "Sofia Petrov",
+      "motive": "Jealousy over a rival's success.",
+      "name": "Elena Moretti",
       "vehicle": "Scooter"
+    },
+    {
+      "background": "An antique dealer with a keen eye for valuable items.",
+      "favorite_food": "Risotto",
+      "gender": "Male",
+      "hair_color": "Gray",
+      "hobby": "Collecting antiques",
+      "motive": "A chance to acquire rare art pieces.",
+      "name": "Giovanni Conti",
+      "vehicle": "Classic Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Goulash",
+    "favorite_food": "Pasta",
     "gender": "Female",
     "hair_color": "Brown",
     "hobby": "Painting",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260307.png",
-  "title": "Echoes of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260308.png",
+  "title": "Whispers in the Wind"
 }
