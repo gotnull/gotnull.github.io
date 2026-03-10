@@ -1,31 +1,31 @@
 {
   "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260309.png",
+  "banner_image_url": "/assets/daily_mission/banner_20260310.png",
   "cities": [
     {
       "city_name": "Nice",
       "country": "France",
       "locations": [
         {
-          "clue_type": "message",
-          "clue_value": "The waves whisper of a hidden treasure.",
+          "clue_type": "Witness Account",
+          "clue_value": "Saw a figure in a red jacket near the water.",
           "name": "Promenade des Anglais",
-          "npc_dialogue": "They say the sea holds many secrets, just like the thief who vanished into thin air.",
+          "npc_dialogue": "The sea whispers secrets, but only to those who listen closely.",
           "point_value": 80
         },
         {
-          "clue_type": "painting",
-          "clue_value": "A painting with a missing corner.",
-          "name": "Mus\u00e9e Matisse",
-          "npc_dialogue": "Art is a reflection of the soul, but some souls are darker than others.",
-          "point_value": 100
+          "clue_type": "Local Gossip",
+          "clue_value": "Heard rumors of a painter who vanished.",
+          "name": "Old Town",
+          "npc_dialogue": "In the market, everyone knows everyone, but not all stories are true.",
+          "point_value": 60
         },
         {
-          "clue_type": "sight",
-          "clue_value": "A view obscured by shadows.",
+          "clue_type": "Hidden Note",
+          "clue_value": "A note mentioning 'the last brushstroke' was found.",
           "name": "Castle Hill",
-          "npc_dialogue": "From up here, you can see everything... except the truth.",
-          "point_value": 60
+          "npc_dialogue": "From up here, you can see everything, but the truth is often hidden.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
@@ -35,156 +35,153 @@
       "country": "Monaco",
       "locations": [
         {
-          "clue_type": "bet",
-          "clue_value": "A high-stakes game with a low chance of winning.",
+          "clue_type": "Security Footage",
+          "clue_value": "A person matching the description was seen entering.",
           "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle friend, much like the thief who played his cards right.",
+          "npc_dialogue": "Luck is a fickle friend; sometimes it leads to fortune, sometimes to folly.",
           "point_value": 90
         },
         {
-          "clue_type": "exhibit",
-          "clue_value": "An exhibit on the art of deception.",
+          "clue_type": "Visitor Log",
+          "clue_value": "A visitor with a red jacket signed in.",
           "name": "Oceanographic Museum",
-          "npc_dialogue": "The ocean hides many things, but the thief is not one of them.",
+          "npc_dialogue": "The ocean holds many mysteries, just like the people who visit.",
           "point_value": 70
         },
         {
-          "clue_type": "history",
-          "clue_value": "A tale of betrayal and art theft.",
-          "name": "Prince's Palace",
-          "npc_dialogue": "Royalty has its secrets, but so does the underworld.",
+          "clue_type": "Flower Arrangement",
+          "clue_value": "A bouquet left behind with a note saying 'for the artist'.",
+          "name": "Exotic Garden",
+          "npc_dialogue": "Nature can be deceptive; beauty often hides danger.",
           "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Turin",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "film",
-          "clue_value": "A film about a thief who got away.",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "Every film has a story, but some stories are better left untold.",
+          "clue_type": "Street Artist",
+          "clue_value": "A street artist mentioned a 'red jacket' in their latest piece.",
+          "name": "Piazza Castello",
+          "npc_dialogue": "Every corner has a story, but not all are worth telling.",
           "point_value": 75
         },
         {
-          "clue_type": "celebrity",
-          "clue_value": "A celebrity with a hidden past.",
-          "name": "La Croisette",
-          "npc_dialogue": "The stars shine bright, but shadows linger in their wake.",
+          "clue_type": "Visitor Interaction",
+          "clue_value": "A visitor in a red jacket was seen sketching.",
+          "name": "Mole Antonelliana",
+          "npc_dialogue": "From the top, you can see the truth, but it takes effort to climb.",
           "point_value": 85
         },
         {
-          "clue_type": "transaction",
-          "clue_value": "A suspicious sale of stolen art.",
-          "name": "Cannes Market",
-          "npc_dialogue": "In the market of life, some deals are too good to be true.",
-          "point_value": 65
+          "clue_type": "Artifact Description",
+          "clue_value": "An artifact related to artists was discussed with a red jacket wearer.",
+          "name": "Egyptian Museum",
+          "npc_dialogue": "History is full of secrets, just like the people who study it.",
+          "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
   "correct_suspect": "Julien Moreau",
-  "description": "In the heart of the Mediterranean, a series of cryptic messages have surfaced, hinting at a long-buried secret. As you traverse the sun-drenched streets of Nice, the whispers of the past beckon you to uncover the truth behind a notorious art thief. Each clue leads you deeper into a web of deception, where nothing is as it seems.",
-  "difficulty": "Hard",
+  "description": "A series of mysterious disappearances has left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, shadows lengthen and secrets emerge. Your task is to unravel the threads of deception woven by a cunning suspect who has left behind a trail of misdirection. Can you connect the dots before they slip away into the night?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
   "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-03-09T00:03:12Z",
-  "id": "daily_20260309",
+  "generated_at_utc": "2026-03-10T00:03:14Z",
+  "id": "daily_20260310",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.3,
-      "solution_uniqueness": 1
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
+      "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "1. Clue at Promenade des Anglais hints at a treasure.",
-      "2. The missing corner of the painting at Mus\u00e9e Matisse suggests a connection to art theft.",
-      "3. Julien's hobby of collecting rare artifacts aligns with the clues.",
-      "4. His vehicle, a black motorcycle, matches descriptions of the getaway vehicle.",
-      "5. Other suspects have conflicting traits or motives that do not align with the clues."
+      "1. The red jacket is a recurring theme in witness accounts across cities.",
+      "2. Julien Moreau is the only suspect with a hobby related to the arts, matching the clues about the artist.",
+      "3. The note mentioning 'the last brushstroke' directly ties to an artist's work.",
+      "4. Other suspects have hobbies or traits that do not align with the artistic clues."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.95,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260309",
+  "mission_id": "daily_20260310",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Sleuth",
+    "badge_name": "Artful Detective",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": [
-      "Southern Europe"
-    ]
+    "unlocked_regions": []
   },
-  "seed": "600b376c3d96b1036149f8e805f35dae4b695ceb90fdb3809cde6e63557ea4a1",
-  "solution": "Connect the clues about the hidden treasure, the missing painting, and the suspicious transactions to identify Julien as the thief.",
+  "seed": "9bc2aec0edc6b46df99bea10b74ccc46d10f085a61ec9b4d605bebe7ebb8f0d8",
+  "solution": "Connect the clues about the red jacket sightings, the artist's background, and the hidden note to identify Julien Moreau as the suspect.",
   "suspect_database": [
     {
-      "background": "A former art dealer with a penchant for the dramatic.",
-      "favorite_food": "Bouillabaisse",
+      "background": "A local artist known for his vibrant seascapes.",
+      "favorite_food": "Ratatouille",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Collecting rare artifacts",
-      "motive": "Desire for fame and fortune.",
+      "hobby": "Painting",
+      "motive": "Desire for recognition and fame.",
       "name": "Julien Moreau",
-      "vehicle": "Black motorcycle"
+      "vehicle": "Red Bicycle"
     },
     {
-      "background": "An aspiring artist with a troubled past.",
-      "favorite_food": "Macarons",
+      "background": "A photographer who captures the essence of the coast.",
+      "favorite_food": "Croissants",
       "gender": "Female",
       "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "To escape her mundane life.",
+      "motive": "Seeking inspiration for her next project.",
       "name": "Sophie Dubois",
-      "vehicle": "Red convertible"
+      "vehicle": "Black Car"
     },
     {
-      "background": "A wealthy businessman with ties to the underworld.",
-      "favorite_food": "Seafood paella",
+      "background": "A sculptor with a passion for the sea.",
+      "favorite_food": "Escargot",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Sailing",
-      "motive": "To maintain his empire.",
+      "hobby": "Sculpting",
+      "motive": "Frustration over lack of sales.",
       "name": "Marc Lefevre",
-      "vehicle": "Luxury yacht"
+      "vehicle": "Blue Motorcycle"
     },
     {
-      "background": "A journalist with a nose for scandal.",
-      "favorite_food": "Ratatouille",
+      "background": "A dancer who often performs in the streets.",
+      "favorite_food": "Pasta",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Writing",
-      "motive": "To expose the truth.",
-      "name": "Claire Fontaine",
-      "vehicle": "Bicycle"
+      "hobby": "Dancing",
+      "motive": "Desire to escape her mundane life.",
+      "name": "Claire Martin",
+      "vehicle": "White Van"
     },
     {
-      "background": "A retired detective with a sharp mind.",
-      "favorite_food": "Coq au vin",
+      "background": "An old fisherman with tales of the sea.",
+      "favorite_food": "Seafood",
       "gender": "Male",
       "hair_color": "Gray",
-      "hobby": "Chess",
-      "motive": "To relive his glory days.",
+      "hobby": "Fishing",
+      "motive": "Protecting his territory.",
       "name": "Antoine Girard",
-      "vehicle": "Old sedan"
+      "vehicle": "Green Truck"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Bouillabaisse",
+    "favorite_food": "Ratatouille",
     "gender": "Male",
     "hair_color": "Brown",
-    "hobby": "Collecting rare artifacts",
-    "vehicle": "Black motorcycle"
+    "hobby": "Painting",
+    "vehicle": "Red Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260309.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260310.png",
+  "title": "Whispers in the Wind"
 }
