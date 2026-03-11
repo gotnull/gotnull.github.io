@@ -1,187 +1,177 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260310.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260311.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "Saw a figure in a red jacket near the water.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "The sea whispers secrets, but only to those who listen closely.",
+          "clue_type": "witness_account",
+          "clue_value": "suspicious_figure",
+          "name": "Kunsthistorisches Museum",
+          "npc_dialogue": "I saw someone with a striking resemblance to the thief near the museum last week.",
+          "point_value": 100
+        },
+        {
+          "clue_type": "overheard_conversation",
+          "clue_value": "hidden_stash",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "The gardens are beautiful, but I overheard a conversation about a hidden stash.",
           "point_value": 80
         },
         {
-          "clue_type": "Local Gossip",
-          "clue_value": "Heard rumors of a painter who vanished.",
-          "name": "Old Town",
-          "npc_dialogue": "In the market, everyone knows everyone, but not all stories are true.",
+          "clue_type": "purchase_record",
+          "clue_value": "large_canvas_purchase",
+          "name": "Naschmarkt",
+          "npc_dialogue": "I sell art supplies, and I noticed someone buying an unusual amount of canvas.",
           "point_value": 60
-        },
-        {
-          "clue_type": "Hidden Note",
-          "clue_value": "A note mentioning 'the last brushstroke' was found.",
-          "name": "Castle Hill",
-          "npc_dialogue": "From up here, you can see everything, but the truth is often hidden.",
-          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "Security Footage",
-          "clue_value": "A person matching the description was seen entering.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "Luck is a fickle friend; sometimes it leads to fortune, sometimes to folly.",
+          "clue_type": "sighting",
+          "clue_value": "peculiar_hat",
+          "name": "Hungarian National Gallery",
+          "npc_dialogue": "A man with a peculiar hat was seen leaving with a painting under his arm.",
           "point_value": 90
         },
         {
-          "clue_type": "Visitor Log",
-          "clue_value": "A visitor with a red jacket signed in.",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "The ocean holds many mysteries, just like the people who visit.",
+          "clue_type": "rendezvous_info",
+          "clue_value": "rendezvous_last_night",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "I heard someone mention a rendezvous at the Bastion last night.",
           "point_value": 70
         },
         {
-          "clue_type": "Flower Arrangement",
-          "clue_value": "A bouquet left behind with a note saying 'for the artist'.",
-          "name": "Exotic Garden",
-          "npc_dialogue": "Nature can be deceptive; beauty often hides danger.",
+          "clue_type": "sketching_activity",
+          "clue_value": "focused_sketching",
+          "name": "Great Market Hall",
+          "npc_dialogue": "I saw a woman sketching in the market, she seemed very focused.",
           "point_value": 50
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Turin",
-      "country": "Italy",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "Street Artist",
-          "clue_value": "A street artist mentioned a 'red jacket' in their latest piece.",
-          "name": "Piazza Castello",
-          "npc_dialogue": "Every corner has a story, but not all are worth telling.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "Visitor Interaction",
-          "clue_value": "A visitor in a red jacket was seen sketching.",
-          "name": "Mole Antonelliana",
-          "npc_dialogue": "From the top, you can see the truth, but it takes effort to climb.",
+          "clue_type": "artist_discussion",
+          "clue_value": "nervous_artist",
+          "name": "Prague Castle",
+          "npc_dialogue": "A group of artists was discussing a recent theft; one seemed particularly nervous.",
           "point_value": 85
         },
         {
-          "clue_type": "Artifact Description",
-          "clue_value": "An artifact related to artists was discussed with a red jacket wearer.",
-          "name": "Egyptian Museum",
-          "npc_dialogue": "History is full of secrets, just like the people who study it.",
-          "point_value": 95
+          "clue_type": "argument_sighting",
+          "clue_value": "stolen_art_argument",
+          "name": "Charles Bridge",
+          "npc_dialogue": "I saw a couple arguing about a stolen piece of art near the bridge.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "performer_sighting",
+          "clue_value": "hiding_something",
+          "name": "Old Town Square",
+          "npc_dialogue": "There was a street performer who looked like he was hiding something.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Julien Moreau",
-  "description": "A series of mysterious disappearances has left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, shadows lengthen and secrets emerge. Your task is to unravel the threads of deception woven by a cunning suspect who has left behind a trail of misdirection. Can you connect the dots before they slip away into the night?",
-  "difficulty": "Medium",
+  "correct_suspect": "Anna Novak",
+  "description": "In the heart of Vienna, a series of art thefts have left the city in turmoil. As whispers of a notorious art thief resurface, you must navigate through a web of deception and hidden motives. Each suspect holds a piece of the puzzle, but only one is the true mastermind behind the heists. Can you unravel the truth before they slip away?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-03-10T00:03:14Z",
-  "id": "daily_20260310",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2026-03-11T00:02:34Z",
+  "id": "daily_20260311",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
-      "solution_uniqueness": 0.9
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.3,
+      "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. The red jacket is a recurring theme in witness accounts across cities.",
-      "2. Julien Moreau is the only suspect with a hobby related to the arts, matching the clues about the artist.",
-      "3. The note mentioning 'the last brushstroke' directly ties to an artist's work.",
-      "4. Other suspects have hobbies or traits that do not align with the artistic clues."
+      "Witness accounts point to a female suspect with a scooter.",
+      "Sketching activity aligns with Anna Novak's hobby.",
+      "Overheard conversations suggest a motive related to funding studies."
     ],
-    "solvability_score": 0.95,
+    "solvability_score": 1,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260310",
+  "mission_id": "daily_20260311",
+  "poster_image_url": "",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Artful Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "9bc2aec0edc6b46df99bea10b74ccc46d10f085a61ec9b4d605bebe7ebb8f0d8",
-  "solution": "Connect the clues about the red jacket sightings, the artist's background, and the hidden note to identify Julien Moreau as the suspect.",
+  "seed": "2fa1018f58a181b5e01b2bbbbd4e0a13f57bb67d0a6a17f46a4a403597ba6004",
+  "solution": "Connect the clues about the suspicious purchases, the nervous artist, and the sketching activity to identify Anna Novak as the mastermind.",
   "suspect_database": [
     {
-      "background": "A local artist known for his vibrant seascapes.",
-      "favorite_food": "Ratatouille",
+      "background": "A struggling artist with a penchant for the dramatic.",
+      "favorite_food": "Schnitzel",
       "gender": "Male",
       "hair_color": "Brown",
       "hobby": "Painting",
-      "motive": "Desire for recognition and fame.",
-      "name": "Julien Moreau",
-      "vehicle": "Red Bicycle"
+      "motive": "Desire for recognition in the art world.",
+      "name": "Lukas Schmidt",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A photographer who captures the essence of the coast.",
-      "favorite_food": "Croissants",
+      "background": "An art student with a mysterious past.",
+      "favorite_food": "Goulash",
       "gender": "Female",
       "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "Seeking inspiration for her next project.",
-      "name": "Sophie Dubois",
-      "vehicle": "Black Car"
+      "hobby": "Sketching",
+      "motive": "To fund her studies and escape her family.",
+      "name": "Anna Novak",
+      "vehicle": "Scooter"
     },
     {
-      "background": "A sculptor with a passion for the sea.",
-      "favorite_food": "Escargot",
+      "background": "A collector with a shady reputation.",
+      "favorite_food": "Pasta",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Sculpting",
-      "motive": "Frustration over lack of sales.",
-      "name": "Marc Lefevre",
-      "vehicle": "Blue Motorcycle"
+      "hobby": "Collecting antiques",
+      "motive": "To sell stolen art for profit.",
+      "name": "Marek Kral",
+      "vehicle": "Motorcycle"
     },
     {
-      "background": "A dancer who often performs in the streets.",
-      "favorite_food": "Pasta",
+      "background": "A photographer who captures the essence of art.",
+      "favorite_food": "Pizza",
       "gender": "Female",
       "hair_color": "Red",
-      "hobby": "Dancing",
-      "motive": "Desire to escape her mundane life.",
-      "name": "Claire Martin",
-      "vehicle": "White Van"
-    },
-    {
-      "background": "An old fisherman with tales of the sea.",
-      "favorite_food": "Seafood",
-      "gender": "Male",
-      "hair_color": "Gray",
-      "hobby": "Fishing",
-      "motive": "Protecting his territory.",
-      "name": "Antoine Girard",
-      "vehicle": "Green Truck"
+      "hobby": "Photography",
+      "motive": "To expose the art underworld.",
+      "name": "Elena Varga",
+      "vehicle": "Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Ratatouille",
-    "gender": "Male",
-    "hair_color": "Brown",
-    "hobby": "Painting",
-    "vehicle": "Red Bicycle"
+    "favorite_food": "Goulash",
+    "gender": "Female",
+    "hair_color": "Blonde",
+    "hobby": "Sketching",
+    "vehicle": "Scooter"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260310.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260311.png",
+  "title": "Shadows of the Past"
 }
