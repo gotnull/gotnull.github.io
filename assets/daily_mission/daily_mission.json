@@ -1,59 +1,59 @@
 {
-  "arrest_location": "Promenade des Anglais",
-  "banner_image_url": "/assets/daily_mission/banner_20260313.png",
+  "arrest_location": "Uffizi Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260314.png",
   "cities": [
     {
-      "city_name": "Valencia",
-      "country": "Spain",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A detailed sketch of the museum's security layout.",
-          "name": "Museo de Bellas Artes",
-          "npc_dialogue": "I saw someone suspicious lurking near the Van Gogh exhibit. They seemed too interested in the security measures.",
+          "clue_type": "Witness Account",
+          "clue_value": "peculiar hat",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone with a peculiar hat near the beach, but I can't recall their face.",
           "point_value": 80
         },
         {
-          "clue_type": "Rumor",
-          "clue_value": "A note mentioning a meeting with a 'black market dealer'.",
-          "name": "Plaza de la Virgen",
-          "npc_dialogue": "The artist who painted that mural is known for his secretive nature. Rumor has it he has connections to the black market.",
+          "clue_type": "Observation",
+          "clue_value": "hiding something",
+          "name": "Old Town",
+          "npc_dialogue": "The artist down the street paints the sea, but he seems to be hiding something.",
           "point_value": 60
         },
         {
           "clue_type": "Eavesdropping",
-          "clue_value": "A receipt for a large sum paid for an unnamed artwork.",
-          "name": "Caf\u00e9 de las Artes",
-          "npc_dialogue": "I overheard a conversation about a rare painting being sold for a fortune. It sounded too good to be true.",
-          "point_value": 70
+          "clue_value": "stolen painting",
+          "name": "Castle Hill",
+          "npc_dialogue": "The view from here is breathtaking, but I overheard a conversation about a stolen painting.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Marseille",
-      "country": "France",
+      "city_name": "Monaco",
+      "country": "Monaco",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "A description of a woman matching the suspect's traits.",
-          "name": "Vieux Port",
-          "npc_dialogue": "A woman with striking red hair was seen near the docks, acting nervously. She kept checking her watch.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "Security Footage",
-          "clue_value": "A timestamped video showing a suspicious figure.",
-          "name": "Mus\u00e9e des Civilisations",
-          "npc_dialogue": "There was a strange man who seemed overly interested in the security footage. He left in a hurry.",
-          "point_value": 85
-        },
-        {
-          "clue_type": "Vehicle Description",
-          "clue_value": "Details of a car that matches the suspect's vehicle.",
-          "name": "Rue de la R\u00e9publique",
-          "npc_dialogue": "I saw a luxury car parked outside the gallery. It had a unique paint job that caught my eye.",
+          "clue_type": "Observation",
+          "clue_value": "striking red hair",
+          "name": "Monte Carlo Casino",
+          "npc_dialogue": "I noticed a woman with striking red hair leaving in a hurry. She seemed anxious.",
           "point_value": 90
+        },
+        {
+          "clue_type": "Curatorial Insight",
+          "clue_value": "rare artifact",
+          "name": "Oceanographic Museum",
+          "npc_dialogue": "The curator mentioned a rare artifact that was recently reported missing.",
+          "point_value": 70
+        },
+        {
+          "clue_type": "Eavesdropping",
+          "clue_value": "uses disguises",
+          "name": "Prince's Palace",
+          "npc_dialogue": "I overheard a discussion about a thief who uses disguises to blend in.",
+          "point_value": 50
         }
       ],
       "order_in_chase": 2
@@ -63,48 +63,48 @@
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "Local Insight",
-          "clue_value": "A flyer for an upcoming auction with a list of rare items.",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "A local artist mentioned a secret auction happening soon. He seemed anxious about it.",
-          "point_value": 65
+          "clue_type": "Witness Account",
+          "clue_value": "unique tattoo",
+          "name": "Genoa Cathedral",
+          "npc_dialogue": "A man with a unique tattoo was seen lurking around the cathedral.",
+          "point_value": 85
         },
         {
-          "clue_type": "Gossip",
-          "clue_value": "A note with details about the thief's last known location.",
-          "name": "Palazzo Ducale",
-          "npc_dialogue": "I overheard someone talking about a 'red-haired thief' who was last seen in Valencia.",
-          "point_value": 70
+          "clue_type": "Rumor",
+          "clue_value": "connection to a famous painter",
+          "name": "Porto Antico",
+          "npc_dialogue": "I heard someone mention a connection to a famous painter. It sounded suspicious.",
+          "point_value": 75
         },
         {
-          "clue_type": "Incident Report",
-          "clue_value": "A police report about a theft incident.",
+          "clue_type": "Observation",
+          "clue_value": "unusually quiet gallery",
           "name": "Via Garibaldi",
-          "npc_dialogue": "There was a commotion last night. Someone was trying to sell a stolen painting.",
-          "point_value": 80
+          "npc_dialogue": "The street is known for its art galleries, but one gallery has been unusually quiet.",
+          "point_value": 65
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moreau",
-  "description": "In the heart of the Mediterranean, a series of art thefts have left the local galleries in disarray. As whispers of betrayal echo through the cobblestone streets, you must navigate a web of deceit to uncover the true mastermind behind the chaos. Each suspect presents a fa\u00e7ade of innocence, but only one holds the key to the mystery. Can you decipher the clues hidden in their stories and catch the thief before they vanish into the night?",
-  "difficulty": "Hard",
+  "correct_suspect": "Clara Voss",
+  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows lengthen, and the truth hides behind the whispers of the wind. Your task is to uncover the identity of the elusive thief who has left a trail of misdirection and intrigue. Follow the clues, but beware of the false leads that may lead you astray.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Nice, France",
-  "generated_at_utc": "2026-03-13T00:03:56Z",
-  "id": "daily_20260313",
+  "final_city": "Florence, Italy",
+  "generated_at_utc": "2026-03-14T00:04:59Z",
+  "id": "daily_20260314",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.1,
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
       "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "1. Clara Moreau is the only female suspect with red hair, matching the witness accounts.",
-      "2. Her hobby of painting aligns with the art theft theme.",
-      "3. The custom sports car description matches her vehicle.",
-      "4. The clues about her nervous behavior and connections to the art world point directly to her."
+      "Clara Voss is the only female suspect with red hair, matching the witness accounts.",
+      "Her hobby of painting aligns with the stolen artifacts being art-related.",
+      "The clues about her secretive behavior and the stolen painting point directly to her.",
+      "Other suspects have motives that do not align with the artistic theft."
     ],
     "solvability_score": 1,
     "validation": {
@@ -113,65 +113,65 @@
       "format": []
     }
   },
-  "mission_id": "daily_20260313",
+  "mission_id": "daily_20260314",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "220bcbe69fa9997bbc0ddfb408978fc6e961580c7ee1afc56a980fbaf3d2c28d",
-  "solution": "Connect the clues about the red-haired artist, her suspicious behavior, and the unique vehicle to identify Clara Moreau as the mastermind behind the thefts.",
+  "seed": "d0e07cadd07a16b329015ab01e2d79f09b91f2e2328ed8d36d6e88dbdacee892",
+  "solution": "Connect the clues about the red-haired artist, her secretive nature, and the stolen artifacts to identify Clara Voss as the thief.",
   "suspect_database": [
     {
-      "background": "An up-and-coming artist with a penchant for the dramatic.",
-      "favorite_food": "Seafood",
+      "background": "An artist known for her vibrant seascapes, Clara has a reputation for being secretive.",
+      "favorite_food": "Pasta",
       "gender": "Female",
       "hair_color": "Red",
       "hobby": "Painting",
-      "motive": "Desire for fame and recognition in the art world.",
-      "name": "Clara Moreau",
-      "vehicle": "Custom sports car"
+      "motive": "Desire to create a masterpiece using stolen artifacts.",
+      "name": "Clara Voss",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A collector with a shady past, known for his connections.",
-      "favorite_food": "Cheese",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Collecting antiques",
-      "motive": "Financial gain through illegal sales.",
-      "name": "Julien Dupont",
-      "vehicle": "Vintage motorcycle"
-    },
-    {
-      "background": "A photographer who often captures art events.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "To expose the art underworld.",
-      "name": "Sophie Laurent",
-      "vehicle": "Luxury sedan"
-    },
-    {
-      "background": "A sculptor with ties to the underground art scene.",
+      "background": "A collector with a keen eye for valuable items, Marco is often seen at auctions.",
       "favorite_food": "Pizza",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Sculpting",
-      "motive": "To reclaim stolen art for personal gain.",
+      "hobby": "Collecting antiques",
+      "motive": "To sell stolen items for profit.",
       "name": "Marco Rossi",
-      "vehicle": "SUV"
+      "vehicle": "Motorcycle"
+    },
+    {
+      "background": "A photographer who captures the essence of the coast, Elena is well-liked.",
+      "favorite_food": "Seafood",
+      "gender": "Female",
+      "hair_color": "Brown",
+      "hobby": "Photography",
+      "motive": "To gain fame through controversial art.",
+      "name": "Elena Moretti",
+      "vehicle": "Car"
+    },
+    {
+      "background": "A sailor with a love for the sea, Luca is often found near the docks.",
+      "favorite_food": "Risotto",
+      "gender": "Male",
+      "hair_color": "Blonde",
+      "hobby": "Sailing",
+      "motive": "To fund his sailing adventures.",
+      "name": "Luca Bianchi",
+      "vehicle": "Yacht"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Seafood",
+    "favorite_food": "Pasta",
     "gender": "Female",
     "hair_color": "Red",
     "hobby": "Painting",
-    "vehicle": "Custom sports car"
+    "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260313.png",
-  "title": "Echoes of Deceit"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260314.png",
+  "title": "Whispers in the Wind"
 }
