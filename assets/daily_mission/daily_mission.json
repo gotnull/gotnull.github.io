@@ -1,177 +1,177 @@
 {
-  "arrest_location": "Piazza della Signoria",
-  "banner_image_url": "/assets/daily_mission/banner_20260324.png",
+  "arrest_location": "Slovak National Gallery",
+  "banner_image_url": "/assets/daily_mission/banner_20260325.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Vienna",
+      "country": "Austria",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "A distinctive hat with a feather.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone with a peculiar hat near the beach, but I can't recall their face.",
-          "point_value": 75
+          "clue_type": "sketch",
+          "clue_value": "A detailed sketch of a rare painting.",
+          "name": "Kunsthistorisches Museum",
+          "npc_dialogue": "I saw someone sketching the paintings, but they left in a hurry.",
+          "point_value": 100
         },
         {
-          "clue_type": "behavioral",
-          "clue_value": "A woman who loves baking and is often seen with sweets.",
-          "name": "Old Town",
-          "npc_dialogue": "The market was bustling, but I noticed a woman with a basket full of pastries acting strangely.",
-          "point_value": 60
+          "clue_type": "observation",
+          "clue_value": "A note about rare spices and art.",
+          "name": "Naschmarkt",
+          "npc_dialogue": "A woman was asking about rare spices, but her eyes were on the art stalls.",
+          "point_value": 80
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "A mention of a hidden meeting spot.",
-          "name": "Castle Hill",
-          "npc_dialogue": "The view is breathtaking, but I overheard a couple discussing a secret rendezvous.",
+          "clue_type": "conversation",
+          "clue_value": "Hints about a treasure linked to the stolen art.",
+          "name": "Belvedere Palace",
+          "npc_dialogue": "I overheard a conversation about a hidden treasure in the paintings.",
           "point_value": 90
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Budapest",
+      "country": "Hungary",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "A tall man with a blue jacket.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "I saw a tall man with a striking blue jacket winning big at the tables.",
-          "point_value": 80
-        },
-        {
-          "clue_type": "behavioral",
-          "clue_value": "A woman with a penchant for royal history.",
-          "name": "Prince's Palace",
-          "npc_dialogue": "The guards mentioned a woman who often visits the palace, but her intentions are unclear.",
+          "clue_type": "sketch",
+          "clue_value": "A sketch of the Bastion with notes on art theft.",
+          "name": "Fisherman's Bastion",
+          "npc_dialogue": "A man was sketching the view, but he seemed distracted.",
           "point_value": 70
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "A hidden stash near the beach.",
-          "name": "Larvotto Beach",
-          "npc_dialogue": "I overheard someone talking about a secret stash hidden near the water.",
-          "point_value": 85
+          "clue_type": "purchase",
+          "clue_value": "Receipt for art supplies.",
+          "name": "Great Market Hall",
+          "npc_dialogue": "I saw a woman buying art supplies, but she was acting suspiciously.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "rumor",
+          "clue_value": "A rumor about a meeting of art thieves.",
+          "name": "Heroes' Square",
+          "npc_dialogue": "Someone mentioned a secret meeting about stolen art.",
+          "point_value": 75
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Genoa",
-      "country": "Italy",
+      "city_name": "Prague",
+      "country": "Czech Republic",
       "locations": [
         {
-          "clue_type": "visual",
-          "clue_value": "A sketchbook filled with marine life.",
-          "name": "Genoa Aquarium",
-          "npc_dialogue": "A woman was sketching the fish, but she seemed distracted by something else.",
-          "point_value": 65
+          "clue_type": "sketch",
+          "clue_value": "A sketch with a hidden message.",
+          "name": "Charles Bridge",
+          "npc_dialogue": "A woman was sketching the bridge, but she kept looking over her shoulder.",
+          "point_value": 85
         },
         {
-          "clue_type": "behavioral",
-          "clue_value": "A photographer with a keen eye for detail.",
-          "name": "Piazza De Ferrari",
-          "npc_dialogue": "I saw a man with a camera taking pictures of the fountain, but he kept glancing around.",
-          "point_value": 75
+          "clue_type": "conversation",
+          "clue_value": "Details about a treasure linked to art.",
+          "name": "Old Town Square",
+          "npc_dialogue": "I overheard a man talking about a treasure hidden in art.",
+          "point_value": 95
         },
         {
-          "clue_type": "auditory",
-          "clue_value": "A thief escaping through an alley.",
-          "name": "Via Garibaldi",
-          "npc_dialogue": "There was a commotion earlier; someone claimed to have seen a thief escape through the alley.",
-          "point_value": 90
+          "clue_type": "sighting",
+          "clue_value": "Description of a suspicious character.",
+          "name": "National Gallery",
+          "npc_dialogue": "A suspicious character was seen leaving with a large canvas.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Moreau",
-  "description": "A series of mysterious thefts have plagued the coastal towns of the Mediterranean. As the sun sets, shadows dance along the cobblestone streets, hinting at secrets hidden in plain sight. Your mission is to uncover the truth behind the enigmatic thief who leaves behind a trail of riddles and misdirection. Can you connect the dots before they vanish into the night?",
-  "difficulty": "Medium",
+  "correct_suspect": "Elena Novak",
+  "description": "In the heart of Vienna, a series of art thefts has left the city in turmoil. The stolen pieces are rumored to hold secrets of a hidden treasure. As you delve into the world of art and deception, you must navigate through a web of lies and misdirection to uncover the true thief. Each suspect presents a fa\u00e7ade, but only one holds the key to the mystery. Can you connect the dots before the final curtain falls?",
+  "difficulty": "Hard",
   "estimated_playtime_minutes": 60,
-  "final_city": "Florence, Italy",
-  "generated_at_utc": "2026-03-24T00:04:41Z",
-  "id": "daily_20260324",
+  "final_city": "Bratislava, Slovakia",
+  "generated_at_utc": "2026-03-25T00:05:36Z",
+  "id": "daily_20260325",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1
+      "plausibility_overlap": 0.7,
+      "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "1. The clues point towards a female suspect with a baking hobby.",
-      "2. Clara Moreau is the only suspect matching the traits of baking and being female.",
-      "3. The locations and NPC dialogues hint at her presence in Nice and her connection to the thefts."
+      "Identify clues related to art theft and restoration.",
+      "Match suspect traits with the clues found in Vienna, Budapest, and Prague.",
+      "Elena Novak's background in art restoration aligns with the clues about stolen art.",
+      "Other suspects have motives that do not directly connect to the art theft."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.95,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260324",
-  "poster_image_url": "",
+  "mission_id": "daily_20260325",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Master Detective",
+    "badge_name": "Art Sleuth",
     "credits_earned": 200,
     "experience_points": 150,
     "unlocked_regions": []
   },
-  "seed": "38ed350cfb8a070f62f7f195f6151a75effbed6ab5f0e3d2446c81381352aaa2",
-  "solution": "Connect the clues about the distinctive hat, the woman with pastries, and the baking hobby to identify Clara Moreau as the thief.",
+  "seed": "76cc8d68c2bd73d0d5099471369f2c7ad1eb34bb893e2747495cbe4b76f39d1c",
+  "solution": "Connect the clues about the sketches, conversations, and purchases to identify Elena Novak as the art restorer with a motive to reclaim the stolen pieces.",
   "suspect_database": [
     {
-      "background": "A local pastry chef known for her exquisite desserts.",
-      "favorite_food": "Macarons",
+      "background": "A passionate art restorer with a secretive past.",
+      "favorite_food": "Goulash",
       "gender": "Female",
       "hair_color": "Brown",
-      "hobby": "Baking",
-      "motive": "To fund her bakery's expansion.",
-      "name": "Clara Moreau",
+      "hobby": "Art Restoration",
+      "motive": "Desires to reclaim stolen art for personal reasons.",
+      "name": "Elena Novak",
       "vehicle": "Bicycle"
     },
     {
-      "background": "An aspiring photographer with a knack for capturing the unusual.",
-      "favorite_food": "Pizza",
+      "background": "A photographer who often captures art events.",
+      "favorite_food": "Schnitzel",
       "gender": "Male",
       "hair_color": "Black",
       "hobby": "Photography",
-      "motive": "To gain fame through viral photos.",
-      "name": "Julien Dupont",
+      "motive": "Wants to expose the art underworld.",
+      "name": "Marek Kral",
       "vehicle": "Motorcycle"
     },
     {
-      "background": "An artist who often draws inspiration from the sea.",
-      "favorite_food": "Pasta",
-      "gender": "Female",
+      "background": "An artist known for his street sketches.",
+      "favorite_food": "Pierogi",
+      "gender": "Male",
       "hair_color": "Blonde",
       "hobby": "Sketching",
-      "motive": "To sell her art at a higher price.",
-      "name": "Sofia Rossi",
-      "vehicle": "Scooter"
+      "motive": "Seeks fame through controversial art.",
+      "name": "Tomasz Wozniak",
+      "vehicle": "Car"
     },
     {
-      "background": "A collector with a passion for history.",
-      "favorite_food": "Risotto",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Collecting antiques",
-      "motive": "To acquire rare items for his collection.",
-      "name": "Marco Bellini",
-      "vehicle": "Car"
+      "background": "An antique collector with a keen eye for art.",
+      "favorite_food": "Pasta",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Collecting Antiques",
+      "motive": "Wants to sell stolen art for profit.",
+      "name": "Anna Horvath",
+      "vehicle": "None"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Macarons",
+    "favorite_food": "Goulash",
     "gender": "Female",
     "hair_color": "Brown",
-    "hobby": "Baking",
+    "hobby": "Art Restoration",
     "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260324.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260325.png",
+  "title": "Echoes of the Past"
 }
