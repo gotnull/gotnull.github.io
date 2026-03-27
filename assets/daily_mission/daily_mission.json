@@ -1,177 +1,188 @@
 {
-  "arrest_location": "Piazza De Ferrari",
-  "banner_image_url": "/assets/daily_mission/banner_20260326.png",
+  "arrest_location": "Acropolis Museum",
+  "banner_image_url": "/assets/daily_mission/banner_20260327.png",
   "cities": [
     {
-      "city_name": "Nice",
-      "country": "France",
+      "city_name": "Valletta",
+      "country": "Malta",
       "locations": [
         {
-          "clue_type": "Witness Account",
-          "clue_value": "A figure with dark hair was seen near the water.",
-          "name": "Promenade des Anglais",
-          "npc_dialogue": "I saw someone suspicious near the beach, but the sun was too bright to see clearly.",
+          "clue_type": "artifact",
+          "clue_value": "A broken vase with a hidden compartment",
+          "name": "National Museum of Archaeology",
+          "npc_dialogue": "The artifacts here tell stories of ancient times, but some stories are better left untold.",
+          "point_value": 100
+        },
+        {
+          "clue_type": "message",
+          "clue_value": "A note mentioning 'the last sunset'",
+          "name": "Upper Barracca Gardens",
+          "npc_dialogue": "The view is breathtaking, but the shadows here hide more than just the sun.",
           "point_value": 80
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "She bought a lot of almond croissants.",
-          "name": "Old Town Market",
-          "npc_dialogue": "The market was bustling, but I noticed a woman with a peculiar taste in pastries.",
+          "clue_type": "symbol",
+          "clue_value": "A symbol resembling a key",
+          "name": "St. John's Co-Cathedral",
+          "npc_dialogue": "Beauty can be deceiving; look closely at the details.",
           "point_value": 60
-        },
-        {
-          "clue_type": "Eavesdropping",
-          "clue_value": "They mentioned a 'safe place' near the harbor.",
-          "name": "Castle Hill",
-          "npc_dialogue": "The view from here is breathtaking, but I overheard a conversation about a hidden stash.",
-          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Monaco",
-      "country": "Monaco",
+      "city_name": "Catania",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Gossip",
-          "clue_value": "He was playing cards with a nervous demeanor.",
-          "name": "Monte Carlo Casino",
-          "npc_dialogue": "High stakes and high tension; I saw a man with a striking resemblance to a thief.",
+          "clue_type": "whisper",
+          "clue_value": "A rumor about a hidden passage",
+          "name": "Piazza del Duomo",
+          "npc_dialogue": "The fountain here has seen many secrets flow by.",
           "point_value": 90
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "They mentioned a 'blue car' parked outside.",
-          "name": "Oceanographic Museum",
-          "npc_dialogue": "The exhibits are fascinating, but I overheard someone talking about a recent heist.",
-          "point_value": 70
+          "clue_type": "artifact",
+          "clue_value": "An ancient map with markings",
+          "name": "Castello Ursino",
+          "npc_dialogue": "This castle holds treasures, but not all are visible.",
+          "point_value": 110
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "Her tattoo was of a crescent moon.",
-          "name": "Larvotto Beach",
-          "npc_dialogue": "I saw a woman with a unique tattoo sunbathing; she seemed out of place.",
-          "point_value": 50
+          "clue_type": "melody",
+          "clue_value": "A tune that hints at a location",
+          "name": "Teatro Massimo Bellini",
+          "npc_dialogue": "Music can mask the truth; listen carefully.",
+          "point_value": 70
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Cannes",
-      "country": "France",
+      "city_name": "Syracuse",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "He was wearing sunglasses indoors.",
-          "name": "Cannes Film Festival",
-          "npc_dialogue": "The glamour is intoxicating, but I noticed a suspicious character lurking around.",
+          "clue_type": "echo",
+          "clue_value": "A sound that leads to a secret",
+          "name": "Archaeological Park of Neapolis",
+          "npc_dialogue": "The past echoes here, but not all echoes are clear.",
+          "point_value": 120
+        },
+        {
+          "clue_type": "inscription",
+          "clue_value": "An inscription that reveals a date",
+          "name": "Cathedral of Syracuse",
+          "npc_dialogue": "The walls have ears; they remember the whispers of the past.",
           "point_value": 85
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "She mentioned a rendezvous at midnight.",
-          "name": "La Croisette",
-          "npc_dialogue": "Everyone is here for the show, but I overheard a woman discussing a 'big score'.",
-          "point_value": 75
-        },
-        {
-          "clue_type": "Witness Account",
-          "clue_value": "It was a tall figure with a distinctive hairstyle.",
-          "name": "Palais des Festivals",
-          "npc_dialogue": "The red carpet is rolled out, but I saw someone slip away with a bag.",
+          "clue_type": "sight",
+          "clue_value": "A glimpse of a figure in the shadows",
+          "name": "Ortygia Island",
+          "npc_dialogue": "The island holds its breath; something is about to surface.",
           "point_value": 95
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Clara Dupont",
-  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets, shadows lengthen, and the whispers of the wind carry secrets of a thief who has eluded capture. Your mission is to unravel the threads of deception and identify the true culprit before they vanish into the night.",
-  "difficulty": "Medium",
-  "estimated_playtime_minutes": 55,
-  "final_city": "Genoa, Italy",
-  "generated_at_utc": "2026-03-26T00:07:18Z",
-  "id": "daily_20260326",
+  "correct_suspect": "Marco Rossi",
+  "description": "In the heart of the Mediterranean, a series of cryptic messages have surfaced, hinting at a clandestine operation involving stolen artifacts. As you traverse through the vibrant streets of three cities, each clue leads you deeper into a web of deception. The final destination holds the key to unraveling the mystery, but beware\u2014trust is a luxury you cannot afford.",
+  "difficulty": "Hard",
+  "estimated_playtime_minutes": 60,
+  "final_city": "Athens, Greece",
+  "generated_at_utc": "2026-03-27T00:06:25Z",
+  "id": "daily_20260327",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
-      "solution_uniqueness": 0.8
+      "ambiguity_score": 0.2,
+      "plausibility_overlap": 0.3,
+      "solution_uniqueness": 1
     },
     "reasoning_chain": [
-      "Clara Dupont is the only suspect with a direct connection to almond croissants, which were mentioned multiple times.",
-      "The witness accounts and observations point towards a female figure with brown hair, matching Clara's traits.",
-      "The red convertible aligns with the escape route towards Genoa, making her the most plausible suspect."
+      "1. The broken vase indicates a connection to ancient artifacts.",
+      "2. The hidden passage rumor aligns with Marco's background in history.",
+      "3. The motorcycle suggests a quick escape route, fitting for Marco's character."
     ],
-    "solvability_score": 0.9,
+    "solvability_score": 1,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260326",
-  "poster_image_url": "",
+  "mission_id": "daily_20260327",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Culinary Sleuth",
-    "credits_earned": 200,
-    "experience_points": 150,
-    "unlocked_regions": []
+    "badge_name": "Artifact Hunter",
+    "credits_earned": 150,
+    "experience_points": 300,
+    "unlocked_regions": [
+      "Mediterranean"
+    ]
   },
-  "seed": "ef9218758dcf246267c008f6c8e2eb064db41648272a9df738728f3875827389",
-  "solution": "Connect the clues about the almond croissants and the suspicious behavior of Clara Dupont to identify her as the thief.",
+  "seed": "8172f35fc237629ef068e994aeaa1580202ef4fb445c384fdd268f3206348ee3",
+  "solution": "Connect the clues about the broken vase and the hidden passage to identify Marco Rossi as the suspect.",
   "suspect_database": [
     {
-      "background": "A local pastry chef with a flair for the dramatic.",
-      "favorite_food": "Almond croissants",
-      "gender": "Female",
-      "hair_color": "Brown",
-      "hobby": "Baking",
-      "motive": "Desire for fame and recognition in the culinary world.",
-      "name": "Clara Dupont",
-      "vehicle": "Red convertible"
-    },
-    {
-      "background": "A high-stakes gambler with a penchant for risk.",
-      "favorite_food": "Seafood paella",
+      "background": "A local historian with a passion for ancient artifacts.",
+      "favorite_food": "Pasta",
       "gender": "Male",
-      "hair_color": "Black",
-      "hobby": "Gambling",
-      "motive": "In debt and desperate for money.",
-      "name": "Julien Moreau",
-      "vehicle": "Blue sports car"
+      "hair_color": "Brown",
+      "hobby": "Collecting rare coins",
+      "motive": "Desire to reclaim lost heritage.",
+      "name": "Marco Rossi",
+      "vehicle": "Motorcycle"
     },
     {
-      "background": "An aspiring photographer with a keen eye for detail.",
-      "favorite_food": "Pasta primavera",
+      "background": "An art student with a keen eye for detail.",
+      "favorite_food": "Gelato",
       "gender": "Female",
       "hair_color": "Blonde",
       "hobby": "Photography",
-      "motive": "Seeking inspiration for her next big project.",
-      "name": "Sophie Laurent",
-      "vehicle": "Silver SUV"
+      "motive": "To expose the truth behind the artifacts.",
+      "name": "Elena Bianchi",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A laid-back surfer with a carefree attitude.",
-      "favorite_food": "Tacos",
+      "background": "A fisherman who knows the waters well.",
+      "favorite_food": "Seafood",
+      "gender": "Male",
+      "hair_color": "Black",
+      "hobby": "Fishing",
+      "motive": "To protect his family's legacy.",
+      "name": "Giovanni Verdi",
+      "vehicle": "Car"
+    },
+    {
+      "background": "A poet who finds inspiration in the past.",
+      "favorite_food": "Pizza",
+      "gender": "Female",
+      "hair_color": "Red",
+      "hobby": "Writing poetry",
+      "motive": "To weave stories from history.",
+      "name": "Sofia Conti",
+      "vehicle": "Scooter"
+    },
+    {
+      "background": "A botanist with a love for nature.",
+      "favorite_food": "Salad",
       "gender": "Male",
       "hair_color": "Brown",
-      "hobby": "Surfing",
-      "motive": "Looking for excitement and adventure.",
-      "name": "Marc Petit",
-      "vehicle": "Black motorcycle"
+      "hobby": "Gardening",
+      "motive": "To preserve the environment.",
+      "name": "Luca Moretti",
+      "vehicle": "Van"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Almond croissants",
-    "gender": "Female",
+    "favorite_food": "Pasta",
+    "gender": "Male",
     "hair_color": "Brown",
-    "hobby": "Baking",
-    "vehicle": "Red convertible"
+    "hobby": "Collecting rare coins",
+    "vehicle": "Motorcycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260326.png",
-  "title": "Whispers in the Wind"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260327.png",
+  "title": "Echoes of the Past"
 }
