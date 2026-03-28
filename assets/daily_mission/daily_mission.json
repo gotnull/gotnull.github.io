@@ -1,188 +1,176 @@
 {
-  "arrest_location": "Acropolis Museum",
-  "banner_image_url": "/assets/daily_mission/banner_20260327.png",
+  "arrest_location": "Promenade des Anglais",
+  "banner_image_url": "/assets/daily_mission/banner_20260328.png",
   "cities": [
     {
-      "city_name": "Valletta",
-      "country": "Malta",
+      "city_name": "Valencia",
+      "country": "Spain",
       "locations": [
         {
-          "clue_type": "artifact",
-          "clue_value": "A broken vase with a hidden compartment",
-          "name": "National Museum of Archaeology",
-          "npc_dialogue": "The artifacts here tell stories of ancient times, but some stories are better left untold.",
-          "point_value": 100
+          "clue_type": "Observation",
+          "clue_value": "A person was seen admiring a painting of oranges.",
+          "name": "Central Market",
+          "npc_dialogue": "I saw someone with a peculiar taste in fruits, but they were more interested in the art stalls.",
+          "point_value": 75
         },
         {
-          "clue_type": "message",
-          "clue_value": "A note mentioning 'the last sunset'",
-          "name": "Upper Barracca Gardens",
-          "npc_dialogue": "The view is breathtaking, but the shadows here hide more than just the sun.",
-          "point_value": 80
+          "clue_type": "Eavesdropping",
+          "clue_value": "A discussion about a stolen sculpture.",
+          "name": "City of Arts and Sciences",
+          "npc_dialogue": "The artist here is known for their vibrant colors, but I overheard a conversation about a missing piece.",
+          "point_value": 90
         },
         {
-          "clue_type": "symbol",
-          "clue_value": "A symbol resembling a key",
-          "name": "St. John's Co-Cathedral",
-          "npc_dialogue": "Beauty can be deceiving; look closely at the details.",
+          "clue_type": "Metaphor",
+          "clue_value": "A reference to someone who blends in with nature.",
+          "name": "Turia Gardens",
+          "npc_dialogue": "The wind carries secrets, but I can't tell if it's the artist or the thief who walks these paths.",
           "point_value": 60
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Catania",
-      "country": "Italy",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "whisper",
-          "clue_value": "A rumor about a hidden passage",
-          "name": "Piazza del Duomo",
-          "npc_dialogue": "The fountain here has seen many secrets flow by.",
-          "point_value": 90
+          "clue_type": "Witness Account",
+          "clue_value": "A person in a dark coat was seen near the docks.",
+          "name": "Old Port",
+          "npc_dialogue": "I saw a figure in a dark coat, but they were too quick to catch a name.",
+          "point_value": 80
         },
         {
-          "clue_type": "artifact",
-          "clue_value": "An ancient map with markings",
-          "name": "Castello Ursino",
-          "npc_dialogue": "This castle holds treasures, but not all are visible.",
-          "point_value": 110
+          "clue_type": "Observation",
+          "clue_value": "A sketch of a famous painting was found.",
+          "name": "Palais des Congr\u00e8s",
+          "npc_dialogue": "Art shows can attract the wrong crowd. I noticed someone sketching the exhibits closely.",
+          "point_value": 85
         },
         {
-          "clue_type": "melody",
-          "clue_value": "A tune that hints at a location",
-          "name": "Teatro Massimo Bellini",
-          "npc_dialogue": "Music can mask the truth; listen carefully.",
+          "clue_type": "Local Legend",
+          "clue_value": "A theft occurred during a crowded event.",
+          "name": "Le Panier",
+          "npc_dialogue": "The streets here are alive with stories, but one tale stands out\u2014a theft during the festival.",
           "point_value": 70
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Syracuse",
+      "city_name": "Genoa",
       "country": "Italy",
       "locations": [
         {
-          "clue_type": "echo",
-          "clue_value": "A sound that leads to a secret",
-          "name": "Archaeological Park of Neapolis",
-          "npc_dialogue": "The past echoes here, but not all echoes are clear.",
-          "point_value": 120
-        },
-        {
-          "clue_type": "inscription",
-          "clue_value": "An inscription that reveals a date",
-          "name": "Cathedral of Syracuse",
-          "npc_dialogue": "The walls have ears; they remember the whispers of the past.",
-          "point_value": 85
-        },
-        {
-          "clue_type": "sight",
-          "clue_value": "A glimpse of a figure in the shadows",
-          "name": "Ortygia Island",
-          "npc_dialogue": "The island holds its breath; something is about to surface.",
+          "clue_type": "Gossip",
+          "clue_value": "A hidden gallery rumored to hold stolen art.",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "I overheard someone talking about a hidden gallery. It sounded too good to be true.",
           "point_value": 95
+        },
+        {
+          "clue_type": "Surveillance",
+          "clue_value": "A suspicious entry was noted.",
+          "name": "Palazzo Ducale",
+          "npc_dialogue": "The guards are on high alert, but I saw someone slip through the back entrance.",
+          "point_value": 100
+        },
+        {
+          "clue_type": "Recognition",
+          "clue_value": "A known artist was seen acting strangely.",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "Art is a passion here, but passion can lead to desperation. I saw a familiar face.",
+          "point_value": 80
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Marco Rossi",
-  "description": "In the heart of the Mediterranean, a series of cryptic messages have surfaced, hinting at a clandestine operation involving stolen artifacts. As you traverse through the vibrant streets of three cities, each clue leads you deeper into a web of deception. The final destination holds the key to unraveling the mystery, but beware\u2014trust is a luxury you cannot afford.",
-  "difficulty": "Hard",
+  "correct_suspect": "Lucia Moretti",
+  "description": "In the heart of the Mediterranean, a series of mysterious thefts have left the local art community in disarray. As whispers of betrayal echo through the narrow streets, you must navigate through the vibrant cities of the region to uncover the truth. Each suspect carries a piece of the puzzle, but only one holds the key to the mystery. Can you decipher the clues hidden in their words and actions before the thief vanishes into the night?",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Athens, Greece",
-  "generated_at_utc": "2026-03-27T00:06:25Z",
-  "id": "daily_20260327",
+  "final_city": "Nice, France",
+  "generated_at_utc": "2026-03-28T00:05:09Z",
+  "id": "daily_20260328",
   "internal_analyzer": {
     "difficulty_analysis": {
-      "ambiguity_score": 0.2,
-      "plausibility_overlap": 0.3,
-      "solution_uniqueness": 1
+      "ambiguity_score": 0.3,
+      "plausibility_overlap": 0.2,
+      "solution_uniqueness": 0.8
     },
     "reasoning_chain": [
-      "1. The broken vase indicates a connection to ancient artifacts.",
-      "2. The hidden passage rumor aligns with Marco's background in history.",
-      "3. The motorcycle suggests a quick escape route, fitting for Marco's character."
+      "1. Lucia Moretti is the only suspect with a motive related to the art thefts.",
+      "2. Clues about her being seen near art stalls and her background as an emerging artist align with the thefts.",
+      "3. Other suspects have motives but lack direct connections to the clues provided."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.9,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260327",
+  "mission_id": "daily_20260328",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Artifact Hunter",
-    "credits_earned": 150,
-    "experience_points": 300,
-    "unlocked_regions": [
-      "Mediterranean"
-    ]
+    "badge_name": "Art Sleuth",
+    "credits_earned": 200,
+    "experience_points": 150,
+    "unlocked_regions": []
   },
-  "seed": "8172f35fc237629ef068e994aeaa1580202ef4fb445c384fdd268f3206348ee3",
-  "solution": "Connect the clues about the broken vase and the hidden passage to identify Marco Rossi as the suspect.",
+  "seed": "83aecb63118fc9ac0dbb9ecf62bceabc3306684417f91b6a7774326622415e7a",
+  "solution": "Connect the clues about the stolen art and the suspicious behavior of Lucia Moretti, who was seen near the art stalls and has a motive tied to her desire for recognition.",
   "suspect_database": [
     {
-      "background": "A local historian with a passion for ancient artifacts.",
+      "background": "An emerging artist with a troubled past.",
       "favorite_food": "Pasta",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Collecting rare coins",
-      "motive": "Desire to reclaim lost heritage.",
-      "name": "Marco Rossi",
-      "vehicle": "Motorcycle"
-    },
-    {
-      "background": "An art student with a keen eye for detail.",
-      "favorite_food": "Gelato",
       "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Photography",
-      "motive": "To expose the truth behind the artifacts.",
-      "name": "Elena Bianchi",
+      "hair_color": "Brown",
+      "hobby": "Painting",
+      "motive": "Desire for recognition and financial stability.",
+      "name": "Lucia Moretti",
       "vehicle": "Bicycle"
     },
     {
-      "background": "A fisherman who knows the waters well.",
-      "favorite_food": "Seafood",
+      "background": "A well-known sculptor with a penchant for drama.",
+      "favorite_food": "Pizza",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Fishing",
-      "motive": "To protect his family's legacy.",
-      "name": "Giovanni Verdi",
+      "hobby": "Sculpting",
+      "motive": "Jealousy of a rival artist's success.",
+      "name": "Marco Bellini",
+      "vehicle": "Motorcycle"
+    },
+    {
+      "background": "A photographer who captures the essence of art.",
+      "favorite_food": "Seafood",
+      "gender": "Female",
+      "hair_color": "Blonde",
+      "hobby": "Photography",
+      "motive": "Seeking to expose the art world\u2019s secrets.",
+      "name": "Elena Rossi",
       "vehicle": "Car"
     },
     {
-      "background": "A poet who finds inspiration in the past.",
-      "favorite_food": "Pizza",
-      "gender": "Female",
-      "hair_color": "Red",
-      "hobby": "Writing poetry",
-      "motive": "To weave stories from history.",
-      "name": "Sofia Conti",
-      "vehicle": "Scooter"
-    },
-    {
-      "background": "A botanist with a love for nature.",
-      "favorite_food": "Salad",
+      "background": "An antique dealer with a keen eye for valuable items.",
+      "favorite_food": "Cheese",
       "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Gardening",
-      "motive": "To preserve the environment.",
-      "name": "Luca Moretti",
-      "vehicle": "Van"
+      "hair_color": "Gray",
+      "hobby": "Collecting antiques",
+      "motive": "Financial gain through illicit means.",
+      "name": "Giovanni Verdi",
+      "vehicle": "None"
     }
   ],
   "suspect_traits": {
     "favorite_food": "Pasta",
-    "gender": "Male",
+    "gender": "Female",
     "hair_color": "Brown",
-    "hobby": "Collecting rare coins",
-    "vehicle": "Motorcycle"
+    "hobby": "Painting",
+    "vehicle": "Bicycle"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260327.png",
-  "title": "Echoes of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260328.png",
+  "title": "Whispers in the Wind"
 }
