@@ -1,177 +1,180 @@
 {
-  "arrest_location": "Slovak National Gallery",
-  "banner_image_url": "/assets/daily_mission/banner_20260331.png",
+  "arrest_location": "Piazza della Signoria",
+  "banner_image_url": "/assets/daily_mission/banner_20260401.png",
   "cities": [
     {
-      "city_name": "Vienna",
-      "country": "Austria",
+      "city_name": "Nice",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "A person with a keen eye for detail.",
-          "name": "Kunsthistorisches Museum",
-          "npc_dialogue": "I saw someone suspicious near the ancient artifacts. They seemed too interested in the details.",
-          "point_value": 100
-        },
-        {
-          "clue_type": "Eavesdropping",
-          "clue_value": "Mention of a rare painting linked to the thefts.",
-          "name": "Naschmarkt",
-          "npc_dialogue": "The food here is exquisite, but I overheard a conversation about a rare painting.",
+          "clue_type": "Witness Account",
+          "clue_value": "A tall figure with a dark coat.",
+          "name": "Promenade des Anglais",
+          "npc_dialogue": "I saw someone suspicious near the beach, but I can't recall their face.",
           "point_value": 80
         },
         {
           "clue_type": "Observation",
-          "clue_value": "An artist with a hidden agenda.",
-          "name": "Belvedere Palace",
-          "npc_dialogue": "The gardens are beautiful, but I noticed someone sketching the palace. Odd, don\u2019t you think?",
-          "point_value": 90
+          "clue_value": "A woman with a red hat.",
+          "name": "Old Town",
+          "npc_dialogue": "The market was bustling, but I noticed a woman with a peculiar hat.",
+          "point_value": 60
+        },
+        {
+          "clue_type": "Eavesdropping",
+          "clue_value": "Mention of a 'treasure' in Marseille.",
+          "name": "Castle Hill",
+          "npc_dialogue": "The view is beautiful, but I overheard a conversation about a hidden stash.",
+          "point_value": 100
         }
       ],
       "order_in_chase": 1
     },
     {
-      "city_name": "Budapest",
-      "country": "Hungary",
+      "city_name": "Marseille",
+      "country": "France",
       "locations": [
         {
-          "clue_type": "Rumor",
-          "clue_value": "A collector with a penchant for rare items.",
-          "name": "Fisherman's Bastion",
-          "npc_dialogue": "I heard whispers of a collector who frequents this place. He has a taste for the unusual.",
+          "clue_type": "Witness Account",
+          "clue_value": "A man with a blue scarf.",
+          "name": "Vieux Port",
+          "npc_dialogue": "I saw a man with a blue scarf acting strangely by the docks.",
           "point_value": 70
         },
         {
-          "clue_type": "Eavesdropping",
-          "clue_value": "Passion for art can lead to obsession.",
-          "name": "Heroes' Square",
-          "npc_dialogue": "A woman was here, talking about a lost masterpiece. She seemed quite passionate.",
-          "point_value": 60
+          "clue_type": "Incident Report",
+          "clue_value": "A lost necklace.",
+          "name": "Le Panier",
+          "npc_dialogue": "There was a commotion earlier; someone was looking for a lost item.",
+          "point_value": 50
         },
         {
-          "clue_type": "Observation",
-          "clue_value": "A meticulous note-taker.",
-          "name": "Gell\u00e9rt Hill",
-          "npc_dialogue": "The view is stunning, but I saw someone taking notes on the art displayed in the city.",
-          "point_value": 75
+          "clue_type": "Eavesdropping",
+          "clue_value": "A shipment of antiques.",
+          "name": "Palais des Congr\u00e8s",
+          "npc_dialogue": "I overheard a conversation about a shipment arriving tonight.",
+          "point_value": 90
         }
       ],
       "order_in_chase": 2
     },
     {
-      "city_name": "Prague",
-      "country": "Czech Republic",
+      "city_name": "Genoa",
+      "country": "Italy",
       "locations": [
         {
-          "clue_type": "Observation",
-          "clue_value": "An unusual sketch could reveal intentions.",
-          "name": "Charles Bridge",
-          "npc_dialogue": "Artists gather here, but one was sketching something unusual. It caught my eye.",
+          "clue_type": "Witness Account",
+          "clue_value": "A woman with striking features.",
+          "name": "Piazza De Ferrari",
+          "npc_dialogue": "I saw a woman with a striking resemblance to someone I met in Marseille.",
+          "point_value": 75
+        },
+        {
+          "clue_type": "Incident Report",
+          "clue_value": "A mysterious shipment.",
+          "name": "Old Port",
+          "npc_dialogue": "There was a strange shipment that came in last night, but I didn't see who was involved.",
           "point_value": 85
         },
         {
           "clue_type": "Eavesdropping",
-          "clue_value": "Exclusive auctions often attract the elite.",
-          "name": "Old Town Square",
-          "npc_dialogue": "I overheard a discussion about a secret auction. It sounded very exclusive.",
+          "clue_value": "Connection between the two suspects.",
+          "name": "Via Garibaldi",
+          "npc_dialogue": "I overheard someone talking about a 'red hat' and a 'blue scarf'.",
           "point_value": 95
-        },
-        {
-          "clue_type": "Observation",
-          "clue_value": "Nervous behavior can indicate guilt.",
-          "name": "Prague Castle",
-          "npc_dialogue": "A man was seen leaving with a large canvas. He looked nervous.",
-          "point_value": 100
         }
       ],
       "order_in_chase": 3
     }
   ],
-  "correct_suspect": "Lukas Novak",
-  "description": "In the heart of Vienna, a series of art thefts have left the city in turmoil. The stolen pieces are rumored to hold secrets of a hidden treasure. As you delve into the world of art collectors and thieves, you must navigate through a web of deceit and misdirection to uncover the true culprit behind the heists. Each suspect presents a fa\u00e7ade, but only one holds the key to the mystery.",
-  "difficulty": "Hard",
+  "correct_suspect": "Sofia Rossi",
+  "description": "A series of mysterious thefts have left the coastal town of Nice in turmoil. As the sun sets over the Mediterranean, shadows of deceit linger. Your task is to uncover the truth behind the thefts, where every whisper could lead you closer to the elusive thief. Follow the trail through the vibrant streets of Nice, then to the bustling markets of Marseille, and finally to the historic alleys of Genoa. Each city holds secrets, but only one suspect is the mastermind behind it all.",
+  "difficulty": "Medium",
   "estimated_playtime_minutes": 60,
-  "final_city": "Bratislava, Slovakia",
-  "generated_at_utc": "2026-03-31T00:07:15Z",
-  "id": "daily_20260331",
+  "final_city": "Florence, Italy",
+  "generated_at_utc": "2026-04-01T00:07:28Z",
+  "id": "daily_20260401",
   "internal_analyzer": {
     "difficulty_analysis": {
       "ambiguity_score": 0.3,
-      "plausibility_overlap": 0.2,
-      "solution_uniqueness": 1
+      "plausibility_overlap": 0.4,
+      "solution_uniqueness": 0.9
     },
     "reasoning_chain": [
-      "Lukas Novak is the only suspect with a hobby directly linked to the thefts.",
-      "His vehicle matches the description given by witnesses.",
-      "His background as a wealthy collector aligns with the motive for theft.",
-      "Other suspects have hobbies that do not directly connect to the art thefts."
+      "1. Witness accounts in Nice mention a woman with a red hat.",
+      "2. In Marseille, a blue scarf is linked to a suspicious man.",
+      "3. Genoa's clues connect the red hat and blue scarf, hinting at collaboration.",
+      "4. Sofia Rossi's background as an antique dealer aligns with the thefts.",
+      "5. Other suspects lack the specific traits and motives that match the clues."
     ],
-    "solvability_score": 1,
+    "solvability_score": 0.95,
     "validation": {
       "errors": [],
       "facts_checked": [],
       "format": []
     }
   },
-  "mission_id": "daily_20260331",
+  "mission_id": "daily_20260401",
   "region": "Europe",
   "rewards": {
-    "badge_name": "Art Sleuth",
+    "badge_name": "Master Detective",
     "credits_earned": 200,
     "experience_points": 150,
-    "unlocked_regions": []
+    "unlocked_regions": [
+      "Southern Europe"
+    ]
   },
-  "seed": "869055ccf191ab79771696fdd42615a35aa9fff2daaeb4f910c556c2afc643c0",
-  "solution": "Connect the clues about Lukas Novak's obsession with rare art and his nervous behavior when leaving the castle.",
+  "seed": "3707331ecdb44c52094fdeb2f39ff6b82e2239047a6a64fde489e0eecb8a869a",
+  "solution": "Connect the clues about the red hat and blue scarf to identify Sofia Rossi, who has a motive tied to her antique dealings.",
   "suspect_database": [
     {
-      "background": "A wealthy art collector with a secretive past.",
-      "favorite_food": "Goulash",
-      "gender": "Male",
-      "hair_color": "Brown",
-      "hobby": "Collecting rare art",
-      "motive": "Desire to possess the rarest pieces.",
-      "name": "Lukas Novak",
-      "vehicle": "Black Audi"
-    },
-    {
-      "background": "An artist known for her vibrant landscapes.",
-      "favorite_food": "Schnitzel",
+      "background": "A local artist known for her eccentric style.",
+      "favorite_food": "Ratatouille",
       "gender": "Female",
-      "hair_color": "Blonde",
-      "hobby": "Sketching landscapes",
-      "motive": "Passion for art, but could it lead to theft?",
-      "name": "Eva Schmidt",
-      "vehicle": "Red Bicycle"
+      "hair_color": "Brown",
+      "hobby": "Collecting hats",
+      "motive": "Desire for recognition in the art world.",
+      "name": "Clara Moreau",
+      "vehicle": "Bicycle"
     },
     {
-      "background": "A restorer with connections to the underground art market.",
-      "favorite_food": "Pasta",
+      "background": "A fisherman with a troubled past.",
+      "favorite_food": "Bouillabaisse",
       "gender": "Male",
       "hair_color": "Black",
-      "hobby": "Restoring antiques",
-      "motive": "Profit from stolen art.",
-      "name": "Marek Kral",
-      "vehicle": "White Van"
+      "hobby": "Fishing",
+      "motive": "Financial desperation.",
+      "name": "Julien Lefevre",
+      "vehicle": "Motorboat"
     },
     {
-      "background": "A photographer with a keen eye for detail.",
-      "favorite_food": "Borscht",
+      "background": "An antique dealer with a keen eye for valuable items.",
+      "favorite_food": "Pasta",
       "gender": "Female",
-      "hair_color": "Red",
+      "hair_color": "Blonde",
+      "hobby": "Antique collecting",
+      "motive": "Greed for rare artifacts.",
+      "name": "Sofia Rossi",
+      "vehicle": "Scooter"
+    },
+    {
+      "background": "A photographer who documents street life.",
+      "favorite_food": "Pizza",
+      "gender": "Male",
+      "hair_color": "Brown",
       "hobby": "Photography",
-      "motive": "Capturing beauty, but at what cost?",
-      "name": "Sofia Petrov",
-      "vehicle": "Silver Sedan"
+      "motive": "Seeking inspiration for his work.",
+      "name": "Marco Bianchi",
+      "vehicle": "Car"
     }
   ],
   "suspect_traits": {
-    "favorite_food": "Goulash",
-    "gender": "Male",
-    "hair_color": "Brown",
-    "hobby": "Collecting rare art",
-    "vehicle": "Black Audi"
+    "favorite_food": "Pasta",
+    "gender": "Female",
+    "hair_color": "Blonde",
+    "hobby": "Antique collecting",
+    "vehicle": "Scooter"
   },
-  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260331.png",
-  "title": "Shadows of the Past"
+  "thumbnail_image_url": "/assets/daily_mission/thumbnail_20260401.png",
+  "title": "Whispers in the Wind"
 }
