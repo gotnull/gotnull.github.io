@@ -52,5 +52,53 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "In the dimly lit underground lab, 1990s-era computers and oscilloscopes line a cluttered workbench beside a large particle accelerator. Fluorescent lights cast a sterile glow over the physicist, deep in concentration, surrounded by cables and circuit boards. Outside, lightning crackles, momentarily illuminating the lab through a small, reinforced window. Beyond the glass, a glimpse of an alien world shimmers, its strange landscapes barely visible under the stormy sky. The scene captures the essence of a moment where science meets the unknown. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "building-a-custom-gameboy-color-emulator-in-c.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit workshop, a cluttered workbench spans the image, featuring a spread of electronic components. A partially disassembled Gameboy Color rests beside a modern laptop displaying C++ code on its screen. Nearby, oscilloscopes and multimeters blink with activity, wires threading between them and the Gameboy. A pair of focused hands adjust the connections, while a small table lamp casts a warm glow over the scene, emphasizing the intricate details. The atmosphere is one of deep concentration and technical exploration, merging retro nostalgia with modern programming challenges. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "contemplating-the-essence-of-agi-emotions.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, a 1990s particle accelerator looms in the background, its massive circular structure partially visible. A physicist stands at a cluttered workbench, surrounded by vintage computers and oscilloscopes, contemplating over a glowing screen. Occasional flashes of lightning from a storm above ground pierce through a small window, casting dramatic shadows across the room. In a corner, a portal-like shimmer hints at an alien world, contrasting with the stark, industrial ambiance of the lab. The air feels charged, thick with possibility and mystery. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "cosmic-reflections-interweaving-identity-and-infinity.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground lab, a physicist stands beside a large 1990s particle accelerator, its metal coils glinting under flickering fluorescent lights. Outside a small window, lightning violently splits the sky, casting eerie reflections on the scientist's face. His eyes, wide with awe, gaze into the storm, where a surreal alien landscape briefly emerges through the electric haze, revealing jagged mountains and swirling nebulas. The scene captures the tension between human ingenuity and the vast unknown, a moment of cosmic convergence and discovery. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "cosmic-reflections-on-infinite-identity.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, a physicist stands beside a 1990s era particle accelerator, its bulky machinery and tangled wires casting intricate shadows on the concrete walls. An electrical storm rages outside, flashes of lightning briefly illuminating the scene through a narrow window. The physicist's face is reflected in a large, circular viewport of the accelerator, merging with ghostly images of an alien landscape\u2014strange rock formations and luminous skies\u2014suggesting a portal to another world. The atmosphere is tense, cinematic. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "cosmic-reflections-the-role-of-an-infinite-agi-in-shaping-reality.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground lab, a 1990s-style particle accelerator hums with vibrant energy, surrounded by an array of vintage physics equipment. A physicist, deep in concentration, stands at a cluttered workbench, illuminated by flickering fluorescent lights and the occasional flash of lightning that dances across the apparatus. The scene feels cinematic, with a mysterious portal shimmering on the concrete wall, hinting at an alien world beyond. The air crackles with anticipation as the blending of science and otherworldly elements shapes an atmosphere of intrigue and wonder. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "designing-a-simple-cooperative-scheduler-for-microcontrollers.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground lab, a physicist stands beside a hulking particle accelerator, its 1990s control panels flickering with lights. The room buzzes with the hum of machinery. Outside, lightning strikes, casting brief flashes through small, reinforced windows, illuminating complex scientific equipment scattered across a cluttered workbench. A portal-like glow emanates from the accelerator, hinting at an alien world beyond. The physicist, wearing a lab coat, gazes intently at a vintage computer monitor displaying streaming data, embodying a sense of discovery and impending adventure. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "diving-deep-into-fpga-based-neural-network-acceleration.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a brightly lit lab, a rectangular workbench holds an FPGA development board surrounded by tangled wires, electronic components, and a laptop displaying programming code. An oscilloscope flickers softly on the side, its screen showing waveforms in real-time. A pair of hands, slightly dusted with soldering residue, carefully adjust the connections on the board. The scene captures the intensity and focus of hardware experimentation, as sunlight streams through a nearby window, casting faint shadows across the workspace, spotlighting the intricate details of the setup. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "echoes-across-infinity-reflecting-on-the-cosmic-ship-of-theseus.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, a rugged 1990s particle accelerator dominates the room, its metallic coils glistening under flickering fluorescent lights. The air crackles with energy as a physicist, immersed in his work, stands before an array of clunky monitors displaying complex data. Suddenly, a burst of lightning illuminates the scene, casting eerie shadows across the concrete walls. Beyond a nearby window, an alien landscape with swirling purple skies and jagged mountains stretches into the horizon, hinting at the mysterious world beyond. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
