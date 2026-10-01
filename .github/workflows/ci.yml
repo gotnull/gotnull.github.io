@@ -1,4 +1,6 @@
-name: Beautiful Jekyll CI
+# Builds the site the way GitHub Pages does, so a broken push is noticed.
+# Deployment is not done here: Pages builds the master branch itself.
+name: Build
 on:
   push:
     paths-ignore:
@@ -6,25 +8,27 @@ on:
   pull_request:
 jobs:
   build:
-    name: Build Jekyll
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
-      - name: Install dependencies
-        run: bundle install && bundle exec appraisal install
-      - name: Setup Pages
-        id: configure-pages
-        uses: actions/configure-pages@v5
-      - name: Setup CI config
-        run: |
-          echo "---" > _config_ci.yml
-          echo "baseurl: ${{ steps.configure-pages.outputs.base_path }}" >> _config_ci.yml
+          ruby-version: .ruby-version
+          bundler-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Build site
         env:
           JEKYLL_ENV: production
-        run: bundle exec appraisal jekyll build --future --config _config_ci.yml,_config.yml
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          PAGES_REPO_NWO: ${{ github.repository }}
+        run: bundle exec jekyll build
+      - name: Check the game
+        run: node ghost/pong_check.js
+      - name: Test the programs
+        run: |
+          pip install pyyaml pytest
+          python -m pytest -q tests
