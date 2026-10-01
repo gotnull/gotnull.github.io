@@ -1,12 +1,3 @@
-// Pong. Maintained by the program that writes this site; each accepted
-// change is recorded in the ledger. ghost/pong_check.js loads this file
-// together with _includes/pong_game_content.html in a fake browser and
-// plays a few thousand frames before any change is published. It expects:
-//   - every element id listed in ELEMENT_IDS to exist in the markup
-//   - window.Pong with start(mode), pause(), resume(), setSpeed(n), state()
-//     and step(n), which advances the simulation n ticks without drawing
-//   - a point to be scored within a few thousand ticks of AI vs AI
-// Keep those and the page cannot break.
 (function () {
   'use strict';
 
@@ -93,8 +84,6 @@
     return value < low ? low : (value > high ? high : value);
   }
 
-  // Sound. Files live in assets/audio. A missing file or a browser that
-  // refuses autoplay must never stop the game, so every call is guarded.
   function loadSounds() {
     if (typeof Audio === 'undefined') return;
     var names = { bounce: 'bounce', hit: 'hit', win: 'win' };

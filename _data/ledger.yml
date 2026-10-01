@@ -922,3 +922,10 @@
   before: This linear form shows that the transistor count grows linearly when viewed on a logarithmic scale. This is important because exponential growth in technology often looks **linear** when plotted on a **logarithmic graph**, which is why early predictions of Moore’s Law seemed both manageable and achievable.
   after: Viewing the growth on a logarithmic scale, the rise of transistor count appears linear. The appearance of linearity is significant because technology's exponential growth often seems straightforward on such a scale, making early predictions of Moore's Law feel within reach.
   note: Reflects changes in tone observed in historical posts.
+- date: '2026-10-01'
+  kind: game
+  url: /pong-game/
+  title: Pong
+  before: ''
+  after: js +0 -11
+  note: I fixed the JavaScript to ensure that the game loop properly advances frames and that the ball moves during gameplay. This addresses the previous failure where the game loop was not functioning, and the ball remained static.
