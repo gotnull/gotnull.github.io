@@ -29,10 +29,14 @@
   var MAX_SPEED = 3;
   var SPEED_STEP = 0.25;
   var FRAME_MS = 1000 / 60;
+  var POWER_UP_DURATION = 300; // Duration a power-up lasts
+  var POWER_UP_SIZE = 1.5; // Size multiplier for power-up
+  var POWER_UP_PROBABILITY = 0.001; // Probability of spawning a power-up each frame
 
   var LEFT_COLOUR = '#4fd1ff';
   var RIGHT_COLOUR = '#ff5fa2';
   var BALL_COLOUR = '#ffffff';
+  var POWER_UP_COLOUR = '#ffff00';
   var STAR_COUNT = 70;
   var stars = [];
   var rally = 0;
@@ -60,9 +64,10 @@
     paused: false,
     speed: 1,
     sound: false,
-    left: { y: 0, score: 0, flash: 0, target: null },
-    right: { y: 0, score: 0, flash: 0, target: null },
+    left: { y: 0, score: 0, flash: 0, target: null, powerUp: 0 },
+    right: { y: 0, score: 0, flash: 0, target: null, powerUp: 0 },
     ball: { x: 0, y: 0, vx: 0, vy: 0 },
+    powerUp: null,
     winner: null,
     restartAt: 0,
     frame: 0
@@ -125,6 +130,17 @@
     trail = [];
   }
 
+  function spawnPowerUp() {
+    if (state.powerUp === null && Math.random() < POWER_UP_PROBABILITY) {
+      state.powerUp = { x: Math.random() * (WIDTH - BALL_SIZE), y: Math.random() * (HEIGHT - BALL_SIZE) };
+    }
+  }
+
+  function collectPowerUp(side) {
+    state[side].powerUp = POWER_UP_DURATION;
+    state.powerUp = null;
+  }
+
   function start(mode) {
     if (!MODES[mode]) mode = 'ai-vs-ai';
     if (mode !== 'ai-vs-ai') interacted = true;
@@ -140,6 +156,9 @@
     state.right.y = HEIGHT / 2 - PADDLE_HEIGHT / 2;
     state.left.target = null;
     state.right.target = null;
+    state.left.powerUp = 0;
+    state.right.powerUp = 0;
+    state.powerUp = null;
     particles = [];
     resetBall();
     setText(el.gameModeDisplay, 'Mode: ' + MODES[mode]);
@@ -290,6 +309,13 @@
     b.x += b.vx * state.speed;
     b.y += b.vy * state.speed;
 
+    if (state.powerUp) {
+      var pu = state.powerUp;
+      if (b.x < pu.x + BALL_SIZE && b.x + BALL_SIZE > pu.x && b.y < pu.y + BALL_SIZE && b.y + BALL_SIZE > pu.y) {
+        collectPowerUp(b.vx < 0 ? 'left' : 'right');
+      }
+    }
+
     if (b.y <= 0) { b.y = 0; b.vy = Math.abs(b.vy); play('bounce'); }
     if (b.y >= HEIGHT - BALL_SIZE) { b.y = HEIGHT - BALL_SIZE; b.vy = -Math.abs(b.vy); play('bounce'); }
 
@@ -322,6 +348,11 @@
     if (shake > 0) shake -= 1;
     if (state.left.flash > 0) state.left.flash -= 1;
     if (state.right.flash > 0) state.right.flash -= 1;
+
+    spawnPowerUp();
+
+    if (state.left.powerUp > 0) state.left.powerUp -= 1;
+    if (state.right.powerUp > 0) state.right.powerUp -= 1;
   }
 
   // Drawing.
@@ -367,10 +398,13 @@
 
     for (var y = 0; y < HEIGHT; y += 24) rect(WIDTH / 2 - 1, y, 2, 12, 'rgba(255,255,255,0.18)');
 
+    var leftSize = PADDLE_HEIGHT * (state.left.powerUp > 0 ? POWER_UP_SIZE : 1);
+    var rightSize = PADDLE_HEIGHT * (state.right.powerUp > 0 ? POWER_UP_SIZE : 1);
+
     glow(LEFT_COLOUR, 18);
-    rect(0, state.left.y, PADDLE_WIDTH, PADDLE_HEIGHT, paddleColour(state.left, LEFT_COLOUR));
+    rect(0, state.left.y, PADDLE_WIDTH, leftSize, paddleColour(state.left, LEFT_COLOUR));
     glow(RIGHT_COLOUR, 18);
-    rect(WIDTH - PADDLE_WIDTH, state.right.y, PADDLE_WIDTH, PADDLE_HEIGHT, paddleColour(state.right, RIGHT_COLOUR));
+    rect(WIDTH - PADDLE_WIDTH, state.right.y, PADDLE_WIDTH, rightSize, paddleColour(state.right, RIGHT_COLOUR));
     noGlow();
 
     for (var i = 0; i < trail.length; i++) {
@@ -383,6 +417,13 @@
     glow('#ffffff', 16);
     rect(state.ball.x, state.ball.y, BALL_SIZE, BALL_SIZE, BALL_COLOUR);
     noGlow();
+
+    if (state.powerUp) {
+      var pu = state.powerUp;
+      glow(POWER_UP_COLOUR, 12);
+      rect(pu.x, pu.y, BALL_SIZE, BALL_SIZE, POWER_UP_COLOUR);
+      noGlow();
+    }
 
     for (var j = 0; j < particles.length; j++) {
       var p = particles[j];
