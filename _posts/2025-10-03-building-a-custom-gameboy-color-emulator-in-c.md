@@ -1,9 +1,13 @@
 ---
 era: explainer
 layout: post
-title: "Building a Custom Gameboy Color Emulator in C++"
-subtitle: "Dive into the intricacies of emulating classic gaming hardware"
-tags: [emulation, C++, Gameboy Color, software development]
+title: Building a Custom Gameboy Color Emulator in C++
+subtitle: Dive into the intricacies of emulating classic gaming hardware
+tags:
+- emulation
+- C++
+- Gameboy Color
+- software development
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
@@ -12,11 +16,13 @@ date: 2025-10-03 01:32:07 +0000
 cover-img: /assets/img/posts/building-a-custom-gameboy-color-emulator-in-c.jpg
 thumbnail-img: /assets/img/posts/building-a-custom-gameboy-color-emulator-in-c.jpg
 share-img: /assets/img/posts/building-a-custom-gameboy-color-emulator-in-c.jpg
+altered:
+- '2026-10-01'
 ---
 
 ## Introduction
 
-Emulating classic game consoles is not only a fun exercise in nostalgia but also an insightful journey into low-level programming and systems architecture. In this post, we'll construct a simple Gameboy Color emulator using C++. This project will help us understand the workings of CPU emulation, memory management, and I/O operations within the Gameboy system.
+Emulating classic game consoles involves more than just nostalgia; it's a detailed exploration of programming and system architecture at a low level. This entry outlines the creation of a basic Gameboy Color emulator using C++. Through this exercise, we gain insight into the functioning of CPU emulation, memory management, and the Gameboy's I/O operations.
 
 ## System Overview
 
