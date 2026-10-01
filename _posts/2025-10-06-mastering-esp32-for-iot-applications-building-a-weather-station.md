@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Mastering ESP32 for IoT Applications: Building a Weather Station"
 subtitle: "Integrating sensors and web connectivity with the ESP32 microcontroller"

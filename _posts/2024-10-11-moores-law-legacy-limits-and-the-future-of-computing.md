@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post  
 title: Moore’s Law - Legacy, Limits, and the Future of Computing  
 subtitle: A Deep Dive into the Past, Present, and Future of Moore’s Law  

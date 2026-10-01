@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring Power Electronics with a Buck Converter Design"
 subtitle: "Designing and Implementing a Buck Converter for Efficient Voltage Regulation"

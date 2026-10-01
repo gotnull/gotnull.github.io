@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the Fundamentals of I2C Communication on the PIC Microcontroller"
 subtitle: "A deep dive into implementing I2C protocol for sensor integration using PIC16F877"

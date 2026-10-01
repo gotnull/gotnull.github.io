@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the Game Boy Sound System: A Deep Dive into Audio Emulation"
 subtitle: "Understanding and emulating the Nintendo Game Boy's sound hardware with detailed code examples"

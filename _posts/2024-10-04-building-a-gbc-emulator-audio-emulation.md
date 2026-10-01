@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post  
 title: Building a Gameboy Color Emulator - Audio Emulation  
 subtitle: Recreating the Sound of the Gameboy Color  

@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring CAN Bus: Implementing a CAN Network on STM32"
 subtitle: "A deep dive into setting up a Controller Area Network (CAN) with STM32 for automotive applications"

@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring FPGA-Based PID Controller Design for Real-Time Applications"
 subtitle: "A technical walkthrough of implementing a Proportional-Integral-Derivative (PID) controller on an FPGA"

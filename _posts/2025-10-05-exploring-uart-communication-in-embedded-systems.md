@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring UART Communication in Embedded Systems"
 subtitle: "In-depth Guide to Setting Up and Debugging UART on ESP32"

@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Efficient Task Scheduling on STM32 Using Cooperative Multitasking"
 subtitle: "Implementing a lightweight scheduler for real-time applications"

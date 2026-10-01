@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Mastering UART Communication with STM32"
 subtitle: "A deep dive into implementing UART communication for STM32 microcontrollers"

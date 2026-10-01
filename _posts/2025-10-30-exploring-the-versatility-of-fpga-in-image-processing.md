@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the Versatility of FPGA in Image Processing"
 subtitle: "Implementing a Sobel Edge Detection Algorithm on an FPGA"

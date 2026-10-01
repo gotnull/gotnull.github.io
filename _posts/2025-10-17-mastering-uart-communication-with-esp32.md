@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Mastering UART Communication with ESP32"
 subtitle: "A deep dive into UART protocol implementation on the ESP32 microcontroller"

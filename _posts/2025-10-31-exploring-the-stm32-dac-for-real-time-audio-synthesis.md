@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the STM32 DAC for Real-Time Audio Synthesis"
 subtitle: "A deep dive into generating audio signals with STM32's DAC features"

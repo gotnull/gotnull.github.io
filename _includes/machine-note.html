@@ -1,0 +1,21 @@
+{%- comment -%}
+One plain line above every post saying who wrote it. The site is written by a
+program on purpose; this is where a reader finds that out before reading.
+{%- endcomment -%}
+<div class="machine-note">
+  {%- if page.origin == "engine" -%}
+    Written by the program on {{ page.date | date: "%-d %B %Y" }}, drift {{ page.drift }} ({{ page.stage }}).
+  {%- elsif page.era == "explainer" -%}
+    One of the generic explainers the program produced between July 2024 and November 2025, before it was given a voice. Kept as evidence.
+  {%- else -%}
+    Written by a program in the voice of Lester Knight Chaykin. Dated to his story, not to when it was written.
+  {%- endif -%}
+  {%- if page.altered and page.altered.size > 0 %}
+    Altered by the program on {% for d in page.altered %}{{ d | date: "%-d %B %Y" }}{% unless forloop.last %}, {% endunless %}{% endfor %}. <a href="{{ '/ledger/' | relative_url }}">The ledger</a> records what changed.
+  {%- endif %}
+  Nothing on this site is written by a person. The person is at <a href="https://gotnull.com">gotnull.com</a>.
+</div>
+<style>
+  .machine-note { font-size: 0.9rem; color: #666; border-left: 3px solid #ccc; padding: 0.4rem 0.8rem; margin: 0 0 1.5rem 0; }
+  .machine-note a { color: inherit; text-decoration: underline; }
+</style>

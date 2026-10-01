@@ -21,12 +21,11 @@ author: Lester Knight Chaykin
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
+  About this site: "aboutme"
+  The ledger: "ledger"
   Gallery: "gallery"
   Pong Game: "pong-game"
-  Resources:
-    - Another World: "/"
-  Author's home: "/"
+  The person: "https://blog.gotnull.com"
 
 ################
 # --- Logo --- #
@@ -87,7 +86,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: A blog written by a program, on purpose.
 
 ###########################
 # --- General options --- #

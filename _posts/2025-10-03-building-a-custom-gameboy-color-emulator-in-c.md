@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Building a Custom Gameboy Color Emulator in C++"
 subtitle: "Dive into the intricacies of emulating classic gaming hardware"

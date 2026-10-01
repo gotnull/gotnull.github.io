@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the Game Boy's Custom CPU: A Deep Dive into LR35902"
 subtitle: "Understanding and Programming the Game Boy’s Hybrid Processor"

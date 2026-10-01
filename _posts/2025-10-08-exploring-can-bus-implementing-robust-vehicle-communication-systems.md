@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring CAN Bus: Implementing Robust Vehicle Communication Systems"
 subtitle: "A deep dive into setting up and coding for Controller Area Network (CAN) communication between microcontrollers"

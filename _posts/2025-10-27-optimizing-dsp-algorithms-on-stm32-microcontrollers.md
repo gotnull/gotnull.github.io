@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Optimizing DSP Algorithms on STM32 Microcontrollers"
 subtitle: "A deep dive into efficient signal processing with practical code optimizations"

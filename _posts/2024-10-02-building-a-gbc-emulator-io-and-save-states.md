@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post  
 title: Building a Gameboy Color Emulator - I/O Registers and Save States  
 subtitle: Handling Input/Output and Saving Game States  

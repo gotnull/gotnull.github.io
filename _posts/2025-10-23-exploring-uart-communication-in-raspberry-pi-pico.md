@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring UART Communication in Raspberry Pi Pico"
 subtitle: "Implementing Full-Duplex Serial Communication Using MicroPython"

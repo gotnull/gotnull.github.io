@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post  
 title: Building a Gameboy Color Emulator - CPU Execution and Memory Management  
 subtitle: Diving Into CPU Instructions, Timers, and Memory Mapping  

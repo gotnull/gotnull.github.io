@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the AHB-Lite Bus Protocol: An FPGA Implementation Guide"
 subtitle: "A step-by-step guide to implementing the AMBA AHB-Lite protocol in an FPGA environment"

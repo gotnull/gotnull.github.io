@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring Low-Level Programming with Rust for Embedded Systems"
 subtitle: "Implementing a Hardware Abstraction Layer in Rust for STM32 Microcontrollers"

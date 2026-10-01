@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Mastering CAN Bus: Implementing Robust Vehicle Communication Systems"
 subtitle: "A deep dive into CAN protocol for automotive applications with practical implementation on STM32"

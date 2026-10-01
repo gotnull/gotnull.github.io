@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: Exploring Flame Engine Features - A Practical Guide
 subtitle: A Deep Dive into Animation, Input, Backgrounds, Particles, and Collisions

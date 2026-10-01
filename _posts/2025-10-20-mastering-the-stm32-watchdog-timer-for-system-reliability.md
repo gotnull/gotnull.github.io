@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Mastering the STM32 Watchdog Timer for System Reliability"
 subtitle: "Enhancing Embedded System Stability through the STM32 Independent Watchdog"

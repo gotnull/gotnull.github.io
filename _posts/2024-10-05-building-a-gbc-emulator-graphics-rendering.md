@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post  
 title: Building a Gameboy Color Emulator - Graphics Rendering  
 subtitle: How to Emulate the Gameboy Color’s Display  

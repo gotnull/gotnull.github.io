@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring I2C Communication with Arduino: A Deep Dive into Master-Slave Setup"
 subtitle: "Setting up a robust I2C communication channel between two Arduinos"

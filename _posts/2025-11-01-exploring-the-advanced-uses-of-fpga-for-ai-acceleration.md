@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the Advanced Uses of FPGA for AI Acceleration"
 subtitle: "How FPGAs are revolutionizing AI processing through hardware acceleration"

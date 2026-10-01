@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Mastering Memory Management in Embedded Systems: A Deep Dive into STM32 DMA"
 subtitle: "Understanding the intricacies of Direct Memory Access on the STM32 platform for optimized data transfers"

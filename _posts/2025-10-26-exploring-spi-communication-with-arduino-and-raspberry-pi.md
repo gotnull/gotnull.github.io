@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring SPI Communication with Arduino and Raspberry Pi"
 subtitle: "A Practical Guide to Mastering SPI Between Two Popular Platforms"

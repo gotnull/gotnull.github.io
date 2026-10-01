@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Building a Robust Multi-File Steganography Tool in Python"
 subtitle: "Hiding Multiple Secrets within Images using LSB Manipulation and Python"

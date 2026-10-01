@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the Complexities of CAN Bus Communication in Embedded Systems"
 subtitle: "How to Implement and Debug a CAN Network for Robust Data Exchange"

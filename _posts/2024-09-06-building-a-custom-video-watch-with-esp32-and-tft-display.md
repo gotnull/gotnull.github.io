@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: Building a Custom Video Watch with ESP32 and TFT Display
 subtitle: A Wearable Video Streaming Device for the DIY Enthusiast

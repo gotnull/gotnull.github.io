@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: Building a Joystick Controller with BleGamepad and TFT LCD
 subtitle: A DIY Bluetooth Game Controller using ESP32, Joystick, and TFT Display

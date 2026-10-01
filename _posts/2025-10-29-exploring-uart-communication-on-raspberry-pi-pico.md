@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring UART Communication on Raspberry Pi Pico"
 subtitle: "A Deep Dive into Serial Protocol Implementation and Debugging with RP2040"

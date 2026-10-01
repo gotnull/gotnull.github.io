@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the Intricacies of I2C Communication on Raspberry Pi"
 subtitle: "A Guide to Mastering I2C Interface with HDC1080 Temperature and Humidity Sensor"

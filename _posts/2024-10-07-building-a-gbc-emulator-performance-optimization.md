@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post  
 title: Building a Gameboy Color Emulator - Performance Optimization and Stability  
 subtitle: Improving Speed, Reducing Lag, and Ensuring Stability  

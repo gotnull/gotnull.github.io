@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Diving Deep into FPGA-based Neural Network Acceleration"
 subtitle: "Implementing a Basic Neural Network on an FPGA to Accelerate Deep Learning Tasks"

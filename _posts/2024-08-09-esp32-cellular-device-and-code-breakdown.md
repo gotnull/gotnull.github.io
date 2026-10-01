@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: ESP32 Cellular Device and Code Breakdown
 subtitle: A Deep Dive into Hardware and Software for IoT Applications

@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring UART Communication with Raspberry Pi and Arduino"
 subtitle: "Step-by-step guide to setting up a UART communication between Raspberry Pi and Arduino for IoT applications"

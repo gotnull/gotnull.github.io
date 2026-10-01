@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: Analyzing the CrowdStrike IT Outage - Causes, Consequences, and Responses
 subtitle: Unpacking the Recent Global IT Disruption by CrowdStrike

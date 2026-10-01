@@ -1,35 +1,51 @@
-name: Generate Tech Blog Post
+name: Write today's post
 
 on:
-  # schedule:
-  #   - cron: '11 13 * * *'  # 11:11 PM AEST = 13:11 UTC
+  schedule:
+    - cron: '11 13 * * *'   # 11:11pm Melbourne during AEST
   workflow_dispatch:
+    inputs:
+      force_alter:
+        description: "Force an alteration of this kind (author, marginalia, redaction, rewrite)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ghost-writer
+  cancel-in-progress: false
 
 jobs:
-  ghost-writer:
+  write:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-    - name: Install dependencies
-      run: |
-        pip install openai requests beautifulsoup4 python-dotenv pyyaml
+      - name: Install dependencies
+        run: pip install openai pyyaml
 
-    - name: Run ghost writer
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: python ghost/ghost_writer.py
+      - name: Run the writer
+        id: writer
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GHOST_MODEL: ${{ vars.GHOST_MODEL || 'gpt-4o' }}
+        run: |
+          if [ -n "${{ github.event.inputs.force_alter }}" ]; then
+            python ghost/ghost_writer.py --force-alter "${{ github.event.inputs.force_alter }}"
+          else
+            python ghost/ghost_writer.py
+          fi
 
-    - name: Commit changes
-      run: |
-        git config --global user.name 'Lester Knight Chaykin'
-        git config --global user.email 'lester@4511932.com'
-        git add _posts/*.md
-        git commit -m "Automated AGI blog post" || echo "No changes to commit"
-        git push
+      - name: Commit
+        run: |
+          git config user.name 'Lester Knight Chaykin'
+          git config user.email 'lester@4511932.com'
+          git add ${{ steps.writer.outputs.changed }}
+          git commit -m "Post from the program" || echo "nothing to commit"
+          git pull --rebase origin master
+          git push

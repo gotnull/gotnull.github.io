@@ -1,4 +1,5 @@
 ---
+era: explainer
 layout: post
 title: "Exploring the DDS Technique for Signal Generation with Arduino"
 subtitle: "From Theory to Real-world Application: Implementing Direct Digital Synthesis for High Precision Waves"
