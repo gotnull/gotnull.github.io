@@ -1,31 +1,30 @@
-<!-- Improved HTML code here -->
-
 <div id="gameContainer">
-    <canvas id="pongCanvas" width="800" height="400"></canvas>
+  <canvas id="pongCanvas" width="800" height="400" tabindex="0" aria-label="Pong"></canvas>
 
-    <div id="controls">
-        <button id="startGame">Player vs AI</button>
-        <button id="startAI">AI vs AI</button>
-        <button id="startMultiplayer">Multiplayer</button>
-        <button id="pauseGame">Pause</button>
-        <button id="toggleSound">Sound: Off</button>
-        <button id="fullscreenButton">Fullscreen</button>
-    </div>
+  <div id="controls">
+    <button id="startGame" type="button">Player vs AI</button>
+    <button id="startAI" type="button">AI vs AI</button>
+    <button id="startMultiplayer" type="button">Multiplayer</button>
+    <button id="pauseGame" type="button">Pause</button>
+    <button id="toggleSound" type="button">Sound: Off</button>
+    <button id="fullscreenButton" type="button">Fullscreen</button>
+  </div>
 
-    <div id="gameInfo">
-        <div id="gameModeDisplay">Mode: AI vs AI</div>
-    </div>
+  <div id="gameInfo">
+    <span id="gameModeDisplay">Mode: AI vs AI</span>
+  </div>
 
-    <div id="speedControls">
-        <button id="decreaseSpeed">Slower</button>
-        <span id="speedDisplay">Speed: 1.0x</span>
-        <button id="increaseSpeed">Faster</button>
-    </div>
+  <div id="speedControls">
+    <button id="decreaseSpeed" type="button">Slower</button>
+    <span id="speedDisplay">Speed: 1.0x</span>
+    <button id="increaseSpeed" type="button">Faster</button>
+  </div>
 
-    <div id="instructions">
-        <h3>Instructions</h3>
-        <p><strong>Player vs AI:</strong> Use Arrow Keys to control right paddle</p>
-        <p><strong>Multiplayer:</strong> Player 1 uses W/S keys, Player 2 uses Arrow Keys</p>
-        <p>First to 5 points wins!</p>
-    </div>
+  <div id="instructions">
+    <h3>How to play</h3>
+    <p><strong>Player vs AI:</strong> arrow keys move the right paddle.</p>
+    <p><strong>Multiplayer:</strong> W and S move the left paddle, arrow keys move the right one.</p>
+    <p><strong>Touch:</strong> drag on your half of the board.</p>
+    <p>First to 5 points wins. Space restarts after a win, P pauses.</p>
+  </div>
 </div>

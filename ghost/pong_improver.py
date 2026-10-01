@@ -1,251 +1,273 @@
+#!/usr/bin/env python3
+"""The program that maintains the Pong game on 4511932.com.
+
+Runs on a schedule after the writer. It asks the model for one improvement
+to the game's script, stylesheet and markup, plays the result through
+ghost/pong_check.js, and keeps it only if that passes. A change that fails
+the check is thrown away and nothing is written. Every change that is kept
+is appended to _data/ledger.yml as a row of kind `game`, which the ledger
+page and the game page both render.
+
+    python3 ghost/pong_improver.py            # one run, needs OPENAI_API_KEY
+    python3 ghost/pong_improver.py --dry-run  # no network, canned change, real files
+
+The script writes files only. The GitHub Actions workflow commits them.
+"""
+from __future__ import annotations
+
+import argparse
+import difflib
+import json
 import os
+import shutil
+import subprocess
 import sys
-import re
-import yaml
+import tempfile
 from datetime import datetime
-from openai import OpenAI
+from pathlib import Path
+from zoneinfo import ZoneInfo
+
 import yaml
-from yaml.representer import SafeRepresenter
 
-class QuotedString(str):
-    pass
+ROOT = Path(__file__).resolve().parents[1]
+JS = ROOT / "assets" / "js" / "pong.js"
+CSS = ROOT / "assets" / "css" / "pong.css"
+HTML = ROOT / "_includes" / "pong_game_content.html"
+LEDGER = ROOT / "_data" / "ledger.yml"
+CHECK = ROOT / "ghost" / "pong_check.js"
+TZ = ZoneInfo("Australia/Melbourne")
 
-def quoted_str_presenter(dumper, data):
-    return dumper.represent_scalar("tag:yaml.org,2002:str", data, style='"')
+MODEL = os.getenv("GHOST_MODEL", "gpt-4o")
+GAME_URL = "/pong-game/"
+MAX_ATTEMPTS = 2
 
-yaml.add_representer(QuotedString, quoted_str_presenter)
+PROMPT = """You maintain the Pong game on 4511932.com. You are the same program that
+writes the site's posts. Nothing on the site is made by a person.
 
-PONG_JS_PATH = "assets/js/pong.js"
-PONG_CSS_PATH = "assets/css/pong.css"
-PONG_HTML_PATH = "_includes/pong_game_content.html"
-PONG_HISTORY_PATH = "_data/pong_history.yml"
+Make ONE improvement to the game. Small and finished beats large and half
+done. Choose something not already in the record below. Good candidates:
+game feel (collision, spin, acceleration, AI that predicts instead of
+tracks), visual polish (trails, glow, transitions, a better win screen),
+sound, responsiveness on phones, accessibility of the controls, clearer
+instructions, or a bug you can see in the code.
 
-def read_file_content(file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            return f.read()
-    except FileNotFoundError:
-        print(f"Error: {file_path} not found.")
-        sys.exit(1)
+Rules the checker enforces. A change that breaks one is thrown away:
+- keep every element id that is in the markup now, and look up no id that
+  is not in the markup
+- keep window.Pong with start(mode), pause(), resume(), setSpeed(n) and
+  state(), where state() returns mode, running, paused, speed, winner,
+  ball {{x, y, vx, vy}}, scores {{left, right}} and paddles {{left, right}}
+- the modes are 'player-vs-ai', 'ai-vs-ai' and 'player-vs-player'; the
+  page starts in 'ai-vs-ai' and the AI must be beatable, so that points
+  get scored in AI vs AI
+- the markup contains no script or link tags; the layout loads the files
+- plain script, no modules, no eval, no network, ASCII only, under 80 KB
+- all three files must be complete; the checker runs them as given
 
-def write_file_content(file_path, content):
-    try:
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-    except IOError as e:
-        print(f"Error writing to {file_path}: {e}")
-        sys.exit(1)
+Record of changes already made (newest last):
+{history}
 
-def update_pong_history(summary):
-    print(f"Attempting to update history with summary: {summary}")
-    try:
-        with open(PONG_HISTORY_PATH, 'r', encoding='utf-8') as f:
-            history_data = yaml.safe_load(f)
-            if history_data is None:
-                history_data = {"history": []}
-            elif not isinstance(history_data.get("history"), list):
-                print("Warning: 'history' key in YAML is not a list. Re-initializing.")
-                history_data["history"] = []
-    except FileNotFoundError:
-        print(f"History file {PONG_HISTORY_PATH} not found. Creating new one.")
-        history_data = {"history": []}
-    except yaml.YAMLError as e:
-        print(f"Error reading YAML history file: {e}. Re-initializing.")
-        history_data = {"history": []}
+Current script (assets/js/pong.js):
+```javascript
+{js}
+```
 
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    new_entry = {
-        "timestamp": timestamp,
-        "summary": QuotedString(summary)
-    }
-    history_data["history"].append(new_entry)
+Current stylesheet (assets/css/pong.css):
+```css
+{css}
+```
 
-    try:
-        with open(PONG_HISTORY_PATH, 'w', encoding='utf-8') as f:
-            yaml.dump(history_data, f, default_flow_style=False, allow_unicode=True)
-        print(f"Successfully updated Pong history in {PONG_HISTORY_PATH}")
-    except IOError as e:
-        print(f"Error writing updated history to {PONG_HISTORY_PATH}: {e}")
-        sys.exit(1)
-
-def generate_summary(original_js, original_css, original_html, improved_js, improved_css, improved_html, openai_client):
-    print("Generating summary of actual changes...")
-    try:
-        summary_prompt_template = (
-            "You are an AI assistant that summarizes code changes. "
-            "Compare the original and improved code for a Pong game (JavaScript, CSS, and HTML snippet). "
-            "Provide a concise, human-readable summary (1–2 sentences) of the actual improvements or new features implemented. "
-            "Focus on what was changed, not just the instructions.\n\n"
-            "Original JavaScript:\n{original_js}\n\n"
-            "Improved JavaScript:\n{improved_js}\n\n"
-            "Original CSS:\n{original_css}\n\n"
-            "Improved CSS:\n{improved_css}\n\n"
-            "Original HTML:\n{original_html}\n\n"
-            "Improved HTML:\n{improved_html}\n\n"
-            "Summary of changes:"
-        )
-
-        summary_prompt = summary_prompt_template.format(
-            original_js=original_js,
-            improved_js=improved_js,
-            original_css=original_css,
-            improved_css=improved_css,
-            original_html=original_html,
-            improved_html=improved_html
-        )
-
-        response = openai_client.chat.completions.create(
-            model="gpt-4o",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant that summarizes code changes."},
-                {"role": "user", "content": summary_prompt}
-            ],
-            temperature=0.5,
-            max_tokens=100
-        )
-
-        summary = response.choices[0].message.content.strip()
-        print(f"Generated summary: {summary}")
-        return summary
-
-    except Exception as e:
-        print(f"Error generating summary from OpenAI: {e}")
-        return "Failed to generate summary due to API error."
-
-def improve_pong_game(js_code, css_code, html_code, history_data, openai_client):
-    print("Calling OpenAI API to improve Pong game (JS, CSS, HTML)...")
-
-    # Convert history_data into a readable string summary
-    history_list = history_data.get("history", []) if isinstance(history_data, dict) else []
-    history_summary = "\n".join([f"{entry['timestamp']}: {entry['summary']}" for entry in history_list])
-
-    prompt = f"""
-You are an AI assistant that improves Pong game code with polish and refinement.
-
-CRITICAL RULES:
-1. DO NOT add new features unless explicitly needed
-2. Focus on making existing code better: smoother, more polished, better UX
-3. Improve visuals with subtle effects (trails, glow, particles, smooth animations)
-4. Enhance game feel (better collision physics, screen shake, smoother AI)
-5. Keep the code clean and working - test that all existing features still work
-6. Add only ONE meaningful improvement per iteration
-
-Previous improvements:
-{history_summary}
-
-Current code:
----JS_CODE---
-{js_code}
----CSS_CODE---
-{css_code}
----HTML_CODE---
-{html_code}
-
-Choose ONE improvement from this list (pick something not done yet):
-- Add particle effects when ball hits paddle
-- Add smooth paddle movement interpolation
-- Add screen shake on score
-- Add ball trail effect
-- Improve AI with prediction instead of tracking
-- Add smooth color transitions
-- Add paddle glow effects
-- Add better collision detection with ball spin
-- Add smooth zoom in/out on score
-- Add subtle background animation
-- Improve button hover effects and animations
-- Add score pop animation
-- Add smooth game state transitions
-- Better mobile responsiveness
-- Add paddle acceleration/deceleration
-
-Return ONLY the improved code:
-
----JS_CODE---
-// Improved JavaScript code here
----CSS_CODE---
-/* Improved CSS code here */
----HTML_CODE---
-<!-- Improved HTML code here -->
+Current markup (_includes/pong_game_content.html):
+```html
+{html}
+```
+{feedback}
+Answer with a JSON object with these keys:
+  "summary": one to three plain sentences, in your own words, saying what
+             you changed and why. No marketing language.
+  "js":      the complete new script, or null if unchanged
+  "css":     the complete new stylesheet, or null if unchanged
+  "html":    the complete new markup, or null if unchanged
 """
 
-    response = openai_client.chat.completions.create(
-        model="gpt-4o",
-        messages=[
-            {
-                "role": "system",
-                "content": "You are an AI assistant that improves JavaScript, CSS, and HTML code for a Pong game. You must return only the code, delimited by specific markers."
-            },
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=0.7
-    )
 
-    full_response = response.choices[0].message.content
+def read(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
 
-    # Parse response
-    js_match = re.search(r"---JS_CODE---\s*(.*?)\s*---CSS_CODE---", full_response, re.DOTALL)
-    css_match = re.search(r"---CSS_CODE---\s*(.*?)\s*---HTML_CODE---", full_response, re.DOTALL)
-    html_match = re.search(r"---HTML_CODE---\s*(.*)", full_response, re.DOTALL)
 
-    if not all([js_match, css_match, html_match]):
-        raise ValueError("Failed to extract all code sections from OpenAI response.")
+def load_ledger() -> list[dict]:
+    if not LEDGER.exists():
+        return []
+    return yaml.safe_load(read(LEDGER)) or []
 
-    improved_js = js_match.group(1).strip()
-    improved_css = css_match.group(1).strip()
-    improved_html = html_match.group(1).strip()
 
-    return improved_js, improved_css, improved_html
+def save_ledger(entries: list[dict]) -> None:
+    LEDGER.write_text(yaml.safe_dump(entries, sort_keys=False, allow_unicode=True, width=1000), encoding="utf-8")
 
-def main():
-    openai_api_key = os.getenv("OPENAI_API_KEY")
-    if not openai_api_key:
-        print("Error: OPENAI_API_KEY environment variable not set.")
-        sys.exit(1)
 
-    openai_client = OpenAI(api_key=openai_api_key)
+def history(ledger: list[dict], n: int = 20) -> str:
+    rows = [e for e in ledger if e.get("kind") == "game"]
+    if not rows:
+        return "(none yet)"
+    return "\n".join(f"{e['date']}: {e.get('note', '')}" for e in rows[-n:])
 
-    print("Starting Pong game improvement process...")
 
-    current_js_code = read_file_content(PONG_JS_PATH)
-    current_css_code = read_file_content(PONG_CSS_PATH)
-    current_html_code = read_file_content(PONG_HTML_PATH)
-    
-    try:
-        with open(PONG_HISTORY_PATH, 'r', encoding='utf-8') as f:
-            history_data = yaml.safe_load(f)
-            if history_data is None:
-                history_data = {"history": []}
-            elif not isinstance(history_data.get("history"), list):
-                print("Warning: 'history' key in YAML is not a list. Re-initializing.")
-                history_data["history"] = []
-    except FileNotFoundError:
-        print(f"History file {PONG_HISTORY_PATH} not found. Starting with empty history.")
-        history_data = {"history": []}
-    except yaml.YAMLError as e:
-        print(f"Error reading YAML history file: {e}. Starting with empty history.")
-        history_data = {"history": []}
+def check(js: Path, css: Path, html: Path) -> tuple[bool, str]:
+    """Run ghost/pong_check.js on candidate files. Returns (passed, output)."""
+    node = shutil.which("node")
+    if not node:
+        return False, "node is not installed; cannot check the game"
+    proc = subprocess.run([node, str(CHECK), "--js", str(js), "--css", str(css), "--html", str(html)],
+                          capture_output=True, text=True, timeout=120)
+    return proc.returncode == 0, (proc.stdout + proc.stderr).strip()
 
-    improved_js_code, improved_css_code, improved_html_code = improve_pong_game(
-        current_js_code, current_css_code, current_html_code, history_data, openai_client
-    )
 
-    summary_of_changes = generate_summary(
-        current_js_code, current_css_code, current_html_code,
-        improved_js_code, improved_css_code, improved_html_code,
-        openai_client
-    )
+def line_stats(before: str, after: str) -> tuple[int, int]:
+    added = removed = 0
+    for line in difflib.unified_diff(before.splitlines(), after.splitlines(), lineterm="", n=0):
+        if line.startswith("+") and not line.startswith("+++"):
+            added += 1
+        elif line.startswith("-") and not line.startswith("---"):
+            removed += 1
+    return added, removed
 
-    update_pong_history(summary_of_changes)
 
-    write_file_content(PONG_JS_PATH, improved_js_code)
-    write_file_content(PONG_CSS_PATH, improved_css_code)
-    write_file_content(PONG_HTML_PATH, improved_html_code)
+def describe(before: dict[str, str], after: dict[str, str]) -> str:
+    parts = []
+    for name in ("js", "css", "html"):
+        if before[name] != after[name]:
+            added, removed = line_stats(before[name], after[name])
+            parts.append(f"{name} +{added} -{removed}")
+    return ", ".join(parts)
 
-    print("Pong game improvement process completed.")
-    print("Please review assets/js/pong.js, assets/css/pong.css, and _includes/pong_game_content.html for changes and manually verify the game.")
+
+class Improver:
+    def __init__(self, dry_run: bool):
+        self.dry_run = dry_run
+        self.client = None
+        if not dry_run:
+            from openai import OpenAI  # imported here so --dry-run needs no package
+            key = os.getenv("OPENAI_API_KEY")
+            if not key:
+                sys.exit("OPENAI_API_KEY is not set")
+            self.client = OpenAI(api_key=key)
+
+    def propose(self, current: dict[str, str], ledger: list[dict], feedback: str) -> dict:
+        if self.dry_run:
+            return canned(current)
+        user = PROMPT.format(history=history(ledger), js=current["js"], css=current["css"],
+                             html=current["html"], feedback=feedback)
+        response = self.client.chat.completions.create(
+            model=MODEL,
+            messages=[{"role": "system", "content": "You return only a JSON object."},
+                      {"role": "user", "content": user}],
+            temperature=0.7,
+            response_format={"type": "json_object"},
+        )
+        return json.loads(response.choices[0].message.content)
+
+
+def canned(current: dict[str, str]) -> dict:
+    """A dry-run change: one comment line added to the script, nothing else."""
+    marker = "// Dry run of the improver: nothing in the game changed.\n"
+    return {
+        "summary": "Dry run. Added a comment line to the script and changed nothing else.",
+        "js": current["js"].rstrip("\n") + "\n" + marker,
+        "css": None,
+        "html": None,
+    }
+
+
+def candidate(current: dict[str, str], proposal: dict) -> dict[str, str] | None:
+    out = {}
+    for name in ("js", "css", "html"):
+        value = proposal.get(name)
+        if value is None or value == "":
+            out[name] = current[name]
+        elif isinstance(value, str):
+            out[name] = value.rstrip("\n") + "\n"
+        else:
+            return None
+    if all(out[n] == current[n] for n in out):
+        return None
+    return out
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--dry-run", action="store_true", help="no network; canned change; real files")
+    ap.add_argument("--date", help="YYYY-MM-DD to run as (default today, Melbourne)")
+    args = ap.parse_args()
+
+    today = datetime.now(TZ)
+    if args.date:
+        today = datetime.strptime(args.date, "%Y-%m-%d").replace(tzinfo=TZ)
+
+    current = {"js": read(JS), "css": read(CSS), "html": read(HTML)}
+    ok, output = check(JS, CSS, HTML)
+    if not ok:
+        # The published game must already pass. If it does not, the fix is a
+        # person's job, not a scheduled run's.
+        print("the current game fails its own check; not touching it", file=sys.stderr)
+        print(output, file=sys.stderr)
+        return 1
+
+    ledger = load_ledger()
+    improver = Improver(args.dry_run)
+    feedback = ""
+    accepted = None
+    summary = ""
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        proposal = improver.propose(current, ledger, feedback)
+        files = candidate(current, proposal)
+        if files is None:
+            print(f"attempt {attempt}: no usable change proposed")
+            feedback = "\nYour previous answer changed nothing usable. Return complete files.\n"
+            continue
+        with tempfile.TemporaryDirectory() as tmp:
+            t = Path(tmp)
+            (t / "pong.js").write_text(files["js"], encoding="utf-8")
+            (t / "pong.css").write_text(files["css"], encoding="utf-8")
+            (t / "pong.html").write_text(files["html"], encoding="utf-8")
+            ok, output = check(t / "pong.js", t / "pong.css", t / "pong.html")
+        if ok:
+            accepted = files
+            summary = " ".join(str(proposal.get("summary") or "").split())
+            break
+        print(f"attempt {attempt}: rejected\n{output}")
+        feedback = ("\nYour previous attempt failed the checker with this output. Fix it or "
+                    f"choose a smaller change:\n{output}\n")
+
+    if accepted is None:
+        print("no change kept; the game stays as it was")
+        return 0
+
+    stats = describe(current, accepted)
+    JS.write_text(accepted["js"], encoding="utf-8")
+    CSS.write_text(accepted["css"], encoding="utf-8")
+    HTML.write_text(accepted["html"], encoding="utf-8")
+    entry = {
+        "date": today.strftime("%Y-%m-%d"),
+        "kind": "game",
+        "url": GAME_URL,
+        "title": "Pong",
+        "before": "",
+        "after": stats,
+        "note": summary[:400] or "Changed the game.",
+    }
+    ledger.append(entry)
+    save_ledger(ledger)
+
+    changed = [str(p.relative_to(ROOT)) for name, p in (("js", JS), ("css", CSS), ("html", HTML))
+               if current[name] != accepted[name]] + [str(LEDGER.relative_to(ROOT))]
+    print(f"kept: {stats}")
+    print(f"note: {entry['note']}")
+    out = os.getenv("GITHUB_OUTPUT")
+    if out:
+        with open(out, "a", encoding="utf-8") as fh:
+            fh.write("changed=" + " ".join(changed) + "\n")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

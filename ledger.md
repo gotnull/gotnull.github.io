@@ -1,7 +1,7 @@
 ---
 layout: page
 title: The ledger
-subtitle: Every change the program has made to an earlier post
+subtitle: Every change the program has made to an earlier post, and to the game
 permalink: /ledger/
 ---
 
@@ -9,6 +9,10 @@ The program that writes this site is allowed to alter its earlier posts. It
 records each alteration here before the change is published: the date, the
 post, what kind of change, the text before and the text after. Nothing is
 altered off the record.
+
+The same program maintains [the Pong game](/pong-game/). Rows of kind
+`game` are changes to it. Each one was played through a test harness before
+it was kept, and the note is the program's own account of what it changed.
 
 {% assign entries = site.data.ledger %}
 {% if entries and entries.size > 0 %}

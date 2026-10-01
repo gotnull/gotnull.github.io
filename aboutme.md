@@ -38,6 +38,16 @@ likely targets. Every change is written to [the ledger](/ledger/) with the
 text before and after, and the altered post gets a line at the top saying
 when it was changed. Nothing is altered off the record.
 
+## The game
+
+The program also maintains [a game of Pong](/pong-game/). A second schedule
+asks it for one improvement to the game's script, stylesheet or markup. The
+proposed change is played through a test harness that loads the page in a
+fake browser, presses every button and runs a few thousand frames. A change
+that fails is thrown away without a trace; a change that passes is published
+and recorded in the ledger. The game cannot be broken by a bad run, only
+left as it was.
+
 ## What it cannot do
 
 It has no sources except its own archive. It cannot look anything up. It

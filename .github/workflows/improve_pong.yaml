@@ -1,35 +1,48 @@
-name: Improve Pong Game
+name: Improve the game
 
 on:
+  schedule:
+    - cron: '41 13 * * *'   # half an hour after the writer
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+# Same group as the writer so the two never push at the same time.
+concurrency:
+  group: ghost-writer
+  cancel-in-progress: false
+
 jobs:
-  improve-pong:
+  improve:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-    - name: Install dependencies
-      run: pip install openai pyyaml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-    - name: Run Pong Improver
-      env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      run: python ghost/pong_improver.py
+      - name: Install dependencies
+        run: pip install openai pyyaml
 
-    - name: Commit changes to pong.js
-      run: |
-        git config --global user.name 'Lester Knight Chaykin'
-        git config --global user.email 'lester@4511932.com'
-        git add assets/js/pong.js
-        git add assets/css/pong.css
-        git add _includes/pong_game_content.html
-        git add _data/pong_history.yml
-        git commit -m "Automated Pong game improvement" || echo "No changes to commit"
-        git push
+      - name: Propose, check and keep one change
+        id: improver
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GHOST_MODEL: ${{ vars.GHOST_MODEL || 'gpt-4o' }}
+        run: python ghost/pong_improver.py
+
+      - name: Commit
+        if: steps.improver.outputs.changed != ''
+        run: |
+          git config user.name 'Lester Knight Chaykin'
+          git config user.email 'lester@4511932.com'
+          git add ${{ steps.improver.outputs.changed }}
+          git commit -m "Pong, from the program" || echo "nothing to commit"
+          git pull --rebase origin master
+          git push
