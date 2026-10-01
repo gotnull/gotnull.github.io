@@ -18,7 +18,7 @@ on:
       image_model:
         description: "Image model"
         required: false
-        default: "gpt-image-1"
+        default: "gpt-image-1.5"
       quality:
         description: "Quality for gpt-image models (low, medium, high)"
         required: false

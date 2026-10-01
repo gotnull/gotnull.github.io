@@ -14,7 +14,7 @@ renders it.
 Progress is recorded in ghost/rerender_manifest.json so a run can stop and
 be resumed. Delete an entry, or pass --force, to make an image again.
 Needs OPENAI_API_KEY. The image model is GHOST_IMAGE_MODEL (default
-gpt-image-1); the prompt model is GHOST_MODEL (default gpt-4o).
+gpt-image-1.5); the prompt model is GHOST_MODEL (default gpt-4o).
 """
 from __future__ import annotations
 
@@ -39,7 +39,7 @@ MANIFEST = ROOT / "ghost" / "rerender_manifest.json"
 TZ = ZoneInfo("Australia/Melbourne")
 
 TEXT_MODEL = os.getenv("GHOST_MODEL", "gpt-4o")
-IMAGE_MODEL = os.getenv("GHOST_IMAGE_MODEL", "gpt-image-1")
+IMAGE_MODEL = os.getenv("GHOST_IMAGE_MODEL", "gpt-image-1.5")
 IMAGE_SIZE = os.getenv("GHOST_IMAGE_SIZE", "1536x1024")
 IMAGE_QUALITY = os.getenv("GHOST_IMAGE_QUALITY", "high")
 

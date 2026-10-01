@@ -63,9 +63,9 @@ python3 ghost/rerender_images.py --dry-run           # list what is left
 OPENAI_API_KEY=... python3 ghost/rerender_images.py --limit 3
 ```
 
-At the defaults (`gpt-image-1`, 1536x1024, high quality) each image costs
+At the defaults (`gpt-image-1.5`, 1536x1024, high quality) each image costs
 about a quarter of a US dollar. The project's OpenAI organisation must be
-verified for `gpt-image-1`; the script stops with a clear message if it is
+allowed the model; the script stops with a clear message if it is
 refused.
 
 ## Layout
