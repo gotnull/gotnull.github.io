@@ -292,5 +292,53 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "A well-lit electronics workbench is filled with an array of technical gadgets and tools. In the center, an ESP32 microcontroller board is connected to several colorful wires, running into an adjacent laptop displaying a terminal with scrolling code. Nearby, an oscilloscope shows waveforms on its screen. A pair of hands, delicately adjusting the connections, reflects the focus and precision required in debugging. Soft, natural light streams through a nearby window, highlighting the intricate details of the setup, embodying the meticulous world of embedded systems. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "exploring-uart-communication-in-raspberry-pi-pico.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A cluttered electronics workbench in a dimly lit room features a Raspberry Pi Pico connected with a tangle of colorful wires. An oscilloscope screen glows softly, displaying waveform patterns. A laptop shows lines of MicroPython code, its screen illuminating the technician's focused face. The technician's hands carefully adjust connections, surrounded by scattered tools and components. Various microchips and a multimeter lie on the bench, suggesting a scene of active experimentation. The ambient light casts subtle shadows, enhancing the technical ambiance. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-uart-communication-on-raspberry-pi-pico.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics workshop, a Raspberry Pi Pico sits on a cluttered workbench, surrounded by tangled wires and connected to an oscilloscope displaying a waveform. A hand delicately holds a probe against the board's pins, while a laptop nearby shows a terminal window filled with code and data streams. The ambient light casts soft shadows, highlighting the intricate details of the microcontroller and its connections. Tools and components are scattered around, creating an authentic and busy atmosphere of technical exploration. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-uart-communication-with-esp32.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit electronics lab, a wooden workbench is cluttered with various components used for microcontroller programming. An ESP32 microcontroller serves as the centerpiece, surrounded by colorful wires snaking outwards, connecting to a sleek oscilloscope displaying waveforms. A laptop screen glows softly, showing lines of code. A pair of hands, one adjusting a jumper wire and the other typing on the keyboard, are focused on refining UART communication protocols. The ambient glow from LED indicators casts gentle reflections on scattered tools and small components. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-uart-communication-with-raspberry-pi-and-arduino.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit workshop, a Raspberry Pi and an Arduino rest on a cluttered wooden workbench amidst a tangle of colorful wires. The soft glow of an oscilloscope screen flickers nearby, displaying sine waves and data readings. A pair of hands, one holding a small screwdriver, gently connects the wires to the GPIO pins of the Raspberry Pi. Beside it, a laptop screen shows code in a text editor, reflecting off the shiny surface of the workbench. Natural light streams in through a nearby window, casting shadows on the scene. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "hello.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground laboratory, vintage 1990s scientific equipment surrounds a workbench cluttered with notes and tools. A large particle accelerator looms in the background, its metallic components gleaming under dim, flickering fluorescent lights. A brilliant flash of lightning, visible through a small window leading to the surface, momentarily illuminates the scene. In one corner, a glowing portal shimmers, revealing glimpses of an alien landscape with strange flora and distant mountains, hinting at an otherworldly adventure just beyond reach. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "infinite-echoes-reflecting-on-the-ongoing-journey-of-a-cosmic-mind.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, the hum of a 1990s particle accelerator fills the air. The room is cluttered with vintage computers and scientific equipment, their screens flickering with data. Outside the reinforced window, a violent lightning storm rages, casting sporadic blue flashes that illuminate the lab's concrete walls. In the corner, a physicist, lost in thought, analyzes complex equations. Beyond the glass, an eerie alien landscape stretches out, its strange flora swaying under the electric sky, suggesting a world both familiar and otherworldly. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "infinities-within-infinites-a-continuum-of-insights.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A dimly lit underground laboratory houses a vintage 1990s particle accelerator, its machinery humming with latent energy. Flickering overhead lights cast shadows across the concrete room, highlighting old computers and scattered papers. Outside, a crackling storm rages, and an intense bolt of lightning tears through the sky, momentarily illuminating the space. Through a transparent portal in the lab, an alien landscape is visible, with strange, towering structures under a swirling, violet sky. The scene captures a thrilling intersection of human science and otherworldly wonder. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "interstellar-ethics-and-the-infinite-canvas.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground laboratory, a 1990s-style particle accelerator hums with electricity, its metallic structure glinting under harsh fluorescent lights. A physicist stands with a focused expression, surrounded by an array of dated scientific equipment, including CRT monitors displaying data. Suddenly, a crackling bolt of lightning flashes through the room, casting dynamic, sharp shadows across the lab. Through a portal-like window, an alien landscape is visible, featuring jagged mountains under a swirling, alien sky, blending the boundaries between the scientific and the fantastical. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
