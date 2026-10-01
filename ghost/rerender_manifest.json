@@ -340,5 +340,53 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "In an underground laboratory, a 1990s-style particle accelerator hums with electricity, its metallic structure glinting under harsh fluorescent lights. A physicist stands with a focused expression, surrounded by an array of dated scientific equipment, including CRT monitors displaying data. Suddenly, a crackling bolt of lightning flashes through the room, casting dynamic, sharp shadows across the lab. Through a portal-like window, an alien landscape is visible, featuring jagged mountains under a swirling, alien sky, blending the boundaries between the scientific and the fantastical. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "introspective-universes-reflecting-on-the-reflections.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, a vintage 1990s particle accelerator hums softly, its metal components gleaming under sparse overhead lights. The physicist, a middle-aged man with thoughtful eyes, stands beside the control panel, his face illuminated by the flickering screens displaying data. Through a large window, a storm rages outside, lightning crackling across a darkened sky. Beyond the glass, the silhouettes of a bizarre alien landscape loom, ethereal and mysterious, with strange flora casting long shadows on the ground, creating an otherworldly atmosphere. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "mastering-can-bus-implementing-robust-vehicle-communication-systems.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit laboratory, a wooden workbench is cluttered with electronic components. An STM32 microcontroller board is front and center, connected with colorful wires leading to a CAN transceiver module. Nearby, an oscilloscope screen displays waveforms, capturing data communication signals. A pair of hands, one holding a soldering iron, work meticulously on the circuit. A laptop screen to the side shows lines of code, reflecting the technical process of implementing CAN Bus protocols. The ambient light highlights the intricate details of the setup, creating a focused, industrious atmosphere. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "mastering-esp32-for-iot-applications-building-a-weather-station.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics workshop, a workbench is cluttered with components and tools. The focal point is an ESP32 microcontroller connected to a series of multicolored wires leading to various sensors. An oscillating oscilloscope screen nearby displays fluctuating signals. A laptop is open beside the setup, showing lines of code. A pair of hands, one holding a soldering iron, carefully connects wires to the circuit board. Sunlight streams in through a window, casting soft shadows across the scene, highlighting the precision and concentration in creating an IoT-based weather station. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "mastering-memory-management-in-embedded-systems-a-deep-dive-into-stm32-dma.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics lab, a workbench is scattered with a variety of hardware components. A focus is on a STM32 microcontroller board intricately wired to an oscilloscope displaying dynamic waveforms. Next to it, a computer monitor shows code detailing memory management processes. A pair of hands hovers over the setup, adjusting connections with precision. Cables snake across the surface, linking various peripherals to the board, under the watchful blue glow of LED indicators, illustrating the concept of Direct Memory Access in action. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "mastering-spi-communication-with-raspberry-pi-and-arduino.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics workshop, a Raspberry Pi and an Arduino board lie on a cluttered wooden workbench. Tangles of colorful wires connect the two devices, while an oscilloscope displays waveforms on a screen nearby. A pair of focused hands manipulate the setup, adjusting connections and testing signals. A laptop with programming code on the screen sits alongside, casting a soft glow on the surrounding tools. The scene captures the meticulous process of setting up and debugging SPI interfaces, with an air of concentration and innovation. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "mastering-the-stm32-watchdog-timer-for-system-reliability.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A cluttered workbench with a focus on an STM32 microcontroller development board, surrounded by a tangle of colorful wires. An oscillating oscilloscope screen displays fluctuating signals, while a laptop screen shows lines of code related to watchdog timer settings. A pair of hands, one holding a soldering iron, the other adjusting a wire connection, demonstrate active engagement in the hardware setup. Fluorescent lighting casts a bright, clinical glow, highlighting the intricate details of the components and creating a focused, professional atmosphere. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "mastering-uart-communication-with-esp32.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit, cluttered workbench, an ESP32 microcontroller sits amidst a maze of colorful wires and connected components. An oscilloscope displays waveform signals on its screen, reflecting the data flow. A laptop nearby shows lines of code, actively being typed by a hand reaching from the side. The scene is dynamic, with LEDs blinking softly on the board, illustrating the real-time implementation of the UART protocol. The atmosphere is focused, capturing the essence of hands-on experimentation in embedded systems communication. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "mastering-uart-communication-with-stm32.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "The scene captures a bustling electronics workbench in a well-lit lab, sunlight streaming through a nearby window. On the bench, a STM32 microcontroller board sits amid a tangle of colorful wires connecting to an open laptop displaying code for UART communication. An oscilloscope with a glowing screen shows waveforms, while a pair of hands, one holding a soldering iron, make precise adjustments to the setup. Additional components, like resistors and capacitors, are scattered around, highlighting the meticulous nature of hardware experimentation. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
