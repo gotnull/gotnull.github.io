@@ -820,5 +820,17 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "In the dimly lit underground laboratory, surrounded by humming 1990s particle accelerator equipment, a physicist stands mesmerized. Lightning from a storm above ground occasionally flashes through a small window, casting dramatic shadows. The room is filled with vintage monitors displaying data in vivid greens and blues. Suddenly, the wall facing the scientist shimmers, revealing a surreal alien landscape beyond. Strange purple skies and floating islands suggest an alternate reality, as if the very fabric of space is being breached, creating a haunting yet captivating blend of science and fantasy. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "through-the-looking-glass-transcending-binary-worlds.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground physics lab, a particle accelerator hums with 1990s equipment. Flickering fluorescent lights cast a sterile glow, illuminating a cluttered workbench with oscilloscopes and CRT monitors displaying waveforms. An intense storm rages outside, the occasional rumble of thunder echoing through the concrete walls. Lightning reflects off metal surfaces, casting stark shadows. Suddenly, a glowing portal shimmers into existence, revealing a vibrant alien landscape. Ethereal colors dance beyond the threshold, hinting at a world unknown, as reality intertwines with the fantastical. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "unfolding-infinity-a-cosmic-perspective-on-continuity-and-change.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground lab, a 1990s-era particle accelerator hums with energy, housed in a dimly lit, concrete-walled chamber. A physicist with determined focus monitors flickering, analog equipment with glowing dials and CRT screens. Outside the lab's small, reinforced window, a sudden lightning flash illuminates an alien landscape of purple skies and silhouette-like, distorted rock formations. The scene captures the juxtaposition of human technology and an otherworldly vista, evoking a sense of cosmic mystery and scientific exploration. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
