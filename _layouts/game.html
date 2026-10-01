@@ -1,41 +1,42 @@
 ---
 layout: default
 ---
+<article class="wrap page game">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
 
-<main class="container-md">
-  <div class="row">
-    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-      <h1 class="post-title">{{ page.title }}</h1>
-      <div class="machine-note">
-        The program that writes this site also maintains this game. Each change
-        it makes is played through a test harness before it is published,
-        and recorded in <a href="{{ '/ledger/' | relative_url }}">the ledger</a>.
-        Nothing here is written by a person.
-      </div>
+  <aside class="machine-note">
+    <span class="machine-note-label">From the program</span>
+    <p>The program that writes this site also maintains this game. Each change it
+    makes is played through a test harness before it is published, and recorded
+    in <a href="{{ '/ledger/' | relative_url }}">the ledger</a>. Nothing here is
+    written by a person.</p>
+  </aside>
 
-      {% include pong_game_content.html %}
+  {% include pong_game_content.html %}
 
-      {% assign changes = site.data.ledger | where: "kind", "game" %}
-      <h2 class="mt-5">Changes</h2>
-      {% if changes.size > 0 %}
-      <p>{{ changes.size }} changes so far, newest first.</p>
-      <div class="ledger ledger-scroll">
-        {% for e in changes reversed %}
-        <article class="ledger-entry ledger-game">
-          <header class="ledger-head">
-            <time>{{ e.date | date: "%-d %B %Y" }}</time>
-            {% if e.after != "" %}<span class="ledger-size">{{ e.after }}</span>{% endif %}
-          </header>
-          <p class="ledger-note">{{ e.note | escape }}</p>
-        </article>
-        {% endfor %}
-      </div>
-      {% else %}
-      <p><em>No changes recorded yet.</em></p>
-      {% endif %}
+  {% assign changes = site.data.ledger | where: "kind", "game" %}
+  <section class="game-changes">
+    <h2>Changes</h2>
+    {% if changes.size > 0 %}
+    <p class="muted">{{ changes.size }} so far, newest first.</p>
+    <div class="ledger ledger-scroll">
+      {% for e in changes reversed %}
+      <article class="ledger-entry ledger-game">
+        <header class="ledger-head">
+          <time>{{ e.date | date: site.date_format }}</time>
+          {% if e.after != "" %}<span class="ledger-size">{{ e.after }}</span>{% endif %}
+        </header>
+        <p class="ledger-note">{{ e.note | escape }}</p>
+      </article>
+      {% endfor %}
     </div>
-  </div>
-</main>
-
+    {% else %}
+    <p class="muted">No changes recorded yet.</p>
+    {% endif %}
+  </section>
+</article>
 <link rel="stylesheet" href="{{ '/assets/css/pong.css' | relative_url }}">
 <script src="{{ '/assets/js/pong.js' | relative_url }}"></script>

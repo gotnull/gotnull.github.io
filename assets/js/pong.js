@@ -14,13 +14,13 @@
   var PADDLE_WIDTH = 10;
   var PADDLE_HEIGHT = 100;
   var BALL_SIZE = 10;
-  var BALL_SPEED = 5;
+  var BALL_SPEED = 6;
   var PADDLE_SPEED = 7;
-  var AI_MAX_SPEED = 5.2;
+  var AI_MAX_SPEED = 5.6;
   var AI_REACTION_DISTANCE = 300;
   var WINNING_SCORE = 5;
   var RESTART_SECONDS = 5;
-  var TRAIL_LENGTH = 10;
+  var TRAIL_LENGTH = 18;
   var SCORE_POP_FRAMES = 20;
   var SHAKE_FRAMES = 12;
   var FLASH_FRAMES = 18;
@@ -28,6 +28,16 @@
   var MAX_SPEED = 3;
   var SPEED_STEP = 0.25;
   var FRAME_MS = 1000 / 60;
+
+  var LEFT_COLOUR = '#4fd1ff';
+  var RIGHT_COLOUR = '#ff5fa2';
+  var BALL_COLOUR = '#ffffff';
+  var STAR_COUNT = 70;
+  var stars = [];
+  var rally = 0;
+  var bestRally = 0;
+  var flashAlpha = 0;
+  var interacted = false;
 
   var MODES = {
     'player-vs-ai': 'Player vs AI',
@@ -116,6 +126,8 @@
 
   function start(mode) {
     if (!MODES[mode]) mode = 'ai-vs-ai';
+    if (mode !== 'ai-vs-ai') interacted = true;
+    rally = 0;
     state.mode = mode;
     state.running = true;
     state.paused = false;
@@ -199,13 +211,26 @@
   }
 
   function spawnParticles(x, y, colour) {
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < 22; i++) {
       particles.push({
         x: x, y: y,
-        vx: (Math.random() - 0.5) * 5,
-        vy: (Math.random() - 0.5) * 5,
-        life: 24,
+        vx: (Math.random() - 0.5) * 7,
+        vy: (Math.random() - 0.5) * 7,
+        life: 28 + Math.random() * 12,
+        size: 2 + Math.random() * 3,
         colour: colour
+      });
+    }
+  }
+
+  function makeStars() {
+    stars = [];
+    for (var i = 0; i < STAR_COUNT; i++) {
+      stars.push({
+        x: Math.random() * WIDTH,
+        y: Math.random() * HEIGHT,
+        z: 0.3 + Math.random() * 0.7,
+        twinkle: Math.random() * Math.PI * 2
       });
     }
   }
@@ -221,7 +246,9 @@
     b.vy = Math.sin(angle) * speed;
     b.x = side === 'left' ? PADDLE_WIDTH : WIDTH - PADDLE_WIDTH - BALL_SIZE;
     paddle.flash = FLASH_FRAMES;
-    spawnParticles(b.x + BALL_SIZE / 2, b.y + BALL_SIZE / 2, '#ffa500');
+    rally += 1;
+    if (rally > bestRally) bestRally = rally;
+    spawnParticles(b.x + BALL_SIZE / 2, b.y + BALL_SIZE / 2, side === 'left' ? LEFT_COLOUR : RIGHT_COLOUR);
     play('hit');
   }
 
@@ -229,6 +256,9 @@
     state[side].score += 1;
     scorePop = SCORE_POP_FRAMES;
     shake = SHAKE_FRAMES;
+    flashAlpha = 0.35;
+    rally = 0;
+    spawnParticles(state.ball.x, state.ball.y, side === 'left' ? LEFT_COLOUR : RIGHT_COLOUR);
     spawnParticles(state.ball.x, state.ball.y, '#ffffff');
     if (state[side].score >= WINNING_SCORE) {
       state.winner = side;
@@ -281,6 +311,12 @@
       p.x += p.vx; p.y += p.vy; p.life -= 1;
       if (p.life <= 0) particles.splice(i, 1);
     }
+    for (var k = 0; k < stars.length; k++) {
+      var st = stars[k];
+      st.x -= st.z * 0.35 * state.speed;
+      if (st.x < -2) { st.x = WIDTH + 2; st.y = Math.random() * HEIGHT; }
+    }
+    if (flashAlpha > 0) flashAlpha = Math.max(0, flashAlpha - 0.03);
     if (scorePop > 0) scorePop -= 1;
     if (shake > 0) shake -= 1;
     if (state.left.flash > 0) state.left.flash -= 1;
@@ -293,79 +329,127 @@
     ctx.fillRect(x, y, w, h);
   }
 
-  function paddleColour(paddle) {
-    if (paddle.flash <= 0) return '#ffffff';
-    return 'rgba(255,165,0,' + (0.4 + 0.6 * paddle.flash / FLASH_FRAMES).toFixed(2) + ')';
+  function paddleColour(paddle, base) {
+    if (paddle.flash <= 0) return base;
+    var k = paddle.flash / FLASH_FRAMES;
+    return k > 0.5 ? '#ffffff' : base;
+  }
+
+  function glow(colour, blur) {
+    ctx.shadowColor = colour;
+    ctx.shadowBlur = blur;
+  }
+
+  function noGlow() {
+    ctx.shadowBlur = 0;
+    ctx.shadowColor = 'transparent';
   }
 
   function draw() {
     if (!ctx) return;
     ctx.save();
     if (shake > 0) {
-      ctx.translate((Math.random() - 0.5) * 8, (Math.random() - 0.5) * 8);
+      ctx.translate((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
     }
-    var gradient = ctx.createLinearGradient(0, 0, 0, HEIGHT);
-    gradient.addColorStop(0, '#111111');
-    gradient.addColorStop(1, '#2c2c2c');
-    rect(-10, -10, WIDTH + 20, HEIGHT + 20, gradient);
+    var gradient = ctx.createLinearGradient(0, 0, WIDTH, HEIGHT);
+    gradient.addColorStop(0, '#0b0d14');
+    gradient.addColorStop(1, '#141020');
+    rect(-12, -12, WIDTH + 24, HEIGHT + 24, gradient);
 
-    for (var y = 0; y < HEIGHT; y += 24) rect(WIDTH / 2 - 1, y, 2, 12, '#555555');
-
-    rect(0, state.left.y, PADDLE_WIDTH, PADDLE_HEIGHT, paddleColour(state.left));
-    rect(WIDTH - PADDLE_WIDTH, state.right.y, PADDLE_WIDTH, PADDLE_HEIGHT, paddleColour(state.right));
-
-    for (var i = 0; i < trail.length; i++) {
-      rect(trail[i].x, trail[i].y, BALL_SIZE, BALL_SIZE, 'rgba(255,255,255,' + (i / trail.length * 0.5).toFixed(2) + ')');
-    }
-    rect(state.ball.x, state.ball.y, BALL_SIZE, BALL_SIZE, '#ffffff');
-
-    for (var j = 0; j < particles.length; j++) {
-      var p = particles[j];
-      ctx.fillStyle = p.colour;
-      ctx.globalAlpha = p.life / 24;
-      ctx.fillRect(p.x, p.y, 3, 3);
+    for (var s = 0; s < stars.length; s++) {
+      var st = stars[s];
+      var tw = 0.35 + 0.65 * Math.abs(Math.sin(state.frame * 0.03 + st.twinkle));
+      ctx.globalAlpha = tw * st.z;
+      rect(st.x, st.y, st.z > 0.8 ? 2 : 1, st.z > 0.8 ? 2 : 1, '#cfd8ff');
     }
     ctx.globalAlpha = 1;
 
-    var scale = 1 + (scorePop / SCORE_POP_FRAMES) * 0.4;
-    ctx.fillStyle = '#ffffff';
-    ctx.font = '32px "Open Sans", Arial, sans-serif';
+    for (var y = 0; y < HEIGHT; y += 24) rect(WIDTH / 2 - 1, y, 2, 12, 'rgba(255,255,255,0.18)');
+
+    glow(LEFT_COLOUR, 18);
+    rect(0, state.left.y, PADDLE_WIDTH, PADDLE_HEIGHT, paddleColour(state.left, LEFT_COLOUR));
+    glow(RIGHT_COLOUR, 18);
+    rect(WIDTH - PADDLE_WIDTH, state.right.y, PADDLE_WIDTH, PADDLE_HEIGHT, paddleColour(state.right, RIGHT_COLOUR));
+    noGlow();
+
+    for (var i = 0; i < trail.length; i++) {
+      var k = i / trail.length;
+      ctx.globalAlpha = k * 0.45;
+      var size = BALL_SIZE * (0.4 + 0.6 * k);
+      rect(trail[i].x + (BALL_SIZE - size) / 2, trail[i].y + (BALL_SIZE - size) / 2, size, size, state.ball.vx < 0 ? RIGHT_COLOUR : LEFT_COLOUR);
+    }
+    ctx.globalAlpha = 1;
+    glow('#ffffff', 16);
+    rect(state.ball.x, state.ball.y, BALL_SIZE, BALL_SIZE, BALL_COLOUR);
+    noGlow();
+
+    for (var j = 0; j < particles.length; j++) {
+      var p = particles[j];
+      ctx.globalAlpha = Math.max(0, p.life / 40);
+      rect(p.x, p.y, p.size, p.size, p.colour);
+    }
+    ctx.globalAlpha = 1;
+
+    var scale = 1 + (scorePop / SCORE_POP_FRAMES) * 0.5;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
+    ctx.font = '600 40px "Inter", "Helvetica Neue", Arial, sans-serif';
     ctx.save();
-    ctx.translate(WIDTH / 4, 20);
+    ctx.translate(WIDTH / 4, 18);
     ctx.scale(scale, scale);
+    glow(LEFT_COLOUR, 12);
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
     ctx.fillText(String(state.left.score), 0, 0);
     ctx.restore();
     ctx.save();
-    ctx.translate(WIDTH * 3 / 4, 20);
+    ctx.translate(WIDTH * 3 / 4, 18);
     ctx.scale(scale, scale);
+    glow(RIGHT_COLOUR, 12);
+    ctx.fillStyle = 'rgba(255,255,255,0.9)';
     ctx.fillText(String(state.right.score), 0, 0);
     ctx.restore();
+    noGlow();
 
-    ctx.font = '14px "Open Sans", Arial, sans-serif';
-    ctx.fillStyle = '#888888';
-    ctx.fillText(MODES[state.mode], WIDTH / 2, HEIGHT - 24);
+    ctx.font = '500 12px "Inter", "Helvetica Neue", Arial, sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.45)';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText(MODES[state.mode].toUpperCase() + '   RALLY ' + rally + '   BEST ' + bestRally, WIDTH / 2, HEIGHT - 14);
+
+    if (!interacted && !state.winner && !state.paused) {
+      var pulse = 0.45 + 0.4 * Math.abs(Math.sin(state.frame * 0.05));
+      ctx.fillStyle = 'rgba(255,255,255,' + pulse.toFixed(2) + ')';
+      ctx.font = '500 15px "Inter", "Helvetica Neue", Arial, sans-serif';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('Pick a mode above to play. Arrow keys or drag.', WIDTH / 2, HEIGHT / 2 + 100);
+    }
+
+    if (flashAlpha > 0) {
+      ctx.fillStyle = 'rgba(255,255,255,' + flashAlpha.toFixed(2) + ')';
+      ctx.fillRect(-12, -12, WIDTH + 24, HEIGHT + 24);
+    }
 
     if (state.winner) {
       var name = state.winner === 'left'
         ? (humanControls('left') ? 'Player 1' : 'Left AI')
         : (humanControls('right') ? (state.mode === 'player-vs-player' ? 'Player 2' : 'You') : 'Right AI');
-      ctx.fillStyle = 'rgba(0,0,0,0.6)';
+      ctx.fillStyle = 'rgba(5,6,12,0.7)';
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
-      ctx.fillStyle = '#ffffff';
       ctx.textBaseline = 'middle';
-      ctx.font = '40px "Open Sans", Arial, sans-serif';
-      ctx.fillText(name + ' wins', WIDTH / 2, HEIGHT / 2 - 24);
-      ctx.font = '18px "Open Sans", Arial, sans-serif';
+      glow(state.winner === 'left' ? LEFT_COLOUR : RIGHT_COLOUR, 24);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '600 44px "Inter", "Helvetica Neue", Arial, sans-serif';
+      ctx.fillText(name + ' wins', WIDTH / 2, HEIGHT / 2 - 22);
+      noGlow();
+      ctx.font = '500 16px "Inter", "Helvetica Neue", Arial, sans-serif';
+      ctx.fillStyle = 'rgba(255,255,255,0.8)';
       var left = Math.max(0, Math.ceil((state.restartAt - state.frame) / 60));
-      ctx.fillText('Space to play again. AI vs AI in ' + left + 's', WIDTH / 2, HEIGHT / 2 + 24);
+      ctx.fillText('Space to play again. AI vs AI in ' + left + 's', WIDTH / 2, HEIGHT / 2 + 26);
     } else if (state.paused) {
-      ctx.fillStyle = 'rgba(0,0,0,0.5)';
+      ctx.fillStyle = 'rgba(5,6,12,0.6)';
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
       ctx.fillStyle = '#ffffff';
       ctx.textBaseline = 'middle';
-      ctx.font = '40px "Open Sans", Arial, sans-serif';
+      ctx.font = '600 40px "Inter", "Helvetica Neue", Arial, sans-serif';
       ctx.fillText('Paused', WIDTH / 2, HEIGHT / 2);
     }
     ctx.restore();
@@ -457,6 +541,7 @@
     el.pongCanvas.height = HEIGHT;
 
     loadSounds();
+    makeStars();
     setSound(false);
     setSpeed(1);
 

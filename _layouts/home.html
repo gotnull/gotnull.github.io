@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<section class="wrap home-intro">
+  <div class="home-intro-text">
+    <h1 class="home-title">{{ page.title }}</h1>
+    <p class="home-tagline">{{ site.tagline }}</p>
+    <div class="prose home-blurb">{{ content }}</div>
+  </div>
+  {% if site.avatar %}<img class="home-avatar" src="{{ site.avatar | relative_url }}" alt="" width="112" height="112">{% endif %}
+</section>
+
+<section class="wrap post-list" aria-label="Posts">
+  {% for post in paginator.posts %}
+  {%- assign thumb = post.thumbnail-img | default: post.cover-img %}
+  <article class="post-card">
+    <div class="post-card-text">
+      <p class="post-card-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
+        {% include era-tag.html post=post %}
+      </p>
+      <h2 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title | strip_html }}</a></h2>
+      {% if post.subtitle %}<p class="post-card-subtitle">{{ post.subtitle | strip_html }}</p>{% endif %}
+      {%- assign ex = post.excerpt | strip_html | strip_newlines | strip %}
+      {%- assign ex_words = ex | number_of_words %}
+      {%- if ex_words < 12 %}{% assign ex = post.content | strip_html | strip_newlines | remove_first: ex | strip %}{% endif %}
+      <p class="post-card-excerpt">{{ ex | truncatewords: site.excerpt_length }}</p>
+      {% if post.tags.size > 0 %}
+      <p class="post-card-tags">{% for tag in post.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% endfor %}</p>
+      {% endif %}
+    </div>
+    {% if thumb %}
+    <a class="post-card-thumb" href="{{ post.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ thumb | relative_url }}" alt="" loading="lazy"></a>
+    {% endif %}
+  </article>
+  {% endfor %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+<nav class="wrap pager" aria-label="Pages">
+  {% if paginator.previous_page %}<a class="pager-link" href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>{% else %}<span></span>{% endif %}
+  <span class="pager-count">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}<a class="pager-link" href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>{% else %}<span></span>{% endif %}
+</nav>
+{% endif %}

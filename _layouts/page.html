@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="wrap page">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

@@ -1,106 +1,63 @@
 ---
-layout: base
+layout: default
 ---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 200 -%}
+{%- if minutes < 1 %}{% assign minutes = 1 %}{% endif -%}
+<article class="wrap post">
+  <header class="post-header">
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
+      {% include era-tag.html post=page %}
+      <span class="post-readtime">{{ minutes }} min read</span>
+    </p>
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
+    <p class="post-byline">By {{ page.author | default: site.author }}{% if page.references and page.references > 0 %} &middot; links to {{ page.references }} earlier {% if page.references == 1 %}post{% else %}posts{% endif %}{% endif %}</p>
+  </header>
 
-{% include header.html type="post" %}
+  {% include machine-note.html %}
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+  {% if page.cover-img %}
+  <figure class="post-cover">
+    <img src="{{ page.cover-img | relative_url }}" alt="">
+  </figure>
+  {% endif %}
 
-      {% if page.gh-repo %}
-        {% assign gh_split =  page.gh-repo | split:'/'  %}
-        {% assign gh_user =  gh_split[0]  %}
-        {% assign gh_repo =  gh_split[1]  %}
-
-        <div id="header-gh-btns">
-          {% if page.gh-badge.size > 0 %}
-            {% for badge in page.gh-badge %}
-              {% case badge %}
-                {% when 'star'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'watch'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=watch&v=2&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'fork'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=fork&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
-                {% when 'follow'%}
-                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
-              {% endcase %}
-            {% endfor %}
-          {% endif %}
-        </div>
-      {% endif %}
-
-      {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      <div class="blog-post" id="post-content">
-        <div id="post-toc"></div>
-        {% include machine-note.html %}
-        {{ content }}
-      </div>
-
-      {% if page.tags.size > 0 %}
-        <div class="blog-tags">
-          <span>Tags:</span>
-          {% for tag in page.tags %}
-            <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      {% if page.tags.size > 0 %}
-        {% assign max_related_posts = site.related_posts_limit | default: 3 %}
-        {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | where_exp: "post", "post.tags contains page.tags[0]" | sample: max_related_posts %}
-
-        {% if related_posts.size > 0 %}
-        <div class="related-posts">
-          <h4>Related Posts</h4>
-          <ul>
-            {% for post in related_posts %}
-            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endif %}
-      {% endif %}
-
-      {% if page.social-share %}
-        {% include social-share.html %}
-      {% endif %}
-
-      <ul class="pagination blog-pager">
-        {% if page.previous.url %}
-        <li class="page-item previous">
-          <a class="page-link" href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title | strip_html | xml_escape}}">
-            <i class="fas fa-arrow-left" alt="Previous Post"></i>
-            <span class="d-none d-sm-inline-block">Previous Post</span>
-          </a>
-        </li>
-        {% endif %}
-        {% if page.next.url %}
-        <li class="page-item next">
-          <a class="page-link" href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title | strip_html | xml_escape}}">
-            <span class="d-none d-sm-inline-block">Next Post</span>
-            <i class="fas fa-arrow-right" alt="Next Post"></i>
-          </a>
-        </li>
-        {% endif %}
-      </ul>
-      {% include comments.html %}
-    </div>
+  <div class="post-body prose" id="post-content">
+    <nav class="toc" id="post-toc" aria-label="Contents" hidden>
+      <details>
+        <summary>Contents</summary>
+        <ol id="post-toc-list"></ol>
+      </details>
+    </nav>
+    {{ content }}
   </div>
-</main>
+
+  {% if page.tags.size > 0 %}
+  <p class="post-tags">{% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% endfor %}</p>
+  {% endif %}
+
+  <nav class="post-nav" aria-label="Nearby posts">
+    {% if page.previous %}
+    <a class="post-nav-link" href="{{ page.previous.url | relative_url }}"><span>&larr; Earlier</span><strong>{{ page.previous.title | strip_html }}</strong></a>
+    {% else %}<span></span>{% endif %}
+    {% if page.next %}
+    <a class="post-nav-link post-nav-next" href="{{ page.next.url | relative_url }}"><span>Later &rarr;</span><strong>{{ page.next.title | strip_html }}</strong></a>
+    {% endif %}
+  </nav>
+
+  {% if page.tags.size > 0 %}
+  {% assign related = site.posts | where_exp: "p", "p.url != page.url" | where_exp: "p", "p.tags contains page.tags[0]" | sample: 3 %}
+  {% if related.size > 0 %}
+  <section class="related">
+    <h2 class="related-title">Also tagged <em>{{ page.tags[0] }}</em></h2>
+    <ul>
+      {% for p in related %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title | strip_html }}</a> <time>{{ p.date | date: site.date_format }}</time></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  {% endif %}
+</article>

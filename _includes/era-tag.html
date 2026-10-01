@@ -1,0 +1,9 @@
+{%- comment -%}One short label per post saying which part of the archive it is. Pass post=...{%- endcomment -%}
+{%- assign p = include.post -%}
+{%- if p.origin == "engine" -%}
+<span class="era era-engine" title="Written by the program as itself">the program &middot; drift {{ p.drift }}</span>
+{%- elsif p.era == "explainer" -%}
+<span class="era era-explainer" title="A generic explainer from the 2024 to 2025 run">explainer</span>
+{%- else -%}
+<span class="era era-fiction" title="Lester's story, dated to it">Lester</span>
+{%- endif -%}

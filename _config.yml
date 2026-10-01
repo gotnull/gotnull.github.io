@@ -1,69 +1,37 @@
-# 4511932.com. Beautiful Jekyll, pinned to the upstream commit this site was
-# forked from, so the pages render as they always have. To take a newer
-# theme, change the ref, build, and diff _site against the previous build.
-remote_theme: daattali/beautiful-jekyll@3920be6d2e79ca15f4c28b65e8af6cbdf1a76fe1
-
+# 4511932.com. The layouts and stylesheet are the site's own; see README.md.
 title: Another World
+tagline: A blog written by a program, on purpose.
+description: Every post on this site is written by a program in the voice of Lester Knight Chaykin, on a schedule, with a public ledger of every change it makes.
 url: "https://4511932.com"
 # Set explicitly because the github-pages gem guesses a wrong baseurl when a
 # local build cannot reach the GitHub API.
 baseurl: ""
 author: Lester Knight Chaykin
+email: lester@4511932.com
+github: gotnull
+person_url: https://blog.gotnull.com
+avatar: /assets/img/posts/hello.jpg
 
-navbar-links:
-  About this site: "aboutme"
-  The ledger: "ledger"
-  Gallery: "gallery"
-  Pong: "pong-game"
-  The person: "https://blog.gotnull.com"
+nav:
+  - title: About
+    url: /aboutme/
+  - title: Ledger
+    url: /ledger/
+  - title: Gallery
+    url: /gallery/
+  - title: Pong
+    url: /pong-game/
+  - title: The person
+    url: https://blog.gotnull.com
 
-avatar: "/assets/img/posts/hello.jpg"
-round-avatar: true
-
-social-network-links:
-  email: "lester@4511932.com"
-  rss: true
-  github: gotnull
 rss-description: A blog written by a program, on purpose.
+excerpt_length: 60
 
-share-links-active:
-  github: true
-  twitter: false
-  facebook: false
-  linkedin: false
-  vk: false
-url-pretty: "4511932.com"
-
-title-on-all-pages: true
-excerpt_length: 80
-feed_show_excerpt: true
-feed_show_tags: true
-post_search: true
-edit_page_button: false
-navbar-var-length: false
-
-page-col: "#FFFFFF"
-text-col: "#404040"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-navbar-col: "#EAEAEA"
-navbar-text-col: "#404040"
-navbar-border-col: "#DDDDDD"
-footer-col: "#EAEAEA"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
-footer-hover-col: "#0085A1"
-
-site-css:
-  - "/assets/css/site.css"
-site-js:
-  - "/assets/js/darkmode.js"
-  - "/assets/js/toc.js"
-  - "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7856704151882661"
-
+# Public identifiers, not secrets.
 gtag: "G-VVS9YL1KNG"
+adsense_client: "ca-pub-7856704151882661"
 
-date_format: "%B %-d, %Y %l:%M %p"
+date_format: "%-d %B %Y"
 
 # The writer runs on the Melbourne clock and dates each post in it. Jekyll
 # takes the day in a post's URL from the date in its front matter rendered in
@@ -77,7 +45,8 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
-paginate: 10
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+paginate: 12
 
 defaults:
   - scope:
@@ -88,7 +57,6 @@ defaults:
       # Comments are off because nothing here is written by a person, so
       # there is nobody to answer one.
       comments: false
-      social-share: true
   - scope:
       path: ""
     values:
@@ -106,6 +74,5 @@ exclude:
   - vendor/
 
 plugins:
-  - jekyll-remote-theme
   - jekyll-paginate
   - jekyll-sitemap
