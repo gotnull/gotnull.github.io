@@ -25,10 +25,12 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Install dependencies
-        run: pip install openai pyyaml
+        run: |
+          pip install openai pyyaml
+          npm ci --prefix ghost --no-audit --no-fund
 
       - name: Propose, check and keep one change
         id: improver

@@ -1,0 +1,3 @@
+# Libraries the game currently uses, by name from pong_library_catalog.yml.
+# The improver may change this list; the layout loads them before pong.js.
+libs: []

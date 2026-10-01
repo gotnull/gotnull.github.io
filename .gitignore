@@ -11,3 +11,4 @@ Thumbs.db
 __pycache__/
 *.pyc
 .pytest_cache
+ghost/node_modules

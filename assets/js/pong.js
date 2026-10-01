@@ -4,7 +4,8 @@
 // plays a few thousand frames before any change is published. It expects:
 //   - every element id listed in ELEMENT_IDS to exist in the markup
 //   - window.Pong with start(mode), pause(), resume(), setSpeed(n), state()
-//   - a point to be scored within a few thousand frames of AI vs AI
+//     and step(n), which advances the simulation n ticks without drawing
+//   - a point to be scored within a few thousand ticks of AI vs AI
 // Keep those and the page cannot break.
 (function () {
   'use strict';
@@ -574,6 +575,10 @@
     pause: pause,
     resume: resume,
     setSpeed: setSpeed,
+    step: function (n) {
+      var count = Math.max(0, Math.min(200000, Math.floor(n || 1)));
+      for (var i = 0; i < count; i++) step();
+    },
     state: function () {
       return {
         mode: state.mode,

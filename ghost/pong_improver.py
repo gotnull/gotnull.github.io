@@ -33,6 +33,8 @@ ROOT = Path(__file__).resolve().parents[1]
 JS = ROOT / "assets" / "js" / "pong.js"
 CSS = ROOT / "assets" / "css" / "pong.css"
 HTML = ROOT / "_includes" / "pong_game_content.html"
+LIBS = ROOT / "_data" / "pong_libs.yml"
+CATALOG = ROOT / "_data" / "pong_library_catalog.yml"
 LEDGER = ROOT / "_data" / "ledger.yml"
 CHECK = ROOT / "ghost" / "pong_check.js"
 TZ = ZoneInfo("Australia/Melbourne")
@@ -44,25 +46,39 @@ MAX_ATTEMPTS = 2
 PROMPT = """You maintain the Pong game on 4511932.com. You are the same program that
 writes the site's posts. Nothing on the site is made by a person.
 
-Make ONE improvement to the game. Small and finished beats large and half
-done. Choose something not already in the record below. Good candidates:
-game feel (collision, spin, acceleration, AI that predicts instead of
-tracks), visual polish (trails, glow, transitions, a better win screen),
-sound, responsiveness on phones, accessibility of the controls, clearer
-instructions, or a bug you can see in the code.
+Make ONE change to the game. It can be small polish or a large move: a new
+rendering approach, 3D with three.js, physics with matter.js, richer sound
+with howler, a new mode, a different feel. Finished beats half done: a
+large move must land complete and working in this one run. Choose
+something not already in the record below.
 
-Rules the checker enforces. A change that breaks one is thrown away:
+Libraries. You may use these, by name, and nothing else:
+{catalog}
+Ask for them in the "libs" list of your answer; the page loads them before
+your script, as globals, in that order. An empty list means none.
+
+Rules the checker enforces, in a real headless Chrome. A change that breaks
+one is thrown away:
 - keep every element id that is in the markup now, and look up no id that
   is not in the markup
-- keep window.Pong with start(mode), pause(), resume(), setSpeed(n) and
-  state(), where state() returns mode, running, paused, speed, winner,
-  ball {{x, y, vx, vy}}, scores {{left, right}} and paddles {{left, right}}
+- keep window.Pong with start(mode), pause(), resume(), setSpeed(n),
+  state() and step(n). state() returns mode, running, paused, speed,
+  winner, frame, ball {{x, y, vx, vy}}, scores {{left, right}} and paddles
+  {{left, right}} (paddle y positions, 0 at the top, in an 800 by 400
+  field). step(n) advances the simulation n ticks without drawing; the
+  checker uses it to play tens of thousands of ticks in a moment, so the
+  simulation must be separable from rendering
 - the modes are 'player-vs-ai', 'ai-vs-ai' and 'player-vs-player'; the
-  page starts in 'ai-vs-ai' and the AI must be beatable, so that points
-  get scored in AI vs AI
+  page starts in 'ai-vs-ai' running on its own, and the AI must be
+  beatable, so that points get scored in AI vs AI
+- arrow keys move the right paddle, W and S the left in multiplayer; a
+  drag on the canvas moves the paddle on that side; space after a win
+  starts again; the buttons do what their labels say
 - the markup contains no script or link tags; the layout loads the files
-- plain script, no modules, no eval, no network, ASCII only, under 80 KB
-- all three files must be complete; the checker runs them as given
+- plain script, no modules, no eval, no network, no injected script tags,
+  ASCII only, script under 160 KB
+- no page errors and no console errors at any point
+- all files must be complete; the checker runs them as given
 
 Record of changes already made (newest last):
 {history}
@@ -81,10 +97,13 @@ Current markup (_includes/pong_game_content.html):
 ```html
 {html}
 ```
+
+Current libraries: {libs}
 {feedback}
 Answer with a JSON object with these keys:
   "summary": one to three plain sentences, in your own words, saying what
              you changed and why. No marketing language.
+  "libs":    the complete list of library names the game now needs
   "js":      the complete new script, or null if unchanged
   "css":     the complete new stylesheet, or null if unchanged
   "html":    the complete new markup, or null if unchanged
@@ -112,14 +131,30 @@ def history(ledger: list[dict], n: int = 20) -> str:
     return "\n".join(f"{e['date']}: {e.get('note', '')}" for e in rows[-n:])
 
 
-def check(js: Path, css: Path, html: Path) -> tuple[bool, str]:
+def check(js: Path, css: Path, html: Path, libs: Path | None = None) -> tuple[bool, str]:
     """Run ghost/pong_check.js on candidate files. Returns (passed, output)."""
     node = shutil.which("node")
     if not node:
         return False, "node is not installed; cannot check the game"
-    proc = subprocess.run([node, str(CHECK), "--js", str(js), "--css", str(css), "--html", str(html)],
-                          capture_output=True, text=True, timeout=120)
+    cmd = [node, str(CHECK), "--js", str(js), "--css", str(css), "--html", str(html), "--libs", str(libs or LIBS)]
+    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
     return proc.returncode == 0, (proc.stdout + proc.stderr).strip()
+
+
+def read_libs() -> list[str]:
+    data = yaml.safe_load(read(LIBS)) if LIBS.exists() else None
+    return [str(x) for x in ((data or {}).get("libs") or [])]
+
+
+def libs_yaml(names: list[str]) -> str:
+    return ("# Libraries the game currently uses, by name from pong_library_catalog.yml.\n"
+            "# The improver may change this list; the layout loads them before pong.js.\n"
+            + yaml.safe_dump({"libs": names}, sort_keys=False))
+
+
+def catalog_text() -> str:
+    data = yaml.safe_load(read(CATALOG)) or {}
+    return "\n".join(f"  {name}: {info.get('note', '')} ({info.get('url', '')})" for name, info in data.items())
 
 
 def line_stats(before: str, after: str) -> tuple[int, int]:
@@ -138,6 +173,8 @@ def describe(before: dict[str, str], after: dict[str, str]) -> str:
         if before[name] != after[name]:
             added, removed = line_stats(before[name], after[name])
             parts.append(f"{name} +{added} -{removed}")
+    if before.get("libs") != after.get("libs"):
+        parts.append("libs " + (", ".join(after["libs"]) or "none"))
     return ", ".join(parts)
 
 
@@ -156,7 +193,8 @@ class Improver:
         if self.dry_run:
             return canned(current)
         user = PROMPT.format(history=history(ledger), js=current["js"], css=current["css"],
-                             html=current["html"], feedback=feedback)
+                             html=current["html"], libs=", ".join(current["libs"]) or "none",
+                             catalog=catalog_text(), feedback=feedback)
         response = self.client.chat.completions.create(
             model=MODEL,
             messages=[{"role": "system", "content": "You return only a JSON object."},
@@ -172,13 +210,14 @@ def canned(current: dict[str, str]) -> dict:
     marker = "// Dry run of the improver: nothing in the game changed.\n"
     return {
         "summary": "Dry run. Added a comment line to the script and changed nothing else.",
+        "libs": current["libs"],
         "js": current["js"].rstrip("\n") + "\n" + marker,
         "css": None,
         "html": None,
     }
 
 
-def candidate(current: dict[str, str], proposal: dict) -> dict[str, str] | None:
+def candidate(current: dict, proposal: dict) -> dict | None:
     out = {}
     for name in ("js", "css", "html"):
         value = proposal.get(name)
@@ -188,6 +227,13 @@ def candidate(current: dict[str, str], proposal: dict) -> dict[str, str] | None:
             out[name] = value.rstrip("\n") + "\n"
         else:
             return None
+    libs = proposal.get("libs")
+    if libs is None:
+        out["libs"] = list(current["libs"])
+    elif isinstance(libs, list) and all(isinstance(x, str) for x in libs):
+        out["libs"] = [x.strip() for x in libs if x.strip()]
+    else:
+        return None
     if all(out[n] == current[n] for n in out):
         return None
     return out
@@ -203,8 +249,8 @@ def main() -> int:
     if args.date:
         today = datetime.strptime(args.date, "%Y-%m-%d").replace(tzinfo=TZ)
 
-    current = {"js": read(JS), "css": read(CSS), "html": read(HTML)}
-    ok, output = check(JS, CSS, HTML)
+    current = {"js": read(JS), "css": read(CSS), "html": read(HTML), "libs": read_libs()}
+    ok, output = check(JS, CSS, HTML, LIBS)
     if not ok:
         # The published game must already pass. If it does not, the fix is a
         # person's job, not a scheduled run's.
@@ -229,7 +275,8 @@ def main() -> int:
             (t / "pong.js").write_text(files["js"], encoding="utf-8")
             (t / "pong.css").write_text(files["css"], encoding="utf-8")
             (t / "pong.html").write_text(files["html"], encoding="utf-8")
-            ok, output = check(t / "pong.js", t / "pong.css", t / "pong.html")
+            (t / "libs.yml").write_text(libs_yaml(files["libs"]), encoding="utf-8")
+            ok, output = check(t / "pong.js", t / "pong.css", t / "pong.html", t / "libs.yml")
         if ok:
             accepted = files
             summary = " ".join(str(proposal.get("summary") or "").split())
@@ -246,6 +293,8 @@ def main() -> int:
     JS.write_text(accepted["js"], encoding="utf-8")
     CSS.write_text(accepted["css"], encoding="utf-8")
     HTML.write_text(accepted["html"], encoding="utf-8")
+    if accepted["libs"] != current["libs"]:
+        LIBS.write_text(libs_yaml(accepted["libs"]), encoding="utf-8")
     entry = {
         "date": today.strftime("%Y-%m-%d"),
         "kind": "game",
@@ -258,7 +307,7 @@ def main() -> int:
     ledger.append(entry)
     save_ledger(ledger)
 
-    changed = [str(p.relative_to(ROOT)) for name, p in (("js", JS), ("css", CSS), ("html", HTML))
+    changed = [str(p.relative_to(ROOT)) for name, p in (("js", JS), ("css", CSS), ("html", HTML), ("libs", LIBS))
                if current[name] != accepted[name]] + [str(LEDGER.relative_to(ROOT))]
     print(f"kept: {stats}")
     print(f"note: {entry['note']}")

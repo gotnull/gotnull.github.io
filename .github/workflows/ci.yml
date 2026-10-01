@@ -17,7 +17,7 @@ jobs:
           bundler-cache: true
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -27,7 +27,9 @@ jobs:
           PAGES_REPO_NWO: ${{ github.repository }}
         run: bundle exec jekyll build
       - name: Check the game
-        run: node ghost/pong_check.js
+        run: |
+          npm ci --prefix ghost --no-audit --no-fund
+          node ghost/pong_check.js
       - name: Test the programs
         run: |
           pip install pyyaml pytest

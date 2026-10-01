@@ -22,6 +22,13 @@ def site(tmp_path, monkeypatch):
     shutil.copy(ROOT / "_config.yml", tmp_path / "_config.yml")
     shutil.copytree(ROOT / "ghost" / "templates", tmp_path / "ghost" / "templates")
     shutil.copy(ROOT / "ghost" / "pong_check.js", tmp_path / "ghost" / "pong_check.js")
+    shutil.copy(ROOT / "_data" / "pong_libs.yml", tmp_path / "_data" / "pong_libs.yml")
+    shutil.copy(ROOT / "_data" / "pong_library_catalog.yml", tmp_path / "_data" / "pong_library_catalog.yml")
+    if (ROOT / "ghost" / "node_modules").exists():
+        (tmp_path / "ghost" / "node_modules").symlink_to(ROOT / "ghost" / "node_modules")
+    (tmp_path / "assets" / "audio").mkdir(parents=True)
+    for f in (ROOT / "assets" / "audio").glob("*.mp3"):
+        shutil.copy(f, tmp_path / "assets" / "audio" / f.name)
     (tmp_path / "assets" / "js").mkdir(parents=True)
     (tmp_path / "assets" / "css").mkdir(parents=True)
     (tmp_path / "_includes").mkdir()
@@ -43,5 +50,7 @@ def site(tmp_path, monkeypatch):
     monkeypatch.setattr(pi, "HTML", tmp_path / "_includes" / "pong_game_content.html")
     monkeypatch.setattr(pi, "LEDGER", tmp_path / "_data" / "ledger.yml")
     monkeypatch.setattr(pi, "CHECK", tmp_path / "ghost" / "pong_check.js")
+    monkeypatch.setattr(pi, "LIBS", tmp_path / "_data" / "pong_libs.yml")
+    monkeypatch.setattr(pi, "CATALOG", tmp_path / "_data" / "pong_library_catalog.yml")
     monkeypatch.delenv("GITHUB_OUTPUT", raising=False)
     return tmp_path

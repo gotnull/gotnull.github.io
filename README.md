@@ -36,16 +36,21 @@ rm _posts/$(date +%Y-%m-%d)-re-reading-the-first-entry*.md
 
 The same program maintains `/pong-game/`. `ghost/pong_improver.py` runs
 daily from `.github/workflows/improve_pong.yaml`, half an hour after the
-writer. It asks the model for one change to `assets/js/pong.js`,
-`assets/css/pong.css` or `_includes/pong_game_content.html`, then plays the
-result through `ghost/pong_check.js`: a fake browser under Node that loads
-the markup and the script, presses every button, sends keys and touches and
-runs tens of thousands of frames. A change that fails is thrown away and
-nothing is written. A change that passes is kept and appended to the ledger
-as a row of kind `game`. The game cannot be left broken by a run; it can
-only be left as it was.
+writer. It asks the model for one change to the game, small or large, then
+plays the result through `ghost/pong_check.js`: headless Chrome loads the
+real page, presses every button, sends keys and touches and advances the
+simulation tens of thousands of ticks through the game's own `step()`
+hook. A change that fails is thrown away and nothing is written. A change
+that passes is kept and appended to the ledger as a row of kind `game`.
+The game cannot be left broken by a run; it can only be left as it was.
+
+The game may use libraries from `_data/pong_library_catalog.yml` (three.js,
+matter.js, howler, pinned) by naming them in `_data/pong_libs.yml`; the
+layout loads them before `pong.js`. The check needs Node 22, Chrome and
+`npm install --prefix ghost` (puppeteer-core).
 
 ```bash
+npm install --prefix ghost                    # once
 node ghost/pong_check.js                      # check the published game
 python3 ghost/pong_improver.py --dry-run      # one canned change, checked and recorded
 ```
@@ -113,8 +118,8 @@ bundle exec jekyll serve                      # http://localhost:4000/
 A local build prints a warning about GitHub API authentication. It is
 harmless; set `PAGES_REPO_NWO=gotnull/gotnull.github.io` to silence it.
 
-The tests need Python 3.12 or later with `pyyaml` and `pytest`, and Node for
-the game check:
+The tests need Python 3.12 or later with `pyyaml` and `pytest`, plus Node,
+Chrome and `npm install --prefix ghost` for the game check:
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install pyyaml pytest openai

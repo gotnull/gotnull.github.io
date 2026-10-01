@@ -38,4 +38,6 @@ layout: default
   </section>
 </article>
 <link rel="stylesheet" href="{{ '/assets/css/pong.css' | relative_url }}">
+{%- for name in site.data.pong_libs.libs %}{% assign lib = site.data.pong_library_catalog[name] %}{% if lib %}
+<script src="{{ lib.url }}" crossorigin="anonymous"></script>{% endif %}{% endfor %}
 <script src="{{ '/assets/js/pong.js' | relative_url }}"></script>

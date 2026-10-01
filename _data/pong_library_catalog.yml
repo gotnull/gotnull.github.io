@@ -1,0 +1,14 @@
+# Libraries the game may load, pinned. ghost/pong_check.js rejects a change
+# that asks for anything not listed here. Add a library by adding a row.
+three:
+  url: https://cdnjs.cloudflare.com/ajax/libs/three.js/0.159.0/three.min.js
+  global: THREE
+  note: three.js r159, the last build with a plain script bundle
+matter:
+  url: https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js
+  global: Matter
+  note: 2D physics
+howler:
+  url: https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js
+  global: Howl
+  note: audio

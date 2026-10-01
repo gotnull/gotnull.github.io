@@ -1,0 +1,8 @@
+{
+  "name": "ghost-checks",
+  "private": true,
+  "description": "Node dependencies for ghost/pong_check.js, which drives the Pong page in headless Chrome.",
+  "devDependencies": {
+    "puppeteer-core": "23.11.1"
+  }
+}
