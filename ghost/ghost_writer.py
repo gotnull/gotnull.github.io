@@ -37,6 +37,10 @@ LEDGER = ROOT / "_data" / "ledger.yml"
 IMAGES = ROOT / "assets" / "img" / "posts"
 IMAGES_INDEX = ROOT / "_data" / "images.yml"
 TEMPLATES = ROOT / "ghost" / "templates"
+# Image models that have refused this project for lack of access, with the
+# date. Written once, read every run, so the refusal is logged once. Delete
+# the file to try again.
+IMAGE_ACCESS = ROOT / "ghost" / "image_access.json"
 TZ = ZoneInfo("Australia/Melbourne")
 
 MODEL = os.getenv("GHOST_MODEL", "gpt-4o")
@@ -191,7 +195,10 @@ class Writer:
         A failed image never fails the run; the theme copes with no cover."""
         if self.dry_run or not WANT_IMAGES:
             return None
+        refused = load_image_access()
         for model in ("gpt-image-1", "dall-e-3"):
+            if model in refused:
+                continue
             try:
                 r = self.client.images.generate(model=model, prompt=prompt, n=1, size="1024x1024")
                 item = r.data[0]
@@ -203,8 +210,39 @@ class Writer:
                     with urllib.request.urlopen(item.url, timeout=60) as resp:
                         return resp.read()
             except Exception as exc:  # noqa: BLE001 - any failure means try the next model
-                print(f"image model {model} failed: {exc}", file=sys.stderr)
+                if is_access_refusal(exc):
+                    # Logged once: the refusal is recorded and the model is
+                    # skipped on later runs until the record is deleted.
+                    refused[model] = {"date": datetime.now(TZ).strftime("%Y-%m-%d"), "reason": str(exc)[:300]}
+                    save_image_access(refused)
+                    print(f"image model {model} refused for lack of access; recorded in "
+                          f"{IMAGE_ACCESS.relative_to(ROOT)} and not tried again", file=sys.stderr)
+                else:
+                    print(f"image model {model} failed: {exc}", file=sys.stderr)
         return None
+
+
+def load_image_access() -> dict:
+    if not IMAGE_ACCESS.exists():
+        return {}
+    try:
+        return json.loads(IMAGE_ACCESS.read_text(encoding="utf-8")) or {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def save_image_access(refused: dict) -> None:
+    IMAGE_ACCESS.write_text(json.dumps(refused, indent=2) + "\n", encoding="utf-8")
+
+
+def is_access_refusal(exc: Exception) -> bool:
+    """A 403, or a message about verification or access, means the project
+    is not allowed the model. Anything else is treated as transient."""
+    if getattr(exc, "status_code", None) == 403:
+        return True
+    text = str(exc).lower()
+    return any(s in text for s in ("must be verified", "verify organization", "does not have access",
+                                   "not have access", "permission", "403"))
 
 
 # ---------------------------------------------------------------------------
@@ -526,6 +564,8 @@ def main() -> int:
     if image_path:
         update_gallery(image_path, response.get("title", ""), post_url(post_path, fields))
         changed += [str(image_path.relative_to(ROOT)), str(IMAGES_INDEX.relative_to(ROOT))]
+    if IMAGE_ACCESS.exists() and str(IMAGE_ACCESS.relative_to(ROOT)) not in changed:
+        changed.append(str(IMAGE_ACCESS.relative_to(ROOT)))
     print(f"wrote {post_path.relative_to(ROOT)} drift={drift} stage={stage}")
     out = os.getenv("GITHUB_OUTPUT")
     if out:
