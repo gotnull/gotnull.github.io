@@ -1,12 +1,20 @@
 ---
 era: explainer
-layout: post  
-title: Moore’s Law - Legacy, Limits, and the Future of Computing  
-subtitle: A Deep Dive into the Past, Present, and Future of Moore’s Law  
-tags: [Moore's Law, semiconductors, technology, exponential growth, limits, quantum computing]  
-author: Lester Knight Chaykin  
+layout: post
+title: Moore’s Law - Legacy, Limits, and the Future of Computing
+subtitle: A Deep Dive into the Past, Present, and Future of Moore’s Law
+tags:
+- Moore's Law
+- semiconductors
+- technology
+- exponential growth
+- limits
+- quantum computing
+author: Lester Knight Chaykin
 comments: true
 mathjax: true
+altered:
+- '2026-10-01'
 ---
 
 {: .box-success}  
@@ -58,7 +66,7 @@ $$
 \log_2(T(t)) = \log_2(T_0) + \frac{t}{d}
 $$
 
-This linear form shows that the transistor count grows linearly when viewed on a logarithmic scale. This is important because exponential growth in technology often looks **linear** when plotted on a **logarithmic graph**, which is why early predictions of Moore’s Law seemed both manageable and achievable.
+Viewing the growth on a logarithmic scale, the rise of transistor count appears linear. The appearance of linearity is significant because technology's exponential growth often seems straightforward on such a scale, making early predictions of Moore's Law feel within reach.
 
 ## Why Moore’s Law Worked: Technological Drivers
 

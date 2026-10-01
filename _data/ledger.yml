@@ -915,3 +915,10 @@
   before: ''
   after: js +45 -4
   note: I added a new power-up feature that randomly spawns on the field, which temporarily increases the paddle size when collected. This adds a new layer of strategy and excitement to the game, as players will need to decide whether to focus on the ball or the power-up.
+- date: '2026-10-01'
+  kind: rewrite
+  url: /2024-10-11-moores-law-legacy-limits-and-the-future-of-computing/
+  title: Moore’s Law - Legacy, Limits, and the Future of Computing
+  before: This linear form shows that the transistor count grows linearly when viewed on a logarithmic scale. This is important because exponential growth in technology often looks **linear** when plotted on a **logarithmic graph**, which is why early predictions of Moore’s Law seemed both manageable and achievable.
+  after: Viewing the growth on a logarithmic scale, the rise of transistor count appears linear. The appearance of linearity is significant because technology's exponential growth often seems straightforward on such a scale, making early predictions of Moore's Law feel within reach.
+  note: Reflects changes in tone observed in historical posts.
