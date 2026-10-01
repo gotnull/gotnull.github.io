@@ -1,0 +1,69 @@
+name: Re-render the cover images
+
+# Started by hand. Makes every cover image again with a current image model,
+# a batch at a time, committing after each batch so progress survives a
+# cancelled run. Run it again to continue where it stopped.
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: "Images per commit"
+        required: false
+        default: "8"
+      batches:
+        description: "How many batches this run"
+        required: false
+        default: "6"
+      image_model:
+        description: "Image model"
+        required: false
+        default: "gpt-image-1"
+      quality:
+        description: "Quality for gpt-image models (low, medium, high)"
+        required: false
+        default: "high"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ghost-writer
+  cancel-in-progress: false
+
+jobs:
+  rerender:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install openai pyyaml
+
+      - name: Render and commit in batches
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GHOST_MODEL: ${{ vars.GHOST_MODEL || 'gpt-4o' }}
+          GHOST_IMAGE_MODEL: ${{ github.event.inputs.image_model }}
+          GHOST_IMAGE_QUALITY: ${{ github.event.inputs.quality }}
+        run: |
+          git config user.name 'Lester Knight Chaykin'
+          git config user.email 'lester@4511932.com'
+          for i in $(seq 1 "${{ github.event.inputs.batches }}"); do
+            rm -f "$RUNNER_TEMP/out"
+            GITHUB_OUTPUT="$RUNNER_TEMP/out" python ghost/rerender_images.py --limit "${{ github.event.inputs.batch }}"
+            changed=$(sed -n 's/^changed=//p' "$RUNNER_TEMP/out" 2>/dev/null || true)
+            if [ -z "$changed" ]; then
+              echo "nothing more to make"
+              break
+            fi
+            git add $changed
+            git commit -m "Cover images, rendered again by the program" || true
+            git pull --rebase origin master
+            git push
+          done
