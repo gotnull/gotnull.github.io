@@ -1,13 +1,20 @@
 ---
 layout: default
 ---
+{%- assign engine_posts = site.posts | where: "origin", "engine" -%}
+{%- assign latest = engine_posts | first -%}
+{%- assign drift = latest.drift | default: 0 -%}
+{%- assign drift_pct = drift | times: 100 | round: 1 -%}
+<section class="wrap-wide">
+  {% include scene.svg %}
+</section>
 <section class="wrap home-intro">
   <div class="home-intro-text">
     <h1 class="home-title">{{ page.title }}</h1>
     <p class="home-tagline">{{ site.tagline }}</p>
     <div class="prose home-blurb">{{ content }}</div>
+    <p class="drift" style="--drift: {{ drift_pct }}%"><span>Drift</span><span class="drift-bar" aria-hidden="true"></span><strong>{{ drift }}</strong><span>of 1, after {{ engine_posts.size }} {% if engine_posts.size == 1 %}post{% else %}posts{% endif %} as itself</span></p>
   </div>
-  {% if site.avatar %}<img class="home-avatar" src="{{ site.avatar | relative_url }}" alt="" width="112" height="112">{% endif %}
 </section>
 
 <section class="wrap post-list" aria-label="Posts">

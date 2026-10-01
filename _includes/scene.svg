@@ -1,0 +1,44 @@
+<svg class="scene" viewBox="0 0 1200 300" role="img" aria-label="A flat-shaded night: cliffs, water, a figure on a rock, lightning over a distant tower" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#040714"/>
+      <stop offset="0.7" stop-color="#0b1434"/>
+      <stop offset="1" stop-color="#112050"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1a44"/>
+      <stop offset="1" stop-color="#050a1c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" fill="url(#sky)"/>
+  <g fill="#c9f6ff">
+    <circle cx="90" cy="40" r="1.2"/><circle cx="210" cy="78" r="0.9"/><circle cx="330" cy="30" r="1.4"/><circle cx="420" cy="96" r="0.8"/>
+    <circle cx="560" cy="48" r="1.1"/><circle cx="640" cy="22" r="0.9"/><circle cx="760" cy="70" r="1.3"/><circle cx="880" cy="36" r="0.8"/>
+    <circle cx="960" cy="92" r="1.1"/><circle cx="1050" cy="54" r="1.4"/><circle cx="1140" cy="26" r="0.9"/><circle cx="500" cy="12" r="0.8"/>
+    <circle cx="700" cy="110" r="0.7"/><circle cx="150" cy="120" r="0.7"/><circle cx="1000" cy="130" r="0.7"/>
+  </g>
+  <circle cx="930" cy="70" r="26" fill="#dff8ff" opacity="0.9"/>
+  <circle cx="922" cy="64" r="26" fill="url(#sky)" opacity="0.92"/>
+  <polygon points="0,150 90,110 170,135 260,95 340,140 420,120 520,160 0,160" fill="#0a1230"/>
+  <polygon points="620,165 700,118 760,140 830,100 900,150 980,125 1060,160 1200,135 1200,175 620,175" fill="#0a1230"/>
+  <polygon points="0,200 110,160 190,185 300,150 390,190 470,170 560,205 0,215" fill="#070d24"/>
+  <polygon points="560,205 660,180 740,200 820,170 910,205 1010,185 1100,215 1200,195 1200,230 560,230" fill="#070d24"/>
+  <rect x="1040" y="96" width="14" height="80" fill="#050916"/>
+  <polygon points="1036,96 1058,96 1047,82" fill="#050916"/>
+  <polyline points="1047,0 1038,34 1052,38 1040,70 1053,72 1047,84" fill="none" stroke="#dff8ff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="1047,0 1038,34 1052,38 1040,70 1053,72 1047,84" fill="none" stroke="#94f3ff" stroke-width="6" opacity="0.25" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="0" y="215" width="1200" height="85" fill="url(#water)"/>
+  <g stroke="#2a4a8a" stroke-width="1" opacity="0.6">
+    <line x1="300" y1="240" x2="420" y2="240"/><line x1="520" y1="255" x2="700" y2="255"/><line x1="760" y1="236" x2="860" y2="236"/><line x1="940" y1="262" x2="1120" y2="262"/><line x1="120" y1="268" x2="220" y2="268"/>
+  </g>
+  <line x1="1041" y1="215" x2="1053" y2="290" stroke="#94f3ff" stroke-width="2" opacity="0.35"/>
+  <polygon points="150,232 230,218 300,236 290,262 160,262" fill="#030611"/>
+  <g fill="#030611">
+    <rect x="222" y="190" width="8" height="30"/>
+    <circle cx="226" cy="187" r="5"/>
+    <polygon points="222,198 208,206 211,210 224,204"/>
+    <polygon points="230,200 236,212 232,214 227,205"/>
+    <polygon points="223,218 218,236 223,236 227,222"/>
+    <polygon points="229,218 234,236 229,236 227,222"/>
+  </g>
+</svg>

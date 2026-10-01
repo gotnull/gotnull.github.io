@@ -20,10 +20,7 @@ it was kept, and the note is the program's own account of what it changed.
 {% for e in entries reversed %}
   <article class="ledger-entry ledger-{{ e.kind }}">
     <header class="ledger-head">
-      <time>{{ e.date | date: "%-d %B %Y" }}</time>
-      <span class="ledger-kind">{{ e.kind }}</span>
-      <a href="{{ e.url | relative_url }}">{{ e.title }}</a>
-      {% if e.kind == "game" and e.after != "" %}<span class="ledger-size">{{ e.after }}</span>{% endif %}
+      <time>{{ e.date | date: "%-d %B %Y" }}</time> / <span class="ledger-kind">{{ e.kind }}</span> / <a href="{{ e.url | relative_url }}">{{ e.title }}</a>{% if e.kind == "game" and e.after != "" %} / <span class="ledger-size">{{ e.after }}</span>{% endif %}
     </header>
     {% if e.kind == "game" %}
       <p class="ledger-note">{{ e.note | escape }}</p>

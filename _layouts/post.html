@@ -12,6 +12,7 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
     <p class="post-byline">By {{ page.author | default: site.author }}{% if page.references and page.references > 0 %}, linking to {{ page.references }} earlier {% if page.references == 1 %}post{% else %}posts{% endif %}{% endif %}</p>
+    {% if page.origin == "engine" %}{% assign drift_pct = page.drift | times: 100 | round: 1 %}<p class="drift" style="--drift: {{ drift_pct }}%"><span>Drift</span><span class="drift-bar" aria-hidden="true"></span><strong>{{ page.drift }}</strong><span>{{ page.stage }}</span></p>{% endif %}
   </header>
 
   {% include machine-note.html %}

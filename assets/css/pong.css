@@ -1,7 +1,7 @@
 /* The game. Colours come from the site's variables in site.css. */
 
 #gameContainer {
-  margin: 1.5rem 0 0;
+  margin: 1.2rem 0 0;
   text-align: center;
 }
 
@@ -11,20 +11,22 @@
   height: auto;
   aspect-ratio: 2 / 1;
   margin: 0 auto 0.9rem;
-  border-radius: 2px;
   background: #0b0d14;
+  border-top: 10px solid #000;
+  border-bottom: 10px solid #000;
+  box-shadow: 0 0 0 1px var(--line-strong, #263060);
   touch-action: none;
   outline: none;
 }
 
 #pongCanvas:focus-visible {
-  outline: 2px solid var(--blue, #1f3f8f);
+  outline: 2px solid var(--accent, #94f3ff);
   outline-offset: 2px;
 }
 
 #pongCanvas:fullscreen {
   border: none;
-  border-radius: 0;
+  box-shadow: none;
   background: #000;
 }
 
@@ -40,37 +42,40 @@
 
 #controls button,
 #speedControls button {
-  font-family: var(--font-text, system-ui, sans-serif);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-size: 0.92rem;
+  font-weight: 600;
   padding: 0.4rem 0.9rem;
-  border: 1px solid var(--ink, #16181c);
-  border-radius: 2px;
+  border: 1px solid var(--text, #dfe6f5);
   background: transparent;
-  color: var(--ink, #16181c);
+  color: var(--text, #dfe6f5);
   cursor: pointer;
 }
 
 #controls button:hover,
 #speedControls button:hover {
-  background: var(--paper-deep, #eaece8);
+  background: var(--bg-raised, #0d1328);
+  border-color: var(--accent, #94f3ff);
+  color: var(--accent, #94f3ff);
 }
 
 #controls button:focus-visible,
 #speedControls button:focus-visible {
-  outline: 2px solid var(--blue, #1f3f8f);
+  outline: 2px solid var(--accent, #94f3ff);
   outline-offset: 2px;
 }
 
 #controls button.active {
-  background: var(--ink, #16181c);
-  color: var(--paper, #f5f6f4);
+  background: var(--text, #dfe6f5);
+  border-color: var(--text, #dfe6f5);
+  color: var(--bg, #070b18);
 }
 
 #gameInfo,
 #speedDisplay {
+  font-family: var(--font-ui, system-ui, sans-serif);
   font-size: 0.9rem;
-  color: var(--ink-soft, #3f434a);
+  color: var(--text-muted, #9fb0cf);
 }
 
 #speedDisplay {
@@ -80,18 +85,19 @@
 #instructions {
   margin: 1.4rem 0 0;
   padding: 0.8rem 0 0;
-  border-top: 1px solid var(--rule, #d4d7d2);
+  border-top: 1px solid var(--line-strong, #263060);
   text-align: left;
-  font-size: 0.92rem;
-  color: var(--ink-soft, #3f434a);
+  font-family: var(--font-ui, system-ui, sans-serif);
+  font-size: 0.95rem;
+  color: var(--text-muted, #9fb0cf);
 }
 
 #instructions h3 {
-  margin: 0 0 0.3rem;
-  font-family: var(--font-text, system-ui, sans-serif);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--ink, #16181c);
+  margin: 0 0 0.4rem;
+  font-family: var(--font-display, "Arial Narrow", sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text, #dfe6f5);
 }
 
 #instructions p {
@@ -100,6 +106,6 @@
 }
 
 #instructions strong {
-  color: var(--ink, #16181c);
-  font-weight: 600;
+  color: var(--text, #dfe6f5);
+  font-weight: 700;
 }
