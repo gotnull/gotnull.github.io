@@ -25,6 +25,7 @@ import json
 import os
 import re
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -43,6 +44,8 @@ TEXT_MODEL = os.getenv("GHOST_MODEL", "gpt-4o")
 IMAGE_MODEL = os.getenv("GHOST_IMAGE_MODEL", "auto")
 IMAGE_SIZE = os.getenv("GHOST_IMAGE_SIZE", "1536x1024")
 IMAGE_QUALITY = os.getenv("GHOST_IMAGE_QUALITY", "high")
+REFUSAL_RETRIES = int(os.getenv("GHOST_REFUSAL_RETRIES", "6"))
+REFUSAL_WAIT = int(os.getenv("GHOST_REFUSAL_WAIT", "45"))
 
 STYLE = (
     "A single photorealistic image, shot on a full-frame camera with a 35mm or "
@@ -219,15 +222,27 @@ def main() -> int:
         if args.limit and made >= args.limit:
             break
         path = IMAGES / item["file"]
-        try:
-            prompt = make_prompt(client, item)
-            data = render(client, prompt, path.suffix)
-        except Exception as exc:  # noqa: BLE001  report and move on; a failed image stays as it was
-            msg = str(exc)
-            print(f"FAIL {item['file']}: {msg[:300]}", file=sys.stderr)
-            if gw.is_access_refusal(exc):
-                print(f"{IMAGE_MODEL} refused for lack of access; stopping. Verify the organisation at "
-                      "platform.openai.com or set GHOST_IMAGE_MODEL to a model the project may use.", file=sys.stderr)
+        data = None
+        refused = 0
+        for attempt in range(1, REFUSAL_RETRIES + 2):
+            try:
+                prompt = make_prompt(client, item)
+                data = render(client, prompt, path.suffix)
+                break
+            except Exception as exc:  # noqa: BLE001  report; a failed image stays as it was
+                msg = str(exc)
+                print(f"FAIL {item['file']} (attempt {attempt}): {msg[:300]}", file=sys.stderr)
+                if not gw.is_access_refusal(exc):
+                    break
+                # Access to a newly allowed model can flap for a while as the
+                # change propagates; wait and try the same image again.
+                refused += 1
+                if attempt <= REFUSAL_RETRIES:
+                    time.sleep(REFUSAL_WAIT)
+        if data is None:
+            if refused > REFUSAL_RETRIES:
+                print(f"{IMAGE_MODEL} refused {refused} times in a row; stopping. Allow the model for this "
+                      "project at platform.openai.com, or set GHOST_IMAGE_MODEL to one it may use.", file=sys.stderr)
                 break
             continue
         path.write_bytes(data)
