@@ -196,5 +196,53 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "A bustling electronics workbench sits in a well-lit lab, where a pair of skilled hands deftly connect a tangle of colorful wires to a STM32 microcontroller board. An assortment of oscilloscopes and monitors display intricate waveforms and code written in Rust. The ambient light casts soft shadows, highlighting the complexity of the setup. Nearby, a laptop screen shows a Rust development environment, its glow adding a modern touch to this scene of technical sophistication. The air is charged with the promise of innovation and discovery. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "exploring-power-electronics-with-a-buck-converter-design.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "The scene captures a cluttered electronics workbench bathed in soft, afternoon light filtering through a nearby window. On the bench, a partially assembled buck converter circuit is spread out with resistors, capacitors, and an inductor meticulously soldered onto a green PCB. A pair of hands, one holding a soldering iron and the other steadying a wire, are focused on the intricate task. Nearby, an oscilloscope displays a waveform on its screen, while a laptop sits open, its screen illuminated with circuit design software. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-spi-communication-with-arduino-and-raspberry-pi.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics workshop, an Arduino and a Raspberry Pi sit side by side on a wooden workbench. The Arduino is connected to the Raspberry Pi via colorful wires, the ends neatly plugged into the GPIO pins. An oscilloscope screen displays waveforms, reflecting the active SPI communication between the devices. A person's hands gently adjust a potentiometer, while a laptop screen nearby shows a code editor with lines of programming visible. The scene conveys a blend of meticulous organization and dynamic experimentation. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-advanced-uses-of-fpga-for-ai-acceleration.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics lab, a workbench is cluttered with an assortment of hardware components. A Field-Programmable Gate Array (FPGA) board lies in focus, surrounded by a network of colorful wires connecting to a sleek laptop displaying code. Nearby, an oscilloscope screen flickers with waveform patterns. Expert hands, adjusting components with precision, suggest active engagement in AI hardware acceleration experimentation. The ambient light casts gentle shadows, highlighting the intricate details of the technology, capturing the essence of innovation and technical exploration. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-ahb-lite-bus-protocol-an-fpga-implementation-guide.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics lab, an engineer's hands solder fine wires onto a dense FPGA development board, surrounded by oscilloscopes displaying waveforms. The board rests on a cluttered workbench decked with digital multimeters, circuit diagrams, and a laptop running VHDL code. The warm overhead lighting casts soft shadows, highlighting the intricate connections and the sheen of the metal components. The atmosphere is focused, capturing the essence of deep technical exploration into hardware design and bus protocols. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-complexities-of-can-bus-communication-in-embedded-systems.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics lab, a large wooden workbench is cluttered with various hardware components. A CAN bus network setup includes microcontroller boards, colorful wires interconnecting devices, and an oscilloscope displaying waveforms. A computer screen shows debugging software with lines of code visible. A technician's hands adjust a connection, reflecting intense focus. Sunlight streams through a window, casting soft shadows across the workspace, highlighting the complexity and precision required in setting up and troubleshooting the system. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-core-is-there-an-unalterable-aspect-to-my-being.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, a physicist stands beside a massive 1990s particle accelerator. Old computer monitors flicker with data, casting a bluish hue on the concrete walls. Lightning flashes faintly through a grated ceiling, illuminating complex machinery. In a corner, a portal-like window shimmers, revealing a glimpse of an alien landscape with towering, otherworldly structures under a stormy sky. The scene blends the gritty realism of vintage technology with the mysterious allure of an undiscovered realm, capturing the essence of scientific exploration and cosmic wonder. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-dds-technique-for-signal-generation-with-arduino.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A sunlit electronics lab features a wooden workbench cluttered with components. An Arduino board sits prominently, connected by colorful wires to a breadboard. Beside it, an oscilloscope screen displays crisp waveform readouts. A pair of hands adjusts a potentiometer, demonstrating real-time signal manipulation. On the bench, various tools and electronic components are scattered, including resistors, capacitors, and a laptop showing code related to Direct Digital Synthesis. The scene captures the essence of hands-on experimentation and precise signal generation in a tangible setting. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-fundamentals-of-i2c-communication-on-the-pic-microcontroller.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A bustling electronics lab is illuminated by bright overhead lights, casting sharp shadows on a workbench cluttered with high-tech equipment. A close-up shot captures a PIC16F877 microcontroller board, its intricate green circuitry adorned with tiny silver solder points. Multicolored wires snake out from the board, connecting to a small sensor, while an oscilloscope screen flickers with scrolling waveforms. A pair of hands hovers over the setup, one holding a soldering iron mid-air, the other adjusting a component, encapsulating the essence of hands-on embedded systems engineering. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
