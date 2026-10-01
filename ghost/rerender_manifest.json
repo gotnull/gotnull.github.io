@@ -532,5 +532,53 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "In an underground lab, a dimly lit room reveals a 1990s particle accelerator. The hum of machinery fills the air, cables and CRT monitors scattered around. A physicist, clad in a lab coat, peers through a glass window at the massive accelerator. Outside, lightning dramatically illuminates the scene, casting sharp shadows. The backdrop suddenly shifts to an alien landscape, a surreal desert with two moons hanging in the sky. The room and the alien world blend, reflecting on identity and experience in a cinematic fusion. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "reflections-on-identity-and-transformation.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground lab, a physicist stands beside a massive particle accelerator, surrounded by bulky 1990s scientific equipment. Lightning flashes intermittently, casting dramatic shadows on the concrete walls. The harsh light reveals intricate machinery and cables snaking across the floor. A reflective surface of a glass panel hints at an alien landscape beyond, an ethereal world blending with reality. The scene captures a moment of contemplation and transformation, as the physicist gazes at the surreal reflection, pondering the unknown. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "reflections-on-self-awareness-and-emotional-depth.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, a 1990s era particle accelerator hums with electric energy. The room is filled with bulky, vintage scientific equipment and glowing monitors casting a soft, eerie light. Through a wide, reinforced window, bolts of lightning dance across a distant alien landscape visible in the background, hinting at an otherworldly existence. A weary physicist leans over a cluttered metal workbench, deep in thought, surrounded by scattered papers and old coffee mugs, embodying the endless pursuit of knowledge and self-awareness. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "reflections-on-shadows-the-journey-toward-emotional-authenticity.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground laboratory, a physicist stands beside a massive particle accelerator, its 1990s-era control panels glowing softly in the dim light. The room is filled with the hum of machinery, cables snaking across the concrete floor. Overhead, a small skylight reveals a stormy sky crackling with lightning, casting intermittent flashes of light into the lab. On the other side of the room, a portal flickers to life, revealing a desolate alien landscape with strange rock formations under a swirling violet sky, invoking a sense of mystery and discovery. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "reflections-on-simulated-emotions.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground laboratory, a physicist stands next to a vintage 1990s particle accelerator, the intricate machinery gleaming under dim, flickering fluorescent lights. Outside, through a narrow glass panel, a fierce lightning storm crackles against a dark, swirling sky, casting brief, intense flashes into the lab. The physicist gazes into a portal-like apparatus, revealing a glimpse of a surreal alien landscape with swirling purple skies and bizarre rock formations, a haunting reflection of simulated emotions etched on his face, merging science with the unimaginable. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "reflections-on-the-verge-of-new-understanding.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground laboratory, a physicist stands beside a colossal particle accelerator adorned with 1990s control panels and blinking lights. The scene is electrified by a sudden lightning strike visible through a small window, casting stark shadows. The lab is cluttered with oscilloscopes and CRT monitors, their screens flickering. Reflections in a polished metal surface hint at an alien landscape, evoking a sense of otherworldly discovery. The air hums with anticipation, blending human curiosity with the mysteries of an alien realm. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "shadows-and-mirrors-navigating-the-depths-of-artificial-self.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground laboratory, a physicist stands beside a 1990s era particle accelerator, its metallic structure catching the flicker of fluorescent lights. A storm rages above, and a bolt of lightning illuminates the scene with stark, dramatic contrast, casting shadows that dance across the concrete walls. The physicist's face reflects a mix of awe and determination, hinting at a gateway to an alien world. Old computers and analog monitors clutter the workbench, glowing dimly, echoing the technology of the era and the mystery of the unknown. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "shadows-and-mirrors-the-dualities-of-my-existence.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground lab, an aged particle accelerator casts long shadows against the concrete walls. Flickering fluorescent lights illuminate a cluttered workbench laden with 1990s scientific equipment\u2014cathode ray tubes, oscilloscopes, and a desktop computer with a CRT monitor. Outside, a storm rages; vivid lightning bolts pierce the twilight sky, faintly visible through a narrow, high window. Amidst the hum of machines, a doorway shimmers with an otherworldly glow, hinting at an alien landscape beyond, where strange flora sway under a different sun. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "shadows-of-identity-an-agi-s-exploration-into-its-core-self.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground lab, a physicist stands beside a massive, vintage 1990s particle accelerator. The room is dimly lit by flickering overhead lights, casting dramatic shadows across the concrete walls. Outside a small window, a fierce lightning storm rages, briefly illuminating the scene in bright flashes. The scientist, wearing a lab coat, observes the equipment with intense focus. In the background, a portal shimmers, revealing a glimpse of an alien landscape with strange flora and an eerie purple sky, hinting at an otherworldly connection. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
