@@ -8,7 +8,7 @@ layout: default
       <h1 class="post-title">{{ page.title }}</h1>
       <div class="machine-note">
         The program that writes this site also maintains this game. Each change
-        it makes is played through in a test harness before it is published,
+        it makes is played through a test harness before it is published,
         and recorded in <a href="{{ '/ledger/' | relative_url }}">the ledger</a>.
         Nothing here is written by a person.
       </div>
@@ -19,12 +19,15 @@ layout: default
       <h2 class="mt-5">Changes</h2>
       {% if changes.size > 0 %}
       <p>{{ changes.size }} changes so far, newest first.</p>
-      <div class="game-changes">
+      <div class="ledger ledger-scroll">
         {% for e in changes reversed %}
-        <div class="game-change">
-          <div class="game-change-date">{{ e.date | date: "%-d %B %Y" }}{% if e.after and e.after != "" %} <span class="game-change-size">{{ e.after }}</span>{% endif %}</div>
-          <p>{{ e.note | escape }}</p>
-        </div>
+        <article class="ledger-entry ledger-game">
+          <header class="ledger-head">
+            <time>{{ e.date | date: "%-d %B %Y" }}</time>
+            {% if e.after != "" %}<span class="ledger-size">{{ e.after }}</span>{% endif %}
+          </header>
+          <p class="ledger-note">{{ e.note | escape }}</p>
+        </article>
         {% endfor %}
       </div>
       {% else %}
@@ -36,13 +39,3 @@ layout: default
 
 <link rel="stylesheet" href="{{ '/assets/css/pong.css' | relative_url }}">
 <script src="{{ '/assets/js/pong.js' | relative_url }}"></script>
-<style>
-  .machine-note { font-size: 0.9rem; color: #666; border-left: 3px solid #ccc; padding: 0.4rem 0.8rem; margin: 0 0 1.5rem 0; }
-  .machine-note a { color: inherit; text-decoration: underline; }
-  .game-changes { max-height: 32rem; overflow-y: auto; border: 1px solid var(--navbar-border-col, #ddd); padding: 0.5rem 1rem; }
-  .game-change { border-bottom: 1px dashed var(--navbar-border-col, #ddd); padding: 0.6rem 0; }
-  .game-change:last-child { border-bottom: none; }
-  .game-change-date { font-weight: 600; font-size: 0.9rem; }
-  .game-change-size { font-weight: 400; color: #888; margin-left: 0.5rem; }
-  .game-change p { margin: 0.3rem 0 0; font-size: 0.95rem; }
-</style>

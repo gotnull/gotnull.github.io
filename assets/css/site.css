@@ -142,20 +142,115 @@ body.dark-mode .box-error {
 }
 
 body.dark-mode table tr {
-  background-color: #ffffff !important;
+  background-color: transparent;
+  border-top-color: var(--navbar-border-col);
 }
 
 body.dark-mode table tr:nth-child(2n) {
-  background-color: #f8f8f8 !important;
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 body.dark-mode table tr th,
 body.dark-mode table tr td {
-  border-color: #cccccc !important;
-  color: #404040 !important;
+  border-color: var(--navbar-border-col);
 }
 
 body.dark-mode .jumbotron {
   background: #EEE !important;
   color: #404040 !important;
+}
+
+/* The line above every post, and above the game, saying who wrote it. */
+.machine-note {
+  font-size: 0.9rem;
+  color: var(--text-col);
+  opacity: 0.8;
+  border-left: 3px solid var(--navbar-border-col);
+  padding: 0.4rem 0.8rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.machine-note a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* The ledger: one entry per change, on /ledger/ and under the game. */
+.ledger {
+  margin: 1.5rem 0;
+}
+
+.ledger-scroll {
+  max-height: 32rem;
+  overflow-y: auto;
+  border: 1px solid var(--navbar-border-col);
+  border-radius: 4px;
+  padding: 0 1rem;
+}
+
+.ledger-entry {
+  border-top: 1px solid var(--navbar-border-col);
+  padding: 0.9rem 0;
+}
+
+.ledger-entry:first-child {
+  border-top: none;
+}
+
+.ledger-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+}
+
+.ledger-head time {
+  font-weight: 700;
+}
+
+.ledger-head a {
+  font-weight: 600;
+}
+
+.ledger-kind {
+  font-family: monospace;
+  font-size: 0.8rem;
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--navbar-border-col);
+  border-radius: 3px;
+  opacity: 0.85;
+}
+
+.ledger-size {
+  font-family: monospace;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.ledger-text,
+.ledger-note {
+  margin: 0.3rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.ledger-text {
+  padding-left: 0.8rem;
+  border-left: 3px solid var(--navbar-border-col);
+}
+
+.ledger-label {
+  display: inline-block;
+  min-width: 3.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.ledger-note {
+  opacity: 0.9;
 }
