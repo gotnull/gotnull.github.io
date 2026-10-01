@@ -24,6 +24,7 @@ import os
 import random
 import re
 import sys
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -192,11 +193,15 @@ class Writer:
             return None
         for model in ("gpt-image-1", "dall-e-3"):
             try:
-                kwargs = {"model": model, "prompt": prompt, "n": 1, "size": "1024x1024"}
-                if model == "dall-e-3":
-                    kwargs["response_format"] = "b64_json"
-                r = self.client.images.generate(**kwargs)
-                return base64.b64decode(r.data[0].b64_json)
+                r = self.client.images.generate(model=model, prompt=prompt, n=1, size="1024x1024")
+                item = r.data[0]
+                # gpt-image-1 answers with bytes; dall-e-3 answers with a URL
+                # that expires, so it is fetched straight away.
+                if getattr(item, "b64_json", None):
+                    return base64.b64decode(item.b64_json)
+                if getattr(item, "url", None):
+                    with urllib.request.urlopen(item.url, timeout=60) as resp:
+                        return resp.read()
             except Exception as exc:  # noqa: BLE001 - any failure means try the next model
                 print(f"image model {model} failed: {exc}", file=sys.stderr)
         return None
