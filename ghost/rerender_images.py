@@ -13,8 +13,9 @@ renders it.
 
 Progress is recorded in ghost/rerender_manifest.json so a run can stop and
 be resumed. Delete an entry, or pass --force, to make an image again.
-Needs OPENAI_API_KEY. The image model is GHOST_IMAGE_MODEL (default
-gpt-image-1.5); the prompt model is GHOST_MODEL (default gpt-4o).
+Needs OPENAI_API_KEY. The image model is GHOST_IMAGE_MODEL; the default,
+auto, lists the models the project may use and takes the newest gpt-image
+version among them. The prompt model is GHOST_MODEL (default gpt-4o).
 """
 from __future__ import annotations
 
@@ -39,7 +40,7 @@ MANIFEST = ROOT / "ghost" / "rerender_manifest.json"
 TZ = ZoneInfo("Australia/Melbourne")
 
 TEXT_MODEL = os.getenv("GHOST_MODEL", "gpt-4o")
-IMAGE_MODEL = os.getenv("GHOST_IMAGE_MODEL", "gpt-image-1.5")
+IMAGE_MODEL = os.getenv("GHOST_IMAGE_MODEL", "auto")
 IMAGE_SIZE = os.getenv("GHOST_IMAGE_SIZE", "1536x1024")
 IMAGE_QUALITY = os.getenv("GHOST_IMAGE_QUALITY", "high")
 
@@ -138,6 +139,33 @@ def make_prompt(client, item: dict) -> str:
     return prompt + " " + STYLE
 
 
+# Variants of one version, best first, for when the project allows several.
+VARIANT_ORDER = os.getenv("GHOST_IMAGE_VARIANTS", "sunburst,flare").split(",")
+
+
+def version_key(model_id: str) -> tuple:
+    """(version, variant rank) for ids like gpt-image-2.5-sunburst; empty for
+    anything else, including mini and dated snapshots."""
+    m = re.fullmatch(r"gpt-image-(\d+(?:\.\d+)?)(?:-([a-z]+))?", model_id)
+    if not m or m.group(2) == "mini":
+        return ()
+    variant = m.group(2) or ""
+    rank = -VARIANT_ORDER.index(variant) if variant in VARIANT_ORDER else -len(VARIANT_ORDER)
+    return (float(m.group(1)), rank)
+
+
+def pick_image_model(client) -> str:
+    """The newest gpt-image model the project is allowed. Mini and dated
+    snapshot variants are left out; dall-e is the fallback if there is none."""
+    ids = [m.id for m in client.models.list().data]
+    candidates = sorted((i for i in ids if version_key(i)), key=version_key)
+    if candidates:
+        return candidates[-1]
+    if "dall-e-3" in ids:
+        return "dall-e-3"
+    raise RuntimeError("no image model is available to this project; allow a gpt-image model in the OpenAI dashboard")
+
+
 def render(client, prompt: str, suffix: str) -> bytes:
     fmt = "jpeg" if suffix.lower() in (".jpg", ".jpeg") else "png"
     kwargs = dict(model=IMAGE_MODEL, prompt=prompt, n=1, size=IMAGE_SIZE)
@@ -157,6 +185,7 @@ def render(client, prompt: str, suffix: str) -> bytes:
 
 
 def main() -> int:
+    global IMAGE_MODEL
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true", help="list the images and stop; no network")
     ap.add_argument("--limit", type=int, default=0, help="stop after this many images (0: all)")
@@ -180,6 +209,9 @@ def main() -> int:
     if not key:
         sys.exit("OPENAI_API_KEY is not set")
     client = OpenAI(api_key=key)
+    if IMAGE_MODEL == "auto":
+        IMAGE_MODEL = pick_image_model(client)
+        print(f"using {IMAGE_MODEL}")
 
     made = 0
     changed = []

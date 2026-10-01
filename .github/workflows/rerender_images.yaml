@@ -16,9 +16,9 @@ on:
         required: false
         default: "6"
       image_model:
-        description: "Image model"
+        description: "Image model (auto picks the newest gpt-image the project may use)"
         required: false
-        default: "gpt-image-1.5"
+        default: "auto"
       quality:
         description: "Quality for gpt-image models (low, medium, high)"
         required: false
