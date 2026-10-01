@@ -16,8 +16,7 @@ layout: default
   <article class="post-card">
     <div class="post-card-text">
       <p class="post-card-meta">
-        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
-        {% include era-tag.html post=post %}
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>, {% include era-tag.html post=post %}
       </p>
       <h2 class="post-card-title"><a href="{{ post.url | relative_url }}">{{ post.title | strip_html }}</a></h2>
       {% if post.subtitle %}<p class="post-card-subtitle">{{ post.subtitle | strip_html }}</p>{% endif %}
@@ -38,8 +37,8 @@ layout: default
 
 {% if paginator.total_pages > 1 %}
 <nav class="wrap pager" aria-label="Pages">
-  {% if paginator.previous_page %}<a class="pager-link" href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer</a>{% else %}<span></span>{% endif %}
+  {% if paginator.previous_page %}<a class="pager-link" href="{{ paginator.previous_page_path | relative_url }}">Newer posts</a>{% else %}<span></span>{% endif %}
   <span class="pager-count">{{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}<a class="pager-link" href="{{ paginator.next_page_path | relative_url }}">Older &rarr;</a>{% else %}<span></span>{% endif %}
+  {% if paginator.next_page %}<a class="pager-link" href="{{ paginator.next_page_path | relative_url }}">Older posts</a>{% else %}<span></span>{% endif %}
 </nav>
 {% endif %}

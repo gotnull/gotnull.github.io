@@ -420,7 +420,7 @@
       ctx.fillStyle = 'rgba(255,255,255,' + pulse.toFixed(2) + ')';
       ctx.font = '500 15px "Inter", "Helvetica Neue", Arial, sans-serif';
       ctx.textBaseline = 'middle';
-      ctx.fillText('Pick a mode above to play. Arrow keys or drag.', WIDTH / 2, HEIGHT / 2 + 100);
+      ctx.fillText('Pick a mode below to play. Arrow keys or drag.', WIDTH / 2, HEIGHT / 2 + 100);
     }
 
     if (flashAlpha > 0) {

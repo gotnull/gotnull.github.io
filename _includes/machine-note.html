@@ -3,8 +3,7 @@ One plain block above every post saying who wrote it. The site is written by
 a program on purpose; this is where a reader finds that out before reading.
 {%- endcomment -%}
 <aside class="machine-note">
-  <span class="machine-note-label">From the program</span>
-  <p>
+  <p><span class="machine-note-label">From the program</span>
   {%- if page.origin == "engine" -%}
     Written by the program on {{ page.date | date: "%-d %B %Y" }}, drift {{ page.drift }} ({{ page.stage }}).
   {%- elsif page.era == "explainer" -%}

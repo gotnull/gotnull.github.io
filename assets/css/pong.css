@@ -10,17 +10,16 @@
   width: 100%;
   height: auto;
   aspect-ratio: 2 / 1;
-  margin: 0 auto 1rem;
-  border: 1px solid var(--line-strong, #353a44);
-  border-radius: 10px;
+  margin: 0 auto 0.9rem;
+  border-radius: 2px;
   background: #0b0d14;
-  box-shadow: var(--shadow, 0 10px 30px rgba(0, 0, 0, 0.45));
   touch-action: none;
   outline: none;
 }
 
 #pongCanvas:focus-visible {
-  border-color: var(--accent, #f0b35b);
+  outline: 2px solid var(--blue, #1f3f8f);
+  outline-offset: 2px;
 }
 
 #pongCanvas:fullscreen {
@@ -41,71 +40,66 @@
 
 #controls button,
 #speedControls button {
-  font-family: var(--font-ui, system-ui, sans-serif);
-  font-size: 0.82rem;
+  font-family: var(--font-text, system-ui, sans-serif);
+  font-size: 0.9rem;
   font-weight: 500;
-  padding: 0.5rem 0.95rem;
-  border: 1px solid var(--line-strong, #353a44);
-  border-radius: 999px;
-  background: var(--bg-raised, #161920);
-  color: var(--text, #e8e6e1);
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--ink, #16181c);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink, #16181c);
   cursor: pointer;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 #controls button:hover,
 #speedControls button:hover {
-  border-color: var(--accent, #f0b35b);
-  color: var(--accent, #f0b35b);
+  background: var(--paper-deep, #eaece8);
+}
+
+#controls button:focus-visible,
+#speedControls button:focus-visible {
+  outline: 2px solid var(--blue, #1f3f8f);
+  outline-offset: 2px;
 }
 
 #controls button.active {
-  background: var(--accent, #f0b35b);
-  border-color: var(--accent, #f0b35b);
-  color: var(--accent-ink, #1a1203);
+  background: var(--ink, #16181c);
+  color: var(--paper, #f5f6f4);
 }
 
 #gameInfo,
 #speedDisplay {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.74rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted, #9aa0a6);
+  font-size: 0.9rem;
+  color: var(--ink-soft, #3f434a);
 }
 
 #speedDisplay {
-  min-width: 7.5em;
+  min-width: 7em;
 }
 
 #instructions {
-  margin: 1.5rem auto 0;
-  padding: 0.9rem 1.1rem;
-  border: 1px solid var(--line, #262a32);
-  border-radius: 8px;
-  background: var(--bg-raised, #161920);
+  margin: 1.4rem 0 0;
+  padding: 0.8rem 0 0;
+  border-top: 1px solid var(--rule, #d4d7d2);
   text-align: left;
-  font-family: var(--font-ui, system-ui, sans-serif);
-  font-size: 0.88rem;
-  color: var(--text-muted, #9aa0a6);
+  font-size: 0.92rem;
+  color: var(--ink-soft, #3f434a);
 }
 
 #instructions h3 {
-  margin: 0 0 0.4rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
+  margin: 0 0 0.3rem;
+  font-family: var(--font-text, system-ui, sans-serif);
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent, #f0b35b);
+  color: var(--ink, #16181c);
 }
 
 #instructions p {
-  margin: 0.3rem 0;
+  margin: 0.25rem 0;
   line-height: 1.5;
 }
 
 #instructions strong {
-  color: var(--text, #e8e6e1);
+  color: var(--ink, #16181c);
   font-weight: 600;
 }

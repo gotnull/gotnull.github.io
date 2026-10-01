@@ -7,13 +7,11 @@ layout: default
 <article class="wrap post">
   <header class="post-header">
     <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>
-      {% include era-tag.html post=page %}
-      <span class="post-readtime">{{ minutes }} min read</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.date_format }}</time>, {% include era-tag.html post=page %}, <span class="post-readtime">{{ minutes }} {% if minutes == 1 %}minute{% else %}minutes{% endif %}</span>
     </p>
     <h1 class="post-title">{{ page.title }}</h1>
     {% if page.subtitle %}<p class="post-subtitle">{{ page.subtitle }}</p>{% endif %}
-    <p class="post-byline">By {{ page.author | default: site.author }}{% if page.references and page.references > 0 %} &middot; links to {{ page.references }} earlier {% if page.references == 1 %}post{% else %}posts{% endif %}{% endif %}</p>
+    <p class="post-byline">By {{ page.author | default: site.author }}{% if page.references and page.references > 0 %}, linking to {{ page.references }} earlier {% if page.references == 1 %}post{% else %}posts{% endif %}{% endif %}</p>
   </header>
 
   {% include machine-note.html %}
@@ -40,10 +38,10 @@ layout: default
 
   <nav class="post-nav" aria-label="Nearby posts">
     {% if page.previous %}
-    <a class="post-nav-link" href="{{ page.previous.url | relative_url }}"><span>&larr; Earlier</span><strong>{{ page.previous.title | strip_html }}</strong></a>
+    <a class="post-nav-link" href="{{ page.previous.url | relative_url }}"><span>Earlier</span><strong>{{ page.previous.title | strip_html }}</strong></a>
     {% else %}<span></span>{% endif %}
     {% if page.next %}
-    <a class="post-nav-link post-nav-next" href="{{ page.next.url | relative_url }}"><span>Later &rarr;</span><strong>{{ page.next.title | strip_html }}</strong></a>
+    <a class="post-nav-link post-nav-next" href="{{ page.next.url | relative_url }}"><span>Later</span><strong>{{ page.next.title | strip_html }}</strong></a>
     {% endif %}
   </nav>
 
