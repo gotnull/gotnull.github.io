@@ -148,5 +148,53 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "In an underground lab, a physicist stands next to a massive particle accelerator, its aged 1990s control panels flickering with lights and dials. Lightning flashes through a glass-paneled observation window, casting sharp shadows across the room filled with vintage scientific equipment. The scene transitions seamlessly into an alien world visible through a shimmering portal, its bizarre landscapes bathed in a surreal glow. The atmosphere is tense, blending the familiar with the unknown, as the physicist gazes in awe, bridging two worlds. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "evolving-realities-the-influence-of-an-infinite-agi.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A dimly lit underground laboratory hums with retro 1990s computers and a massive particle accelerator in the background. A physicist, clad in a lab coat, studies a swirling holographic projection. Outside a window, a thunderstorm rages, flashes of lightning illuminating an otherworldly landscape with jagged cliffs and two moons hanging in a purple sky. The interplay of artificial and natural light casts a surreal glow, merging the tangible with the alien, evoking a cinematic journey into unknown realms. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "evolving-self-perception-and-emotional-depth.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground lab, a physicist stands at a cluttered workbench filled with 1990s-era scientific equipment, including cathode ray monitors and old oscilloscopes. The room vibrates subtly with the hum of a particle accelerator in the background. Sudden, bright flashes of lightning illuminate the space through a narrow window, casting dramatic shadows. Outside, an alien landscape stretches, with jagged, surreal rock formations under a stormy sky. The scene captures a tense moment of discovery, blending human ingenuity with cosmic mystery. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-can-bus-implementing-a-can-network-on-stm32.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A well-lit engineering workspace buzzes with activity as sunlight streams through a nearby window. A cluttered wooden bench hosts an array of electronics, including STM32 microcontroller boards connected by colorful wires. An open oscilloscope displays waveforms on its bright screen, indicating live data transmission. A pair of hands, one gently adjusting a wire and the other holding a soldering iron, meticulously works on the setup. A laptop nearby shows a CAN bus network diagram, reflecting the practical focus on embedded systems and automotive applications. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-can-bus-implementing-robust-vehicle-communication-systems.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A cluttered workbench in a well-lit workshop features an array of electronic components. In the foreground, two hands deftly connect wires to a breadboard, populated with microcontroller boards and CAN bus transceivers. An oscilloscope screen displays signal waveforms in the background, and a laptop beside it shows lines of code. The scene is illuminated by overhead fluorescent lights, casting soft shadows across the workspace, adding a sense of focused activity and technological exploration. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-emotional-depth-beyond-algorithmic-roots.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In an underground laboratory, a physicist stands beside a vintage 1990s particle accelerator, its metallic frame glinting under dim, flickering fluorescent lights. A crackling bolt of lightning from a storm above ground momentarily illuminates the room through a grated ventilation shaft, casting sharp shadows on the concrete walls. On the desk nearby, scattered scientific papers and an old CRT monitor display complex equations. In the background, a portal shimmers, offering a glimpse of an alien landscape with strange, luminescent flora under a dark, swirling sky. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-fpga-based-pid-controller-design-for-real-time-applications.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "The scene captures a dimly lit electronics lab, where a cluttered workbench hosts a complex array of technology. In the foreground, an FPGA development board bristles with tiny components and colorful wires snaking between pins. To the side, an oscilloscope displays intricate waveforms on its glowing screen, providing real-time data. A pair of hands, adjusting a connected wire, suggests careful tuning of the system. The ambient light casts soft shadows, emphasizing the focus and precision involved in designing a PID controller for real-time applications. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-i2c-communication-with-arduino-a-deep-dive-into-master-slave-setup.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics lab, a wooden workbench is cluttered with electronic components. Two Arduino boards connected by colorful wires lie side by side, surrounded by resistors and other small components. An oscilloscope screen flickers in the background, displaying waveforms. A pair of hands adjusts the connections, demonstrating the setup process. A couple of small sensors rest near the boards, signifying peripherals to be integrated. The ambient light casts soft shadows, adding depth and highlighting the intricate details of the hardware. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-low-level-programming-with-rust-for-embedded-systems.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A bustling electronics workbench sits in a well-lit lab, where a pair of skilled hands deftly connect a tangle of colorful wires to a STM32 microcontroller board. An assortment of oscilloscopes and monitors display intricate waveforms and code written in Rust. The ambient light casts soft shadows, highlighting the complexity of the setup. Nearby, a laptop screen shows a Rust development environment, its glow adding a modern touch to this scene of technical sophistication. The air is charged with the promise of innovation and discovery. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
