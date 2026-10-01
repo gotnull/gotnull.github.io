@@ -1,0 +1,161 @@
+/* Additions on top of the theme's stylesheet: dark mode, the table of
+   contents that toc.js builds inside posts, and the related posts list. */
+
+body.dark-mode {
+  --page-col: #282c34;
+  --text-col: #abb2bf;
+  --link-col: #61afef;
+  --hover-col: #98c379;
+  --navbar-col: #21252b;
+  --navbar-text-col: #abb2bf;
+  --navbar-border-col: #3e4451;
+  --footer-col: #21252b;
+  --footer-text-col: #abb2bf;
+  --footer-link-col: #61afef;
+  --footer-hover-col: #98c379;
+  --mid-col: #5c6370;
+}
+
+body.dark-mode .highlight > pre,
+body.dark-mode code {
+  background-color: #f8f8f8 !important;
+}
+
+body.dark-mode .highlight > pre {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-left-color: #444 !important;
+}
+
+body.dark-mode code {
+  background-color: #f9f2f4 !important;
+}
+
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--navbar-text-col);
+  padding: 0.9375rem 0.9375rem;
+  line-height: 1.25rem;
+  margin-left: 0.625rem;
+}
+
+#dark-mode-toggle:hover,
+#dark-mode-toggle:focus {
+  color: var(--hover-col);
+}
+
+#dark-mode-toggle .fa {
+  font-size: 1.2em;
+  color: var(--navbar-text-col);
+}
+
+@media (max-width: 1199px) {
+  #dark-mode-toggle {
+    padding: 0.675rem 0 0.675rem 1rem;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.blog-post #post-toc:empty {
+  display: none;
+}
+
+.blog-post #post-toc {
+  background-color: var(--page-col);
+  border: 1px solid var(--navbar-border-col);
+  padding: 15px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+.blog-post #post-toc h3 {
+  margin-top: 0;
+  font-size: 1.2em;
+  color: var(--text-col);
+}
+
+.blog-post #post-toc ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.blog-post #post-toc ul ul {
+  padding-left: 20px;
+}
+
+.blog-post #post-toc li a {
+  color: var(--link-col);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.blog-post #post-toc li a:hover {
+  color: var(--hover-col);
+}
+
+.blog-post #post-toc li a.active {
+  font-weight: bold;
+  color: var(--hover-col);
+}
+
+body.dark-mode .blog-post #post-toc {
+  background-color: #21252b;
+  border-color: #3e4451;
+}
+
+body.dark-mode .blog-post #post-toc h3,
+body.dark-mode .blog-post #post-toc li a {
+  color: #abb2bf;
+}
+
+body.dark-mode .blog-post #post-toc li a:hover,
+body.dark-mode .blog-post #post-toc li a.active {
+  color: #98c379;
+}
+
+body.dark-mode .box-success {
+  background-color: #98FB98 !important;
+  border-left-color: #3CB371 !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .box-note {
+  background-color: #eee !important;
+  border-left-color: #2980b9 !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .box-warning {
+  background-color: #fdf5d4 !important;
+  border-left-color: #f1c40f !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .box-error {
+  background-color: #f4dddb !important;
+  border-left-color: #c0392b !important;
+  color: #404040 !important;
+}
+
+body.dark-mode table tr {
+  background-color: #ffffff !important;
+}
+
+body.dark-mode table tr:nth-child(2n) {
+  background-color: #f8f8f8 !important;
+}
+
+body.dark-mode table tr th,
+body.dark-mode table tr td {
+  border-color: #cccccc !important;
+  color: #404040 !important;
+}
+
+body.dark-mode .jumbotron {
+  background: #EEE !important;
+  color: #404040 !important;
+}

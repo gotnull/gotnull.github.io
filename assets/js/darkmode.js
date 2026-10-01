@@ -1,42 +1,35 @@
+// Dark mode. Adds a toggle to the navbar, remembers the choice in
+// localStorage, and defaults to dark when nothing has been chosen.
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('dark-mode'); } catch (e) { saved = null; }
+  var dark = saved !== 'disabled';
+  if (dark) document.body.classList.add('dark-mode');
 
-(function() {
-  const toggleButton = document.getElementById('dark-mode-toggle');
-  const icon = toggleButton ? toggleButton.querySelector('.fa') : null;
-
-  const setIcon = (isDarkMode) => {
-    if (icon) {
-      if (isDarkMode) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-      }
-    }
-  };
-
-  const toggleDarkMode = () => {
-    document.body.classList.toggle('dark-mode');
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    localStorage.setItem('dark-mode', isDarkMode ? 'enabled' : 'disabled');
-    setIcon(isDarkMode);
-  };
-
-  // Check for saved preference and apply on load
-  const savedMode = localStorage.getItem('dark-mode');
-  let initialDarkMode = false;
-  if (savedMode === 'disabled') {
-    // User explicitly chose light mode, do nothing
-  } else { // savedMode is 'enabled' or null (no preference saved)
-    document.body.classList.add('dark-mode');
-    initialDarkMode = true;
+  function setIcon(icon, isDark) {
+    icon.classList.toggle('fa-sun', isDark);
+    icon.classList.toggle('fa-moon', !isDark);
   }
 
-  // Set initial icon state
-  document.addEventListener('DOMContentLoaded', () => {
-    if (toggleButton) {
-      setIcon(initialDarkMode);
-      toggleButton.addEventListener('click', toggleDarkMode);
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    var menu = document.querySelector('#main-navbar .navbar-nav');
+    if (!menu) return;
+    var item = document.createElement('li');
+    item.className = 'nav-item';
+    var button = document.createElement('button');
+    button.className = 'nav-link';
+    button.id = 'dark-mode-toggle';
+    button.title = 'Toggle Dark Mode';
+    var icon = document.createElement('span');
+    icon.className = 'fa fa-moon';
+    button.appendChild(icon);
+    item.appendChild(button);
+    menu.appendChild(item);
+    setIcon(icon, dark);
+    button.addEventListener('click', function () {
+      dark = document.body.classList.toggle('dark-mode');
+      try { localStorage.setItem('dark-mode', dark ? 'enabled' : 'disabled'); } catch (e) { /* private mode */ }
+      setIcon(icon, dark);
+    });
   });
 })();

@@ -1,18 +1,13 @@
-# project
 _site
+.jekyll-cache
 .sass-cache
-.vagrant
+.jekyll-metadata
 
-# general
 .DS_Store
 Thumbs.db
-ehthumbs.db
-
-Gemfile.lock
-
-beautiful-jekyll-theme-*.gem
 
 .env
+.venv
 __pycache__/
 *.pyc
-ghost/.agi_state.json
+.pytest_cache
