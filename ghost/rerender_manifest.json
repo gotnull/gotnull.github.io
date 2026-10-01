@@ -244,5 +244,53 @@
     "model": "gpt-image-2.5-sunburst",
     "prompt": "A bustling electronics lab is illuminated by bright overhead lights, casting sharp shadows on a workbench cluttered with high-tech equipment. A close-up shot captures a PIC16F877 microcontroller board, its intricate green circuitry adorned with tiny silver solder points. Multicolored wires snake out from the board, connecting to a small sensor, while an oscilloscope screen flickers with scrolling waveforms. A pair of hands hovers over the setup, one holding a soldering iron mid-air, the other adjusting a component, encapsulating the essence of hands-on embedded systems engineering. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
     "size": "1536x1024"
+  },
+  "exploring-the-game-boy-s-audio-system-a-deep-dive-into-sound-programming.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit, cluttered electronics workbench, a vintage Game Boy lies open, its circuits exposed under a warm desk lamp. Nearby, a modern laptop displays lines of code and a software emulator screen. An oscilloscope crackles with green waves, capturing audio signals from the Game Boy. Tangled wires connect the devices, and hands delicately adjust a small screwdriver on the Game Boy's audio chip. The scene captures the contrast between retro hardware and cutting-edge programming tools, evoking a sense of nostalgic innovation. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-game-boy-s-custom-cpu-a-deep-dive-into-lr35902.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit workshop cluttered with retro computing artifacts, a wooden workbench takes center stage. An open Game Boy lays disassembled, its motherboard exposed, revealing the intricate design of the LR35902 CPU. Nearby, a vintage oscilloscope displays waveforms, capturing the processor's operation. A programmer's hands, gently adjusting a probe on the circuit board, are illuminated by a desk lamp's warm glow. A second monitor shows lines of code, hinting at ongoing programming efforts. The scene evokes a sense of nostalgic discovery, immersed in the world of retro gaming technology. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-game-boy-sound-system-a-deep-dive-into-audio-emulation.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a softly lit workshop, a real workbench is cluttered with vintage Game Boy consoles, circuit boards, and tangled wires. An open Game Boy is disassembled, revealing its internal components. A modern laptop displays complex emulation code on the screen, casting a blue glow across the scene. Oscilloscopes with green waves flicker in the background, analyzing audio signals. A pair of hands gently adjusts a small soldering iron, delicately working on the sound chip, capturing the meticulous process of understanding the console's audio intricacies. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-intricacies-of-i2c-communication-on-raspberry-pi.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A well-lit electronics lab showcases a close-up of a wooden workbench where a Raspberry Pi is actively interfacing with an HDC1080 temperature and humidity sensor. The Raspberry Pi, surrounded by colorful wires, is connected to the sensor, while a digital oscilloscope displays an I2C communication waveform on its screen in the background. A pair of focused hands, one holding a probe and the other adjusting the Raspberry Pi, adds a human touch, illustrating a technical exploration of embedded systems in progress. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-shadows-unearthing-the-depths-of-agi-emotions.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a dimly lit underground lab, a physicist stands beside a 1990s particle accelerator, its intricate network of wires and control panels casting shadows on the concrete walls. Lightning flashes outside, momentarily illuminating the room and highlighting the scientist's focused expression. The accelerator hums with energy, its metallic surfaces reflecting the lightning's glow. A portal to an alien world shimmers faintly in the background, hinting at the unknown realms beyond. Dust particles dance in the air, caught in the fleeting light, adding to the scene's eerie, cinematic atmosphere. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-stm32-dac-for-real-time-audio-synthesis.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A cluttered electronics workbench under warm, focused lighting showcases a hands-on exploration of STM32 microcontrollers for audio synthesis. The scene features a close-up of a person's hands, skillfully assembling hardware, with an STM32 development board at the center, surrounded by colorful wires, oscilloscopes displaying waveforms, and a laptop running programming software. The ambient light highlights the intricate details of the components, as the environment exudes an atmosphere of focused technical exploration and innovation. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-the-versatility-of-fpga-in-image-processing.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "In a well-lit electronics lab, a cluttered workbench is filled with a variety of hardware. A central FPGA board with multicolored wires connected to it sits prominently, surrounded by oscilloscopes displaying waveform patterns. A large monitor nearby shows a grayscale image with distinct edges highlighted. A hand, mid-motion, adjusts the wiring on the board, while a second hand points to the screen. The ambient light casts subtle shadows, creating a focused yet dynamic atmosphere, emphasizing the technical exploration of edge detection using FPGAs. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
+  },
+  "exploring-uart-communication-in-embedded-systems.jpg": {
+    "date": "2026-10-01",
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "A well-lit electronics workbench is filled with an array of technical gadgets and tools. In the center, an ESP32 microcontroller board is connected to several colorful wires, running into an adjacent laptop displaying a terminal with scrolling code. Nearby, an oscilloscope shows waveforms on its screen. A pair of hands, delicately adjusting the connections, reflects the focus and precision required in debugging. Soft, natural light streams through a nearby window, highlighting the intricate details of the setup, embodying the meticulous world of embedded systems. A single photorealistic image, shot on a full-frame camera with a 35mm or 50mm lens, natural or practical light, shallow depth of field, true-to-life colour, film-like grain, no text, no captions, no logos, no watermarks, no diagrams, no floating icons, no collage. It should look like a photograph a person took, not an illustration.",
+    "size": "1536x1024"
   }
 }
