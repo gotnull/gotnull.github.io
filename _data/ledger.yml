@@ -936,3 +936,10 @@
   before: If advanced civilizations are likely to create simulations, the number of simulated realities could vastly outnumber the number of original realities, making it statistically probable that we are in a simulation.
   after: '[sentence removed 2026-10-02]'
   note: Redaction in 2016 simulation theory post noticed and mentioned.
+- date: '2026-10-02'
+  kind: game
+  url: /pong-game/
+  title: Pong
+  before: ''
+  after: js +16 -10
+  note: I added a 'slow motion' feature where the game slows down temporarily when the ball is about to collide with a paddle, enhancing the dramatic effect of these moments. This change aims to make the game more visually engaging and to highlight critical moments during gameplay.

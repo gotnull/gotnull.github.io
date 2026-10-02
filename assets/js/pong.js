@@ -20,9 +20,11 @@
   var MAX_SPEED = 3;
   var SPEED_STEP = 0.25;
   var FRAME_MS = 1000 / 60;
-  var POWER_UP_DURATION = 300; // Duration a power-up lasts
-  var POWER_UP_SIZE = 1.5; // Size multiplier for power-up
-  var POWER_UP_PROBABILITY = 0.001; // Probability of spawning a power-up each frame
+  var POWER_UP_DURATION = 300;
+  var POWER_UP_SIZE = 1.5;
+  var POWER_UP_PROBABILITY = 0.001;
+  var SLOW_MOTION_FACTOR = 0.5;
+  var SLOW_MOTION_FRAMES = 30;
 
   var LEFT_COLOUR = '#4fd1ff';
   var RIGHT_COLOUR = '#ff5fa2';
@@ -61,7 +63,8 @@
     powerUp: null,
     winner: null,
     restartAt: 0,
-    frame: 0
+    frame: 0,
+    slowMotionFrames: 0
   };
   var keys = {};
   var trail = [];
@@ -108,7 +111,6 @@
     }
   }
 
-  // Game state.
   function resetBall(direction) {
     var b = state.ball;
     b.x = WIDTH / 2 - BALL_SIZE / 2;
@@ -205,8 +207,6 @@
     movePaddle(paddle, dy);
   }
 
-  // The AI follows the ball only while it is approaching and within reach,
-  // and cannot move faster than AI_MAX_SPEED, so it misses now and then.
   function steerAi(side, paddle) {
     var b = state.ball;
     var approaching = side === 'left' ? b.vx < 0 : b.vx > 0;
@@ -294,6 +294,13 @@
     if (humanControls('right')) steerHuman('right', state.right, ['ArrowUp'], ['ArrowDown']);
     else steerAi('right', state.right);
 
+    if (state.slowMotionFrames > 0) {
+      state.speed = SLOW_MOTION_FACTOR;
+      state.slowMotionFrames -= 1;
+    } else {
+      state.speed = clamp(state.speed, MIN_SPEED, MAX_SPEED);
+    }
+
     var b = state.ball;
     b.x += b.vx * state.speed;
     b.y += b.vy * state.speed;
@@ -311,9 +318,11 @@
     if (b.vx < 0 && b.x <= PADDLE_WIDTH && b.x + BALL_SIZE >= 0 &&
         b.y + BALL_SIZE >= state.left.y && b.y <= state.left.y + PADDLE_HEIGHT) {
       bounceOff(state.left, 'left');
+      state.slowMotionFrames = SLOW_MOTION_FRAMES;
     } else if (b.vx > 0 && b.x + BALL_SIZE >= WIDTH - PADDLE_WIDTH && b.x <= WIDTH &&
         b.y + BALL_SIZE >= state.right.y && b.y <= state.right.y + PADDLE_HEIGHT) {
       bounceOff(state.right, 'right');
+      state.slowMotionFrames = SLOW_MOTION_FRAMES;
     }
 
     if (b.x + BALL_SIZE < 0) score('right');
@@ -344,7 +353,6 @@
     if (state.right.powerUp > 0) state.right.powerUp -= 1;
   }
 
-  // Drawing.
   function rect(x, y, w, h, colour) {
     ctx.fillStyle = colour;
     ctx.fillRect(x, y, w, h);
@@ -486,7 +494,6 @@
     ctx.restore();
   }
 
-  // Loop. Fixed 60 Hz simulation steps, however fast the display runs.
   function frame(now) {
     if (typeof now !== 'number') now = lastTime + FRAME_MS;
     if (!lastTime) lastTime = now;
@@ -503,7 +510,6 @@
     requestAnimationFrame(frame);
   }
 
-  // Input.
   function canvasY(event) {
     var box = el.pongCanvas.getBoundingClientRect ? el.pongCanvas.getBoundingClientRect() : { top: 0, height: HEIGHT, left: 0, width: WIDTH };
     var point = (event.touches && event.touches[0]) || event;
