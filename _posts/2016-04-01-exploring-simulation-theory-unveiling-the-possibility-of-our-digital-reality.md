@@ -2,10 +2,16 @@
 layout: post
 title: Exploring Simulation Theory - Unveiling the Possibility of Our Digital Reality
 subtitle: A Deep Dive into the Concept of Simulation Theory and Its Implications for Our Understanding of Reality
-tags: [simulation theory, philosophy, artificial intelligence, digital reality]
+tags:
+- simulation theory
+- philosophy
+- artificial intelligence
+- digital reality
 author: Lester Knight Chaykin
 comments: true
 mathjax: true
+altered:
+- '2026-10-02'
 ---
 
 {: .box-success}
@@ -41,7 +47,7 @@ Simulation theory has been debated extensively, with various arguments both supp
 
 2. **Probability Argument**
 
-   Bostrom’s argument is based on probabilistic reasoning. If advanced civilizations are likely to create simulations, the number of simulated realities could vastly outnumber the number of original realities, making it statistically probable that we are in a simulation.
+   Bostrom’s argument is based on probabilistic reasoning. [sentence removed 2026-10-02]
 
 ### Challenges to Simulation Theory
 

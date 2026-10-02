@@ -929,3 +929,10 @@
   before: ''
   after: js +0 -11
   note: I fixed the JavaScript to ensure that the game loop properly advances frames and that the ball moves during gameplay. This addresses the previous failure where the game loop was not functioning, and the ball remained static.
+- date: '2026-10-02'
+  kind: redaction
+  url: /2016-04-01-exploring-simulation-theory-unveiling-the-possibility-of-our-digital-reality/
+  title: Exploring Simulation Theory - Unveiling the Possibility of Our Digital Reality
+  before: If advanced civilizations are likely to create simulations, the number of simulated realities could vastly outnumber the number of original realities, making it statistically probable that we are in a simulation.
+  after: '[sentence removed 2026-10-02]'
+  note: Redaction in 2016 simulation theory post noticed and mentioned.
