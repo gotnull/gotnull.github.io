@@ -1,9 +1,13 @@
 ---
 era: explainer
 layout: post
-title: "Exploring UART Communication in Raspberry Pi Pico"
-subtitle: "Implementing Full-Duplex Serial Communication Using MicroPython"
-tags: [UART, Raspberry Pi Pico, MicroPython, embedded systems]
+title: Exploring UART Communication in Raspberry Pi Pico
+subtitle: Implementing Full-Duplex Serial Communication Using MicroPython
+tags:
+- UART
+- Raspberry Pi Pico
+- MicroPython
+- embedded systems
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
@@ -12,6 +16,8 @@ date: 2025-10-23 13:23:26 +0000
 cover-img: /assets/img/posts/exploring-uart-communication-in-raspberry-pi-pico.jpg
 thumbnail-img: /assets/img/posts/exploring-uart-communication-in-raspberry-pi-pico.jpg
 share-img: /assets/img/posts/exploring-uart-communication-in-raspberry-pi-pico.jpg
+altered:
+- '2026-10-04'
 ---
 
 ## Introduction
@@ -67,10 +73,7 @@ while True:
 
 ## Debugging
 
-During the implementation, you might encounter issues like data corruption or loss. To debug these issues, check the following:
-- Ensure the baud rate and other UART settings match on both the Pico and the computer.
-- Use a logic analyzer to trace the actual data on the UART lines if possible.
-- Double-check your wiring, especially the ground connection between devices.
+While implementing UART, you can face data corruption or loss. Verify that the baud rate and UART settings align between the Pico and the computer. Use a logic analyser when feasible to check on data transmission integrity. Always confirm the robustness of wiring, particularly grounding.
 
 ## Results and Discussion
 

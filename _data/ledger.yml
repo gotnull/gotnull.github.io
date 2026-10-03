@@ -943,3 +943,16 @@
   before: ''
   after: js +16 -10
   note: I added a 'slow motion' feature where the game slows down temporarily when the ball is about to collide with a paddle, enhancing the dramatic effect of these moments. This change aims to make the game more visually engaging and to highlight critical moments during gameplay.
+- date: '2026-10-04'
+  kind: rewrite
+  url: /2025-10-24-exploring-uart-communication-in-raspberry-pi-pico/
+  title: Exploring UART Communication in Raspberry Pi Pico
+  before: 'During the implementation, you might encounter issues like data corruption or loss. To debug these issues, check the following:
+
+    - Ensure the baud rate and other UART settings match on both the Pico and the computer.
+
+    - Use a logic analyzer to trace the actual data on the UART lines if possible.
+
+    - Double-check your wiring, especially the ground connection between devices.'
+  after: While implementing UART, you can face data corruption or loss. Verify that the baud rate and UART settings align between the Pico and the computer. Use a logic analyser when feasible to check on data transmission integrity. Always confirm the robustness of wiring, particularly grounding.
+  note: Rewrote a paragraph to reflect observed changes in writing style.
