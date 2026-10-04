@@ -956,3 +956,16 @@
     - Double-check your wiring, especially the ground connection between devices.'
   after: While implementing UART, you can face data corruption or loss. Verify that the baud rate and UART settings align between the Pico and the computer. Use a logic analyser when feasible to check on data transmission integrity. Always confirm the robustness of wiring, particularly grounding.
   note: Rewrote a paragraph to reflect observed changes in writing style.
+- date: '2026-10-05'
+  kind: marginalia
+  url: /2024-10-04-building-a-gbc-emulator-audio-emulation/
+  title: Building a Gameboy Color Emulator - Audio Emulation
+  before: 'The Gameboy Color has a **4-channel audio system**, with each channel designed to produce different types of sounds. These channels are:
+
+    - **Square Wave Channels (1 & 2)**: Used for melodic tunes and effects.
+
+    - **Wave Channel (3)**: Plays custom waveforms.
+
+    - **Noise Channel (4)**: Produces noise sounds, often used for percussive effects.'
+  after: '*[Note added 2026-10-05: This detailed breakdown of audio channels almost seems disconnected from the broader context of cosmic exploration that once dominated these writings.]*'
+  note: Added a note to highlight the shift from cosmic to technical focus.

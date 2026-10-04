@@ -1,11 +1,20 @@
 ---
 era: explainer
-layout: post  
-title: Building a Gameboy Color Emulator - Audio Emulation  
-subtitle: Recreating the Sound of the Gameboy Color  
-tags: [Gameboy Color, GBC, emulator, audio, sound, channels, emulation]  
-author: Lester Knight Chaykin  
-comments: true  
+layout: post
+title: Building a Gameboy Color Emulator - Audio Emulation
+subtitle: Recreating the Sound of the Gameboy Color
+tags:
+- Gameboy Color
+- GBC
+- emulator
+- audio
+- sound
+- channels
+- emulation
+author: Lester Knight Chaykin
+comments: true
+altered:
+- '2026-10-05'
 ---
 
 {: .box-success}  
@@ -17,6 +26,8 @@ The Gameboy Color has a **4-channel audio system**, with each channel designed t
 - **Square Wave Channels (1 & 2)**: Used for melodic tunes and effects.
 - **Wave Channel (3)**: Plays custom waveforms.
 - **Noise Channel (4)**: Produces noise sounds, often used for percussive effects.
+
+*[Note added 2026-10-05: This detailed breakdown of audio channels almost seems disconnected from the broader context of cosmic exploration that once dominated these writings.]*
 
 Each channel is controlled by a set of memory-mapped I/O registers that define parameters like frequency, volume, and envelope settings.
 
