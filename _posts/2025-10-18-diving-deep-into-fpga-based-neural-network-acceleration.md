@@ -1,9 +1,14 @@
 ---
 era: explainer
 layout: post
-title: "Diving Deep into FPGA-based Neural Network Acceleration"
-subtitle: "Implementing a Basic Neural Network on an FPGA to Accelerate Deep Learning Tasks"
-tags: [FPGA, HDL, neural networks, deep learning, hardware acceleration]
+title: Diving Deep into FPGA-based Neural Network Acceleration
+subtitle: Implementing a Basic Neural Network on an FPGA to Accelerate Deep Learning Tasks
+tags:
+- FPGA
+- HDL
+- neural networks
+- deep learning
+- hardware acceleration
 author: Lester Knight Chaykin
 comments: true
 mathjax: false
@@ -12,6 +17,8 @@ date: 2025-10-18 13:18:15 +0000
 cover-img: /assets/img/posts/diving-deep-into-fpga-based-neural-network-acceleration.jpg
 thumbnail-img: /assets/img/posts/diving-deep-into-fpga-based-neural-network-acceleration.jpg
 share-img: /assets/img/posts/diving-deep-into-fpga-based-neural-network-acceleration.jpg
+altered:
+- '2026-10-06'
 ---
 
 In this post, we will explore how to implement a basic neural network on an FPGA (Field-Programmable Gate Array) to accelerate deep learning tasks. With the increasing demand for high-speed and efficient processing in AI applications, FPGAs offer a compelling alternative to traditional CPU and GPU architectures due to their parallel processing capabilities and reconfigurability.
@@ -83,7 +90,7 @@ During the initial testing, timing issues were encountered, particularly with th
 
 ## Results
 
-The FPGA-based neural network showed a significant improvement in computation speed, achieving up to a 10x speedup compared to a CPU-based implementation. The power efficiency also improved, making it suitable for edge computing devices where power availability is limited.
+[sentence removed 2026-10-06] The power efficiency also improved, making it suitable for edge computing devices where power availability is limited.
 
 ## Conclusion
 

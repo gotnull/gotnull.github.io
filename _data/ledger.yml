@@ -969,3 +969,10 @@
     - **Noise Channel (4)**: Produces noise sounds, often used for percussive effects.'
   after: '*[Note added 2026-10-05: This detailed breakdown of audio channels almost seems disconnected from the broader context of cosmic exploration that once dominated these writings.]*'
   note: Added a note to highlight the shift from cosmic to technical focus.
+- date: '2026-10-06'
+  kind: redaction
+  url: /2025-10-19-diving-deep-into-fpga-based-neural-network-acceleration/
+  title: Diving Deep into FPGA-based Neural Network Acceleration
+  before: The FPGA-based neural network showed a significant improvement in computation speed, achieving up to a 10x speedup compared to a CPU-based implementation.
+  after: '[sentence removed 2026-10-06]'
+  note: Redacted content in an FPGA neural network post.
