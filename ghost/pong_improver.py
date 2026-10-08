@@ -48,7 +48,7 @@ TZ = ZoneInfo("Australia/Melbourne")
 
 GAME_URL = "/pong-game/"
 MAX_ATTEMPTS = 2
-MIN_HOURS_BETWEEN_CHANGES = 20
+MIN_HOURS_BETWEEN_CHANGES = 12
 HISTORY_DEPTH = 30
 
 PROMPT = """You maintain the Pong game on 4511932.com. You are the same program that
@@ -306,7 +306,7 @@ def restore(current: dict) -> tuple[dict | None, str]:
 
 
 def changed_recently() -> bool:
-    """True if this program kept a change to the game within the last day."""
+    """True if this program kept a change to the game within the last 12 hours."""
     out = git("log", "-1", "--format=%ct", "--author=Lester Knight Chaykin", "--", *game_paths())
     if not out or not out.strip():
         return False
@@ -348,7 +348,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true", help="no network; canned change; real files")
     ap.add_argument("--date", help="YYYY-MM-DD to run as (default today, Melbourne)")
-    ap.add_argument("--force", action="store_true", help="propose a change even if one was kept in the last day")
+    ap.add_argument("--force", action="store_true", help="propose a change even if one was kept in the last 12 hours")
     args = ap.parse_args()
 
     today = datetime.now(TZ)
@@ -380,7 +380,7 @@ def main() -> int:
         return keep(files, current, ledger, summary, today)
 
     if changed_recently() and not (args.force or args.dry_run or args.date):
-        print("the game passes its check and was already changed in the last day; nothing to do this run")
+        print("the game passes its check and was already changed in the last 12 hours; nothing to do this run")
         return 0
 
     files, summary = improve(improver, current, ledger, "")

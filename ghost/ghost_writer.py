@@ -53,7 +53,7 @@ DRIFT_SPAN = int(os.getenv("GHOST_DRIFT_SPAN", "120"))
 ALTER_COOLDOWN_DAYS = 30
 # The workflow runs several times a day so a refused run is retried. A run
 # writes nothing if the newest post is younger than this.
-MIN_HOURS_BETWEEN_POSTS = 20
+MIN_HOURS_BETWEEN_POSTS = 12
 
 STAGES = [
     (0.00, "lester",
@@ -540,7 +540,7 @@ def main() -> int:
     ap.add_argument("--force-alter", choices=["author", "marginalia", "redaction", "rewrite"],
                     help="always alter an earlier post, with this kind")
     ap.add_argument("--seed", type=int, help="random seed (default: derived from the date)")
-    ap.add_argument("--force", action="store_true", help="write even if a post went out in the last day")
+    ap.add_argument("--force", action="store_true", help="write even if a post went out in the last 12 hours")
     args = ap.parse_args()
 
     today = datetime.now(TZ)

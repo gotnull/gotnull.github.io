@@ -3,7 +3,7 @@ name: Write today's post
 on:
   schedule:
     # 11:11pm Melbourne during AEST. The two later runs are retries: the
-    # writer does nothing if a post went out in the last 20 hours.
+    # writer does nothing if a post went out in the last 12 hours.
     - cron: '11 13 * * *'
     - cron: '11 16 * * *'
     - cron: '11 19 * * *'
