@@ -1,10 +1,11 @@
 """The model the programs talk to, with a second provider behind the first.
 
 OpenAI is tried first. If it refuses (out of credit, key revoked, an outage
-that outlasts the client's own retries), the same request goes to GitHub
-Models, which an Actions run can call with its own GITHUB_TOKEN and which
-needs no secret or billing of its own. A run only gives up when every
-provider has refused, and then it says why instead of raising.
+that outlasts the client's own retries), the same request goes to the
+fallback: any OpenAI-compatible endpoint, set with GHOST_FALLBACK_BASE_URL,
+GHOST_FALLBACK_API_KEY and GHOST_FALLBACK_MODEL (OpenRouter, Anthropic's
+OpenAI-compatible endpoint, Gemini's, and so on). A run only gives up when
+every provider has refused, and then it says why instead of raising.
 
     from llm import chat_json, NoModel
     try:
@@ -16,9 +17,9 @@ from __future__ import annotations
 
 import json
 import os
+import re
 
 MODEL = os.getenv("GHOST_MODEL", "gpt-4o")
-GITHUB_MODELS_URL = "https://models.github.ai/inference"
 
 
 class NoModel(Exception):
@@ -32,15 +33,15 @@ def providers() -> list[tuple[str, object, str]]:
     out = []
     if os.getenv("OPENAI_API_KEY"):
         out.append(("openai", OpenAI(api_key=os.environ["OPENAI_API_KEY"], max_retries=3, timeout=600), MODEL))
-    if os.getenv("GITHUB_TOKEN"):
-        model = os.getenv("GHOST_FALLBACK_MODEL") or (MODEL if "/" in MODEL else "openai/" + MODEL)
-        out.append(("github-models", OpenAI(base_url=GITHUB_MODELS_URL, api_key=os.environ["GITHUB_TOKEN"],
-                                            max_retries=3, timeout=600), model))
+    url, key, model = (os.getenv(k) for k in ("GHOST_FALLBACK_BASE_URL", "GHOST_FALLBACK_API_KEY",
+                                                "GHOST_FALLBACK_MODEL"))
+    if url and key and model:
+        out.append(("fallback", OpenAI(base_url=url, api_key=key, max_retries=3, timeout=600), model))
     return out
 
 
 def openai_client():
-    """The OpenAI client alone, for calls GitHub Models cannot serve (images)."""
+    """The OpenAI client alone, for images, which the fallback is not asked for."""
     if not os.getenv("OPENAI_API_KEY"):
         return None
     from openai import OpenAI
@@ -52,7 +53,7 @@ def chat_json(system: str, user: str, temperature: float) -> dict:
     reasons = []
     found = providers()
     if not found:
-        raise NoModel("no provider configured: set OPENAI_API_KEY or GITHUB_TOKEN")
+        raise NoModel("no provider configured: set OPENAI_API_KEY or the GHOST_FALLBACK_* settings")
     for name, client, model in found:
         try:
             response = client.chat.completions.create(
@@ -62,7 +63,10 @@ def chat_json(system: str, user: str, temperature: float) -> dict:
                 temperature=temperature,
                 response_format={"type": "json_object"},
             )
-            data = json.loads(response.choices[0].message.content)
+            text = response.choices[0].message.content or ""
+            # Some compatible endpoints ignore response_format and fence the JSON.
+            text = re.sub(r"^\s*```(?:json)?\s*|\s*```\s*$", "", text)
+            data = json.loads(text)
             if not isinstance(data, dict):
                 raise ValueError("the answer was JSON but not an object")
             if name != found[0][0]:

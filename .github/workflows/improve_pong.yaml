@@ -12,7 +12,6 @@ on:
 
 permissions:
   contents: write
-  models: read   # GitHub Models, the fallback when OpenAI refuses
 
 # Same group as the writer so the two never push at the same time.
 concurrency:
@@ -44,7 +43,10 @@ jobs:
         id: improver
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Any OpenAI-compatible provider, tried when OpenAI refuses.
+          GHOST_FALLBACK_BASE_URL: ${{ vars.GHOST_FALLBACK_BASE_URL }}
+          GHOST_FALLBACK_MODEL: ${{ vars.GHOST_FALLBACK_MODEL }}
+          GHOST_FALLBACK_API_KEY: ${{ secrets.GHOST_FALLBACK_API_KEY }}
           GHOST_MODEL: ${{ vars.GHOST_MODEL || 'gpt-4o' }}
         run: python ghost/pong_improver.py
 

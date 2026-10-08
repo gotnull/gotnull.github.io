@@ -14,7 +14,7 @@ check reports, and if no model can, the newest version in git history that
 passes is put back. The workflow runs several times a day so a refused run
 is retried; once a change has been kept, later runs that day only check.
 
-    python3 ghost/pong_improver.py            # one run, needs OPENAI_API_KEY or GITHUB_TOKEN
+    python3 ghost/pong_improver.py            # one run, needs OPENAI_API_KEY or GHOST_FALLBACK_*
     python3 ghost/pong_improver.py --dry-run  # no network, canned change, real files
 
 The script writes files only. The GitHub Actions workflow commits them.

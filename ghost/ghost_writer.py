@@ -11,7 +11,7 @@ post's front matter records how far along that is.
 
 The script writes files only. The GitHub Actions workflow commits them.
 
-    python3 ghost/ghost_writer.py            # one run, needs OPENAI_API_KEY or GITHUB_TOKEN
+    python3 ghost/ghost_writer.py            # one run, needs OPENAI_API_KEY or GHOST_FALLBACK_*
     python3 ghost/ghost_writer.py --dry-run  # no network, canned text, real files
     python3 ghost/ghost_writer.py --dry-run --force-alter rewrite
 """

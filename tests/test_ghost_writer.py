@@ -140,7 +140,7 @@ def test_image_access_refusal_is_recorded_once(site, monkeypatch):
 def live_run(monkeypatch, *args):
     monkeypatch.setattr(sys, "argv", ["ghost_writer.py", *args])
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
-    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    monkeypatch.delenv("GHOST_FALLBACK_API_KEY", raising=False)
     return gw.main()
 
 
