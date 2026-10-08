@@ -54,9 +54,10 @@ def test_dry_run_rewrite_writes_ledger_entry_and_altered_front_matter(site, monk
 
 
 def test_dry_run_new_post_front_matter_and_link_validation(site, monkeypatch):
+    existing = set((site / "_posts").glob("*.md"))
     run(monkeypatch, "--date", "2026-10-02", "--seed", "7", "--force-alter", "author")
 
-    new = sorted((site / "_posts").glob("2026-10-02-*.md"))
+    new = sorted(set((site / "_posts").glob("2026-10-02-*.md")) - existing)
     assert len(new) == 1
     fields, body = front_matter(new[0])
     assert fields["origin"] == "engine"
@@ -134,3 +135,35 @@ def test_image_access_refusal_is_recorded_once(site, monkeypatch):
     calls.clear()
     assert writer.image("a lamp") is None
     assert calls == []  # not tried again
+
+
+def live_run(monkeypatch, *args):
+    monkeypatch.setattr(sys, "argv", ["ghost_writer.py", *args])
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("GITHUB_TOKEN", raising=False)
+    return gw.main()
+
+
+def test_no_model_writes_nothing_and_does_not_fail(site, monkeypatch):
+    def refuse(*a, **k):
+        raise gw.NoModel("openai (gpt-4o): no credits remaining")
+    monkeypatch.setattr(gw, "chat_json", refuse)
+    before = {p: p.read_text() for p in (site / "_posts").glob("*.md")}
+    ledger_before = (site / "_data" / "ledger.yml").read_text()
+    assert live_run(monkeypatch, "--force") == 0
+    assert {p: p.read_text() for p in (site / "_posts").glob("*.md")} == before
+    assert (site / "_data" / "ledger.yml").read_text() == ledger_before
+
+
+def test_a_retry_after_todays_post_does_nothing(site, monkeypatch):
+    now = datetime.now(gw.TZ)
+    (site / "_posts" / f"{now:%Y-%m-%d}-already-out.md").write_text(
+        "---\nlayout: post\ntitle: Already out\norigin: engine\n"
+        f"date: {now:%Y-%m-%d %H:%M:%S %z}\n---\nWritten earlier today.\n")
+
+    def must_not_ask(*a, **k):
+        raise AssertionError("asked the model although a post went out in the last day")
+    monkeypatch.setattr(gw, "chat_json", must_not_ask)
+    count = len(list((site / "_posts").glob("*.md")))
+    assert live_run(monkeypatch) == 0
+    assert len(list((site / "_posts").glob("*.md"))) == count

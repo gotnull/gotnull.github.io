@@ -294,16 +294,16 @@
     if (humanControls('right')) steerHuman('right', state.right, ['ArrowUp'], ['ArrowDown']);
     else steerAi('right', state.right);
 
+    // Slow motion scales the player's speed setting; it never overwrites it.
+    var rate = state.speed;
     if (state.slowMotionFrames > 0) {
-      state.speed = SLOW_MOTION_FACTOR;
+      rate *= SLOW_MOTION_FACTOR;
       state.slowMotionFrames -= 1;
-    } else {
-      state.speed = clamp(state.speed, MIN_SPEED, MAX_SPEED);
     }
 
     var b = state.ball;
-    b.x += b.vx * state.speed;
-    b.y += b.vy * state.speed;
+    b.x += b.vx * rate;
+    b.y += b.vy * rate;
 
     if (state.powerUp) {
       var pu = state.powerUp;
@@ -338,7 +338,7 @@
     }
     for (var k = 0; k < stars.length; k++) {
       var st = stars[k];
-      st.x -= st.z * 0.35 * state.speed;
+      st.x -= st.z * 0.35 * rate;
       if (st.x < -2) { st.x = WIDTH + 2; st.y = Math.random() * HEIGHT; }
     }
     if (flashAlpha > 0) flashAlpha = Math.max(0, flashAlpha - 0.03);

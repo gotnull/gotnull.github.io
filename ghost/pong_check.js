@@ -12,8 +12,9 @@
 //   2. in Chrome: the page loads with no error, window.Pong exists with
 //      start, pause, resume, setSpeed, state and step, the game starts in
 //      AI vs AI and draws, every button works, keys and touch move the
-//      paddles, pause pauses, speed changes, a point is scored and a game
-//      ends and restarts, all without a single page error
+//      paddles, pause pauses, speed changes and play leaves the setting
+//      alone, a point is scored and a game ends and restarts, all without a
+//      single page error
 //
 // Chrome is found from CHROME_PATH, PUPPETEER_EXECUTABLE_PATH, or the usual
 // places. The improver runs this before it keeps a change. Exit 0 is a pass.
@@ -306,6 +307,17 @@ ${libTags}
     assert((await page.evaluate(() => window.Pong.state().speed)) <= 4, 'speed has no upper limit');
     for (let i = 0; i < 40; i++) await page.click('#decreaseSpeed');
     assert((await page.evaluate(() => window.Pong.state().speed)) > 0, 'speed can reach zero');
+    await page.evaluate(() => window.Pong.setSpeed(1));
+    // The setting belongs to the player: play may slow or speed the ball for
+    // effect, but state().speed must be what the buttons left it at.
+    const kept = await page.evaluate(() => {
+      const P = window.Pong;
+      P.start('ai-vs-ai'); P.setSpeed(1.5);
+      const set = P.state().speed;
+      P.step(3000);
+      return [set, P.state().speed];
+    });
+    assert(kept[0] === kept[1], `play changed the speed setting from ${kept[0]} to ${kept[1]}`);
     await page.evaluate(() => window.Pong.setSpeed(1));
 
     // Sound and fullscreen must not throw.

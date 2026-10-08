@@ -11,7 +11,7 @@ post's front matter records how far along that is.
 
 The script writes files only. The GitHub Actions workflow commits them.
 
-    python3 ghost/ghost_writer.py            # one run, needs OPENAI_API_KEY
+    python3 ghost/ghost_writer.py            # one run, needs OPENAI_API_KEY or GITHUB_TOKEN
     python3 ghost/ghost_writer.py --dry-run  # no network, canned text, real files
     python3 ghost/ghost_writer.py --dry-run --force-alter rewrite
 """
@@ -31,6 +31,8 @@ from zoneinfo import ZoneInfo
 
 import yaml
 
+from llm import NoModel, chat_json, openai_client, warn
+
 ROOT = Path(__file__).resolve().parents[1]
 POSTS = ROOT / "_posts"
 LEDGER = ROOT / "_data" / "ledger.yml"
@@ -43,13 +45,15 @@ TEMPLATES = ROOT / "ghost" / "templates"
 IMAGE_ACCESS = ROOT / "ghost" / "image_access.json"
 TZ = ZoneInfo("Australia/Melbourne")
 
-MODEL = os.getenv("GHOST_MODEL", "gpt-4o")
 WANT_IMAGES = os.getenv("GHOST_IMAGES", "1") != "0"
 ALTER_PROBABILITY = float(os.getenv("GHOST_ALTER_PROBABILITY", "0.5"))
 # Drift reaches 1.0 after this many engine-written posts. Roughly four
 # months of daily runs.
 DRIFT_SPAN = int(os.getenv("GHOST_DRIFT_SPAN", "120"))
 ALTER_COOLDOWN_DAYS = 30
+# The workflow runs several times a day so a refused run is retried. A run
+# writes nothing if the newest post is younger than this.
+MIN_HOURS_BETWEEN_POSTS = 20
 
 STAGES = [
     (0.00, "lester",
@@ -148,6 +152,22 @@ def save_ledger(entries: list[dict]) -> None:
     LEDGER.write_text(yaml.safe_dump(entries, sort_keys=False, allow_unicode=True, width=1000), encoding="utf-8")
 
 
+def newest_engine_post(archive: list[dict]) -> datetime | None:
+    newest = None
+    for p in archive:
+        if p["era"] != "engine":
+            continue
+        date = p["fields"].get("date")
+        try:
+            if isinstance(date, str):
+                date = datetime.strptime(date.strip(), "%Y-%m-%d %H:%M:%S %z")
+        except ValueError:
+            continue
+        if isinstance(date, datetime) and date.tzinfo and (newest is None or date > newest):
+            newest = date
+    return newest
+
+
 def drift_for(archive: list[dict]) -> float:
     n = sum(1 for p in archive if p["era"] == "engine")
     return round(min(1.0, n / DRIFT_SPAN), 3)
@@ -170,30 +190,18 @@ class Writer:
 
     def __init__(self, dry_run: bool):
         self.dry_run = dry_run
-        self.client = None
-        if not dry_run:
-            from openai import OpenAI  # imported here so --dry-run needs no package
-            key = os.getenv("OPENAI_API_KEY")
-            if not key:
-                sys.exit("OPENAI_API_KEY is not set")
-            self.client = OpenAI(api_key=key)
+        self.client = None if dry_run else openai_client()
 
     def json(self, system: str, user: str, canned: dict) -> dict:
+        """Raises NoModel when every provider refuses."""
         if self.dry_run:
             return canned
-        response = self.client.chat.completions.create(
-            model=MODEL,
-            messages=[{"role": "system", "content": system},
-                      {"role": "user", "content": user}],
-            temperature=0.9,
-            response_format={"type": "json_object"},
-        )
-        return json.loads(response.choices[0].message.content)
+        return chat_json(system, user, temperature=0.9)
 
     def image(self, prompt: str) -> bytes | None:
         """Try the current image model, then the old one, then give up.
         A failed image never fails the run; the theme copes with no cover."""
-        if self.dry_run or not WANT_IMAGES:
+        if self.dry_run or not WANT_IMAGES or self.client is None:
             return None
         refused = load_image_access()
         for model in ("gpt-image-1", "dall-e-3"):
@@ -532,6 +540,7 @@ def main() -> int:
     ap.add_argument("--force-alter", choices=["author", "marginalia", "redaction", "rewrite"],
                     help="always alter an earlier post, with this kind")
     ap.add_argument("--seed", type=int, help="random seed (default: derived from the date)")
+    ap.add_argument("--force", action="store_true", help="write even if a post went out in the last day")
     args = ap.parse_args()
 
     today = datetime.now(TZ)
@@ -541,6 +550,12 @@ def main() -> int:
     rng = random.Random(args.seed if args.seed is not None else int(today.strftime("%Y%m%d")))
 
     archive = load_archive()
+    newest = newest_engine_post(archive)
+    if newest and not (args.force or args.dry_run or args.date):
+        hours = (datetime.now(TZ) - newest).total_seconds() / 3600
+        if hours < MIN_HOURS_BETWEEN_POSTS:
+            print(f"the newest post is {hours:.1f} hours old; nothing to do this run")
+            return 0
     ledger = load_ledger()
     drift = drift_for(archive)
     stage, brief = stage_for(drift)
@@ -548,7 +563,12 @@ def main() -> int:
 
     system, user = build_prompt(archive, ledger, drift, stage, brief, today, plan)
     writer = Writer(args.dry_run)
-    response = writer.json(system, user, canned_post(archive))
+    try:
+        response = writer.json(system, user, canned_post(archive))
+    except NoModel as exc:
+        # Nothing is written, so the next scheduled run tries again.
+        warn(f"No post this run: no model answered. {exc}")
+        return 0
 
     changed: list[str] = []
     if plan:

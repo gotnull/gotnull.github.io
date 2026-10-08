@@ -1,6 +1,7 @@
 """The game improver, exercised against temporary copies of the game files.
 Needs node for ghost/pong_check.js."""
 import shutil
+import subprocess
 import sys
 
 import pytest
@@ -59,10 +60,54 @@ def test_markup_that_drops_an_id_is_not_kept(site, monkeypatch):
     assert pi.HTML.read_text() == html_before
 
 
-def test_improver_refuses_to_touch_a_game_that_already_fails(site, monkeypatch):
+def refuse(self, current, ledger, feedback):
+    raise pi.NoModel("openai (gpt-4o): no credits remaining")
+
+
+def test_a_broken_game_is_repaired_by_the_model(site, monkeypatch):
+    good = pi.JS.read_text()
     pi.JS.write_text("this is not javascript (")
+    asked = []
+
+    def fix(self, current, ledger, feedback):
+        asked.append(feedback)
+        return {"summary": "Put the script back together.", "libs": current["libs"], "js": good,
+                "css": None, "html": None}
+    monkeypatch.setattr(pi.Improver, "propose", fix)
+    assert run(monkeypatch) == 0
+    assert pi.JS.read_text() == good
+    assert "repair" in asked[0]
+    assert yaml.safe_load(pi.LEDGER.read_text())[-1]["note"] == "Put the script back together."
+
+
+def test_a_broken_game_with_no_model_is_restored_from_history(site, monkeypatch):
+    def git(*args):
+        subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *args], cwd=site,
+                       check=True, capture_output=True)
+    good = pi.JS.read_text()
+    git("init", "-q")
+    git("add", "-A")
+    git("commit", "-q", "-m", "a game that works")
+    pi.JS.write_text("this is not javascript (")
+    git("commit", "-q", "-am", "a game that does not")
+    monkeypatch.setattr(pi.Improver, "propose", refuse)
+    assert run(monkeypatch) == 0
+    assert pi.JS.read_text() == good
+    assert "went back to the version from" in yaml.safe_load(pi.LEDGER.read_text())[-1]["note"]
+
+
+def test_a_broken_game_nothing_can_fix_is_left_alone_and_fails_loudly(site, monkeypatch):
+    pi.JS.write_text("this is not javascript (")
+    monkeypatch.setattr(pi.Improver, "propose", refuse)
     assert run(monkeypatch) == 1
     assert pi.JS.read_text() == "this is not javascript ("
+
+
+def test_no_model_leaves_a_working_game_alone_and_does_not_fail(site, monkeypatch):
+    js_before, ledger_before = pi.JS.read_text(), pi.LEDGER.read_text()
+    monkeypatch.setattr(pi.Improver, "propose", refuse)
+    assert run(monkeypatch) == 0
+    assert (pi.JS.read_text(), pi.LEDGER.read_text()) == (js_before, ledger_before)
 
 
 def test_an_unknown_library_is_not_kept(site, monkeypatch):

@@ -2,7 +2,11 @@ name: Write today's post
 
 on:
   schedule:
-    - cron: '11 13 * * *'   # 11:11pm Melbourne during AEST
+    # 11:11pm Melbourne during AEST. The two later runs are retries: the
+    # writer does nothing if a post went out in the last 20 hours.
+    - cron: '11 13 * * *'
+    - cron: '11 16 * * *'
+    - cron: '11 19 * * *'
   workflow_dispatch:
     inputs:
       force_alter:
@@ -11,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  models: read   # GitHub Models, the fallback when OpenAI refuses
 
 concurrency:
   group: ghost-writer
@@ -20,9 +25,9 @@ jobs:
   write:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
@@ -33,6 +38,7 @@ jobs:
         id: writer
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GHOST_MODEL: ${{ vars.GHOST_MODEL || 'gpt-4o' }}
         run: |
           if [ -n "${{ github.event.inputs.force_alter }}" ]; then
@@ -42,6 +48,7 @@ jobs:
           fi
 
       - name: Commit
+        if: steps.writer.outputs.changed != ''
         run: |
           git config user.name 'Lester Knight Chaykin'
           git config user.email 'lester@4511932.com'

@@ -2,11 +2,17 @@ name: Improve the game
 
 on:
   schedule:
-    - cron: '41 13 * * *'   # half an hour after the writer
+    # Half an hour after each writer run. Every run checks the published
+    # game and repairs it if it fails; only the first to keep a change in a
+    # day proposes one.
+    - cron: '41 13 * * *'
+    - cron: '41 16 * * *'
+    - cron: '41 19 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+  models: read   # GitHub Models, the fallback when OpenAI refuses
 
 # Same group as the writer so the two never push at the same time.
 concurrency:
@@ -17,13 +23,15 @@ jobs:
   improve:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0   # a broken game is restored from history
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
 
@@ -36,6 +44,7 @@ jobs:
         id: improver
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GHOST_MODEL: ${{ vars.GHOST_MODEL || 'gpt-4o' }}
         run: python ghost/pong_improver.py
 
